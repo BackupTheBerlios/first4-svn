@@ -1,0 +1,1812 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="first4"
+	ProjectGUID="{30628FAD-7BF9-3C6A-A74A-3EECD841F1A9}"
+	Keyword=""
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="build\"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				WarningLevel="0"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Zm200 -w34100 -w34189 -EHsc -Zm200 -w34100 -w34189 -EHsc -w34100 -w34189"
+				Optimization="2"
+				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build&quot;,&quot;build&quot;,$(QTDIR)\mkspecs\win32-msvc2005"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"
+				GeneratePreprocessedFile="0"
+				RuntimeLibrary="3"
+				BufferSecurityCheck="false"
+				TreatWChar_tAsBuiltInType="false"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="build\"
+				ObjectFile="build\"
+				ProgramDataBaseFileName=".\"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				IgnoreImportLibrary="true"
+				AdditionalDependencies="$(QTDIR)\lib\qtmaind.lib $(QTDIR)\lib\QtSqld4.lib $(QTDIR)\lib\QtGuid4.lib $(QTDIR)\lib\QtCored4.lib"
+				OutputFile="bin\first4.exe"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="$(QTDIR)\lib"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile=""
+				SubSystem="2"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="build\"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				WarningLevel="0"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Zm200 -w34100 -w34189 -EHsc -Zm200 -w34100 -w34189 -EHsc -w34100 -w34189"
+				Optimization="2"
+				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build&quot;,&quot;build&quot;,$(QTDIR)\mkspecs\win32-msvc2005"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT,NDEBUG"
+				GeneratePreprocessedFile="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				TreatWChar_tAsBuiltInType="false"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="build\"
+				ObjectFile="build\"
+				ProgramDataBaseFileName=".\"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,QT_THREAD_SUPPORT"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				IgnoreImportLibrary="true"
+				AdditionalDependencies="$(QTDIR)\lib\qtmain.lib $(QTDIR)\lib\QtSql4.lib $(QTDIR)\lib\QtGui4.lib $(QTDIR)\lib\QtCore4.lib"
+				OutputFile="bin\first4.exe"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="$(QTDIR)\lib"
+				GenerateDebugInformation="false"
+				ProgramDatabaseFile=""
+				SubSystem="2"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath="src\aboutfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\addrfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\addrselectfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\cfgfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\cmntfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\dataeditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\datafrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\doceditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\docopenfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\invfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\invnewfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\loginfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\mainfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\newdatatabfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\newdbfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\orderseditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\ordersfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\printfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\procfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\progfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\stockselfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="src\vars.cpp"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath="src\aboutfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\aboutfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\aboutfrm.h -o build\moc_aboutfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_aboutfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\aboutfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\aboutfrm.h -o build\moc_aboutfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_aboutfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\addrfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\addrfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\addrfrm.h -o build\moc_addrfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_addrfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\addrfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\addrfrm.h -o build\moc_addrfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_addrfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\addrselectfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\addrselectfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\addrselectfrm.h -o build\moc_addrselectfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_addrselectfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\addrselectfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\addrselectfrm.h -o build\moc_addrselectfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_addrselectfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\cfgfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\cfgfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\cfgfrm.h -o build\moc_cfgfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_cfgfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\cfgfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\cfgfrm.h -o build\moc_cfgfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_cfgfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\cmntfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\cmntfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\cmntfrm.h -o build\moc_cmntfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_cmntfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\cmntfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\cmntfrm.h -o build\moc_cmntfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_cmntfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\dataeditfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\dataeditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\dataeditfrm.h -o build\moc_dataeditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_dataeditfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\dataeditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\dataeditfrm.h -o build\moc_dataeditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_dataeditfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\datafrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\datafrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\datafrm.h -o build\moc_datafrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_datafrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\datafrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\datafrm.h -o build\moc_datafrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_datafrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\doceditfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\doceditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\doceditfrm.h -o build\moc_doceditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_doceditfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\doceditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\doceditfrm.h -o build\moc_doceditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_doceditfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\docopenfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\docopenfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\docopenfrm.h -o build\moc_docopenfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_docopenfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\docopenfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\docopenfrm.h -o build\moc_docopenfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_docopenfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\invfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\invfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\invfrm.h -o build\moc_invfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_invfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\invfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\invfrm.h -o build\moc_invfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_invfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\invnewfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\invnewfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\invnewfrm.h -o build\moc_invnewfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_invnewfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\invnewfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\invnewfrm.h -o build\moc_invnewfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_invnewfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\loginfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\loginfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\loginfrm.h -o build\moc_loginfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_loginfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\loginfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\loginfrm.h -o build\moc_loginfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_loginfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\mainfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\mainfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\mainfrm.h -o build\moc_mainfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_mainfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\mainfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\mainfrm.h -o build\moc_mainfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_mainfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\newdatatabfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\newdatatabfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\newdatatabfrm.h -o build\moc_newdatatabfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_newdatatabfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\newdatatabfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\newdatatabfrm.h -o build\moc_newdatatabfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_newdatatabfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\newdbfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\newdbfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\newdbfrm.h -o build\moc_newdbfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_newdbfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\newdbfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\newdbfrm.h -o build\moc_newdbfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_newdbfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\orderseditfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\orderseditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\orderseditfrm.h -o build\moc_orderseditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_orderseditfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\orderseditfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\orderseditfrm.h -o build\moc_orderseditfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_orderseditfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\ordersfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\ordersfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\ordersfrm.h -o build\moc_ordersfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_ordersfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\ordersfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\ordersfrm.h -o build\moc_ordersfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_ordersfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\printfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\printfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\printfrm.h -o build\moc_printfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_printfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\printfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\printfrm.h -o build\moc_printfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_printfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\procfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\procfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\procfrm.h -o build\moc_procfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_procfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\procfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\procfrm.h -o build\moc_procfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_procfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\progfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\progfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\progfrm.h -o build\moc_progfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_progfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\progfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\progfrm.h -o build\moc_progfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_progfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\stockselfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\stockselfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\stockselfrm.h -o build\moc_stockselfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_stockselfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\stockselfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build&quot; -I&quot;build&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\stockselfrm.h -o build\moc_stockselfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe"
+						Outputs="build\moc_stockselfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\vars.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Generated Files"
+			Filter="cpp;c;cxx;moc;h;def;odl;idl;res;"
+			UniqueIdentifier="{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}"
+			>
+			<File
+				RelativePath="build\moc_aboutfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_addrfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_addrselectfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_cfgfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_cmntfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_dataeditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_datafrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_doceditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_docopenfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_invfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_invnewfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_loginfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_mainfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_newdatatabfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_newdbfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_orderseditfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_ordersfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_printfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_procfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_progfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="build\moc_stockselfrm.cpp"
+				>
+			</File>
+			<File
+				RelativePath="debug\qrc_first.cpp"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="release\qrc_first.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="build\ui_aboutfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_addrfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_addrselectfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_cfgfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_cmntfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_dataeditfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_datafrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_doceditfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_docopenfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_invfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_invnewfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_loginfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_mainfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_newdatatabfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_newdbfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_orderseditfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_ordersfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_printfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_progfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\ui_stockselfrm.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Translation Files"
+			Filter="ts"
+			UniqueIdentifier="{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}"
+			ParseFiles="false"
+			>
+			<File
+				RelativePath="langfiles\de.ts"
+				>
+			</File>
+			<File
+				RelativePath="langfiles\it.ts"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Form Files"
+			Filter="ui"
+			UniqueIdentifier="{99349809-55BA-4b9d-BF79-8FDBB0286EB3}"
+			ParseFiles="false"
+			>
+			<File
+				RelativePath="ui\aboutfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\aboutfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\aboutfrm.ui -o build\ui_aboutfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_aboutfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\aboutfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\aboutfrm.ui -o build\ui_aboutfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_aboutfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\addrfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\addrfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\addrfrm.ui -o build\ui_addrfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_addrfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\addrfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\addrfrm.ui -o build\ui_addrfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_addrfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\addrselectfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\addrselectfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\addrselectfrm.ui -o build\ui_addrselectfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_addrselectfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\addrselectfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\addrselectfrm.ui -o build\ui_addrselectfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_addrselectfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\cfgfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\cfgfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\cfgfrm.ui -o build\ui_cfgfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_cfgfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\cfgfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\cfgfrm.ui -o build\ui_cfgfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_cfgfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\cmntfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\cmntfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\cmntfrm.ui -o build\ui_cmntfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_cmntfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\cmntfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\cmntfrm.ui -o build\ui_cmntfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_cmntfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\dataeditfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\dataeditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\dataeditfrm.ui -o build\ui_dataeditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_dataeditfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\dataeditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\dataeditfrm.ui -o build\ui_dataeditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_dataeditfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\datafrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\datafrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\datafrm.ui -o build\ui_datafrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_datafrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\datafrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\datafrm.ui -o build\ui_datafrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_datafrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\doceditfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\doceditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\doceditfrm.ui -o build\ui_doceditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_doceditfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\doceditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\doceditfrm.ui -o build\ui_doceditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_doceditfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\docopenfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\docopenfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\docopenfrm.ui -o build\ui_docopenfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_docopenfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\docopenfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\docopenfrm.ui -o build\ui_docopenfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_docopenfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\invfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\invfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\invfrm.ui -o build\ui_invfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_invfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\invfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\invfrm.ui -o build\ui_invfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_invfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\invnewfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\invnewfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\invnewfrm.ui -o build\ui_invnewfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_invnewfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\invnewfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\invnewfrm.ui -o build\ui_invnewfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_invnewfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\loginfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\loginfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\loginfrm.ui -o build\ui_loginfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_loginfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\loginfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\loginfrm.ui -o build\ui_loginfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_loginfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\mainfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\mainfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\mainfrm.ui -o build\ui_mainfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_mainfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\mainfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\mainfrm.ui -o build\ui_mainfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_mainfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\newdatatabfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\newdatatabfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\newdatatabfrm.ui -o build\ui_newdatatabfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_newdatatabfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\newdatatabfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\newdatatabfrm.ui -o build\ui_newdatatabfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_newdatatabfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\newdbfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\newdbfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\newdbfrm.ui -o build\ui_newdbfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_newdbfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\newdbfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\newdbfrm.ui -o build\ui_newdbfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_newdbfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\orderseditfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\orderseditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\orderseditfrm.ui -o build\ui_orderseditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_orderseditfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\orderseditfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\orderseditfrm.ui -o build\ui_orderseditfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_orderseditfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\ordersfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\ordersfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\ordersfrm.ui -o build\ui_ordersfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_ordersfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\ordersfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\ordersfrm.ui -o build\ui_ordersfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_ordersfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\printfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\printfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\printfrm.ui -o build\ui_printfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_printfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\printfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\printfrm.ui -o build\ui_printfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_printfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\progfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\progfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\progfrm.ui -o build\ui_progfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_progfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\progfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\progfrm.ui -o build\ui_progfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_progfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\stockselfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\stockselfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\stockselfrm.ui -o build\ui_stockselfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_stockselfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\stockselfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\stockselfrm.ui -o build\ui_stockselfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe"
+						Outputs="build\ui_stockselfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="qrc;*"
+			UniqueIdentifier="{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}"
+			ParseFiles="false"
+			>
+			<File
+				RelativePath="ui\images\artsbuilderexecute.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\button_ok.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\button_ok_small.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\clock.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\contents.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\contents2.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\down.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\editdelete.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\exit.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\filenew.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\fileopen.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\fileprint.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\filesave.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\first.qrc"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="RCC ui\first.qrc"
+						CommandLine="$(QTDIR)\bin\rcc.exe -name first ui\first.qrc -o debug\qrc_first.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\rcc.exe;ui\images\exit.png;ui\images\viewmag.png;ui\images\up.png;ui\images\fileprint.png;ui\images\filenew.png;ui\images\kfm.png;ui\images\message32x32.png;ui\images\kill.png;ui\images\vcard.png;ui\images\print;ui\images\kcalc32x32.png;ui\images\impexp.png;ui\images\down.png;ui\images\searchfind;ui\images\kontact_todo.png;ui\images\logo.png;ui\images\xclipboard.png;ui\images\contents.png;ui\images\wordprocessing.png;ui\images\wordprocessing32x32.png;ui\images\fileopen.png;ui\images\undo;ui\images\viewmag2.png;ui\images\xmag.png;ui\images\filesave.png;ui\images\kdmconfig.png;ui\images\undo.png;ui\images\kcalc.png;ui\images\kfm32x32.png;ui\images\contents2.png;ui\images\editdelete.png;ui\images\gtkam-camera.png;ui\images\startsplash.png;ui\images\artsbuilderexecute.png;ui\images\clock.png;ui\images\help_index.png;ui\images\redo;ui\images\button_ok.png;ui\images\kfind.png;ui\images\message2.png;ui\images\message.png;ui\images\package_utilities.png;ui\images\hotlistdel.png;ui\images\button_ok_small.png;ui\images\hotlistadd.png;ui\images\readme"
+						Outputs="debug\qrc_first.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="RCC ui\first.qrc"
+						CommandLine="$(QTDIR)\bin\rcc.exe -name first ui\first.qrc -o release\qrc_first.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\rcc.exe;ui\images\exit.png;ui\images\viewmag.png;ui\images\up.png;ui\images\fileprint.png;ui\images\filenew.png;ui\images\kfm.png;ui\images\message32x32.png;ui\images\kill.png;ui\images\vcard.png;ui\images\print;ui\images\kcalc32x32.png;ui\images\impexp.png;ui\images\down.png;ui\images\searchfind;ui\images\kontact_todo.png;ui\images\logo.png;ui\images\xclipboard.png;ui\images\contents.png;ui\images\wordprocessing.png;ui\images\wordprocessing32x32.png;ui\images\fileopen.png;ui\images\undo;ui\images\viewmag2.png;ui\images\xmag.png;ui\images\filesave.png;ui\images\kdmconfig.png;ui\images\undo.png;ui\images\kcalc.png;ui\images\kfm32x32.png;ui\images\contents2.png;ui\images\editdelete.png;ui\images\gtkam-camera.png;ui\images\startsplash.png;ui\images\artsbuilderexecute.png;ui\images\clock.png;ui\images\help_index.png;ui\images\redo;ui\images\button_ok.png;ui\images\kfind.png;ui\images\message2.png;ui\images\message.png;ui\images\package_utilities.png;ui\images\hotlistdel.png;ui\images\button_ok_small.png;ui\images\hotlistadd.png;ui\images\readme"
+						Outputs="release\qrc_first.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\images\gtkam-camera.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\help_index.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\hotlistadd.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\hotlistdel.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\impexp.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kcalc.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kcalc32x32.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kdmconfig.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kfind.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kfm.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kfm32x32.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kill.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\kontact_todo.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\logo.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\message.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\message2.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\message32x32.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\package_utilities.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\print"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\readme"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\redo"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\searchfind"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\startsplash.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\undo"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\undo.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\up.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\vcard.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\viewmag.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\viewmag2.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\wordprocessing.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\wordprocessing32x32.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\xclipboard.png"
+				>
+			</File>
+			<File
+				RelativePath="ui\images\xmag.png"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
