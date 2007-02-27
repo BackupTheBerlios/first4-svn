@@ -1,0 +1,261 @@
+<ui version="4.0" >
+ <class>newdatatabfrm</class>
+ <widget class="QDialog" name="newdatatabfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>323</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>New Datatable...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>false</bool>
+  </property>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Type:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Name:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Columns:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncreate" >
+   <property name="geometry" >
+    <rect>
+     <x>320</x>
+     <y>290</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Create</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncance" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>C&amp;ancel</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>40</y>
+     <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="rdbstock" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>98</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Stock</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rdbiecode" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>98</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>IE-Codelist</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rdbcustom" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>98</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Custom</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="grpcols" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>110</y>
+     <width>301</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QListWidget" name="listcols" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>241</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnadd" >
+    <property name="geometry" >
+     <rect>
+      <x>259</x>
+      <y>10</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="icon" >
+     <iconset resource="first.qrc" >:/images/images/hotlistadd.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnremove" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>50</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="icon" >
+     <iconset resource="first.qrc" >:/images/images/hotlistdel.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnup" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="icon" >
+     <iconset resource="first.qrc" >:/images/images/up.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btndown" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>130</y>
+      <width>31</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="icon" >
+     <iconset resource="first.qrc" >:/images/images/down.png</iconset>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="txtname" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>301</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="first.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btncreate</sender>
+   <signal>clicked()</signal>
+   <receiver>newdatatabfrm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btncance</sender>
+   <signal>clicked()</signal>
+   <receiver>newdatatabfrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

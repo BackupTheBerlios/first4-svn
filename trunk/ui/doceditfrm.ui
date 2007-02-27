@@ -1,0 +1,712 @@
+<ui version="4.0" >
+ <class>doceditfrm</class>
+ <widget class="QWidget" name="doceditfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>685</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Documents...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Document:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Customer:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnclearsearch" >
+   <property name="geometry" >
+    <rect>
+     <x>340</x>
+     <y>140</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="first.qrc" >:/images/images/kill.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>570</x>
+     <y>60</y>
+     <width>56</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Date:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnsearchaddr" >
+   <property name="geometry" >
+    <rect>
+     <x>340</x>
+     <y>60</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Document #:</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="" >
+   <property name="geometry" >
+    <rect>
+     <x>520</x>
+     <y>10</y>
+     <width>233</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" >
+    <property name="margin" >
+     <number>0</number>
+    </property>
+    <property name="spacing" >
+     <number>6</number>
+    </property>
+    <item row="0" column="3" >
+     <widget class="QPushButton" name="btnprint" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/fileprint.png</iconset>
+      </property>
+      <property name="iconSize" >
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" >
+     <widget class="QPushButton" name="btnsave" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/filesave.png</iconset>
+      </property>
+      <property name="iconSize" >
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5" >
+     <widget class="QPushButton" name="btncomplete" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+      </property>
+      <property name="iconSize" >
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4" >
+     <spacer>
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" >
+       <size>
+        <width>21</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" >
+     <widget class="QPushButton" name="btnnew" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+      </property>
+      <property name="iconSize" >
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" >
+     <widget class="QPushButton" name="btnopen" >
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/fileopen.png</iconset>
+      </property>
+      <property name="iconSize" >
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>380</x>
+     <y>140</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Customer ID:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnclose" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>650</y>
+     <width>80</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>650</y>
+     <width>56</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>User:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbluser" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>650</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbdoc" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>221</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtdoccount" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>170</y>
+     <width>221</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblID" >
+   <property name="geometry" >
+    <rect>
+     <x>490</x>
+     <y>140</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="boxdate" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>60</y>
+     <width>111</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="displayFormat" >
+    <string>dd.MM.yyyy</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>480</x>
+     <y>510</y>
+     <width>281</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="Line" name="line_5" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>265</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation" >
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Total incl. VAT:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>265</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation" >
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Total:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>132</y>
+      <width>265</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation" >
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>56</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Total excl. VAT:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>VAT:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Discount:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnvat" >
+    <property name="geometry" >
+     <rect>
+      <x>130</x>
+      <y>78</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="icon" >
+     <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19" >
+    <property name="geometry" >
+     <rect>
+      <x>250</x>
+      <y>34</y>
+      <width>21</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>%</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boxtot" >
+    <property name="geometry" >
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boxdiscount" >
+    <property name="geometry" >
+     <rect>
+      <x>160</x>
+      <y>32</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boxvat" >
+    <property name="geometry" >
+     <rect>
+      <x>160</x>
+      <y>77</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boxtot_excl" >
+    <property name="geometry" >
+     <rect>
+      <x>160</x>
+      <y>54</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boxtot_incl" >
+    <property name="geometry" >
+     <rect>
+      <x>160</x>
+      <y>107</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btncalc" >
+    <property name="geometry" >
+     <rect>
+      <x>180</x>
+      <y>140</y>
+      <width>91</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>C&amp;alc</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTabWidget" name="mainwidget" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>200</y>
+     <width>751</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="currentIndex" >
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="tab1" >
+    <attribute name="title" >
+     <string>Introduction</string>
+    </attribute>
+    <widget class="QLabel" name="label_20" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Salutation:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>181</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Other informations:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtsalutation" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>611</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="boxotherinfo" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>731</width>
+       <height>201</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab2" >
+    <attribute name="title" >
+     <string>Positions</string>
+    </attribute>
+    <widget class="QTableWidget" name="tabmain" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>731</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Pos</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Label</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Description</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Quantity</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Unit</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Price/Unit</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Price</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>VAT</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>actquantity</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>minquantity</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>artID</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab3" >
+    <attribute name="title" >
+     <string>Comments</string>
+    </attribute>
+    <widget class="QTextEdit" name="boxcomments" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>731</width>
+       <height>251</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QTextEdit" name="boxaddress" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>60</y>
+     <width>221</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="first.qrc" />
+ </resources>
+ <connections/>
+</ui>
