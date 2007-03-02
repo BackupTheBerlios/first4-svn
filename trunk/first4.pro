@@ -4,8 +4,7 @@ QT +=   gui \
   sql
 CONFIG +=   qt \
   warn_on \
-  console \
-  debug
+  console 
 DESTDIR =   bin
 OBJECTS_DIR =   build
 MOC_DIR =   build
