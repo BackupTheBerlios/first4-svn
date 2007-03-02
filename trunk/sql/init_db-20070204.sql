@@ -57,6 +57,8 @@ CREATE TABLE `datatabs` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `datatabs` VALUES (0,'vattab','MwSt.-Werte','','Tax50#Comments:200   ','vattab');
+
 --
 -- Table structure for table `docpositions`
 --
@@ -96,6 +98,24 @@ CREATE TABLE `docs` (
   `introduction` text NOT NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `docsdrafts`
+--
+
+CREATE TABLE  `docdrafts` (
+  `ID` int(11) NOT NULL auto_increment,
+  `doctyp` text NOT NULL,
+  `date` text NOT NULL,
+  `client` text NOT NULL,
+  `comments` text NOT NULL,
+  `amount` text NOT NULL,
+  `discount` text NOT NULL,
+  `docID` text NOT NULL,
+  `salutation` text NOT NULL,
+  `introduction` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `doctab`
@@ -410,3 +430,10 @@ CREATE TABLE `userstab` (
 LOCK TABLES `userstab` WRITE;
 INSERT INTO `userstab` VALUES (1,'Administrator','','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
 UNLOCK TABLES;
+
+CREATE TABLE `vattab` (
+  `ID` int(11) NOT NULL auto_increment,
+  `col1` text NOT NULL,
+  `col2` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

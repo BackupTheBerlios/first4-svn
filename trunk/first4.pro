@@ -1,10 +1,11 @@
-TEMPLATE =  app
+TEMPLATE =   app
 QT +=   gui \
   core \
   sql
 CONFIG +=   qt \
   warn_on \
-  console 
+  console \
+  debug
 DESTDIR =   bin
 OBJECTS_DIR =   build
 MOC_DIR =   build
@@ -28,7 +29,9 @@ FORMS =   ui/mainfrm.ui \
   ui/invnewfrm.ui \
   ui/cmntfrm.ui \
   ui/docopenfrm.ui \
-  ui/doceditfrm.ui
+  ui/doceditfrm.ui \
+  ui/doccompletefrm.ui \
+  ui/docopendraftfrm.ui
 HEADERS =   src/mainfrm.h \
   src/vars.h \
   src/cfgfrm.h \
@@ -50,7 +53,9 @@ HEADERS =   src/mainfrm.h \
   src/progfrm.h \
   src/cmntfrm.h \
   src/docopenfrm.h \
-  src/doceditfrm.h
+  src/doceditfrm.h \
+  src/doccompletefrm.h \
+  src/docopendraftsfrm.h
 SOURCES =   src/main.cpp \
   src/mainfrm.cpp \
   src/vars.cpp \
@@ -73,7 +78,9 @@ SOURCES =   src/main.cpp \
   src/progfrm.cpp \
   src/cmntfrm.cpp \
   src/docopenfrm.cpp \
-  src/doceditfrm.cpp
+  src/doceditfrm.cpp \
+  src/doccompletefrm.cpp \
+  src/docopendraftsfrm.cpp
 TRANSLATIONS =   langfiles/de.ts \
   langfiles/it.ts
 RESOURCES =   ui/first.qrc

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'invnewfrm.ui'
 **
-** Created: Tue Feb 27 17:21:49 2007
+** Created: Thu Mar 1 12:03:11 2007
 **      by: Qt User Interface Compiler version 4.2.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

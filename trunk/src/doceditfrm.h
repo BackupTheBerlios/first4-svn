@@ -9,10 +9,25 @@ Q_OBJECT
 private:
 	void closeEvent( QCloseEvent* ce );
 	void readdoctab();
+	void addrow();
 private slots:
 	void selectaddress();
 	void printpreview();
 	void printesr();
+	void contmenu();
+	void removerow();
+	void navtable();
+	void checkdb();
+	void clearlblid();
+	void completedoc();
+	void printreport(bool complete);
+	void registeramount();
+	void revenue(QString dbID, QString amount);
+	void refreshstockdb();
+	void savecompletedoc();
+	void newdocument();
+	void opendoc();
+	void savedoc();
 public:
 	doceditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();

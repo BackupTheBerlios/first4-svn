@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'doceditfrm.h'
 **
-** Created: Tue Feb 27 17:25:19 2007
+** Created: Thu Mar 1 14:30:15 2007
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.2.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -22,7 +22,7 @@ static const uint qt_meta_data_doceditfrm[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   10, // methods
+      19,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -30,16 +30,32 @@ static const uint qt_meta_data_doceditfrm[] = {
       12,   11,   11,   11, 0x08,
       28,   11,   11,   11, 0x08,
       43,   11,   11,   11, 0x08,
-      54,   11,   11,   11, 0x0a,
-      73,   11,   11,   11, 0x0a,
-      84,   11,   11,   11, 0x0a,
+      54,   11,   11,   11, 0x08,
+      65,   11,   11,   11, 0x08,
+      77,   11,   11,   11, 0x08,
+      88,   11,   11,   11, 0x08,
+      98,   11,   11,   11, 0x08,
+     111,   11,   11,   11, 0x08,
+     134,  125,   11,   11, 0x08,
+     152,   11,   11,   11, 0x08,
+     181,  169,   11,   11, 0x08,
+     206,   11,   11,   11, 0x08,
+     223,   11,   11,   11, 0x08,
+     241,   11,   11,   11, 0x08,
+     255,   11,   11,   11, 0x08,
+     265,   11,   11,   11, 0x0a,
+     284,   11,   11,   11, 0x0a,
+     295,   11,   11,   11, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_doceditfrm[] = {
-    "doceditfrm\0\0selectaddress()\0printpreview()\0printesr()\0"
-    "selecteddocument()\0calc_tot()\0print()\0"
+    "doceditfrm\0\0selectaddress()\0printpreview()\0printesr()\0contmenu()\0"
+    "removerow()\0navtable()\0checkdb()\0clearlblid()\0completedoc()\0"
+    "complete\0printreport(bool)\0registeramount()\0dbID,amount\0"
+    "revenue(QString,QString)\0refreshstockdb()\0savecompletedoc()\0"
+    "newdocument()\0opendoc()\0selecteddocument()\0calc_tot()\0print()\0"
 };
 
 const QMetaObject doceditfrm::staticMetaObject = {
@@ -72,11 +88,24 @@ int doceditfrm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 0: selectaddress(); break;
         case 1: printpreview(); break;
         case 2: printesr(); break;
-        case 3: selecteddocument(); break;
-        case 4: calc_tot(); break;
-        case 5: print(); break;
+        case 3: contmenu(); break;
+        case 4: removerow(); break;
+        case 5: navtable(); break;
+        case 6: checkdb(); break;
+        case 7: clearlblid(); break;
+        case 8: completedoc(); break;
+        case 9: printreport((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 10: registeramount(); break;
+        case 11: revenue((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 12: refreshstockdb(); break;
+        case 13: savecompletedoc(); break;
+        case 14: newdocument(); break;
+        case 15: opendoc(); break;
+        case 16: selecteddocument(); break;
+        case 17: calc_tot(); break;
+        case 18: print(); break;
         }
-        _id -= 6;
+        _id -= 19;
     }
     return _id;
 }

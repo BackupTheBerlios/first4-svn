@@ -775,7 +775,7 @@ void cfgfrm::saveresourcesdetails()
 			querysave.bindValue( ":idcounter", item->text(4));
 			querysave.bindValue( ":ID", item->text(1));
 			querysave.exec();
-	    } else if(item->text(2).mid(0,4) == "data") {
+	    } else if(item->text(2).mid(0,4) == "data" || item->text(2) == "vattab") {
 			QSqlQuery querysave;
 			querysave.prepare( "UPDATE `datatabs` SET `users` = :users WHERE `ID` = :ID LIMIT 1;");
 			querysave.bindValue( ":users", item->text(3));
@@ -903,7 +903,7 @@ void cfgfrm::newaddr()
 	QSqlQuery queryadrnew2(qstr2);
 	QString qstr3 = tr("CREATE TABLE `%1` (  `ID` int(11) NOT NULL auto_increment, `clientid` text NOT NULL, `company` text NOT NULL, `lastname` text NOT NULL, `firstname` text NOT NULL, `nameadd` text NOT NULL, `pobox` text NOT NULL, `street_nr` text NOT NULL, `zip_location` text NOT NULL, `tel_b` text NOT NULL, `tel_direct` text NOT NULL, `fax_b` text NOT NULL, `tel_p` text NOT NULL, `fax_p` text NOT NULL, `mobile` text NOT NULL, `email1` text NOT NULL, `email2` text NOT NULL, `email3` text NOT NULL, `homepage` text NOT NULL, `revenueaj` text NOT NULL, `revenuelj` text NOT NULL, `discount` text NOT NULL, `clienttyp` text NOT NULL, `comments` text NOT NULL, `custom1` text NOT NULL, `custom2` text NOT NULL, `custom3` text NOT NULL, `custom4` text NOT NULL, `custom5` text NOT NULL, `created` text NOT NULL, `modified` text NOT NULL, KEY `ID` (`ID`)) ENGINE=InnoDB CHARSET=latin1;").arg(adrname);
 	QSqlQuery queryadrnew3(qstr3);
-	cfgfrm::loadressources();
+	loadressources();
     }
 }
 //
