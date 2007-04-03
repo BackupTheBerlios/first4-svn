@@ -8,6 +8,7 @@ class stockselfrm : public QDialog, public Ui::stockselfrm
 Q_OBJECT
 public:
 	stockselfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
+	void init();
 private slots:
 };
 #endif

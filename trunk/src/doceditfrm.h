@@ -10,6 +10,7 @@ private:
 	void closeEvent( QCloseEvent* ce );
 	void readdoctab();
 	void addrow();
+	void writetexfile();
 private slots:
 	void selectaddress();
 	void printpreview();
@@ -28,6 +29,7 @@ private slots:
 	void newdocument();
 	void opendoc();
 	void savedoc();
+	void show_vat();
 public:
 	doceditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
@@ -37,6 +39,7 @@ public:
 public slots:
 	void selecteddocument();
 	void calc_tot();
+	void calc_vat();
 	void print();
 };
 #endif

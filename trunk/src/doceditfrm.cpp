@@ -2,6 +2,9 @@
 #include <QMenu>
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <QProcess>
+#include <QFile>
+#include <QDir>
 //
 #include "doceditfrm.h"
 #include "vars.h"
@@ -9,6 +12,7 @@
 #include "stockselfrm.h"
 #include "doccompletefrm.h"
 #include "docopendraftsfrm.h"
+#include "vatshowfrm.h"
 //
 extern QString username, fullname, docfolder, templatefolder;
 //
@@ -120,6 +124,9 @@ void doceditfrm::init()
 	connect(btnclearsearch, SIGNAL(released()), this, SLOT(clearlblid()));
 	connect(btncomplete, SIGNAL(released()), this, SLOT(completedoc()));
 	connect(btnopen, SIGNAL(released()), this, SLOT(opendoc()));
+	connect(btnsave, SIGNAL(released()), this, SLOT(savedoc()));
+	connect(btncalc, SIGNAL(released()), this, SLOT(calc_tot()));
+	connect(btnvat, SIGNAL(released()), this, SLOT(show_vat()));
 }
 //
 void doceditfrm::closeEvent( QCloseEvent* ce )
@@ -362,21 +369,17 @@ void doceditfrm::checkdb()
 					    item->setText(3, query2.value(3).toString());
 					    item->setText(4, query2.value(4).toString());
 					    item->setText(5, query2.value(5).toString());
-					    item->setText(6, query2.value(6).toString());
+					    item->setText(6, vatlist[query2.value(6).toInt()]);
 					    item->setText(7, query2.value(7).toString());
-					    item->setText(8, query.value(0).toString()+""+query2.value(0).toString());
+					    item->setText(8, query.value(0).toString()+":#:"+query2.value(0).toString());
 					}
 			    }
 			}
 	    }
 	    
 	    if(sfrm->treemain->topLevelItemCount()>1)
-	    {	
-			sfrm->treemain->setColumnWidth(0, 0);
-			sfrm->treemain->setColumnWidth(6, 0);
-			sfrm->treemain->setColumnWidth(7, 0);
-			sfrm->treemain->setColumnWidth(8, 0);
-			
+	    {		
+   			sfrm->init();	
 			if(sfrm->exec())
 			{
 			    QTreeWidgetItem *item = sfrm->treemain->currentItem();
@@ -396,23 +399,23 @@ void doceditfrm::checkdb()
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(5));
-					tabmainitem = tabmain->item(tabmain->currentRow(), 6);
-
+					tabmain->setItem(tabmain->currentRow(), 6, tabmainitem);
+	
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(6));
-					tabmainitem = tabmain->item(tabmain->currentRow(), 8);
+					tabmain->setItem(tabmain->currentRow(), 8, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(3));					
-					tabmainitem = tabmain->item(tabmain->currentRow(), 9);
+					tabmain->setItem(tabmain->currentRow(), 9, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(7));
-					tabmainitem = tabmain->item(tabmain->currentRow(), 10);
+					tabmain->setItem(tabmain->currentRow(), 10, tabmainitem);
 					
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(8));
-					tabmainitem = tabmain->item(tabmain->currentRow(), 11);
+					tabmain->setItem(tabmain->currentRow(), 11, tabmainitem);
 			    }
 			}
 	    }
@@ -435,23 +438,23 @@ void doceditfrm::checkdb()
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(5));
-				tabmainitem = tabmain->item(tabmain->currentRow(), 6);
+				tabmain->setItem(tabmain->currentRow(), 6, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(6));
-				tabmainitem = tabmain->item(tabmain->currentRow(), 8);
+				tabmain->setItem(tabmain->currentRow(), 8, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(3));					
-				tabmainitem = tabmain->item(tabmain->currentRow(), 9);
+				tabmain->setItem(tabmain->currentRow(), 9, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(7));
-				tabmainitem = tabmain->item(tabmain->currentRow(), 10);
+				tabmain->setItem(tabmain->currentRow(), 10, tabmainitem);
 					
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(8));
-				tabmainitem = tabmain->item(tabmain->currentRow(), 11);
+				tabmain->setItem(tabmain->currentRow(), 11, tabmainitem);
 			}
 	    }
     }
@@ -465,7 +468,64 @@ void doceditfrm::clearlblid()
 //
 void doceditfrm::calc_tot()
 {
-	
+   int i;
+   double amount =0;
+   double discount = boxdiscount->text().toDouble();
+   for(i=0;i<tabmain->rowCount()-1;i++)
+   {
+   		QTableWidgetItem *item = tabmain->item(i, 7);
+		amount += item->text().toDouble(); 
+   }
+   double tot = amount;
+   double tot_excl = tot - (tot/100*discount);
+   boxtot->setText(QString("%1").arg(tot, 0, 'f',2));
+   boxtot_excl->setText(QString("%1").arg(tot_excl, 0, 'f',2));
+   calc_vat();
+   double tot_incl = tot_excl;
+   for(i=0;i<vatlist.count();i++)
+   {
+       tot_incl += vatamount[i].toDouble() * (vatlist[i].toDouble()/100);
+   }
+   boxvat->setText(QString("%1").arg(tot_incl - tot_excl, 0, 'f',2));
+   boxtot_incl->setText(QString("%1").arg(tot_incl, 0, 'f',2));
+}
+//
+void doceditfrm::calc_vat()
+{
+    int i, rows;
+    
+    for(i=0;i<vatlist.count();i++)
+		vatamount[i] = "0.00";       
+    
+    for(rows=0;rows<tabmain->rowCount()-1;rows++)
+    {
+		for(i=0;i<vatlist.count();i++)
+		{
+			QTableWidgetItem *item = tabmain->item(rows, 8);
+		    if(item->text() == vatlist[i])
+		    {
+		    	item = tabmain->item(rows, 7);
+				vatamount[i] = QString("%1").arg(vatamount[i].toDouble() + item->text().toDouble(), 0, 'f',2);
+	    	}
+		}
+    }
+}
+//
+void doceditfrm::show_vat()
+{
+    vatshowfrm *svat = new vatshowfrm;
+    int i;
+    for(i=0;i<vatlist.count();i++)
+    {
+		if(vatamount[i].toDouble() > 0)
+		{
+		    QTreeWidgetItem *item = new QTreeWidgetItem(svat->treemain);
+		    item->setText(0, vatlist[i]);
+		    item->setText(1, vatamount[i]);
+		    item->setText(2, QString("%1").arg(vatamount[i].toDouble()/100*vatlist[i].toDouble(), 0, 'f',2));
+		}
+    }
+    svat->exec();
 }
 //
 void doceditfrm::print()
@@ -657,18 +717,13 @@ void doceditfrm::registeramount()
 	
 }
 //
-void doceditfrm::savecompletedoc()
-{
-	
-}
-//
 void doceditfrm::newdocument()
 {
     opendocID = ""; 
     opendocSource = "";
     if(!btncomplete->isEnabled())
     {
-		int r=QMessageBox::information(this, tr("New Document..."), tr("Take over existing data?"), QMessageBox::Yes, QMessageBox::No);
+		int r = QMessageBox::information(this, tr("New Document..."), tr("Take over existing data?"), QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{
 		    int tmp = cmbdoc->currentIndex();
@@ -789,7 +844,7 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		    adresse += query2.value(5).toString() + "<BR>";
 		if(query2.value(6).toString()!="")
 		    adresse += query2.value(6).toString();
-		boxaddress->setText(adresse);
+		boxaddress->setText(adresse.replace("<BR>", "\n"));
 	
 		boxcomments->setText(query.value(7).toString());
 		txtsalutation->setText(query.value(8).toString());
@@ -901,19 +956,30 @@ void doceditfrm::savedoc()
 		query2.exec();
 	
 		QSqlQuery query3;
-		for(row=0;row<maintable->rowCount()-1;row++)
+		for(row=0;row<tabmain->rowCount()-1;row++)
 		{
+			QTableWidgetItem *item = new QTableWidgetItem;
+			
 		    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docdrafts');");
 		    query3.bindValue( ":docid", opendocID);
-		    query3.bindValue( ":stock", maintable->text(row,11).section(":#:", 0, 0));
-		    query3.bindValue( ":stock_id", maintable->text(row,11).section(":#:", 1, 1));
-		    query3.bindValue( ":doc_pos", maintable->text(row,0));
-		    query3.bindValue( ":label", maintable->text(row,1));
-		    query3.bindValue( ":description", maintable->text(row, 3));
-		    query3.bindValue( ":quantity", maintable->text(row,4));
-		    query3.bindValue( ":unit", maintable->text(row,5));
-		    query3.bindValue( ":price", maintable->text(row,6));
-		    query3.bindValue( ":vat", maintable->text(row,8));
+		    
+		    item = tabmain->item(row, 11);
+		    query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+		    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+		    item = tabmain->item(row, 0);
+		    query3.bindValue( ":doc_pos", item->text());
+		    item = tabmain->item(row, 1);
+		    query3.bindValue( ":label", item->text());
+		    item = tabmain->item(row, 3);
+		    query3.bindValue( ":description", item->text());
+		    item = tabmain->item(row, 4);
+		    query3.bindValue( ":quantity", item->text());
+		    item = tabmain->item(row, 5);
+		    query3.bindValue( ":unit", item->text());
+		    item = tabmain->item(row, 6);
+		    query3.bindValue( ":price", item->text());
+		    item = tabmain->item(row, 8);
+		    query3.bindValue( ":vat", item->text());
 		    query3.exec();
 		}
     }
@@ -947,20 +1013,285 @@ void doceditfrm::savedoc()
 		opendocID = query2.value(0).toString();
 	
 		QSqlQuery query3;
-		for(row=0;row<maintable->rowCount()-1;row++)
+		for(row=0;row<tabmain->rowCount()-1;row++)
 		{
+			QTableWidgetItem *item = new QTableWidgetItem;
+			
 		    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docdrafts');");
 		    query3.bindValue( ":docid", opendocID);
-		    query3.bindValue( ":stock", maintable->text(row,11).section(":#:", 0, 0));
-		    query3.bindValue( ":stock_id", maintable->text(row,11).section(":#:", 1, 1));
-		    query3.bindValue( ":doc_pos", maintable->text(row,0));
-		    query3.bindValue( ":label", maintable->text(row,1));
-		    query3.bindValue( ":description", maintable->text(row, 3));
-		    query3.bindValue( ":quantity", maintable->text(row,4));
-		    query3.bindValue( ":unit", maintable->text(row,5));
-		    query3.bindValue( ":price", maintable->text(row,6));
-		    query3.bindValue( ":vat", maintable->text(row,8));
+		    
+		    item = tabmain->item(row, 11);
+		    query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+		    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+		    item = tabmain->item(row, 0);
+		    query3.bindValue( ":doc_pos", item->text());
+		    item = tabmain->item(row, 1);
+		    query3.bindValue( ":label", item->text());
+		    item = tabmain->item(row, 3);
+		    query3.bindValue( ":description", item->text());
+		    item = tabmain->item(row, 4);
+		    query3.bindValue( ":quantity", item->text());
+		    item = tabmain->item(row, 5);
+		    query3.bindValue( ":unit", item->text());
+		    item = tabmain->item(row, 6);
+		    query3.bindValue( ":price", item->text());
+		    item = tabmain->item(row, 8);
+		    query3.bindValue( ":vat", item->text());
 		    query3.exec();
 		}
     }
+}
+//
+void doceditfrm::savecompletedoc()
+{ 
+    QDate date = boxdate->date();
+    QString s = date.toString("dd.MM.yyyy");
+    int row;
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO `docs` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount`, `docID` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount, :docID);");
+    query.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
+    query.bindValue( ":date", s);
+    query.bindValue( ":client", lblID->text());
+    query.bindValue( ":salutation", txtsalutation->text());
+    query.bindValue( ":introduction", boxotherinfo->toPlainText());
+    query.bindValue( ":comments", boxcomments->toPlainText());
+    query.bindValue( ":amount", boxtot->text());
+    query.bindValue( ":discount", boxdiscount->text());
+    query.bindValue( ":docID", txtdoccount->text());
+    query.exec();
+    
+    QSqlQuery querycheck;
+    querycheck.prepare("SELECT ID FROM docs WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
+    querycheck.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
+    querycheck.bindValue( ":date", s);
+    querycheck.bindValue( ":client", lblID->text());
+    querycheck.bindValue( ":salutation", txtsalutation->text());
+    querycheck.bindValue( ":introduction", boxotherinfo->toPlainText());
+    querycheck.bindValue( ":comments", boxcomments->toPlainText());
+    querycheck.bindValue( ":amount", boxtot->text());
+    querycheck.bindValue( ":discount", boxdiscount->text());
+    querycheck.exec();
+    querycheck.next();  
+    opendocID = querycheck.value(0).toString();
+    
+    QSqlQuery query2;
+    query2.prepare("DELETE FROM `docpositions` WHERE `DOCID` = :id;");
+    query2.bindValue(":id", opendocID);
+    query2.exec();
+	
+    QSqlQuery query3;
+    for(row=0;row<tabmain->rowCount()-1;row++)
+    {
+		QTableWidgetItem *item = new QTableWidgetItem;
+			
+	    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docs');");
+	    query3.bindValue( ":docid", opendocID);
+		    
+	    item = tabmain->item(row, 11);
+	    query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+	    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+	    item = tabmain->item(row, 0);
+	    query3.bindValue( ":doc_pos", item->text());
+	    item = tabmain->item(row, 1);
+	    query3.bindValue( ":label", item->text());
+	    item = tabmain->item(row, 3);
+	    query3.bindValue( ":description", item->text());
+	    item = tabmain->item(row, 4);
+	    query3.bindValue( ":quantity", item->text());
+	    item = tabmain->item(row, 5);
+	    query3.bindValue( ":unit", item->text());
+	    item = tabmain->item(row, 6);
+	    query3.bindValue( ":price", item->text());
+	    item = tabmain->item(row, 8);
+	    query3.bindValue( ":vat", item->text());
+	    query3.exec();
+    }
+    
+    //falls vorhande entwurf löchen
+    QString connstr4 = "DELETE FROM `docdrafts` WHERE `ID` = '"+opendocID+"';";
+    QSqlQuery query4(connstr4);
+    
+    btncomplete->setEnabled(FALSE);
+    btnsave->setEnabled(FALSE);
+}
+//
+void doceditfrm::writetexfile()
+{
+    int i;
+    
+    //Check DoG
+    QSqlQuery querydays;
+    querydays.prepare("SELECT value FROM maincfgtab WHERE `var`='DoG'");
+    querydays.exec();
+    querydays.next();
+    
+    QString tabhead = "";
+    QString tabcontent = "";
+    if(cmbdoc->currentIndex() != 2)
+    {
+		//TABHEAD erstellen
+		tabhead = "\\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(0)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(3)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(4)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(5)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(6)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(7)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(8)->text() + "}\\end{footnotesize}";
+    
+		//TABCONTENT erstellen
+		for(i=0;i<tabmain->rowCount()-1;i++)
+		{
+			QTableWidgetItem *item = tabmain->item(i, 0);
+			tabcontent += item->text() + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 3);
+			tabcontent += item->text().simplified().replace("\n", "\\newline ") + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 4);
+			tabcontent += item->text() + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 5);
+			tabcontent += item->text() + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 6);
+			tabcontent += item->text() + " CHF & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 7);
+			tabcontent += item->text() + " CHF & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 8);
+			tabcontent += item->text() + " \\\\ \n";
+		}
+	} else {
+		//TABHEAD erstellen
+		tabhead = "\\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(0)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(3)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(4)->text() + "}\\end{footnotesize} & \\begin{footnotesize}\\textbf{" + tabmain->horizontalHeaderItem(5)->text() + "}\\end{footnotesize}";
+    
+		//TABCONTENT erstellen
+		for(i=0;i<tabmain->rowCount()-1;i++)
+		{
+			QTableWidgetItem *item = tabmain->item(i, 0);
+			tabcontent += item->text() + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 3);
+			tabcontent += item->text().simplified().replace("\n", "\\newline ") + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 4);
+			tabcontent += item->text() + " & ";
+			
+			item = new QTableWidgetItem;
+			item = tabmain->item(i, 5);
+			tabcontent += item->text() + " \\\\ \n";
+		}
+    }
+    
+    QDir d(docfolder+"/"+lblID->text());
+    if ( !d.exists() )
+		d.mkdir(docfolder+"/"+lblID->text());
+    
+    QFile textemplate(cmbfilename->text(cmbdoc->currentItem()));
+    QFile output(QDir::homeDirPath()+"/.first/tmp/output.tex");
+    if ( textemplate.open( IO_ReadOnly ) )
+    {
+	if ( output.open( IO_WriteOnly ) )
+	{
+	    QString line;
+	    QTextStream instream( &textemplate );
+	    QTextStream outstream( &output );
+	    while ( !instream.atEnd() )
+	    {
+		line = instream.readLine();
+		line = line.replace("###DATE###", boxdatum->date().toString("dd. MMMM yyyy"));
+		line = line.replace("###RECIPIENT###", boxadress->text().replace("\n", "\\newline "));
+		line = line.replace("###DOCTYPE###", cmbdoc->currentText());
+		line = line.replace("###DOCID###", doccount->text());
+		line = line.replace("###TABHEAD###", tabhead);
+		line = line.replace("###TABCONTENT###", tabcontent);
+		line = line.replace("###DoG###", boxdatum->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
+		if(line.contains("###DISCOUNT###") > 0)
+		{
+		    if(box_rabatt->text().toDouble()>0)
+		    {
+			QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+box_tot->text()+" CHF} \\\\ \n";
+			tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+box_rabatt->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(box_tot->text().toDouble()/100*box_rabatt->text().toDouble(), 0, 'f',2)+" CHF \\end{scriptsize} \\\\ \n";
+			line = line.replace("###DISCOUNT###", tmpdiscount);
+		    }
+		    else
+			line = line.replace("###DISCOUNT###", "");
+		}
+		line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. Tax:"));
+		line = line.replace("###TOTEXCL###", box_tot_exkl->text()+ " CHF");
+		
+		if(line.contains("###VAT###") > 0)
+		{
+		    QString tmpvat = "\\begin{scriptsize}"+tr("Tax rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("Tax amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("Tax")+"\\end{scriptsize} \\\\ \n";
+		    
+		    double mwsttot = 0;
+		    for(i=0;i<taxlist.count();i++)
+		    {
+			mwsttot += taxamount[i].toDouble() * (taxlist[i].toDouble() / 100);
+			QString mwsttmp = QString("%1").arg(taxamount[i].toDouble() * (taxlist[i].toDouble() / 100), 0, 'f',2);
+			if(taxamount[i].toDouble() > 0)
+			    tmpvat += "\\begin{scriptsize}"+taxlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+taxamount[i]+" CHF \\end{scriptsize} & \\begin{scriptsize}"+mwsttmp+" CHF \\end{scriptsize} \\\\ \n";
+		    }
+		    line = line.replace("###VAT###", tmpvat);
+		}		
+		
+		line = line.replace("###TOTINCL_DESC###", tr("Net amount:"));		
+		line = line.replace("###TOTINCL###", box_tot_inkl->text()+ " CHF");
+		line = line.replace("###USER###", lbluser->text());
+		line = line.replace("###CUSTOMER###", boxadress->text().section("\n", 0, 0));
+		
+		if(box_salutation->text() != "")
+		    line = line.replace("###SALUTATION###", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+box_salutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
+		else
+		    line = line.replace("###SALUTATION###", "");
+		
+		if(box_otherinfo->text() != "")
+		    line = line.replace("###INTRODUCTION###", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+box_otherinfo->text().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
+		else
+		    line = line.replace("###INTRODUCTION###", "");
+
+		if(line.contains("###COMMENTS###") > 0)
+		{
+		    if(box_btext->text() != "")
+		    {
+			QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
+			tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
+			tmpcomments += box_btext->text().replace("\n", " \\\\ \n"); + "\\\\ \n";
+			tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
+			line = line.replace("###COMMENTS###", tmpcomments);
+		    }
+		    else
+			line = line.replace("###COMMENTS###", "");
+		}
+		outstream << line << "\n";
+	    }
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
+	textemplate.close();
+    } else {
+	QMessageBox::critical(0,"Error...",tr("Can't open template!"));
+    }
+    
+    //converting text to dvi
+    
+    QProcess *procdvi = new QProcess( this );
+    procdvi->addArgument( "latex" );
+    procdvi->addArgument("-output-directory="+QDir::homeDirPath()+"/.first/tmp/");
+    procdvi->addArgument( output.name() );
+    if ( !procdvi->start() )
+	QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+    sleep(3);
+
+    //copy file in the correct folder
+    QProcess *proccp = new QProcess( this );
+    proccp->addArgument( "mv" );
+    proccp->addArgument(QDir::homeDirPath()+"/.first/tmp/output.dvi");
+    proccp->addArgument(docfolder+"/"+lblID->text()+"/"+dateiname->text());
+    proccp->start();
 }

@@ -80,8 +80,8 @@ void dataeditfrm::loadentry(QString dbID)
 		txtpackage->setText(query.value(10).toString());
 		txtweight->setText(query.value(11).toString());
 		cmbvat->setCurrentIndex(query.value(12).toString().toInt(&ok, 10));
-		if(query.value(13).toString()=="0")
-		    chkactive->setChecked(FALSE);
+		if(query.value(13).toString()=="1")
+		    chkactive->setChecked(TRUE);
 		txtwebname->setText(query.value(14).toString());
 		txtwebimage->setText(query.value(15).toString());
 		txtweburl->setText(query.value(16).toString());
@@ -99,7 +99,7 @@ void dataeditfrm::loadentry(QString dbID)
 //
 void dataeditfrm::loadvat()
 {
-    QString connstr = QString("SELECT col1, col2 FROM `taxtab` ORDER BY ID;");
+    QString connstr = QString("SELECT col1, col2 FROM `vattab` ORDER BY ID;");
     QSqlQuery query(connstr);
     if(query.isActive())
     {
