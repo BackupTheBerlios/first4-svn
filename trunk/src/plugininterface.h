@@ -24,6 +24,8 @@ class QIcon;
 class QString;
 class QWidget;
 class QDialog;
+class QPushButton;
+
 /**
 * @author Alexander Saal <alex.saal@gmx.de>
 * @date 2007/03/05
@@ -106,7 +108,25 @@ class First4PluginInterface
 		virtual QWidget *widget() const = 0;
 
 		/**
-		* Rückgabe eines QPushButtons mit Text\n\n
+		* Rückgabe eines QPushButtons mit Text
+		*
+		* @return	QPushButton
+		*
+		* @code
+		* QPushButton *button( QWidget *widget ) {
+		*	return new QPushButton( widget );
+		* }
+		* 
+		* QPushButton *newButton() {
+		*	return new QPushButton();
+		* }
+		* @endcode
+		*/
+		virtual QPushButton *button( QWidget *widget ) const = 0;
+		virtual QPushButton *button() const = 0;
+
+		/**
+		* Rückgabe eines QWidgets
 		*
 		* @return	QWidget
 		*
@@ -116,7 +136,7 @@ class First4PluginInterface
 		* }
 		* @endcode
 		*/
-		virtual QPushButton *button() const = 0;
+		virtual QWidget *newToolBoxWidget() const = 0;
 
 		/**
 		* Rückgabe des ToolBarIndexes, ist gleich zusetzen mit den ToolBarPages
@@ -129,7 +149,7 @@ class First4PluginInterface
 		* }
 		* @endcode
 		*/
-		virtual int toolBarIndex() const = 0;
+		virtual int toolBoxIndex() const = 0;
 
 		/**
 		* Anzeigen des QDialoges
