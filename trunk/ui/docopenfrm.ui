@@ -22,6 +22,172 @@
    <property name="spacing" >
     <number>6</number>
    </property>
+   <item row="2" column="0" colspan="2" >
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnclose" >
+       <property name="text" >
+        <string>&amp;Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string>User:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbluser" >
+       <property name="text" >
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progbar" >
+       <property name="minimumSize" >
+        <size>
+         <width>250</width>
+         <height>19</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>250</width>
+         <height>19</height>
+        </size>
+       </property>
+       <property name="value" >
+        <number>0</number>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>71</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QTreeWidget" name="treemain" >
+     <column>
+      <property name="text" >
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Document ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Customer</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Amount</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Discount</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Comments</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>ClientID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>ClientAddr</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QTreeWidget" name="treeindex" >
+     <property name="maximumSize" >
+      <size>
+       <width>221</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Documents</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>sort</string>
+      </property>
+     </column>
+    </widget>
+   </item>
    <item row="0" column="0" colspan="2" >
     <layout class="QGridLayout" >
      <property name="margin" >
@@ -285,183 +451,27 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" >
-    <widget class="QTreeWidget" name="treeindex" >
-     <property name="maximumSize" >
-      <size>
-       <width>221</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <column>
-      <property name="text" >
-       <string>Documents</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>name</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>sort</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2" >
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="btnclose" >
-       <property name="text" >
-        <string>&amp;Close</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_3" >
-       <property name="text" >
-        <string>User:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lbluser" >
-       <property name="text" >
-        <string>-</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="progbar" >
-       <property name="minimumSize" >
-        <size>
-         <width>250</width>
-         <height>19</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>250</width>
-         <height>19</height>
-        </size>
-       </property>
-       <property name="value" >
-        <number>0</number>
-       </property>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>71</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnopen" >
-       <property name="text" >
-        <string>&amp;Open</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="1" >
-    <widget class="QTreeWidget" name="treemain" >
-     <column>
-      <property name="text" >
-       <string>ID</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Document ID</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Date</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Customer</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Amount</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Discount</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Comments</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>ClientID</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>ClientAddr</string>
-      </property>
-     </column>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources>
   <include location="first.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnclose</sender>
+   <signal>released()</signal>
+   <receiver>docopenfrm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>47</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>456</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
