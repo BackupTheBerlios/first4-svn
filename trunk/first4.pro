@@ -57,7 +57,8 @@ HEADERS =   src/mainfrm.h \
   src/doceditfrm.h \
   src/doccompletefrm.h \
   src/docopendraftsfrm.h \
-  src/vatshowfrm.h
+  src/vatshowfrm.h \
+  src/plugininterface.h
 SOURCES =   src/main.cpp \
   src/mainfrm.cpp \
   src/vars.cpp \
