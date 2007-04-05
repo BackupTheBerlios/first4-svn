@@ -64,6 +64,7 @@ int main(int argc, char ** argv)
 		splash.finish(&mfrm);
 		mfrm.show();
 		mfrm.loaduserdata();
+		mfrm.initplugins();
 		mfrm.checkmsg();
 
 		app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
