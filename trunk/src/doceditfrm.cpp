@@ -5,6 +5,7 @@
 #include <QProcess>
 #include <QFile>
 #include <QDir>
+#include <QTextStream>
 //
 #include "doceditfrm.h"
 #include "vars.h"
@@ -526,21 +527,6 @@ void doceditfrm::show_vat()
 		}
     }
     svat->exec();
-}
-//
-void doceditfrm::print()
-{
-	
-}
-//
-void doceditfrm::printpreview()
-{
-	
-}
-//
-void doceditfrm::printesr()
-{
-	
 }
 //
 void doceditfrm::initvat()
@@ -1191,107 +1177,137 @@ void doceditfrm::writetexfile()
     if ( !d.exists() )
 		d.mkdir(docfolder+"/"+lblID->text());
     
-    QFile textemplate(cmbfilename->text(cmbdoc->currentItem()));
-    QFile output(QDir::homeDirPath()+"/.first/tmp/output.tex");
-    if ( textemplate.open( IO_ReadOnly ) )
+    QFile textemplate(filename[cmbdoc->currentIndex()]);
+    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
+    if ( textemplate.open( QIODevice::ReadOnly ) )
     {
-	if ( output.open( IO_WriteOnly ) )
-	{
-	    QString line;
-	    QTextStream instream( &textemplate );
-	    QTextStream outstream( &output );
-	    while ( !instream.atEnd() )
-	    {
-		line = instream.readLine();
-		line = line.replace("###DATE###", boxdatum->date().toString("dd. MMMM yyyy"));
-		line = line.replace("###RECIPIENT###", boxadress->text().replace("\n", "\\newline "));
-		line = line.replace("###DOCTYPE###", cmbdoc->currentText());
-		line = line.replace("###DOCID###", doccount->text());
-		line = line.replace("###TABHEAD###", tabhead);
-		line = line.replace("###TABCONTENT###", tabcontent);
-		line = line.replace("###DoG###", boxdatum->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
-		if(line.contains("###DISCOUNT###") > 0)
+		if ( output.open( QIODevice::WriteOnly ) )
 		{
-		    if(box_rabatt->text().toDouble()>0)
+		    QString line;
+		    QTextStream instream( &textemplate );
+		    QTextStream outstream( &output );
+		    while ( !instream.atEnd() )
 		    {
-			QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+box_tot->text()+" CHF} \\\\ \n";
-			tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+box_rabatt->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(box_tot->text().toDouble()/100*box_rabatt->text().toDouble(), 0, 'f',2)+" CHF \\end{scriptsize} \\\\ \n";
-			line = line.replace("###DISCOUNT###", tmpdiscount);
-		    }
-		    else
-			line = line.replace("###DISCOUNT###", "");
-		}
-		line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. Tax:"));
-		line = line.replace("###TOTEXCL###", box_tot_exkl->text()+ " CHF");
+				line = instream.readLine();
+				line = line.replace("###DATE###", boxdate->date().toString("dd. MMMM yyyy"));
+				line = line.replace("###RECIPIENT###", boxaddress->toPlainText().replace("\n", "\\newline "));
+				line = line.replace("###DOCTYPE###", cmbdoc->currentText());
+				line = line.replace("###DOCID###", txtdoccount->text());
+				line = line.replace("###TABHEAD###", tabhead);
+				line = line.replace("###TABCONTENT###", tabcontent);
+				line = line.replace("###DoG###", boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
+				if(line.contains("###DISCOUNT###") > 0)
+				{
+				    if(boxdiscount->text().toDouble()>0)
+				    {
+						QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+boxtot->text()+" CHF} \\\\ \n";
+						tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+boxdiscount->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(boxtot->text().toDouble()/100*boxdiscount->text().toDouble(), 0, 'f',2)+" CHF \\end{scriptsize} \\\\ \n";
+						line = line.replace("###DISCOUNT###", tmpdiscount);
+				    }
+				    else
+						line = line.replace("###DISCOUNT###", "");
+				}
+				line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. Tax:"));
+				line = line.replace("###TOTEXCL###", boxtot_excl->text()+ " CHF");
 		
-		if(line.contains("###VAT###") > 0)
-		{
-		    QString tmpvat = "\\begin{scriptsize}"+tr("Tax rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("Tax amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("Tax")+"\\end{scriptsize} \\\\ \n";
-		    
-		    double mwsttot = 0;
-		    for(i=0;i<taxlist.count();i++)
-		    {
-			mwsttot += taxamount[i].toDouble() * (taxlist[i].toDouble() / 100);
-			QString mwsttmp = QString("%1").arg(taxamount[i].toDouble() * (taxlist[i].toDouble() / 100), 0, 'f',2);
-			if(taxamount[i].toDouble() > 0)
-			    tmpvat += "\\begin{scriptsize}"+taxlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+taxamount[i]+" CHF \\end{scriptsize} & \\begin{scriptsize}"+mwsttmp+" CHF \\end{scriptsize} \\\\ \n";
-		    }
-		    line = line.replace("###VAT###", tmpvat);
-		}		
+				if(line.contains("###VAT###") > 0)
+				{
+				    QString tmpvat = "\\begin{scriptsize}"+tr("Tax rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("Tax amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("Tax")+"\\end{scriptsize} \\\\ \n";
+				    
+				    double vattot = 0;
+				    for(i=0;i<vatlist.count();i++)
+				    {
+						vattot += vatamount[i].toDouble() * (vatlist[i].toDouble() / 100);
+						QString vattmp = QString("%1").arg(vatamount[i].toDouble() * (vatlist[i].toDouble() / 100), 0, 'f',2);
+						if(vatamount[i].toDouble() > 0)
+						    tmpvat += "\\begin{scriptsize}"+vatlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+vatamount[i]+" CHF \\end{scriptsize} & \\begin{scriptsize}"+vattmp+" CHF \\end{scriptsize} \\\\ \n";
+				    }
+				    line = line.replace("###VAT###", tmpvat);
+				}		
 		
-		line = line.replace("###TOTINCL_DESC###", tr("Net amount:"));		
-		line = line.replace("###TOTINCL###", box_tot_inkl->text()+ " CHF");
-		line = line.replace("###USER###", lbluser->text());
-		line = line.replace("###CUSTOMER###", boxadress->text().section("\n", 0, 0));
+				line = line.replace("###TOTINCL_DESC###", tr("Net amount:"));		
+				line = line.replace("###TOTINCL###", boxtot_incl->text()+ " CHF");
+				line = line.replace("###USER###", lbluser->text());
+				line = line.replace("###CUSTOMER###", boxaddress->toPlainText().section("\n", 0, 0));
 		
-		if(box_salutation->text() != "")
-		    line = line.replace("###SALUTATION###", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+box_salutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
-		else
-		    line = line.replace("###SALUTATION###", "");
+				if(txtsalutation->text() != "")
+				    line = line.replace("###SALUTATION###", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+txtsalutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
+				else
+				    line = line.replace("###SALUTATION###", "");
 		
-		if(box_otherinfo->text() != "")
-		    line = line.replace("###INTRODUCTION###", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+box_otherinfo->text().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
-		else
-		    line = line.replace("###INTRODUCTION###", "");
+				if(boxotherinfo->toPlainText() != "")
+				    line = line.replace("###INTRODUCTION###", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+boxotherinfo->toPlainText().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
+				else
+				    line = line.replace("###INTRODUCTION###", "");
 
-		if(line.contains("###COMMENTS###") > 0)
-		{
-		    if(box_btext->text() != "")
-		    {
-			QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
-			tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
-			tmpcomments += box_btext->text().replace("\n", " \\\\ \n"); + "\\\\ \n";
-			tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
-			line = line.replace("###COMMENTS###", tmpcomments);
+				if(line.contains("###COMMENTS###") > 0)
+				{
+				    if(boxcomments->toPlainText() != "")
+				    {
+						QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
+						tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
+						tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n"); + "\\\\ \n";
+						tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
+						line = line.replace("###COMMENTS###", tmpcomments);
+				    }
+				    else
+						line = line.replace("###COMMENTS###", "");
+				}
+				outstream << line << "\n";
 		    }
-		    else
-			line = line.replace("###COMMENTS###", "");
+		    output.close();
+		} else {
+		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
 		}
-		outstream << line << "\n";
-	    }
-	    output.close();
-	} else {
-	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
-	}
-	textemplate.close();
+		textemplate.close();
     } else {
-	QMessageBox::critical(0,"Error...",tr("Can't open template!"));
+		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
     }
     
     //converting text to dvi
     
     QProcess *procdvi = new QProcess( this );
-    procdvi->addArgument( "latex" );
-    procdvi->addArgument("-output-directory="+QDir::homeDirPath()+"/.first/tmp/");
-    procdvi->addArgument( output.name() );
-    if ( !procdvi->start() )
-	QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
-    sleep(3);
+    QStringList args;
+    args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
+ 	procdvi->start("latex", args);
 
     //copy file in the correct folder
     QProcess *proccp = new QProcess( this );
-    proccp->addArgument( "mv" );
-    proccp->addArgument(QDir::homeDirPath()+"/.first/tmp/output.dvi");
-    proccp->addArgument(docfolder+"/"+lblID->text()+"/"+dateiname->text());
-    proccp->start();
+    args.clear();
+    args << QDir::homePath() + "/.first4/tmp/output.dvi" << docfolder+"/"+lblID->text()+"/"+docfile;
+    proccp->start("mv", args);
+}
+//
+void doceditfrm::printpreview()
+{
+    if(tabmain->rowCount()>1)
+    {
+		if(lblID->text()!="")
+		{
+		    this->writetexfile();
+		    //Show Report
+		    QProcess *procshow = new QProcess( this );
+		    QStringList args;
+		    args << docfolder+"/"+lblID->text()+"/"+docfile;
+		    procshow->start("kdvi", args);
+		    if(procshow->exitStatus() == QProcess::CrashExit ) 
+				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+
+		    QFile file(docfolder+"/"+lblID->text()+"/"+docfile);
+		    file.remove();
+		}
+    }    
+}
+
+void doceditfrm::print()
+{
+    if(boxaddress->toPlainText() != "" && lblID->text() != "-")
+		printreport(FALSE);
+    else
+		QMessageBox::information(0, tr("Adress..."), tr("Please select a receiver"));
+}
+//
+void doceditfrm::printesr()
+{
+	
 }
