@@ -1277,7 +1277,7 @@ void doceditfrm::writetexfile()
     args << QDir::homePath() + "/.first4/tmp/output.dvi" << docfolder+"/"+lblID->text()+"/"+docfile;
     proccp->start("mv", args);
 }
-//
+////
 void doceditfrm::printpreview()
 {
     if(tabmain->rowCount()>1)
