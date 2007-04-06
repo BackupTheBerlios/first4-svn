@@ -31,7 +31,7 @@ FORMS += ui/chipcardbase.ui
 # Project Header
 HEADERS += include/chipcard.h
 HEADERS += include/chipcardplugin.h
-HEADERS += src/plugininterface.h
+HEADERS += ../../src/plugininterface.h
 
 # Project Source
 SOURCES += src/chipcard.cpp

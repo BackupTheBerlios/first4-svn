@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'ordersfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -34,7 +34,6 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_2;
     QComboBox *comboBox;
-    QSpacerItem *spacerItem;
     QPushButton *btnadd;
     QPushButton *btnedit;
     QPushButton *btndelete;
@@ -43,22 +42,33 @@ public:
     QPushButton *pushButton;
     QLabel *label_3;
     QLabel *lbluser;
-    QSpacerItem *spacerItem1;
     QProgressBar *progbar;
     QTreeWidget *treemain;
     QTreeWidget *treeindex;
 
     void setupUi(QWidget *ordersfrm)
     {
-    ordersfrm->setObjectName(QString::fromUtf8("ordersfrm"));
+    if (ordersfrm->objectName().isEmpty())
+        ordersfrm->setObjectName(QString::fromUtf8("ordersfrm"));
+    QSize size(887, 552);
+    size = size.expandedTo(ordersfrm->minimumSizeHint());
+    ordersfrm->resize(size);
     ordersfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/kfm.png")));
     gridLayout = new QGridLayout(ordersfrm);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     hboxLayout = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     hboxLayout->setMargin(0);
+#endif
     hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
     label = new QLabel(ordersfrm);
     label->setObjectName(QString::fromUtf8("label"));
@@ -80,9 +90,8 @@ public:
 
     hboxLayout->addWidget(comboBox);
 
-    spacerItem = new QSpacerItem(241, 26, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout->addItem(spacerItem);
+    hboxLayout->addItem(new QSpacerItem(241, 26, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     btnadd = new QPushButton(ordersfrm);
     btnadd->setObjectName(QString::fromUtf8("btnadd"));
@@ -112,7 +121,9 @@ public:
     gridLayout->addLayout(hboxLayout, 0, 0, 1, 2);
 
     hboxLayout1 = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout1->setSpacing(6);
+#endif
     hboxLayout1->setMargin(0);
     hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
     pushButton = new QPushButton(ordersfrm);
@@ -130,9 +141,8 @@ public:
 
     hboxLayout1->addWidget(lbluser);
 
-    spacerItem1 = new QSpacerItem(271, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout1->addItem(spacerItem1);
+    hboxLayout1->addItem(new QSpacerItem(271, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     progbar = new QProgressBar(ordersfrm);
     progbar->setObjectName(QString::fromUtf8("progbar"));
@@ -165,11 +175,6 @@ public:
 
 
     retranslateUi(ordersfrm);
-
-    QSize size(887, 552);
-    size = size.expandedTo(ordersfrm->minimumSizeHint());
-    ordersfrm->resize(size);
-
 
     QMetaObject::connectSlotsByName(ordersfrm);
     } // setupUi

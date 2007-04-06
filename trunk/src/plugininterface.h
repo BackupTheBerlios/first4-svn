@@ -117,7 +117,7 @@ class First4PluginInterface
 		*	return new QPushButton( widget );
 		* }
 		* 
-		* QPushButton *newButton() {
+		* QPushButton *button() {
 		*	return new QPushButton();
 		* }
 		* @endcode
@@ -131,20 +131,20 @@ class First4PluginInterface
 		* @return	QWidget
 		*
 		* @code
-		* QWidget *button() {
-		*	return new QPushButton();
+		* QWidget *newToolBoxWidget() {
+		*	return new QWidget();
 		* }
 		* @endcode
 		*/
 		virtual QWidget *newToolBoxWidget() const = 0;
 
 		/**
-		* Rückgabe des ToolBarIndexes, ist gleich zusetzen mit den ToolBarPages
+		* Rückgabe des ToolBoxIndexes, ist gleich zusetzen mit den ToolBarPages
 		*
 		* @return	index 
 		*
 		* @code
-		* int toolbarIndex() {
+		* int toolBoxIndex() {
 		*	return 0;
 		* }
 		* @endcode
@@ -179,6 +179,7 @@ class First4PluginInterface
 		*/
 		virtual bool showWindow( QWidget *widget ) const = 0;
 };
+
 Q_DECLARE_INTERFACE( First4PluginInterface, "first4.First4PluginInterface/1.4.x" )
 
 #endif // __FIRST4_PLUGININTERFACE_H__

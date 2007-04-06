@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'newdatatabfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -44,7 +44,11 @@ public:
 
     void setupUi(QDialog *newdatatabfrm)
     {
-    newdatatabfrm->setObjectName(QString::fromUtf8("newdatatabfrm"));
+    if (newdatatabfrm->objectName().isEmpty())
+        newdatatabfrm->setObjectName(QString::fromUtf8("newdatatabfrm"));
+    QSize size(400, 323);
+    size = size.expandedTo(newdatatabfrm->minimumSizeHint());
+    newdatatabfrm->resize(size);
     newdatatabfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     newdatatabfrm->setSizeGripEnabled(false);
     label_2 = new QLabel(newdatatabfrm);
@@ -101,11 +105,6 @@ public:
     txtname->setGeometry(QRect(90, 10, 301, 23));
 
     retranslateUi(newdatatabfrm);
-
-    QSize size(400, 323);
-    size = size.expandedTo(newdatatabfrm->minimumSizeHint());
-    newdatatabfrm->resize(size);
-
     QObject::connect(btncreate, SIGNAL(clicked()), newdatatabfrm, SLOT(accept()));
     QObject::connect(btncance, SIGNAL(clicked()), newdatatabfrm, SLOT(reject()));
 

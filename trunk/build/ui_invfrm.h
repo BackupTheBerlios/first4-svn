@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'invfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -29,33 +29,35 @@ public:
     QGridLayout *gridLayout;
     QTableWidget *maintab;
     QGridLayout *gridLayout1;
-    QSpacerItem *spacerItem;
     QPushButton *btncomments;
     QPushButton *btnnew;
-    QSpacerItem *spacerItem1;
-    QSpacerItem *spacerItem2;
     QLabel *label;
     QPushButton *btnsave;
-    QSpacerItem *spacerItem3;
     QComboBox *cmbinv;
     QPushButton *btncomplete;
     QPushButton *btnprint;
     QGridLayout *gridLayout2;
     QLabel *label_2;
-    QSpacerItem *spacerItem4;
     QProgressBar *progbar;
     QLabel *lbluser;
-    QSpacerItem *spacerItem5;
     QPushButton *btnclose;
 
     void setupUi(QWidget *invfrm)
     {
-    invfrm->setObjectName(QString::fromUtf8("invfrm"));
+    if (invfrm->objectName().isEmpty())
+        invfrm->setObjectName(QString::fromUtf8("invfrm"));
+    QSize size(730, 659);
+    size = size.expandedTo(invfrm->minimumSizeHint());
+    invfrm->resize(size);
     invfrm->setMaximumSize(QSize(16777215, 16777215));
     invfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/kfm.png")));
     gridLayout = new QGridLayout(invfrm);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     maintab = new QTableWidget(invfrm);
     maintab->setObjectName(QString::fromUtf8("maintab"));
@@ -63,12 +65,13 @@ public:
     gridLayout->addWidget(maintab, 1, 0, 1, 1);
 
     gridLayout1 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout1->setSpacing(6);
+#endif
     gridLayout1->setMargin(0);
     gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
-    spacerItem = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem, 0, 4, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 4, 1, 1);
 
     btncomments = new QPushButton(invfrm);
     btncomments->setObjectName(QString::fromUtf8("btncomments"));
@@ -84,13 +87,11 @@ public:
 
     gridLayout1->addWidget(btnnew, 0, 5, 1, 1);
 
-    spacerItem1 = new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem1, 0, 2, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 2, 1, 1);
 
-    spacerItem2 = new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem2, 0, 9, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 9, 1, 1);
 
     label = new QLabel(invfrm);
     label->setObjectName(QString::fromUtf8("label"));
@@ -104,9 +105,8 @@ public:
 
     gridLayout1->addWidget(btnsave, 0, 6, 1, 1);
 
-    spacerItem3 = new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem3, 0, 7, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 7, 1, 1);
 
     cmbinv = new QComboBox(invfrm);
     cmbinv->setObjectName(QString::fromUtf8("cmbinv"));
@@ -138,7 +138,9 @@ public:
     gridLayout->addLayout(gridLayout1, 0, 0, 1, 1);
 
     gridLayout2 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout2->setSpacing(6);
+#endif
     gridLayout2->setMargin(0);
     gridLayout2->setObjectName(QString::fromUtf8("gridLayout2"));
     label_2 = new QLabel(invfrm);
@@ -146,9 +148,8 @@ public:
 
     gridLayout2->addWidget(label_2, 0, 2, 1, 1);
 
-    spacerItem4 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout2->addItem(spacerItem4, 0, 1, 1, 1);
+    gridLayout2->addItem(new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 1, 1, 1);
 
     progbar = new QProgressBar(invfrm);
     progbar->setObjectName(QString::fromUtf8("progbar"));
@@ -163,9 +164,8 @@ public:
 
     gridLayout2->addWidget(lbluser, 0, 3, 1, 1);
 
-    spacerItem5 = new QSpacerItem(181, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout2->addItem(spacerItem5, 0, 4, 1, 1);
+    gridLayout2->addItem(new QSpacerItem(181, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 4, 1, 1);
 
     btnclose = new QPushButton(invfrm);
     btnclose->setObjectName(QString::fromUtf8("btnclose"));
@@ -177,11 +177,6 @@ public:
 
 
     retranslateUi(invfrm);
-
-    QSize size(730, 659);
-    size = size.expandedTo(invfrm->minimumSizeHint());
-    invfrm->resize(size);
-
     QObject::connect(btnclose, SIGNAL(released()), invfrm, SLOT(close()));
 
     QMetaObject::connectSlotsByName(invfrm);

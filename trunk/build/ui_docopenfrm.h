@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'docopenfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -29,8 +29,14 @@ class Ui_docopenfrm
 {
 public:
     QGridLayout *gridLayout;
+    QHBoxLayout *hboxLayout;
+    QPushButton *btnclose;
+    QLabel *label_3;
+    QLabel *lbluser;
+    QProgressBar *progbar;
+    QTreeWidget *treemain;
+    QTreeWidget *treeindex;
     QGridLayout *gridLayout1;
-    QSpacerItem *spacerItem;
     QGridLayout *gridLayout2;
     QPushButton *btnclearsearch;
     QLabel *label_2;
@@ -41,41 +47,97 @@ public:
     QLabel *label;
     QGridLayout *gridLayout3;
     QPushButton *btnprint;
-    QSpacerItem *spacerItem1;
     QPushButton *btnedit;
     QPushButton *btnnew;
     QPushButton *btndelete;
-    QTreeWidget *treeindex;
-    QHBoxLayout *hboxLayout;
-    QPushButton *btnclose;
-    QSpacerItem *spacerItem2;
-    QLabel *label_3;
-    QLabel *lbluser;
-    QSpacerItem *spacerItem3;
-    QProgressBar *progbar;
-    QSpacerItem *spacerItem4;
-    QPushButton *btnopen;
-    QTreeWidget *treemain;
 
     void setupUi(QWidget *docopenfrm)
     {
-    docopenfrm->setObjectName(QString::fromUtf8("docopenfrm"));
+    if (docopenfrm->objectName().isEmpty())
+        docopenfrm->setObjectName(QString::fromUtf8("docopenfrm"));
+    QSize size(913, 554);
+    size = size.expandedTo(docopenfrm->minimumSizeHint());
+    docopenfrm->resize(size);
     docopenfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/wordprocessing.png")));
     gridLayout = new QGridLayout(docopenfrm);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+    hboxLayout = new QHBoxLayout();
+#ifndef Q_OS_MAC
+    hboxLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
+    hboxLayout->setMargin(0);
+#endif
+    hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
+    btnclose = new QPushButton(docopenfrm);
+    btnclose->setObjectName(QString::fromUtf8("btnclose"));
+
+    hboxLayout->addWidget(btnclose);
+
+
+    hboxLayout->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+    label_3 = new QLabel(docopenfrm);
+    label_3->setObjectName(QString::fromUtf8("label_3"));
+
+    hboxLayout->addWidget(label_3);
+
+    lbluser = new QLabel(docopenfrm);
+    lbluser->setObjectName(QString::fromUtf8("lbluser"));
+
+    hboxLayout->addWidget(lbluser);
+
+
+    hboxLayout->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+    progbar = new QProgressBar(docopenfrm);
+    progbar->setObjectName(QString::fromUtf8("progbar"));
+    progbar->setMinimumSize(QSize(250, 19));
+    progbar->setMaximumSize(QSize(250, 19));
+    progbar->setValue(0);
+    progbar->setOrientation(Qt::Horizontal);
+
+    hboxLayout->addWidget(progbar);
+
+
+    hboxLayout->addItem(new QSpacerItem(71, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
+
+
+    gridLayout->addLayout(hboxLayout, 2, 0, 1, 2);
+
+    treemain = new QTreeWidget(docopenfrm);
+    treemain->setObjectName(QString::fromUtf8("treemain"));
+
+    gridLayout->addWidget(treemain, 1, 1, 1, 1);
+
+    treeindex = new QTreeWidget(docopenfrm);
+    treeindex->setObjectName(QString::fromUtf8("treeindex"));
+    treeindex->setMaximumSize(QSize(221, 16777215));
+
+    gridLayout->addWidget(treeindex, 1, 0, 1, 1);
+
     gridLayout1 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout1->setSpacing(6);
+#endif
     gridLayout1->setMargin(0);
     gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
-    spacerItem = new QSpacerItem(42, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem, 0, 1, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(42, 20, QSizePolicy::Preferred, QSizePolicy::Minimum), 0, 1, 1, 1);
 
     gridLayout2 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout2->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout2->setMargin(0);
+#endif
     gridLayout2->setObjectName(QString::fromUtf8("gridLayout2"));
     btnclearsearch = new QPushButton(docopenfrm);
     btnclearsearch->setObjectName(QString::fromUtf8("btnclearsearch"));
@@ -121,7 +183,9 @@ public:
     gridLayout1->addLayout(gridLayout2, 0, 0, 1, 1);
 
     gridLayout3 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout3->setSpacing(6);
+#endif
     gridLayout3->setMargin(0);
     gridLayout3->setObjectName(QString::fromUtf8("gridLayout3"));
     btnprint = new QPushButton(docopenfrm);
@@ -133,9 +197,8 @@ public:
 
     gridLayout3->addWidget(btnprint, 0, 4, 1, 1);
 
-    spacerItem1 = new QSpacerItem(16, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout3->addItem(spacerItem1, 0, 3, 1, 1);
+    gridLayout3->addItem(new QSpacerItem(16, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 3, 1, 1);
 
     btnedit = new QPushButton(docopenfrm);
     btnedit->setObjectName(QString::fromUtf8("btnedit"));
@@ -170,72 +233,9 @@ public:
 
     gridLayout->addLayout(gridLayout1, 0, 0, 1, 2);
 
-    treeindex = new QTreeWidget(docopenfrm);
-    treeindex->setObjectName(QString::fromUtf8("treeindex"));
-    treeindex->setMaximumSize(QSize(221, 16777215));
-
-    gridLayout->addWidget(treeindex, 1, 0, 1, 1);
-
-    hboxLayout = new QHBoxLayout();
-    hboxLayout->setSpacing(6);
-    hboxLayout->setMargin(0);
-    hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
-    btnclose = new QPushButton(docopenfrm);
-    btnclose->setObjectName(QString::fromUtf8("btnclose"));
-
-    hboxLayout->addWidget(btnclose);
-
-    spacerItem2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-    hboxLayout->addItem(spacerItem2);
-
-    label_3 = new QLabel(docopenfrm);
-    label_3->setObjectName(QString::fromUtf8("label_3"));
-
-    hboxLayout->addWidget(label_3);
-
-    lbluser = new QLabel(docopenfrm);
-    lbluser->setObjectName(QString::fromUtf8("lbluser"));
-
-    hboxLayout->addWidget(lbluser);
-
-    spacerItem3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-    hboxLayout->addItem(spacerItem3);
-
-    progbar = new QProgressBar(docopenfrm);
-    progbar->setObjectName(QString::fromUtf8("progbar"));
-    progbar->setMinimumSize(QSize(250, 19));
-    progbar->setMaximumSize(QSize(250, 19));
-    progbar->setValue(0);
-    progbar->setOrientation(Qt::Horizontal);
-
-    hboxLayout->addWidget(progbar);
-
-    spacerItem4 = new QSpacerItem(71, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-    hboxLayout->addItem(spacerItem4);
-
-    btnopen = new QPushButton(docopenfrm);
-    btnopen->setObjectName(QString::fromUtf8("btnopen"));
-
-    hboxLayout->addWidget(btnopen);
-
-
-    gridLayout->addLayout(hboxLayout, 2, 0, 1, 2);
-
-    treemain = new QTreeWidget(docopenfrm);
-    treemain->setObjectName(QString::fromUtf8("treemain"));
-
-    gridLayout->addWidget(treemain, 1, 1, 1, 1);
-
 
     retranslateUi(docopenfrm);
-
-    QSize size(913, 554);
-    size = size.expandedTo(docopenfrm->minimumSizeHint());
-    docopenfrm->resize(size);
-
+    QObject::connect(btnclose, SIGNAL(released()), docopenfrm, SLOT(close()));
 
     QMetaObject::connectSlotsByName(docopenfrm);
     } // setupUi
@@ -243,6 +243,21 @@ public:
     void retranslateUi(QWidget *docopenfrm)
     {
     docopenfrm->setWindowTitle(QApplication::translate("docopenfrm", "Open document...", 0, QApplication::UnicodeUTF8));
+    btnclose->setText(QApplication::translate("docopenfrm", "&Close", 0, QApplication::UnicodeUTF8));
+    label_3->setText(QApplication::translate("docopenfrm", "User:", 0, QApplication::UnicodeUTF8));
+    lbluser->setText(QApplication::translate("docopenfrm", "-", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(0, QApplication::translate("docopenfrm", "ID", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(1, QApplication::translate("docopenfrm", "Document ID", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(2, QApplication::translate("docopenfrm", "Date", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(3, QApplication::translate("docopenfrm", "Customer", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(4, QApplication::translate("docopenfrm", "Amount", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(5, QApplication::translate("docopenfrm", "Discount", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(6, QApplication::translate("docopenfrm", "Comments", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(7, QApplication::translate("docopenfrm", "ClientID", 0, QApplication::UnicodeUTF8));
+    treemain->headerItem()->setText(8, QApplication::translate("docopenfrm", "ClientAddr", 0, QApplication::UnicodeUTF8));
+    treeindex->headerItem()->setText(0, QApplication::translate("docopenfrm", "Documents", 0, QApplication::UnicodeUTF8));
+    treeindex->headerItem()->setText(1, QApplication::translate("docopenfrm", "name", 0, QApplication::UnicodeUTF8));
+    treeindex->headerItem()->setText(2, QApplication::translate("docopenfrm", "sort", 0, QApplication::UnicodeUTF8));
     btnclearsearch->setText(QString());
     label_2->setText(QApplication::translate("docopenfrm", "Text:", 0, QApplication::UnicodeUTF8));
     btnsearch->setText(QString());
@@ -258,22 +273,6 @@ public:
     btnedit->setText(QString());
     btnnew->setText(QString());
     btndelete->setText(QString());
-    treeindex->headerItem()->setText(0, QApplication::translate("docopenfrm", "Documents", 0, QApplication::UnicodeUTF8));
-    treeindex->headerItem()->setText(1, QApplication::translate("docopenfrm", "name", 0, QApplication::UnicodeUTF8));
-    treeindex->headerItem()->setText(2, QApplication::translate("docopenfrm", "sort", 0, QApplication::UnicodeUTF8));
-    btnclose->setText(QApplication::translate("docopenfrm", "&Close", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("docopenfrm", "User:", 0, QApplication::UnicodeUTF8));
-    lbluser->setText(QApplication::translate("docopenfrm", "-", 0, QApplication::UnicodeUTF8));
-    btnopen->setText(QApplication::translate("docopenfrm", "&Open", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(0, QApplication::translate("docopenfrm", "ID", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(1, QApplication::translate("docopenfrm", "Document ID", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(2, QApplication::translate("docopenfrm", "Date", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(3, QApplication::translate("docopenfrm", "Customer", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(4, QApplication::translate("docopenfrm", "Amount", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(5, QApplication::translate("docopenfrm", "Discount", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(6, QApplication::translate("docopenfrm", "Comments", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(7, QApplication::translate("docopenfrm", "ClientID", 0, QApplication::UnicodeUTF8));
-    treemain->headerItem()->setText(8, QApplication::translate("docopenfrm", "ClientAddr", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(docopenfrm);
     } // retranslateUi
 

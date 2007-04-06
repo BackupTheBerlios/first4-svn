@@ -15,7 +15,7 @@
     <absoluteprojectpath>false</absoluteprojectpath>
     <description></description>
     <defaultencoding></defaultencoding>
-    <versioncontrol></versioncontrol>
+    <versioncontrol>kdevsubversion</versioncontrol>
   </general>
   <kdevfileview>
     <groups>
@@ -118,7 +118,7 @@
       <resolveIncludePaths>true</resolveIncludePaths>
       <alwaysParseInBackground>true</alwaysParseInBackground>
       <usePermanentCaching>true</usePermanentCaching>
-      <alwaysIncludeNamespaces>false</alwaysIncludeNamespaces>
+      <alwaysIncludeNamespaces>true</alwaysIncludeNamespaces>
       <includePaths>.;</includePaths>
     </codecompletion>
     <creategettersetter>
@@ -156,7 +156,7 @@
       <globalcwd>/home/chmaster/projekte/first4</globalcwd>
       <useglobalprogram>true</useglobalprogram>
       <terminal>false</terminal>
-      <autocompile>false</autocompile>
+      <autocompile>true</autocompile>
       <autoinstall>false</autoinstall>
       <autokdesu>false</autokdesu>
       <envvars/>
@@ -189,4 +189,9 @@
       <usermanualurl></usermanualurl>
     </projectdoc>
   </kdevdocumentation>
+  <ctagspart>
+    <customArguments></customArguments>
+    <customTagfilePath>/home/chmaster/projekte/first4/tags</customTagfilePath>
+    <activeTagsFiles/>
+  </ctagspart>
 </kdevelop>

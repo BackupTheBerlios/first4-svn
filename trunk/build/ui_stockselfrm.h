@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'stockselfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -27,7 +27,11 @@ public:
 
     void setupUi(QDialog *stockselfrm)
     {
-    stockselfrm->setObjectName(QString::fromUtf8("stockselfrm"));
+    if (stockselfrm->objectName().isEmpty())
+        stockselfrm->setObjectName(QString::fromUtf8("stockselfrm"));
+    QSize size(642, 393);
+    size = size.expandedTo(stockselfrm->minimumSizeHint());
+    stockselfrm->resize(size);
     stockselfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     btncancel = new QPushButton(stockselfrm);
     btncancel->setObjectName(QString::fromUtf8("btncancel"));
@@ -40,11 +44,6 @@ public:
     treemain->setGeometry(QRect(10, 10, 621, 341));
 
     retranslateUi(stockselfrm);
-
-    QSize size(642, 393);
-    size = size.expandedTo(stockselfrm->minimumSizeHint());
-    stockselfrm->resize(size);
-
     QObject::connect(btnaccept, SIGNAL(clicked()), stockselfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), stockselfrm, SLOT(reject()));
     QObject::connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), stockselfrm, SLOT(accept()));

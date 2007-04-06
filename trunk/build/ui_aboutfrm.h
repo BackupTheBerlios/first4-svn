@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'aboutfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -26,7 +26,11 @@ public:
 
     void setupUi(QDialog *aboutfrm)
     {
-    aboutfrm->setObjectName(QString::fromUtf8("aboutfrm"));
+    if (aboutfrm->objectName().isEmpty())
+        aboutfrm->setObjectName(QString::fromUtf8("aboutfrm"));
+    QSize size(650, 447);
+    size = size.expandedTo(aboutfrm->minimumSizeHint());
+    aboutfrm->resize(size);
     textEdit = new QTextEdit(aboutfrm);
     textEdit->setObjectName(QString::fromUtf8("textEdit"));
     textEdit->setGeometry(QRect(10, 10, 631, 391));
@@ -35,11 +39,6 @@ public:
     okButton->setGeometry(QRect(570, 410, 75, 30));
 
     retranslateUi(aboutfrm);
-
-    QSize size(650, 447);
-    size = size.expandedTo(aboutfrm->minimumSizeHint());
-    aboutfrm->resize(size);
-
     QObject::connect(okButton, SIGNAL(clicked()), aboutfrm, SLOT(accept()));
 
     QMetaObject::connectSlotsByName(aboutfrm);

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'addrfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -35,19 +35,14 @@ public:
     QHBoxLayout *hboxLayout;
     QLabel *label_5;
     QLabel *lbluser;
-    QSpacerItem *spacerItem;
     QProgressBar *progbar;
-    QSpacerItem *spacerItem1;
     QPushButton *btnclose;
     QTabWidget *maintab;
     QWidget *tab1;
     QGridLayout *gridLayout1;
-    QSpacerItem *spacerItem2;
     QLabel *label_7;
     QLabel *label_6;
     QLineEdit *adr2;
-    QSpacerItem *spacerItem3;
-    QSpacerItem *spacerItem4;
     QLineEdit *adr3;
     QLabel *label_8;
     QLabel *label_9;
@@ -56,18 +51,15 @@ public:
     QLabel *label_10;
     QLabel *label_11;
     QLineEdit *adr5;
-    QSpacerItem *spacerItem5;
     QLabel *label_12;
     QLineEdit *adr7;
     QLineEdit *adr8;
     QLabel *label_13;
     QLabel *label_14;
     QLineEdit *adr9;
-    QSpacerItem *spacerItem6;
     QLabel *adr1;
     QWidget *tab2;
     QGridLayout *gridLayout2;
-    QSpacerItem *spacerItem7;
     QLabel *label_18;
     QLabel *label_17;
     QLabel *label_15;
@@ -88,17 +80,10 @@ public:
     QLineEdit *adr16;
     QLineEdit *adr14;
     QLineEdit *adr12;
-    QSpacerItem *spacerItem8;
-    QSpacerItem *spacerItem9;
-    QSpacerItem *spacerItem10;
-    QSpacerItem *spacerItem11;
     QWidget *tab3;
     QGridLayout *gridLayout3;
-    QSpacerItem *spacerItem12;
     QLineEdit *adr22;
-    QSpacerItem *spacerItem13;
     QLabel *label_23;
-    QSpacerItem *spacerItem14;
     QLabel *label_22;
     QTreeWidget *listrevenue;
     QFrame *line;
@@ -126,9 +111,7 @@ public:
     QLineEdit *adr26;
     QLineEdit *adr27;
     QLineEdit *adr28;
-    QSpacerItem *spacerItem15;
     QLabel *label_34;
-    QSpacerItem *spacerItem16;
     QWidget *tab5;
     QGridLayout *gridLayout5;
     QTreeWidget *listdocs;
@@ -143,11 +126,9 @@ public:
     QPushButton *btnsearch;
     QLineEdit *txtsearch;
     QComboBox *cmbdir;
-    QSpacerItem *spacerItem17;
     QGridLayout *gridLayout8;
     QPushButton *btnnew;
     QPushButton *btndelete;
-    QSpacerItem *spacerItem18;
     QPushButton *btncancel;
     QPushButton *btnsave;
     QPushButton *btnprint;
@@ -156,15 +137,27 @@ public:
 
     void setupUi(QWidget *addrfrm)
     {
-    addrfrm->setObjectName(QString::fromUtf8("addrfrm"));
+    if (addrfrm->objectName().isEmpty())
+        addrfrm->setObjectName(QString::fromUtf8("addrfrm"));
+    QSize size(918, 699);
+    size = size.expandedTo(addrfrm->minimumSizeHint());
+    addrfrm->resize(size);
     addrfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     gridLayout = new QGridLayout(addrfrm);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     hboxLayout = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     hboxLayout->setMargin(0);
+#endif
     hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
     label_5 = new QLabel(addrfrm);
     label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -178,17 +171,13 @@ public:
 
     lbluser = new QLabel(addrfrm);
     lbluser->setObjectName(QString::fromUtf8("lbluser"));
-    QSizePolicy sizePolicy1(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy1.setHorizontalStretch(0);
-    sizePolicy1.setVerticalStretch(0);
-    sizePolicy1.setHeightForWidth(lbluser->sizePolicy().hasHeightForWidth());
-    lbluser->setSizePolicy(sizePolicy1);
+    sizePolicy.setHeightForWidth(lbluser->sizePolicy().hasHeightForWidth());
+    lbluser->setSizePolicy(sizePolicy);
 
     hboxLayout->addWidget(lbluser);
 
-    spacerItem = new QSpacerItem(361, 23, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout->addItem(spacerItem);
+    hboxLayout->addItem(new QSpacerItem(361, 23, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     progbar = new QProgressBar(addrfrm);
     progbar->setObjectName(QString::fromUtf8("progbar"));
@@ -199,9 +188,8 @@ public:
 
     hboxLayout->addWidget(progbar);
 
-    spacerItem1 = new QSpacerItem(211, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout->addItem(spacerItem1);
+    hboxLayout->addItem(new QSpacerItem(211, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     btnclose = new QPushButton(addrfrm);
     btnclose->setObjectName(QString::fromUtf8("btnclose"));
@@ -213,20 +201,23 @@ public:
 
     maintab = new QTabWidget(addrfrm);
     maintab->setObjectName(QString::fromUtf8("maintab"));
-    QSizePolicy sizePolicy2(static_cast<QSizePolicy::Policy>(5), static_cast<QSizePolicy::Policy>(5));
-    sizePolicy2.setHorizontalStretch(0);
-    sizePolicy2.setVerticalStretch(0);
-    sizePolicy2.setHeightForWidth(maintab->sizePolicy().hasHeightForWidth());
-    maintab->setSizePolicy(sizePolicy2);
+    QSizePolicy sizePolicy1(static_cast<QSizePolicy::Policy>(5), static_cast<QSizePolicy::Policy>(5));
+    sizePolicy1.setHorizontalStretch(0);
+    sizePolicy1.setVerticalStretch(0);
+    sizePolicy1.setHeightForWidth(maintab->sizePolicy().hasHeightForWidth());
+    maintab->setSizePolicy(sizePolicy1);
     tab1 = new QWidget();
     tab1->setObjectName(QString::fromUtf8("tab1"));
     gridLayout1 = new QGridLayout(tab1);
+#ifndef Q_OS_MAC
     gridLayout1->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout1->setMargin(9);
+#endif
     gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
-    spacerItem2 = new QSpacerItem(172, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout1->addItem(spacerItem2, 0, 2, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(172, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 2, 1, 1);
 
     label_7 = new QLabel(tab1);
     label_7->setObjectName(QString::fromUtf8("label_7"));
@@ -244,21 +235,19 @@ public:
 
     gridLayout1->addWidget(adr2, 0, 1, 1, 1);
 
-    spacerItem3 = new QSpacerItem(461, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout1->addItem(spacerItem3, 1, 0, 1, 5);
+    gridLayout1->addItem(new QSpacerItem(461, 20, QSizePolicy::Minimum, QSizePolicy::Fixed), 1, 0, 1, 5);
 
-    spacerItem4 = new QSpacerItem(171, 16, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout1->addItem(spacerItem4, 3, 1, 1, 2);
+    gridLayout1->addItem(new QSpacerItem(171, 16, QSizePolicy::Minimum, QSizePolicy::Fixed), 3, 1, 1, 2);
 
     adr3 = new QLineEdit(tab1);
     adr3->setObjectName(QString::fromUtf8("adr3"));
-    QSizePolicy sizePolicy3(static_cast<QSizePolicy::Policy>(7), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy3.setHorizontalStretch(0);
-    sizePolicy3.setVerticalStretch(0);
-    sizePolicy3.setHeightForWidth(adr3->sizePolicy().hasHeightForWidth());
-    adr3->setSizePolicy(sizePolicy3);
+    QSizePolicy sizePolicy2(static_cast<QSizePolicy::Policy>(7), static_cast<QSizePolicy::Policy>(0));
+    sizePolicy2.setHorizontalStretch(0);
+    sizePolicy2.setVerticalStretch(0);
+    sizePolicy2.setHeightForWidth(adr3->sizePolicy().hasHeightForWidth());
+    adr3->setSizePolicy(sizePolicy2);
 
     gridLayout1->addWidget(adr3, 2, 1, 1, 4);
 
@@ -297,9 +286,8 @@ public:
 
     gridLayout1->addWidget(adr5, 6, 1, 1, 4);
 
-    spacerItem5 = new QSpacerItem(161, 16, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout1->addItem(spacerItem5, 7, 1, 1, 2);
+    gridLayout1->addItem(new QSpacerItem(161, 16, QSizePolicy::Minimum, QSizePolicy::Fixed), 7, 1, 1, 2);
 
     label_12 = new QLabel(tab1);
     label_12->setObjectName(QString::fromUtf8("label_12"));
@@ -331,30 +319,29 @@ public:
 
     gridLayout1->addWidget(adr9, 10, 1, 1, 4);
 
-    spacerItem6 = new QSpacerItem(20, 211, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout1->addItem(spacerItem6, 11, 1, 1, 1);
+    gridLayout1->addItem(new QSpacerItem(20, 211, QSizePolicy::Minimum, QSizePolicy::Expanding), 11, 1, 1, 1);
 
     adr1 = new QLabel(tab1);
     adr1->setObjectName(QString::fromUtf8("adr1"));
-    QSizePolicy sizePolicy4(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy4.setHorizontalStretch(0);
-    sizePolicy4.setVerticalStretch(0);
-    sizePolicy4.setHeightForWidth(adr1->sizePolicy().hasHeightForWidth());
-    adr1->setSizePolicy(sizePolicy4);
+    sizePolicy.setHeightForWidth(adr1->sizePolicy().hasHeightForWidth());
+    adr1->setSizePolicy(sizePolicy);
 
     gridLayout1->addWidget(adr1, 0, 4, 1, 1);
 
-    maintab->addTab(tab1, QApplication::translate("addrfrm", "Address", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab1, QString());
     tab2 = new QWidget();
     tab2->setObjectName(QString::fromUtf8("tab2"));
     gridLayout2 = new QGridLayout(tab2);
+#ifndef Q_OS_MAC
     gridLayout2->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout2->setMargin(9);
+#endif
     gridLayout2->setObjectName(QString::fromUtf8("gridLayout2"));
-    spacerItem7 = new QSpacerItem(20, 141, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout2->addItem(spacerItem7, 13, 1, 1, 1);
+    gridLayout2->addItem(new QSpacerItem(20, 141, QSizePolicy::Minimum, QSizePolicy::Expanding), 13, 1, 1, 1);
 
     label_18 = new QLabel(tab2);
     label_18->setObjectName(QString::fromUtf8("label_18"));
@@ -466,57 +453,51 @@ public:
 
     gridLayout2->addWidget(adr12, 2, 1, 1, 1);
 
-    spacerItem8 = new QSpacerItem(161, 201, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout2->addItem(spacerItem8, 0, 2, 8, 1);
+    gridLayout2->addItem(new QSpacerItem(161, 201, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 2, 8, 1);
 
-    spacerItem9 = new QSpacerItem(291, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout2->addItem(spacerItem9, 3, 0, 1, 2);
+    gridLayout2->addItem(new QSpacerItem(291, 20, QSizePolicy::Minimum, QSizePolicy::Fixed), 3, 0, 1, 2);
 
-    spacerItem10 = new QSpacerItem(291, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout2->addItem(spacerItem10, 7, 0, 1, 2);
+    gridLayout2->addItem(new QSpacerItem(291, 20, QSizePolicy::Minimum, QSizePolicy::Fixed), 7, 0, 1, 2);
 
-    spacerItem11 = new QSpacerItem(461, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout2->addItem(spacerItem11, 11, 0, 1, 3);
+    gridLayout2->addItem(new QSpacerItem(461, 20, QSizePolicy::Minimum, QSizePolicy::Fixed), 11, 0, 1, 3);
 
-    maintab->addTab(tab2, QApplication::translate("addrfrm", "Communication", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab2, QString());
     tab3 = new QWidget();
     tab3->setObjectName(QString::fromUtf8("tab3"));
     gridLayout3 = new QGridLayout(tab3);
+#ifndef Q_OS_MAC
     gridLayout3->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout3->setMargin(9);
+#endif
     gridLayout3->setObjectName(QString::fromUtf8("gridLayout3"));
-    spacerItem12 = new QSpacerItem(461, 301, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout3->addItem(spacerItem12, 4, 0, 1, 3);
+    gridLayout3->addItem(new QSpacerItem(461, 301, QSizePolicy::Minimum, QSizePolicy::Expanding), 4, 0, 1, 3);
 
     adr22 = new QLineEdit(tab3);
     adr22->setObjectName(QString::fromUtf8("adr22"));
-    QSizePolicy sizePolicy5(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy5.setHorizontalStretch(0);
-    sizePolicy5.setVerticalStretch(0);
-    sizePolicy5.setHeightForWidth(adr22->sizePolicy().hasHeightForWidth());
-    adr22->setSizePolicy(sizePolicy5);
+    sizePolicy.setHeightForWidth(adr22->sizePolicy().hasHeightForWidth());
+    adr22->setSizePolicy(sizePolicy);
     adr22->setMaximumSize(QSize(61, 25));
     adr22->setAlignment(Qt::AlignRight);
 
     gridLayout3->addWidget(adr22, 3, 1, 1, 1);
 
-    spacerItem13 = new QSpacerItem(241, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout3->addItem(spacerItem13, 3, 2, 1, 1);
+    gridLayout3->addItem(new QSpacerItem(241, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 3, 2, 1, 1);
 
     label_23 = new QLabel(tab3);
     label_23->setObjectName(QString::fromUtf8("label_23"));
 
     gridLayout3->addWidget(label_23, 3, 0, 1, 1);
 
-    spacerItem14 = new QSpacerItem(20, 151, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout3->addItem(spacerItem14, 1, 0, 1, 1);
+    gridLayout3->addItem(new QSpacerItem(20, 151, QSizePolicy::Minimum, QSizePolicy::Expanding), 1, 0, 1, 1);
 
     label_22 = new QLabel(tab3);
     label_22->setObjectName(QString::fromUtf8("label_22"));
@@ -535,64 +516,53 @@ public:
 
     gridLayout3->addWidget(line, 2, 0, 1, 3);
 
-    maintab->addTab(tab3, QApplication::translate("addrfrm", "Customer", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab3, QString());
     tab4 = new QWidget();
     tab4->setObjectName(QString::fromUtf8("tab4"));
     gridLayout4 = new QGridLayout(tab4);
+#ifndef Q_OS_MAC
     gridLayout4->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout4->setMargin(9);
+#endif
     gridLayout4->setObjectName(QString::fromUtf8("gridLayout4"));
     btnadrcust5 = new QPushButton(tab4);
     btnadrcust5->setObjectName(QString::fromUtf8("btnadrcust5"));
-    QSizePolicy sizePolicy6(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy6.setHorizontalStretch(0);
-    sizePolicy6.setVerticalStretch(0);
-    sizePolicy6.setHeightForWidth(btnadrcust5->sizePolicy().hasHeightForWidth());
-    btnadrcust5->setSizePolicy(sizePolicy6);
+    sizePolicy.setHeightForWidth(btnadrcust5->sizePolicy().hasHeightForWidth());
+    btnadrcust5->setSizePolicy(sizePolicy);
     btnadrcust5->setIcon(QIcon(QString::fromUtf8(":/images/images/xclipboard.png")));
 
     gridLayout4->addWidget(btnadrcust5, 7, 0, 1, 1);
 
     btnadrcust4 = new QPushButton(tab4);
     btnadrcust4->setObjectName(QString::fromUtf8("btnadrcust4"));
-    QSizePolicy sizePolicy7(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy7.setHorizontalStretch(0);
-    sizePolicy7.setVerticalStretch(0);
-    sizePolicy7.setHeightForWidth(btnadrcust4->sizePolicy().hasHeightForWidth());
-    btnadrcust4->setSizePolicy(sizePolicy7);
+    sizePolicy.setHeightForWidth(btnadrcust4->sizePolicy().hasHeightForWidth());
+    btnadrcust4->setSizePolicy(sizePolicy);
     btnadrcust4->setIcon(QIcon(QString::fromUtf8(":/images/images/xclipboard.png")));
 
     gridLayout4->addWidget(btnadrcust4, 6, 0, 1, 1);
 
     btnadrcust3 = new QPushButton(tab4);
     btnadrcust3->setObjectName(QString::fromUtf8("btnadrcust3"));
-    QSizePolicy sizePolicy8(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy8.setHorizontalStretch(0);
-    sizePolicy8.setVerticalStretch(0);
-    sizePolicy8.setHeightForWidth(btnadrcust3->sizePolicy().hasHeightForWidth());
-    btnadrcust3->setSizePolicy(sizePolicy8);
+    sizePolicy.setHeightForWidth(btnadrcust3->sizePolicy().hasHeightForWidth());
+    btnadrcust3->setSizePolicy(sizePolicy);
     btnadrcust3->setIcon(QIcon(QString::fromUtf8(":/images/images/xclipboard.png")));
 
     gridLayout4->addWidget(btnadrcust3, 5, 0, 1, 1);
 
     btnadrcust2 = new QPushButton(tab4);
     btnadrcust2->setObjectName(QString::fromUtf8("btnadrcust2"));
-    QSizePolicy sizePolicy9(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy9.setHorizontalStretch(0);
-    sizePolicy9.setVerticalStretch(0);
-    sizePolicy9.setHeightForWidth(btnadrcust2->sizePolicy().hasHeightForWidth());
-    btnadrcust2->setSizePolicy(sizePolicy9);
+    sizePolicy.setHeightForWidth(btnadrcust2->sizePolicy().hasHeightForWidth());
+    btnadrcust2->setSizePolicy(sizePolicy);
     btnadrcust2->setIcon(QIcon(QString::fromUtf8(":/images/images/xclipboard.png")));
 
     gridLayout4->addWidget(btnadrcust2, 4, 0, 1, 1);
 
     btnadrcust1 = new QPushButton(tab4);
     btnadrcust1->setObjectName(QString::fromUtf8("btnadrcust1"));
-    QSizePolicy sizePolicy10(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy10.setHorizontalStretch(0);
-    sizePolicy10.setVerticalStretch(0);
-    sizePolicy10.setHeightForWidth(btnadrcust1->sizePolicy().hasHeightForWidth());
-    btnadrcust1->setSizePolicy(sizePolicy10);
+    sizePolicy.setHeightForWidth(btnadrcust1->sizePolicy().hasHeightForWidth());
+    btnadrcust1->setSizePolicy(sizePolicy);
     btnadrcust1->setIcon(QIcon(QString::fromUtf8(":/images/images/xclipboard.png")));
 
     gridLayout4->addWidget(btnadrcust1, 3, 0, 1, 1);
@@ -610,22 +580,16 @@ public:
 
     adr30 = new QLabel(tab4);
     adr30->setObjectName(QString::fromUtf8("adr30"));
-    QSizePolicy sizePolicy11(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy11.setHorizontalStretch(0);
-    sizePolicy11.setVerticalStretch(0);
-    sizePolicy11.setHeightForWidth(adr30->sizePolicy().hasHeightForWidth());
-    adr30->setSizePolicy(sizePolicy11);
+    sizePolicy.setHeightForWidth(adr30->sizePolicy().hasHeightForWidth());
+    adr30->setSizePolicy(sizePolicy);
     adr30->setMinimumSize(QSize(91, 20));
 
     gridLayout4->addWidget(adr30, 10, 5, 1, 1);
 
     adr29 = new QLabel(tab4);
     adr29->setObjectName(QString::fromUtf8("adr29"));
-    QSizePolicy sizePolicy12(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy12.setHorizontalStretch(0);
-    sizePolicy12.setVerticalStretch(0);
-    sizePolicy12.setHeightForWidth(adr29->sizePolicy().hasHeightForWidth());
-    adr29->setSizePolicy(sizePolicy12);
+    sizePolicy.setHeightForWidth(adr29->sizePolicy().hasHeightForWidth());
+    adr29->setSizePolicy(sizePolicy);
     adr29->setMinimumSize(QSize(91, 20));
 
     gridLayout4->addWidget(adr29, 10, 2, 1, 2);
@@ -703,25 +667,27 @@ public:
 
     gridLayout4->addWidget(adr28, 7, 3, 1, 3);
 
-    spacerItem15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout4->addItem(spacerItem15, 0, 3, 1, 3);
+    gridLayout4->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 3, 1, 3);
 
     label_34 = new QLabel(tab4);
     label_34->setObjectName(QString::fromUtf8("label_34"));
 
     gridLayout4->addWidget(label_34, 9, 4, 2, 1);
 
-    spacerItem16 = new QSpacerItem(451, 101, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout4->addItem(spacerItem16, 11, 0, 1, 6);
+    gridLayout4->addItem(new QSpacerItem(451, 101, QSizePolicy::Minimum, QSizePolicy::Expanding), 11, 0, 1, 6);
 
-    maintab->addTab(tab4, QApplication::translate("addrfrm", "Ulterior Data", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab4, QString());
     tab5 = new QWidget();
     tab5->setObjectName(QString::fromUtf8("tab5"));
     gridLayout5 = new QGridLayout(tab5);
+#ifndef Q_OS_MAC
     gridLayout5->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout5->setMargin(9);
+#endif
     gridLayout5->setObjectName(QString::fromUtf8("gridLayout5"));
     listdocs = new QTreeWidget(tab5);
     listdocs->setObjectName(QString::fromUtf8("listdocs"));
@@ -729,29 +695,39 @@ public:
 
     gridLayout5->addWidget(listdocs, 0, 0, 1, 1);
 
-    maintab->addTab(tab5, QApplication::translate("addrfrm", "Documents", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab5, QString());
     tab6 = new QWidget();
     tab6->setObjectName(QString::fromUtf8("tab6"));
     gridLayout6 = new QGridLayout(tab6);
+#ifndef Q_OS_MAC
     gridLayout6->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout6->setMargin(9);
+#endif
     gridLayout6->setObjectName(QString::fromUtf8("gridLayout6"));
     listproc = new QTreeWidget(tab6);
     listproc->setObjectName(QString::fromUtf8("listproc"));
 
     gridLayout6->addWidget(listproc, 0, 0, 1, 1);
 
-    maintab->addTab(tab6, QApplication::translate("addrfrm", "Procedures", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab6, QString());
 
     gridLayout->addWidget(maintab, 1, 1, 1, 1);
 
     hboxLayout1 = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout1->setSpacing(6);
+#endif
     hboxLayout1->setMargin(0);
     hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
     gridLayout7 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout7->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout7->setMargin(0);
+#endif
     gridLayout7->setObjectName(QString::fromUtf8("gridLayout7"));
     btnclear = new QPushButton(addrfrm);
     btnclear->setObjectName(QString::fromUtf8("btnclear"));
@@ -788,12 +764,13 @@ public:
 
     hboxLayout1->addLayout(gridLayout7);
 
-    spacerItem17 = new QSpacerItem(251, 51, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout1->addItem(spacerItem17);
+    hboxLayout1->addItem(new QSpacerItem(251, 51, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     gridLayout8 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout8->setSpacing(6);
+#endif
     gridLayout8->setMargin(0);
     gridLayout8->setObjectName(QString::fromUtf8("gridLayout8"));
     btnnew = new QPushButton(addrfrm);
@@ -814,9 +791,8 @@ public:
 
     gridLayout8->addWidget(btndelete, 0, 3, 1, 1);
 
-    spacerItem18 = new QSpacerItem(16, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    gridLayout8->addItem(spacerItem18, 0, 5, 1, 1);
+    gridLayout8->addItem(new QSpacerItem(16, 20, QSizePolicy::Fixed, QSizePolicy::Minimum), 0, 5, 1, 1);
 
     btncancel = new QPushButton(addrfrm);
     btncancel->setObjectName(QString::fromUtf8("btncancel"));
@@ -862,11 +838,11 @@ public:
 
     mainlistview = new QTreeWidget(addrfrm);
     mainlistview->setObjectName(QString::fromUtf8("mainlistview"));
-    QSizePolicy sizePolicy13(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(7));
-    sizePolicy13.setHorizontalStretch(0);
-    sizePolicy13.setVerticalStretch(0);
-    sizePolicy13.setHeightForWidth(mainlistview->sizePolicy().hasHeightForWidth());
-    mainlistview->setSizePolicy(sizePolicy13);
+    QSizePolicy sizePolicy3(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(7));
+    sizePolicy3.setHorizontalStretch(0);
+    sizePolicy3.setVerticalStretch(0);
+    sizePolicy3.setHeightForWidth(mainlistview->sizePolicy().hasHeightForWidth());
+    mainlistview->setSizePolicy(sizePolicy3);
     mainlistview->setMinimumSize(QSize(411, 0));
     mainlistview->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -874,11 +850,6 @@ public:
 
 
     retranslateUi(addrfrm);
-
-    QSize size(918, 699);
-    size = size.expandedTo(addrfrm->minimumSizeHint());
-    addrfrm->resize(size);
-
     QObject::connect(btnclose, SIGNAL(released()), addrfrm, SLOT(close()));
 
     maintab->setCurrentIndex(0);

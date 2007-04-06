@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'dataeditfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -95,7 +95,11 @@ public:
 
     void setupUi(QDialog *dataeditfrm)
     {
-    dataeditfrm->setObjectName(QString::fromUtf8("dataeditfrm"));
+    if (dataeditfrm->objectName().isEmpty())
+        dataeditfrm->setObjectName(QString::fromUtf8("dataeditfrm"));
+    QSize size(776, 496);
+    size = size.expandedTo(dataeditfrm->minimumSizeHint());
+    dataeditfrm->resize(size);
     dataeditfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/kfm32x32.png")));
     label_19 = new QLabel(dataeditfrm);
     label_19->setObjectName(QString::fromUtf8("label_19"));
@@ -170,8 +174,12 @@ public:
     tab_1 = new QWidget();
     tab_1->setObjectName(QString::fromUtf8("tab_1"));
     gridLayout = new QGridLayout(tab_1);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     tabsuppliers = new QTableWidget(tab_1);
     tabsuppliers->setObjectName(QString::fromUtf8("tabsuppliers"));
@@ -181,7 +189,7 @@ public:
 
     gridLayout->addWidget(tabsuppliers, 0, 0, 1, 1);
 
-    maintab->addTab(tab_1, QApplication::translate("dataeditfrm", "Supplier", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab_1, QString());
     tab_2 = new QWidget();
     tab_2->setObjectName(QString::fromUtf8("tab_2"));
     txtweight = new QLineEdit(tab_2);
@@ -224,7 +232,7 @@ public:
     chkactive = new QCheckBox(tab_2);
     chkactive->setObjectName(QString::fromUtf8("chkactive"));
     chkactive->setGeometry(QRect(120, 110, 82, 22));
-    maintab->addTab(tab_2, QApplication::translate("dataeditfrm", "add. Informations", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab_2, QString());
     tab_3 = new QWidget();
     tab_3->setObjectName(QString::fromUtf8("tab_3"));
     label_30 = new QLabel(tab_3);
@@ -245,19 +253,23 @@ public:
     label_32 = new QLabel(tab_3);
     label_32->setObjectName(QString::fromUtf8("label_32"));
     label_32->setGeometry(QRect(10, 80, 101, 21));
-    maintab->addTab(tab_3, QApplication::translate("dataeditfrm", "Web", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab_3, QString());
     tab_4 = new QWidget();
     tab_4->setObjectName(QString::fromUtf8("tab_4"));
     gridLayout1 = new QGridLayout(tab_4);
+#ifndef Q_OS_MAC
     gridLayout1->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout1->setMargin(9);
+#endif
     gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
     txtcomments = new QTextEdit(tab_4);
     txtcomments->setObjectName(QString::fromUtf8("txtcomments"));
 
     gridLayout1->addWidget(txtcomments, 0, 0, 1, 1);
 
-    maintab->addTab(tab_4, QApplication::translate("dataeditfrm", "Comments", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(tab_4, QString());
     lblmargin = new QLabel(dataeditfrm);
     lblmargin->setObjectName(QString::fromUtf8("lblmargin"));
     lblmargin->setGeometry(QRect(140, 420, 98, 27));
@@ -323,11 +335,6 @@ public:
     QWidget::setTabOrder(btnok, btncancel);
 
     retranslateUi(dataeditfrm);
-
-    QSize size(776, 496);
-    size = size.expandedTo(dataeditfrm->minimumSizeHint());
-    dataeditfrm->resize(size);
-
     QObject::connect(btncancel, SIGNAL(released()), dataeditfrm, SLOT(reject()));
 
     maintab->setCurrentIndex(0);

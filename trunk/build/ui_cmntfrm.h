@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'cmntfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -27,7 +27,11 @@ public:
 
     void setupUi(QDialog *cmntfrm)
     {
-    cmntfrm->setObjectName(QString::fromUtf8("cmntfrm"));
+    if (cmntfrm->objectName().isEmpty())
+        cmntfrm->setObjectName(QString::fromUtf8("cmntfrm"));
+    QSize size(592, 493);
+    size = size.expandedTo(cmntfrm->minimumSizeHint());
+    cmntfrm->resize(size);
     cmntfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     btncancel = new QPushButton(cmntfrm);
     btncancel->setObjectName(QString::fromUtf8("btncancel"));
@@ -40,11 +44,6 @@ public:
     btnok->setGeometry(QRect(510, 460, 75, 27));
 
     retranslateUi(cmntfrm);
-
-    QSize size(592, 493);
-    size = size.expandedTo(cmntfrm->minimumSizeHint());
-    cmntfrm->resize(size);
-
     QObject::connect(btnok, SIGNAL(clicked()), cmntfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), cmntfrm, SLOT(reject()));
 

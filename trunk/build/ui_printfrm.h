@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'printfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -32,7 +32,11 @@ public:
 
     void setupUi(QDialog *printfrm)
     {
-    printfrm->setObjectName(QString::fromUtf8("printfrm"));
+    if (printfrm->objectName().isEmpty())
+        printfrm->setObjectName(QString::fromUtf8("printfrm"));
+    QSize size(341, 203);
+    size = size.expandedTo(printfrm->minimumSizeHint());
+    printfrm->resize(size);
     printfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     btncancel = new QPushButton(printfrm);
     btncancel->setObjectName(QString::fromUtf8("btncancel"));
@@ -57,11 +61,6 @@ public:
     rdbtn_1->setGeometry(QRect(20, 20, 281, 23));
 
     retranslateUi(printfrm);
-
-    QSize size(341, 203);
-    size = size.expandedTo(printfrm->minimumSizeHint());
-    printfrm->resize(size);
-
     QObject::connect(btnok, SIGNAL(clicked()), printfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), printfrm, SLOT(reject()));
 

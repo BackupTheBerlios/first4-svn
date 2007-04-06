@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'invnewfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -32,7 +32,11 @@ public:
 
     void setupUi(QDialog *invnewfrm)
     {
-    invnewfrm->setObjectName(QString::fromUtf8("invnewfrm"));
+    if (invnewfrm->objectName().isEmpty())
+        invnewfrm->setObjectName(QString::fromUtf8("invnewfrm"));
+    QSize size(441, 253);
+    size = size.expandedTo(invnewfrm->minimumSizeHint());
+    invnewfrm->resize(size);
     invnewfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/kfm.png")));
     btncreate = new QPushButton(invnewfrm);
     btncreate->setObjectName(QString::fromUtf8("btncreate"));
@@ -54,11 +58,6 @@ public:
     cmbinv->setGeometry(QRect(160, 10, 271, 22));
 
     retranslateUi(invnewfrm);
-
-    QSize size(441, 253);
-    size = size.expandedTo(invnewfrm->minimumSizeHint());
-    invnewfrm->resize(size);
-
     QObject::connect(btncreate, SIGNAL(clicked()), invnewfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), invnewfrm, SLOT(reject()));
 

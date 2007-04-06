@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'cfgfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -238,8 +238,12 @@ public:
 
     void setupUi(QWidget *cfgfrm)
     {
-    cfgfrm->setObjectName(QString::fromUtf8("cfgfrm"));
+    if (cfgfrm->objectName().isEmpty())
+        cfgfrm->setObjectName(QString::fromUtf8("cfgfrm"));
     cfgfrm->setWindowModality(Qt::NonModal);
+    QSize size(743, 611);
+    size = size.expandedTo(cfgfrm->minimumSizeHint());
+    cfgfrm->resize(size);
     cfgfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     label = new QLabel(cfgfrm);
     label->setObjectName(QString::fromUtf8("label"));
@@ -347,7 +351,7 @@ public:
     txtuser->setObjectName(QString::fromUtf8("txtuser"));
     txtuser->setGeometry(QRect(130, 30, 161, 25));
     txtuser->setReadOnly(true);
-    maintab->addTab(user, QApplication::translate("cfgfrm", "User", 0, QApplication::UnicodeUTF8));
+    maintab->addTab(user, QString());
     admin = new QWidget();
     admin->setObjectName(QString::fromUtf8("admin"));
     cfgtab = new QTabWidget(admin);
@@ -400,7 +404,7 @@ public:
     btndbapply = new QPushButton(groupBox_7);
     btndbapply->setObjectName(QString::fromUtf8("btndbapply"));
     btndbapply->setGeometry(QRect(510, 70, 82, 30));
-    cfgtab->addTab(database, QApplication::translate("cfgfrm", "&Database", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(database, QString());
     users = new QWidget();
     users->setObjectName(QString::fromUtf8("users"));
     label_20 = new QLabel(users);
@@ -450,9 +454,7 @@ public:
     tabWidget = new QTabWidget(users);
     tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
     tabWidget->setGeometry(QRect(220, 179, 471, 281));
-    QFont font1;
-    font1.setPointSize(8);
-    tabWidget->setFont(font1);
+    tabWidget->setFont(font);
     contact = new QWidget();
     contact->setObjectName(QString::fromUtf8("contact"));
     label_22 = new QLabel(contact);
@@ -479,7 +481,7 @@ public:
     txtdob = new QDateEdit(contact);
     txtdob->setObjectName(QString::fromUtf8("txtdob"));
     txtdob->setGeometry(QRect(110, 130, 110, 23));
-    tabWidget->addTab(contact, QApplication::translate("cfgfrm", "&Contact", 0, QApplication::UnicodeUTF8));
+    tabWidget->addTab(contact, QString());
     privat = new QWidget();
     privat->setObjectName(QString::fromUtf8("privat"));
     label_26 = new QLabel(privat);
@@ -506,7 +508,7 @@ public:
     txt_users_privat_street = new QLineEdit(privat);
     txt_users_privat_street->setObjectName(QString::fromUtf8("txt_users_privat_street"));
     txt_users_privat_street->setGeometry(QRect(130, 10, 241, 24));
-    tabWidget->addTab(privat, QApplication::translate("cfgfrm", "&Privat", 0, QApplication::UnicodeUTF8));
+    tabWidget->addTab(privat, QString());
     business = new QWidget();
     business->setObjectName(QString::fromUtf8("business"));
     label_34 = new QLabel(business);
@@ -563,7 +565,7 @@ public:
     txt_users_business_prof = new QLineEdit(business);
     txt_users_business_prof->setObjectName(QString::fromUtf8("txt_users_business_prof"));
     txt_users_business_prof->setGeometry(QRect(120, 10, 131, 24));
-    tabWidget->addTab(business, QApplication::translate("cfgfrm", "&Business", 0, QApplication::UnicodeUTF8));
+    tabWidget->addTab(business, QString());
     comunication = new QWidget();
     comunication->setObjectName(QString::fromUtf8("comunication"));
     groupBox_9 = new QGroupBox(comunication);
@@ -680,13 +682,13 @@ public:
     txt_users_private_tel = new QLineEdit(groupBox_8);
     txt_users_private_tel->setObjectName(QString::fromUtf8("txt_users_private_tel"));
     txt_users_private_tel->setGeometry(QRect(100, 20, 113, 21));
-    tabWidget->addTab(comunication, QApplication::translate("cfgfrm", "C&ommunication", 0, QApplication::UnicodeUTF8));
+    tabWidget->addTab(comunication, QString());
     notes = new QWidget();
     notes->setObjectName(QString::fromUtf8("notes"));
     txtnotes = new QTextEdit(notes);
     txtnotes->setObjectName(QString::fromUtf8("txtnotes"));
     txtnotes->setGeometry(QRect(10, 10, 451, 231));
-    tabWidget->addTab(notes, QApplication::translate("cfgfrm", "&Notes", 0, QApplication::UnicodeUTF8));
+    tabWidget->addTab(notes, QString());
     txt_users_pwd2 = new QLineEdit(users);
     txt_users_pwd2->setObjectName(QString::fromUtf8("txt_users_pwd2"));
     txt_users_pwd2->setGeometry(QRect(320, 130, 201, 24));
@@ -696,7 +698,7 @@ public:
     txt_users_user = new QLineEdit(users);
     txt_users_user->setObjectName(QString::fromUtf8("txt_users_user"));
     txt_users_user->setGeometry(QRect(320, 50, 201, 24));
-    cfgtab->addTab(users, QApplication::translate("cfgfrm", "&Users", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(users, QString());
     authorizations = new QWidget();
     authorizations->setObjectName(QString::fromUtf8("authorizations"));
     label_57 = new QLabel(authorizations);
@@ -777,7 +779,7 @@ public:
     listressources->setObjectName(QString::fromUtf8("listressources"));
     listressources->setGeometry(QRect(10, 40, 251, 381));
     listressources->setContextMenuPolicy(Qt::CustomContextMenu);
-    cfgtab->addTab(authorizations, QApplication::translate("cfgfrm", "&Authorizations", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(authorizations, QString());
     path = new QWidget();
     path->setObjectName(QString::fromUtf8("path"));
     groupBox_11 = new QGroupBox(path);
@@ -805,7 +807,7 @@ public:
     btnsavepath->setObjectName(QString::fromUtf8("btnsavepath"));
     btnsavepath->setGeometry(QRect(580, 110, 80, 27));
     btnsavepath->setIcon(QIcon(QString::fromUtf8(":/images/images/button_ok.png")));
-    cfgtab->addTab(path, QApplication::translate("cfgfrm", "&Path", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(path, QString());
     tab_5 = new QWidget();
     tab_5->setObjectName(QString::fromUtf8("tab_5"));
     label_68 = new QLabel(tab_5);
@@ -857,7 +859,7 @@ public:
     btnowndata->setObjectName(QString::fromUtf8("btnowndata"));
     btnowndata->setGeometry(QRect(610, 440, 80, 27));
     btnowndata->setIcon(QIcon(QString::fromUtf8(":/images/images/button_ok.png")));
-    cfgtab->addTab(tab_5, QApplication::translate("cfgfrm", "&Own data", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(tab_5, QString());
     settings = new QWidget();
     settings->setObjectName(QString::fromUtf8("settings"));
     label_66 = new QLabel(settings);
@@ -876,8 +878,8 @@ public:
     btnsavesettings->setObjectName(QString::fromUtf8("btnsavesettings"));
     btnsavesettings->setGeometry(QRect(600, 430, 80, 27));
     btnsavesettings->setIcon(QIcon(QString::fromUtf8(":/images/images/button_ok.png")));
-    cfgtab->addTab(settings, QApplication::translate("cfgfrm", "&Settings", 0, QApplication::UnicodeUTF8));
-    maintab->addTab(admin, QApplication::translate("cfgfrm", "Administrator", 0, QApplication::UnicodeUTF8));
+    cfgtab->addTab(settings, QString());
+    maintab->addTab(admin, QString());
     QWidget::setTabOrder(maintab, txtuser);
     QWidget::setTabOrder(txtuser, txtoldpwd);
     QWidget::setTabOrder(txtoldpwd, txtnewpwd1);
@@ -967,11 +969,6 @@ public:
     QWidget::setTabOrder(txt_bank_accountnr, txt_bank_usrnr);
 
     retranslateUi(cfgfrm);
-
-    QSize size(743, 611);
-    size = size.expandedTo(cfgfrm->minimumSizeHint());
-    cfgfrm->resize(size);
-
     QObject::connect(btnclose, SIGNAL(released()), cfgfrm, SLOT(close()));
 
     maintab->setCurrentIndex(0);

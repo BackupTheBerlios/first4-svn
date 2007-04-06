@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -55,7 +55,11 @@ public:
 
     void setupUi(QMainWindow *mainfrm)
     {
-    mainfrm->setObjectName(QString::fromUtf8("mainfrm"));
+    if (mainfrm->objectName().isEmpty())
+        mainfrm->setObjectName(QString::fromUtf8("mainfrm"));
+    QSize size(332, 553);
+    size = size.expandedTo(mainfrm->minimumSizeHint());
+    mainfrm->resize(size);
     QSizePolicy sizePolicy(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
@@ -99,12 +103,8 @@ public:
     QBrush brush(QColor(206, 207, 209, 255));
     brush.setStyle(Qt::SolidPattern);
     palette.setBrush(QPalette::Active, QPalette::Button, brush);
-    QBrush brush1(QColor(206, 207, 209, 255));
-    brush1.setStyle(Qt::SolidPattern);
-    palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
-    QBrush brush2(QColor(206, 207, 209, 255));
-    brush2.setStyle(Qt::SolidPattern);
-    palette.setBrush(QPalette::Disabled, QPalette::Button, brush2);
+    palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btnbrowsedir->setPalette(palette);
     btnbrowsedir->setAutoFillBackground(true);
     btnbrowsedir->setIcon(QIcon(QString::fromUtf8(":/images/images/kdmconfig.png")));
@@ -118,15 +118,9 @@ public:
     btnvieworders->setObjectName(QString::fromUtf8("btnvieworders"));
     btnvieworders->setGeometry(QRect(10, 40, 251, 27));
     QPalette palette1;
-    QBrush brush3(QColor(206, 207, 209, 255));
-    brush3.setStyle(Qt::SolidPattern);
-    palette1.setBrush(QPalette::Active, QPalette::Button, brush3);
-    QBrush brush4(QColor(206, 207, 209, 255));
-    brush4.setStyle(Qt::SolidPattern);
-    palette1.setBrush(QPalette::Inactive, QPalette::Button, brush4);
-    QBrush brush5(QColor(206, 207, 209, 255));
-    brush5.setStyle(Qt::SolidPattern);
-    palette1.setBrush(QPalette::Disabled, QPalette::Button, brush5);
+    palette1.setBrush(QPalette::Active, QPalette::Button, brush);
+    palette1.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette1.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btnvieworders->setPalette(palette1);
     btnvieworders->setAutoFillBackground(true);
     btnvieworders->setIcon(QIcon(QString::fromUtf8(":/images/images/kfind.png")));
@@ -136,15 +130,9 @@ public:
     btninventory->setObjectName(QString::fromUtf8("btninventory"));
     btninventory->setGeometry(QRect(10, 70, 251, 27));
     QPalette palette2;
-    QBrush brush6(QColor(206, 207, 209, 255));
-    brush6.setStyle(Qt::SolidPattern);
-    palette2.setBrush(QPalette::Active, QPalette::Button, brush6);
-    QBrush brush7(QColor(206, 207, 209, 255));
-    brush7.setStyle(Qt::SolidPattern);
-    palette2.setBrush(QPalette::Inactive, QPalette::Button, brush7);
-    QBrush brush8(QColor(206, 207, 209, 255));
-    brush8.setStyle(Qt::SolidPattern);
-    palette2.setBrush(QPalette::Disabled, QPalette::Button, brush8);
+    palette2.setBrush(QPalette::Active, QPalette::Button, brush);
+    palette2.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette2.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btninventory->setPalette(palette2);
     btninventory->setAutoFillBackground(true);
     btninventory->setIcon(QIcon(QString::fromUtf8(":/images/images/kontact_todo.png")));
@@ -154,15 +142,9 @@ public:
     btnbrowsedata->setObjectName(QString::fromUtf8("btnbrowsedata"));
     btnbrowsedata->setGeometry(QRect(10, 10, 251, 27));
     QPalette palette3;
-    QBrush brush9(QColor(206, 207, 209, 255));
-    brush9.setStyle(Qt::SolidPattern);
-    palette3.setBrush(QPalette::Active, QPalette::Button, brush9);
-    QBrush brush10(QColor(206, 207, 209, 255));
-    brush10.setStyle(Qt::SolidPattern);
-    palette3.setBrush(QPalette::Inactive, QPalette::Button, brush10);
-    QBrush brush11(QColor(206, 207, 209, 255));
-    brush11.setStyle(Qt::SolidPattern);
-    palette3.setBrush(QPalette::Disabled, QPalette::Button, brush11);
+    palette3.setBrush(QPalette::Active, QPalette::Button, brush);
+    palette3.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette3.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btnbrowsedata->setPalette(palette3);
     btnbrowsedata->setAutoFillBackground(true);
     btnbrowsedata->setIcon(QIcon(QString::fromUtf8(":/images/images/kfm32x32.png")));
@@ -180,15 +162,9 @@ public:
     btnbrowsedoc->setObjectName(QString::fromUtf8("btnbrowsedoc"));
     btnbrowsedoc->setGeometry(QRect(10, 10, 251, 27));
     QPalette palette4;
-    QBrush brush12(QColor(206, 207, 209, 255));
-    brush12.setStyle(Qt::SolidPattern);
-    palette4.setBrush(QPalette::Active, QPalette::Button, brush12);
-    QBrush brush13(QColor(206, 207, 209, 255));
-    brush13.setStyle(Qt::SolidPattern);
-    palette4.setBrush(QPalette::Inactive, QPalette::Button, brush13);
-    QBrush brush14(QColor(206, 207, 209, 255));
-    brush14.setStyle(Qt::SolidPattern);
-    palette4.setBrush(QPalette::Disabled, QPalette::Button, brush14);
+    palette4.setBrush(QPalette::Active, QPalette::Button, brush);
+    palette4.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette4.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btnbrowsedoc->setPalette(palette4);
     btnbrowsedoc->setAutoFillBackground(true);
     btnbrowsedoc->setIcon(QIcon(QString::fromUtf8(":/images/images/wordprocessing.png")));
@@ -198,15 +174,9 @@ public:
     btnnewdoc->setObjectName(QString::fromUtf8("btnnewdoc"));
     btnnewdoc->setGeometry(QRect(10, 40, 251, 27));
     QPalette palette5;
-    QBrush brush15(QColor(206, 207, 209, 255));
-    brush15.setStyle(Qt::SolidPattern);
-    palette5.setBrush(QPalette::Active, QPalette::Button, brush15);
-    QBrush brush16(QColor(206, 207, 209, 255));
-    brush16.setStyle(Qt::SolidPattern);
-    palette5.setBrush(QPalette::Inactive, QPalette::Button, brush16);
-    QBrush brush17(QColor(206, 207, 209, 255));
-    brush17.setStyle(Qt::SolidPattern);
-    palette5.setBrush(QPalette::Disabled, QPalette::Button, brush17);
+    palette5.setBrush(QPalette::Active, QPalette::Button, brush);
+    palette5.setBrush(QPalette::Inactive, QPalette::Button, brush);
+    palette5.setBrush(QPalette::Disabled, QPalette::Button, brush);
     btnnewdoc->setPalette(palette5);
     btnnewdoc->setAutoFillBackground(true);
     btnnewdoc->setIcon(QIcon(QString::fromUtf8(":/images/images/wordprocessing.png")));
@@ -253,11 +223,6 @@ public:
     mainfrm->setCentralWidget(centralwidget);
 
     retranslateUi(mainfrm);
-
-    QSize size(332, 553);
-    size = size.expandedTo(mainfrm->minimumSizeHint());
-    mainfrm->resize(size);
-
     QObject::connect(btnexit, SIGNAL(released()), mainfrm, SLOT(close()));
 
     maintoolbox->setCurrentIndex(3);

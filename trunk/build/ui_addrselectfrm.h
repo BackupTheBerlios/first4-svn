@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'addrselectfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -30,7 +30,6 @@ class Ui_addrselectfrm
 public:
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QSpacerItem *spacerItem;
     QLineEdit *txtsearch;
     QComboBox *cmbdir;
     QLabel *label_2;
@@ -44,18 +43,23 @@ public:
 
     void setupUi(QDialog *addrselectfrm)
     {
-    addrselectfrm->setObjectName(QString::fromUtf8("addrselectfrm"));
+    if (addrselectfrm->objectName().isEmpty())
+        addrselectfrm->setObjectName(QString::fromUtf8("addrselectfrm"));
+    QSize size(552, 361);
+    size = size.expandedTo(addrselectfrm->minimumSizeHint());
+    addrselectfrm->resize(size);
     addrselectfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/kdmconfig.png")));
     layoutWidget = new QWidget(addrselectfrm);
     layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
     layoutWidget->setGeometry(QRect(10, 10, 381, 55));
     gridLayout = new QGridLayout(layoutWidget);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
     gridLayout->setMargin(0);
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-    spacerItem = new QSpacerItem(91, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout->addItem(spacerItem, 0, 2, 1, 1);
+    gridLayout->addItem(new QSpacerItem(91, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 2, 1, 1);
 
     txtsearch = new QLineEdit(layoutWidget);
     txtsearch->setObjectName(QString::fromUtf8("txtsearch"));
@@ -101,11 +105,6 @@ public:
     btncancelsearch->setIcon(QIcon(QString::fromUtf8(":/images/images/kill.png")));
 
     retranslateUi(addrselectfrm);
-
-    QSize size(552, 361);
-    size = size.expandedTo(addrselectfrm->minimumSizeHint());
-    addrselectfrm->resize(size);
-
     QObject::connect(btnaccept, SIGNAL(clicked()), addrselectfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), addrselectfrm, SLOT(reject()));
     QObject::connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), addrselectfrm, SLOT(accept()));

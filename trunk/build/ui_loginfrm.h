@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'loginfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -34,7 +34,11 @@ public:
 
     void setupUi(QDialog *loginfrm)
     {
-    loginfrm->setObjectName(QString::fromUtf8("loginfrm"));
+    if (loginfrm->objectName().isEmpty())
+        loginfrm->setObjectName(QString::fromUtf8("loginfrm"));
+    QSize size(352, 180);
+    size = size.expandedTo(loginfrm->minimumSizeHint());
+    loginfrm->resize(size);
     QSizePolicy sizePolicy(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
@@ -76,11 +80,6 @@ public:
     QWidget::setTabOrder(btnok, btncancel);
 
     retranslateUi(loginfrm);
-
-    QSize size(352, 180);
-    size = size.expandedTo(loginfrm->minimumSizeHint());
-    loginfrm->resize(size);
-
     QObject::connect(btncancel, SIGNAL(clicked()), loginfrm, SLOT(reject()));
 
     QMetaObject::connectSlotsByName(loginfrm);

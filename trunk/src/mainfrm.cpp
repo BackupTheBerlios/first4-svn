@@ -89,9 +89,8 @@ void mainfrm::initplugins() {
 						maintoolbox->insertItem( maintoolbox->count() + 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
 					}
 					else
-					{						
+					{																		
 						QWidget *w = maintoolbox->widget( fpi->toolBoxIndex() );
-						fpi->button( w );
 					}
 
 					connect ( fpi->button(), SIGNAL ( released() ), this, SLOT ( pluginaction() ) );

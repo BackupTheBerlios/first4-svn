@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'doceditfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:14 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -38,7 +38,6 @@ public:
     QGridLayout *gridLayout1;
     QHBoxLayout *hboxLayout;
     QVBoxLayout *vboxLayout;
-    QSpacerItem *spacerItem;
     QHBoxLayout *hboxLayout1;
     QPushButton *btnclose;
     QLabel *label_5;
@@ -49,7 +48,6 @@ public:
     QLabel *label_13;
     QWidget *layoutWidget;
     QHBoxLayout *hboxLayout2;
-    QSpacerItem *spacerItem1;
     QPushButton *btncalc;
     QFrame *line_5;
     QLineEdit *boxtot_incl;
@@ -87,61 +85,75 @@ public:
     QLabel *lblID;
     QLabel *label_2;
     QLabel *label_6;
-    QSpacerItem *spacerItem2;
     QLineEdit *txtdoccount;
-    QSpacerItem *spacerItem3;
     QPushButton *btnsearchaddr;
-    QSpacerItem *spacerItem4;
-    QSpacerItem *spacerItem5;
     QTextEdit *boxaddress;
-    QSpacerItem *spacerItem6;
     QLabel *label;
     QGridLayout *gridLayout7;
-    QSpacerItem *spacerItem7;
     QGridLayout *gridLayout8;
     QDateEdit *boxdate;
     QLabel *label_3;
-    QSpacerItem *spacerItem8;
     QHBoxLayout *hboxLayout4;
-    QSpacerItem *spacerItem9;
     QPushButton *btnnew;
     QPushButton *btnopen;
     QPushButton *btnsave;
     QPushButton *btnprint;
-    QSpacerItem *spacerItem10;
     QPushButton *btncomplete;
 
     void setupUi(QWidget *doceditfrm)
     {
-    doceditfrm->setObjectName(QString::fromUtf8("doceditfrm"));
+    if (doceditfrm->objectName().isEmpty())
+        doceditfrm->setObjectName(QString::fromUtf8("doceditfrm"));
+    QSize size(779, 718);
+    size = size.expandedTo(doceditfrm->minimumSizeHint());
+    doceditfrm->resize(size);
     doceditfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/wordprocessing.png")));
     gridLayout = new QGridLayout(doceditfrm);
+#ifndef Q_OS_MAC
     gridLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout->setMargin(9);
+#endif
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     groupBox_3 = new QGroupBox(doceditfrm);
     groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
     groupBox_3->setMinimumSize(QSize(761, 191));
     groupBox_3->setMaximumSize(QSize(16777215, 191));
     gridLayout1 = new QGridLayout(groupBox_3);
+#ifndef Q_OS_MAC
     gridLayout1->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout1->setMargin(9);
+#endif
     gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
     hboxLayout = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     hboxLayout->setMargin(0);
+#endif
     hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
     vboxLayout = new QVBoxLayout();
+#ifndef Q_OS_MAC
     vboxLayout->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     vboxLayout->setMargin(0);
+#endif
     vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
-    spacerItem = new QSpacerItem(20, 131, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    vboxLayout->addItem(spacerItem);
+    vboxLayout->addItem(new QSpacerItem(20, 131, QSizePolicy::Minimum, QSizePolicy::Fixed));
 
     hboxLayout1 = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout1->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     hboxLayout1->setMargin(0);
+#endif
     hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
     btnclose = new QPushButton(groupBox_3);
     btnclose->setObjectName(QString::fromUtf8("btnclose"));
@@ -155,11 +167,8 @@ public:
 
     label_5 = new QLabel(groupBox_3);
     label_5->setObjectName(QString::fromUtf8("label_5"));
-    QSizePolicy sizePolicy1(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy1.setHorizontalStretch(0);
-    sizePolicy1.setVerticalStretch(0);
-    sizePolicy1.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
-    label_5->setSizePolicy(sizePolicy1);
+    sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+    label_5->setSizePolicy(sizePolicy);
 
     hboxLayout1->addWidget(label_5);
 
@@ -176,11 +185,8 @@ public:
 
     groupBox = new QGroupBox(groupBox_3);
     groupBox->setObjectName(QString::fromUtf8("groupBox"));
-    QSizePolicy sizePolicy2(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy2.setHorizontalStretch(0);
-    sizePolicy2.setVerticalStretch(0);
-    sizePolicy2.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-    groupBox->setSizePolicy(sizePolicy2);
+    sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+    groupBox->setSizePolicy(sizePolicy);
     groupBox->setMinimumSize(QSize(281, 171));
     groupBox->setMaximumSize(QSize(281, 171));
     line_2 = new QFrame(groupBox);
@@ -200,12 +206,13 @@ public:
     layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
     layoutWidget->setGeometry(QRect(9, 140, 261, 29));
     hboxLayout2 = new QHBoxLayout(layoutWidget);
+#ifndef Q_OS_MAC
     hboxLayout2->setSpacing(6);
+#endif
     hboxLayout2->setMargin(0);
     hboxLayout2->setObjectName(QString::fromUtf8("hboxLayout2"));
-    spacerItem1 = new QSpacerItem(161, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout2->addItem(spacerItem1);
+    hboxLayout2->addItem(new QSpacerItem(161, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     btncalc = new QPushButton(layoutWidget);
     btncalc->setObjectName(QString::fromUtf8("btncalc"));
@@ -240,21 +247,15 @@ public:
     boxvat = new QLineEdit(groupBox);
     boxvat->setObjectName(QString::fromUtf8("boxvat"));
     boxvat->setGeometry(QRect(160, 77, 113, 21));
-    QSizePolicy sizePolicy3(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy3.setHorizontalStretch(0);
-    sizePolicy3.setVerticalStretch(0);
-    sizePolicy3.setHeightForWidth(boxvat->sizePolicy().hasHeightForWidth());
-    boxvat->setSizePolicy(sizePolicy3);
+    sizePolicy.setHeightForWidth(boxvat->sizePolicy().hasHeightForWidth());
+    boxvat->setSizePolicy(sizePolicy);
     boxvat->setMinimumSize(QSize(113, 21));
     boxvat->setMaximumSize(QSize(113, 21));
     boxtot_excl = new QLineEdit(groupBox);
     boxtot_excl->setObjectName(QString::fromUtf8("boxtot_excl"));
     boxtot_excl->setGeometry(QRect(160, 54, 113, 21));
-    QSizePolicy sizePolicy4(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy4.setHorizontalStretch(0);
-    sizePolicy4.setVerticalStretch(0);
-    sizePolicy4.setHeightForWidth(boxtot_excl->sizePolicy().hasHeightForWidth());
-    boxtot_excl->setSizePolicy(sizePolicy4);
+    sizePolicy.setHeightForWidth(boxtot_excl->sizePolicy().hasHeightForWidth());
+    boxtot_excl->setSizePolicy(sizePolicy);
     boxtot_excl->setMinimumSize(QSize(113, 21));
     boxtot_excl->setMaximumSize(QSize(113, 21));
     label_11 = new QLabel(groupBox);
@@ -265,11 +266,8 @@ public:
     label_19 = new QLabel(groupBox);
     label_19->setObjectName(QString::fromUtf8("label_19"));
     label_19->setGeometry(QRect(250, 34, 21, 17));
-    QSizePolicy sizePolicy5(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy5.setHorizontalStretch(0);
-    sizePolicy5.setVerticalStretch(0);
-    sizePolicy5.setHeightForWidth(label_19->sizePolicy().hasHeightForWidth());
-    label_19->setSizePolicy(sizePolicy5);
+    sizePolicy.setHeightForWidth(label_19->sizePolicy().hasHeightForWidth());
+    label_19->setSizePolicy(sizePolicy);
     label_19->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
     label_10 = new QLabel(groupBox);
     label_10->setObjectName(QString::fromUtf8("label_10"));
@@ -280,11 +278,8 @@ public:
     boxdiscount = new QLineEdit(groupBox);
     boxdiscount->setObjectName(QString::fromUtf8("boxdiscount"));
     boxdiscount->setGeometry(QRect(160, 32, 80, 21));
-    QSizePolicy sizePolicy6(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy6.setHorizontalStretch(0);
-    sizePolicy6.setVerticalStretch(0);
-    sizePolicy6.setHeightForWidth(boxdiscount->sizePolicy().hasHeightForWidth());
-    boxdiscount->setSizePolicy(sizePolicy6);
+    sizePolicy.setHeightForWidth(boxdiscount->sizePolicy().hasHeightForWidth());
+    boxdiscount->setSizePolicy(sizePolicy);
     boxdiscount->setMinimumSize(QSize(80, 21));
     boxdiscount->setMaximumSize(QSize(80, 21));
     boxdiscount->setAlignment(Qt::AlignRight);
@@ -294,11 +289,8 @@ public:
     boxtot = new QLineEdit(groupBox);
     boxtot->setObjectName(QString::fromUtf8("boxtot"));
     boxtot->setGeometry(QRect(160, 10, 113, 21));
-    QSizePolicy sizePolicy7(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy7.setHorizontalStretch(0);
-    sizePolicy7.setVerticalStretch(0);
-    sizePolicy7.setHeightForWidth(boxtot->sizePolicy().hasHeightForWidth());
-    boxtot->setSizePolicy(sizePolicy7);
+    sizePolicy.setHeightForWidth(boxtot->sizePolicy().hasHeightForWidth());
+    boxtot->setSizePolicy(sizePolicy);
     boxtot->setMinimumSize(QSize(113, 21));
     boxtot->setMaximumSize(QSize(113, 21));
 
@@ -316,8 +308,12 @@ public:
     tab1 = new QWidget();
     tab1->setObjectName(QString::fromUtf8("tab1"));
     gridLayout2 = new QGridLayout(tab1);
+#ifndef Q_OS_MAC
     gridLayout2->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout2->setMargin(9);
+#endif
     gridLayout2->setObjectName(QString::fromUtf8("gridLayout2"));
     label_20 = new QLabel(tab1);
     label_20->setObjectName(QString::fromUtf8("label_20"));
@@ -339,12 +335,16 @@ public:
 
     gridLayout2->addWidget(boxotherinfo, 2, 0, 1, 2);
 
-    mainwidget->addTab(tab1, QApplication::translate("doceditfrm", "Introduction", 0, QApplication::UnicodeUTF8));
+    mainwidget->addTab(tab1, QString());
     tab2 = new QWidget();
     tab2->setObjectName(QString::fromUtf8("tab2"));
     gridLayout3 = new QGridLayout(tab2);
+#ifndef Q_OS_MAC
     gridLayout3->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout3->setMargin(9);
+#endif
     gridLayout3->setObjectName(QString::fromUtf8("gridLayout3"));
     tabmain = new QTableWidget(tab2);
     tabmain->setObjectName(QString::fromUtf8("tabmain"));
@@ -355,41 +355,48 @@ public:
 
     gridLayout3->addWidget(tabmain, 0, 0, 1, 1);
 
-    mainwidget->addTab(tab2, QApplication::translate("doceditfrm", "Positions", 0, QApplication::UnicodeUTF8));
+    mainwidget->addTab(tab2, QString());
     tab3 = new QWidget();
     tab3->setObjectName(QString::fromUtf8("tab3"));
     gridLayout4 = new QGridLayout(tab3);
+#ifndef Q_OS_MAC
     gridLayout4->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout4->setMargin(9);
+#endif
     gridLayout4->setObjectName(QString::fromUtf8("gridLayout4"));
     boxcomments = new QTextEdit(tab3);
     boxcomments->setObjectName(QString::fromUtf8("boxcomments"));
 
     gridLayout4->addWidget(boxcomments, 0, 0, 1, 1);
 
-    mainwidget->addTab(tab3, QApplication::translate("doceditfrm", "Comments", 0, QApplication::UnicodeUTF8));
+    mainwidget->addTab(tab3, QString());
 
     gridLayout->addWidget(mainwidget, 1, 0, 1, 1);
 
     groupBox_2 = new QGroupBox(doceditfrm);
     groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-    QSizePolicy sizePolicy8(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy8.setHorizontalStretch(0);
-    sizePolicy8.setVerticalStretch(0);
-    sizePolicy8.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
-    groupBox_2->setSizePolicy(sizePolicy8);
+    sizePolicy.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
+    groupBox_2->setSizePolicy(sizePolicy);
     groupBox_2->setMinimumSize(QSize(761, 201));
     groupBox_2->setMaximumSize(QSize(761, 201));
     widget = new QWidget(groupBox_2);
     widget->setObjectName(QString::fromUtf8("widget"));
     widget->setGeometry(QRect(10, 7, 741, 191));
     gridLayout5 = new QGridLayout(widget);
+#ifndef Q_OS_MAC
     gridLayout5->setSpacing(6);
+#endif
     gridLayout5->setMargin(0);
     gridLayout5->setObjectName(QString::fromUtf8("gridLayout5"));
     gridLayout6 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout6->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout6->setMargin(0);
+#endif
     gridLayout6->setObjectName(QString::fromUtf8("gridLayout6"));
     cmbdoc = new QComboBox(widget);
     cmbdoc->setObjectName(QString::fromUtf8("cmbdoc"));
@@ -397,7 +404,9 @@ public:
     gridLayout6->addWidget(cmbdoc, 0, 1, 1, 1);
 
     hboxLayout3 = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout3->setSpacing(6);
+#endif
     hboxLayout3->setMargin(0);
     hboxLayout3->setObjectName(QString::fromUtf8("hboxLayout3"));
     btnclearsearch = new QPushButton(widget);
@@ -433,9 +442,8 @@ public:
 
     gridLayout6->addWidget(label_6, 4, 0, 1, 1);
 
-    spacerItem2 = new QSpacerItem(20, 82, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout6->addItem(spacerItem2, 2, 0, 2, 1);
+    gridLayout6->addItem(new QSpacerItem(20, 82, QSizePolicy::Minimum, QSizePolicy::Fixed), 2, 0, 2, 1);
 
     txtdoccount = new QLineEdit(widget);
     txtdoccount->setObjectName(QString::fromUtf8("txtdoccount"));
@@ -444,9 +452,8 @@ public:
 
     gridLayout6->addWidget(txtdoccount, 4, 1, 1, 1);
 
-    spacerItem3 = new QSpacerItem(20, 121, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout6->addItem(spacerItem3, 0, 3, 3, 1);
+    gridLayout6->addItem(new QSpacerItem(20, 121, QSizePolicy::Minimum, QSizePolicy::Fixed), 0, 3, 3, 1);
 
     btnsearchaddr = new QPushButton(widget);
     btnsearchaddr->setObjectName(QString::fromUtf8("btnsearchaddr"));
@@ -456,13 +463,11 @@ public:
 
     gridLayout6->addWidget(btnsearchaddr, 1, 2, 1, 1);
 
-    spacerItem4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout6->addItem(spacerItem4, 0, 2, 1, 1);
+    gridLayout6->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding), 0, 2, 1, 1);
 
-    spacerItem5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    gridLayout6->addItem(spacerItem5, 2, 2, 1, 1);
+    gridLayout6->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding), 2, 2, 1, 1);
 
     boxaddress = new QTextEdit(widget);
     boxaddress->setObjectName(QString::fromUtf8("boxaddress"));
@@ -470,9 +475,8 @@ public:
 
     gridLayout6->addWidget(boxaddress, 1, 1, 3, 1);
 
-    spacerItem6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout6->addItem(spacerItem6, 4, 2, 1, 2);
+    gridLayout6->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 4, 2, 1, 2);
 
     label = new QLabel(widget);
     label->setObjectName(QString::fromUtf8("label"));
@@ -484,16 +488,21 @@ public:
     gridLayout5->addLayout(gridLayout6, 0, 0, 1, 1);
 
     gridLayout7 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout7->setSpacing(6);
+#endif
     gridLayout7->setMargin(0);
     gridLayout7->setObjectName(QString::fromUtf8("gridLayout7"));
-    spacerItem7 = new QSpacerItem(20, 111, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    gridLayout7->addItem(spacerItem7, 1, 0, 1, 1);
+    gridLayout7->addItem(new QSpacerItem(20, 111, QSizePolicy::Minimum, QSizePolicy::Fixed), 1, 0, 1, 1);
 
     gridLayout8 = new QGridLayout();
+#ifndef Q_OS_MAC
     gridLayout8->setSpacing(6);
+#endif
+#ifndef Q_OS_MAC
     gridLayout8->setMargin(0);
+#endif
     gridLayout8->setObjectName(QString::fromUtf8("gridLayout8"));
     boxdate = new QDateEdit(widget);
     boxdate->setObjectName(QString::fromUtf8("boxdate"));
@@ -505,25 +514,22 @@ public:
 
     gridLayout8->addWidget(label_3, 1, 1, 1, 1);
 
-    spacerItem8 = new QSpacerItem(129, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout8->addItem(spacerItem8, 1, 0, 1, 1);
+    gridLayout8->addItem(new QSpacerItem(129, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 1, 0, 1, 1);
 
     hboxLayout4 = new QHBoxLayout();
+#ifndef Q_OS_MAC
     hboxLayout4->setSpacing(6);
+#endif
     hboxLayout4->setMargin(0);
     hboxLayout4->setObjectName(QString::fromUtf8("hboxLayout4"));
-    spacerItem9 = new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout4->addItem(spacerItem9);
+    hboxLayout4->addItem(new QSpacerItem(21, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     btnnew = new QPushButton(widget);
     btnnew->setObjectName(QString::fromUtf8("btnnew"));
-    QSizePolicy sizePolicy9(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy9.setHorizontalStretch(0);
-    sizePolicy9.setVerticalStretch(0);
-    sizePolicy9.setHeightForWidth(btnnew->sizePolicy().hasHeightForWidth());
-    btnnew->setSizePolicy(sizePolicy9);
+    sizePolicy.setHeightForWidth(btnnew->sizePolicy().hasHeightForWidth());
+    btnnew->setSizePolicy(sizePolicy);
     btnnew->setIcon(QIcon(QString::fromUtf8(":/images/images/filenew.png")));
     btnnew->setIconSize(QSize(22, 22));
 
@@ -531,11 +537,8 @@ public:
 
     btnopen = new QPushButton(widget);
     btnopen->setObjectName(QString::fromUtf8("btnopen"));
-    QSizePolicy sizePolicy10(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy10.setHorizontalStretch(0);
-    sizePolicy10.setVerticalStretch(0);
-    sizePolicy10.setHeightForWidth(btnopen->sizePolicy().hasHeightForWidth());
-    btnopen->setSizePolicy(sizePolicy10);
+    sizePolicy.setHeightForWidth(btnopen->sizePolicy().hasHeightForWidth());
+    btnopen->setSizePolicy(sizePolicy);
     btnopen->setIcon(QIcon(QString::fromUtf8(":/images/images/fileopen.png")));
     btnopen->setIconSize(QSize(22, 22));
 
@@ -543,11 +546,8 @@ public:
 
     btnsave = new QPushButton(widget);
     btnsave->setObjectName(QString::fromUtf8("btnsave"));
-    QSizePolicy sizePolicy11(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy11.setHorizontalStretch(0);
-    sizePolicy11.setVerticalStretch(0);
-    sizePolicy11.setHeightForWidth(btnsave->sizePolicy().hasHeightForWidth());
-    btnsave->setSizePolicy(sizePolicy11);
+    sizePolicy.setHeightForWidth(btnsave->sizePolicy().hasHeightForWidth());
+    btnsave->setSizePolicy(sizePolicy);
     btnsave->setIcon(QIcon(QString::fromUtf8(":/images/images/filesave.png")));
     btnsave->setIconSize(QSize(22, 22));
 
@@ -555,27 +555,20 @@ public:
 
     btnprint = new QPushButton(widget);
     btnprint->setObjectName(QString::fromUtf8("btnprint"));
-    QSizePolicy sizePolicy12(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy12.setHorizontalStretch(0);
-    sizePolicy12.setVerticalStretch(0);
-    sizePolicy12.setHeightForWidth(btnprint->sizePolicy().hasHeightForWidth());
-    btnprint->setSizePolicy(sizePolicy12);
+    sizePolicy.setHeightForWidth(btnprint->sizePolicy().hasHeightForWidth());
+    btnprint->setSizePolicy(sizePolicy);
     btnprint->setIcon(QIcon(QString::fromUtf8(":/images/images/fileprint.png")));
     btnprint->setIconSize(QSize(22, 22));
 
     hboxLayout4->addWidget(btnprint);
 
-    spacerItem10 = new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-    hboxLayout4->addItem(spacerItem10);
+    hboxLayout4->addItem(new QSpacerItem(21, 20, QSizePolicy::Fixed, QSizePolicy::Minimum));
 
     btncomplete = new QPushButton(widget);
     btncomplete->setObjectName(QString::fromUtf8("btncomplete"));
-    QSizePolicy sizePolicy13(static_cast<QSizePolicy::Policy>(0), static_cast<QSizePolicy::Policy>(0));
-    sizePolicy13.setHorizontalStretch(0);
-    sizePolicy13.setVerticalStretch(0);
-    sizePolicy13.setHeightForWidth(btncomplete->sizePolicy().hasHeightForWidth());
-    btncomplete->setSizePolicy(sizePolicy13);
+    sizePolicy.setHeightForWidth(btncomplete->sizePolicy().hasHeightForWidth());
+    btncomplete->setSizePolicy(sizePolicy);
     btncomplete->setIcon(QIcon(QString::fromUtf8(":/images/images/button_ok.png")));
     btncomplete->setIconSize(QSize(22, 22));
 
@@ -595,11 +588,6 @@ public:
 
 
     retranslateUi(doceditfrm);
-
-    QSize size(779, 718);
-    size = size.expandedTo(doceditfrm->minimumSizeHint());
-    doceditfrm->resize(size);
-
 
     mainwidget->setCurrentIndex(0);
 

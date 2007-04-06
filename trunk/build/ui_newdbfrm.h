@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'newdbfrm.ui'
 **
-** Created: Thu Mar 1 12:03:10 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -46,7 +46,11 @@ public:
 
     void setupUi(QDialog *newdbfrm)
     {
-    newdbfrm->setObjectName(QString::fromUtf8("newdbfrm"));
+    if (newdbfrm->objectName().isEmpty())
+        newdbfrm->setObjectName(QString::fromUtf8("newdbfrm"));
+    QSize size(431, 234);
+    size = size.expandedTo(newdbfrm->minimumSizeHint());
+    newdbfrm->resize(size);
     newdbfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     mainwidget = new QStackedWidget(newdbfrm);
     mainwidget->setObjectName(QString::fromUtf8("mainwidget"));
@@ -105,11 +109,6 @@ public:
     mainwidget->addWidget(page_2);
 
     retranslateUi(newdbfrm);
-
-    QSize size(431, 234);
-    size = size.expandedTo(newdbfrm->minimumSizeHint());
-    newdbfrm->resize(size);
-
     QObject::connect(btncancel, SIGNAL(released()), newdbfrm, SLOT(reject()));
     QObject::connect(btncancel_2, SIGNAL(released()), newdbfrm, SLOT(reject()));
     QObject::connect(btnfinish, SIGNAL(released()), newdbfrm, SLOT(accept()));

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'progfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -26,7 +26,11 @@ public:
 
     void setupUi(QWidget *progfrm)
     {
-    progfrm->setObjectName(QString::fromUtf8("progfrm"));
+    if (progfrm->objectName().isEmpty())
+        progfrm->setObjectName(QString::fromUtf8("progfrm"));
+    QSize size(401, 159);
+    size = size.expandedTo(progfrm->minimumSizeHint());
+    progfrm->resize(size);
     progfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     progbar = new QProgressBar(progfrm);
     progbar->setObjectName(QString::fromUtf8("progbar"));
@@ -38,11 +42,6 @@ public:
     txtcomments->setGeometry(QRect(10, 40, 381, 111));
 
     retranslateUi(progfrm);
-
-    QSize size(401, 159);
-    size = size.expandedTo(progfrm->minimumSizeHint());
-    progfrm->resize(size);
-
 
     QMetaObject::connectSlotsByName(progfrm);
     } // setupUi

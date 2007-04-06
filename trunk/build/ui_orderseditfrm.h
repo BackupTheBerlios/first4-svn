@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'orderseditfrm.ui'
 **
-** Created: Thu Mar 1 12:03:11 2007
-**      by: Qt User Interface Compiler version 4.2.0
+** Created: Thu Apr 5 22:13:13 2007
+**      by: Qt User Interface Compiler version 4.3.0beta
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -40,7 +40,6 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *hboxLayout;
     QPushButton *btncancel;
-    QSpacerItem *spacerItem;
     QPushButton *btnok;
     QLineEdit *txtordernr;
     QComboBox *cmbstock;
@@ -55,7 +54,11 @@ public:
 
     void setupUi(QDialog *orderseditfrm)
     {
-    orderseditfrm->setObjectName(QString::fromUtf8("orderseditfrm"));
+    if (orderseditfrm->objectName().isEmpty())
+        orderseditfrm->setObjectName(QString::fromUtf8("orderseditfrm"));
+    QSize size(577, 497);
+    size = size.expandedTo(orderseditfrm->minimumSizeHint());
+    orderseditfrm->resize(size);
     orderseditfrm->setWindowIcon(QIcon(QString::fromUtf8(":/images/images/logo.png")));
     label = new QLabel(orderseditfrm);
     label->setObjectName(QString::fromUtf8("label"));
@@ -93,7 +96,9 @@ public:
     layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
     layoutWidget->setGeometry(QRect(10, 460, 561, 33));
     hboxLayout = new QHBoxLayout(layoutWidget);
+#ifndef Q_OS_MAC
     hboxLayout->setSpacing(6);
+#endif
     hboxLayout->setMargin(0);
     hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
     btncancel = new QPushButton(layoutWidget);
@@ -101,9 +106,8 @@ public:
 
     hboxLayout->addWidget(btncancel);
 
-    spacerItem = new QSpacerItem(381, 31, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    hboxLayout->addItem(spacerItem);
+    hboxLayout->addItem(new QSpacerItem(381, 31, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
     btnok = new QPushButton(layoutWidget);
     btnok->setObjectName(QString::fromUtf8("btnok"));
@@ -143,11 +147,6 @@ public:
     lbldbid->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
     retranslateUi(orderseditfrm);
-
-    QSize size(577, 497);
-    size = size.expandedTo(orderseditfrm->minimumSizeHint());
-    orderseditfrm->resize(size);
-
     QObject::connect(btnok, SIGNAL(clicked()), orderseditfrm, SLOT(accept()));
     QObject::connect(btncancel, SIGNAL(clicked()), orderseditfrm, SLOT(reject()));
 
