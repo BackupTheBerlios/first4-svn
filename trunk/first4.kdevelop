@@ -13,8 +13,8 @@
     <ignoreparts/>
     <projectdirectory>.</projectdirectory>
     <absoluteprojectpath>false</absoluteprojectpath>
-    <description></description>
-    <defaultencoding></defaultencoding>
+    <description/>
+    <defaultencoding/>
     <versioncontrol>kdevsubversion</versioncontrol>
   </general>
   <kdevfileview>
@@ -29,6 +29,7 @@
     <tree>
       <hidepatterns>*.o,*.lo,CVS</hidepatterns>
       <hidenonprojectfiles>false</hidenonprojectfiles>
+      <showvcsfields>false</showvcsfields>
     </tree>
   </kdevfileview>
   <kdevdoctreeview>
@@ -71,11 +72,11 @@
   </kdevdoctreeview>
   <kdevdebugger>
     <general>
-      <dbgshell></dbgshell>
-      <gdbpath></gdbpath>
-      <configGdbScript></configGdbScript>
-      <runShellScript></runShellScript>
-      <runGdbScript></runGdbScript>
+      <dbgshell/>
+      <gdbpath/>
+      <configGdbScript/>
+      <runShellScript/>
+      <runGdbScript/>
       <breakonloadinglibs>true</breakonloadinglibs>
       <separatetty>false</separatetty>
       <floatingtoolbar>false</floatingtoolbar>
@@ -112,7 +113,7 @@
       <statusBarTypeEvaluation>false</statusBarTypeEvaluation>
       <namespaceAliases>std=_GLIBCXX_STD;__gnu_cxx=std</namespaceAliases>
       <processPrimaryTypes>true</processPrimaryTypes>
-      <processFunctionArguments>false</processFunctionArguments>
+      <processFunctionArguments>true</processFunctionArguments>
       <preProcessAllHeaders>false</preProcessAllHeaders>
       <parseMissingHeaders>false</parseMissingHeaders>
       <resolveIncludePaths>true</resolveIncludePaths>
@@ -122,7 +123,7 @@
       <includePaths>.;</includePaths>
     </codecompletion>
     <creategettersetter>
-      <prefixGet></prefixGet>
+      <prefixGet/>
       <prefixSet>set</prefixSet>
       <prefixVariable>m_,_</prefixVariable>
       <parameterName>theValue</parameterName>
@@ -151,8 +152,8 @@
     <run>
       <directoryradio>executable</directoryradio>
       <mainprogram>/home/chmaster/projekte/first4/bin/first4</mainprogram>
-      <programargs></programargs>
-      <globaldebugarguments></globaldebugarguments>
+      <programargs/>
+      <globaldebugarguments/>
       <globalcwd>/home/chmaster/projekte/first4</globalcwd>
       <useglobalprogram>true</useglobalprogram>
       <terminal>false</terminal>
@@ -166,7 +167,7 @@
       <runmultiplejobs>false</runmultiplejobs>
       <numberofjobs>1</numberofjobs>
       <dontact>false</dontact>
-      <makebin></makebin>
+      <makebin/>
       <prio>0</prio>
       <envvars/>
     </make>
@@ -184,13 +185,13 @@
   </cppsupportpart>
   <kdevdocumentation>
     <projectdoc>
-      <docsystem></docsystem>
-      <docurl></docurl>
-      <usermanualurl></usermanualurl>
+      <docsystem/>
+      <docurl/>
+      <usermanualurl/>
     </projectdoc>
   </kdevdocumentation>
   <ctagspart>
-    <customArguments></customArguments>
+    <customArguments/>
     <customTagfilePath>/home/chmaster/projekte/first4/tags</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>

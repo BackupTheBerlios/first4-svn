@@ -7,6 +7,7 @@
 #include <QPluginLoader>
 #include <QStatusBar>
 #include <QCloseEvent>
+#include <QDebug>
 //
 #include "mainfrm.h"
 #include "vars.h"
@@ -69,6 +70,7 @@ void mainfrm::loaduserdata()
 void mainfrm::initplugins() {
 	// plugin initialisierung, sehr wichtig ...
 	// aber noch nicht ganz fertig ....
+	// so funktioniert nun einiger massen :)
 	QDir pluginsDir = QDir ( qApp->applicationDirPath() );
 	pluginsDir.cd ( "plugins" );
 
@@ -76,57 +78,33 @@ void mainfrm::initplugins() {
 	{
 		if ( fileName.split ( "." ).value ( 1 ).toLower()  == "dll" || fileName.split ( "." ).value ( 1 ).toLower() == "so" )
 		{
-			QPluginLoader loader ( pluginsDir.absoluteFilePath ( fileName ) );
-			QObject *plugin = loader.instance();
+			QPluginLoader loader( pluginsDir.absoluteFilePath ( fileName ) );
+			QObject *plug = loader.instance();
 
-			if ( plugin )
+			if ( plug != NULL )
 			{
-				First4PluginInterface *fpi = qobject_cast<First4PluginInterface *> ( plugin );
+				First4PluginInterface *fpi = qobject_cast<First4PluginInterface *> ( plug );
 				if ( fpi )
 				{
-					if( maintoolbox->count() > fpi->toolBoxIndex() )
+					qDebug() << fpi;
+					if( maintoolbox->count() > fpi->toolBoxIndex() || fpi->toolBoxIndex() == -1 )
 					{
-						maintoolbox->insertItem( maintoolbox->count() + 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
+						if( !fpi->pluginName().isEmpty() || !fpi->pluginName().isNull() )
+							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
+						else
+							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fileName.split ( "." ).value ( 0 ) );
 					}
 					else
-					{																		
+					{
 						QWidget *w = maintoolbox->widget( fpi->toolBoxIndex() );
 					}
-
-					connect ( fpi->button(), SIGNAL ( released() ), this, SLOT ( pluginaction() ) );
 				}
 			}
 		}
 	}
 
 }
-// TODO:	Add by ChMaster (aka: Alexander Saal)
-// 		Pluginimplementierung
-void mainfrm::pluginaction() {
-	// aktion fuer das druecken von plugin buttons :)
-	QPushButton *button = qobject_cast<QPushButton *> ( sender() );
-	First4PluginInterface *fpi = qobject_cast<First4PluginInterface *> ( button->parent() );
 
-	if ( fpi->dialog() != NULL )
-	{
-		if ( !fpi->showWindow ( fpi->dialog() ) )
-		{
-			QMessageBox::information ( this, tr( "Pluginsystem" ), tr ( "Plugin '" ) + fpi->pluginName() + tr ( "' can not load..\nThis plugins have no dialog." ) );
-			return;
-		}
-		return;
-	}
-
-	if ( fpi->widget() != NULL )
-	{
-		if ( !fpi->showWindow ( fpi->widget() ) )
-		{
-			QMessageBox::information ( this, tr( "Pluginsystem" ), tr ( "Plugin '" ) + fpi->pluginName() + tr ( "' can not load..\nThis plugins have no widget." ) );
-			return;
-		}
-		return;
-	}
-}
 //
 void mainfrm::checkmsg()
 {

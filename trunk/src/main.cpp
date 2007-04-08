@@ -60,12 +60,14 @@ int main(int argc, char ** argv)
 			Qt::AlignHCenter|Qt::AlignTop,
 			Qt::black
 	    ); 
-	   	mainfrm mfrm;
-		splash.finish(&mfrm);
-		mfrm.show();
-		mfrm.loaduserdata();
-		mfrm.initplugins();
-		mfrm.checkmsg();
+		mainfrm *mfrm = new mainfrm();
+		splash.finish(mfrm);
+		
+		mfrm->loaduserdata();
+		mfrm->initplugins();
+		mfrm->checkmsg();
+
+		mfrm->show();
 
 		app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
 		return app.exec();

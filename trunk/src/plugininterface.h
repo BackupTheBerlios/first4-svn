@@ -19,6 +19,8 @@
 #ifndef __FIRST4_PLUGININTERFACE_H__
 #define __FIRST4_PLUGININTERFACE_H__
 
+#include <QtPlugin>
+
 // QtCore Classes
 class QIcon;
 class QString;
@@ -29,8 +31,8 @@ class QPushButton;
 /**
 * @author Alexander Saal <alex.saal@gmx.de>
 * @date 2007/03/05
-* @version 1.4.x
-* @since 1.4.x
+* @version 1.4.0
+* @since 1.4.0
 */
 class First4PluginInterface
 {
@@ -108,24 +110,6 @@ class First4PluginInterface
 		virtual QWidget *widget() const = 0;
 
 		/**
-		* Rückgabe eines QPushButtons mit Text
-		*
-		* @return	QPushButton
-		*
-		* @code
-		* QPushButton *button( QWidget *widget ) {
-		*	return new QPushButton( widget );
-		* }
-		* 
-		* QPushButton *button() {
-		*	return new QPushButton();
-		* }
-		* @endcode
-		*/
-		virtual QPushButton *button( QWidget *widget ) const = 0;
-		virtual QPushButton *button() const = 0;
-
-		/**
 		* Rückgabe eines QWidgets
 		*
 		* @return	QWidget
@@ -180,6 +164,6 @@ class First4PluginInterface
 		virtual bool showWindow( QWidget *widget ) const = 0;
 };
 
-Q_DECLARE_INTERFACE( First4PluginInterface, "first4.First4PluginInterface/1.4.x" )
+Q_DECLARE_INTERFACE( First4PluginInterface, "first4.First4PluginInterface/1.4.0" )
 
 #endif // __FIRST4_PLUGININTERFACE_H__
