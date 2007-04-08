@@ -15,3 +15,30 @@
 *   along with this program; if not, write to the Free Software Foundation,
 *   Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
+
+#include <QtCore>
+#include <QtXml>
+
+#include "chipcard.h"
+
+ChipCard *chipcard_instance = NULL;
+ChipCard::ChipCard( QWidget *parent ) : QWidget( parent ) {
+	setupUi( this );
+	chipcard_instance = this;
+
+	//connect ( btnSearch, SIGNAL ( clicked() ), this, SLOT ( slotSearch() ) );
+
+	QDesktopWidget *desktop = qApp->desktop();
+	const QRect rect = desktop->availableGeometry( desktop->primaryScreen() );
+	int left = ( rect.width() - width() ) / 2;
+	int top = ( rect.height() - height() ) / 2;
+	setGeometry( left, top, width(), height() );
+}
+
+ChipCard::~ChipCard() {}
+
+void ChipCard::closeEvent( QCloseEvent *e ) {
+	chipcard_instance = NULL;
+}
+
+void ChipCard::pay() {}

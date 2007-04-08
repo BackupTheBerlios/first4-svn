@@ -22,71 +22,77 @@
 #include "chipcard.h"
 #include "chipcardplugin.h"
 
-QIcon ChipcardPlugin::img() const
-{
-	return QIcon();
+QIcon ChipcardPlugin::img() const {
+	return QIcon( ":/chipcard.png" );
 }
 
-QString ChipcardPlugin::pluginName() const
-{
-	return QString ( tr ( "Unterstützung für Chipcartenzahlung" ) );
+QString ChipcardPlugin::pluginName() const {
+
+	return QString( tr( "Kartenzahlung" ) );
 }
 
-QString ChipcardPlugin::pluginVersion() const
-{
-	return QString ( "0.0.1" );
+QString ChipcardPlugin::pluginVersion() const {
+
+	return QString( "0.0.1" );
 }
 
-QDialog *ChipcardPlugin::dialog() const
-{
+QDialog *ChipcardPlugin::dialog() const {
+
 	return NULL;
 }
 
-QWidget *ChipcardPlugin::widget() const
-{
-	if( !chipcard_instance ) {
+QWidget *ChipcardPlugin::widget() const {
+
+	if ( !chipcard_instance ) {
 		chipcard_instance = new ChipCard();
+
 	} else {
 		return chipcard_instance;
 	}
-	 
-	return search_instance;
+
+	return chipcard_instance;
 }
 
-QPushButton *ChipcardPlugin::button ( QWidget *widget ) const
-{}
+void ChipcardPlugin::showWidget() {
+	showWindow( widget() );
+}
 
-QPushButton *ChipcardPlugin::button() const
-{}
+QWidget *ChipcardPlugin::newToolBoxWidget() const {
 
-QWidget *ChipcardPlugin::newToolBoxWidget() const
-{
+	QWidget *window = new QWidget();
+	QGridLayout *layout = new QGridLayout;
+	QPushButton *btn = new QPushButton( tr( "Kartenzahlung" ) );
+	btn->setFlat( true );
 	
+	connect( btn, SIGNAL( clicked() ), this, SLOT( showWidget() ) );
+	
+	layout->addWidget( btn, 0, 0 );
+
+	window->setLayout( layout );
+	return window;
 }
 
-int ChipcardPlugin::toolBoxIndex() const
-{
+int ChipcardPlugin::toolBoxIndex() const {
+
 	return -1;
 }
 
-bool ChipcardPlugin::showWindow ( QDialog *dialog ) const
-{
-	if ( dialog->exec() == QDialog::Accepted )
-	{
+bool ChipcardPlugin::showWindow( QDialog *dialog ) const {
+
+	if ( dialog->exec() == QDialog::Accepted ) {
 		delete dialog;
 		return true;
-	}
-	else
-	{
+
+	} else {
 		delete dialog;
 		return false;
 	}
 }
 
-bool ChipcardPlugin::showWindow ( QWidget *widget ) const
-{
+bool ChipcardPlugin::showWindow( QWidget *widget ) const {
+
 	widget->show();
 	return true;
 }
 
-Q_EXPORT_PLUGIN2 ( chipcardplugin, ChipcardPlugin )
+Q_EXPORT_PLUGIN2( chipcardplugin, ChipcardPlugin )

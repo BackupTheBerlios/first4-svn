@@ -23,27 +23,26 @@
 
 #include <plugininterface.h>
 
-class ChipcardPlugin : public QObject, public First4PluginInterface
-{
+class ChipcardPlugin : public QObject, public First4PluginInterface {
 	Q_OBJECT
-	Q_INTERFACES(First4PluginInterface)
+	Q_INTERFACES( First4PluginInterface )
 
 	public:
 		QIcon img() const;
 		QString pluginName() const;
 		QString pluginVersion() const;
-		
 		QDialog *dialog() const;
-		QWidget *widget() const;
-		QPushButton *button( QWidget *widget ) const;
-		QPushButton *button() const;
 		QWidget *newToolBoxWidget() const;
-		
+
 		int toolBoxIndex() const;
 		bool showWindow( QDialog *dialog ) const;
 		bool showWindow( QWidget *widget ) const;
 
 	private:
+		QWidget *widget() const;
+
+	private slots:
+		void showWidget();
 };
 
 #endif //CHIPCARDPLUGIN_H

@@ -19,8 +19,8 @@
 # Qt 4 Settings
 TEMPLATE = lib
 DESTDIR = ../../bin/plugins
-DEPENDPATH += include res src ../../src ui ../../3rdparty
-INCLUDEPATH += include ../../src
+DEPENDPATH += include res src ui ../../3rdparty
+INCLUDEPATH += include 
 RESOURCES += res/chipcardplugin.qrc
 CONFIG += debug thread warn_on qt plugin
 QT += xml network
@@ -31,7 +31,7 @@ FORMS += ui/chipcardbase.ui
 # Project Header
 HEADERS += include/chipcard.h
 HEADERS += include/chipcardplugin.h
-HEADERS += ../../src/plugininterface.h
+HEADERS += include/plugininterface.h
 
 # Project Source
 SOURCES += src/chipcard.cpp

@@ -15,3 +15,32 @@
 *   along with this program; if not, write to the Free Software Foundation,
 *   Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
+
+#ifndef CHIPCARD_H
+#define CHIPCARD_H
+
+#include "ui_chipcardbase.h"
+
+#include <QtCore>
+#include <QtGui>
+
+class ChipCard;
+extern ChipCard *chipcard_instance;
+
+class ChipCard : public QWidget, public Ui::UiChipCardBase
+{
+	Q_OBJECT
+
+	public:
+		ChipCard( QWidget *parent = 0L );
+		~ChipCard();
+
+		static ChipCard *instance() { return chipcard_instance;	}
+
+	private slots:
+		void pay();
+
+	protected:
+		void closeEvent( QCloseEvent *e );
+};
+#endif //CHIPCARD_H
