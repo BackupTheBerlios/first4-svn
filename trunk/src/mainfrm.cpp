@@ -33,13 +33,13 @@ mainfrm::mainfrm ( QWidget * parent, Qt::WFlags f )
 //
 void mainfrm::loaduserdata()
 {
-	this->setFixedSize ( this->width(), this->height() );
+	//this->setFixedSize ( this->width(), this->height() );
 	lbluser->setText ( username );
 	lbldb->setText ( dbname );
 	lblserver->setText ( dbhost );
 	this->setWindowTitle ( QString ( "first %1" ).arg ( firstver ) );
 
-	maintoolbox->setCurrentIndex ( 7 );
+	maintoolbox->setCurrentIndex ( maintoolbox->count() );
 
 	QTimer *timer = new QTimer();
 	connect ( timer, SIGNAL ( timeout() ), this, SLOT ( checkmsg() ) );
@@ -73,7 +73,7 @@ void mainfrm::initplugins() {
 	// so funktioniert nun einiger massen :)
 	QDir pluginsDir = QDir ( qApp->applicationDirPath() );
 	pluginsDir.cd ( "plugins" );
-
+	
 	foreach ( QString fileName, pluginsDir.entryList ( QDir::Files ) )
 	{
 		if ( fileName.split ( "." ).value ( 1 ).toLower()  == "dll" || fileName.split ( "." ).value ( 1 ).toLower() == "so" )
@@ -86,7 +86,6 @@ void mainfrm::initplugins() {
 				First4PluginInterface *fpi = qobject_cast<First4PluginInterface *> ( plug );
 				if ( fpi )
 				{
-					qDebug() << fpi;
 					if( maintoolbox->count() > fpi->toolBoxIndex() || fpi->toolBoxIndex() == -1 )
 					{
 						if( !fpi->pluginName().isEmpty() || !fpi->pluginName().isNull() )

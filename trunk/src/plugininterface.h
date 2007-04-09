@@ -20,6 +20,7 @@
 #define __FIRST4_PLUGININTERFACE_H__
 
 #include <QtPlugin>
+#include <QtSql>
 
 // QtCore Classes
 class QIcon;
@@ -29,138 +30,138 @@ class QDialog;
 class QPushButton;
 
 /**
-* @author Alexander Saal <alex.saal@gmx.de>
-* @date 2007/03/05
-* @version 1.4.0
-* @since 1.4.0
-*/
+ * @author Alexander Saal <alex.saal@gmx.de>
+ * @date 2007/03/05
+ * @version 1.4.0
+ * @since 1.4.0
+ */
 class First4PluginInterface
 {
 	Q_CLASSINFO("Author", "Alexander Saal")
-	Q_CLASSINFO("EMAIL", "alex.saal@gmx.de")
-	Q_CLASSINFO("URL", "http://chmaster.freeforge.net")
+			Q_CLASSINFO("EMAIL", "alex.saal@gmx.de")
+			Q_CLASSINFO("URL", "http://chmaster.freeforge.net")
 
 	public:
 		/**
-		* Konstrukor First4PluginInterface
-		*/
+	 * Konstrukor First4PluginInterface
+		 */
 		virtual ~First4PluginInterface() {}
 
 		/**
-		* Rückgabe des Icons
-		*
-		* @return	Icon was fr das Plugin definiert wurde
-		*/
+		 * Rückgabe des Icons
+		 *
+		 * @return	Icon was fr das Plugin definiert wurde
+		 */
 		virtual QIcon img() const = 0;
 
 		/**
-		* Rckgabe des Pluginnamens
-		*
-		* @return	Pluginname
-		*
-		* @code
-		* QString Pluginname() {
-		*	return "Mein erstes Plugin";
-		* }
-		* @endcode
-		*/
+		 * Rückgabe des Pluginnamens
+		 *
+		 * @return	Pluginname
+		 *
+		 * @code
+		 * QString Pluginname() {
+		 *	return "Mein erstes Plugin";
+		 * }
+		 * @endcode
+		 */
 		virtual QString pluginName() const = 0;
 
 		/**
-		* Rckgabe der Pluginversion
-		*
-		* @return	Pluginversion
-		*
-		* @code
-		* QString pluginVersion() {
-		*	return "1.4.0.0";
-		* }
-		* @endcode
-		*/
+		 * Rückgabe der Pluginversion
+		 *
+		 * @return	Pluginversion
+		 *
+		 * @code
+		 * QString pluginVersion() {
+		 *	return "1.4.0.0";
+		 * }
+		 * @endcode
+		 */
 		virtual QString pluginVersion() const = 0;
 
 		/**
-		* Rückgabe des QDialoges\n\n
-		* Es muss ein "return NULL;" erfolgen wenn kein QDialog existiert oder angegeben wurde.\n
-		* Es kann nur eine von beiden Funktionen benutzt werden.\n
-		*
-		* @return	QDialog
-		*
-		* @code
-		* QDialog *dialog() {
-		*	return NULL;
-		* }
-		* @endcode
-		*/
+		 * Rückgabe des QDialoges\n\n
+		 * Es muss ein "return NULL;" erfolgen wenn kein QDialog existiert oder angegeben wurde.\n
+		 * Es kann nur eine von beiden Funktionen benutzt werden.\n
+		 *
+		 * @return	QDialog
+		 *
+		 * @code
+		 * QDialog *dialog() {
+		 *	return NULL;
+		 * }
+		 * @endcode
+		 */
 		virtual QDialog *dialog() const = 0;
 
 		/**
-		* Rückgabe des QWidgets\n\n
-		* Es muss ein "return NULL;" erfolgen wenn kein QWidget existiert oder angegeben wurde.\n
-		* Es kann nur eine von beiden Funktionen benutzt werden.\n
-		*
-		* @return	QWidget
-		*
-		* @code
-		* QWidget *widget() {
-		*	return NULL;
-		* }
-		* @endcode
-		*/
+		 * Rückgabe des QWidgets\n\n
+		 * Es muss ein "return NULL;" erfolgen wenn kein QWidget existiert oder angegeben wurde.\n
+		 * Es kann nur eine von beiden Funktionen benutzt werden.\n
+		 *
+		 * @return	QWidget
+		 *
+		 * @code
+		 * QWidget *widget() {
+		 *	return NULL;
+		 * }
+		 * @endcode
+		 */
 		virtual QWidget *widget() const = 0;
 
 		/**
-		* Rückgabe eines QWidgets
-		*
-		* @return	QWidget
-		*
-		* @code
-		* QWidget *newToolBoxWidget() {
-		*	return new QWidget();
-		* }
-		* @endcode
-		*/
+		 * Rückgabe eines QWidgets
+		 *
+		 * @return	QWidget
+		 *
+		 * @code
+		 * QWidget *newToolBoxWidget() {
+		 *	return new QWidget();
+		 * }
+		 * @endcode
+		 */
 		virtual QWidget *newToolBoxWidget() const = 0;
 
 		/**
-		* Rückgabe des ToolBoxIndexes, ist gleich zusetzen mit den ToolBarPages
-		*
-		* @return	index 
-		*
-		* @code
-		* int toolBoxIndex() {
-		*	return 0;
-		* }
-		* @endcode
-		*/
+		 * Rückgabe des ToolBoxIndexes, ist gleich zusetzen mit den ToolBarPages
+		 *
+		 * @return	index 
+		 *
+		 * @code
+		 * int toolBoxIndex() {
+		 *	return 0;
+		 * }
+		 * @endcode
+		 */
 		virtual int toolBoxIndex() const = 0;
 
 		/**
-		* Anzeigen des QDialoges
-		*
-		* @return	war oder falsch (hängt vom übergebenen Parameter ab)
-		*
-		* @code
-		* bool showWindow( QDialog *dialog ) {
-		*	dialog->exec();
-		*	delete dialog;
-		* }
-		* @endcode
-		*/
+		 * Anzeigen des QDialoges
+		 *
+		 * @return	war oder falsch (hängt vom übergebenen Parameter ab)
+		 *
+		 * @code
+		 * bool showWindow( QDialog *dialog ) {
+		 *	dialog->exec();
+		 *	delete dialog;
+		 * }
+		 * @endcode
+		 */
 		virtual bool showWindow( QDialog *dialog ) const = 0;
 
 		/**
-		* Anzeigen des QWidgets
-		*
-		* @return	war oder falsch (hängt vom übergebenen Parameter ab)
-		*
-		* @code
-		* bool showWindow( QWidget *widget ) {
-		*	widget->show();
-		*	delete widget;
-		* }
-		* @endcode
-		*/
+		 * Anzeigen des QWidgets
+		 *
+		 * @return	war oder falsch (hängt vom übergebenen Parameter ab)
+		 *
+		 * @code
+		 * bool showWindow( QWidget *widget ) {
+		 *	widget->show();
+		 *	delete widget;
+		 * }
+		 * @endcode
+		 */
 		virtual bool showWindow( QWidget *widget ) const = 0;
 };
 

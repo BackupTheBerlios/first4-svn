@@ -15,62 +15,66 @@ extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
 bool createConnections()
 {
-    // create the default database connection
-    QSqlDatabase firstDB = QSqlDatabase::addDatabase("QMYSQL");
-    firstDB.setDatabaseName(dbname);
-    firstDB.setUserName(dbuid);
-    firstDB.setPassword(dbpwd);
-    firstDB.setHostName(dbhost);
-    firstDB.setPort(dbport.toInt());
-    if (!firstDB.open() ) {
-        QMessageBox::critical(0,"Error...", "Unable to connect to database server!");
-    }
-    return TRUE;
+	// create the default database connection
+	QSqlDatabase firstDB = QSqlDatabase::addDatabase ( "QMYSQL" );
+	firstDB.setDatabaseName ( dbname );
+	firstDB.setUserName ( dbuid );
+	firstDB.setPassword ( dbpwd );
+	firstDB.setHostName ( dbhost );
+	firstDB.setPort ( dbport.toInt() );
+	if ( !firstDB.open() )
+	{
+		QMessageBox::critical ( 0,"Error...", "Unable to connect to database server!" );
+	}
+	return TRUE;
 }
 
-int main(int argc, char ** argv)
+int main ( int argc, char ** argv )
 {
-	QApplication app( argc, argv );
+	QApplication app ( argc, argv );
 	QString langfile;
-	QFile file(QDir::homePath()+"/.first4/lang.conf");
-    if(file.open(QIODevice::ReadOnly))
-    {
-		QTextStream stream(&file);
+	QFile file ( QDir::homePath() +"/.first4/lang.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
 		langfile = stream.readLine();
 		file.close();
 	}
-    else
-		QMessageBox::critical(0,"Error...", "Error during Language-File reading!");
-    
-    QTranslator translator;
-    translator.load(langfile); 
-    app.installTranslator( &translator );
-	
-    loginfrm logfrm;
-    logfrm.loadservers();
-    if(logfrm.exec()) {
-   		logfrm.saveservers();
-   		createConnections();
-		QSplashScreen splash(QPixmap(":/images/images/startsplash.png"));
-	    splash.show();
-	    app.processEvents();
+	else
+		QMessageBox::critical ( 0,"Error...", "Error during Language-File reading!" );
 
-		splash.showMessage(
-			QObject::tr("Initializing..."),
-			Qt::AlignHCenter|Qt::AlignTop,
-			Qt::black
-	    ); 
+	QTranslator translator;
+	translator.load ( langfile );
+	app.installTranslator ( &translator );
+
+	loginfrm logfrm;
+	logfrm.loadservers();
+	if ( logfrm.exec() )
+	{
+		logfrm.saveservers();
+		createConnections();
+		QSplashScreen splash ( QPixmap ( ":/images/images/startsplash.png" ) );
+		splash.show();
+		app.processEvents();
+		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
+
 		mainfrm *mfrm = new mainfrm();
-		splash.finish(mfrm);
-		
+
+		splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
 		mfrm->loaduserdata();
+		
+		splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
 		mfrm->initplugins();
+		
+		splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
 		mfrm->checkmsg();
+		
+		splash.finish ( mfrm );
 
 		mfrm->show();
 
-		app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
+		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		return app.exec();
-		QSqlDatabase::removeDatabase("firstDB");	
-   	}	
+		QSqlDatabase::removeDatabase ( "firstDB" );
+	}
 }
