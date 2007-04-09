@@ -23,7 +23,7 @@ DEPENDPATH += include res src ui ../../3rdparty
 INCLUDEPATH += include 
 RESOURCES += res/chipcardplugin.qrc
 CONFIG += debug thread warn_on qt plugin
-QT += xml network
+QT += xml network sql
 
 # Project Ui files
 FORMS += ui/chipcardbase.ui

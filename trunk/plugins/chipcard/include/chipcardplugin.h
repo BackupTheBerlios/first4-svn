@@ -36,9 +36,10 @@ class ChipcardPlugin : public QObject, public First4PluginInterface {
 
 		int toolBoxIndex() const;
 		bool showWindow( QDialog *dialog ) const;
-		bool showWindow( QWidget *widget ) const;
+		bool showWindow( QWidget *widget ) const;		
 
 	private:
+		QSqlDatabase db_other;
 		QWidget *widget() const;
 
 	private slots:

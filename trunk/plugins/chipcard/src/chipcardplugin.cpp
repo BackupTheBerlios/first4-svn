@@ -45,7 +45,7 @@ QWidget *ChipcardPlugin::widget() const {
 
 	if ( !chipcard_instance ) {
 		chipcard_instance = new ChipCard();
-
+	
 	} else {
 		return chipcard_instance;
 	}

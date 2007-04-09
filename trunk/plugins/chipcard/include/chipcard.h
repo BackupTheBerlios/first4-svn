@@ -36,9 +36,10 @@ class ChipCard : public QWidget, public Ui::UiChipCardBase
 		~ChipCard();
 
 		static ChipCard *instance() { return chipcard_instance;	}
-
+		
 	private slots:
 		void pay();
+		void reloadCustomer();
 
 	protected:
 		void closeEvent( QCloseEvent *e );

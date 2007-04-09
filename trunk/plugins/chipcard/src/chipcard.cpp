@@ -18,6 +18,7 @@
 
 #include <QtCore>
 #include <QtXml>
+#include <QtSql>
 
 #include "chipcard.h"
 
@@ -26,13 +27,15 @@ ChipCard::ChipCard( QWidget *parent ) : QWidget( parent ) {
 	setupUi( this );
 	chipcard_instance = this;
 
-	//connect ( btnSearch, SIGNAL ( clicked() ), this, SLOT ( slotSearch() ) );
-
+	connect( btnPay, SIGNAL ( clicked() ), this, SLOT ( pay() ) );
+	
 	QDesktopWidget *desktop = qApp->desktop();
 	const QRect rect = desktop->availableGeometry( desktop->primaryScreen() );
 	int left = ( rect.width() - width() ) / 2;
 	int top = ( rect.height() - height() ) / 2;
 	setGeometry( left, top, width(), height() );
+
+	reloadCustomer();
 }
 
 ChipCard::~ChipCard() {}
@@ -42,3 +45,19 @@ void ChipCard::closeEvent( QCloseEvent *e ) {
 }
 
 void ChipCard::pay() {}
+
+void ChipCard::reloadCustomer() {
+	
+	cbxCustomer->clear();
+	QString connstr = QString( "SELECT * FROM adrtabs;" );
+
+	QSqlQuery query( connstr );
+	int fieldNo = query.record().indexOf( "name" );
+
+	if ( query.isActive() ) {
+		while ( query.next() ) {
+			QString name = query.value( fieldNo ).toString();
+			cbxCustomer->addItem( name );
+		}
+	}
+}
