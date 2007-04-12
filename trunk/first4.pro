@@ -42,7 +42,6 @@ HEADERS =   src/mainfrm.h \
   src/newdatatabfrm.h \
   src/addrfrm.h \
   src/datafrm.h \
-  src/procfrm.h \
   src/dataeditfrm.h \
   src/loginfrm.h \
   src/printfrm.h \
@@ -69,7 +68,6 @@ SOURCES =   src/main.cpp \
   src/newdatatabfrm.cpp \
   src/addrfrm.cpp \
   src/datafrm.cpp \
-  src/procfrm.cpp \
   src/dataeditfrm.cpp \
   src/loginfrm.cpp \
   src/printfrm.cpp \
