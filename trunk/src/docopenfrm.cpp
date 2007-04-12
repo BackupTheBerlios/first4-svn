@@ -184,7 +184,7 @@ void docopenfrm::deletedoc()
 void docopenfrm::newdoc()
 {
     QTreeWidgetItem *item = treeindex->currentItem();
-    if(item->parent() != 0)
+    if(item && item->parent() != 0)
     	item = item->parent();
     if(item!=0)
     {

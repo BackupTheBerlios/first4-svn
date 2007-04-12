@@ -245,3 +245,4 @@ void mainfrm::newdoc()
 	docfrm->init();
 	docfrm->show();
 }
+

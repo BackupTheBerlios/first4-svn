@@ -30,6 +30,10 @@ private slots:
 	void opendoc();
 	void savedoc();
 	void show_vat();
+	QStringList esr();
+	void reject();
+	void excl_vat();
+	void editposition();
 public:
 	doceditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();

@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
+#include <Qt>
 //
 #include "doceditfrm.h"
 #include "vars.h"
@@ -14,6 +15,7 @@
 #include "doccompletefrm.h"
 #include "docopendraftsfrm.h"
 #include "vatshowfrm.h"
+#include "doceditposition.h"
 //
 extern QString username, fullname, docfolder, templatefolder;
 //
@@ -128,6 +130,8 @@ void doceditfrm::init()
 	connect(btnsave, SIGNAL(released()), this, SLOT(savedoc()));
 	connect(btncalc, SIGNAL(released()), this, SLOT(calc_tot()));
 	connect(btnvat, SIGNAL(released()), this, SLOT(show_vat()));
+	connect(boxtot_excl, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
+	connect(boxvat, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
 }
 //
 void doceditfrm::closeEvent( QCloseEvent* ce )
@@ -227,11 +231,8 @@ void doceditfrm::contmenu()
     QMenu* contextMenu = new QMenu( this );
     Q_CHECK_PTR( contextMenu );
 
-    QAction* checkstock = new QAction( tr("&Check Stock"), this );
-	connect(checkstock , SIGNAL(triggered()), this, SLOT(checkdb()));
-	contextMenu->addAction(checkstock);
     QAction* editentry = new QAction( tr("&Edit Entry"), this );
-	connect(editentry , SIGNAL(triggered()), this, SLOT(openeditentryfrm()));
+	connect(editentry , SIGNAL(triggered()), this, SLOT(editposition()));
 	contextMenu->addAction(editentry);
     QAction* del_row = new QAction( tr("&Delete Row"), this );
 	connect(del_row , SIGNAL(triggered()), this, SLOT(removerow()));
@@ -343,6 +344,7 @@ void doceditfrm::addrow()
 		QMessageBox::information(0,tr("Stock..."), tr("Please define VAT first!"));			
 	}
 }
+//
 void doceditfrm::checkdb()
 {
 	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
@@ -642,11 +644,6 @@ void doceditfrm::completedoc()
 			}
 		}
 	}
-}
-//
-void doceditfrm::printreport(bool complete)
-{
-	
 }
 //
 void doceditfrm::refreshstockdb()
@@ -1270,6 +1267,8 @@ void doceditfrm::writetexfile()
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
  	procdvi->start("latex", args);
+ 	if(procdvi->exitStatus() == QProcess::CrashExit ) 
+				QMessageBox::critical(0,"Error...", tr("Can't convert TXT-File."));
 
     //copy file in the correct folder
     QProcess *proccp = new QProcess( this );
@@ -1309,5 +1308,176 @@ void doceditfrm::print()
 //
 void doceditfrm::printesr()
 {
-	
+    calc_tot();
+    QStringList esrcode = esr();
+    
+    QFile file(docfolder+"/tmpesr.kud");
+    if ( file.open( QIODevice::WriteOnly ) )
+    {
+		QTextStream stream( &file );	
+		stream << "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
+		stream << "<!DOCTYPE KugarData [\n    <!ATTLIST KugarData\n        Template CDATA #REQUIRED>\n]>\n";
+		stream << "<KugarData>\n";
+		stream << "<Field level=\"0\"\n";
+		stream << "esr1=\""+esrcode[0]+"\"\n";
+		stream << "esr2 = \""+esrcode[1]+"\"\n";
+		stream << "company = \""+companyaddress+"\"\n";
+		stream << "date = \""+QDate::currentDate().toString("dd.MM.yyyy")+"\"\n";
+		stream << "tnr = \""+tnr+"\"\n";
+		stream << "client = \""+boxaddress->toPlainText()+"\"\n";
+		stream << "amount = \""+boxtot_incl->text().section(".", 0, 0)+"\"\n";
+		stream << "amountcents = \""+boxtot_incl->text().section(".", 1, 1)+"\"\n";
+		stream << "/>\n\n</KugarData>";
+		file.close();
+    }
+    file.remove();
+}
+//
+QStringList doceditfrm::esr()
+{
+    QStringList esrarray, returnstrlist;
+    esrarray <<"0"<<"9"<<"4"<<"6"<<"8"<<"2"<<"7"<<"1"<<"3"<<"5";
+    double betrag = boxtot_incl->text().toDouble() * 100;
+    QString betragstring = QString("%1").arg(betrag, 0, 'f', 0);
+    betragstring = betragstring.rightJustified(10, '0' );
+    QString esrcode = "01"+betragstring;
+    QString R1 = 0;
+    int i;
+    QStringList tmplist(esrcode.split(""));
+    for(i = 0; i < esrcode.length(); i++ )				//Schleife entsprechend der Anzahl Ziffer
+    {	
+		int Rbb = R1.toInt() + tmplist[i].toInt();		//Rest plus entspr. Ziffer - Ganzzahlen
+		R1 = esrarray[Rbb % 10];				//Modulo10 Algorithmus abarbeiten
+    }
+    QString P1 = QString("%1").arg((10 - R1.toInt()) % 10, 10, 0);
+    
+    QString refnr = txtdoccount->text().right(8);
+    refnr = refnr.rightJustified(15, '0', TRUE);
+    
+    QStringList tmplist2(refnr.split(""));
+    QString R2 = 0;
+    for (i = 0; i < refnr.length(); i++ )			//Schleife entsprechend der Anzahl Ziffer	
+    {	
+		int Rpr = R2.toInt() + tmplist2[i].toInt();	//Rest plus entspr. Ziffer - Ganzzahlen
+		R2 = esrarray[Rpr % 10];			//Modulo10 Algorithmus abarbeiten
+    }
+    QString P2 = QString("%1").arg((10 - R2.toInt()) % 10, 10, 0);
+    
+    returnstrlist.append(refnr.mid(0, 1) +" "+refnr.mid(1, 5) +" "+refnr.mid(6, 5) +" "+refnr.mid(11, 5) + P2.simplified());
+    
+    returnstrlist.append(esrcode+P1.simplified()+">"+refnr + P2.simplified()+"+ "+tnr.section("-", 0, 0).leftJustified(2, '.', TRUE )+tnr.section("-", 1, 1).leftJustified(6, '0', TRUE )+tnr.section("-", 2, 2).leftJustified(1, '.', TRUE )+">");
+    return returnstrlist;
+}
+//
+void doceditfrm::printreport(bool complete)
+{
+    if(tabmain->rowCount()>1)
+    {
+		if(lblID->text()!="")
+		{
+		    writetexfile();
+		    QProcess *procps = new QProcess( this );
+		    QStringList args;
+		    args << "-o" << docfolder+"/"+lblID->text()+"/"+docfile.replace(".dvi", ".ps") << docfolder+"/"+lblID->text()+"/"+docfile;
+		    procps->start("dvips", args);
+		    if(procps->exitStatus() == QProcess::CrashExit ) 
+				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+	    
+		    QProcess *procprint = new QProcess( this );
+		    args.clear();
+		    args << docfolder+"/"+lblID->text()+"/"+docfile.replace(".dvi", ".ps");
+		    procprint->start("kprinter", args);
+   		    if(procprint->exitStatus() == QProcess::CrashExit ) 
+				QMessageBox::critical(0,"Error...", tr("Can't print File."));
+	    
+		    if(!complete)
+		    {
+				QFile file(docfolder+"/"+lblID->text()+"/"+docfile);
+				file.remove();
+		    }
+		}
+    }
+}
+//
+void doceditfrm::reject()
+{
+    QFile delfile(docfolder+"/"+lblID->text()+"/"+docfile);
+    if(delfile.exists() && docfile!="" && opendocID!="")
+    {
+		int r=QMessageBox::information(this, tr("Document not saved..."), tr("Document %1 is not completed!\n\n Save as draft?").arg(docfile),QMessageBox::Yes, QMessageBox::No); 
+		if(r==0)
+		    savedoc();
+    }
+    this->close();
+}
+//
+void doceditfrm::excl_vat()
+{
+    boxtot_incl->setText(QString("%1").arg(boxtot_excl->text().toDouble() + boxvat->text().toDouble(), 0, 'f',2));
+}
+//
+void doceditfrm::editposition()
+{
+    int i;
+    doceditposition *epos = new doceditposition;
+    QTableWidgetItem *item = tabmain->item(tabmain->currentRow(),0);
+    if(item)
+	    epos->txtpos->setText(item->text());
+
+    item = tabmain->item(tabmain->currentRow(),1);
+    if(item)
+	    epos->txtlabel->setText(item->text());
+    
+    item = tabmain->item(tabmain->currentRow(),3);
+    if(item)
+	    epos->txtdescription->setText(item->text().simplified());
+    
+    item = tabmain->item(tabmain->currentRow(),4);
+    if(item)
+	    epos->txtquantity->setText(item->text());
+    
+    item = tabmain->item(tabmain->currentRow(),5);
+    if(item)
+	    epos->txtunit->setText(item->text());
+    
+    epos->cmbvat->addItems(vatlist);
+    for(i=0;i<vatlist.count();i++)
+    {
+    	item = tabmain->item(tabmain->currentRow(),8);
+		if(item && vatlist[i] == item->text())
+		    epos->cmbvat->setCurrentIndex(i);
+    }
+    if(tabmain->item(tabmain->currentRow(),6)->text()!="")
+		epos->txtprice->setText(tabmain->item(tabmain->currentRow(),6)->text());
+    else
+	epos->txtprice->setText("0.00");
+    
+    if(epos->exec())
+    {
+    	item = new QTableWidgetItem;
+    	item->setText(epos->txtlabel->text());
+    	tabmain->setItem(tabmain->currentRow(), 1, item);
+		
+		item = new QTableWidgetItem;
+		item->setTextAlignment(32);
+    	item->setText(epos->txtdescription->toPlainText());
+    	tabmain->setItem(tabmain->currentRow(), 3, item);
+    	
+    	item = new QTableWidgetItem;
+    	item->setText(epos->txtquantity->text());
+    	tabmain->setItem(tabmain->currentRow(), 4, item);
+    	
+    	item = new QTableWidgetItem;
+    	item->setText(epos->txtunit->text());
+    	tabmain->setItem(tabmain->currentRow(), 5, item);
+    	
+    	item = new QTableWidgetItem;
+    	item->setText(epos->txtprice->text());
+    	tabmain->setItem(tabmain->currentRow(), 6, item);
+    	
+    	item = new QTableWidgetItem;
+    	item->setText(epos->cmbvat->currentText());
+    	tabmain->setItem(tabmain->currentRow(), 8, item);
+    	navtable();
+    }
 }
