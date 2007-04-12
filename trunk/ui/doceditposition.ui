@@ -1,0 +1,265 @@
+<ui version="4.0" >
+ <class>doceditposition</class>
+ <widget class="QDialog" name="doceditposition" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Edit position details...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnaccept" >
+   <property name="geometry" >
+    <rect>
+     <x>320</x>
+     <y>260</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Accept</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Position:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Label:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Description:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Price:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>200</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Quantity:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>230</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>VAT:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>200</y>
+     <width>56</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Unit:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtlabel" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>130</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txtdescription" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>381</width>
+     <height>94</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtunit" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>200</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>230</y>
+     <width>41</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>CHF</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtquantity" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>200</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtprice" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>230</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="inputMask" >
+    <string>0.00; </string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtpos" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>10</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbvat" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>230</y>
+     <width>79</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="first.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnaccept</sender>
+   <signal>clicked()</signal>
+   <receiver>doceditposition</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>doceditposition</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
