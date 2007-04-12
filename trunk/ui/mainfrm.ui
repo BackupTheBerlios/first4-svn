@@ -10,7 +10,9 @@
    </rect>
   </property>
   <property name="sizePolicy" >
-   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+   <sizepolicy>
+    <hsizetype>0</hsizetype>
+    <vsizetype>0</vsizetype>
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -18,16 +20,19 @@
   <property name="windowTitle" >
    <string>first</string>
   </property>
-  <property name="icon" >
+  <property name="windowIcon" >
    <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
+    <property name="margin" >
+     <number>9</number>
+    </property>
+    <property name="spacing" >
+     <number>6</number>
+    </property>
     <item row="0" column="0" >
      <widget class="QToolBox" name="maintoolbox" >
-      <property name="cursor" >
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="autoFillBackground" >
        <bool>false</bool>
       </property>
@@ -39,8 +44,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>159</width>
+         <height>51</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -50,6 +55,12 @@
         <iconset resource="first.qrc" >:/images/images/kdmconfig.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
         <item row="0" column="0" >
          <widget class="QPushButton" name="btnbrowsedir" >
           <property name="palette" >
@@ -126,8 +137,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>178</width>
+         <height>117</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -137,6 +148,12 @@
         <iconset resource="first.qrc" >:/images/images/kfm.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
         <item row="0" column="0" >
          <widget class="QPushButton" name="btnbrowsedata" >
           <property name="palette" >
@@ -325,8 +342,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>96</width>
+         <height>26</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -341,8 +358,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>163</width>
+         <height>84</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -352,6 +369,12 @@
         <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
         <item row="0" column="0" >
          <widget class="QPushButton" name="btnbrowsedoc" >
           <property name="palette" >
@@ -484,8 +507,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>96</width>
+         <height>26</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -500,8 +523,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>96</width>
+         <height>26</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -516,8 +539,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>311</width>
-         <height>191</height>
+         <width>96</width>
+         <height>26</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -533,7 +556,7 @@
          <x>0</x>
          <y>0</y>
          <width>317</width>
-         <height>151</height>
+         <height>154</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -543,12 +566,24 @@
         <iconset resource="first.qrc" >:/images/images/xmag.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
         <item row="0" column="0" >
          <widget class="QGroupBox" name="groupBox_2" >
           <property name="title" >
            <string/>
           </property>
           <layout class="QGridLayout" >
+           <property name="margin" >
+            <number>9</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
            <item row="0" column="0" >
             <widget class="QLabel" name="label" >
              <property name="text" >
@@ -617,6 +652,12 @@
        <string/>
       </property>
       <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
        <item row="0" column="0" >
         <widget class="QLabel" name="lblmsg" >
          <property name="text" >

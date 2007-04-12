@@ -1227,12 +1227,12 @@ void doceditfrm::writetexfile()
 				    else
 						line = line.replace("###DISCOUNT###", "");
 				}
-				line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. Tax:"));
+				line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. VAT:"));
 				line = line.replace("###TOTEXCL###", boxtot_excl->text()+ " CHF");
 		
 				if(line.contains("###VAT###") > 0)
 				{
-				    QString tmpvat = "\\begin{scriptsize}"+tr("Tax rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("Tax amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("Tax")+"\\end{scriptsize} \\\\ \n";
+				    QString tmpvat = "\\begin{scriptsize}"+tr("VAT rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("VAT amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("VAT")+"\\end{scriptsize} \\\\ \n";
 				    
 				    double vattot = 0;
 				    for(i=0;i<vatlist.count();i++)
@@ -1326,7 +1326,7 @@ void doceditfrm::print()
     if(boxaddress->toPlainText() != "" && lblID->text() != "-")
 		printreport(FALSE);
     else
-		QMessageBox::information(0, tr("Adress..."), tr("Please select a receiver"));
+		QMessageBox::information(0, tr("Address..."), tr("Please select a receiver"));
 }
 //
 void doceditfrm::printesr()

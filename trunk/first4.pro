@@ -32,7 +32,8 @@ FORMS =   ui/mainfrm.ui \
   ui/doceditfrm.ui \
   ui/doccompletefrm.ui \
   ui/docopendraftfrm.ui \
-  ui/vatshowfrm.ui
+  ui/vatshowfrm.ui \
+  ui/doceditposition.ui
 HEADERS =   src/mainfrm.h \
   src/vars.h \
   src/cfgfrm.h \
@@ -58,7 +59,7 @@ HEADERS =   src/mainfrm.h \
   src/doccompletefrm.h \
   src/docopendraftsfrm.h \
   src/vatshowfrm.h \
-  src/plugininterface.h
+  src/doceditposition.h
 SOURCES =   src/main.cpp \
   src/mainfrm.cpp \
   src/vars.cpp \
@@ -84,7 +85,8 @@ SOURCES =   src/main.cpp \
   src/doceditfrm.cpp \
   src/doccompletefrm.cpp \
   src/docopendraftsfrm.cpp \
-  src/vatshowfrm.cpp
+  src/vatshowfrm.cpp \
+  src/doceditposition.cpp
 TRANSLATIONS =   langfiles/de.ts \
   langfiles/it.ts
 RESOURCES =   ui/first.qrc
