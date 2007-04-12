@@ -6,7 +6,6 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
-#include <Qt>
 //
 #include "doceditfrm.h"
 #include "vars.h"
@@ -244,11 +243,12 @@ void doceditfrm::contmenu()
 //
 void doceditfrm::removerow()
 {
+	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 	tabmain->removeRow(tabmain->currentRow());
     int i;
     if(tabmain->rowCount() == 0)
     {
-    	tabmain->setRowCount(1);
+    	addrow();
 		QTableWidgetItem *item = new QTableWidgetItem;
 		item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
 		tabmain->setItem(0, 2, item);
@@ -259,23 +259,21 @@ void doceditfrm::removerow()
     	item->setText(QString("%1").arg(i+1,0,10));
     	tabmain->setItem(i, 0, item);
     }
+    connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 }
 //
 void doceditfrm::navtable()
 {  
 	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
-
+	int row = tabmain->currentRow();
 	QTableWidgetItem *item;
-    int row = tabmain->currentRow();
-
     if(row == tabmain->rowCount() - 1)
 		addrow();
-
+	
     QTableWidgetItem *tmpitem = new QTableWidgetItem;
     tmpitem = tabmain->item(row, 4);
     QString tmpstr = tmpitem->text();
     double quantity = tmpstr.toDouble(); 
-
     tmpitem = new QTableWidgetItem;
     tmpitem = tabmain->item(row, 9);
     tmpstr = tmpitem->text();
@@ -692,12 +690,37 @@ void doceditfrm::refreshstockdb()
 //
 void doceditfrm::revenue(QString dbID, QString amount)
 {
-	
+    QString qstr = "SELECT revenueaj, revenuelj FROM adr"+dbID.section("_", 0, 0)+" WHERE `ID` = '"+dbID.section("_", 1, 1)+"';";
+    QSqlQuery query(qstr);
+    query.next();
+    if(query.value(0).toString().section(";", 0, 0) == QDate::currentDate().toString("yyyy") || query.value(0).toString().section(";", 0, 0) == "")
+    {
+		double newamount = query.value(0).toString().section(";", 1, 1).toDouble() + amount.toDouble();
+		QString qstr2 = "UPDATE `adr"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+QString("%1").arg(newamount,  0, 'f', 2 )+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
+		QSqlQuery query2(qstr2);
+    }
+    else
+    {
+		QString qstr2 = "UPDATE `adr"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+amount+"', `revenuelj` = '"+query.value(1).toString()+"#"+query.value(0).toString()+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
+		QSqlQuery query2(qstr2);
+    }
 }
 //
 void doceditfrm::registeramount()
-{
-	
+{/*
+    editkontenfrm *ekonto = new editkontenfrm;
+    ekonto->initfrm();
+    QString refnr = doccount->text().right(8);
+    refnr = refnr.rightJustify(15, '0', TRUE);    
+    ekonto->txtRefNr->setText(refnr);
+    ekonto->boxdatum->setDate(boxdatum->date());
+    ekonto->txtCode->setText("RE");
+    ekonto->txtadresse->setText(boxadress->text());
+    ekonto->lbladrID->setText(lblID->text());
+    ekonto->txtbeschreibung->setText(tr("Bill %1").arg(doccount->text()));
+    ekonto->txtbetrag->setText(box_tot_inkl->text());
+    ekonto->setdbID("ietab");
+    ekonto->newentry("ietab");*/
 }
 //
 void doceditfrm::newdocument()
@@ -1459,8 +1482,8 @@ void doceditfrm::editposition()
     	tabmain->setItem(tabmain->currentRow(), 1, item);
 		
 		item = new QTableWidgetItem;
-		item->setTextAlignment(32);
     	item->setText(epos->txtdescription->toPlainText());
+		item->setTextAlignment(Qt::AlignLeft | Qt::AlignBottom);
     	tabmain->setItem(tabmain->currentRow(), 3, item);
     	
     	item = new QTableWidgetItem;
