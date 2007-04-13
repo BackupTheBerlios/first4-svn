@@ -19,3 +19,4 @@
 # Qt 4 Settings
 TEMPLATE = subdirs
 SUBDIRS  += chipcard
+SUBDIRS  += report
