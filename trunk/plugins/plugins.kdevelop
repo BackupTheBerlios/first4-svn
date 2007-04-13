@@ -147,7 +147,7 @@
   </kdevfilecreate>
   <kdevtrollproject>
     <general>
-      <activedir>chipcard</activedir>
+      <activedir>report</activedir>
     </general>
     <run>
       <directoryradio>executable</directoryradio>
