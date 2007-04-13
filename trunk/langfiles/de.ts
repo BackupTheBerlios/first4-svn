@@ -5,22 +5,22 @@
     <message>
         <location filename="../src/main.cpp" line="59"/>
         <source>Initializing ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung ...</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="63"/>
         <source>Initializing userdata ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisiere Benutzerdaten ...</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="66"/>
         <source>Initializing plugins ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisiere Plugins ...</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="69"/>
         <source>Initializing messages ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisiere Nachrichten ...</translation>
     </message>
 </context>
 <context>
