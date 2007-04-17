@@ -24,7 +24,7 @@ void docopenfrm::init()
     docart.clear();
     docsource.clear();
     searchrowlist << "client" <<  "docID" << "date" << "data" << "comments";
-    doclabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Bill");
+    doclabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoices");
     docart << "1 offer" << "2 orderconf" << "3 deliverynote" << "4 bill";
     docsource << "docs" << "docdrafts";
     

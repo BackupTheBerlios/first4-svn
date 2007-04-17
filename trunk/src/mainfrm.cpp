@@ -20,6 +20,7 @@
 #include "docopenfrm.h"
 #include "doceditfrm.h"
 #include "plugininterface.h"
+#include "procedurefrm.h"
 //
 extern QString username, fullname, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
@@ -250,7 +251,9 @@ void mainfrm::newdoc()
 //
 void mainfrm::browseorders()
 {
-
+	procedurefrm *pfrm = new procedurefrm;
+	pfrm->init();
+	pfrm->show();
 }
 //
 void mainfrm::neworder()

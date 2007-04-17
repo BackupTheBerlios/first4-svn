@@ -38,7 +38,7 @@ void doceditfrm::init()
     lbluser->setText(username);
     
     docnames.clear();
-    docnames << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Bill");
+    docnames << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoice");
     
 	readdoctab();
     initvat();
