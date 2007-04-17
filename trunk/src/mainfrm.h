@@ -10,19 +10,21 @@ public:
 	mainfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 private slots:
 	void closeEvent( QCloseEvent* ce );
-public:
-	void loaduserdata();
-	void initplugins();
-public slots:
-	void checkmsg();	
-	void config();
 	void about();
 	void browseaddr();
 	void browsedata();
 	void vieworders();
 	void inventory();
 	void opendoc();
-	void newdoc();	
+	void newdoc();
+	void browseorders();
+	void neworder();
+public:
+	void loaduserdata();
+	void initplugins();
+public slots:
+	void checkmsg();	
+	void config();
 };
 #endif
 

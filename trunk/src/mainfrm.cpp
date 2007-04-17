@@ -33,7 +33,7 @@ mainfrm::mainfrm ( QWidget * parent, Qt::WFlags f )
 //
 void mainfrm::loaduserdata()
 {
-	//this->setFixedSize ( this->width(), this->height() );
+	this->setFixedSize ( this->width(), this->height() );
 	lbluser->setText ( username );
 	lbldb->setText ( dbname );
 	lblserver->setText ( dbhost );
@@ -63,6 +63,8 @@ void mainfrm::loaduserdata()
 	connect ( btninventory, SIGNAL ( released() ), this, SLOT ( inventory() ) );
 	connect ( btnbrowsedoc, SIGNAL ( released() ), this, SLOT ( opendoc() ) );
 	connect ( btnnewdoc, SIGNAL ( released() ), this, SLOT ( newdoc() ) );
+	connect ( btnbrowseorders, SIGNAL ( released() ), this, SLOT ( browseorders() ) );
+	connect ( btnneworder, SIGNAL ( released() ), this, SLOT ( neworder() ) );
 
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
@@ -245,4 +247,13 @@ void mainfrm::newdoc()
 	docfrm->init();
 	docfrm->show();
 }
+//
+void mainfrm::browseorders()
+{
 
+}
+//
+void mainfrm::neworder()
+{
+
+}
