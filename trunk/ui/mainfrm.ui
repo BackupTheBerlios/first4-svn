@@ -44,8 +44,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>159</width>
-         <height>51</height>
+         <width>317</width>
+         <height>154</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -137,8 +137,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>178</width>
-         <height>117</height>
+         <width>317</width>
+         <height>154</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -342,24 +342,148 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>96</width>
-         <height>26</height>
+         <width>317</width>
+         <height>154</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Procedures</string>
+        <string>Orders</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
        </attribute>
+       <widget class="QPushButton" name="btnneworder" >
+        <property name="geometry" >
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>299</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
+        <property name="text" >
+         <string>New Order</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+        </property>
+        <property name="checkable" >
+         <bool>false</bool>
+        </property>
+        <property name="flat" >
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnbrowseorders" >
+        <property name="geometry" >
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>299</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>206</red>
+              <green>207</green>
+              <blue>209</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="autoFillBackground" >
+         <bool>true</bool>
+        </property>
+        <property name="text" >
+         <string>Browse Orders</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+        </property>
+        <property name="checkable" >
+         <bool>false</bool>
+        </property>
+        <property name="flat" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_4" >
        <property name="geometry" >
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>163</width>
-         <height>84</height>
+         <width>317</width>
+         <height>154</height>
         </rect>
        </property>
        <attribute name="label" >
