@@ -69,11 +69,7 @@ void mainfrm::loaduserdata()
 
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
-// 		Pluginimplementierung
 void mainfrm::initplugins() {
-	// plugin initialisierung, sehr wichtig ...
-	// aber noch nicht ganz fertig ....
-	// so funktioniert nun einiger massen :)
 	QDir pluginsDir = QDir ( qApp->applicationDirPath() );
 	pluginsDir.cd ( "plugins" );
 	
@@ -95,10 +91,6 @@ void mainfrm::initplugins() {
 							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
 						else
 							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fileName.split ( "." ).value ( 0 ) );
-					}
-					else
-					{
-						QWidget *w = maintoolbox->widget( fpi->toolBoxIndex() );
 					}
 				}
 			}
