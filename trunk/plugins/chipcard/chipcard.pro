@@ -23,7 +23,7 @@ DEPENDPATH += include res src ui ../../3rdparty
 INCLUDEPATH += include 
 RESOURCES += res/chipcardplugin.qrc
 CONFIG += debug thread warn_on qt plugin
-QT += xml network sql
+QT += network sql
 
 # Project Ui files
 FORMS += ui/chipcardbase.ui
@@ -37,15 +37,6 @@ HEADERS += include/plugininterface.h
 SOURCES += src/chipcard.cpp
 SOURCES += src/chipcardplugin.cpp
 
-# Core - 3rdparty Source/Header
-HEADERS += ../3rdparty/Base64.h
-HEADERS += ../3rdparty/XMLPreferences.h
-HEADERS += ../3rdparty/XMLWriter.h
-
-SOURCES += ../3rdparty/Base64.cpp
-SOURCES += ../3rdparty/XMLPreferences.cpp
-SOURCES += ../3rdparty/XMLWriter.cpp
-
 # Unix/Linux settings
 unix{
   TARGET = ../../bin/plugins/chipcardplugin
@@ -54,6 +45,7 @@ unix{
   MOC_DIR += ../../build/chipcardplugin/unix/moc
   OBJECTS_DIR += ../../build/chipcardplugin/unix/obj
   UI_DIR += ui
+  LIBS += -L/usr/lib -lchipcard3c
 }
 
 # Windows settings
