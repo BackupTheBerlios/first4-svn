@@ -21,6 +21,11 @@
 
 #include "ui_chipcardbase.h"
 
+#include <chipcard3/chipcard3.h>
+#include <chipcard3/client/card.h>
+#include <chipcard3/client/client.h>
+#include <chipcard3/client/cards/geldkarte.h>
+
 #include <QtCore>
 #include <QtGui>
 
@@ -40,6 +45,19 @@ class ChipCard : public QWidget, public Ui::UiChipCardBase
 	private slots:
 		void pay();
 		void reloadCustomer();
+		void reloadProducts();
+		void errorMsg ( LC_CARD *card, LC_CLIENT_RESULT res );
+
+	private:
+		bool initCard();
+		bool deinitCard( LC_CARD *card, LC_CLIENT *cl, LC_CLIENT_RESULT res );		
+
+		LC_CLIENT *lcClient;
+		LC_CLIENT_RESULT lcClientRes;
+		LC_CARD *lcCard;
+		LC_GELDKARTE_VALUES *lcGeldkarteValues;
+		
+		int rv;
 
 	protected:
 		void closeEvent( QCloseEvent *e );
