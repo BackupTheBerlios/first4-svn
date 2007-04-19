@@ -41,6 +41,9 @@
           <property name="text" >
            <string>Customer:</string>
           </property>
+          <property name="buddy" >
+           <cstring>cbxCustomer</cstring>
+          </property>
          </widget>
         </item>
         <item>
@@ -67,14 +70,107 @@
           <property name="text" >
            <string>Commodity:</string>
           </property>
+          <property name="buddy" >
+           <cstring>comboBoxCommodity</cstring>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEditCommodity" />
+         <widget class="QComboBox" name="comboBoxCommodity" >
+          <property name="editable" >
+           <bool>true</bool>
+          </property>
+          <property name="maxVisibleItems" >
+           <number>20</number>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item row="2" column="0" >
+       <layout class="QHBoxLayout" >
+        <item>
+         <widget class="QLabel" name="label" >
+          <property name="minimumSize" >
+           <size>
+            <width>110</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>110</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="buddy" >
+           <cstring>lineEditPrice</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditPrice" >
+          <property name="minimumSize" >
+           <size>
+            <width>78</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>78</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="cursor" >
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="readOnly" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2" >
+          <property name="minimumSize" >
+           <size>
+            <width>110</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>110</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text" >
+           <string>EUR / CHF</string>
+          </property>
+          <property name="buddy" >
+           <cstring>lineEditPrice</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>211</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="0" >
        <layout class="QGridLayout" >
         <item row="0" column="0" >
          <widget class="QLabel" name="labelDescription" >
@@ -93,10 +189,10 @@
           <property name="text" >
            <string>Description:</string>
           </property>
+          <property name="buddy" >
+           <cstring>textBrowserDescription</cstring>
+          </property>
          </widget>
-        </item>
-        <item rowspan="2" row="0" column="1" >
-         <widget class="QTextEdit" name="textEditDescription" />
         </item>
         <item row="1" column="0" >
          <spacer>
@@ -110,6 +206,13 @@
            </size>
           </property>
          </spacer>
+        </item>
+        <item rowspan="2" row="0" column="1" >
+         <widget class="QTextBrowser" name="textBrowserDescription" >
+          <property name="openExternalLinks" >
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -149,8 +252,33 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>cbxCustomer</tabstop>
+  <tabstop>comboBoxCommodity</tabstop>
+  <tabstop>lineEditPrice</tabstop>
+  <tabstop>textBrowserDescription</tabstop>
+  <tabstop>btnPay</tabstop>
+  <tabstop>btnAbort</tabstop>
+ </tabstops>
  <resources>
   <include location="../res/chipcardplugin.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnAbort</sender>
+   <signal>clicked()</signal>
+   <receiver>UiChipCardBase</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>547</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>311</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
