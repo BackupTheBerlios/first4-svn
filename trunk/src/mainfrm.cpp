@@ -252,11 +252,13 @@ void mainfrm::newdoc()
 void mainfrm::browseorders()
 {
 	procedurefrm *pfrm = new procedurefrm;
-	pfrm->init();
-	pfrm->show();
+	if(pfrm->init() != 0)
+		pfrm->show();
 }
 //
 void mainfrm::neworder()
 {
-
+	procedurefrm *pfrm = new procedurefrm;
+	if(pfrm->init() == 2)
+		pfrm->neworder();
 }
