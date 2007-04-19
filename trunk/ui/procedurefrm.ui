@@ -1,0 +1,432 @@
+<ui version="4.0" >
+ <class>procedurefrm</class>
+ <widget class="QWidget" name="procedurefrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>780</width>
+    <height>401</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Browse orders...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="0" >
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_2" >
+       <property name="text" >
+        <string>Search:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtsearch" >
+       <property name="minimumSize" >
+        <size>
+         <width>210</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>21</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string>in:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox" >
+       <property name="minimumSize" >
+        <size>
+         <width>149</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnsearch" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>31</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnadd" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnedit" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="first.qrc" >:/images/images/kfind.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btndelete" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="first.qrc" >:/images/images/editdelete.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btncomplete" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" >
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QTreeWidget" name="treeindex" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>7</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>181</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <column>
+        <property name="text" >
+         <string>Orders</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>-</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>sort</string>
+        </property>
+       </column>
+       <item>
+        <property name="text" >
+         <string>Incomming orders</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Offers</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Open orders</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Completed orders</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Deliverynotes</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Invoices</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Archive</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>6</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTreeWidget" name="treemain" >
+       <column>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="icon" >
+         <iconset resource="first.qrc" >:/images/images/button_ok_small.png</iconset>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Customer</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Description</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Date</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" >
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnclose" >
+       <property name="text" >
+        <string>&amp;Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>User:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbluser" >
+       <property name="text" >
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progbar" >
+       <property name="maximumSize" >
+        <size>
+         <width>201</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="value" >
+        <number>0</number>
+       </property>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="first.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnclose</sender>
+   <signal>released()</signal>
+   <receiver>procedurefrm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>47</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>389</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
