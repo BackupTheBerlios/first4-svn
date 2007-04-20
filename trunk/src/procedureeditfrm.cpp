@@ -37,10 +37,10 @@ void procedureeditfrm::init()
     taborders->setColumnWidth(5,60);
     taborders->setColumnWidth(6,100);       
     taborders->setColumnWidth(7,100);
-    taborders->setColumnWidth(8,0);
-    taborders->setColumnWidth(9,0);
-    taborders->setColumnWidth(10,0);
-    taborders->setColumnWidth(11,0);
+    taborders->hideColumn(8);
+    taborders->hideColumn(9);
+    taborders->hideColumn(10);
+
     taborders->setRowCount(1);
     
     QTableWidgetItem *item = new QTableWidgetItem;
@@ -50,6 +50,9 @@ void procedureeditfrm::init()
 	item = new QTableWidgetItem;   
  	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
  	taborders->setItem(0, 2, item);
+ 	
+ 	item = new QTableWidgetItem;
+ 	taborders->setItem(0, 3, item);
     
  	item = new QTableWidgetItem;
  	item->setText("0");
@@ -60,12 +63,13 @@ void procedureeditfrm::init()
  	taborders->setItem(0, 6, item);
  	
  	item = new QTableWidgetItem;
- 	item->setText("0.00");
+ 	item->setText("0.0");
  	taborders->setItem(0, 7, item);
     
     tabtasks->setColumnWidth(0, 30);
     tabtasks->setColumnWidth(1, 515);
     tabtasks->setColumnWidth(2, 100);
+
     tabtasks->setRowCount(1);
     item = new QTableWidgetItem;
     item->setCheckState(Qt::Unchecked);
@@ -88,8 +92,8 @@ void procedureeditfrm::init()
 	connect(btnaccept, SIGNAL(released()), this, SLOT(acceptdata()));
 	connect(btnaddr, SIGNAL(released()), this, SLOT(searchaddress()));
 	connect(btncanceladdr, SIGNAL(released()), this, SLOT(clearaddress()));
-    connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));
-    connect(tabtasks, SIGNAL(cellChanged(int, int)), this, SLOT(navtasktab()));
+    connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));
+    connect(tabtasks, SIGNAL(cellChanged(int, int)), this, SLOT(navtasktab(int)));
     connect(taborders, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(tabtasks, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(taborders, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
@@ -138,26 +142,34 @@ void procedureeditfrm::acceptdata()
 		accept();
 }
 //
-void procedureeditfrm::navtasktab()
+void procedureeditfrm::navtasktab(int row)
 {
-    if(tabtasks->currentRow() == tabtasks->rowCount()-1)
+    if(row == tabtasks->rowCount()-1)
     {
-	    tabtasks->setRowCount(tabtasks->rowCount()+1);
-	    QTableWidgetItem *item = new QTableWidgetItem;
-	    item->setCheckState(Qt::Unchecked);
-	 	tabtasks->setItem(tabtasks->rowCount()-1, 0, item);
+	    QTableWidgetItem *item = tabtasks->item(row, 1);
+	    if(item != 0)
+	    {
+	    	if(item->text() != "")
+	    	{
+	    		tabtasks->setRowCount(tabtasks->rowCount()+1);	
+				item = new QTableWidgetItem;
+			    item->setCheckState(Qt::Unchecked);
+			 	tabtasks->setItem(tabtasks->rowCount()-1, 0, item);
  	
-	 	item = new QTableWidgetItem;
-	 	item->setText(QDate::currentDate().toString("dd.MM.yyyy"));
-	 	tabtasks->setItem(tabtasks->rowCount()-1, 2, item); 
+			 	item = new QTableWidgetItem;
+			 	item->setText(QDate::currentDate().toString("dd.MM.yyyy"));
+			 	tabtasks->setItem(tabtasks->rowCount()-1, 2, item); 
+    		}
+    	}
     }
 }
  
-void procedureeditfrm::navordertabs()
+void procedureeditfrm::navordertabs(int row)
 {
-	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));
+	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));
     QTableWidgetItem *item = new QTableWidgetItem;
-    if(taborders->currentRow() == taborders->rowCount()-1)
+
+    if(row == taborders->rowCount()-1)
     {
 	    taborders->setRowCount(taborders->rowCount()+1);
 
@@ -170,6 +182,9 @@ void procedureeditfrm::navordertabs()
 	 	taborders->setItem(taborders->rowCount()-1, 2, item);
     
 	 	item = new QTableWidgetItem;
+	 	taborders->setItem(taborders->rowCount()-1, 3, item);
+    
+	 	item = new QTableWidgetItem;
 	 	item->setText("0");
 	 	taborders->setItem(taborders->rowCount()-1, 4, item);
  	
@@ -178,16 +193,24 @@ void procedureeditfrm::navordertabs()
 	 	taborders->setItem(taborders->rowCount()-1, 6, item);
  	
 	 	item = new QTableWidgetItem;
-	 	item->setText("0.00");
+	 	item->setText("0.0");
 	 	taborders->setItem(taborders->rowCount()-1, 7, item);
     }
     item = new QTableWidgetItem;
-    item = taborders->item(taborders->currentRow(),4);
+    item = taborders->item(row,0);
+    item->setText("");
+    
+    item = new QTableWidgetItem;
+    item = taborders->item(row,2);
+    item->setText("");
+    
+    item = new QTableWidgetItem;
+    item = taborders->item(row,4);
     QString tmpstr = item->text();
     double quantity = tmpstr.toDouble(); 
 
     item = new QTableWidgetItem;
-    item = taborders->item(taborders->currentRow(),9);
+    item = taborders->item(row,8);
     if(item != 0)
 	    tmpstr = item->text();
     else
@@ -200,27 +223,24 @@ void procedureeditfrm::navordertabs()
 		    QMessageBox::information(0,tr("Stock..."), tr("The entered quantity exceeds the stock!")); 
     }
     item = new QTableWidgetItem;
-    item = taborders->item(taborders->currentRow(),6);
+    item = taborders->item(row,6);
     tmpstr = item->text();
     double p_single = tmpstr.toDouble();
 
     item = new QTableWidgetItem;
     item->setText(QString("%1").arg(p_single, 0, 'f',2));
-	taborders->setItem(taborders->currentRow(), 6, item);
-
-    item = new QTableWidgetItem;
-    item->setText(QString("%1").arg(quantity*p_single, 0, 'f',2));    
-    taborders->setItem(taborders->currentRow(),7, item);
-    connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));
+	taborders->setItem(row, 6, item);
+	
+	connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));
 }
 
 
 void procedureeditfrm::checkdb()
 {
-	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));
+	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));
 	QTableWidgetItem *testitem1 = taborders->item(taborders->currentRow(),1);
 	QTableWidgetItem *testitem2 = taborders->item(taborders->currentRow(),3);
-	if(taborders->currentColumn()==2 && testitem1->text()!="" && testitem2 == 0)
+	if(taborders->currentColumn()==2 && testitem1 != 0 && testitem1->text()!="" && testitem2->text().simplified()=="")
     {
 		stockselfrm *sfrm = new stockselfrm;
 	    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
@@ -329,7 +349,7 @@ void procedureeditfrm::checkdb()
 			}
 	    }
     }
-	connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));	
+	connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));	
 }
 
 void procedureeditfrm::contmenu()
@@ -382,7 +402,7 @@ void procedureeditfrm::edittask()
 		item->setText(edtentry->date->date().toString("dd.MM.yyyy"));
 		tabtasks->setItem(tabtasks->currentRow(), 2, item);
 		
-		navtasktab();
+		navtasktab(tabtasks->currentRow());
     }
 }
 
@@ -442,7 +462,7 @@ void procedureeditfrm::editorder()
 	    item->setText(edtentry->txtprice->text());
 	    taborders->setItem(taborders->currentRow(), 6, item);
 
-		navordertabs();
+		navordertabs(taborders->currentRow());
     }     
 }
 

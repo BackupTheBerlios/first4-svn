@@ -21,8 +21,8 @@ private slots:
 	void removerow();
 	void editorder();
 public slots:
-	void navtasktab();
-	void navordertabs();
+	void navtasktab(int row);
+	void navordertabs(int row);
 };
 #endif
 

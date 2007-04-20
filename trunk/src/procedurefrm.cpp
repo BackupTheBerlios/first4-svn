@@ -308,7 +308,7 @@ void procedurefrm::checkeditID()
 {
     QTreeWidgetItem* item = treemain->currentItem();
     item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
-    //editorder(item->text(1));
+    editorder(item->text(1));
 }
 //
 
@@ -319,7 +319,6 @@ void procedurefrm::checkdeleteID()
     //deleteorder(item->text(1));
 }
 //
-/*
 void procedurefrm::editorder(QString dbID)
 {
     int i;
@@ -348,48 +347,80 @@ void procedurefrm::editorder(QString dbID)
 		eorders->lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
 		eorders->cmbpriority->setEditText(query.value(7).toString());    
 		eorders->txtresponsible->setText(query.value(9).toString());  	
-		    	
-		eorders->navtasktab(0, 0);
-		QSqlQuery tasks;
-		tasks.prepare("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`=:id ORDER BY ID;");
-		tasks.bindValue(":id", query.value(0).toString());
-		tasks.exec();
+
+		QString qstr = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery tasks(qstr);
+
 		while(tasks.next())
 		{
-		    QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tabletasks->item(tasks.at(), 0);
-		    if(tasks.value(0).toString() == "1")
-			tmpitem->setChecked(TRUE);
-		    eorders->tabletasks->setText(tasks.at(), 1, tasks.value(1).toString());
-		    eorders->tabletasks->setText(tasks.at(), 2, tasks.value(2).toString());
-		    eorders->navtasktab(tasks.at(), 0);
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(tasks.value(0).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    eorders->tabtasks->setItem(tasks.at(), 0, tmpitem);
+			
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(1).toString());
+		    eorders->tabtasks->setItem(tasks.at(), 1, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(2).toString());
+		    eorders->tabtasks->setItem(tasks.at(), 2, tmpitem);
+		    eorders->navtasktab(tasks.at());
 		}
-	
-		nafrm->navtasktab(0, 0);
-		QSqlQuery orders;
-		orders.prepare("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`=:id ORDER BY ID;");
-		orders.bindValue(":id", query.value(0).toString());
-		orders.exec();
+		
+		qstr = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery orders(qstr);
+
 		while(orders.next())
 		{
-		    QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tableorders->item(tasks.at(), 0);
-		    if(tasks.value(0).toString() == "1")
-			tmpitem->setChecked(TRUE);
-		    eorders->tableorders->setText(orders.at(), 1, orders.value(3).toString());
-		    eorders->tableorders->setPixmap(i, 2, QPixmap::fromMimeSource( "viewmag2.png" ));	
-		    eorders->tableorders->setText(orders.at(), 3, orders.value(4).toString());
-		    eorders->tableorders->setText(orders.at(), 4, orders.value(5).toString());
-		    eorders->tableorders->setText(orders.at(), 5, orders.value(6).toString());	
-		    eorders->tableorders->setText(orders.at(), 6, QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));
-		    eorders->tableorders->setText(orders.at(), 7, QString("%1").arg(orders.value(5).toInt()*orders.value(7).toString().toFloat(), 0, 'f',2));
-		    eorders->tableorders->setText(orders.at(), 8, orders.value(8).toString());
-		    eorders->tableorders->setText(orders.at(), 11, orders.value(0).toString()+":#:"+orders.value(1).toString());
-		    eorders->navordertabs(orders.at(), 0);
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(orders.value(0).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    eorders->taborders->setItem(orders.at(), 0, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(3).toString());
+		    eorders->taborders->setItem(orders.at(), 1, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		    eorders->taborders->setItem(orders.at(), 2, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(4).toString());
+		    eorders->taborders->setItem(orders.at(), 3, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(5).toString());
+		    eorders->taborders->setItem(orders.at(), 4, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(6).toString());
+		    eorders->taborders->setItem(orders.at(), 5, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));
+		    eorders->taborders->setItem(orders.at(), 6, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(8).toString());
+		    eorders->taborders->setItem(orders.at(), 7, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(0).toString()+":#:"+orders.value(1).toString());
+		    eorders->taborders->setItem(orders.at(), 10, tmpitem);
+		    
+		    eorders->navordertabs(orders.at());
 		}
     }
     
-    if(eorders->exec()==QDialog::Accepted)
-    {	    
-		if(eorders->tabletasks->numRows()>1)
+    if(eorders->exec())
+    {/*	    
+		if(eorders->tabtasks->rowCount()>1)
 		{
 		    //Alte Daten löschen
 		    QSqlQuery querytask_clean;
@@ -464,9 +495,10 @@ void procedurefrm::editorder(QString dbID)
 		mainlisttable->clearSelection();	
 		this->filltable(nafrm->cmbstatus->currentItem());
 		mainlisttable->setFocus();
-    }
+    */}
 }
 //
+/*
 void procedurefrm::editarchiveorder(QString dbID)
 {
     int i;    
