@@ -64,6 +64,7 @@ int procedurefrm::init()
     treeindex->setCurrentItem(treemain->topLevelItem(0));
     
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(settable()));
+	connect(btnadd, SIGNAL(released()), this, SLOT(neworder()));
     connect(btnedit, SIGNAL(released()), this, SLOT(checkeditID()));
     connect(btndelete, SIGNAL(released()), this, SLOT(checkdeleteID()));
     return r;
@@ -149,7 +150,7 @@ void procedurefrm::filltable(int state)
 			
 		    QTreeWidgetItem* childrow0 = new QTreeWidgetItem(row);
 		    childrow0->setText(2, tr("Tasks"));
-		    childrow0->setText(1, query.value(11).toString());
+		    //childrow0->setText(1, query.value(11).toString());
 			
 			QString qstrtasks = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='%1';").arg(query.value(0).toString());
 		    QSqlQuery tasks(qstrtasks);
@@ -166,7 +167,7 @@ void procedurefrm::filltable(int state)
 		
 		    QTreeWidgetItem* childrow1 = new QTreeWidgetItem(row);
 		    childrow1->setText(2, tr("Orders"));
-		    childrow1->setText(1, query.value(12).toString());
+		    //childrow1->setText(1, query.value(12).toString());
 		
 			QString qstrorders = QString("SELECT state, label, quantity FROM procedureorders WHERE `PROC_ID`='%1';").arg(query.value(0).toString());
 		    QSqlQuery orders(qstrorders);

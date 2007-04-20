@@ -363,7 +363,6 @@ void doceditfrm::checkdb()
 			    {	
 					while(query2.next())
 					{
-						QMessageBox::information(0, "test", qstr);
 					    QTreeWidgetItem *item = new QTreeWidgetItem(sfrm->treemain);
 					    item->setText(0, query2.value(0).toString());
 					    item->setText(1, query2.value(1).toString());

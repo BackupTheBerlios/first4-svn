@@ -274,19 +274,19 @@ void procedureeditfrm::checkdb()
 	
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(6));
-					taborders->setItem(taborders->currentRow(), 8, tabmainitem);
+					taborders->setItem(taborders->currentRow(), 7, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(3));					
-					taborders->setItem(taborders->currentRow(), 9, tabmainitem);
+					taborders->setItem(taborders->currentRow(), 8, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(7));
-					taborders->setItem(taborders->currentRow(), 10, tabmainitem);
+					taborders->setItem(taborders->currentRow(), 9, tabmainitem);
 					
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(8));
-					taborders->setItem(taborders->currentRow(), 11, tabmainitem);
+					taborders->setItem(taborders->currentRow(), 10, tabmainitem);
 			    }
 			}
 	    }
@@ -313,19 +313,19 @@ void procedureeditfrm::checkdb()
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(6));
-				taborders->setItem(taborders->currentRow(), 8, tabmainitem);
+				taborders->setItem(taborders->currentRow(), 7, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(3));					
-				taborders->setItem(taborders->currentRow(), 9, tabmainitem);
+				taborders->setItem(taborders->currentRow(), 8, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(7));
-				taborders->setItem(taborders->currentRow(), 10, tabmainitem);
+				taborders->setItem(taborders->currentRow(), 9, tabmainitem);
 					
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(8));
-				taborders->setItem(taborders->currentRow(), 11, tabmainitem);
+				taborders->setItem(taborders->currentRow(), 10, tabmainitem);
 			}
 	    }
     }
