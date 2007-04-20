@@ -151,10 +151,8 @@ void procedurefrm::filltable(int state)
 		    childrow0->setText(2, tr("Tasks"));
 		    childrow0->setText(1, query.value(11).toString());
 			
-		    QSqlQuery tasks;
-		    tasks.prepare("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`=:id;");
-		    tasks.bindValue(":id", query.value(0).toString());
-		    tasks.exec();
+			QString qstrtasks = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='%1';").arg(query.value(0).toString());
+		    QSqlQuery tasks(qstrtasks);
 		    while(tasks.next())
 		    {
 				QTreeWidgetItem* childchild = new QTreeWidgetItem(childrow0);
@@ -170,10 +168,8 @@ void procedurefrm::filltable(int state)
 		    childrow1->setText(2, tr("Orders"));
 		    childrow1->setText(1, query.value(12).toString());
 		
-		    QSqlQuery orders;
-		    orders.prepare("SELECT state, label, quantity FROM procedureorders WHERE `PROC_ID`=:id;");
-		    orders.bindValue(":id", query.value(0).toString());
-		    orders.exec();
+			QString qstrorders = QString("SELECT state, label, quantity FROM procedureorders WHERE `PROC_ID`='%1';").arg(query.value(0).toString());
+		    QSqlQuery orders(qstrorders);
 		    while(orders.next())
 		    {
 				QTreeWidgetItem* childchild = new QTreeWidgetItem(childrow1);
@@ -221,7 +217,7 @@ void procedurefrm::neworder()
     procedureeditfrm *eorder = new procedureeditfrm;
     eorder->setWindowTitle( tr("New order..."));
     eorder->init();
-    eorder->chkcompleted->setChecked(TRUE);
+    eorder->chkcompleted->setChecked(FALSE);
     
     QTreeWidgetItem *item = treemain->currentItem();
     if(item != 0)
@@ -230,7 +226,6 @@ void procedurefrm::neworder()
 		eorder->cmbstate->setCurrentIndex(0);
     if(eorder->exec())
     {
-    	QMessageBox::information(0, "test", "test4");
 		QTreeWidgetItem* row = new QTreeWidgetItem(treemain);
 
 		//datenbank aktualisieren
@@ -303,7 +298,8 @@ void procedurefrm::neworder()
 	//ansicht aktualisieren
 	treemain->clearSelection();
 	treeindex->clearSelection();
-	filltable(treeindex->currentItem()->text(2).toInt());
+	if(treeindex->currentItem() != 0)
+		filltable(treeindex->currentItem()->text(2).toInt());
     }
 }
 //

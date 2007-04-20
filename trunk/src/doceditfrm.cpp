@@ -357,12 +357,13 @@ void doceditfrm::checkdb()
 			while(query.next())
 			{
 				QTableWidgetItem *checkitem = tabmain->item(tabmain->currentRow(), 1);
-				QString qstr = QString("SELECT ID, col1, col2, col3, col5, col8, col9, col6 FROM %1 WHERE col1 LIKE '%%2%' AND `col13`='1' ORDER BY col1 ASC;").arg(query.value(0).toString()).arg(checkitem->text());
+				QString qstr = QString("SELECT ID, col1, col2, col3, col5, col8, col12, col6 FROM %1 WHERE col1 LIKE '%%2%' AND `col13`='1' ORDER BY col1 ASC;").arg(query.value(0).toString()).arg(checkitem->text());
 			    QSqlQuery query2(qstr);
 			    if(query2.isActive())
 			    {	
 					while(query2.next())
 					{
+						QMessageBox::information(0, "test", qstr);
 					    QTreeWidgetItem *item = new QTreeWidgetItem(sfrm->treemain);
 					    item->setText(0, query2.value(0).toString());
 					    item->setText(1, query2.value(1).toString());

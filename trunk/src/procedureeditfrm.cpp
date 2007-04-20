@@ -37,7 +37,7 @@ void procedureeditfrm::init()
     taborders->setColumnWidth(5,60);
     taborders->setColumnWidth(6,100);       
     taborders->setColumnWidth(7,100);
-    taborders->setColumnWidth(8,80);
+    taborders->setColumnWidth(8,0);
     taborders->setColumnWidth(9,0);
     taborders->setColumnWidth(10,0);
     taborders->setColumnWidth(11,0);
@@ -111,7 +111,7 @@ void procedureeditfrm::searchaddress()
 void procedureeditfrm::initvat()
 {
     ordervatlist.clear();
-    QString connstr = "SELECT col1 FROM taxtab ORDER BY ID;";
+    QString connstr = "SELECT col1 FROM vattab ORDER BY ID;";
     QSqlQuery query(connstr);
     if ( query.isActive())
     {
@@ -191,9 +191,9 @@ void procedureeditfrm::navordertabs()
     if(item != 0)
 	    tmpstr = item->text();
     else
-	    tmpstr = "0";
+	    tmpstr = "";
     double actquantity = tmpstr.toDouble();
-    QMessageBox::information(0, "test", "test3");
+
     if (tmpstr != "")
     {
 		if(quantity > actquantity)
@@ -203,7 +203,7 @@ void procedureeditfrm::navordertabs()
     item = taborders->item(taborders->currentRow(),6);
     tmpstr = item->text();
     double p_single = tmpstr.toDouble();
-    QMessageBox::information(0, "test", "test4");
+
     item = new QTableWidgetItem;
     item->setText(QString("%1").arg(p_single, 0, 'f',2));
 	taborders->setItem(taborders->currentRow(), 6, item);
@@ -220,7 +220,7 @@ void procedureeditfrm::checkdb()
 	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs()));
 	QTableWidgetItem *testitem1 = taborders->item(taborders->currentRow(),1);
 	QTableWidgetItem *testitem2 = taborders->item(taborders->currentRow(),3);
-	if(taborders->currentColumn()==2 && testitem1->text()!="" && testitem2->text()=="")
+	if(taborders->currentColumn()==2 && testitem1->text()!="" && testitem2 == 0)
     {
 		stockselfrm *sfrm = new stockselfrm;
 	    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
@@ -228,8 +228,7 @@ void procedureeditfrm::checkdb()
 	    {
 			while(query.next())
 			{
-				QTableWidgetItem *checkitem = taborders->item(taborders->currentRow(), 1);
-				QString qstr = QString("SELECT ID, col1, col2, col3, col5, col8, col9, col6 FROM %1 WHERE col1 LIKE '%%2%' AND `col13`='1' ORDER BY col1 ASC;").arg(query.value(0).toString()).arg(checkitem->text());
+				QString qstr = QString("SELECT ID, col1, col2, col3, col5, col8, col12, col6 FROM %1 WHERE col1 LIKE '%%2%' AND `col13`='1' ORDER BY col1 ASC;").arg(query.value(0).toString()).arg(testitem1->text());
 			    QSqlQuery query2(qstr);
 			    if(query2.isActive())
 			    {	
@@ -249,9 +248,8 @@ void procedureeditfrm::checkdb()
 			    }
 			}
 	    }
-	    
 	    if(sfrm->treemain->topLevelItemCount()>1)
-	    {		
+	    {
    			sfrm->init();	
 			if(sfrm->exec())
 			{

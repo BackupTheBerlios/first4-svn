@@ -657,13 +657,14 @@ void addrfrm::search()
 void addrfrm::printaddr()
 {
     this->writetexfile();
-    sleep(2);
+
     //Show Report
     QStringList args;
     args << QDir::homePath()+"/.first4/tmp/output.dvi";
     QProcess *procshow = new QProcess( this );
     procshow->start("kdvi", args);
-    sleep(3);
+	if(procshow->exitStatus() != QProcess::NormalExit ) 
+			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
     QFile file(QDir::homePath()+"/.first4/tmp/output.dvi");
     file.remove();
 }

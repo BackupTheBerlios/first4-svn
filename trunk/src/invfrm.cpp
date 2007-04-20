@@ -205,12 +205,17 @@ void invfrm::print()
     QStringList args;
     args << "-o" << QDir::homePath()+"/.first4/tmp/output.ps" << QDir::homePath()+"/.first4/tmp/output.dvi";
     procps->start("dvips", args);
-	    
-    sleep(2);
-    QProcess *procprint = new QProcess( this );
-    args.clear();
-    args << QDir::homePath()+"/.first4/tmp/output.ps";
-    procprint->start("kprinter", args);
+	if(procps->exitStatus() == QProcess::CrashExit ) 
+		QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
+	else
+	{
+	    QProcess *procprint = new QProcess( this );
+    	args.clear();
+	    args << QDir::homePath()+"/.first4/tmp/output.ps";
+	    procprint->start("kprinter", args);
+	    if(procprint->exitStatus() != QProcess::NormalExit ) 
+			QMessageBox::critical(0,"Error...", tr("Error during printing process."));
+	}
 }
 //
 void invfrm::printpreview()
@@ -220,6 +225,8 @@ void invfrm::printpreview()
     QStringList args;
     args << QDir::homePath()+"/.first4/tmp/output.dvi";
 	procshow->start("kdvi", args);
+	if(procshow->exitStatus() != QProcess::NormalExit ) 
+			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
 }
 //
 void invfrm::writetexfile()
@@ -272,6 +279,8 @@ void invfrm::writetexfile()
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
     procdvi->start("latex", args);
+	if(procdvi->exitStatus() != QProcess::NormalExit ) 
+			QMessageBox::critical(0,"Error...", tr("Error during conversion to DVI file."));
 }
 //
 void invfrm::complete()
