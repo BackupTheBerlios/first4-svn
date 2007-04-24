@@ -119,7 +119,7 @@ void ChipCard::pay() {
 		QMessageBox::warning( this, tr( "First4 - Payment" ), tr( "The productprice is zero." ) );
 		deinitCard( lcCard, lcClient, lcClientRes );
 		return;
-	}	
+	}
 	
 	
 	if( buy > maxTransfer ) {
@@ -155,7 +155,7 @@ void ChipCard::reloadProducts() {}
 
 bool ChipCard::initCard() {
 
-	QMessageBox::information( this, tr( "First4 - Payment" ), tr( "Please insert a german moneycard, and press Ok." ) );
+	QMessageBox::information( this, tr( "First4 - Payment" ), tr( "Please insert a moneycard, and press Ok." ) );
 
 	lcCard = 0;
 	lcClient = LC_Client_new( "First4 - Payment", "0.0.1" );
