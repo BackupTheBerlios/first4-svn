@@ -20,14 +20,13 @@
 #define __FIRST4_PLUGININTERFACE_H__
 
 #include <QtPlugin>
-#include <QtSql>
 
 // QtCore Classes
+
 class QIcon;
 class QString;
 class QWidget;
 class QDialog;
-class QPushButton;
 
 /**
  * @author Alexander Saal <alex.saal@gmx.de>
@@ -35,15 +34,16 @@ class QPushButton;
  * @version 1.4.0
  * @since 1.4.0
  */
-class First4PluginInterface
-{
-	Q_CLASSINFO("Author", "Alexander Saal")
-			Q_CLASSINFO("EMAIL", "alex.saal@gmx.de")
-			Q_CLASSINFO("URL", "http://chmaster.freeforge.net")
+
+class First4PluginInterface {
+	
+	Q_CLASSINFO( "Author", "Alexander Saal" )
+	Q_CLASSINFO( "EMAIL", "alex.saal@gmx.de" )
+	Q_CLASSINFO( "URL", "http://chmaster.freeforge.net" )
 
 	public:
 		/**
-	 * Konstrukor First4PluginInterface
+		* Konstrukor First4PluginInterface
 		 */
 		virtual ~First4PluginInterface() {}
 
@@ -52,6 +52,7 @@ class First4PluginInterface
 		 *
 		 * @return	Icon was fr das Plugin definiert wurde
 		 */
+
 		virtual QIcon img() const = 0;
 
 		/**
