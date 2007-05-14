@@ -11,10 +11,10 @@ public:
 	void init();
 	void loadvat();
 	void loadentry(QString);
-	void calc_gw();
 	void newentry();
 	void updateentry();
 public slots:
+	void calc_gw();
 	void acceptdata();
 	void seladdress();
 	void contmenu();

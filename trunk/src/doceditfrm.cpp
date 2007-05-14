@@ -1247,7 +1247,7 @@ void doceditfrm::writetexfile()
 		
 				line = line.replace("###TOTINCL_DESC###", tr("Net amount:"));		
 				line = line.replace("###TOTINCL###", boxtot_incl->text()+ " CHF");
-				line = line.replace("###USER###", lbluser->text());
+				line = line.replace("###USER###", fullname);
 				line = line.replace("###CUSTOMER###", boxaddress->toPlainText().section("\n", 0, 0));
 		
 				if(txtsalutation->text() != "")

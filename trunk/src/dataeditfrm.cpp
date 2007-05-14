@@ -28,6 +28,8 @@ void dataeditfrm::init()
     connect(tabsuppliers, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(tabsuppliers, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(acceptsp()));
 	connect(btnok, SIGNAL(released()), this, SLOT(acceptdata()));
+	connect(txtpurchaseprice, SIGNAL(editingFinished()), this, SLOT(calc_gw()));
+	connect(txtsellprice, SIGNAL(editingFinished()), this, SLOT(calc_gw()));
 }
 //
 void dataeditfrm::loadentry(QString dbID)

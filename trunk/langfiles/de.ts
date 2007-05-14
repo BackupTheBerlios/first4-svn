@@ -1756,12 +1756,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dataeditfrm.ui" line="224"/>
         <source>Purchase price:</source>
-        <translation>Verk. Preis:</translation>
+        <translation>Eink. Preis:</translation>
     </message>
     <message>
         <location filename="../ui/dataeditfrm.ui" line="237"/>
         <source>Sell price:</source>
-        <translation>Eink. Preis:</translation>
+        <translation>Verk. Preis:</translation>
     </message>
     <message>
         <location filename="../ui/dataeditfrm.ui" line="276"/>
@@ -2140,7 +2140,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/doceditfrm.ui" line="454"/>
         <source>Discount:</source>
-        <translation>Diskont:</translation>
+        <translation>Rabatt:</translation>
     </message>
     <message>
         <location filename="../ui/doceditfrm.ui" line="426"/>
