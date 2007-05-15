@@ -50,7 +50,7 @@ unix{
 
 # Windows settings
 win32{
-  TARGET = ../../bin/plugins/searchplugin  
+  TARGET = ../../bin/plugins/chipcardplugin  
   CONFIG += debug thread warn_on qt plugin
   RC_FILE = res/chipcardplugin.rc
   RCC_DIR = ../../build/chipcardplugin/win/rcc
