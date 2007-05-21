@@ -16,7 +16,7 @@ private slots:
 	void settable();
 	void editorder(QString dbID);
 	//void editarchiveorder(QString dbID);
-	//void deleteorder(QString dbID);
+	void deleteorder(QString dbID);
 	//void deletearchivorder(QString dbID);
 	//void completeitems();
 	//void createdoc_1(QString dbID);

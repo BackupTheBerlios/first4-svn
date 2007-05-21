@@ -316,7 +316,7 @@ void procedurefrm::checkdeleteID()
 {
     QTreeWidgetItem* item = treemain->currentItem();
     item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
-    //deleteorder(item->text(1));
+    deleteorder(item->text(1));
 }
 //
 void procedurefrm::editorder(QString dbID)
@@ -564,24 +564,22 @@ void procedurefrm::editarchiveorder(QString dbID)
     }
     nafrm->btnaccept->setCaption("Schliessen");
     nafrm->show();
-}
+}*/
 //
 void procedurefrm::deleteorder(QString dbID)
 {
     QString conn = "SELECT orderid FROM proceduretab WHERE `ID` = '"+dbID+"';";
     QSqlQuery query(conn);
     if( query.isActive())
-    { 
-	query.next();
-    }   
+		query.next();
     if(QMessageBox::information(this, tr("Delete order..."), tr("Delete order %1?").arg(query.value(0).toString()), QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes)
     {
-	conn = "DELETE FROM `proceduretab` WHERE `ID`='"+dbID+"';";
-	QSqlQuery query2(conn);
+		conn = "DELETE FROM `proceduretab` WHERE `ID`='"+dbID+"';";
+		QSqlQuery query2(conn);
     }
-    this->filltable(mainlistview->currentItem()->text(2).toInt());
-    mainlisttable->setFocus();
-}
+    this->filltable(treemain->currentItem()->text(2).toInt());
+    treemain->setFocus();
+}/*
 //
 void procedurefrm::deletearchivorder(QString dbID)
 {
