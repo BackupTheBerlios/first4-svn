@@ -419,7 +419,7 @@ void procedurefrm::editorder(QString dbID)
     }
     
     if(eorders->exec())
-    {	    
+    {/*	    
 		if(eorders->tabtasks->rowCount()>1)
 		{
 		    //Alte Daten löschen
@@ -579,7 +579,7 @@ void procedurefrm::deleteorder(QString dbID)
     }
     this->filltable(treemain->currentItem()->text(2).toInt());
     treemain->setFocus();
-}/*
+}
 //
 void procedurefrm::deletearchivorder(QString dbID)
 {
@@ -587,15 +587,13 @@ void procedurefrm::deletearchivorder(QString dbID)
 	
     QSqlQuery query(conn);
     if( query.isActive())
-    { 
-	query.next();
-    }   
+		query.next();
     if(QMessageBox::information(this, tr("Delete order..."), tr("Delete order %1?").arg(query.value(0).toString()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
     {
-	conn = "DELETE FROM `procedurearchiv` WHERE `ID`='"+dbID+"';";
-	QSqlQuery query2(conn);
+		conn = "DELETE FROM `procedurearchiv` WHERE `ID`='"+dbID+"';";
+		QSqlQuery query2(conn);
     }
-}
+}/*
 //
 void procedurefrm::completeitems()
 {
