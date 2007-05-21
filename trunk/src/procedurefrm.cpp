@@ -419,7 +419,7 @@ void procedurefrm::editorder(QString dbID)
     }
     
     if(eorders->exec())
-    {/*	    
+    {	    
 		if(eorders->tabtasks->rowCount()>1)
 		{
 		    //Alte Daten löschen
