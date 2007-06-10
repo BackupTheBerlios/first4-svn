@@ -18,4 +18,14 @@
 
 # Qt 4 Settings
 TEMPLATE = subdirs
-SUBDIRS  += chipcard
+
+# *nux settings
+unix{
+	SUBDIRS  += chipcard
+	SUBDIRS  += docscanner
+}
+
+# Windows settings
+win32{
+	SUBDIRS  += docscanner
+}
