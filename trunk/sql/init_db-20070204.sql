@@ -1,3 +1,19 @@
+﻿-- MySQL dump 10.10
+--
+-- Host: localhost    Database: first4
+-- ------------------------------------------------------
+-- Server version	5.0.24a-Debian_9ubuntu0.1-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `accounttab`
@@ -26,7 +42,6 @@ LOCK TABLES `accounttab` WRITE;
 INSERT INTO `accounttab` VALUES (1,'ietab','Incomes / Expenditures','','','','','');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `accounttab` ENABLE KEYS */;
-
 
 --
 -- Table structure for table `adrtabs`
@@ -57,7 +72,35 @@ CREATE TABLE `datatabs` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `datatabs` VALUES (0,'vattab','MwSt.-Werte','','Tax50#Comments:200   ','vattab');
+--
+-- Dumping data for table `datatabs`
+--
+
+
+/*!40000 ALTER TABLE `datatabs` DISABLE KEYS */;
+LOCK TABLES `datatabs` WRITE;
+INSERT INTO `datatabs` VALUES (1,'vattab','MwSt.-Werte','','Tax:70#Comments:200','vattab');
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `datatabs` ENABLE KEYS */;
+
+--
+-- Table structure for table `docdrafts`
+--
+
+DROP TABLE IF EXISTS `docdrafts`;
+CREATE TABLE `docdrafts` (
+  `ID` int(11) NOT NULL auto_increment,
+  `doctyp` text NOT NULL,
+  `date` text NOT NULL,
+  `client` text NOT NULL,
+  `comments` text NOT NULL,
+  `amount` text NOT NULL,
+  `discount` text NOT NULL,
+  `docID` text NOT NULL,
+  `salutation` text NOT NULL,
+  `introduction` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `docpositions`
@@ -100,24 +143,6 @@ CREATE TABLE `docs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table `docsdrafts`
---
-
-CREATE TABLE  `docdrafts` (
-  `ID` int(11) NOT NULL auto_increment,
-  `doctyp` text NOT NULL,
-  `date` text NOT NULL,
-  `client` text NOT NULL,
-  `comments` text NOT NULL,
-  `amount` text NOT NULL,
-  `discount` text NOT NULL,
-  `docID` text NOT NULL,
-  `salutation` text NOT NULL,
-  `introduction` text NOT NULL,
-  PRIMARY KEY  (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
-
---
 -- Table structure for table `doctab`
 --
 
@@ -138,7 +163,7 @@ CREATE TABLE `doctab` (
 
 /*!40000 ALTER TABLE `doctab` DISABLE KEYS */;
 LOCK TABLES `doctab` WRITE;
-INSERT INTO `doctab` VALUES (1,'1 offer','','0001',''),(2,'2 orderconf','','0001',''),(3,'3 deliverynote','','0001',''),(4,'4 bill','','0001','');
+INSERT INTO `doctab` VALUES (1,'1 offer','','0001',''),(2,'2 orderconf','','0001',''),(3,'3 deliverynote','/','0001',''),(4,'4 bill','','0002','');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `doctab` ENABLE KEYS */;
 
@@ -200,7 +225,7 @@ CREATE TABLE `maincfgtab` (
 
 /*!40000 ALTER TABLE `maincfgtab` DISABLE KEYS */;
 LOCK TABLES `maincfgtab` WRITE;
-INSERT INTO `maincfgtab` VALUES (1,'docfolder',''),(2,'templatefolder',''),(3,'dbversion','1.4.0'),(4,'company',''),(5,'companyaddress',''),(6,'bankname',''),(7,'bankaddress',''),(8,'bankblz',''),(9,'bankaccountnr',''),(10,'banktnr',''),(11,'docpref',''),(12,'DoG','');
+INSERT INTO `maincfgtab` VALUES (1,'docfolder',''),(2,'templatefolder',''),(3,'dbversion','1.4.0-20070412'),(4,'company',''),(5,'companyaddress',''),(6,'bankname',''),(7,'bankaddress',''),(8,'bankblz',''),(9,'bankaccountnr',''),(10,'banktnr',''),(11,'docpref',''),(12,'DoG','');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `maincfgtab` ENABLE KEYS */;
 
@@ -247,7 +272,7 @@ CREATE TABLE `orderscfgtab` (
 
 /*!40000 ALTER TABLE `orderscfgtab` DISABLE KEYS */;
 LOCK TABLES `orderscfgtab` WRITE;
-INSERT INTO `orderscfgtab` VALUES (1,'',5000);
+INSERT INTO `orderscfgtab` VALUES (1,'',5020);
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `orderscfgtab` ENABLE KEYS */;
 
@@ -315,7 +340,7 @@ CREATE TABLE `procedurecfgtab` (
 
 /*!40000 ALTER TABLE `procedurecfgtab` DISABLE KEYS */;
 LOCK TABLES `procedurecfgtab` WRITE;
-INSERT INTO `procedurecfgtab` VALUES (1,'','100');
+INSERT INTO `procedurecfgtab` VALUES (1,'','0');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `procedurecfgtab` ENABLE KEYS */;
 
@@ -428,12 +453,39 @@ CREATE TABLE `userstab` (
 
 /*!40000 ALTER TABLE `userstab` DISABLE KEYS */;
 LOCK TABLES `userstab` WRITE;
-INSERT INTO `userstab` VALUES (1,'Administrator','','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO `userstab` VALUES (11,'Administrator','','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
 UNLOCK TABLES;
+/*!40000 ALTER TABLE `userstab` ENABLE KEYS */;
 
+--
+-- Table structure for table `vattab`
+--
+
+DROP TABLE IF EXISTS `vattab`;
 CREATE TABLE `vattab` (
   `ID` int(11) NOT NULL auto_increment,
   `col1` text NOT NULL,
   `col2` text NOT NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vattab`
+--
+
+
+/*!40000 ALTER TABLE `vattab` DISABLE KEYS */;
+LOCK TABLES `vattab` WRITE;
+INSERT INTO `vattab` VALUES (1,'7.6','Normaler MwSt.-Satz'),(2,'2.4','Reduzierter MwSt.-Satz'),(3,'0.0','Keine MwSt.');
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `vattab` ENABLE KEYS */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
