@@ -17,11 +17,12 @@
 */
 #include "chipcard.h"
 
-#include <chipcard3/chipcard3.h>
-#include <chipcard3/client/card.h>
-#include <chipcard3/client/client.h>
-#include <chipcard3/client/cards/geldkarte.h>
-#include <chipcard3/client/cards/geldkarte_values.h>
+
+#include <chipcard/chipcard.h>
+#include <chipcard/client/card.h>
+#include <chipcard/client/client.h>
+#include <chipcard/client/cards/geldkarte.h>
+#include <chipcard/client/cards/geldkarte_values.h>
 
 #include <QtCore>
 #include <QtGui>
@@ -91,10 +92,10 @@ void ChipCard::pay() {
 
 	double loaded = ( double )LC_GeldKarte_Values_GetLoaded( lcGeldkarteValues ) / 100.00;
 	double maxTransfer = ( double )LC_GeldKarte_Values_GetMaxXfer( lcGeldkarteValues ) / 100.00;
-	
+
 	// Standardwert für den Verkaufspreis bzw. Einkaufspreis
 	double buy = 0.00;
-	
+
 	/* TODO		Code zum Zahlen mit Karte
 
 		Aus der Datenbank die Produktbeschreibungen holen
@@ -102,35 +103,35 @@ void ChipCard::pay() {
 		QString name = QString( "" );
 		QString connStr = QString( "SELECT * FROM data1;" );
 		QSqlQuery query( constr );
-		
+
 		int fieldNo = query.record().indexOf( "price" );
-	
+
 		if ( query.isActive() ) {
 			while ( query.next() ) {
 				QString name = query.value( fieldNo ).toString();
 			}
 		}
-	
+
 		Aus der Datenbank den Betrag des Produktes holen
 		double buy;
 	*/
-	
+
 	if( buy <= 0.00 ) {
 		QMessageBox::warning( this, tr( "First4 - Payment" ), tr( "The productprice is zero." ) );
 		deinitCard( lcCard, lcClient, lcClientRes );
 		return;
 	}
-	
-	
+
+
 	if( buy > maxTransfer ) {
 		QMessageBox::warning( this, tr( "First4 - Payment" ), tr( "The productprice is too big, you must sell with creditcard.\n\nThe max. transfer on this card is %1 EUR." ).arg( maxTransfer ) );
 		deinitCard( lcCard, lcClient, lcClientRes );
 		return;
 	}
-	
+
 	if( loaded < buy )
 		QMessageBox::warning( this, tr( "First4 - Payment" ), tr( "The card have no enougth money on chip.\n\nAvailable money on card are: %1 EUR" ).arg( loaded ) );
-			
+
 
 	deinitCard( lcCard, lcClient, lcClientRes );
 }
@@ -151,7 +152,7 @@ void ChipCard::reloadCustomer() {
 	}
 }
 
-void ChipCard::reloadProducts() {}	
+void ChipCard::reloadProducts() {}
 
 bool ChipCard::initCard() {
 
@@ -187,7 +188,7 @@ bool ChipCard::initCard() {
 }
 
 bool ChipCard::deinitCard( LC_CARD *card, LC_CLIENT * cl, LC_CLIENT_RESULT res ) {
-	
+
 	res = LC_Card_Close( card );
 	if ( res == LC_Client_ResultOk ) {
 		LC_Client_ReleaseCard( cl, card );
@@ -270,8 +271,8 @@ void ChipCard::errorMsg( LC_CARD *card, LC_CLIENT_RESULT res ) {
 		lt = LC_Card_GetLastText( card );
 
 		//if ( sw1 != -1 && sw2 != -1 )
-		QMessageBox::critical( this, tr( "First4 - Payment" ), tr( "Last card command result: SW1 = %1, SW2 = %2\nResult: %3\nText: %4\n\nError: %5" ).arg( QString("%1").arg( sw1 ), QString("%1").arg( sw2 ), lr, lt, s ) );
+		//QMessageBox::critical( this, tr( "First4 - Payment" ), tr( "Last card command result: SW1 = %1, SW2 = %2\nResult: %3\nText: %4\n\nError: %5" ).arg( sw1, sw2, lr, lt, s ) );
 	}
-	
+
 	QMessageBox::critical( this, tr( "First4 - Payment" ), tr( "Error: %1" ).arg( s ) );
 }

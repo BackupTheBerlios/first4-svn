@@ -45,7 +45,7 @@ unix{
   MOC_DIR += ../../build/chipcardplugin/unix/moc
   OBJECTS_DIR += ../../build/chipcardplugin/unix/obj
   UI_DIR += ui
-  LIBS += -L/usr/lib -lchipcard3c
+  LIBS += -L/usr/lib -lchipcardc
 }
 
 # Windows settings
