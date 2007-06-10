@@ -7,7 +7,7 @@ CONFIG +=   qt \
   console \
   debug
 DESTDIR =   bin
-OBJECTS_DIR =   build
+OBJECTS_DIR = build
 MOC_DIR =   build
 UI_DIR =   build
 FORMS =   ui/mainfrm.ui \
