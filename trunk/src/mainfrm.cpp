@@ -71,6 +71,7 @@ void mainfrm::loaduserdata()
 // TODO:	Add by ChMaster (aka: Alexander Saal)
 void mainfrm::initplugins() {
 	QDir pluginsDir = QDir ( qApp->applicationDirPath() );
+	// FIXME: change plugindirectory to $HOME/.first4/plugins
 	pluginsDir.cd ( "plugins" );
 	
 	foreach ( QString fileName, pluginsDir.entryList ( QDir::Files ) )
