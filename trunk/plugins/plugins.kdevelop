@@ -121,6 +121,8 @@
       <usePermanentCaching>true</usePermanentCaching>
       <alwaysIncludeNamespaces>true</alwaysIncludeNamespaces>
       <includePaths>.;</includePaths>
+      <parseMissingHeadersExperimental>false</parseMissingHeadersExperimental>
+      <resolveIncludePathsUsingMakeExperimental>false</resolveIncludePathsUsingMakeExperimental>
     </codecompletion>
     <creategettersetter>
       <prefixGet></prefixGet>
@@ -147,14 +149,14 @@
   </kdevfilecreate>
   <kdevtrollproject>
     <general>
-      <activedir>chipcard</activedir>
+      <activedir>docscanner</activedir>
     </general>
     <run>
       <directoryradio>executable</directoryradio>
-      <mainprogram>/home/chmaster/projekte/first4/bin/first4</mainprogram>
+      <mainprogram>/home/alex/projekte/cpp/first4/bin/first4</mainprogram>
       <programargs></programargs>
       <globaldebugarguments></globaldebugarguments>
-      <globalcwd>/home/chmaster/projekte/first4/bin</globalcwd>
+      <globalcwd></globalcwd>
       <useglobalprogram>true</useglobalprogram>
       <terminal>false</terminal>
       <autocompile>true</autocompile>
@@ -185,13 +187,13 @@
   </cppsupportpart>
   <kdevdocumentation>
     <projectdoc>
-      <docsystem>Doxygen-Dokumentation</docsystem>
+      <docsystem></docsystem>
       <docurl></docurl>
       <usermanualurl>/home/chmaster/projekte/first4/doc</usermanualurl>
     </projectdoc>
   </kdevdocumentation>
   <ctagspart>
-    <customArguments></customArguments>
+    <customArguments/>
     <customTagfilePath>/home/chmaster/projekte/first4/plugins/tags</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>
