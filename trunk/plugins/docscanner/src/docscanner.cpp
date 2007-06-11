@@ -27,7 +27,6 @@
 	#include <sane_widget.h>
 #endif
 
-
 DocScanner *docscanner_instance = NULL;
 DocScanner::DocScanner( QWidget *parent ) : QWidget( parent )
 {
@@ -81,7 +80,7 @@ void DocScanner::scann() {
 	
 	QApplication::restoreOverrideCursor();
 	
-	SaneWidget *sanew = new SaneWidget( scanWidget );
+	sanew = new SaneWidget( scanWidget );
 
 	if ( sanew->openDevice( device ) == FALSE ) {
 		QString dev = sanew->selectDevice( NULL );
@@ -103,22 +102,22 @@ void DocScanner::scann() {
 	connect( sanew, SIGNAL( scanDone() ), this, SLOT( scanEnd() ) );
 	connect( sanew, SIGNAL( imageReady() ), this, SLOT( imageReady() ) );
 
-	sanew->setIconColorMode( QIcon( ":/images/color.png" ) );
-	sanew->setIconGrayMode( QIcon( ":/images/gray.png" ) );
-	sanew->setIconBWMode( QIcon( ":/images/black_white.png" ) );
-	sanew->setIconPreview( QIcon( ":/images/eye.png" ) );
-	sanew->setIconFinal( QIcon( ":/images/filesave.png" ) );
-	sanew->setIconZoomIn( QIcon( ":/images/viewmag+.png" ) );
-	sanew->setIconZoomOut( QIcon( ":/images/viewmag-.png" ) );
-	sanew->setIconZoomSel( QIcon( ":/images/viewmagfit.png" ) );
-	sanew->setIconZoomFit( QIcon( ":/images/view_fit_window.png" ) );
+	sanew->setIconColorMode( QIcon( ":/color.png" ) );
+	sanew->setIconGrayMode( QIcon( ":/gray.png" ) );
+	sanew->setIconBWMode( QIcon( ":/black_white.png" ) );
+	sanew->setIconPreview( QIcon( ":/eye.png" ) );
+	sanew->setIconFinal( QIcon( ":/filesave.png" ) );
+	sanew->setIconZoomIn( QIcon( ":/viewmag+.png" ) );
+	sanew->setIconZoomOut( QIcon( ":/viewmag-.png" ) );
+	sanew->setIconZoomSel( QIcon( ":/viewmagfit.png" ) );
+	sanew->setIconZoomFit( QIcon( ":/view_fit_window.png" ) );
 	
 	QApplication::setOverrideCursor( Qt::WaitCursor );
 	qApp->processEvents();
 
 	wlayout->setMargin( 2 );
 	wlayout->setSpacing( 2 );
-	wlayout->addWidget( scanWidget );
+	wlayout->addWidget( sanew );
 	wlayout->addWidget( separator );
 	wlayout->addLayout( btn_layout );
 
@@ -134,15 +133,16 @@ void DocScanner::scanStart() {
 	// WINDOWS
 #else
 	if ( progressDialog == NULL ) {
-		progressDialog = new QProgressDialog( 0 );
+		progressDialog = new QProgressDialog( NULL );
 	}
 
 	progressDialog->setMaximum( PROGRESS_MAX );
-
 	progressDialog->setMinimum( PROGRESS_MIN );
 
-	connect( progressDialog, SIGNAL( canceled() ), sanew, SLOT( scanCancel() ) );
-	connect( sanew, SIGNAL( scanProgress( int ) ), progressDialog, SLOT( setValue( int ) ) );
+	if( sanew ) {
+		connect( progressDialog, SIGNAL( canceled() ), sanew, SLOT( scanCancel() ) );
+		connect( sanew, SIGNAL( scanProgress( int ) ), progressDialog, SLOT( setValue( int ) ) );
+	}
 
 	progressDialog->show();
 #endif
