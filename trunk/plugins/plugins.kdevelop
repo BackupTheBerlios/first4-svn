@@ -156,7 +156,7 @@
       <mainprogram>/home/alex/projekte/cpp/first4/bin/first4</mainprogram>
       <programargs/>
       <globaldebugarguments/>
-      <globalcwd/>
+      <globalcwd>/home/alex/projekte/cpp/first4/plugins</globalcwd>
       <useglobalprogram>true</useglobalprogram>
       <terminal>false</terminal>
       <autocompile>true</autocompile>
@@ -178,6 +178,7 @@
       <replacePaths>false</replacePaths>
       <disableDefaultOpts>true</disableDefaultOpts>
     </qmake>
+    <subclassing/>
   </kdevtrollproject>
   <cppsupportpart>
     <filetemplates>
