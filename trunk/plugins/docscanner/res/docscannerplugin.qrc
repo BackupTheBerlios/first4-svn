@@ -1,5 +1,14 @@
 <RCC>
     <qresource prefix="/" >
         <file>docscanner.png</file>
+        <file>black_white.png</file>
+        <file>color.png</file>
+        <file>eye.png</file>
+        <file>filesave.png</file>
+        <file>gray.png</file>
+        <file>view_fit_window.png</file>
+        <file>viewmagfit.png</file>
+        <file>viewmag-.png</file>
+        <file>viewmag+.png</file>
     </qresource>
 </RCC>
