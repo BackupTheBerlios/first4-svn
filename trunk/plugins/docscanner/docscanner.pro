@@ -36,58 +36,58 @@ SOURCES += src/docscanner.cpp
 SOURCES += src/docscannerplugin.cpp
 
 # Unix/Linux settings
-unix{
-  DEPENDPATH += include res src ui
-  INCLUDEPATH += include ui
+unix {
+    DEPENDPATH += include res src ui
+    INCLUDEPATH += include ui
 
-  TARGET = ../../bin/plugins/docscannerplugin
-  #QMAKE_POST_LINK = strip -s ../../bin/plugins/libdocscannerplugin.so
-  RCC_DIR = ../../build/docscannerplugin/unix/rcc
-  MOC_DIR += ../../build/docscannerplugin/unix/moc
-  OBJECTS_DIR += ../../build/docscannerplugin/unix/obj
-  UI_DIR += ui
-  LIBS += -L/usr/lib -lsanewidget
+    TARGET = ../../bin/plugins/docscannerplugin
+    #QMAKE_POST_LINK = strip -s ../../bin/plugins/libdocscannerplugin.so
+    RCC_DIR = ../../build/docscannerplugin/unix/rcc
+    MOC_DIR += ../../build/docscannerplugin/unix/moc
+    OBJECTS_DIR += ../../build/docscannerplugin/unix/obj
+    UI_DIR += ui
+    LIBS += -L/usr/lib -lsanewidget
 }
 
 # Windows settings
-win32{
-  DEPENDPATH += include res src ui ../3rdparty ../3rdparty/twain
-  INCLUDEPATH += include ui ../3rdparty ../3rdparty/twain
+win32 {
+    DEPENDPATH += include res src ui ../3rdparty ../3rdparty/twain
+    INCLUDEPATH += include ui ../3rdparty ../3rdparty/twain
 
-  TARGET = ../../bin/plugins/docscannerplugin  
-  CONFIG += debug thread warn_on qt plugin
-  RC_FILE = res/docscannerplugin.rc
-  RCC_DIR = ../../build/docscannerplugin/win/rcc
-  MOC_DIR += ../../build/docscannerplugin/win/moc
-  OBJECTS_DIR += ../../build/docscannerplugin/win/obj
-  UI_DIR += ../../build/docscannerplugin/win/ui  
-  DEFINES -= UNICODE
+    TARGET = ../../bin/plugins/docscannerplugin  
+    CONFIG += debug thread warn_on qt plugin
+    RC_FILE = res/docscannerplugin.rc
+    RCC_DIR = ../../build/docscannerplugin/win/rcc
+    MOC_DIR += ../../build/docscannerplugin/win/moc
+    OBJECTS_DIR += ../../build/docscannerplugin/win/obj
+    UI_DIR += ../../build/docscannerplugin/win/ui  
+    DEFINES -= UNICODE
 
-  # 3rdpaty Source
-  SOURCES += ../3rdparty/twain/dib.cpp
-  SOURCES += ../3rdparty/twain/qtwain.cpp
-  SOURCES += ../3rdparty/twain/qtwaininterface.cpp
-  SOURCES += ../3rdparty/twain/qtwainsubstitute.cpp
-  SOURCES += ../3rdparty/twain/twaincpp.cpp
+    # 3rdpaty Source
+    SOURCES += ../3rdparty/twain/dib.cpp
+    SOURCES += ../3rdparty/twain/qtwain.cpp
+    SOURCES += ../3rdparty/twain/qtwaininterface.cpp
+    SOURCES += ../3rdparty/twain/qtwainsubstitute.cpp
+    SOURCES += ../3rdparty/twain/twaincpp.cpp
 
-  HEADERS += ../3rdparty/twain/dib.h
-  HEADERS += ../3rdparty/twain/qtwain.h
-  HEADERS += ../3rdparty/twain/qtwaininterface.h
-  HEADERS += ../3rdparty/twain/qtwainsubstitute.h
-  HEADERS += ../3rdparty/twain/stdafx.h
-  HEADERS += ../3rdparty/twain/twain.h
-  HEADERS += ../3rdparty/twain/twaincpp.h
+    HEADERS += ../3rdparty/twain/dib.h
+    HEADERS += ../3rdparty/twain/qtwain.h
+    HEADERS += ../3rdparty/twain/qtwaininterface.h
+    HEADERS += ../3rdparty/twain/qtwainsubstitute.h
+    HEADERS += ../3rdparty/twain/stdafx.h
+    HEADERS += ../3rdparty/twain/twain.h
+    HEADERS += ../3rdparty/twain/twaincpp.h
 }
 
 # Mac settings
 mac {
-  DEPENDPATH += include res src ui
-  INCLUDEPATH += include ui
+    DEPENDPATH += include res src ui
+    INCLUDEPATH += include ui
 
-  TARGET = ../../bin/plugins/docscannerplugin
-  RCC_DIR = ../../build/docscannerplugin/mac/rcc
-  MOC_DIR += ../../build/docscannerplugin/mac/moc
-  OBJECTS_DIR += ../../build/docscannerplugin/mac/obj
-  UI_DIR += ../../build/docscannerplugin/mac/ui
-  LIBS += -L/usr/lib -lsanewidget
+    TARGET = ../../bin/plugins/docscannerplugin
+    RCC_DIR = ../../build/docscannerplugin/mac/rcc
+    MOC_DIR += ../../build/docscannerplugin/mac/moc
+    OBJECTS_DIR += ../../build/docscannerplugin/mac/obj
+    UI_DIR += ../../build/docscannerplugin/mac/ui
+    LIBS += -L/usr/lib -lsanewidget
 }
