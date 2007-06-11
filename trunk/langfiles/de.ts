@@ -532,42 +532,42 @@ p, li { white-space: pre-wrap; }
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="735"/>
+        <location filename="../src/addrfrm.cpp" line="736"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="739"/>
+        <location filename="../src/addrfrm.cpp" line="740"/>
         <source>Can&apos;t open template!</source>
         <translation>Kann Vorlage nicht öffnen!</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="778"/>
+        <location filename="../src/addrfrm.cpp" line="779"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="778"/>
+        <location filename="../src/addrfrm.cpp" line="779"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="798"/>
+        <location filename="../src/addrfrm.cpp" line="799"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="801"/>
+        <location filename="../src/addrfrm.cpp" line="802"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="841"/>
+        <location filename="../src/addrfrm.cpp" line="842"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="844"/>
+        <location filename="../src/addrfrm.cpp" line="845"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
@@ -762,9 +762,14 @@ p, li { white-space: pre-wrap; }
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../src/addrfrm.cpp" line="748"/>
+        <location filename="../src/addrfrm.cpp" line="749"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
+    </message>
+    <message>
+        <location filename="../src/addrfrm.cpp" line="667"/>
+        <source>Can&apos;t show DVI file.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -828,27 +833,27 @@ p, li { white-space: pre-wrap; }
         <translation>Einstellungen...</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="73"/>
+        <location filename="../ui/cfgfrm.ui" line="64"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2022"/>
+        <location filename="../ui/cfgfrm.ui" line="3031"/>
         <source>User</source>
         <translation>Benutzer</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="449"/>
+        <location filename="../ui/cfgfrm.ui" line="752"/>
         <source>Administrator</source>
         <translation>Administrator</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="732"/>
+        <location filename="../ui/cfgfrm.ui" line="1360"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="593"/>
+        <location filename="../ui/cfgfrm.ui" line="1063"/>
         <source>-</source>
         <translation>-</translation>
     </message>
@@ -1193,214 +1198,214 @@ p, li { white-space: pre-wrap; }
         <translation>Eingene Daten...</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="102"/>
+        <location filename="../ui/cfgfrm.ui" line="227"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="114"/>
+        <location filename="../ui/cfgfrm.ui" line="259"/>
         <source>Language-File:</source>
         <translation>Sprach-Datei:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2137"/>
+        <location filename="../ui/cfgfrm.ui" line="3283"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="151"/>
+        <location filename="../ui/cfgfrm.ui" line="293"/>
         <source>Current Database</source>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="541"/>
+        <location filename="../ui/cfgfrm.ui" line="897"/>
         <source>DB-Version:</source>
         <translation>DB-Version:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="176"/>
+        <location filename="../ui/cfgfrm.ui" line="361"/>
         <source>DB-Server:</source>
         <translation>DB-Server:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="554"/>
+        <location filename="../ui/cfgfrm.ui" line="825"/>
         <source>DB-Name:</source>
         <translation>DB-Name:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="489"/>
+        <location filename="../ui/cfgfrm.ui" line="1056"/>
         <source>First-Version:</source>
         <translation>First-Version:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="268"/>
+        <location filename="../ui/cfgfrm.ui" line="460"/>
         <source>Databases</source>
         <translation>Datenbanken</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="706"/>
+        <location filename="../ui/cfgfrm.ui" line="1217"/>
         <source>Confirmation:</source>
         <translation>Bestätigung:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="348"/>
+        <location filename="../ui/cfgfrm.ui" line="694"/>
         <source>Old Password:</source>
         <translation>Altes Passwort:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="361"/>
+        <location filename="../ui/cfgfrm.ui" line="658"/>
         <source>New Password:</source>
         <translation>Neues Passwort:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="387"/>
+        <location filename="../ui/cfgfrm.ui" line="590"/>
         <source>&amp;Change</source>
         <translation>Ä&amp;ndern</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="465"/>
+        <location filename="../ui/cfgfrm.ui" line="768"/>
         <source>&amp;Database</source>
         <translation>&amp;Datenbank</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="477"/>
+        <location filename="../ui/cfgfrm.ui" line="1024"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="516"/>
+        <location filename="../ui/cfgfrm.ui" line="793"/>
         <source>Current database</source>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="528"/>
+        <location filename="../ui/cfgfrm.ui" line="861"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="607"/>
+        <location filename="../ui/cfgfrm.ui" line="916"/>
         <source>DB-Updates</source>
         <translation>DB-Updates</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="619"/>
+        <location filename="../ui/cfgfrm.ui" line="990"/>
         <source>File:</source>
         <translation>Datei:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="655"/>
+        <location filename="../ui/cfgfrm.ui" line="961"/>
         <source>&amp;Update</source>
         <translation>&amp;Update</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="662"/>
+        <location filename="../ui/cfgfrm.ui" line="1076"/>
         <source>&amp;Users</source>
         <translation>&amp;Benutzer</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="674"/>
+        <location filename="../ui/cfgfrm.ui" line="1169"/>
         <source>ID:</source>
         <translation>ID:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="692"/>
+        <location filename="../ui/cfgfrm.ui" line="1106"/>
         <source>(Leave fields empty to
 take current password!)</source>
         <translation>(Felder leer lassen um
 aktuelles Passwort zu behalten!)</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="719"/>
+        <location filename="../ui/cfgfrm.ui" line="1137"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="745"/>
+        <location filename="../ui/cfgfrm.ui" line="2774"/>
         <source>Users:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="854"/>
+        <location filename="../ui/cfgfrm.ui" line="1381"/>
         <source>&amp;Contact</source>
         <translation>&amp;Kontakt</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="866"/>
+        <location filename="../ui/cfgfrm.ui" line="1458"/>
         <source>Firstname:</source>
         <translation>Vorname:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="879"/>
+        <location filename="../ui/cfgfrm.ui" line="1490"/>
         <source>Lastname:</source>
         <translation>Nachname:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="892"/>
+        <location filename="../ui/cfgfrm.ui" line="1522"/>
         <source>Fullname:</source>
         <translation>Kompl.Name:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="905"/>
+        <location filename="../ui/cfgfrm.ui" line="1426"/>
         <source>Date of birth:</source>
         <translation>Geburtsdatum:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="951"/>
+        <location filename="../ui/cfgfrm.ui" line="1535"/>
         <source>&amp;Privat</source>
         <translation>&amp;Privat</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1125"/>
+        <location filename="../ui/cfgfrm.ui" line="1833"/>
         <source>Street:</source>
         <translation>Strasse:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="976"/>
+        <location filename="../ui/cfgfrm.ui" line="1612"/>
         <source>ZIP:</source>
         <translation>PLZ:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1167"/>
+        <location filename="../ui/cfgfrm.ui" line="1766"/>
         <source>Location:</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1154"/>
+        <location filename="../ui/cfgfrm.ui" line="1734"/>
         <source>Country:</source>
         <translation>Land:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1048"/>
+        <location filename="../ui/cfgfrm.ui" line="1689"/>
         <source>&amp;Business</source>
         <translation>&amp;Geschäft</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1060"/>
+        <location filename="../ui/cfgfrm.ui" line="1865"/>
         <source>Empl. grade:</source>
         <translation>Einstel.Grad:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1073"/>
+        <location filename="../ui/cfgfrm.ui" line="1897"/>
         <source>Empl. type:</source>
         <translation>Einstel.art:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1086"/>
+        <location filename="../ui/cfgfrm.ui" line="1980"/>
         <source>Position:</source>
         <translation>Position:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1099"/>
+        <location filename="../ui/cfgfrm.ui" line="2012"/>
         <source>Org. Unit:</source>
         <translation>Abteilung:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1112"/>
+        <location filename="../ui/cfgfrm.ui" line="2044"/>
         <source>Profession:</source>
         <translation>Beruf:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1138"/>
+        <location filename="../ui/cfgfrm.ui" line="1798"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -1408,254 +1413,264 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PLZ:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1181"/>
+        <location filename="../ui/cfgfrm.ui" line="1905"/>
         <source>10%</source>
         <translation>10%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1186"/>
+        <location filename="../ui/cfgfrm.ui" line="1910"/>
         <source>20%</source>
         <translation>20%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1191"/>
+        <location filename="../ui/cfgfrm.ui" line="1915"/>
         <source>30%</source>
         <translation>30%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1196"/>
+        <location filename="../ui/cfgfrm.ui" line="1920"/>
         <source>40%</source>
         <translation>40%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1201"/>
+        <location filename="../ui/cfgfrm.ui" line="1925"/>
         <source>50%</source>
         <translation>50%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1206"/>
+        <location filename="../ui/cfgfrm.ui" line="1930"/>
         <source>60%</source>
         <translation>60%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1211"/>
+        <location filename="../ui/cfgfrm.ui" line="1935"/>
         <source>70%</source>
         <translation>70%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1216"/>
+        <location filename="../ui/cfgfrm.ui" line="1940"/>
         <source>80%</source>
         <translation>80%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1221"/>
+        <location filename="../ui/cfgfrm.ui" line="1945"/>
         <source>90%</source>
         <translation>90%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1226"/>
+        <location filename="../ui/cfgfrm.ui" line="1950"/>
         <source>100%</source>
         <translation>100%</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1313"/>
+        <location filename="../ui/cfgfrm.ui" line="2070"/>
         <source>C&amp;ommunication</source>
         <translation>&amp;Kommunikation</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1325"/>
+        <location filename="../ui/cfgfrm.ui" line="2082"/>
         <source>Business</source>
         <translation>Geschäft</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1622"/>
+        <location filename="../ui/cfgfrm.ui" line="2621"/>
         <source>E-Mail 1:</source>
         <translation>E-Mail 1:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1635"/>
+        <location filename="../ui/cfgfrm.ui" line="2653"/>
         <source>E-Mail 2:</source>
         <translation>E-Mail 2:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1648"/>
+        <location filename="../ui/cfgfrm.ui" line="2685"/>
         <source>E-Mail 3:</source>
         <translation>E-Mail 3:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1609"/>
+        <location filename="../ui/cfgfrm.ui" line="2589"/>
         <source>VoIP:</source>
         <translation>VoIP:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1596"/>
+        <location filename="../ui/cfgfrm.ui" line="2557"/>
         <source>Pager:</source>
         <translation>Pager:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1583"/>
+        <location filename="../ui/cfgfrm.ui" line="2525"/>
         <source>Mobile:</source>
         <translation>Mobile:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1570"/>
+        <location filename="../ui/cfgfrm.ui" line="2493"/>
         <source>Fax:</source>
         <translation>Fax:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1557"/>
+        <location filename="../ui/cfgfrm.ui" line="2461"/>
         <source>Telefon:</source>
         <translation>Telefon:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1441"/>
+        <location filename="../ui/cfgfrm.ui" line="2231"/>
         <source>Tel. direct:</source>
         <translation>Tel. direkt:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1545"/>
+        <location filename="../ui/cfgfrm.ui" line="2408"/>
         <source>Privat</source>
         <translation>Privat</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1661"/>
+        <location filename="../ui/cfgfrm.ui" line="2717"/>
         <source>Website:</source>
         <translation>Webseite:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1758"/>
+        <location filename="../ui/cfgfrm.ui" line="2735"/>
         <source>&amp;Notes</source>
         <translation>&amp;Notizen</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1805"/>
+        <location filename="../ui/cfgfrm.ui" line="2800"/>
         <source>&amp;Authorizations</source>
         <translation>&amp;Berechtigungen</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1817"/>
+        <location filename="../ui/cfgfrm.ui" line="3100"/>
         <source>Ressources:</source>
         <translation>Ressourcen:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1830"/>
+        <location filename="../ui/cfgfrm.ui" line="2824"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1865"/>
+        <location filename="../ui/cfgfrm.ui" line="2859"/>
         <source>Template:</source>
         <translation>Vorlage:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1893"/>
+        <location filename="../ui/cfgfrm.ui" line="2887"/>
         <source>Acc.Nr.</source>
         <translation>Konto-Nr.</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2269"/>
+        <location filename="../ui/cfgfrm.ui" line="3585"/>
         <source>Bank:</source>
         <translation>Bank:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2243"/>
+        <location filename="../ui/cfgfrm.ui" line="3521"/>
         <source>Clearing:</source>
         <translation>BLZ:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1932"/>
+        <location filename="../ui/cfgfrm.ui" line="2926"/>
         <source>Curr.:</source>
         <translation>Währ.:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="1990"/>
+        <location filename="../ui/cfgfrm.ui" line="2984"/>
         <source>Start ID:</source>
         <translation>Start ID:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2027"/>
+        <location filename="../ui/cfgfrm.ui" line="3036"/>
         <source>Read</source>
         <translation>Lesen</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2032"/>
+        <location filename="../ui/cfgfrm.ui" line="3041"/>
         <source>Write</source>
         <translation>Schreiben</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2436"/>
+        <location filename="../ui/cfgfrm.ui" line="3678"/>
         <source>&amp;Save</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2074"/>
+        <location filename="../ui/cfgfrm.ui" line="3108"/>
         <source>&amp;Path</source>
         <translation>&amp;Pfad</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2086"/>
+        <location filename="../ui/cfgfrm.ui" line="3133"/>
         <source>Default path</source>
         <translation>Standard Pfad</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2098"/>
+        <location filename="../ui/cfgfrm.ui" line="3210"/>
         <source>Templates:</source>
         <translation>Vorlagen:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2111"/>
+        <location filename="../ui/cfgfrm.ui" line="3261"/>
         <source>Documents:</source>
         <translation>Dokumente:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2180"/>
+        <location filename="../ui/cfgfrm.ui" line="3296"/>
         <source>&amp;Own data</source>
         <translation>&amp;Eigene Angaben</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2282"/>
+        <location filename="../ui/cfgfrm.ui" line="3553"/>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2205"/>
+        <location filename="../ui/cfgfrm.ui" line="3620"/>
         <source>Company:</source>
         <translation>Firma:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2218"/>
+        <location filename="../ui/cfgfrm.ui" line="3408"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2230"/>
+        <location filename="../ui/cfgfrm.ui" line="3489"/>
         <source>Account:</source>
         <translation>Konto:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2256"/>
+        <location filename="../ui/cfgfrm.ui" line="3453"/>
         <source>Usernumber:</source>
         <translation>Teilnehmernr.:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2325"/>
+        <location filename="../ui/cfgfrm.ui" line="3460"/>
         <source>00-000000-0; </source>
         <translation>00-000000-0;</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2378"/>
+        <location filename="../ui/cfgfrm.ui" line="3633"/>
         <source>&amp;Settings</source>
         <translation>&amp;Einstellungen</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2390"/>
+        <location filename="../ui/cfgfrm.ui" line="3755"/>
         <source>Days of grace:</source>
         <translation>Zahlungsfrist:</translation>
     </message>
     <message>
-        <location filename="../ui/cfgfrm.ui" line="2413"/>
+        <location filename="../ui/cfgfrm.ui" line="3723"/>
         <source>Doc. Prefix:</source>
         <translation>Dok.Vorlage:</translation>
+    </message>
+    <message>
+        <location filename="../ui/cfgfrm.ui" line="161"/>
+        <source>Plugin</source>
+        <translation>Plugin</translation>
+    </message>
+    <message>
+        <location filename="../ui/cfgfrm.ui" line="193"/>
+        <source>Plugindirectory:</source>
+        <translation>Pluginverzeichnis:</translation>
     </message>
 </context>
 <context>
@@ -1679,22 +1694,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>dataeditfrm</name>
     <message>
-        <location filename="../src/dataeditfrm.cpp" line="36"/>
+        <location filename="../src/dataeditfrm.cpp" line="38"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../src/dataeditfrm.cpp" line="218"/>
+        <location filename="../src/dataeditfrm.cpp" line="220"/>
         <source>&amp;Check Address</source>
         <translation>&amp;Adresse überprüfen</translation>
     </message>
     <message>
-        <location filename="../src/dataeditfrm.cpp" line="221"/>
+        <location filename="../src/dataeditfrm.cpp" line="223"/>
         <source>&amp;Add Supplier</source>
         <translation>&amp;Lieferant hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/dataeditfrm.cpp" line="224"/>
+        <location filename="../src/dataeditfrm.cpp" line="226"/>
         <source>&amp;Delete Supplier</source>
         <translation>Lieferant &amp;entfernen</translation>
     </message>
@@ -2713,22 +2728,22 @@ Bitte kontaktieren Sie ihre Administrator.</translation>
         <translation>&amp;Drucken</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="263"/>
+        <location filename="../src/invfrm.cpp" line="270"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="267"/>
+        <location filename="../src/invfrm.cpp" line="274"/>
         <source>Can&apos;t open template!</source>
         <translation>Kann Vorlage nicht öffnen!</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="279"/>
+        <location filename="../src/invfrm.cpp" line="288"/>
         <source>Complete Inventory...</source>
         <translation>Inventar abschliessen...</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="279"/>
+        <location filename="../src/invfrm.cpp" line="288"/>
         <source>Completed Inventories can&apos;t be edited!
 
 Complete nevertheless?</source>
@@ -2737,12 +2752,12 @@ Complete nevertheless?</source>
 Trotzdem abschliessen?</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="374"/>
+        <location filename="../src/invfrm.cpp" line="383"/>
         <source>Save Data...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../src/invfrm.cpp" line="374"/>
+        <location filename="../src/invfrm.cpp" line="383"/>
         <source>Save Inventory?</source>
         <translation>Inventar speichern?</translation>
     </message>
@@ -2820,6 +2835,26 @@ Trotzdem abschliessen?</translation>
         <location filename="../ui/invfrm.ui" line="60"/>
         <source>Purchase Price</source>
         <translation>Eink. Preis</translation>
+    </message>
+    <message>
+        <location filename="../src/invfrm.cpp" line="209"/>
+        <source>Can&apos;t convert to Postscript file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/invfrm.cpp" line="217"/>
+        <source>Error during printing process.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/invfrm.cpp" line="229"/>
+        <source>Can&apos;t show DVI file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/invfrm.cpp" line="283"/>
+        <source>Error during conversion to DVI file.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2906,17 +2941,17 @@ Trotzdem abschliessen?</translation>
         <translation>first</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="815"/>
+        <location filename="../ui/mainfrm.ui" line="828"/>
         <source>&amp;Exit</source>
         <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="805"/>
+        <location filename="../ui/mainfrm.ui" line="818"/>
         <source>&amp;About</source>
         <translation>Übe&amp;r first</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="795"/>
+        <location filename="../ui/mainfrm.ui" line="808"/>
         <source>&amp;Settings</source>
         <translation>&amp;Einstellungen</translation>
     </message>
@@ -2941,7 +2976,7 @@ Trotzdem abschliessen?</translation>
         <translation>Finanzen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="788"/>
+        <location filename="../ui/mainfrm.ui" line="801"/>
         <source>-</source>
         <translation>-</translation>
     </message>
@@ -2966,27 +3001,27 @@ Trotzdem abschliessen?</translation>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="742"/>
+        <location filename="../ui/mainfrm.ui" line="779"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="728"/>
+        <location filename="../ui/mainfrm.ui" line="740"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="119"/>
+        <location filename="../src/mainfrm.cpp" line="112"/>
         <source>Messages: %1</source>
         <translation>Nachrichten: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="198"/>
+        <location filename="../src/mainfrm.cpp" line="191"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="198"/>
+        <location filename="../src/mainfrm.cpp" line="191"/>
         <source>Exit First?</source>
         <translation>First beenden?</translation>
     </message>
@@ -3486,6 +3521,234 @@ Bitte kontaktieren Sie ihre Administrator</translation>
     </message>
 </context>
 <context>
+    <name>procedureeditfrm</name>
+    <message>
+        <location filename="../src/procedureeditfrm.cpp" line="223"/>
+        <source>Stock...</source>
+        <translation>Lager...</translation>
+    </message>
+    <message>
+        <location filename="../src/procedureeditfrm.cpp" line="223"/>
+        <source>The entered quantity exceeds the stock!</source>
+        <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
+    </message>
+    <message>
+        <location filename="../src/procedureeditfrm.cpp" line="362"/>
+        <source>&amp;Check stock</source>
+        <translation>Lager prügen</translation>
+    </message>
+    <message>
+        <location filename="../src/procedureeditfrm.cpp" line="374"/>
+        <source>&amp;Edit entry</source>
+        <translation>&amp;Eintrag bearbeiten</translation>
+    </message>
+    <message>
+        <location filename="../src/procedureeditfrm.cpp" line="377"/>
+        <source>&amp;Delete Row</source>
+        <translation>Zeilen &amp;löschen</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="13"/>
+        <source>Edit Order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="28"/>
+        <source>Order ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="41"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished">&amp;Abbrechen</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="54"/>
+        <source>&amp;Accept</source>
+        <translation type="unfinished">Ü&amp;bernehmen</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="84"/>
+        <source>&amp;General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="96"/>
+        <source>State:</source>
+        <translation type="unfinished">Status:</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="109"/>
+        <source>Customer:</source>
+        <translation type="unfinished">Kunde:</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="123"/>
+        <source>Incomming order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="128"/>
+        <source>Offer</source>
+        <translation type="unfinished">Offerte</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="133"/>
+        <source>Open order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="138"/>
+        <source>Completed order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="143"/>
+        <source>Deliverynote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="148"/>
+        <source>Invoice</source>
+        <translation type="unfinished">Rechnung</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="172"/>
+        <source>Completed ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="369"/>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="198"/>
+        <source>Customer-ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="211"/>
+        <source>Priority:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="224"/>
+        <source>Date of entry:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="250"/>
+        <source>dd.mm.yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="263"/>
+        <source>Complete until:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="276"/>
+        <source>Resp. person:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="289"/>
+        <source>Contact person:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="335"/>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="340"/>
+        <source>2</source>
+        <translation type="unfinished">2</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="345"/>
+        <source>3</source>
+        <translation type="unfinished">3</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="350"/>
+        <source>4</source>
+        <translation type="unfinished">4</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="355"/>
+        <source>5</source>
+        <translation type="unfinished">5</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="416"/>
+        <source>&amp;Tasks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="492"/>
+        <source>Description</source>
+        <translation type="unfinished">Beschreibung</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="445"/>
+        <source>Complete until</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="452"/>
+        <source>&amp;Orders / Work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="479"/>
+        <source>Label</source>
+        <translation type="unfinished">Def</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="497"/>
+        <source>Quantity</source>
+        <translation type="unfinished">Menge</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="502"/>
+        <source>Unit</source>
+        <translation type="unfinished">Einheit</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="507"/>
+        <source>Price / Unit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="512"/>
+        <source>VAT</source>
+        <translation type="unfinished">MwSt</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="517"/>
+        <source>actquantity</source>
+        <translation type="unfinished">aktuelle Quantität</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="522"/>
+        <source>minquantity</source>
+        <translation type="unfinished">minimale Quantität</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="527"/>
+        <source>artID</source>
+        <translation type="unfinished">artID</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedureeditfrm.ui" line="534"/>
+        <source>&amp;Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>procedurefrm</name>
     <message>
         <location filename="../ui/procedurefrm.ui" line="13"/>
@@ -3503,98 +3766,223 @@ Bitte kontaktieren Sie ihre Administrator</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="220"/>
+        <location filename="../ui/procedurefrm.ui" line="223"/>
         <source>Orders</source>
         <translation type="unfinished">Aufträge</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="342"/>
+        <location filename="../ui/procedurefrm.ui" line="374"/>
         <source>-</source>
         <translation type="unfinished">-</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="230"/>
+        <location filename="../ui/procedurefrm.ui" line="233"/>
         <source>sort</source>
         <translation type="unfinished">sort</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="235"/>
+        <location filename="../ui/procedurefrm.ui" line="238"/>
         <source>Incomming orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="241"/>
+        <location filename="../ui/procedurefrm.ui" line="244"/>
         <source>0</source>
         <translation type="unfinished">0</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="246"/>
+        <location filename="../ui/procedurefrm.ui" line="249"/>
         <source>Offers</source>
         <translation type="unfinished">Offerten</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="252"/>
+        <location filename="../ui/procedurefrm.ui" line="255"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="257"/>
+        <location filename="../ui/procedurefrm.ui" line="260"/>
         <source>Open orders</source>
         <translation type="unfinished">Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="263"/>
+        <location filename="../ui/procedurefrm.ui" line="266"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="268"/>
+        <location filename="../ui/procedurefrm.ui" line="271"/>
         <source>Completed orders</source>
         <translation type="unfinished">Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="274"/>
+        <location filename="../ui/procedurefrm.ui" line="277"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="279"/>
+        <location filename="../ui/procedurefrm.ui" line="282"/>
         <source>Deliverynotes</source>
         <translation type="unfinished">Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="285"/>
+        <location filename="../ui/procedurefrm.ui" line="288"/>
         <source>4</source>
         <translation type="unfinished">4</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="290"/>
+        <location filename="../ui/procedurefrm.ui" line="293"/>
         <source>Invoices</source>
         <translation type="unfinished">Rechnungen</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="296"/>
+        <location filename="../ui/procedurefrm.ui" line="299"/>
         <source>5</source>
         <translation type="unfinished">5</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="301"/>
+        <location filename="../ui/procedurefrm.ui" line="304"/>
         <source>Archive</source>
         <translation type="unfinished">Archiv</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="307"/>
+        <location filename="../ui/procedurefrm.ui" line="310"/>
         <source>6</source>
         <translation type="unfinished">6</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="328"/>
+        <location filename="../ui/procedurefrm.ui" line="360"/>
         <source>&amp;Close</source>
         <translation type="unfinished">&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../ui/procedurefrm.ui" line="335"/>
+        <location filename="../ui/procedurefrm.ui" line="367"/>
         <source>User:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="28"/>
+        <source>Authorization Required...</source>
+        <translation type="unfinished">Keine Berechtigung...</translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="28"/>
+        <source>You are not authorized to open this modul
+
+Please contact your Administrator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="152"/>
+        <source>Tasks</source>
+        <translation type="unfinished">Aufgaben</translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="182"/>
+        <source>Quantity: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="186"/>
+        <source>Order ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="190"/>
+        <source>Priority:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="194"/>
+        <source>Contact:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="198"/>
+        <source>Client ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="202"/>
+        <source>Resp. Person:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="206"/>
+        <source>Complete until:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="219"/>
+        <source>New order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="327"/>
+        <source>Edit order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="591"/>
+        <source>Delete order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/procedurefrm.cpp" line="591"/>
+        <source>Delete order %1?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/procedurefrm.ui" line="327"/>
+        <source>ID</source>
+        <translation type="unfinished">ID</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedurefrm.ui" line="332"/>
+        <source>Customer</source>
+        <translation type="unfinished">Kunde</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedurefrm.ui" line="337"/>
+        <source>Description</source>
+        <translation type="unfinished">Beschreibung</translation>
+    </message>
+    <message>
+        <location filename="../ui/procedurefrm.ui" line="342"/>
+        <source>Date</source>
+        <translation type="unfinished">Datum</translation>
+    </message>
+</context>
+<context>
+    <name>proceduretask</name>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="13"/>
+        <source>Edit task...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="28"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="41"/>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="54"/>
+        <source>Complete until:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="67"/>
+        <source>Description:</source>
+        <translation type="unfinished">Beschreibung:</translation>
+    </message>
+    <message>
+        <location filename="../ui/proceduretask.ui" line="90"/>
+        <source>dd.mm.yyyy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
