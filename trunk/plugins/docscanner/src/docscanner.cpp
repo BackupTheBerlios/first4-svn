@@ -186,8 +186,9 @@ void DocScanner::imageReady() {
 	// WINDOWS
 #else
 	QPixmap pix = QPixmap::fromImage( *( sanew->getFinalImage() ) );
+	// FIXME: Stretch image
 	if( !pix.isNull() )
-		;
+		labelPixmap->setPixmap( pix );
 #endif
 }
 
