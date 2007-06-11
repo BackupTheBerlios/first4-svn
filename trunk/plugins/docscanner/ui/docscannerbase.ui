@@ -93,25 +93,16 @@
         <property name="spacing" >
          <number>6</number>
         </property>
-        <item row="0" column="0" >
-         <widget class="QLabel" name="labelDescription" >
-          <property name="minimumSize" >
-           <size>
-            <width>110</width>
-            <height>0</height>
-           </size>
+        <item rowspan="2" row="0" column="1" >
+         <widget class="QLabel" name="labelPixmap" >
+          <property name="frameShape" >
+           <enum>QFrame::Panel</enum>
           </property>
-          <property name="maximumSize" >
-           <size>
-            <width>110</width>
-            <height>16777215</height>
-           </size>
+          <property name="frameShadow" >
+           <enum>QFrame::Sunken</enum>
           </property>
           <property name="text" >
-           <string>Preview:</string>
-          </property>
-          <property name="buddy" >
-           <cstring>textBrowserPreview</cstring>
+           <string/>
           </property>
          </widget>
         </item>
@@ -128,10 +119,22 @@
           </property>
          </spacer>
         </item>
-        <item rowspan="2" row="0" column="1" >
-         <widget class="QTextBrowser" name="textBrowserPreview" >
-          <property name="openExternalLinks" >
-           <bool>true</bool>
+        <item row="0" column="0" >
+         <widget class="QLabel" name="labelDescription" >
+          <property name="minimumSize" >
+           <size>
+            <width>110</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>110</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text" >
+           <string>Preview:</string>
           </property>
          </widget>
         </item>
@@ -181,7 +184,6 @@
  </widget>
  <tabstops>
   <tabstop>cbxCustomer</tabstop>
-  <tabstop>textBrowserPreview</tabstop>
   <tabstop>btnScan</tabstop>
   <tabstop>btnAbort</tabstop>
  </tabstops>
