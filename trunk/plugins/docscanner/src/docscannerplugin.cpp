@@ -44,8 +44,7 @@ QDialog *DocScannerPlugin::dialog() const {
 QWidget *DocScannerPlugin::widget() const {
 
 	if ( !docscanner_instance ) {
-		docscanner_instance = new DocScanner();
-	
+		docscanner_instance = new DocScanner();	
 	} else {
 		return docscanner_instance;
 	}

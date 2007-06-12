@@ -1,4 +1,5 @@
 <ui version="4.0" >
+ <author>Alexander Saal &lt;alex.saal@gmx.de></author>
  <class>UiDocScannerBase</class>
  <widget class="QWidget" name="UiDocScannerBase" >
   <property name="geometry" >
@@ -31,6 +32,51 @@
       <property name="spacing" >
        <number>6</number>
       </property>
+      <item row="2" column="0" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>623</width>
+          <height>151</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QGroupBox" name="groupBoxImageOption" >
+        <property name="title" >
+         <string>Imageoption</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="1" column="0" >
+          <widget class="QRadioButton" name="rBtnSaveImageBlob" >
+           <property name="text" >
+            <string>Save image into database (BLOB)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QRadioButton" name="rBtnSaveImageFile" >
+           <property name="text" >
+            <string>Save image as file</string>
+           </property>
+           <property name="checked" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
       <item row="0" column="0" >
        <layout class="QHBoxLayout" >
         <property name="margin" >
@@ -85,61 +131,6 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="0" >
-       <layout class="QGridLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
-        <property name="spacing" >
-         <number>6</number>
-        </property>
-        <item rowspan="2" row="0" column="1" >
-         <widget class="QLabel" name="labelPixmap" >
-          <property name="frameShape" >
-           <enum>QFrame::Panel</enum>
-          </property>
-          <property name="frameShadow" >
-           <enum>QFrame::Sunken</enum>
-          </property>
-          <property name="text" >
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" >
-         <spacer>
-          <property name="orientation" >
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" >
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0" >
-         <widget class="QLabel" name="labelDescription" >
-          <property name="minimumSize" >
-           <size>
-            <width>110</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize" >
-           <size>
-            <width>110</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text" >
-           <string>Preview:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
      </layout>
     </widget>
    </item>
@@ -166,6 +157,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnScan" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
        <property name="text" >
         <string>&amp;Scan</string>
        </property>
@@ -198,12 +192,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>547</x>
-     <y>389</y>
+     <x>652</x>
+     <y>452</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>311</x>
-     <y>394</y>
+     <x>429</x>
+     <y>483</y>
     </hint>
    </hints>
   </connection>

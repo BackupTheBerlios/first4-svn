@@ -43,7 +43,7 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 		~DocScanner();
 
 		static DocScanner *instance() { return docscanner_instance;	}
-
+		
 	private slots:
 		void scann();
 		void reloadCustomer();
@@ -60,7 +60,7 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 		SaneWidget *sanew;
 #endif
 		QProgressDialog *progressDialog;
-		QDialog *scanWidget;
+		QWidget *scanWidget;
 
 		QRect scanRect;
 		int scanTeft;

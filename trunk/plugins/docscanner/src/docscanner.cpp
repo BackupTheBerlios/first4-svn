@@ -69,7 +69,7 @@ void DocScanner::scann() {
 	QString device( "" );
 	
 	// Scanning dialog
-	scanWidget = new QDialog( 0 );
+	scanWidget = new QWidget( 0 );
 	
 	QVBoxLayout *wlayout = new QVBoxLayout( scanWidget );
 	QHBoxLayout *btn_layout = new QHBoxLayout;
@@ -186,9 +186,42 @@ void DocScanner::imageReady() {
 	// WINDOWS
 #else
 	QPixmap pix = QPixmap::fromImage( *( sanew->getFinalImage() ) );
-	// FIXME: Stretch image
-	if( !pix.isNull() )
-		labelPixmap->setPixmap( pix );
+
+	if( !pix.isNull() ) {
+		// Close scanwidget
+		scanWidget->close();
+
+		// Work with object "pix"
+		if( rBtnSaveImageFile->isChecked() ) {			
+			// save image as file			
+						
+			// some information:
+			// 1.	username
+// 			// 2.	documet dirctory (select from database)
+			// 3.	but last not least, save image to the correct user
+			
+			QString userName = QString( cbxCustomer->currentText() );
+			QString sqlQuery = QString( "SELECT value FROM maincfgtab WHERE var LIKE '%docfolder%';" );
+			
+			QSqlQuery query( sqlQuery );			
+			int fieldNo = query.record().indexOf( "value" );			
+			bool isActive = query.isActive();			
+		
+			if ( isActive ) {
+				bool queryNext = query.next();
+				while ( queryNext ) {
+					sqlQuery = query.value( fieldNo ).toString();
+					queryNext = query.next();
+				}
+			}
+			
+			if( sqlQuery.isEmpty() )
+				return;		
+
+		} else if ( rBtnSaveImageBlob->isChecked() ) {
+			// save image as blob into database .... more memory in database is needed
+		}
+	}
 #endif
 }
 
