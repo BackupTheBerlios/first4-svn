@@ -104,7 +104,7 @@
       <automaticArgumentsHint>true</automaticArgumentsHint>
       <automaticHeaderCompletion>true</automaticHeaderCompletion>
       <codeCompletionDelay>200</codeCompletionDelay>
-      <argumentsHintDelay>400</argumentsHintDelay>
+      <argumentsHintDelay>200</argumentsHintDelay>
       <headerCompletionDelay>250</headerCompletionDelay>
       <showOnlyAccessibleItems>false</showOnlyAccessibleItems>
       <completionBoxItemOrder>0</completionBoxItemOrder>
