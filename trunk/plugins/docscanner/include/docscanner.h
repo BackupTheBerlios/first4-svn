@@ -46,7 +46,8 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 		
 	private slots:
 		void scann();
-		void reloadCustomer();
+		void reloadCustomer( QString );
+		void reloadAddressBook();
 		
 		void scanStart();
 		void scanEnd();
@@ -62,6 +63,7 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 		QProgressDialog *progressDialog;
 		QWidget *scanWidget;
 
+		QMap<QString, QString> addressBook;
 		QRect scanRect;
 		int scanTeft;
 		int scanTop;
