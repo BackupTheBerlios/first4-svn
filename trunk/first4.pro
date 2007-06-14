@@ -1,15 +1,15 @@
+
 TEMPLATE =   app
-QT +=   gui \
-  core \
-  sql
-CONFIG +=   qt \
-  warn_on \
-  console \
-  debug
 DESTDIR =   bin
-OBJECTS_DIR = build
-MOC_DIR =   build
-UI_DIR =   build
+DEPENDPATH += src ui
+INCLUDEPATH += src ui
+CONFIG += qt warn_on thread console debug
+QT +=   gui core sql
+
+OBJECTS_DIR = build/first4/obj
+MOC_DIR =   build/first4/moc
+UI_DIR =   build/first4/ui
+
 FORMS =   ui/mainfrm.ui \
   ui/loginfrm.ui \
   ui/cfgfrm.ui \
