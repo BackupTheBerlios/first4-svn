@@ -571,11 +571,11 @@ void addrfrm::saveaddr()
 	
     QSqlQuery queryadrsave(conn1);
     if( !queryadrsave.exec() ) {
-	    QSqlError err = queryadrsave.lastError();
-	    QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n" + err.databaseText() );
-	    return;
+	QSqlError err = queryadrsave.lastError();
+	QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n\nMessage:\t" + err.databaseText() );
+	return;
     }
-	    
+
     lastadrtab = "";
     loadaddrs();
 }
