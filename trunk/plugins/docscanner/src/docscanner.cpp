@@ -34,6 +34,7 @@ DocScanner::DocScanner( QWidget *parent ) : QWidget( parent )
 	docscanner_instance = this;
 
 	connect( btnScan, SIGNAL( clicked() ), this, SLOT( scann() ) );
+	connect( cbxAddressbook, SIGNAL( currentIndexChanged( QString ) ), this, SLOT( reloadCustomer( QString ) ) );
 
 	QDesktopWidget *desktop = qApp->desktop();
 	const QRect rect = desktop->availableGeometry( desktop->primaryScreen() );
@@ -45,8 +46,8 @@ DocScanner::DocScanner( QWidget *parent ) : QWidget( parent )
 	scanTop = top;
 	
 	setGeometry( left, top, width(), height() );
-
-	reloadCustomer();
+	
+	reloadAddressBook();
 }
 
 DocScanner::~DocScanner() {}
@@ -88,10 +89,17 @@ void DocScanner::scann() {
 		if ( sanew->openDevice( dev ) == FALSE ) {
 			QErrorMessage *err = new QErrorMessage( this );
 			err->showMessage( QString( "Opening the selected scanner failed!" ) );
-			delete( scanWidget );			
-			delete( sanew );
-			scanWidget = NULL;
-			sanew = NULL;
+			
+			if( scanWidget != NULL ) {
+				delete( scanWidget );
+				scanWidget = NULL;
+			}
+
+			if( sanew != NULL ) {
+				delete( sanew );
+				sanew = NULL;
+			}
+
 			return;
 		}
 	}
@@ -200,23 +208,40 @@ void DocScanner::imageReady() {
 // 			// 2.	documet dirctory (select from database)
 			// 3.	but last not least, save image to the correct user
 			
-			QString userName = QString( cbxCustomer->currentText() );
-			QString sqlQuery = QString( "SELECT value FROM maincfgtab WHERE var LIKE '%docfolder%';" );
+			QString userName = QString( cbxCustomer->currentText() );	
+			if( userName.isEmpty() )  return;
+				
+			QString sqlDocQuery = QString( "SELECT value FROM maincfgtab WHERE var LIKE '%docfolder%';" );
+			QString docFolder = QString( "" );
 			
-			QSqlQuery query( sqlQuery );			
-			int fieldNo = query.record().indexOf( "value" );			
-			bool isActive = query.isActive();			
-		
+			QSqlQuery docQuery( sqlDocQuery );
+
+			int fieldNo = docQuery.record().indexOf( "value" );
+			
+			if( fieldNo <= -1 ) {
+				QMessageBox::critical( this, tr( "DocScanner Plugin" ), tr( "The index of column 'value' from 'maincfgtab' table is not correct, abort!" ) );
+				return;
+			}
+						
+			bool isActive = docQuery.isActive();
+
 			if ( isActive ) {
-				bool queryNext = query.next();
-				while ( queryNext ) {
-					sqlQuery = query.value( fieldNo ).toString();
-					queryNext = query.next();
+				while ( docQuery.next() ) {
+					docFolder = docQuery.value( fieldNo ).toString();
 				}
 			}
+
+			if( docFolder.isEmpty() ) {
+				QMessageBox::critical( this, tr( "DocScanner Plugin" ), tr( "No document folder availabel!" ) );
+				return;
+			}
 			
-			if( sqlQuery.isEmpty() )
-				return;		
+			// FIXME: set the correct sql statement for insert image (blob) or image as file to the correct costumner
+			QString sqlImgQuery = QString( "" );
+			QSqlQuery imgQuery( sqlImgQuery );
+			if( imgQuery.exec() )
+				return;
+			
 
 		} else if ( rBtnSaveImageBlob->isChecked() ) {
 			// save image as blob into database .... more memory in database is needed
@@ -225,18 +250,77 @@ void DocScanner::imageReady() {
 #endif
 }
 
-void DocScanner::reloadCustomer() {
+void DocScanner::reloadAddressBook() {
 
-	cbxCustomer->clear();
+	addressBook.clear();
+	cbxAddressbook->clear();
+	cbxAddressbook->addItem( "" );
+
 	QString connstr = QString( "SELECT * FROM adrtabs;" );
 
 	QSqlQuery query( connstr );
-	int fieldNo = query.record().indexOf( "name" );
+	int fieldNoName = query.record().indexOf( "name" );
+	int fieldNoDesc = query.record().indexOf( "description" );
 
 	if ( query.isActive() ) {
 		while ( query.next() ) {
-			QString name = query.value( fieldNo ).toString();
-			cbxCustomer->addItem( name );
+			QString name = query.value( fieldNoName ).toString();
+			QString desc = query.value( fieldNoDesc ).toString();
+			
+			cbxAddressbook->addItem( desc );
+			addressBook[ name ] = desc;
 		}
 	}
+}
+
+void DocScanner::reloadCustomer( QString desc ) {
+	
+	if( desc.isEmpty() || desc.isNull() ) {
+		cbxCustomer->clear();
+		return;
+	}
+
+	cbxCustomer->clear();
+
+	QMap<QString, QString>::const_iterator c_it = addressBook.begin();	
+	while( c_it != addressBook.end() ) {		
+		if( c_it.value() == desc ) {
+			QString connstr = QString( "SELECT * FROM " + QString( c_it.key() ) );
+			
+			QSqlQuery query( connstr );
+			int fieldNoLastName = query.record().indexOf( "lastname" );
+			int fieldNoFirstName = query.record().indexOf( "firstname" );
+			int fieldNoCompany = query.record().indexOf( "company" );
+
+			if ( query.isActive() ) {
+				while ( query.next() ) {
+					QString lastname = query.value( fieldNoLastName ).toString();
+					QString firstname = query.value( fieldNoFirstName ).toString();
+					QString company = query.value( fieldNoCompany ).toString();
+					
+					if( firstname.isEmpty() || firstname.isNull() && lastname.isEmpty() || lastname.isNull() && company.isEmpty() || company.isNull() ) {
+						QMessageBox::critical( this, tr( "DocScanner Plugin" ), tr( "No customer availabel!" ) );
+						return;
+					}
+					else if( lastname.isEmpty() || lastname.isNull() && company.isEmpty() || company.isNull() )
+						cbxCustomer->addItem( firstname );
+
+					else if( firstname.isEmpty() || firstname.isNull() && company.isEmpty() || company.isNull() )
+						cbxCustomer->addItem( lastname );
+
+					else if( !firstname.isEmpty() || !firstname.isNull() && !lastname.isEmpty() || !lastname.isNull() && !company.isEmpty() || !company.isNull())
+						cbxCustomer->addItem( company + " - " + lastname + ", " + firstname);
+
+					else if( !company.isEmpty() || !company.isNull() )
+						cbxCustomer->addItem( company );
+
+					else if( company.isEmpty() || company.isNull() )
+						cbxCustomer->addItem( company );
+				}
+			}
+			
+			
+		}
+		++c_it;
+	}	
 }
