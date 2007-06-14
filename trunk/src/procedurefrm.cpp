@@ -296,11 +296,11 @@ void procedurefrm::neworder()
 				queryorder.exec();
 		    }
 		}
-	//ansicht aktualisieren
-	treemain->clearSelection();
-	treeindex->clearSelection();
-	if(treeindex->currentItem() != 0)
-		filltable(treeindex->currentItem()->text(2).toInt());
+		//ansicht aktualisieren
+		treemain->clearSelection();
+		treeindex->clearSelection();
+		if(treeindex->currentItem() != 0)
+			filltable(treeindex->currentItem()->text(2).toInt());
     }
 }
 //
@@ -309,6 +309,7 @@ void procedurefrm::checkeditID()
     QTreeWidgetItem* item = treemain->currentItem();
     item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
     editorder(item->text(1));
+    //QMessageBox::information(this, tr("Delete order..."), "test");
 }
 //
 
@@ -508,6 +509,7 @@ void procedurefrm::editorder(QString dbID)
 			    tmpitem = eorders->taborders->item(i, 8);
 				queryorder.bindValue( ":vat", tmpitem->text());
 				queryorder.exec();
+				QMessageBox::information(this, tr("Delete order..."), queryorder.lastQuery());
 		    }
 		}
 		
@@ -522,7 +524,7 @@ void procedurefrm::editorder(QString dbID)
 		treeindex->clearSelection();
 		treemain->clearSelection();	
 		this->filltable(eorders->cmbstate->currentIndex());
-		treemain->setFocus();
+		//treemain->setFocus();
     }
 }
 //
@@ -605,8 +607,6 @@ void procedurefrm::deleteorder(QString dbID)
 		conn = "DELETE FROM `proceduretab` WHERE `ID`='"+dbID+"';";
 		QSqlQuery query2(conn);
     }
-    this->filltable(treemain->currentItem()->text(2).toInt());
-    treemain->setFocus();
 }
 //
 void procedurefrm::deletearchivorder(QString dbID)
@@ -620,6 +620,8 @@ void procedurefrm::deletearchivorder(QString dbID)
     {
 		conn = "DELETE FROM `procedurearchiv` WHERE `ID`='"+dbID+"';";
 		QSqlQuery query2(conn);
+	    this->filltable(treemain->currentItem()->text(2).toInt());
+	    treemain->setFocus();
     }
 }/*
 //

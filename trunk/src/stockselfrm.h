@@ -10,6 +10,7 @@ public:
 	stockselfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
 private slots:
+	void acceptentry();
 };
 #endif
 
