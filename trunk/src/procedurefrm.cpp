@@ -419,7 +419,7 @@ void procedurefrm::editorder(QString dbID)
     }
     
     if(eorders->exec())
-    {/*	    
+    {	    
 		if(eorders->tabtasks->rowCount()>1)
 		{
 		    //Alte Daten löschen
@@ -427,13 +427,13 @@ void procedurefrm::editorder(QString dbID)
 		    querytask_clean.prepare("DELETE FROM `proceduretasks` WHERE `PROC_ID`=:id;");
 		    querytask_clean.bindValue(":id", dbID);
 		    querytask_clean.exec();
-		    for(i=0;i<nafrm->tabletasks->numRows()-1;i++)
+		    for(i=0;i<eorders->tabtasks->rowCount()-1;i++)
 		    {
-				QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tabletasks->item(i, 0);
-				if(nafrm->tabletasks->text(i, 1) != "") 
+		    	QTableWidgetItem *tmpitem = eorders->tabtasks->item(i, 1);
+				if(tmpitem->text() != "") 
 				{
 				    QString state;
-			    	if(tmpitem->isChecked())
+			    	if(tmpitem->checkState() == Qt::Checked)
 						state ="1";
 				    else
 						state ="0";
@@ -441,25 +441,32 @@ void procedurefrm::editorder(QString dbID)
 				    querytask.prepare("INSERT INTO `proceduretasks` (`PROC_ID`, `STATE`, `TASK`, `DATE`) VALUE (:proc_id, :state, :task, :date);");
 				    querytask.bindValue(":proc_id", dbID);
 				    querytask.bindValue(":state", state);
-				    querytask.bindValue(":task", nafrm->tabletasks->text(i, 1));
-				    querytask.bindValue(":date", nafrm->tabletasks->text(i, 2));
+				    
+				    tmpitem = new QTableWidgetItem;
+				    tmpitem = eorders->tabtasks->item(i, 1);
+				    querytask.bindValue(":task", tmpitem->text());
+				    
+				    tmpitem = new QTableWidgetItem;
+				    tmpitem = eorders->tabtasks->item(i, 2);
+				    querytask.bindValue(":date", tmpitem->text());
 				    querytask.exec();
 				}
 		    }
 		}
 	
-		if(nafrm->tableorders->numRows()>1)
+		if(eorders->taborders->rowCount() > 1)
 		{
 		    //Alte Daten löschen
 		    QSqlQuery queryorder_clean;
 		    queryorder_clean.prepare("DELETE FROM `procedureorders` WHERE `PROC_ID`=:id;");
 		    queryorder_clean.bindValue(":id", dbID);
 		    queryorder_clean.exec();
-		    for(i=0;i<nafrm->tableorders->numRows()-1;i++)
+		    for(i=0; i < eorders->taborders->rowCount()-1; i++)
 		    {
-				QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tableorders->item(i, 0);
+		    	QTableWidgetItem *tmpitem = eorders->taborders->item(i, 0);
+				
 				QString state;
-				if(tmpitem->isChecked())
+				if(tmpitem->checkState() == Qt::Checked)
 				    state = "1";
 				else
 				    state = "0";
@@ -467,35 +474,56 @@ void procedurefrm::editorder(QString dbID)
 				QSqlQuery queryorder;
 				queryorder.prepare("INSERT INTO `procedureorders` (`ID`, `PROC_ID`, `STOCK`, `STOCK_ID`, `STATE`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`) VALUES ('', :proc_id, :stock, :stock_id, :state, :label, :description, :quantity, :unit, :price, :vat);");
 				queryorder.bindValue( ":proc_id", dbID);
-				queryorder.bindValue( ":stock", nafrm->tableorders->text(i, 11).section(":#:", 0, 0));
-				queryorder.bindValue( ":stock_id", nafrm->tableorders->text(i, 11).section(":#:", 1, 1));
-				if(tmpitem->isChecked())
+
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 11);
+				queryorder.bindValue( ":stock", tmpitem->text().section(":#:", 0, 0));
+				queryorder.bindValue( ":stock_id", tmpitem->text().section(":#:", 1, 1));
+				if(tmpitem->checkState() == Qt::Checked)
 				    queryorder.bindValue( ":state", "1");
 				else
 				    queryorder.bindValue( ":state", "0");
-				queryorder.bindValue( ":label", nafrm->tableorders->text(i, 1));
-				queryorder.bindValue( ":description", nafrm->tableorders->text(i, 3));
-				queryorder.bindValue( ":quantity", nafrm->tableorders->text(i, 4));
-				queryorder.bindValue( ":unit", nafrm->tableorders->text(i, 5));
-				queryorder.bindValue( ":price", nafrm->tableorders->text(i, 6));
-				queryorder.bindValue( ":vat", nafrm->tableorders->text(i, 8));
+
+			    tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 1);
+				queryorder.bindValue( ":label", tmpitem->text());
+				
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 3);
+				queryorder.bindValue( ":description", tmpitem->text());
+				
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 4);
+				queryorder.bindValue( ":quantity", tmpitem->text());
+				
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 5);
+				queryorder.bindValue( ":unit", tmpitem->text());
+				
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 6);
+				queryorder.bindValue( ":price", tmpitem->text());
+				
+				tmpitem = new QTableWidgetItem;
+			    tmpitem = eorders->taborders->item(i, 8);
+				queryorder.bindValue( ":vat", tmpitem->text());
 				queryorder.exec();
 		    }
 		}
 		
 		//datenbank aktualisieren
-		QString erledigt = "0";
-		if(nafrm->chkerledigt->isChecked())
-		    erledigt = "1";
-		QString connstr = "UPDATE `proceduretab` SET `status` = '"+QString("%1").arg(nafrm->cmbstatus->currentItem(), 0, 10)+"', `completed` = '"+erledigt+"', `client` = '"+nafrm->txtkunde->text()+" ("+nafrm->lblkundenid->text()+")', `description` = '"+nafrm->txtbeschreibung->text()+"', `date` = '"+nafrm->dateedit1->date().toString("yyyy-MM-dd")+"', `orderid` = '"+nafrm->boxauftragid->text()+"', `priority` = '"+nafrm->cmbprioritaet->currentText()+"', `contactperson` = '"+nafrm->boxkontakt->text()+"', `resp_person` = '"+nafrm->boxverarbeitet->text()+"',  `complete_until` = '"+nafrm->dateedit2->date().toString("yyyy-MM-dd")+"' WHERE `ID` = '"+dbID+"' LIMIT 1;";
+		QString completed = "0";
+		if(eorders->chkcompleted->isChecked())
+		    completed = "1";
+		QString connstr = "UPDATE `proceduretab` SET `status` = '"+QString("%1").arg(eorders->cmbstate->currentIndex(), 0, 10)+"', `completed` = '"+completed+"', `client` = '"+eorders->txtcustomer->toPlainText()+" ("+eorders->lblcustomerid->text()+")', `description` = '"+eorders->txtcomments->toPlainText()+"', `date` = '"+eorders->dateedit1->date().toString("yyyy-MM-dd")+"', `orderid` = '"+eorders->txtorderid->text()+"', `priority` = '"+eorders->cmbpriority->currentText()+"', `contactperson` = '"+eorders->txtcontact->text()+"', `resp_person` = '"+eorders->txtresponsible->text()+"',  `complete_until` = '"+eorders->dateedit2->date().toString("yyyy-MM-dd")+"' WHERE `ID` = '"+dbID+"' LIMIT 1;";
 		QSqlQuery query(connstr);		
 		
 		//ansicht aktualisieren
-		mainlistview->clearSelection();
-		mainlisttable->clearSelection();	
-		this->filltable(nafrm->cmbstatus->currentItem());
-		mainlisttable->setFocus();
-    */}
+		treeindex->clearSelection();
+		treemain->clearSelection();	
+		this->filltable(eorders->cmbstate->currentIndex());
+		treemain->setFocus();
+    }
 }
 //
 /*
