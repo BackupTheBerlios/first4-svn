@@ -1,4 +1,4 @@
-﻿-- MySQL dump 10.10
+-- MySQL dump 10.10
 --
 -- Host: localhost    Database: first4
 -- ------------------------------------------------------
