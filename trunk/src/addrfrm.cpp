@@ -2,6 +2,7 @@
 #include <QCloseEvent>
 #include <QStringList>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QHeaderView>
 #include <QInputDialog>
 #include <QDate>
@@ -565,9 +566,16 @@ void addrfrm::saveaddr()
     QString s;
     s.sprintf( "%2d.%2d.%4d", date.day(), date.month(), date.year() );
     
+
     QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr4->text()+"',`firstname` = '"+ adr5->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`zip_location` = '"+ adr9->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
 	
     QSqlQuery queryadrsave(conn1);
+    if( !queryadrsave.exec() ) {
+	    QSqlError err = queryadrsave.lastError();
+	    QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n" + err.databaseText() );
+	    return;
+    }
+	    
     lastadrtab = "";
     loadaddrs();
 }
@@ -624,7 +632,7 @@ void addrfrm::deladdr()
 //
 void addrfrm::clearsearch()
 {
-	txtsearch->setText("");
+    txtsearch->setText("");
     lastadrtab = "";
     loadaddrs();    
 }
