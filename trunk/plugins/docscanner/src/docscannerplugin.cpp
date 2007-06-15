@@ -28,7 +28,7 @@ QIcon DocScannerPlugin::img() const {
 
 QString DocScannerPlugin::pluginName() const {
 
-	return QString( tr( "Dokumentenscanner" ) );
+	return QString( tr( "Scan documents" ) );
 }
 
 QString DocScannerPlugin::pluginVersion() const {
