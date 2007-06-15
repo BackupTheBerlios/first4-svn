@@ -15,6 +15,7 @@
 *   along with this program; if not, write to the Free Software Foundation,
 *   Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
+
 #include "docscanner.h"
 
 #include <QtCore>
@@ -42,12 +43,13 @@ DocScanner::DocScanner( QWidget *parent ) : QWidget( parent )
 	int top = ( rect.height() - height() ) / 2;
 	
 	scanRect = rect;
-	scanTeft = left;
+	scanLeft = left;
 	scanTop = top;
 	
 	setGeometry( left, top, width(), height() );
 	
 	reloadAddressBook();
+	checkDatabaseVersion();
 }
 
 DocScanner::~DocScanner() {}
@@ -79,10 +81,8 @@ void DocScanner::scann() {
 	separator->setFrameShape( QFrame::HLine );
 	separator->setFrameShadow( QFrame::Sunken );
 	
-	QApplication::restoreOverrideCursor();
-	
 	sanew = new SaneWidget( scanWidget );
-
+	
 	if ( sanew->openDevice( device ) == FALSE ) {
 		QString dev = sanew->selectDevice( NULL );
 
@@ -102,6 +102,8 @@ void DocScanner::scann() {
 
 			return;
 		}
+
+		scanWidget->setWindowTitle( tr( "Scanwidget ... " ) + dev );
 	}
 	
 
@@ -120,16 +122,13 @@ void DocScanner::scann() {
 	sanew->setIconZoomSel( QIcon( ":/viewmagfit.png" ) );
 	sanew->setIconZoomFit( QIcon( ":/view_fit_window.png" ) );
 	
-	QApplication::setOverrideCursor( Qt::WaitCursor );
-	qApp->processEvents();
-
 	wlayout->setMargin( 2 );
 	wlayout->setSpacing( 2 );
 	wlayout->addWidget( sanew );
 	wlayout->addWidget( separator );
 	wlayout->addLayout( btn_layout );
 
-	scanWidget->setGeometry( scanTeft, scanTop, width(), height() );
+	scanWidget->setGeometry( scanLeft + 100, scanTop + 100, width(), height() );
 	scanWidget->show();
 	QApplication::restoreOverrideCursor();
 #endif
@@ -140,10 +139,14 @@ void DocScanner::scanStart() {
 #ifdef Q_OS_WIN32
 	// WINDOWS
 #else
+	QApplication::setOverrideCursor( Qt::WaitCursor );
+
 	if ( progressDialog == NULL ) {
 		progressDialog = new QProgressDialog( NULL );
 	}
 
+	progressDialog->setWindowTitle( tr( "Scanning document ..." ) );
+	progressDialog->setCancelButtonText( tr( "Cancel" ) );
 	progressDialog->setMaximum( PROGRESS_MAX );
 	progressDialog->setMinimum( PROGRESS_MIN );
 
@@ -153,6 +156,8 @@ void DocScanner::scanStart() {
 	}
 
 	progressDialog->show();
+
+	QApplication::restoreOverrideCursor();
 #endif
 }
 
@@ -176,7 +181,7 @@ void DocScanner::scanFailed() {
 		delete( progressDialog );
 		progressDialog = NULL;
 	}
-
+	
 	QMessageBox mb( "SaneWidget",
 
 	                "Scanning failed!\n",
@@ -323,4 +328,21 @@ void DocScanner::reloadCustomer( QString desc ) {
 		}
 		++c_it;
 	}	
+}
+
+void DocScanner::checkDatabaseVersion() {
+
+	QString connstr = QString( "SELECT value FROM maincfgtab WHERE var = 'dbversion';" );
+
+	QSqlQuery query( connstr );
+	if ( query.isActive() ) {
+		while ( query.next() ) {
+			QString value = query.value( query.record().indexOf( "value" ) ).toString();		
+
+			int mainV = value.split( "." ).value( 0 ).toInt();
+			int secondV = value.split( "." ).value( 1 ).toInt();
+			int thirdV = value.split( "." ).value( 2 ).toInt();
+			int buildDate = value.split( "-" ).value( 1 ).toInt();
+		}
+	}
 }
