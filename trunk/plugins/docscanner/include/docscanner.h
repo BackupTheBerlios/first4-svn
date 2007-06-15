@@ -46,13 +46,14 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 		
 	private slots:
 		void scann();
+		void checkDatabaseVersion();
 		void reloadCustomer( QString );
 		void reloadAddressBook();
 		
 		void scanStart();
 		void scanEnd();
 		void scanFailed();
-		void imageReady();
+		void imageReady();		
 
 	private:
 #ifdef Q_OS_WIN32
@@ -65,7 +66,7 @@ class DocScanner : public QWidget, public Ui::UiDocScannerBase
 
 		QMap<QString, QString> addressBook;
 		QRect scanRect;
-		int scanTeft;
+		int scanLeft;
 		int scanTop;
 
 	protected:
