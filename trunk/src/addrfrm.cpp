@@ -46,6 +46,14 @@ void addrfrm::init()
     mainlistview->headerItem()->setText(2, QApplication::translate("addrfrm", "Firstname", 0, QApplication::UnicodeUTF8));
     mainlistview->headerItem()->setText(3, QApplication::translate("addrfrm", "ID", 0, QApplication::UnicodeUTF8));
     mainlistview->hideColumn(3);
+
+	int i;
+	QStringList colwidth = v.loadcolwidth(this->objectName(), "mainlistview" );
+	if ( colwidth.size() > 0	)
+	{
+		for(i=0; i<colwidth.size(); i++)
+			mainlistview->setColumnWidth(i, colwidth[i].toInt());
+	}
     
     //QSqlDatabase* adrfirstDB = QSqlDatabase::database();
     
@@ -107,7 +115,13 @@ void addrfrm::init()
 //
 void addrfrm::closeEvent(QCloseEvent* ce )
 {
+	int cols;
+	QStringList colwidth;
+	for(cols=0; cols < mainlistview->columnCount(); cols++)
+			colwidth << QString("%1").arg(mainlistview->columnWidth(cols));
 	vars v;
+	v.savecolwidth(this->objectName(), "mainlistview", colwidth);
+	
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 	ce->accept();
 }

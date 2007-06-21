@@ -9,6 +9,7 @@ Q_OBJECT
 public:
 	procedureeditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
+	void neworder();
 private:
 	void initvat();
 private slots:

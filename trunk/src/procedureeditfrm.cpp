@@ -99,6 +99,11 @@ void procedureeditfrm::init()
     connect(taborders, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
 }
 //
+void procedureeditfrm::neworder()
+{
+	newentry = TRUE;
+}
+//
 void procedureeditfrm::searchaddress()
 {
     addrselectfrm *seladdr = new addrselectfrm;
@@ -136,7 +141,8 @@ void procedureeditfrm::acceptdata()
     {
 		QString conn = "UPDATE `procedurecfgtab` SET `auftrid`='"+QString("%1").arg((txtorderid->text().toInt()+1), 0, 10)+"';"; 
 		QSqlQuery query(conn);
-		accept();    
+		QMessageBox::information(this, tr("Delete order..."), conn);
+		accept();
     }
     else
 		accept();
@@ -233,8 +239,7 @@ void procedureeditfrm::navordertabs(int row)
 	
 	connect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));
 }
-
-
+//
 void procedureeditfrm::checkdb()
 {
 	disconnect(taborders, SIGNAL(cellChanged(int, int)), this, SLOT(navordertabs(int)));

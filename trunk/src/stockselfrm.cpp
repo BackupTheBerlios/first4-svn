@@ -5,6 +5,7 @@
 #include <QMessageBox>
 //
 #include "stockselfrm.h"
+#include "vars.h"
 //
 stockselfrm::stockselfrm( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
@@ -18,24 +19,15 @@ void stockselfrm::init()
 	treemain->hideColumn(7);
 	treemain->hideColumn(8);
 		
+
 	int i;
-    QString tmpstr;
-    QStringList lines;
-    QFile file(QDir::homePath()+"/.first4/columns.conf");
-    if(file.open(QIODevice::ReadOnly))
-    {
-		QTextStream stream(&file);
-		while(!stream.atEnd())
-		{
-		    tmpstr = stream.readLine();
-		    if(tmpstr.section("-", 0, 0) == this->objectName())
-		    {
-		    	for(i=0; i<tmpstr.count(";"); i++)
-		    		treemain->setColumnWidth(i, tmpstr.section("-", 1, 1).section(";", i, i).toInt());
-	    	}
-		}
-		file.close();    
-    }
+	vars v;
+	QStringList colwidth = v.loadcolwidth(this->objectName(), "treemain" );
+	if ( colwidth.size() > 0	)
+	{
+		for(i=0; i<colwidth.size(); i++)
+			treemain->setColumnWidth(i, colwidth[i].toInt());
+	}
     
     connect(btnaccept, SIGNAL(released()), this, SLOT(acceptentry()));
     connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(acceptentry()));
@@ -44,14 +36,10 @@ void stockselfrm::init()
 void stockselfrm::acceptentry()
 {
 	int cols;
-    QFile file(QDir::homePath()+"/.first4/columns.conf" );
-    if(file.open(QIODevice::WriteOnly))
-    {
-		QTextStream stream(&file);
-		stream << this->objectName() << "-";
-		for(cols=0; cols < treemain->columnCount(); cols++)
-			stream << treemain->columnWidth(cols) << ";";
-		file.close();    
-    }
+	QStringList colwidth;
+	for(cols=0; cols < treemain->columnCount(); cols++)
+			colwidth << QString("%1").arg(treemain->columnWidth(cols));
+	vars v;
+	v.savecolwidth(this->objectName(), "treemain", colwidth);
 	this->accept();
 }

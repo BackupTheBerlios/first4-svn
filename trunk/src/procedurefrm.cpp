@@ -218,6 +218,7 @@ void procedurefrm::neworder()
     procedureeditfrm *eorder = new procedureeditfrm;
     eorder->setWindowTitle( tr("New order..."));
     eorder->init();
+    eorder->neworder();
     eorder->chkcompleted->setChecked(FALSE);
     
     QTreeWidgetItem *item = treemain->currentItem();
@@ -309,10 +310,8 @@ void procedurefrm::checkeditID()
     QTreeWidgetItem* item = treemain->currentItem();
     item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
     editorder(item->text(1));
-    //QMessageBox::information(this, tr("Delete order..."), "test");
 }
 //
-
 void procedurefrm::checkdeleteID()
 {
     QTreeWidgetItem* item = treemain->currentItem();
@@ -377,7 +376,7 @@ void procedurefrm::editorder(QString dbID)
 		while(orders.next())
 		{
 		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
-   		    if(orders.value(0).toString() == "1")
+   		    if(orders.value(2).toString() == "1")
 			    tmpitem->setCheckState(Qt::Checked);
 			else
 				tmpitem->setCheckState(Qt::Unchecked);
@@ -428,29 +427,29 @@ void procedurefrm::editorder(QString dbID)
 		    querytask_clean.prepare("DELETE FROM `proceduretasks` WHERE `PROC_ID`=:id;");
 		    querytask_clean.bindValue(":id", dbID);
 		    querytask_clean.exec();
+		    
 		    for(i=0;i<eorders->tabtasks->rowCount()-1;i++)
 		    {
 		    	QTableWidgetItem *tmpitem = eorders->tabtasks->item(i, 1);
 				if(tmpitem->text() != "") 
 				{
-				    QString state;
-			    	if(tmpitem->checkState() == Qt::Checked)
-						state ="1";
-				    else
-						state ="0";
-				    QSqlQuery querytask;
-				    querytask.prepare("INSERT INTO `proceduretasks` (`PROC_ID`, `STATE`, `TASK`, `DATE`) VALUE (:proc_id, :state, :task, :date);");
-				    querytask.bindValue(":proc_id", dbID);
-				    querytask.bindValue(":state", state);
-				    
-				    tmpitem = new QTableWidgetItem;
-				    tmpitem = eorders->tabtasks->item(i, 1);
-				    querytask.bindValue(":task", tmpitem->text());
-				    
-				    tmpitem = new QTableWidgetItem;
-				    tmpitem = eorders->tabtasks->item(i, 2);
-				    querytask.bindValue(":date", tmpitem->text());
-				    querytask.exec();
+					tmpitem = eorders->tabtasks->item(i, 0);
+					QString state;
+					if(tmpitem->checkState() == Qt::Checked)
+					    state ="1";
+					else
+					    state ="0";
+					QSqlQuery querytask;
+					querytask.prepare("INSERT INTO `proceduretasks` (`PROC_ID`, `STATE`, `TASK`, `DATE`) VALUE (:proc_id, :state, :task, :date);");
+					querytask.bindValue(":proc_id", dbID);
+					querytask.bindValue(":state", state);
+					tmpitem = eorders->tabtasks->item(i, 1);
+					querytask.bindValue(":task", tmpitem->text());
+					tmpitem = eorders->tabtasks->item(i, 2);
+					querytask.bindValue(":date", tmpitem->text());
+					querytask.exec();
+					
+
 				}
 		    }
 		}
@@ -509,7 +508,7 @@ void procedurefrm::editorder(QString dbID)
 			    tmpitem = eorders->taborders->item(i, 8);
 				queryorder.bindValue( ":vat", tmpitem->text());
 				queryorder.exec();
-				QMessageBox::information(this, tr("Delete order..."), queryorder.lastQuery());
+				QMessageBox::information(this, tr("Delete order..."), queryorder.executedQuery());
 		    }
 		}
 		
