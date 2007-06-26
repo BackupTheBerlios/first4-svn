@@ -7,6 +7,7 @@
 #include <QTranslator>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QTimer>
 
 #include "mainfrm.h"
 #include "loginfrm.h"
@@ -53,25 +54,28 @@ int main ( int argc, char ** argv )
 	{
 		logfrm.saveservers();
 		createConnections();
-		QSplashScreen splash ( QPixmap ( ":/images/images/startsplash.png" ) );
+		QSplashScreen splash ( QPixmap ( ":/images/images/newsplash.png" ) );
 		splash.show();
 		app.processEvents();
-		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
+		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignBottom, Qt::black );
 
 		mainfrm *mfrm = new mainfrm();
 
-		splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
+		splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 		mfrm->loaduserdata();
 		
-		splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
+		splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 		mfrm->initplugins();
 		
-		splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignHCenter|Qt::AlignTop, Qt::black );
+		splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 		mfrm->checkmsg();
+
+		mfrm->show();
+		
+		sleep(1);
 		
 		splash.finish ( mfrm );
 
-		mfrm->show();
 
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		return app.exec();

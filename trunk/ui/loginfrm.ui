@@ -113,6 +113,22 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>270</x>
+     <y>140</y>
+     <width>75</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="flat" >
+    <bool>false</bool>
+   </property>
+  </widget>
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
@@ -127,19 +143,6 @@
    </property>
    <property name="default" >
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btncancel" >
-   <property name="geometry" >
-    <rect>
-     <x>270</x>
-     <y>140</y>
-     <width>75</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>Cancel</string>
    </property>
   </widget>
  </widget>

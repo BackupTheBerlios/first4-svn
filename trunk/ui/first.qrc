@@ -46,5 +46,6 @@
         <file>images/wordprocessing32x32.png</file>
         <file>images/xclipboard.png</file>
         <file>images/xmag.png</file>
+        <file>images/newsplash.png</file>
     </qresource>
 </RCC>
