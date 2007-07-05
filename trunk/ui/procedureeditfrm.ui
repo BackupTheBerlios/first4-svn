@@ -28,32 +28,6 @@
     <string>Order ID:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btncancel" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>480</y>
-     <width>80</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>&amp;Cancel</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnaccept" >
-   <property name="geometry" >
-    <rect>
-     <x>710</x>
-     <y>480</y>
-     <width>80</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>&amp;Accept</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="txtorderid" >
    <property name="geometry" >
     <rect>
@@ -544,6 +518,32 @@
      </property>
     </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="btnaccept" >
+   <property name="geometry" >
+    <rect>
+     <x>699</x>
+     <y>480</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Accept</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>480</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Cancel</string>
+   </property>
   </widget>
  </widget>
  <resources>

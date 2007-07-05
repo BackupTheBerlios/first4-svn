@@ -470,45 +470,43 @@ void procedurefrm::editorder(QString dbID)
 				    state = "1";
 				else
 				    state = "0";
+				    
+				QStringList strlorders;
 	
-				QSqlQuery queryorder;
-				queryorder.prepare("INSERT INTO `procedureorders` (`ID`, `PROC_ID`, `STOCK`, `STOCK_ID`, `STATE`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`) VALUES ('', :proc_id, :stock, :stock_id, :state, :label, :description, :quantity, :unit, :price, :vat);");
-				queryorder.bindValue( ":proc_id", dbID);
-
 				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 11);
-				queryorder.bindValue( ":stock", tmpitem->text().section(":#:", 0, 0));
-				queryorder.bindValue( ":stock_id", tmpitem->text().section(":#:", 1, 1));
+			    tmpitem = eorders->taborders->item(i, 10);
+				strlorders << tmpitem->text().section(":#:", 0, 0) << tmpitem->text().section(":#:", 1, 1);
 				if(tmpitem->checkState() == Qt::Checked)
-				    queryorder.bindValue( ":state", "1");
+					strlorders << "1";
 				else
-				    queryorder.bindValue( ":state", "0");
-
+					strlorders << "0";
+	
 			    tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 1);
-				queryorder.bindValue( ":label", tmpitem->text());
+				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 3);
-				queryorder.bindValue( ":description", tmpitem->text());
+				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 4);
-				queryorder.bindValue( ":quantity", tmpitem->text());
+				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 5);
-				queryorder.bindValue( ":unit", tmpitem->text());
+				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 6);
-				queryorder.bindValue( ":price", tmpitem->text());
+				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 8);
-				queryorder.bindValue( ":vat", tmpitem->text());
-				queryorder.exec();
-				QMessageBox::information(this, tr("Delete order..."), queryorder.executedQuery());
+				strlorders << tmpitem->text();
+				
+				QString qstr = QString("INSERT INTO `procedureorders` (`ID`, `PROC_ID`, `STOCK`, `STOCK_ID`, `STATE`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`) VALUES ('', '"+dbID+"', '%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9');").arg(strlorders[0]).arg(strlorders[1]).arg(strlorders[2]).arg(strlorders[3]).arg(strlorders[4]).arg(strlorders[5]).arg(strlorders[6]).arg(strlorders[7]).arg(strlorders[8]);
+				QSqlQuery queryorders(qstr);
 		    }
 		}
 		

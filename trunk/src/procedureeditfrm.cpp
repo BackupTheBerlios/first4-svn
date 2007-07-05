@@ -37,9 +37,9 @@ void procedureeditfrm::init()
     taborders->setColumnWidth(5,60);
     taborders->setColumnWidth(6,100);       
     taborders->setColumnWidth(7,100);
-    taborders->hideColumn(8);
-    taborders->hideColumn(9);
-    taborders->hideColumn(10);
+    //taborders->hideColumn(8);
+    //taborders->hideColumn(9);
+    //taborders->hideColumn(10);
 
     taborders->setRowCount(1);
     
