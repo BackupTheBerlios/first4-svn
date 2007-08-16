@@ -308,8 +308,11 @@ void procedurefrm::neworder()
 void procedurefrm::checkeditID()
 {
     QTreeWidgetItem* item = treemain->currentItem();
-    item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
-    editorder(item->text(1));
+    if(item != 0)
+    {
+	    item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
+	    editorder(item->text(1));
+   	}
 }
 //
 void procedurefrm::checkdeleteID()
@@ -414,7 +417,21 @@ void procedurefrm::editorder(QString dbID)
 		    tmpitem->setText(orders.value(0).toString()+":#:"+orders.value(1).toString());
 		    eorders->taborders->setItem(orders.at(), 10, tmpitem);
 		    
-		    eorders->navordertabs(orders.at());
+		    QString qstr2 = QString("SELECT col3, col4 FROM %1 WHERE `ID`='%2';").arg(orders.value(0).toString()).arg(orders.value(1).toString());
+		    QSqlQuery checkdbquery(qstr2);
+		    checkdbquery.next();
+		    
+		    //Actual quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(0).toString());
+		    eorders->taborders->setItem(orders.at(), 8, tmpitem);
+		    
+		    //Minimal quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(1).toString());
+		    eorders->taborders->setItem(orders.at(), 9, tmpitem);
+		    
+		    //eorders->navordertabs(orders.at());
 		}
     }
     
@@ -475,11 +492,7 @@ void procedurefrm::editorder(QString dbID)
 	
 				tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 10);
-				strlorders << tmpitem->text().section(":#:", 0, 0) << tmpitem->text().section(":#:", 1, 1);
-				if(tmpitem->checkState() == Qt::Checked)
-					strlorders << "1";
-				else
-					strlorders << "0";
+				strlorders << tmpitem->text().section(":#:", 0, 0) << tmpitem->text().section(":#:", 1, 1) << state;
 	
 			    tmpitem = new QTableWidgetItem;
 			    tmpitem = eorders->taborders->item(i, 1);
@@ -502,7 +515,7 @@ void procedurefrm::editorder(QString dbID)
 				strlorders << tmpitem->text();
 				
 				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 8);
+			    tmpitem = eorders->taborders->item(i, 7);
 				strlorders << tmpitem->text();
 				
 				QString qstr = QString("INSERT INTO `procedureorders` (`ID`, `PROC_ID`, `STOCK`, `STOCK_ID`, `STATE`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`) VALUES ('', '"+dbID+"', '%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9');").arg(strlorders[0]).arg(strlorders[1]).arg(strlorders[2]).arg(strlorders[3]).arg(strlorders[4]).arg(strlorders[5]).arg(strlorders[6]).arg(strlorders[7]).arg(strlorders[8]);
