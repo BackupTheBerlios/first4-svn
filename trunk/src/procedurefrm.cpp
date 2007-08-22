@@ -67,6 +67,7 @@ int procedurefrm::init()
 	connect(btnadd, SIGNAL(released()), this, SLOT(neworder()));
     connect(btnedit, SIGNAL(released()), this, SLOT(checkeditID()));
     connect(btndelete, SIGNAL(released()), this, SLOT(checkdeleteID()));
+    connect(btncomplete, SIGNAL(released()), this, SLOT(completeorder()));
     return r;
 }
 //
@@ -142,6 +143,8 @@ void procedurefrm::filltable(int state)
 		    row->setText(1, query.value(0).toString());
 		    if(query.value(2).toString()=="1")
 				row->setCheckState(0, Qt::Checked);
+			else
+				row->setCheckState(0, Qt::Unchecked);
 		    row->setText(2, query.value(3).toString().section(" (", 0, 0));
 			
 		    row->setText(3, query.value(4).toString());
@@ -310,16 +313,28 @@ void procedurefrm::checkeditID()
     QTreeWidgetItem* item = treemain->currentItem();
     if(item != 0)
     {
-	    item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
-	    editorder(item->text(1));
+    	while(item->parent() != 0)
+    		item = item->parent();
+    	QTreeWidgetItem* indexitem = treeindex->currentItem();
+    	if(indexitem != 0)
+    	{
+    		if(indexitem->text(2).toInt() == 6) //Open order or Archive?
+    			editorder(item->text(1));
+    		else
+    			editarchiveorder(item->text(1));
+   		}
    	}
 }
 //
 void procedurefrm::checkdeleteID()
 {
     QTreeWidgetItem* item = treemain->currentItem();
-    item = treemain->topLevelItem(treemain->indexOfTopLevelItem(item));
-    deleteorder(item->text(1));
+    if(item != 0)
+    {
+    	while(item->parent() != 0)
+    		item = item->parent();
+	    deleteorder(item->text(1));
+    }
 }
 //
 void procedurefrm::editorder(QString dbID)
@@ -431,7 +446,7 @@ void procedurefrm::editorder(QString dbID)
 		    tmpitem->setText(checkdbquery.value(1).toString());
 		    eorders->taborders->setItem(orders.at(), 9, tmpitem);
 		    
-		    //eorders->navordertabs(orders.at());
+		    eorders->navordertabs(orders.at());
 		}
     }
     
@@ -534,77 +549,123 @@ void procedurefrm::editorder(QString dbID)
 		treeindex->clearSelection();
 		treemain->clearSelection();	
 		this->filltable(eorders->cmbstate->currentIndex());
-		//treemain->setFocus();
     }
 }
 //
-/*
 void procedurefrm::editarchiveorder(QString dbID)
 {
-    int i;    
-    neuauftragfrm *nafrm = new neuauftragfrm;
-    nafrm->initfrm();
-    nafrm->setCaption( tr("Edit order..."));
-    QString conn = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchiv WHERE `ID` = '"+dbID+"';";
+    procedureeditfrm *eorders = new procedureeditfrm;
+    eorders->init();
+    eorders->setWindowTitle( tr("Edit order..."));
+    
+    QString qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchiv WHERE `ID` = '"+dbID+"';";
 	
-    QSqlQuery query(conn);
+    QSqlQuery query(qstr);
     if( query.isActive())
     { 
-	while(query.next())
-	{
-	    nafrm->lbldbID->setText(dbID);
-	    nafrm->cmbstatus->setCurrentItem(mainlistview->currentItem()->text(2).toInt());
-	    if(query.value(2).toString()=="1")
-		nafrm->chkerledigt->setChecked(TRUE);
-	    nafrm->txtkunde->setText(query.value(3).toString().section(" (", 0, 0),"");
-	    nafrm->txtbeschreibung->setText(query.value(4).toString(),"");  
-	    QString s = query.value(5).toString();
-	    nafrm->dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
-	    nafrm->boxauftragid->setText(query.value(6).toString());
-	    s = query.value(10).toString();
-	    nafrm->dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
-	    nafrm->boxkontakt->setText(query.value(8).toString());
-	    nafrm->lblkundenid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
-	    nafrm->cmbprioritaet->setCurrentText(query.value(7).toString());    
-	    nafrm->boxverarbeitet->setText(query.value(9).toString());  		
+		query.next();
+		eorders->lbldbID->setText(dbID);
+		eorders->cmbstate->setCurrentIndex(query.value(1).toInt());
+		if(query.value(2).toString() == "1")
+		    eorders->chkcompleted->setCheckState(Qt::Checked);
+		eorders->txtcustomer->setText(query.value(3).toString().section(" (", 0, 0));
+		eorders->txtcomments->setText(query.value(4).toString());
+		QString s = query.value(5).toString();
+		eorders->dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
+		eorders->txtorderid->setText(query.value(6).toString());
+		s = query.value(10).toString();
+		eorders->dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
+		eorders->txtcontact->setText(query.value(8).toString());
+		eorders->lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
+		eorders->cmbpriority->setEditText(query.value(7).toString());    
+		eorders->txtresponsible->setText(query.value(9).toString());  	
+
+		QString qstr = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='A_%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery tasks(qstr);
+
+		while(tasks.next())
+		{
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(tasks.value(0).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    eorders->tabtasks->setItem(tasks.at(), 0, tmpitem);
+			
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(1).toString());
+		    eorders->tabtasks->setItem(tasks.at(), 1, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(2).toString());
+		    eorders->tabtasks->setItem(tasks.at(), 2, tmpitem);
+		    eorders->navtasktab(tasks.at());
+		}
 		
-	    if(query.value(11).toString().contains(":##:")>0)
-		nafrm->navtasktab(0, 0);
-	    for(i=0; i<query.value(11).toString().contains(":##:"); i++)
-	    {
-		QString textzeilen = query.value(11).toString().section(":##:", i, i);
-		QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tabletasks->item(i, 0);
-		if(textzeilen.section( ":#:", 0, 0 )=="1")
-		    tmpitem->setChecked(TRUE);
-		nafrm->tabletasks->setText(i, 1, textzeilen.section( ":#:", 1, 1 ));
-		nafrm->tabletasks->setText(i, 2, textzeilen.section( ":#:", 2, 2 ));
-		nafrm->navtasktab(i, 0);
-	    }
-		
-	    if(query.value(12).toString().contains(":##:")>0)
-		nafrm->navordertabs(0, 0);
-	    for(i=0; i<query.value(12).toString().contains(":##:"); i++)
-	    {
-		QString textzeilen = query.value(12).toString().section(":##:", i, i);
-		QCheckTableItem* tmpitem = (QCheckTableItem*)nafrm->tableorders->item(i, 0);
-		if(textzeilen.section( ":#:", 0, 0 )=="1")
-		    tmpitem->setChecked(TRUE);
-		nafrm->tableorders->setText(i, 1, textzeilen.section( ":#:", 1, 1 ));	
-		nafrm->tableorders->setPixmap(i, 2, QPixmap::fromMimeSource( "viewmag2.png" ));	
-		nafrm->tableorders->setText(i, 3, textzeilen.section( ":#:", 2, 2 ));	
-		nafrm->tableorders->setText(i, 3, textzeilen.section( ":#:", 3, 3 ));
-		nafrm->tableorders->setText(i, 4, textzeilen.section( ":#:", 4, 4 ));	    
-		nafrm->tableorders->setText(i, 5, textzeilen.section( ":#:", 5, 5 ));	    
-		nafrm->tableorders->setText(i, 6, textzeilen.section( ":#:", 6, 6 ));	    
-		nafrm->tableorders->setText(i, 7, textzeilen.section( ":#:", 7, 7 ));	    
-		nafrm->tableorders->setText(i, 8, textzeilen.section( ":#:", 8, 8 ));
-		nafrm->navordertabs(i, 0);
-	    }		
-	}
+		qstr = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='A_%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery orders(qstr);
+
+		while(orders.next())
+		{
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(orders.value(2).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    eorders->taborders->setItem(orders.at(), 0, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(3).toString());
+		    eorders->taborders->setItem(orders.at(), 1, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		    eorders->taborders->setItem(orders.at(), 2, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(4).toString());
+		    eorders->taborders->setItem(orders.at(), 3, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(5).toString());
+		    eorders->taborders->setItem(orders.at(), 4, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(6).toString());
+		    eorders->taborders->setItem(orders.at(), 5, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));
+		    eorders->taborders->setItem(orders.at(), 6, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(8).toString());
+		    eorders->taborders->setItem(orders.at(), 7, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(0).toString()+":#:"+orders.value(1).toString());
+		    eorders->taborders->setItem(orders.at(), 10, tmpitem);
+		    
+		    QString qstr2 = QString("SELECT col3, col4 FROM %1 WHERE `ID`='%2';").arg(orders.value(0).toString()).arg(orders.value(1).toString());
+		    QSqlQuery checkdbquery(qstr2);
+		    checkdbquery.next();
+		    
+		    //Actual quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(0).toString());
+		    eorders->taborders->setItem(orders.at(), 8, tmpitem);
+		    
+		    //Minimal quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(1).toString());
+		    eorders->taborders->setItem(orders.at(), 9, tmpitem);
+		    
+		    eorders->navordertabs(orders.at());
+		}
     }
-    nafrm->btnaccept->setCaption("Schliessen");
-    nafrm->show();
-}*/
+    eorders->btnaccept->setText("Schliessen");
+    eorders->show();
+}
 //
 void procedurefrm::deleteorder(QString dbID)
 {
@@ -633,73 +694,63 @@ void procedurefrm::deletearchivorder(QString dbID)
 	    this->filltable(treemain->currentItem()->text(2).toInt());
 	    treemain->setFocus();
     }
-}/*
+}
 //
-void procedurefrm::completeitems()
+void procedurefrm::completeorder()
 {
     int i;
-    QCheckListItem* item = (QCheckListItem*)mainlisttable->firstChild();
-    for(i=0;i<mainlisttable->childCount();i++)
+	QTreeWidgetItem* indexitem = treeindex->currentItem();
+    for(i=0;i<treemain->topLevelItemCount();i++)
     {	
-	if(i>0)
-	{
-	    item = (QCheckListItem*)item->itemBelow();	    
-	    while(item->text(1).stripWhiteSpace()=="")
-		item=(QCheckListItem*)item->itemBelow();
-	}
-	QListViewItem* itemchild = (QCheckListItem*)item->firstChild();
-	itemchild = (QCheckListItem*)itemchild->itemBelow();
-	itemchild->setOpen(FALSE);
-	itemchild = (QCheckListItem*)itemchild->itemBelow();
-	itemchild->setOpen(FALSE);	
-	itemchild = (QCheckListItem*)itemchild->itemBelow();
-	if(item->isOn())
-	{
-	    switch(mainlistview->currentItem()->text(2).toInt())
-	    {
-	    case 0: //Offerte erstellen
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create offer for order %1 ?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->createdoc_2(0);
-		this->updatedatabase(0, item->text(1));
-		break;
-	    case 1: //Auftragsbestäigung erstellen
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create order confirmation for order %1 ?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->createdoc_2(1);
-		this->updatedatabase(1, item->text(1));
-		this->filltable(1);
-		break;
-	    case 2: //Auftrag erledigt
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("All works on procedure %1 completed?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->updatedatabase(2, item->text(1));
-		this->filltable(2);
-		break;
-	    case 3: //Lieferschein erstellen
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create deliverynote for order %1 ?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->createdoc_2(3);
-		this->updatedatabase(3, item->text(1));
-		this->filltable(3);
-		break;
-	    case 4: //Rechnung erstellen
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create bill for order %1 ?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->createdoc_2(4);
-		this->updatedatabase(4, item->text(1));
-		this->filltable(4);
-		break;
-	    case 5: //Auftrag abgeschlossen und archivieren
-		this->createdoc_1(item->text(1));
-		if(QMessageBox::information(this, tr("Procedure completed..."), tr("Complete and archive order %1 ?").arg(itemchild->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-		    this->updatedatabase(5, item->text(1));
-		this->filltable(5);
-		break;		
-	    }	    
-	}
+   	    QTreeWidgetItem* item = treemain->topLevelItem(i);
+		if(item->checkState(0) == Qt::Checked)
+		{
+			QTreeWidgetItem* childitem = item->child(2); //Order-ID
+		    switch(indexitem->text(2).toInt())
+		    {
+			    case 0: //Offerte erstellen
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create offer for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->createdoc_2(0);
+					this->updatedatabase(0, item->text(1));
+					this->filltable(0);
+					break;
+			    case 1: //Auftragsbestäigung erstellen
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create order confirmation for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->createdoc_2(1);
+					this->updatedatabase(1, item->text(1));
+					this->filltable(1);
+					break;
+			    case 2: //Auftrag erledigt
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("All works on procedure %1 completed?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->updatedatabase(2, item->text(1));
+					this->filltable(2);
+					break;
+			    case 3: //Lieferschein erstellen
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create deliverynote for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->createdoc_2(3);
+					this->updatedatabase(3, item->text(1));
+					this->filltable(3);
+					break;
+			    case 4: //Rechnung erstellen
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create bill for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->createdoc_2(4);
+					this->updatedatabase(4, item->text(1));
+					this->filltable(4);
+					break;
+			    case 5: //Auftrag abgeschlossen und archivieren
+					this->createdoc_1(item->text(1));
+					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Complete and archive order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+					    this->updatedatabase(5, item->text(1));
+					this->filltable(5);
+					break;		
+		    }	    
+		}
     }
-    ablauf::filltable(0);
 }
 //
 void procedurefrm::createdoc_1(QString dbID)
@@ -709,14 +760,12 @@ void procedurefrm::createdoc_1(QString dbID)
     QSqlQuery query(connstr);
     query.next();
     queryreturn.clear();
-    for(i=0;i<=11;i++)
-    {
-	queryreturn.append(query.value(i).toString());
-    }
+    for(i=0;i<=9;i++)
+		queryreturn.append(query.value(i).toString());
 }
 //
 void procedurefrm::createdoc_2(int doctype)
-{   
+{/*
     int i;
     docsfrm *doc = new docsfrm;
     doc->initdocsfrm();
@@ -789,54 +838,55 @@ void procedurefrm::createdoc_2(int doctype)
 	doc->selecteddocument();
 	doc->show();
 	break;
-    }
+    }*/
 }
 //
 void procedurefrm::updatedatabase(int doctype, QString dbID)
 {
     if(QMessageBox::information(this, tr("Order completed..."), tr("Save changes for order %1 in database?").arg(queryreturn[6]), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
     {
-	if(docart<5)
-	{
-	    QString connstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(docart+1, 0, 10)+"' WHERE `ID`='"+dbID+"';";
-	    QSqlQuery query(connstr);
-	}
-	else
-	{
-	    QString connstr1 = "INSERT INTO `procedurearchiv` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
-	    QSqlQuery query1(connstr1);
-	    
-	    QSqlQuery checkid;
-	    checkid.prepare("SELECT id FROM procedurearchiv WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
-	    checkid.bindValue(":prio", queryreturn[2]);
-	    checkid.bindValue(":date", queryreturn[3]);
-	    checkid.bindValue(":client", queryreturn[4]);
-	    checkid.bindValue(":contact", queryreturn[5]);
-	    checkid.bindValue(":orderid", queryreturn[6]);
-	    checkid.bindValue(":desc", queryreturn[7]);
-	    checkid.bindValue(":resp", queryreturn[8]);
-	    checkid.bindValue(":complete", queryreturn[9]);
-	    checkid.exec();
-	    checkid.next();
-
-	    QSqlQuery tasks;
-	    tasks.prepare("UPDATE `proceduretasks` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
-	    tasks.bindValue(":newid", "A_"+checkid.value(0).toString());
-	    tasks.bindValue(":id", dbID);
-	    tasks.exec();
-	    
-	    QSqlQuery orders;
-	    orders.prepare("UPDATE `procedureorders` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
-	    orders.bindValue(":newid", "A_"+checkid.value(0).toString());
-	    orders.bindValue(":id", dbID);
-	    orders.exec();
+		if(doctype<5)
+		{
+		    QString connstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(doctype+1, 0, 10)+"' WHERE `ID`='"+dbID+"';";
+		    QSqlQuery query(connstr);
+		}
+		else
+		{
+		    QString connstr1 = "INSERT INTO `procedurearchiv` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
+		    QSqlQuery query1(connstr1);
 		    
-	    QString connstr2 = "DELETE FROM `proceduretab` WHERE `ID`="+dbID+" LIMIT 1;";
-	    QSqlQuery query2(connstr2);
-	}
+		    QSqlQuery checkid;
+		    checkid.prepare("SELECT id FROM procedurearchiv WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
+		    checkid.bindValue(":prio", queryreturn[2]);
+		    checkid.bindValue(":date", queryreturn[3]);
+		    checkid.bindValue(":client", queryreturn[4]);
+		    checkid.bindValue(":contact", queryreturn[5]);
+		    checkid.bindValue(":orderid", queryreturn[6]);
+		    checkid.bindValue(":desc", queryreturn[7]);
+		    checkid.bindValue(":resp", queryreturn[8]);
+		    checkid.bindValue(":complete", queryreturn[9]);
+		    checkid.exec();
+		    checkid.next();
+
+		    QSqlQuery tasks;
+		    tasks.prepare("UPDATE `proceduretasks` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
+		    tasks.bindValue(":newid", "A_"+checkid.value(0).toString());
+		    tasks.bindValue(":id", dbID);
+		    tasks.exec();
+	    
+		    QSqlQuery orders;
+		    orders.prepare("UPDATE `procedureorders` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
+		    orders.bindValue(":newid", "A_"+checkid.value(0).toString());
+		    orders.bindValue(":id", dbID);
+		    orders.exec();
+			    
+		    QString connstr2 = "DELETE FROM `proceduretab` WHERE `ID`="+dbID+" LIMIT 1;";
+		    QSqlQuery query2(connstr2);
+		}
 	queryreturn.clear();
     }
 }
+/*
 //
 void procedurefrm::searchentry()
 {
@@ -850,13 +900,6 @@ void procedurefrm::searchentry()
 	srchfrm->search();
     srchfrm->exec();
     this->setFocus();
-}
-//
-void procedurefrm::closeEvent( QCloseEvent* ce )
-{
-    varfrm* v = new varfrm;
-    v->savegeo(this->name(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
-    ce->accept();
 }
 //
 void procedurefrm::contmenu()

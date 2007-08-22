@@ -15,13 +15,13 @@ public slots:
 private slots:
 	void settable();
 	void editorder(QString dbID);
-	//void editarchiveorder(QString dbID);
+	void editarchiveorder(QString dbID);
 	void deleteorder(QString dbID);
 	void deletearchivorder(QString dbID);
-	//void completeitems();
-	//void createdoc_1(QString dbID);
-	//void createdoc_2(int doctype);
-	//void updatedatabase(int doctype, QString dbID);
+	void completeorder();
+	void createdoc_1(QString dbID);
+	void createdoc_2(int doctype);
+	void updatedatabase(int doctype, QString dbID);
 	//void searchentry();
 	//void contmenu();
 	//void createoffer();
