@@ -9,7 +9,6 @@ Q_OBJECT
 private:
 	void closeEvent( QCloseEvent* ce );
 	void readdoctab();
-	void addrow();
 	void writetexfile();
 private slots:
 	void selectaddress();
@@ -17,7 +16,6 @@ private slots:
 	void printesr();
 	void contmenu();
 	void removerow();
-	void navtable();
 	void checkdb();
 	void clearlblid();
 	void completedoc();
@@ -40,11 +38,14 @@ public:
     void initvat();
     void loadmaincfg();
 	void opendocfromid(QString source, QString dbID);
+	void navtabonoff(bool state);
+	void addrow();
 public slots:
 	void selecteddocument();
 	void calc_tot();
 	void calc_vat();
 	void print();
+	void navtable();
 };
 #endif
 

@@ -1,3 +1,10 @@
+/*
+ToDo:
+
+- Rabatt muss noch geladen werden
+- updatedatabase muss warten bis dokument abgeschlossen wurde.
+
+*/
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QSqlQuery>
@@ -6,6 +13,7 @@
 #include "procedurefrm.h"
 #include "procedureeditfrm.h"
 #include "vars.h"
+#include "doceditfrm.h"
 //
 QString prefix;
 extern QString username;
@@ -49,7 +57,8 @@ int procedurefrm::init()
 	}
 	
     treeindex->header()->setClickable(FALSE);
-    treeindex->header()->setResizeMode(QHeaderView::Fixed);
+    //treeindex->header()->setResizeMode(QHeaderView::Fixed);
+    treeindex->setColumnWidth(0, 150);
 	treeindex->hideColumn(2);
 	treeindex->setCurrentItem(treemain->topLevelItem(0));
     
@@ -318,7 +327,7 @@ void procedurefrm::checkeditID()
     	QTreeWidgetItem* indexitem = treeindex->currentItem();
     	if(indexitem != 0)
     	{
-    		if(indexitem->text(2).toInt() == 6) //Open order or Archive?
+    		if(indexitem->text(2).toInt() != 6) //Open order or Archive?
     			editorder(item->text(1));
     		else
     			editarchiveorder(item->text(1));
@@ -663,8 +672,8 @@ void procedurefrm::editarchiveorder(QString dbID)
 		    eorders->navordertabs(orders.at());
 		}
     }
-    eorders->btnaccept->setText("Schliessen");
-    eorders->show();
+    eorders->btnaccept->setText(tr("Close"));
+    eorders->exec();
 }
 //
 void procedurefrm::deleteorder(QString dbID)
@@ -711,14 +720,14 @@ void procedurefrm::completeorder()
 			    case 0: //Offerte erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create offer for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->createdoc_2(0);
+					    this->createdoc_2(0, item->text(1));
 					this->updatedatabase(0, item->text(1));
 					this->filltable(0);
 					break;
 			    case 1: //Auftragsbestäigung erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create order confirmation for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->createdoc_2(1);
+					    this->createdoc_2(1, item->text(1));
 					this->updatedatabase(1, item->text(1));
 					this->filltable(1);
 					break;
@@ -731,14 +740,14 @@ void procedurefrm::completeorder()
 			    case 3: //Lieferschein erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create deliverynote for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->createdoc_2(3);
+					    this->createdoc_2(3, item->text(1));
 					this->updatedatabase(3, item->text(1));
 					this->filltable(3);
 					break;
 			    case 4: //Rechnung erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create bill for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->createdoc_2(4);
+					    this->createdoc_2(4, item->text(1));
 					this->updatedatabase(4, item->text(1));
 					this->filltable(4);
 					break;
@@ -764,81 +773,114 @@ void procedurefrm::createdoc_1(QString dbID)
 		queryreturn.append(query.value(i).toString());
 }
 //
-void procedurefrm::createdoc_2(int doctype)
-{/*
-    int i;
-    docsfrm *doc = new docsfrm;
-    doc->initdocsfrm();
+void procedurefrm::createdoc_2(int doctype, QString docid)
+{
+    doceditfrm *doc = new doceditfrm;
+    doc->init();
+    doc->navtabonoff(false);
 
     doc->btnprint->setEnabled(TRUE);
     doc->btncomplete->setEnabled(TRUE);
-    doc->boxadress->setText(queryreturn[4].section(" (", 0, 0));
+    doc->boxaddress->setText(queryreturn[4].section(" (", 0, 0));
     doc->lblID->setText(queryreturn[4].section(" (", 1, 1).section(")", 0, 0));
-    doc->box_btext->setText(queryreturn[7]);
+    doc->boxcomments->setText(queryreturn[7]);
     doc->lbluser->setText(queryreturn[8]);
     
-    QListViewItem* item = mainlisttable->currentItem();
-    QSqlQuery orders;
-    orders.prepare("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`=:id ORDER BY ID;");
-    orders.bindValue(":id", item->text(1));
-    orders.exec();
-    doc->maintable->setNumRows(orders.size());
+    QString qstr1 = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='%1' AND `state`= '1' ORDER BY ID;").arg(docid);
+    QSqlQuery orders(qstr1);
+
+    doc->tabmain->setRowCount(orders.size());
+
     while(orders.next())
     {
-	doc->maintable->setText(i, 0, QString("%1").arg(orders.at()+1, 0, 10));
-	doc->maintable->setText(orders.at(), 1, orders.value(3).toString());
-	doc->maintable->setPixmap(i, 2, QPixmap::fromMimeSource( "viewmag2.png" ));	
-	doc->maintable->setText(orders.at(), 3, orders.value(4).toString());	
-	doc->maintable->setText(orders.at(), 4, orders.value(5).toString());
-	doc->maintable->setText(orders.at(), 5, orders.value(6).toString());	    
-	doc->maintable->setText(orders.at(), 6, QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));	    
-	doc->maintable->setText(orders.at(), 7, QString("%1").arg(orders.value(5).toInt()*orders.value(7).toString().toFloat(), 0, 'f',2));	    
-	doc->maintable->setText(orders.at(), 8, orders.value(8).toString());
+    	QTableWidgetItem *tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.at()+1, 0, 10));
+		doc->tabmain->setItem(orders.at(), 0, tabitem);
+    	
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(orders.value(3).toString());
+		doc->tabmain->setItem(orders.at(), 1, tabitem);
+    	
+		tabitem = new QTableWidgetItem;
+    	tabitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+    	doc->tabmain->setItem(orders.at(), 2, tabitem);
+    	
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.value(4).toString()));
+    	doc->tabmain->setItem(orders.at(), 3, tabitem);
+    	
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.value(5).toString()));
+    	doc->tabmain->setItem(orders.at(), 4, tabitem);
+    	
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.value(6).toString()));
+    	doc->tabmain->setItem(orders.at(), 5, tabitem);
+	    	
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2)));
+    	doc->tabmain->setItem(orders.at(), 6, tabitem);
+    
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(QString("%1").arg(orders.value(5).toInt()*orders.value(7).toString().toFloat(), 0, 'f',2)));
+    	doc->tabmain->setItem(orders.at(), 7, tabitem);
+    		   
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.value(8).toString()));
+    	doc->tabmain->setItem(orders.at(), 8, tabitem);
+
+		//check act. quantity and min. quantity///////////////////////////
+		QString connstr = "SELECT col3, col4 FROM "+orders.value(0).toString()+" WHERE `ID` = "+orders.value(1).toString()+";";
+		QSqlQuery querycheckdb(connstr);
+		querycheckdb.next();
+		
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(querycheckdb.value(0).toString()));
+    	doc->tabmain->setItem(orders.at(), 9, tabitem);
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(querycheckdb.value(1).toString()));
+    	doc->tabmain->setItem(orders.at(), 10, tabitem);
+
+		//check act. quantity and min. quantity///////////////////////////
 	
-	//check act. quantity and min. quantity///////////////////////////
-	QString connstr = "SELECT col3, col4 FROM "+orders.value(0).toString()+" WHERE `ID` = "+orders.value(1).toString()+";";
-	QSqlQuery querycheckdb(connstr);
-	querycheckdb.next();
-	doc->maintable->setText(orders.at(), 9, querycheckdb.value(0).toString());
-	doc->maintable->setText(orders.at(), 10, querycheckdb.value(1).toString());
-	//check act. quantity and min. quantity///////////////////////////
-	
-	doc->maintable->setText(orders.at(), 11, orders.value(0).toString()+":#:"+orders.value(1).toString());
+    	tabitem = new QTableWidgetItem;
+    	tabitem->setText(QString("%1").arg(orders.value(0).toString()+":#:"+orders.value(1).toString()));
+    	doc->tabmain->setItem(orders.at(), 11, tabitem);
     }
     
-    doc->navtable(doc->maintable->numRows(), doc->maintable->numCols());
+    //doc->navtable();
+    doc->addrow();
     doc->calc_tot();	
+    doc->navtabonoff(true);
 
-    switch(docart)
+    switch(doctype)
     {
-    case 0:
-	doc->cmbdoc->setCurrentItem(1);  //leerzeile entfernen
-	doc->cmbdoc->setCurrentItem(0);
-	doc->doccount->setText(abdocpref+queryreturn[6]);
-	doc->selecteddocument(); 
-	doc->show();
-	break;
-    case 1:
-	doc->cmbdoc->setCurrentItem(1);
-	doc->doccount->setText(abdocpref+queryreturn[6]);
-	doc->selecteddocument();
-	doc->show();
-	break;
-    case 2:	    
-	break;
-    case 3:
-	doc->cmbdoc->setCurrentItem(2);
-	doc->doccount->setText(abdocpref+queryreturn[6]);
-	doc->selecteddocument();
-	doc->show();
-	break;
-    case 4:
-	doc->cmbdoc->setCurrentItem(3);
-	doc->doccount->setText(abdocpref+queryreturn[6]);
-	doc->selecteddocument();
-	doc->show();
-	break;
-    }*/
+	    case 0:
+			doc->cmbdoc->setCurrentIndex(1);  //leerzeile entfernen
+			doc->cmbdoc->setCurrentIndex(0);
+			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->selecteddocument(); 
+			doc->show();
+			break;
+	    case 1:
+			doc->cmbdoc->setCurrentIndex(1);
+			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->selecteddocument();
+			doc->show();
+			break;
+	    case 3:
+			doc->cmbdoc->setCurrentIndex(2);
+			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->selecteddocument();
+			doc->show();
+			break;
+	    case 4:
+			doc->cmbdoc->setCurrentIndex(3);
+			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->selecteddocument();
+			doc->show();
+			break;
+    }
 }
 //
 void procedurefrm::updatedatabase(int doctype, QString dbID)

@@ -62,11 +62,13 @@ void doceditfrm::init()
 	item->setText("1");
 	tabmain->setItem(0, 0, item);
 	item = new QTableWidgetItem;
+	item->setText("");
 	tabmain->setItem(tabmain->rowCount()-1, 1, item);
 	item = new QTableWidgetItem;
 	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
 	tabmain->setItem(0, 2, item);
 	item = new QTableWidgetItem;
+	item->setText("");
 	tabmain->setItem(tabmain->rowCount()-1, 3, item);
 	item = new QTableWidgetItem;
 	item->setText("0");
@@ -121,7 +123,6 @@ void doceditfrm::init()
     connect(btnsearchaddr, SIGNAL(released()), this, SLOT(selectaddress()));
     connect(cmbdoc, SIGNAL(activated(int)), this, SLOT(selecteddocument()));
     connect(tabmain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-    connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 	connect(tabmain, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
 	connect(btnclearsearch, SIGNAL(released()), this, SLOT(clearlblid()));
 	connect(btncomplete, SIGNAL(released()), this, SLOT(completedoc()));
@@ -131,6 +132,8 @@ void doceditfrm::init()
 	connect(btnvat, SIGNAL(released()), this, SLOT(show_vat()));
 	connect(boxtot_excl, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
 	connect(boxvat, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
+	navtabonoff(true);
+	
 }
 //
 void doceditfrm::closeEvent( QCloseEvent* ce )
@@ -1503,4 +1506,12 @@ void doceditfrm::editposition()
     	tabmain->setItem(tabmain->currentRow(), 8, item);
     	navtable();
     }
+}
+//
+void doceditfrm::navtabonoff(bool state)
+{
+	if(state)
+		connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	else
+		disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 }

@@ -20,7 +20,7 @@ private slots:
 	void deletearchivorder(QString dbID);
 	void completeorder();
 	void createdoc_1(QString dbID);
-	void createdoc_2(int doctype);
+	void createdoc_2(int doctype, QString docid);
 	void updatedatabase(int doctype, QString dbID);
 	//void searchentry();
 	//void contmenu();
