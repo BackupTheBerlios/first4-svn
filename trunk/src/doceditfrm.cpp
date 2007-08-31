@@ -1515,3 +1515,4 @@ void doceditfrm::navtabonoff(bool state)
 	else
 		disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 }
+//

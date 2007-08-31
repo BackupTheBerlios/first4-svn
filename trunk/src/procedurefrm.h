@@ -21,13 +21,13 @@ private slots:
 	void completeorder();
 	void createdoc_1(QString dbID);
 	void createdoc_2(int doctype, QString docid);
-	void updatedatabase(int doctype, QString dbID);
-	//void searchentry();
-	//void contmenu();
-	//void createoffer();
-	//void createorderconf();
-	//void createdeliverynote();
-	//void createinvoice();
+	void updatedatabase();
+	void search();
+	void contmenu();
+	void createoffer();
+	void createorderconf();
+	void createdeliverynote();
+	void createinvoice();
 	void checkeditID();
 	void checkdeleteID();
 private:

@@ -1,17 +1,12 @@
-/*
-ToDo:
-
-- Rabatt muss noch geladen werden
-- updatedatabase muss warten bis dokument abgeschlossen wurde.
-
-*/
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QHeaderView>
+#include <QMenu>
 //
 #include "procedurefrm.h"
 #include "procedureeditfrm.h"
+#include "proceduresearch.h"
 #include "vars.h"
 #include "doceditfrm.h"
 //
@@ -57,7 +52,7 @@ int procedurefrm::init()
 	}
 	
     treeindex->header()->setClickable(FALSE);
-    //treeindex->header()->setResizeMode(QHeaderView::Fixed);
+    treeindex->header()->setResizeMode(QHeaderView::Fixed);
     treeindex->setColumnWidth(0, 150);
 	treeindex->hideColumn(2);
 	treeindex->setCurrentItem(treemain->topLevelItem(0));
@@ -69,14 +64,17 @@ int procedurefrm::init()
 		query.next();
 		prefix = query.value(0).toString();
     }
-    this->countabl(); 
+    countabl(); 
     treeindex->setCurrentItem(treemain->topLevelItem(0));
     
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(settable()));
 	connect(btnadd, SIGNAL(released()), this, SLOT(neworder()));
     connect(btnedit, SIGNAL(released()), this, SLOT(checkeditID()));
     connect(btndelete, SIGNAL(released()), this, SLOT(checkdeleteID()));
-    connect(btncomplete, SIGNAL(released()), this, SLOT(completeorder()));
+    connect(btndocument, SIGNAL(released()), this, SLOT(completeorder()));
+    connect(btncomplete, SIGNAL(released()), this, SLOT(updatedatabase()));
+    connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
+    connect(btnsearch, SIGNAL(released()), this, SLOT(search()));
     return r;
 }
 //
@@ -709,7 +707,7 @@ void procedurefrm::completeorder()
 {
     int i;
 	QTreeWidgetItem* indexitem = treeindex->currentItem();
-    for(i=0;i<treemain->topLevelItemCount();i++)
+    for(i=0; i<treemain->topLevelItemCount(); i++)
     {	
    	    QTreeWidgetItem* item = treemain->topLevelItem(i);
 		if(item->checkState(0) == Qt::Checked)
@@ -721,42 +719,22 @@ void procedurefrm::completeorder()
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create offer for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
 					    this->createdoc_2(0, item->text(1));
-					this->updatedatabase(0, item->text(1));
-					this->filltable(0);
 					break;
 			    case 1: //Auftragsbestäigung erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create order confirmation for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
 					    this->createdoc_2(1, item->text(1));
-					this->updatedatabase(1, item->text(1));
-					this->filltable(1);
-					break;
-			    case 2: //Auftrag erledigt
-					this->createdoc_1(item->text(1));
-					if(QMessageBox::information(this, tr("Procedure completed..."), tr("All works on procedure %1 completed?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->updatedatabase(2, item->text(1));
-					this->filltable(2);
 					break;
 			    case 3: //Lieferschein erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create deliverynote for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
 					    this->createdoc_2(3, item->text(1));
-					this->updatedatabase(3, item->text(1));
-					this->filltable(3);
 					break;
 			    case 4: //Rechnung erstellen
 					this->createdoc_1(item->text(1));
 					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Create bill for order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
 					    this->createdoc_2(4, item->text(1));
-					this->updatedatabase(4, item->text(1));
-					this->filltable(4);
-					break;
-			    case 5: //Auftrag abgeschlossen und archivieren
-					this->createdoc_1(item->text(1));
-					if(QMessageBox::information(this, tr("Procedure completed..."), tr("Complete and archive order %1 ?").arg(childitem->text(3)), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-					    this->updatedatabase(5, item->text(1));
-					this->filltable(5);
-					break;		
+					break;	
 		    }	    
 		}
     }
@@ -775,8 +753,10 @@ void procedurefrm::createdoc_1(QString dbID)
 //
 void procedurefrm::createdoc_2(int doctype, QString docid)
 {
-    doceditfrm *doc = new doceditfrm;
+    doceditfrm *doc = new doceditfrm();
     doc->init();
+    doc->setWindowFlags(Qt::Dialog);
+    doc->setWindowModality(Qt::WindowModal);
     doc->navtabonoff(false);
 
     doc->btnprint->setEnabled(TRUE);
@@ -847,8 +827,12 @@ void procedurefrm::createdoc_2(int doctype, QString docid)
     	tabitem->setText(QString("%1").arg(orders.value(0).toString()+":#:"+orders.value(1).toString()));
     	doc->tabmain->setItem(orders.at(), 11, tabitem);
     }
+   	//load discount for customer
+   	QString discountstring = QString("SELECT discount FROM adr%1 WHERE `ID`='%2';").arg(queryreturn[4].section(" (", 1, 1).section("_", 0, 0)).arg(queryreturn[4].section(" (", 1, 1).section("_", 1, 1).section(")", 0, 0));
+   	QSqlQuery discountquery(discountstring);
+   	discountquery.next();
+   	doc->boxdiscount->setText(discountquery.value(0).toString());
     
-    //doc->navtable();
     doc->addrow();
     doc->calc_tot();	
     doc->navtabonoff(true);
@@ -858,131 +842,183 @@ void procedurefrm::createdoc_2(int doctype, QString docid)
 	    case 0:
 			doc->cmbdoc->setCurrentIndex(1);  //leerzeile entfernen
 			doc->cmbdoc->setCurrentIndex(0);
-			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->txtdoccount->setText(prefix+"2"+queryreturn[6].rightJustified(7, '0'));
 			doc->selecteddocument(); 
 			doc->show();
 			break;
 	    case 1:
 			doc->cmbdoc->setCurrentIndex(1);
-			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->txtdoccount->setText(prefix+"2"+queryreturn[6].rightJustified(7, '0'));
 			doc->selecteddocument();
 			doc->show();
 			break;
 	    case 3:
 			doc->cmbdoc->setCurrentIndex(2);
-			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->txtdoccount->setText(prefix+"2"+queryreturn[6].rightJustified(7, '0'));
 			doc->selecteddocument();
 			doc->show();
 			break;
 	    case 4:
 			doc->cmbdoc->setCurrentIndex(3);
-			doc->txtdoccount->setText(prefix+queryreturn[6]);
+			doc->txtdoccount->setText(prefix+"2"+queryreturn[6].rightJustified(7, '0'));
 			doc->selecteddocument();
 			doc->show();
 			break;
     }
 }
 //
-void procedurefrm::updatedatabase(int doctype, QString dbID)
+void procedurefrm::updatedatabase()
 {
-    if(QMessageBox::information(this, tr("Order completed..."), tr("Save changes for order %1 in database?").arg(queryreturn[6]), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
-    {
-		if(doctype<5)
+	QTreeWidgetItem *indexitem = new QTreeWidgetItem;
+	indexitem = treeindex->currentItem();
+	if(indexitem!=0)
+	{
+		if(indexitem->text(2).toInt() < 5)
 		{
-		    QString connstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(doctype+1, 0, 10)+"' WHERE `ID`='"+dbID+"';";
-		    QSqlQuery query(connstr);
+		    if(QMessageBox::information(this, tr("Order completed..."), tr("Change status for selected entries?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
+		    {
+			    int i;
+			    for(i=0; i<treemain->topLevelItemCount(); i++)
+			    {	
+			   	    QTreeWidgetItem* item = treemain->topLevelItem(i);
+					if(item->checkState(0) == Qt::Checked)
+					{
+					    QString connstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(indexitem->text(2).toInt()+1, 0, 10)+"' WHERE `ID`='"+item->text(1)+"';";
+					    QSqlQuery query(connstr);
+					}
+				}
+				filltable(indexitem->text(2).toInt());
+	    	}
 		}
 		else
 		{
-		    QString connstr1 = "INSERT INTO `procedurearchiv` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
-		    QSqlQuery query1(connstr1);
-		    
-		    QSqlQuery checkid;
-		    checkid.prepare("SELECT id FROM procedurearchiv WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
-		    checkid.bindValue(":prio", queryreturn[2]);
-		    checkid.bindValue(":date", queryreturn[3]);
-		    checkid.bindValue(":client", queryreturn[4]);
-		    checkid.bindValue(":contact", queryreturn[5]);
-		    checkid.bindValue(":orderid", queryreturn[6]);
-		    checkid.bindValue(":desc", queryreturn[7]);
-		    checkid.bindValue(":resp", queryreturn[8]);
-		    checkid.bindValue(":complete", queryreturn[9]);
-		    checkid.exec();
-		    checkid.next();
-
-		    QSqlQuery tasks;
-		    tasks.prepare("UPDATE `proceduretasks` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
-		    tasks.bindValue(":newid", "A_"+checkid.value(0).toString());
-		    tasks.bindValue(":id", dbID);
-		    tasks.exec();
-	    
-		    QSqlQuery orders;
-		    orders.prepare("UPDATE `procedureorders` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
-		    orders.bindValue(":newid", "A_"+checkid.value(0).toString());
-		    orders.bindValue(":id", dbID);
-		    orders.exec();
-			    
-		    QString connstr2 = "DELETE FROM `proceduretab` WHERE `ID`="+dbID+" LIMIT 1;";
-		    QSqlQuery query2(connstr2);
+			if(QMessageBox::information(this, tr("Procedure completed..."), tr("Archive completed entries?"), QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes)
+			{
+			    int i;
+			    for(i=0; i<treemain->topLevelItemCount(); i++)
+			    {	
+			   	    QTreeWidgetItem* item = treemain->topLevelItem(i);
+					if(item->checkState(0) == Qt::Checked)
+					{
+						this->createdoc_1(item->text(1));
+					    QString connstr1 = "INSERT INTO `procedurearchiv` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
+					    QSqlQuery query1(connstr1);
+						    
+					    QSqlQuery checkid;
+					    checkid.prepare("SELECT id FROM procedurearchiv WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
+					    checkid.bindValue(":prio", queryreturn[2]);
+					    checkid.bindValue(":date", queryreturn[3]);
+					    checkid.bindValue(":client", queryreturn[4]);
+					    checkid.bindValue(":contact", queryreturn[5]);
+					    checkid.bindValue(":orderid", queryreturn[6]);
+					    checkid.bindValue(":desc", queryreturn[7]);
+					    checkid.bindValue(":resp", queryreturn[8]);
+					    checkid.bindValue(":complete", queryreturn[9]);
+					    checkid.exec();
+					    checkid.next();
+		
+					    QSqlQuery tasks;
+					    tasks.prepare("UPDATE `proceduretasks` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
+					    tasks.bindValue(":newid", "A_"+checkid.value(0).toString());
+					    tasks.bindValue(":id", item->text(1));
+					    tasks.exec();
+				    
+					    QSqlQuery orders;
+					    orders.prepare("UPDATE `procedureorders` SET `PROC_ID`=:newid WHERE `proc_id`=:id;");
+					    orders.bindValue(":newid", "A_"+checkid.value(0).toString());
+					    orders.bindValue(":id", item->text(1));
+					    orders.exec();
+							    
+					    QString connstr2 = "DELETE FROM `proceduretab` WHERE `ID`="+item->text(1)+" LIMIT 1;";
+					    QSqlQuery query2(connstr2);	
+				    }
+				}
+				filltable(indexitem->text(2).toInt());
+			}	
 		}
-	queryreturn.clear();
-    }
-}
-/*
-//
-void procedurefrm::searchentry()
-{
-    srchablfrm *srchfrm = new srchablfrm;
-    srchfrm->initfrm();
-    //Werte setzen
-    srchfrm->searchtxt->setText(searchtext->text());
-    srchfrm->cmbrow->setCurrentItem(cmbrow->currentItem());
-    srchfrm->lbluser->setText(lbluser->text());
-    if(searchtext->text() != "")
-	srchfrm->search();
-    srchfrm->exec();
-    this->setFocus();
+   	}
 }
 //
 void procedurefrm::contmenu()
 {
-    QPopupMenu* contextMenu = new QPopupMenu( this );
-    Q_CHECK_PTR( contextMenu );
-    contextMenu->insertItem( tr("Create Offer"),  this, SLOT(createoffer()));
-    contextMenu->insertItem( tr("Create Orderconfirmation"),  this, SLOT(createorderconf()));
-    contextMenu->insertItem( tr("Create Delivery note"),  this, SLOT(createdeliverynote()));
-    contextMenu->insertItem( tr("Create Bill"),  this, SLOT(createbill()));
-    contextMenu->exec( QCursor::pos() );
-    delete contextMenu;
+	QTreeWidgetItem* item = treemain->currentItem();
+    if(item != 0)
+    {
+	    QMenu* contextMenu = new QMenu( this );
+	    Q_CHECK_PTR( contextMenu );
+
+	    QAction* offer = new QAction( tr("Create Offer"), this );
+		connect(offer , SIGNAL(triggered()), this, SLOT(createoffer()));
+		contextMenu->addAction(offer);
+	
+	    QAction* confirmation = new QAction( tr("Create Orderconfirmation"), this );
+		connect(confirmation , SIGNAL(triggered()), this, SLOT(createorderconf()));
+		contextMenu->addAction(confirmation);
+	
+	    QAction* deliverynote = new QAction( tr("Create Delivery note"), this );
+		connect(deliverynote , SIGNAL(triggered()), this, SLOT(createdeliverynote()));
+		contextMenu->addAction(deliverynote);
+	
+	    QAction* invoice = new QAction( tr("Create Bill"), this );
+		connect(invoice , SIGNAL(triggered()), this, SLOT(createinvoice()));
+		contextMenu->addAction(invoice);
+			
+	    contextMenu->exec( QCursor::pos() );
+	    delete contextMenu;
+   	}
+}
+void procedurefrm::search()
+{
+	proceduresearch *psearch = new proceduresearch;
+	psearch->init();
+	psearch->exec();
 }
 //
 void procedurefrm::createoffer()
 {
-    QListViewItem* item = mainlisttable->currentItem();
-    this->createdoc_1(item->text(1));
-    this->createdoc_2(0);
+    QTreeWidgetItem* item = treemain->currentItem();
+    while(item->parent() != 0)
+    		item = item->parent();
+    if(item != 0)
+    {
+	    this->createdoc_1(item->text(1));
+	    this->createdoc_2(0, item->text(1));	
+   	}
 }
 //
 void procedurefrm::createorderconf()
 {
-    QListViewItem* item = mainlisttable->currentItem();
-    this->createdoc_1(item->text(1));
-    this->createdoc_2(1);
+    QTreeWidgetItem* item = treemain->currentItem();
+    while(item->parent() != 0)
+    		item = item->parent();
+    if(item != 0)
+    {
+	    this->createdoc_1(item->text(1));
+	    this->createdoc_2(1, item->text(1));
+    }
 }
 //
 void procedurefrm::createdeliverynote()
 {
-    QListViewItem* item = mainlisttable->currentItem();
-    this->createdoc_1(item->text(1));
-    this->createdoc_2(3);
+    QTreeWidgetItem* item = treemain->currentItem();
+    while(item->parent() != 0)
+    		item = item->parent();
+    if(item != 0)
+    {
+	    this->createdoc_1(item->text(1));
+	    this->createdoc_2(3, item->text(1));
+    }
 }
 //
 void procedurefrm::createinvoice()
 {
-    QListViewItem* item = mainlisttable->currentItem();
-    if(item->depth() > 0)
-	item = item->parent();
-    this->createdoc_1(item->text(1));
-    this->createdoc_2(4);
+	QTreeWidgetItem* item = treemain->currentItem();
+    while(item->parent() != 0)
+    		item = item->parent();
+    if(item != 0)
+    {
+	    this->createdoc_1(item->text(1));
+	    this->createdoc_2(4, item->text(1));
+    }
 }
-*/
+
