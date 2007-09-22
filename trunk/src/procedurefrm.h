@@ -9,7 +9,6 @@ Q_OBJECT
 public:
 	procedurefrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	int init();
-	void closeEvent( QCloseEvent* ce );
 public slots:
 	void neworder();
 private slots:
@@ -34,6 +33,7 @@ private:
 	int checkrights();
 	void countabl();
 	void filltable(int state);
+	void closeEvent( QCloseEvent* ce );
 };
 #endif
 

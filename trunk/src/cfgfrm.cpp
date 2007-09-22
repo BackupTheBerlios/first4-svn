@@ -21,6 +21,7 @@
 #include "newdbfrm.h"
 #include "vars.h"
 #include "newdatatabfrm.h"
+#include "dbwizzardfrm.h"
 
 extern QString username, fullname, firstver, templatefolder, docfolder;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
@@ -225,9 +226,11 @@ void cfgfrm::loaddbinfo()
 //
 void cfgfrm::addservers()
 {
-	newdbfrm* ndb = new newdbfrm;
-	ndb->init();
-	if ( ndb->exec() )
+	//newdbfrm* ndb = new newdbfrm;
+	//ndb->init();
+	dbwizzardfrm* wiz = new dbwizzardfrm;
+	wiz->init();
+	if ( wiz->exec() )
 		loadservers();
 }
 //

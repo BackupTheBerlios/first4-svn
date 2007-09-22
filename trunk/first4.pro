@@ -42,7 +42,8 @@ FORMS =   ui/mainfrm.ui \
   ui/procedurefrm.ui \
   ui/procedureeditfrm.ui \
   ui/proceduretask.ui \
-  ui/proceduresearch.ui
+  ui/proceduresearch.ui \
+  ui/dbwizzardfrm.ui
 HEADERS =   src/mainfrm.h \
   src/vars.h \
   src/cfgfrm.h \
@@ -71,7 +72,8 @@ HEADERS =   src/mainfrm.h \
   src/procedurefrm.h \
   src/procedureeditfrm.h \
   src/proceduretask.h \
-  src/proceduresearch.h
+  src/proceduresearch.h \
+  src/dbwizzardfrm.h
 SOURCES =   src/main.cpp \
   src/mainfrm.cpp \
   src/vars.cpp \
@@ -101,7 +103,8 @@ SOURCES =   src/main.cpp \
   src/procedurefrm.cpp \
   src/procedureeditfrm.cpp \
   src/proceduretask.cpp \
-  src/proceduresearch.cpp
+  src/proceduresearch.cpp \
+  src/dbwizzardfrm.cpp
 TRANSLATIONS =   langfiles/de.ts \
   langfiles/it.ts
 RESOURCES =   ui/first.qrc

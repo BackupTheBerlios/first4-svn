@@ -971,7 +971,9 @@ void procedurefrm::search()
 {
 	proceduresearch *psearch = new proceduresearch;
 	psearch->init();
-	psearch->exec();
+	int r = psearch->exec();
+	if(r)
+		editorder(QString("%1").arg(r, 0, 10));
 }
 //
 void procedurefrm::createoffer()
