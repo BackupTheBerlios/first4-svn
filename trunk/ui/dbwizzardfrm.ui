@@ -256,9 +256,9 @@ p, li { white-space: pre-wrap; }
     <widget class="QLineEdit" name="txtexhost" >
      <property name="geometry" >
       <rect>
-       <x>70</x>
+       <x>100</x>
        <y>80</y>
-       <width>201</width>
+       <width>171</width>
        <height>22</height>
       </rect>
      </property>
@@ -305,9 +305,9 @@ p, li { white-space: pre-wrap; }
     <widget class="QLineEdit" name="txtexuser" >
      <property name="geometry" >
       <rect>
-       <x>70</x>
+       <x>100</x>
        <y>130</y>
-       <width>201</width>
+       <width>171</width>
        <height>22</height>
       </rect>
      </property>
@@ -317,8 +317,8 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>20</x>
        <y>160</y>
-       <width>46</width>
-       <height>14</height>
+       <width>63</width>
+       <height>18</height>
       </rect>
      </property>
      <property name="text" >
@@ -328,9 +328,9 @@ p, li { white-space: pre-wrap; }
     <widget class="QLineEdit" name="txtexpwd" >
      <property name="geometry" >
       <rect>
-       <x>70</x>
+       <x>100</x>
        <y>160</y>
-       <width>201</width>
+       <width>171</width>
        <height>22</height>
       </rect>
      </property>
@@ -486,7 +486,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry" >
       <rect>
        <x>20</x>
-       <y>150</y>
+       <y>140</y>
        <width>46</width>
        <height>14</height>
       </rect>
@@ -495,24 +495,11 @@ p, li { white-space: pre-wrap; }
       <string>User:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14" >
-     <property name="geometry" >
-      <rect>
-       <x>20</x>
-       <y>170</y>
-       <width>46</width>
-       <height>14</height>
-      </rect>
-     </property>
-     <property name="text" >
-      <string>Password:</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="lblexuser" >
      <property name="geometry" >
       <rect>
        <x>120</x>
-       <y>150</y>
+       <y>140</y>
        <width>141</width>
        <height>16</height>
       </rect>
@@ -521,26 +508,6 @@ p, li { white-space: pre-wrap; }
       <font>
        <weight>75</weight>
        <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text" >
-      <string>-</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lblexpwd" >
-     <property name="geometry" >
-      <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>141</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font" >
-      <font>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -565,7 +532,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry" >
       <rect>
        <x>20</x>
-       <y>210</y>
+       <y>170</y>
        <width>61</width>
        <height>16</height>
       </rect>
@@ -578,7 +545,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry" >
       <rect>
        <x>120</x>
-       <y>210</y>
+       <y>170</y>
        <width>141</width>
        <height>16</height>
       </rect>
@@ -597,7 +564,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry" >
       <rect>
        <x>120</x>
-       <y>230</y>
+       <y>190</y>
        <width>141</width>
        <height>16</height>
       </rect>
@@ -616,7 +583,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry" >
       <rect>
        <x>20</x>
-       <y>230</y>
+       <y>190</y>
        <width>87</width>
        <height>16</height>
       </rect>
@@ -1203,7 +1170,7 @@ p, li { white-space: pre-wrap; }
       <string>User:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txtnewfirstpwd_3" >
+    <widget class="QLineEdit" name="txtnewfadminpwd" >
      <property name="geometry" >
       <rect>
        <x>80</x>
@@ -1234,7 +1201,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Default username: &lt;span style=" font-weight:600;">Administrator&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txtnewfirstuser_3" >
+    <widget class="QLineEdit" name="txtnewadminuser" >
      <property name="geometry" >
       <rect>
        <x>80</x>
@@ -1278,7 +1245,7 @@ p, li { white-space: pre-wrap; }
       <string>Step 5 / 5</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lblexhost_2" >
+    <widget class="QLabel" name="lblnewhost" >
      <property name="geometry" >
       <rect>
        <x>120</x>
@@ -1297,7 +1264,7 @@ p, li { white-space: pre-wrap; }
       <string>-</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lblexport_2" >
+    <widget class="QLabel" name="lblnewport" >
      <property name="geometry" >
       <rect>
        <x>120</x>
@@ -1355,7 +1322,7 @@ p, li { white-space: pre-wrap; }
       <string>DB-Port:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lblexdbname_2" >
+    <widget class="QLabel" name="lblnewdbname" >
      <property name="geometry" >
       <rect>
        <x>120</x>
@@ -1387,7 +1354,7 @@ p, li { white-space: pre-wrap; }
       <string>Database:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lblexuser_2" >
+    <widget class="QLabel" name="lblnewuser" >
      <property name="geometry" >
       <rect>
        <x>120</x>
@@ -1420,7 +1387,7 @@ p, li { white-space: pre-wrap; }
       <string>Administrator:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lblexdbversion_2" >
+    <widget class="QLabel" name="lblnewadministrators" >
      <property name="geometry" >
       <rect>
        <x>120</x>

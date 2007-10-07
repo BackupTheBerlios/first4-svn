@@ -13,6 +13,10 @@ private slots:
 	void next();
 	void back();
 	void enable_next();
+	void checkdbs();
+private:
+	void writeconffile();
+	void createnewmysql();
 };
 #endif
 

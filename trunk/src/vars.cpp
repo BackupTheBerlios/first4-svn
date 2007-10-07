@@ -6,7 +6,7 @@
 
 #include "vars.h"
 
-QString firstver = "1.4.0-alpha1";
+QString firstver = "1.3.92-alpha2";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
