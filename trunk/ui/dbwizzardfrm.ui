@@ -41,19 +41,6 @@ p, li { white-space: pre-wrap; }
     <string>&amp;Cancel</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnprev" >
-   <property name="geometry" >
-    <rect>
-     <x>290</x>
-     <y>370</y>
-     <width>91</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>&lt;&lt; &amp;Previous</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btnnext" >
    <property name="enabled" >
     <bool>false</bool>
@@ -70,7 +57,20 @@ p, li { white-space: pre-wrap; }
     <string>&amp;Next >></string>
    </property>
   </widget>
-  <widget class="QStackedWidget" name="stackedWidget" >
+  <widget class="QPushButton" name="btnback" >
+   <property name="geometry" >
+    <rect>
+     <x>290</x>
+     <y>370</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&lt;&lt; &amp;Back</string>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="mainstackwidget" >
    <property name="geometry" >
     <rect>
      <x>20</x>
@@ -1407,19 +1407,6 @@ p, li { white-space: pre-wrap; }
       <string>-</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_40" >
-     <property name="geometry" >
-      <rect>
-       <x>20</x>
-       <y>160</y>
-       <width>46</width>
-       <height>14</height>
-      </rect>
-     </property>
-     <property name="text" >
-      <string>first User:</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_42" >
      <property name="geometry" >
       <rect>
@@ -1463,6 +1450,19 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="text" >
       <string>Create a new MySQL database...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_40" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>first4 User:</string>
      </property>
     </widget>
    </widget>

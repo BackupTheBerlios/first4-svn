@@ -9,6 +9,7 @@
 #include "cfgfrm.h"
 #include "vars.h"
 #include "newdbfrm.h"
+#include "dbwizzardfrm.h"
 
 extern QString username, fullname, docfolder, templatefolder;
 extern QString dbhost, dbname, dbuid, dbpwd,dbport;
@@ -55,9 +56,9 @@ void loginfrm::loadservers()
     
     if(cmbdb->count()==0)
     {
-		newdbfrm ndb;
-		ndb.init();
-		if(ndb.exec())
+    	dbwizzardfrm dbwiz;
+		dbwiz.init();
+		if(dbwiz.exec())
 		    this->loadservers();
 		else
 		    this->reject();

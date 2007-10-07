@@ -11,7 +11,7 @@ public:
 	void init();
 private slots:
 	void next();
-	void previous();
+	void back();
 	void enable_next();
 };
 #endif
