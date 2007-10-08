@@ -397,7 +397,7 @@ void cfgfrm::newuser()
 	bool ok;
 	QString text = QInputDialog::getText ( this, tr ( "QInputDialog::getText()" ),
 	                                       tr ( "User name:" ), QLineEdit::Normal,
-	                                       QDir::home().dirName(), &ok );
+	                                       "", &ok );
 	if ( ok && !text.isEmpty() )
 	{
 		txt_users_user->setText ( text );
