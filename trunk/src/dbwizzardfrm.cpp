@@ -7,6 +7,10 @@
 #include <QTextStream>
 //
 #include "dbwizzardfrm.h"
+#include "vars.h"
+#include "cfgfrm.h"
+//
+extern QString firstver;
 //
 dbwizzardfrm::dbwizzardfrm( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
@@ -75,7 +79,9 @@ void dbwizzardfrm::next()
 				lblnewport->setText(txtnewport->text());
 				lblnewdbname->setText(txtnewdbname->text());
 				lblnewuser->setText(txtnewfirstuser->text());
+				lblnewuserpass->setText(txtnewfirstpwd->text());
 				lblnewadministrators->setText(txtnewadminuser->text());
+				lblnewadministratorspass->setText(txtnewfadminpwd->text());
 			}
 		}
 		else
@@ -165,6 +171,8 @@ void dbwizzardfrm::writeconffile()
 	    	QTextStream stream(&file);
 	    	if(rbtnmysqlex->isChecked())
 		    	stream << lblexuser->text() << ":" << txtexpwd->text() << "@" << lblexhost->text() << "/" << lblexdbname->text() << ":" << lblexport->text() << "\n";
+		    else if(rbtnmysqlnew->isChecked())
+		    	stream << txtnewfirstuser->text() << ":" << txtnewfirstpwd->text() << "@" << txtnewhost->text() << "/" << txtnewdbname->text() << ":" << txtnewport->text() << "\n";
 		}
 		file.close();
     }
@@ -175,6 +183,8 @@ void dbwizzardfrm::writeconffile()
 	    	QTextStream stream(&file);	
 	    	if(rbtnmysqlex->isChecked())
 		    	stream << lblexuser->text() << ":" << txtexpwd->text() << "@" << lblexhost->text() << "/" << lblexdbname->text() << ":" << lblexport->text() << "\n";
+		    else if(rbtnmysqlnew->isChecked())
+		    	stream << txtnewfirstuser->text() << ":" << txtnewfirstpwd->text() << "@" << txtnewhost->text() << "/" << txtnewdbname->text() << ":" << txtnewport->text() << "\n";
 		}
 		file.close();
     }
@@ -184,37 +194,8 @@ void dbwizzardfrm::writeconffile()
 //
 void dbwizzardfrm::createnewmysql()
 {
-	QSqlError sqlerror;
-    QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL");
-    checkDB.setHostName(txtnewhost->text());
-    checkDB.setUserName(txtnewuser->text());
-    checkDB.setPassword(txtnewpwd->text());
-    checkDB.setPort(txtnewport->text().toInt());
-    if(checkDB.open())
-    {
-    	QString qstr_newdb = QString("CREATE DATABASE %1").arg(txtnewdbname->text()); //creating database
-		QSqlQuery query_newdb(qstr_newdb);
-		sqlerror = query_newdb.lastError();
-		if(sqlerror.isValid())
-			QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
-		else
-		{
-			//Creating tables;
-			QString qsqr_tables;
-			QSqlQuery query_newtables(qsqr_tables);
-			sqlerror = query_newtables.lastError();
-			if(sqlerror.isValid())
-				QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
-		}
-		checkDB.close();
-	}
-    else
-    {
-    	QSqlError sqlerror = checkDB.lastError();
-		QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
-    }
-}
-
+	cfgfrm cfrm;
+//Set SqlArray
 QStringList sqlcreatelist;
 sqlcreatelist << "CREATE TABLE `accounttab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`accountnr` text NOT NULL,`bank` text NOT NULL,`blz` text NOT NULL,`currency` text NOT NULL,`users` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "CREATE TABLE `adrtabs` (`ID` int(10) unsigned NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,`idcounter` int(10) unsigned NOT NULL default '0', PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
@@ -233,7 +214,7 @@ sqlcreatelist << "UNLOCK TABLES;";
 sqlcreatelist << "CREATE TABLE `invtab` (`ID` int(11) NOT NULL auto_increment,`NAME` text NOT NULL,`DATATABLE` text NOT NULL,`TABLENAME` text NOT NULL,`DATE` text NOT NULL,`USERS` text NOT NULL,`FINISHED` text NOT NULL,`COMMENTS` text,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "CREATE TABLE `maincfgtab` (`ID` int(11) NOT NULL auto_increment,`var` text NOT NULL,`value` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "LOCK TABLES `maincfgtab` WRITE;";
-sqlcreatelist << "INSERT INTO `maincfgtab` VALUES (1,'docfolder',''),(2,'templatefolder',''),(3,'dbversion','1.4.0-20070412'),(4,'company',''),(5,'companyaddress',''),(6,'bankname',''),(7,'bankaddress',''),(8,'bankblz',''),(9,'bankaccountnr',''),(10,'banktnr',''),(11,'docpref',''),(12,'DoG','');";
+sqlcreatelist << "INSERT INTO `maincfgtab` VALUES (1,'docfolder',''),(2,'templatefolder',''),(3,'dbversion','"+firstver+"'),(4,'company','"+txtcompany->text()+"'),(5,'companyaddress','"+txtstreetnr->text()+"'),(6,'bankname',''),(7,'bankaddress',''),(8,'bankblz',''),(9,'bankaccountnr',''),(10,'banktnr',''),(11,'docpref',''),(12,'DoG','');";
 sqlcreatelist << "UNLOCK TABLES;";
 sqlcreatelist << "CREATE TABLE `msgcfgtab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "LOCK TABLES `msgcfgtab` WRITE;";
@@ -254,6 +235,53 @@ sqlcreatelist << "CREATE TABLE `proceduretab` (`ID` int(11) NOT NULL auto_increm
 sqlcreatelist << "CREATE TABLE `proceduretasks` (`ID` int(11) NOT NULL auto_increment,`PROC_ID` text,`STATE` int(11) default NULL,`TASK` text,`DATE` text,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "CREATE TABLE `userstab` (`ID` int(11) NOT NULL auto_increment,`username` text character set latin1 NOT NULL,`userpass` text character set latin1 NOT NULL,`fullname` text character set latin1 NOT NULL,`firstname` text character set latin1 NOT NULL,`lastname` text character set latin1 NOT NULL,`dob` date NOT NULL default '0000-00-00',`p_street` text character set latin1 NOT NULL,`p_zip` text character set latin1 NOT NULL,`p_location` text character set latin1 NOT NULL,`p_country` text character set latin1 NOT NULL,`b_street` text character set latin1 NOT NULL,`b_zip` text character set latin1 NOT NULL,`b_location` text character set latin1 NOT NULL,`b_country` text character set latin1 NOT NULL,`profession` text character set latin1 NOT NULL,`org_unit` text character set latin1 NOT NULL,`position` text character set latin1 NOT NULL,`emp_type` text character set latin1 NOT NULL,`p_tel` text character set latin1 NOT NULL,`p_fax` text character set latin1 NOT NULL,`p_mobile` text character set latin1 NOT NULL,`p_pager` text character set latin1 NOT NULL,`p_ip` text character set latin1 NOT NULL,`email1` text character set latin1 NOT NULL,`email2` text character set latin1 NOT NULL,`email3` text character set latin1 NOT NULL,`p_web` text character set latin1 NOT NULL,`b_tel` text character set latin1 NOT NULL,`b_teldir` text character set latin1 NOT NULL,`b_fax` text character set latin1 NOT NULL,`b_mobile` text character set latin1 NOT NULL,`b_pager` text character set latin1 NOT NULL,`b_ip` text character set latin1 NOT NULL,`email4` text character set latin1 NOT NULL,`email5` text character set latin1 NOT NULL,`email6` text character set latin1 NOT NULL,`notes` text character set latin1 NOT NULL,`emp_grade` text character set latin1 NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 sqlcreatelist << "LOCK TABLES `userstab` WRITE;";
-sqlcreatelist << "INSERT INTO `userstab` VALUES (11,'Administrator','','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
+sqlcreatelist << "INSERT INTO `userstab` VALUES (11,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
 sqlcreatelist << "UNLOCK TABLES;";
-sqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+sqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";	
+//	
+
+	QSqlError sqlerror;
+    QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL");
+    checkDB.setDatabaseName("mysql");
+    checkDB.setHostName(txtnewhost->text());
+    checkDB.setUserName(txtnewuser->text());
+    checkDB.setPassword(txtnewpwd->text());
+    checkDB.setPort(txtnewport->text().toInt());
+    if(checkDB.open())
+    {
+    	QString qstr_newdb = QString("CREATE DATABASE %1").arg(txtnewdbname->text()); //creating database
+		QSqlQuery query_newdb(qstr_newdb);
+		sqlerror = query_newdb.lastError();
+		if(sqlerror.isValid())
+			QMessageBox::critical(0,"Error...",sqlerror.text());
+			
+    	QString qstr_privileges = QString("GRANT ALL PRIVILEGES ON %1.* TO '%2'@'%' IDENTIFIED BY '%3'").arg(txtnewdbname->text()).arg(txtnewfirstuser->text()).arg(txtnewfirstpwd->text()); //grant privileges
+		QSqlQuery query_privileges(qstr_privileges);
+		sqlerror = query_privileges.lastError();
+		if(sqlerror.isValid())
+			QMessageBox::critical(0,"Error...",sqlerror.text());
+		checkDB.close();
+	}
+    else
+    {
+    	QSqlError sqlerror = checkDB.lastError();
+		QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
+    }
+	checkDB.setDatabaseName(txtnewdbname->text());
+    if(checkDB.open() && !sqlerror.isValid())
+    {
+		//Creating tables;
+		int i;
+		for(i=0;i<sqlcreatelist.size();i++)
+		{
+			QSqlQuery query_newtables(sqlcreatelist[i]);
+			sqlerror = query_newtables.lastError();
+			if(sqlerror.isValid())
+				QMessageBox::critical(0,"Error...",sqlerror.text());	
+		}
+		QMessageBox::information(0,"Database created...",tr("Database successfully created."));
+		checkDB.close();
+	}
+	writeconffile(); //schreibe conffile
+	this->accept();
+}
