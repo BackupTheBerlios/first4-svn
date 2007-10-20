@@ -453,7 +453,7 @@ CREATE TABLE `userstab` (
 
 /*!40000 ALTER TABLE `userstab` DISABLE KEYS */;
 LOCK TABLES `userstab` WRITE;
-INSERT INTO `userstab` VALUES (11,'Administrator','','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO `userstab` VALUES (11,'Administrator','','Administrator','','',CURDATE(),'','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `userstab` ENABLE KEYS */;
 
