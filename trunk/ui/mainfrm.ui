@@ -10,9 +10,7 @@
    </rect>
   </property>
   <property name="sizePolicy" >
-   <sizepolicy>
-    <hsizetype>0</hsizetype>
-    <vsizetype>0</vsizetype>
+   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -25,12 +23,6 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
-    <property name="margin" >
-     <number>9</number>
-    </property>
-    <property name="spacing" >
-     <number>6</number>
-    </property>
     <item row="0" column="0" >
      <widget class="QToolBox" name="maintoolbox" >
       <property name="autoFillBackground" >
@@ -55,10 +47,22 @@
         <iconset resource="first.qrc" >:/images/images/kdmconfig.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
-        <property name="margin" >
+        <property name="leftMargin" >
          <number>9</number>
         </property>
-        <property name="spacing" >
+        <property name="topMargin" >
+         <number>9</number>
+        </property>
+        <property name="rightMargin" >
+         <number>9</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>9</number>
+        </property>
+        <property name="horizontalSpacing" >
+         <number>6</number>
+        </property>
+        <property name="verticalSpacing" >
          <number>6</number>
         </property>
         <item row="0" column="0" >
@@ -148,10 +152,22 @@
         <iconset resource="first.qrc" >:/images/images/kfm.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
-        <property name="margin" >
+        <property name="leftMargin" >
          <number>9</number>
         </property>
-        <property name="spacing" >
+        <property name="topMargin" >
+         <number>9</number>
+        </property>
+        <property name="rightMargin" >
+         <number>9</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>9</number>
+        </property>
+        <property name="horizontalSpacing" >
+         <number>6</number>
+        </property>
+        <property name="verticalSpacing" >
          <number>6</number>
         </property>
         <item row="0" column="0" >
@@ -482,8 +498,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>167</width>
-         <height>84</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -493,12 +509,6 @@
         <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
-        <property name="margin" >
-         <number>9</number>
-        </property>
-        <property name="spacing" >
-         <number>6</number>
-        </property>
         <item row="0" column="0" >
          <widget class="QPushButton" name="btnbrowsedoc" >
           <property name="palette" >
@@ -631,8 +641,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>96</width>
-         <height>26</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -641,6 +651,133 @@
        <attribute name="icon" >
         <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
        </attribute>
+       <layout class="QGridLayout" >
+        <item row="0" column="0" >
+         <widget class="QPushButton" name="btnbrowsedoc_2" >
+          <property name="palette" >
+           <palette>
+            <active>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="autoFillBackground" >
+           <bool>true</bool>
+          </property>
+          <property name="text" >
+           <string>Browse accounts</string>
+          </property>
+          <property name="icon" >
+           <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+          </property>
+          <property name="checkable" >
+           <bool>false</bool>
+          </property>
+          <property name="flat" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QPushButton" name="btnnewdoc_2" >
+          <property name="palette" >
+           <palette>
+            <active>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button" >
+              <brush brushstyle="SolidPattern" >
+               <color alpha="255" >
+                <red>206</red>
+                <green>207</green>
+                <blue>209</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="autoFillBackground" >
+           <bool>true</bool>
+          </property>
+          <property name="text" >
+           <string>New payment</string>
+          </property>
+          <property name="icon" >
+           <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+          </property>
+          <property name="checkable" >
+           <bool>false</bool>
+          </property>
+          <property name="flat" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="page_6" >
        <property name="geometry" >
@@ -680,7 +817,7 @@
          <x>0</x>
          <y>0</y>
          <width>317</width>
-         <height>211</height>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -789,10 +926,22 @@
        <string/>
       </property>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="0" >

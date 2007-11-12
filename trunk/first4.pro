@@ -41,7 +41,8 @@ FORMS = ui/mainfrm.ui \
  ui/procedureeditfrm.ui \
  ui/proceduretask.ui \
  ui/proceduresearch.ui \
- ui/dbwizzardfrm.ui
+ ui/dbwizzardfrm.ui \
+ ui/accountsfrm.ui
 HEADERS = src/mainfrm.h \
  src/vars.h \
  src/cfgfrm.h \

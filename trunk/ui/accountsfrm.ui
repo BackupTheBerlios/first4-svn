@@ -1,0 +1,23 @@
+<ui version="4.0" >
+ <class>accountsfrm</class>
+ <widget class="QWidget" name="accountsfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>649</width>
+    <height>565</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Browse accounts...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+  </property>
+ </widget>
+ <resources>
+  <include location="first.qrc" />
+ </resources>
+ <connections/>
+</ui>
