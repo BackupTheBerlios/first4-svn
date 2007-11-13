@@ -21,6 +21,7 @@
 #include "doceditfrm.h"
 #include "plugininterface.h"
 #include "procedurefrm.h"
+#include "accountsfrm.h"
 //
 extern QString username, fullname, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
@@ -66,6 +67,8 @@ void mainfrm::loaduserdata()
 	connect ( btnnewdoc, SIGNAL ( released() ), this, SLOT ( newdoc() ) );
 	connect ( btnbrowseorders, SIGNAL ( released() ), this, SLOT ( browseorders() ) );
 	connect ( btnneworder, SIGNAL ( released() ), this, SLOT ( neworder() ) );
+	connect ( btnbrowseaccounts, SIGNAL ( released() ), this, SLOT ( browseaccounts() ) );
+	connect ( btnnewpayment, SIGNAL ( released() ), this, SLOT ( newpayment() ) );
 
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
@@ -254,4 +257,16 @@ void mainfrm::neworder()
 	procedurefrm *pfrm = new procedurefrm;
 	if(pfrm->init() == 2)
 		pfrm->neworder();
+}
+//
+void mainfrm::browseaccounts()
+{
+	accountsfrm *afrm = new accountsfrm;
+	if(afrm->init() != 0)
+		afrm->show();
+}
+//
+void mainfrm::newpayment()
+{
+	
 }

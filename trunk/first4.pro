@@ -72,7 +72,8 @@ HEADERS = src/mainfrm.h \
  src/procedureeditfrm.h \
  src/proceduretask.h \
  src/proceduresearch.h \
- src/dbwizzardfrm.h
+ src/dbwizzardfrm.h \
+ src/accountsfrm.h
 SOURCES = src/main.cpp \
  src/mainfrm.cpp \
  src/vars.cpp \
@@ -103,6 +104,7 @@ SOURCES = src/main.cpp \
  src/procedureeditfrm.cpp \
  src/proceduretask.cpp \
  src/proceduresearch.cpp \
- src/dbwizzardfrm.cpp
+ src/dbwizzardfrm.cpp \
+ src/accountsfrm.cpp
 TRANSLATIONS = langfiles/de.ts langfiles/it.ts
 RESOURCES = ui/first.qrc

@@ -19,8 +19,3 @@ private:
 	void createnewmysql();
 };
 #endif
-
-
-
-
-

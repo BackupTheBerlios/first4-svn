@@ -498,8 +498,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>317</width>
-         <height>206</height>
+         <width>167</width>
+         <height>90</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -653,7 +653,7 @@
        </attribute>
        <layout class="QGridLayout" >
         <item row="0" column="0" >
-         <widget class="QPushButton" name="btnbrowsedoc_2" >
+         <widget class="QPushButton" name="btnbrowseaccounts" >
           <property name="palette" >
            <palette>
             <active>
@@ -709,7 +709,7 @@
          </widget>
         </item>
         <item row="1" column="0" >
-         <widget class="QPushButton" name="btnnewdoc_2" >
+         <widget class="QPushButton" name="btnnewpayment" >
           <property name="palette" >
            <palette>
             <active>

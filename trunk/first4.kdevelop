@@ -98,9 +98,7 @@
       <designer>/usr/bin/designer</designer>
       <designerpluginpaths/>
     </qt>
-    <references>
-      <pcs>Qt4</pcs>
-    </references>
+    <references/>
     <codecompletion>
       <automaticCodeCompletion>true</automaticCodeCompletion>
       <automaticArgumentsHint>true</automaticArgumentsHint>
@@ -139,6 +137,11 @@
       <synchronize>true</synchronize>
       <orientation>Vertical</orientation>
     </splitheadersource>
+    <designerintegration>
+      <qtdesigner>
+        <implementation class="accountsfrm" path="ui/accountsfrm.ui" implementationpath="accountsfrm.h" />
+      </qtdesigner>
+    </designerintegration>
   </kdevcppsupport>
   <kdevfilecreate>
     <filetypes/>

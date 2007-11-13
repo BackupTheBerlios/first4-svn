@@ -19,6 +19,8 @@ private slots:
 	void newdoc();
 	void browseorders();
 	void neworder();
+	void browseaccounts();
+	void newpayment();
 public:
 	void loaduserdata();
 	void initplugins();
