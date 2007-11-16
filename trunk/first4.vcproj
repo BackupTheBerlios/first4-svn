@@ -4,6 +4,7 @@
 	Version="8,00"
 	Name="first4"
 	ProjectGUID="{D41D8CD9-8F00-3204-A980-0998ECF8427E}"
+	RootNamespace="first4"
 	Keyword="Qt4VSv1.0"
 	>
 	<Platforms>
@@ -43,7 +44,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="-Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189"
-				Optimization="2"
+				Optimization="4"
 				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;src&quot;,&quot;ui&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build\first4\moc&quot;,&quot;build\first4\ui&quot;,$(QTDIR)\mkspecs\win32-msvc2005"
 				PreprocessorDefinitions="UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
 				GeneratePreprocessedFile="0"
@@ -211,6 +212,10 @@
 				>
 			</File>
 			<File
+				RelativePath="src\accountsfrm.cpp"
+				>
+			</File>
+			<File
 				RelativePath="src\addrfrm.cpp"
 				>
 			</File>
@@ -359,6 +364,32 @@
 						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\aboutfrm.h -o build\first4\moc\moc_aboutfrm.cpp&#x0D;&#x0A;"
 						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\aboutfrm.h"
 						Outputs="build\first4\moc\moc_aboutfrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\accountsfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\accountsfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\accountsfrm.h -o build\first4\moc\moc_accountsfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\accountsfrm.h"
+						Outputs="build\first4\moc\moc_accountsfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\accountsfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2005 -D_MSC_VER=1400 -DWIN32 src\accountsfrm.h -o build\first4\moc\moc_accountsfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\accountsfrm.h"
+						Outputs="build\first4\moc\moc_accountsfrm.cpp"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1105,6 +1136,10 @@
 				>
 			</File>
 			<File
+				RelativePath="build\first4\moc\moc_accountsfrm.cpp"
+				>
+			</File>
+			<File
 				RelativePath="build\first4\moc\moc_addrfrm.cpp"
 				>
 			</File>
@@ -1242,6 +1277,10 @@
 			</File>
 			<File
 				RelativePath="build\first4\ui\ui_aboutfrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\first4\ui\ui_accountsfrm.h"
 				>
 			</File>
 			<File
@@ -1401,6 +1440,32 @@
 						CommandLine="$(QTDIR)\bin\uic.exe ui\aboutfrm.ui -o build\first4\ui\ui_aboutfrm.h&#x0D;&#x0A;"
 						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\aboutfrm.ui"
 						Outputs="build\first4\ui\ui_aboutfrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\accountsfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\accountsfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\accountsfrm.ui -o build\first4\ui\ui_accountsfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\accountsfrm.ui"
+						Outputs="build\first4\ui\ui_accountsfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\accountsfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\accountsfrm.ui -o build\first4\ui\ui_accountsfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\accountsfrm.ui"
+						Outputs="build\first4\ui\ui_accountsfrm.h"
 					/>
 				</FileConfiguration>
 			</File>
