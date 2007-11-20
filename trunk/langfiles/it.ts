@@ -3,22 +3,22 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="60"/>
+        <location filename="../src/main.cpp" line="67"/>
         <source>Initializing ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="64"/>
+        <location filename="../src/main.cpp" line="71"/>
         <source>Initializing userdata ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="67"/>
+        <location filename="../src/main.cpp" line="74"/>
         <source>Initializing plugins ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="70"/>
+        <location filename="../src/main.cpp" line="77"/>
         <source>Initializing messages ...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -414,6 +414,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/aboutfrm.ui" line="97"/>
         <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>accountsfrm</name>
+    <message>
+        <location filename="../ui/accountsfrm.ui" line="13"/>
+        <source>Browse accounts...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2802,11 +2810,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/docopendraftsfrm.cpp" line="54"/>
-        <source>Bill</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/docopendraftsfrm.cpp" line="112"/>
         <source>No Address found in database!</source>
         <translation type="unfinished"></translation>
@@ -2899,6 +2902,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/docopendraftfrm.ui" line="341"/>
         <source>name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/docopendraftsfrm.cpp" line="54"/>
+        <source>Invoice</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3276,138 +3284,148 @@ Complete nevertheless?</source>
 <context>
     <name>mainfrm</name>
     <message>
-        <location filename="../src/mainfrm.cpp" line="112"/>
+        <location filename="../src/mainfrm.cpp" line="115"/>
         <source>Messages: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="191"/>
+        <location filename="../src/mainfrm.cpp" line="194"/>
         <source>Exit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="191"/>
+        <location filename="../src/mainfrm.cpp" line="194"/>
         <source>Exit First?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="21"/>
+        <location filename="../ui/mainfrm.ui" line="19"/>
         <source>first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="808"/>
+        <location filename="../ui/mainfrm.ui" line="957"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="801"/>
+        <location filename="../ui/mainfrm.ui" line="950"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="818"/>
+        <location filename="../ui/mainfrm.ui" line="967"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="828"/>
+        <location filename="../ui/mainfrm.ui" line="977"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="52"/>
+        <location filename="../ui/mainfrm.ui" line="44"/>
         <source>Directories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="107"/>
+        <location filename="../ui/mainfrm.ui" line="111"/>
         <source>Browse Directories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="145"/>
+        <location filename="../ui/mainfrm.ui" line="149"/>
         <source>Datatables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="256"/>
+        <location filename="../ui/mainfrm.ui" line="272"/>
         <source>View purchase orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="312"/>
+        <location filename="../ui/mainfrm.ui" line="328"/>
         <source>Make inventory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="200"/>
+        <location filename="../ui/mainfrm.ui" line="216"/>
         <source>Browse Tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="490"/>
+        <location filename="../ui/mainfrm.ui" line="506"/>
         <source>Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="639"/>
+        <location filename="../ui/mainfrm.ui" line="649"/>
         <source>Finances</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="655"/>
+        <location filename="../ui/mainfrm.ui" line="792"/>
         <source>Messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="671"/>
+        <location filename="../ui/mainfrm.ui" line="808"/>
         <source>Various</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="687"/>
+        <location filename="../ui/mainfrm.ui" line="824"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="740"/>
+        <location filename="../ui/mainfrm.ui" line="877"/>
         <source>Database:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="779"/>
+        <location filename="../ui/mainfrm.ui" line="916"/>
         <source>Server:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="714"/>
+        <location filename="../ui/mainfrm.ui" line="851"/>
         <source>Username:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="545"/>
+        <location filename="../ui/mainfrm.ui" line="555"/>
         <source>Browse documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="601"/>
+        <location filename="../ui/mainfrm.ui" line="611"/>
         <source>New document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="350"/>
+        <location filename="../ui/mainfrm.ui" line="366"/>
         <source>Orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="405"/>
+        <location filename="../ui/mainfrm.ui" line="421"/>
         <source>New Order</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="467"/>
+        <location filename="../ui/mainfrm.ui" line="483"/>
         <source>Browse Orders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainfrm.ui" line="698"/>
+        <source>Browse accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainfrm.ui" line="754"/>
+        <source>New payment</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

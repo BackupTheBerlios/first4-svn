@@ -189,7 +189,7 @@ void doceditfrm::selecteddocument()
 				docfile = "dn"+txtdoccount->text()+".dvi"; 
 				break;
 			case 3:
-				docfile = "bi"+txtdoccount->text()+".dvi"; 
+				docfile = "in"+txtdoccount->text()+".dvi"; 
 				break;    
 	    	}
 		    btnnew->setEnabled(TRUE);
@@ -586,14 +586,14 @@ void doceditfrm::completedoc()
 		{ 
 		    doccompletefrm *complfrm = new doccompletefrm;
 		    complfrm->init();
-		    if(docdef[cmbdoc->currentIndex()] != "3 deliverynote" && docdef[cmbdoc->currentIndex()] != "4 bill")
+		    if(docdef[cmbdoc->currentIndex()] != "3 deliverynote" && docdef[cmbdoc->currentIndex()] != "4 invoice")
 		    {
 				complfrm->chkbox_2->setChecked(FALSE);
 				complfrm->chkbox_2->setEnabled(FALSE);
 				complfrm->chkbox_6->setChecked(FALSE);
 				complfrm->chkbox_6->setEnabled(FALSE);
 		    }	    
-		    if(docdef[cmbdoc->currentIndex()] != "4 bill")
+		    if(docdef[cmbdoc->currentIndex()] != "4 invoice")
 		    {
 				complfrm->chkbox_3->setChecked(FALSE);
 				complfrm->chkbox_3->setEnabled(FALSE);
@@ -720,7 +720,7 @@ void doceditfrm::registeramount()
     ekonto->txtCode->setText("RE");
     ekonto->txtadresse->setText(boxadress->text());
     ekonto->lbladrID->setText(lblID->text());
-    ekonto->txtbeschreibung->setText(tr("Bill %1").arg(doccount->text()));
+    ekonto->txtbeschreibung->setText(tr("Invoice %1").arg(doccount->text()));
     ekonto->txtbetrag->setText(box_tot_inkl->text());
     ekonto->setdbID("ietab");
     ekonto->newentry("ietab");*/
@@ -1269,7 +1269,7 @@ void doceditfrm::writetexfile()
 				    {
 						QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
 						tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
-						tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n"); + "\\\\ \n";
+						tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n") + " \\\\ \n";
 						tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
 						line = line.replace("###COMMENTS###", tmpcomments);
 				    }

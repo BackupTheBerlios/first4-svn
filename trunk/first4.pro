@@ -107,4 +107,4 @@ SOURCES = src/main.cpp \
  src/accountsfrm.cpp
 TRANSLATIONS = langfiles/de.ts langfiles/it.ts
 RESOURCES = ui/first.qrc
-RC_FILE +=   first4.rc
+RC_FILE += first4.rc

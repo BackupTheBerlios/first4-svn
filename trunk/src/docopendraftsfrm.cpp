@@ -51,7 +51,7 @@ void docopendraftsfrm::init()
 void docopendraftsfrm::readdoctab()
 {   
 	dlabel.clear();
-	dlabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Bill");
+	dlabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoice");
     QString qstr = "SELECT name FROM doctab ORDER BY ID;";
     QSqlQuery query(qstr);
     if(query.isActive())

@@ -4,22 +4,22 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="60"/>
+        <location filename="../src/main.cpp" line="67"/>
         <source>Initializing ...</source>
         <translation>Initialisierung ...</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="64"/>
+        <location filename="../src/main.cpp" line="71"/>
         <source>Initializing userdata ...</source>
         <translation>Initialisiere Benutzerdaten ...</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="67"/>
+        <location filename="../src/main.cpp" line="74"/>
         <source>Initializing plugins ...</source>
         <translation>Initialisiere Plugins ...</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="70"/>
+        <location filename="../src/main.cpp" line="77"/>
         <source>Initializing messages ...</source>
         <translation>Initialisiere Nachrichten ...</translation>
     </message>
@@ -416,6 +416,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../ui/aboutfrm.ui" line="97"/>
         <source>License</source>
         <translation>Lizenz</translation>
+    </message>
+</context>
+<context>
+    <name>accountsfrm</name>
+    <message>
+        <location filename="../ui/accountsfrm.ui" line="13"/>
+        <source>Browse accounts...</source>
+        <translation>Durchsuche Konten...</translation>
     </message>
 </context>
 <context>
@@ -2031,7 +2039,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="57"/>
         <source>&amp;Next &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Weiter &gt;&gt;</translation>
     </message>
     <message>
         <location filename="../src/dbwizzardfrm.cpp" line="268"/>
@@ -2089,7 +2097,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="154"/>
         <source>Open a existing SQLite3 database</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestehende SQLite3 Datenbank öffnen</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="170"/>
@@ -2100,87 +2108,87 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;If you are a single-user then you can user SQLite.&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;If you will work with more users at the same time on the same DB then &lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;it would be better if you use MySQL.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für Einzelplatzinstallationen eignet sich besser SQLite.&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für eine Mehrbenutzerinstallation ist besser MySQL.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="189"/>
         <source>Create a new MySQL database</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue MySQL Datenbank erstellen</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="202"/>
         <source>Connect to a existing MySQL database</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinde zu bestehender MySQL Datenbank</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1653"/>
         <source>Database:</source>
-        <translation type="unfinished">Datenbank:</translation>
+        <translation>Datenbank:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="751"/>
         <source>Host:</source>
-        <translation type="unfinished">Host:</translation>
+        <translation>Host:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="620"/>
         <source>Port:</source>
-        <translation type="unfinished">Port:</translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="633"/>
         <source>3306</source>
-        <translation type="unfinished">3306</translation>
+        <translation>3306</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1170"/>
         <source>User:</source>
-        <translation type="unfinished"></translation>
+        <translation>User:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1477"/>
         <source>Password:</source>
-        <translation type="unfinished">Passwort:</translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="351"/>
         <source>&amp;Check</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Check</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="528"/>
         <source>Connect to a existing MySQL database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu bestehender MySQL Datenbank verbinden...</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1588"/>
         <source>Step 1 / 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 1 / 2</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="418"/>
         <source>Step 2 / 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 2 / 2</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1691"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1640"/>
         <source>Database Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank Version:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1627"/>
         <source>Summary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusammenfassun:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="659"/>
         <source>Step 1 / 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 1 / 5</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="672"/>
@@ -2194,12 +2202,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="699"/>
         <source>root</source>
-        <translation type="unfinished"></translation>
+        <translation>root</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1419"/>
         <source>Create a new MySQL database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue MySQL Datenbank erstellen...</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="779"/>
@@ -2222,62 +2230,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="826"/>
         <source>DB-Name:</source>
-        <translation type="unfinished">DB-Name:</translation>
+        <translation>DB-Name:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="839"/>
         <source>first4db</source>
-        <translation type="unfinished"></translation>
+        <translation>first4db</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="855"/>
         <source>Step 2 / 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 2 / 5</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="881"/>
         <source>first4</source>
-        <translation type="unfinished">first4</translation>
+        <translation>first4</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="935"/>
         <source>Company:</source>
-        <translation type="unfinished">Firma:</translation>
+        <translation>Unternehmen:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="980"/>
         <source>Street / Nr.:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strasse Nr.:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="993"/>
         <source>City:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ort:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1022"/>
         <source>ZIP:</source>
-        <translation type="unfinished">PLZ:</translation>
+        <translation>PLZ:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1051"/>
         <source>You can edit this details after the installation in the settings window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einstellungen können nach der Installation im Konfigurationsfenster angepasst werden.</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1064"/>
         <source>Please enter your Company details:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte Unternehmensdaten eingeben:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1090"/>
         <source>Step 3 / 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 3 / 5</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1131"/>
         <source>Step 4 / 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 4 / 5</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1196"/>
@@ -2292,47 +2300,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1214"/>
         <source>Administrator</source>
-        <translation type="unfinished">Administrator</translation>
+        <translation>Administrator</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1245"/>
         <source>Step 5 / 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Schritt 5 / 5</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1309"/>
         <source>DB-Host:</source>
-        <translation type="unfinished"></translation>
+        <translation>DB-Host:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1322"/>
         <source>DB-Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>DB-Port:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1387"/>
         <source>Administrator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Administrator:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1432"/>
         <source>first4 User:</source>
-        <translation type="unfinished"></translation>
+        <translation>first4 User:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1511"/>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateiname:</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1534"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../ui/dbwizzardfrm.ui" line="1601"/>
         <source>Open a existing SQLite3 database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestehende SQLite3 Datenbank öffnen...</translation>
     </message>
 </context>
 <context>
@@ -2806,11 +2814,6 @@ Als Entwurf speichern?</translation>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../src/docopendraftsfrm.cpp" line="54"/>
-        <source>Bill</source>
-        <translation>Rechnung</translation>
-    </message>
-    <message>
         <location filename="../src/docopendraftsfrm.cpp" line="112"/>
         <source>No Address found in database!</source>
         <translation>Keine Adresse in der Datenbank gefunden!</translation>
@@ -2904,6 +2907,11 @@ Als Entwurf speichern?</translation>
         <location filename="../ui/docopendraftfrm.ui" line="341"/>
         <source>name</source>
         <translation>name</translation>
+    </message>
+    <message>
+        <location filename="../src/docopendraftsfrm.cpp" line="54"/>
+        <source>Invoice</source>
+        <translation>Rechnung</translation>
     </message>
 </context>
 <context>
@@ -3284,139 +3292,149 @@ Trotzdem abschliessen?</translation>
 <context>
     <name>mainfrm</name>
     <message>
-        <location filename="../ui/mainfrm.ui" line="21"/>
+        <location filename="../ui/mainfrm.ui" line="19"/>
         <source>first</source>
         <translation>first</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="828"/>
+        <location filename="../ui/mainfrm.ui" line="977"/>
         <source>&amp;Exit</source>
         <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="818"/>
+        <location filename="../ui/mainfrm.ui" line="967"/>
         <source>&amp;About</source>
         <translation>Übe&amp;r first</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="808"/>
+        <location filename="../ui/mainfrm.ui" line="957"/>
         <source>&amp;Settings</source>
         <translation>&amp;Einstellungen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="52"/>
+        <location filename="../ui/mainfrm.ui" line="44"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="145"/>
+        <location filename="../ui/mainfrm.ui" line="149"/>
         <source>Datatables</source>
         <translation>Datentabellen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="490"/>
+        <location filename="../ui/mainfrm.ui" line="506"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="639"/>
+        <location filename="../ui/mainfrm.ui" line="649"/>
         <source>Finances</source>
         <translation>Finanzen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="801"/>
+        <location filename="../ui/mainfrm.ui" line="950"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="655"/>
+        <location filename="../ui/mainfrm.ui" line="792"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="671"/>
+        <location filename="../ui/mainfrm.ui" line="808"/>
         <source>Various</source>
         <translation>Verschiedenes</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="687"/>
+        <location filename="../ui/mainfrm.ui" line="824"/>
         <source>Information</source>
         <translation>Informationen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="714"/>
+        <location filename="../ui/mainfrm.ui" line="851"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="779"/>
+        <location filename="../ui/mainfrm.ui" line="916"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="740"/>
+        <location filename="../ui/mainfrm.ui" line="877"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="112"/>
+        <location filename="../src/mainfrm.cpp" line="115"/>
         <source>Messages: %1</source>
         <translation>Nachrichten: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="191"/>
+        <location filename="../src/mainfrm.cpp" line="194"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
     <message>
-        <location filename="../src/mainfrm.cpp" line="191"/>
+        <location filename="../src/mainfrm.cpp" line="194"/>
         <source>Exit First?</source>
         <translation>First beenden?</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="107"/>
+        <location filename="../ui/mainfrm.ui" line="111"/>
         <source>Browse Directories</source>
         <translation>Adressbücher durchsuchen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="256"/>
+        <location filename="../ui/mainfrm.ui" line="272"/>
         <source>View purchase orders</source>
         <translation>Bestellungen öffnen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="312"/>
+        <location filename="../ui/mainfrm.ui" line="328"/>
         <source>Make inventory</source>
         <translation>Inventar erstellen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="200"/>
+        <location filename="../ui/mainfrm.ui" line="216"/>
         <source>Browse Tables</source>
         <translation>Datentabellen durchsuchen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="545"/>
+        <location filename="../ui/mainfrm.ui" line="555"/>
         <source>Browse documents</source>
         <translation>Dokument durchsuchen</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="601"/>
+        <location filename="../ui/mainfrm.ui" line="611"/>
         <source>New document</source>
         <translation>Neues Dokument</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="350"/>
+        <location filename="../ui/mainfrm.ui" line="366"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="405"/>
+        <location filename="../ui/mainfrm.ui" line="421"/>
         <source>New Order</source>
         <translation>Neuer Auftrag</translation>
     </message>
     <message>
-        <location filename="../ui/mainfrm.ui" line="467"/>
+        <location filename="../ui/mainfrm.ui" line="483"/>
         <source>Browse Orders</source>
         <translation>Aufträge durchsuchen</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainfrm.ui" line="698"/>
+        <source>Browse accounts</source>
+        <translation>Konten durchsuchen</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainfrm.ui" line="754"/>
+        <source>New payment</source>
+        <translation>Neue Zahlung</translation>
     </message>
 </context>
 <context>
@@ -4111,7 +4129,7 @@ Bitte kontaktieren Sie ihre Administrator</translation>
     <message>
         <location filename="../ui/procedurefrm.ui" line="265"/>
         <source>Orders</source>
-        <translation type="unfinished">Bestellungen</translation>
+        <translation>Bestellungen</translation>
     </message>
     <message>
         <location filename="../ui/procedurefrm.ui" line="422"/>
@@ -4298,67 +4316,67 @@ Please contact your Administrator</source>
     <message>
         <location filename="../src/procedurefrm.cpp" line="673"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schliessen</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="895"/>
         <source>Procedure completed...</source>
-        <translation type="unfinished"></translation>
+        <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="720"/>
         <source>Create offer for order %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Offerte für Auftrag %1 erstellen?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="725"/>
         <source>Create order confirmation for order %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Auftragsbestätigung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="730"/>
         <source>Create deliverynote for order %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>lieferschein für Auftrag %1 erstellen?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="735"/>
         <source>Create bill for order %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechnung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="878"/>
         <source>Order completed...</source>
-        <translation type="unfinished"></translation>
+        <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="878"/>
         <source>Change status for selected entries?</source>
-        <translation type="unfinished"></translation>
+        <translation>Status für ausgewählte Einträge anpassen?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="895"/>
         <source>Archive completed entries?</source>
-        <translation type="unfinished"></translation>
+        <translation>Abgeschlossene einträge archivieren?</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="950"/>
         <source>Create Offer</source>
-        <translation type="unfinished"></translation>
+        <translation>Offerte erstellen</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="954"/>
         <source>Create Orderconfirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Auftragsbestätigung erstellen</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="958"/>
         <source>Create Delivery note</source>
-        <translation type="unfinished"></translation>
+        <translation>Lieferschein erstellen</translation>
     </message>
     <message>
         <location filename="../src/procedurefrm.cpp" line="962"/>
         <source>Create Bill</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechnung erstellen</translation>
     </message>
 </context>
 <context>
@@ -4366,102 +4384,102 @@ Please contact your Administrator</source>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Incomming orders</source>
-        <translation type="unfinished">Eingehende Aufträge</translation>
+        <translation>Eingehende Aufträge</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Offers</source>
-        <translation type="unfinished">Offerten</translation>
+        <translation>Offerten</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Open orders</source>
-        <translation type="unfinished">Offene Bestellungen</translation>
+        <translation>Offene Bestellungen</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Completed orders</source>
-        <translation type="unfinished">Abgeschlossene Bestellungen</translation>
+        <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Deliverynotes</source>
-        <translation type="unfinished">Lieferscheine</translation>
+        <translation>Lieferscheine</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Invoices</source>
-        <translation type="unfinished">Rechnungen</translation>
+        <translation>Rechnungen</translation>
     </message>
     <message>
         <location filename="../src/proceduresearch.cpp" line="46"/>
         <source>Archive</source>
-        <translation type="unfinished">Archiv</translation>
+        <translation>Archiv</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="13"/>
         <source>Search order...</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche Auftrag...</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="35"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="48"/>
         <source>ID</source>
-        <translation type="unfinished">ID</translation>
+        <translation>ID</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="158"/>
         <source>Customer</source>
-        <translation type="unfinished">Kunde</translation>
+        <translation>Kunde</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="163"/>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="63"/>
         <source>Date</source>
-        <translation type="unfinished">Datum</translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="79"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="99"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="116"/>
         <source>Search:</source>
-        <translation type="unfinished">Suche:</translation>
+        <translation>Suche:</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="139"/>
         <source>in:</source>
-        <translation type="unfinished">in:</translation>
+        <translation>in:</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="153"/>
         <source>Order Nr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Auftrags-Nr.</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="168"/>
         <source>Tasks</source>
-        <translation type="unfinished">Aufgaben</translation>
+        <translation>Aufgaben</translation>
     </message>
     <message>
         <location filename="../ui/proceduresearch.ui" line="173"/>
         <source>Orders</source>
-        <translation type="unfinished">Aufträge</translation>
+        <translation>Bestellungen</translation>
     </message>
 </context>
 <context>

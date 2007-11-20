@@ -8,7 +8,7 @@
 #include "addrselectfrm.h"
 #include "doceditfrm.h"
 //
-QStringList searchrowlist, docart, doclabel, docsource;
+QStringList searchrowlist, doctype, doclabel, docsource;
 extern QString username, fullname;
 //
 docopenfrm::docopenfrm( QWidget * parent, Qt::WFlags f) 
@@ -21,11 +21,11 @@ void docopenfrm::init()
 {
     searchrowlist.clear();
     doclabel.clear();
-    docart.clear();
+    doctype.clear();
     docsource.clear();
     searchrowlist << "client" <<  "docID" << "date" << "data" << "comments";
     doclabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoices");
-    docart << "1 offer" << "2 orderconf" << "3 deliverynote" << "4 bill";
+    doctype << "1 offer" << "2 orderconf" << "3 deliverynote" << "4 invoice";
     docsource << "docs" << "docdrafts";
     
     int i;
@@ -33,7 +33,7 @@ void docopenfrm::init()
     {
 		QTreeWidgetItem *item = new QTreeWidgetItem(treeindex);
 		item->setText(0, doclabel[i]);
-		item->setText(1, docart[i]);
+		item->setText(1, doctype[i]);
 		item->setText(2, QString("%1").arg(i, 0, 10));
     }
     treeindex->hideColumn(1);
