@@ -1,14 +1,13 @@
+TARGET = first4
 TEMPLATE = app
 DESTDIR = bin
 DEPENDPATH = src ui
 INCLUDEPATH = src ui
 CONFIG += qt \
- warn_on \
  thread \
- console \
- debug \
- x86 \
- plugin
+ plugin \
+ release \
+ warn_on
 QT += gui core sql
 OBJECTS_DIR = build/first4/obj
 MOC_DIR = build/first4/moc
@@ -108,3 +107,4 @@ SOURCES = src/main.cpp \
  src/accountsfrm.cpp
 TRANSLATIONS = langfiles/de.ts langfiles/it.ts
 RESOURCES = ui/first.qrc
+RC_FILE +=   first4.rc

@@ -79,7 +79,7 @@ int main ( int argc, char ** argv )
 
 		mfrm->show();
 		
-		QTimer::singleShot(2000, mfrm, SLOT(closesplash()));
+			QTimer::singleShot(2000, mfrm, SLOT(closesplash()));
 
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		return app.exec();
