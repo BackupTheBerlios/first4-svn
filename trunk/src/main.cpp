@@ -13,6 +13,7 @@
 #include "loginfrm.h"
 
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
+QSplashScreen splash;
 
 bool createConnections()
 {
@@ -28,6 +29,12 @@ bool createConnections()
 		QMessageBox::critical ( 0,"Error...", "Unable to connect to database server!" );
 	}
 	return TRUE;
+}
+
+void closesplash()
+{
+	mainfrm *mfrm = new mainfrm();
+	splash.finish( mfrm );
 }
 
 int main ( int argc, char ** argv )
@@ -54,7 +61,7 @@ int main ( int argc, char ** argv )
 	{
 		logfrm.saveservers();
 		createConnections();
-		QSplashScreen splash ( QPixmap ( ":/images/images/newsplash.png" ) );
+		splash.setPixmap( QPixmap ( ":/images/images/newsplash.png" ) );
 		splash.show();
 		app.processEvents();
 		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignBottom, Qt::black );
@@ -72,10 +79,7 @@ int main ( int argc, char ** argv )
 
 		mfrm->show();
 		
-		sleep(1);
-		
-		splash.finish ( mfrm );
-
+		QTimer::singleShot(2000, mfrm, SLOT(closesplash()));
 
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		return app.exec();
