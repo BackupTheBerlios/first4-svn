@@ -30,6 +30,8 @@ public slots:
 	void selectuser();
 	void newuser();
 	void saveuserchange();
+	void canceluser();
+	void deluser();
 	void loadressourcesdetails();
 	void seldoctemplate();
 	void applyresourcesdetails();

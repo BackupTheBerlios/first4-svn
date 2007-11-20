@@ -96,6 +96,8 @@ void cfgfrm::initfrm()
 	connect ( listusers, SIGNAL ( itemClicked ( QListWidgetItem* ) ), this, SLOT ( selectuser() ) );
 	connect ( btn_users_new, SIGNAL ( released() ), this, SLOT ( newuser() ) );
 	connect ( btn_users_save, SIGNAL ( released() ), this, SLOT ( saveuserchange() ) );
+	connect ( btn_users_delete, SIGNAL ( released() ), this, SLOT ( deluser() ) );
+	connect ( btn_users_cancel, SIGNAL ( released() ), this, SLOT ( canceluser() ) );
 	connect ( listressources, SIGNAL ( itemClicked ( QTreeWidgetItem*,int ) ), this, SLOT ( loadressourcesdetails() ) );
 	connect ( btndoctemplate, SIGNAL ( released() ), this, SLOT ( seldoctemplate() ) );
 	connect ( listpermissions, SIGNAL ( itemClicked ( QTreeWidgetItem*, int ) ), this, SLOT ( applyresourcesdetails() ) );
@@ -352,10 +354,15 @@ void cfgfrm::selectuser()
 		else
 		{
 			cfgtab->setEnabled ( TRUE );
+			txt_users_pwd1->setText("");
+			txt_users_pwd2->setText("");
 			txt_users_firstname->setText ( query.value ( 3 ).toString().simplified() );
 			txt_users_lastname->setText ( query.value ( 4 ).toString().simplified() );
 			QString s = query.value ( 5 ).toString();
 			txtdob->setDate ( QDate::QDate ( s.section ( "-", 0, 0 ).toInt(), s.section ( "-", 1, 1 ).toInt(), s.section ( "-", 2, 2 ).toInt() ) );
+			if (s == "")
+				txtdob->setDate ( QDate::QDate(1970, 01, 01 ));
+				
 			txt_users_privat_street->setText ( query.value ( 6 ).toString() );
 			txt_users_privat_zip->setText ( query.value ( 7 ).toString() );
 			txt_users_privat_location->setText ( query.value ( 8 ).toString() );
@@ -479,6 +486,30 @@ void cfgfrm::saveuserchange()
 		txt_users_pwd1->selectAll();
 		txt_users_pwd1->setFocus();
 	}
+}
+//
+void cfgfrm::canceluser()
+{
+    selectuser();
+}
+
+void cfgfrm::deluser()
+{
+	QListWidgetItem *item = listusers->currentItem();
+    if(item->text() != "Administrator")
+    {
+		int answ = QMessageBox::warning(this, tr("Delete User..."), tr("Delete User '%1' ?").arg(item->text()),QMessageBox::Yes, QMessageBox::No);
+		if(answ == QMessageBox::Yes)
+		{
+	    	QString conn = "DELETE FROM `userstab` WHERE `ID` = '"+txt_users_id->text()+"';";
+		    QSqlQuery query(conn);
+		    loadusers();
+		    listusers->setCurrentRow(0);
+	    	selectuser();
+		}
+    }
+    else
+		QMessageBox::warning(0,"Fehler...", tr("Administrator cannot be deleted!"));
 }
 //
 void cfgfrm::loadressources()
