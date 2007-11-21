@@ -6,8 +6,8 @@ INCLUDEPATH = src ui
 CONFIG += qt \
  thread \
  plugin \
- release \
- warn_on
+ warn_on \
+ debug_and_release
 QT += gui core sql
 OBJECTS_DIR = build/first4/obj
 MOC_DIR = build/first4/moc
