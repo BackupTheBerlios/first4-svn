@@ -3,8 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8,00"
 	Name="first4"
-	ProjectGUID="{D41D8CD9-8F00-3204-A980-0998ECF8427E}"
-	RootNamespace="first4"
+	ProjectGUID="{F6641E1B-BEFE-338C-819E-0DB3E78A9F1E}"
 	Keyword="Qt4VSv1.0"
 	>
 	<Platforms>
@@ -46,7 +45,7 @@
 				AdditionalOptions="-Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189"
 				Optimization="4"
 				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;src&quot;,&quot;ui&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build\first4\moc&quot;,&quot;build\first4\ui&quot;,$(QTDIR)\mkspecs\win32-msvc2005"
-				PreprocessorDefinitions="UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
 				GeneratePreprocessedFile="0"
 				ExceptionHandling="1"
 				RuntimeLibrary="3"
@@ -65,7 +64,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,_DEBUG"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,_DEBUG"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -73,13 +72,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				IgnoreImportLibrary="true"
-				AdditionalDependencies="$(QTDIR)\lib\QtSqld4.lib $(QTDIR)\lib\QtGuid4.lib $(QTDIR)\lib\QtCored4.lib"
+				AdditionalDependencies="$(QTDIR)\lib\qtmaind.lib $(QTDIR)\lib\QtSqld4.lib $(QTDIR)\lib\QtGuid4.lib $(QTDIR)\lib\QtCored4.lib"
 				OutputFile="bin\first4.exe"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(QTDIR)\lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=""
-				SubSystem="1"
+				SubSystem="2"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -137,7 +136,7 @@
 				AdditionalOptions="-Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189"
 				Optimization="2"
 				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;src&quot;,&quot;ui&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build\first4\moc&quot;,&quot;build\first4\ui&quot;,$(QTDIR)\mkspecs\win32-msvc2005"
-				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,NDEBUG"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB,NDEBUG"
 				GeneratePreprocessedFile="0"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
@@ -156,7 +155,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
+				PreprocessorDefinitions="QT_NO_DEBUG,NDEBUG,_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_NO_DEBUG,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -164,14 +163,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				IgnoreImportLibrary="true"
-				AdditionalDependencies="$(QTDIR)\lib\QtSql4.lib $(QTDIR)\lib\QtGui4.lib $(QTDIR)\lib\QtCore4.lib"
+				AdditionalDependencies="$(QTDIR)\lib\qtmain.lib $(QTDIR)\lib\QtSql4.lib $(QTDIR)\lib\QtGui4.lib $(QTDIR)\lib\QtCore4.lib"
 				OutputFile="bin\first4.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="$(QTDIR)\lib"
 				GenerateDebugInformation="false"
 				ProgramDatabaseFile=""
-				SubSystem="1"
+				SubSystem="2"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1131,6 +1130,10 @@
 			Filter="cpp;c;cxx;moc;h;def;odl;idl;res;"
 			UniqueIdentifier="{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}"
 			>
+			<File
+				RelativePath="build\first4\obj\first4.res"
+				>
+			</File>
 			<File
 				RelativePath="build\first4\moc\moc_aboutfrm.cpp"
 				>
@@ -2419,6 +2422,10 @@
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath="first4.rc"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
