@@ -1294,7 +1294,7 @@ void doceditfrm::writetexfile()
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
  	procdvi->start("latex", args);
  	if(procdvi->exitStatus() == QProcess::CrashExit ) 
-				QMessageBox::critical(0,"Error...", tr("Can't convert TXT-File."));
+				QMessageBox::critical(0,"Error...", tr("Can't convert TEX-File."));
 
     //copy file in the correct folder
     QProcess *proccp = new QProcess( this );
