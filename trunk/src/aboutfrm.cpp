@@ -1,4 +1,5 @@
 #include <QtCore>
+
 #include "aboutfrm.h"
 //
 aboutfrm::aboutfrm( QWidget * parent, Qt::WFlags f) 
@@ -8,7 +9,7 @@ aboutfrm::aboutfrm( QWidget * parent, Qt::WFlags f)
 	QString info = QString( "" );
 
 	info += "Copyright (C) 2007 LINUX-BOX.ch";
-	info += "\n";
+	info += "\n\n";
 	info += "Application: Orlando Procopio\n";
 	info += "Plugins: Alexander Saal\n";
 	label_2->setText( info );
@@ -18,6 +19,7 @@ aboutfrm::aboutfrm( QWidget * parent, Qt::WFlags f)
     if ( !lic.open( QIODevice::ReadOnly | QIODevice::Text ) ) {
         return ;
     }
+
     QTextStream LicIn( &lic );
     QString lineLic = LicIn.readAll();
 	lic.close();
