@@ -2,7 +2,7 @@ CONFIG += plugin \
  qt \
  thread \
  warn_on \
- release
+ debug
 DEPENDPATH = src ui
 DESTDIR = bin
 FORMS = ui/aboutfrm.ui \
@@ -118,4 +118,3 @@ win32 {
  OBJECTS_DIR +=  build/first4/win/obj
  RC_FILE +=  first4.rc
 }
-
