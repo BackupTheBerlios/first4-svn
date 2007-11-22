@@ -10,9 +10,7 @@
    </rect>
   </property>
   <property name="sizePolicy" >
-   <sizepolicy>
-    <hsizetype>0</hsizetype>
-    <vsizetype>0</vsizetype>
+   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -39,7 +37,7 @@
    <string>Login...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
   </property>
   <widget class="QLabel" name="label" >
    <property name="geometry" >
@@ -116,7 +114,7 @@
   <widget class="QPushButton" name="btncancel" >
    <property name="geometry" >
     <rect>
-     <x>270</x>
+     <x>10</x>
      <y>140</y>
      <width>75</width>
      <height>30</height>
@@ -125,6 +123,9 @@
    <property name="text" >
     <string>Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
+   </property>
    <property name="flat" >
     <bool>false</bool>
    </property>
@@ -132,7 +133,7 @@
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
-     <x>10</x>
+     <x>270</x>
      <y>140</y>
      <width>75</width>
      <height>30</height>
@@ -140,6 +141,9 @@
    </property>
    <property name="text" >
     <string>OK</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
    <property name="default" >
     <bool>true</bool>
@@ -154,7 +158,7 @@
   <tabstop>btncancel</tabstop>
  </tabstops>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>
