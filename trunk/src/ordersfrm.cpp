@@ -67,7 +67,6 @@ void ordersfrm::countentries()
 	int i;
 	QString qstr;
 	QSqlQuery query;
-	QTreeWidgetItem *item = new QTreeWidgetItem;
 	for(i=0;i<4;i++)
 	{
 		QTreeWidgetItem *item = treeindex->topLevelItem(i);

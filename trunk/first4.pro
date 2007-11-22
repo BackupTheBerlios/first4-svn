@@ -1,110 +1,120 @@
-TARGET = first4
-TEMPLATE = app
-DESTDIR = bin
-DEPENDPATH = src ui
-INCLUDEPATH = src ui
-CONFIG += qt \
+CONFIG += plugin \
+ qt \
  thread \
- plugin \
  warn_on \
- debug_and_release
-QT += gui core sql
-OBJECTS_DIR = build/first4/obj
-MOC_DIR = build/first4/moc
-UI_DIR = build/first4/ui
-FORMS = ui/mainfrm.ui \
- ui/loginfrm.ui \
- ui/cfgfrm.ui \
- ui/aboutfrm.ui \
- ui/newdbfrm.ui \
- ui/newdatatabfrm.ui \
+ release
+DEPENDPATH = src ui
+DESTDIR = bin
+FORMS = ui/aboutfrm.ui \
+ ui/accountsfrm.ui \
  ui/addrfrm.ui \
- ui/datafrm.ui \
- ui/progfrm.ui \
- ui/dataeditfrm.ui \
- ui/printfrm.ui \
  ui/addrselectfrm.ui \
- ui/ordersfrm.ui \
- ui/orderseditfrm.ui \
- ui/stockselfrm.ui \
+ ui/cfgfrm.ui \
+ ui/cmntfrm.ui \
+ ui/dataeditfrm.ui \
+ ui/datafrm.ui \
+ ui/dbwizzardfrm.ui \
+ ui/doccompletefrm.ui \
+ ui/doceditfrm.ui \
+ ui/doceditposition.ui \
+ ui/docopendraftfrm.ui \
+ ui/docopenfrm.ui \
  ui/invfrm.ui \
  ui/invnewfrm.ui \
- ui/cmntfrm.ui \
- ui/docopenfrm.ui \
- ui/doceditfrm.ui \
- ui/doccompletefrm.ui \
- ui/docopendraftfrm.ui \
- ui/vatshowfrm.ui \
- ui/doceditposition.ui \
- ui/procedurefrm.ui \
+ ui/loginfrm.ui \
+ ui/mainfrm.ui \
+ ui/newdatatabfrm.ui \
+ ui/newdbfrm.ui \
+ ui/orderseditfrm.ui \
+ ui/ordersfrm.ui \
+ ui/printfrm.ui \
  ui/procedureeditfrm.ui \
- ui/proceduretask.ui \
+ ui/procedurefrm.ui \
  ui/proceduresearch.ui \
- ui/dbwizzardfrm.ui \
- ui/accountsfrm.ui
-HEADERS = src/mainfrm.h \
- src/vars.h \
- src/cfgfrm.h \
- src/aboutfrm.h \
- src/newdbfrm.h \
- src/newdatatabfrm.h \
+ ui/proceduretask.ui \
+ ui/progfrm.ui \
+ ui/stockselfrm.ui \
+ ui/vatshowfrm.ui
+HEADERS = src/aboutfrm.h \
+ src/accountsfrm.h \
  src/addrfrm.h \
- src/datafrm.h \
- src/dataeditfrm.h \
- src/loginfrm.h \
- src/printfrm.h \
  src/addrselectfrm.h \
- src/ordersfrm.h \
- src/orderseditfrm.h \
- src/stockselfrm.h \
+ src/cfgfrm.h \
+ src/cmntfrm.h \
+ src/dataeditfrm.h \
+ src/datafrm.h \
+ src/dbwizzardfrm.h \
+ src/doccompletefrm.h \
+ src/doceditfrm.h \
+ src/doceditposition.h \
+ src/docopendraftsfrm.h \
+ src/docopenfrm.h \
  src/invfrm.h \
  src/invnewfrm.h \
- src/progfrm.h \
- src/cmntfrm.h \
- src/docopenfrm.h \
- src/doceditfrm.h \
- src/doccompletefrm.h \
- src/docopendraftsfrm.h \
- src/vatshowfrm.h \
- src/doceditposition.h \
- src/procedurefrm.h \
+ src/loginfrm.h \
+ src/mainfrm.h \
+ src/newdatatabfrm.h \
+ src/newdbfrm.h \
+ src/orderseditfrm.h \
+ src/ordersfrm.h \
+ src/printfrm.h \
  src/procedureeditfrm.h \
- src/proceduretask.h \
+ src/procedurefrm.h \
  src/proceduresearch.h \
- src/dbwizzardfrm.h \
- src/accountsfrm.h
-SOURCES = src/main.cpp \
- src/mainfrm.cpp \
- src/vars.cpp \
- src/cfgfrm.cpp \
- src/aboutfrm.cpp \
- src/newdbfrm.cpp \
- src/newdatatabfrm.cpp \
+ src/proceduretask.h \
+ src/progfrm.h \
+ src/stockselfrm.h \
+ src/vars.h \
+ src/vatshowfrm.h
+INCLUDEPATH = src ui
+QT += core gui sql
+SOURCES = src/aboutfrm.cpp \
+ src/accountsfrm.cpp \
  src/addrfrm.cpp \
- src/datafrm.cpp \
- src/dataeditfrm.cpp \
- src/loginfrm.cpp \
- src/printfrm.cpp \
  src/addrselectfrm.cpp \
- src/ordersfrm.cpp \
- src/orderseditfrm.cpp \
- src/stockselfrm.cpp \
+ src/cfgfrm.cpp \
+ src/cmntfrm.cpp \
+ src/dataeditfrm.cpp \
+ src/datafrm.cpp \
+ src/dbwizzardfrm.cpp \
+ src/doccompletefrm.cpp \
+ src/doceditfrm.cpp \
+ src/doceditposition.cpp \
+ src/docopendraftsfrm.cpp \
+ src/docopenfrm.cpp \
  src/invfrm.cpp \
  src/invnewfrm.cpp \
- src/progfrm.cpp \
- src/cmntfrm.cpp \
- src/docopenfrm.cpp \
- src/doceditfrm.cpp \
- src/doccompletefrm.cpp \
- src/docopendraftsfrm.cpp \
- src/vatshowfrm.cpp \
- src/doceditposition.cpp \
- src/procedurefrm.cpp \
+ src/loginfrm.cpp \
+ src/main.cpp \
+ src/mainfrm.cpp \
+ src/newdatatabfrm.cpp \
+ src/newdbfrm.cpp \
+ src/orderseditfrm.cpp \
+ src/ordersfrm.cpp \
+ src/printfrm.cpp \
  src/procedureeditfrm.cpp \
- src/proceduretask.cpp \
+ src/procedurefrm.cpp \
  src/proceduresearch.cpp \
- src/dbwizzardfrm.cpp \
- src/accountsfrm.cpp
-TRANSLATIONS = langfiles/de.ts langfiles/it.ts
+ src/proceduretask.cpp \
+ src/progfrm.cpp \
+ src/stockselfrm.cpp \
+ src/vars.cpp \
+ src/vatshowfrm.cpp
 RESOURCES = ui/first.qrc
-RC_FILE += first4.rc
+TARGET = first4
+TEMPLATE = app
+UI_DIR = build/first4/ui
+mac {
+ MOC_DIR +=  build/first4/mac/moc
+ OBJECTS_DIR +=  build/first4/mac/obj
+}
+unix {
+ MOC_DIR +=  build/first4/unix/moc
+ OBJECTS_DIR +=  build/first4/unix/obj
+}
+win32 {
+ MOC_DIR +=  build/first4/win/moc
+ OBJECTS_DIR +=  build/first4/win/obj
+ RC_FILE +=  first4.rc
+}
+TRANSLATIONS = langfiles/de.ts langfiles/it.ts
