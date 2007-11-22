@@ -9,7 +9,6 @@
 #include "cfgfrm.h"
 #include "vars.h"
 #include "newdbfrm.h"
-#include "dbwizzardfrm.h"
 
 extern QString username, fullname, docfolder, templatefolder;
 extern QString dbhost, dbname, dbuid, dbpwd,dbport;
@@ -23,7 +22,7 @@ loginfrm::loginfrm( QWidget * parent, Qt::WFlags f)
 }
 //
 //
-void loginfrm::loadservers()
+bool loginfrm::loadservers()
 {
     this->setFixedSize(this->width(), this->height());
     vars v;
@@ -39,30 +38,25 @@ void loginfrm::loadservers()
     QFile file(QDir::homePath()+"/.first4/servers.conf" );
     if(file.open(QIODevice::ReadOnly))
     {
-	QTextStream stream(&file);
-	QString streamline;
-	while(!stream.atEnd())
-	{
-	    streamline = stream.readLine();
-	    uid.append(streamline.section("@",0,0).section(":",0,0));
-	    pwd.append(streamline.section("@",0,0).section(":",1,1));
-	    dbserver.append(streamline.section("@",1,1).section("/",0,0));
-	    dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-	    port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
-	    cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-	}
-	file.close();    
+		QTextStream stream(&file);
+		QString streamline;
+		while(!stream.atEnd())
+		{
+	    	streamline = stream.readLine();
+		    uid.append(streamline.section("@",0,0).section(":",0,0));
+	    	pwd.append(streamline.section("@",0,0).section(":",1,1));
+		    dbserver.append(streamline.section("@",1,1).section("/",0,0));
+	    	dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
+		    port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
+	    	cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0));
+		}
+		file.close();    
     }
     
     if(cmbdb->count()==0)
-    {
-    	dbwizzardfrm dbwiz;
-		dbwiz.init();
-		if(dbwiz.exec())
-		    this->loadservers();
-		else
-		    this->reject();
-    }
+    	return FALSE;
+    else
+    	return TRUE;
 }
 //
 void loginfrm::checkpwd()

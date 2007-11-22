@@ -9,7 +9,7 @@ Q_OBJECT
 public:
 	loginfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 public:
-	void loadservers();
+	bool loadservers();
 	void saveservers();
 	void loadsysvars();
 public slots:

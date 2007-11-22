@@ -1695,22 +1695,5 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btncancel</sender>
-   <signal>released()</signal>
-   <receiver>dbwizzardfrm</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>47</x>
-     <y>381</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>249</x>
-     <y>201</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -11,6 +11,7 @@
 
 #include "mainfrm.h"
 #include "loginfrm.h"
+#include "dbwizzardfrm.h"
 
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
@@ -49,7 +50,19 @@ int main ( int argc, char ** argv )
 	app.installTranslator ( &translator );
 
 	loginfrm logfrm;
-	logfrm.loadservers();
+	if(!logfrm.loadservers())
+	{
+		dbwizzardfrm dbwiz;
+		dbwiz.init();
+		if(dbwiz.exec())
+		    logfrm.loadservers();
+		else
+		{
+			QMessageBox::information ( 0,"No Server defined...", "You must define at least one Server." );
+			app.quit();
+		}	
+	}
+	
 	if ( logfrm.exec() )
 	{
 		logfrm.saveservers();

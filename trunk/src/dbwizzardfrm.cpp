@@ -25,6 +25,7 @@ void dbwizzardfrm::init()
 	connect(btnnext, SIGNAL(clicked()), this, SLOT(next()));
 	connect(btnback, SIGNAL(clicked()), this, SLOT(back()));
 	connect(btncheckdb, SIGNAL(released()), this, SLOT(checkdbs()));
+	connect(btncancel, SIGNAL(released()), this, SLOT(reject()));
 	
 	mainstackwidget->setCurrentIndex(0);
 }

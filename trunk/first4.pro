@@ -104,6 +104,7 @@ RESOURCES = ui/first.qrc
 TARGET = first4
 TEMPLATE = app
 UI_DIR = build/first4/ui
+TRANSLATIONS = langfiles/de.ts langfiles/it.ts
 mac {
  MOC_DIR +=  build/first4/mac/moc
  OBJECTS_DIR +=  build/first4/mac/obj
@@ -117,4 +118,4 @@ win32 {
  OBJECTS_DIR +=  build/first4/win/obj
  RC_FILE +=  first4.rc
 }
-TRANSLATIONS = langfiles/de.ts langfiles/it.ts
+
