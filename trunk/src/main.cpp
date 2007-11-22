@@ -7,7 +7,7 @@
 #include <QTranslator>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QTimer>
+#include <QTime>
 
 #include "mainfrm.h"
 #include "loginfrm.h"
@@ -15,7 +15,7 @@
 
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
-bool createConnections()
+bool createConnection()
 {
 	// create the default database connection
 	QSqlDatabase firstDB = QSqlDatabase::addDatabase ( "QMYSQL" );
@@ -66,7 +66,7 @@ int main ( int argc, char ** argv )
 	if ( logfrm.exec() )
 	{
 		logfrm.saveservers();
-		createConnections();
+		createConnection();
 		QSplashScreen splash ( QPixmap ( ":/images/images/newsplash.png" ) );
 		splash.show();
 		app.processEvents();
@@ -82,9 +82,13 @@ int main ( int argc, char ** argv )
 		splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 		mfrm->checkmsg();
 
-		mfrm->show();
-
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
+		
+		int sec = QTime::currentTime().second();
+		while(sec != QTime::currentTime().second()-2) ; //wait 2 secs
+		
+	    mfrm->show();
+		
 		splash.finish( mfrm );
 		return app.exec();
 		QSqlDatabase::removeDatabase ( "firstDB" );

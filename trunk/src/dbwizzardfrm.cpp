@@ -258,6 +258,7 @@ sqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`c
 			
     	QString qstr_privileges = QString("GRANT ALL PRIVILEGES ON %1.* TO '%2'@'%' IDENTIFIED BY '%3'").arg(txtnewdbname->text()).arg(txtnewfirstuser->text()).arg(txtnewfirstpwd->text()); //grant privileges
 		QSqlQuery query_privileges(qstr_privileges);
+		QMessageBox::critical(0,"Error...",qstr_privileges);
 		sqlerror = query_privileges.lastError();
 		if(sqlerror.isValid())
 			QMessageBox::critical(0,"Error...",sqlerror.text());
