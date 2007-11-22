@@ -100,10 +100,10 @@ SOURCES = src/aboutfrm.cpp \
  src/stockselfrm.cpp \
  src/vars.cpp \
  src/vatshowfrm.cpp
-RESOURCES = ui/first.qrc
+RESOURCES = resources/images/first4.qrc
 TARGET = first4
 TEMPLATE = app
-UI_DIR = build/first4/ui
+UI_DIR = ui
 TRANSLATIONS = langfiles/de.ts langfiles/it.ts
 mac {
  MOC_DIR +=  build/first4/mac/moc
