@@ -19,32 +19,109 @@
    <string>first</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
+    <item row="1" column="0" >
+     <widget class="QGroupBox" name="groupBox" >
+      <property name="title" >
+       <string/>
+      </property>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="lblmsg_2" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>21</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>21</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string/>
+         </property>
+         <property name="pixmap" >
+          <pixmap resource="../resources/images/first4.qrc" >:/message2.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <widget class="QLabel" name="lblmsg" >
+         <property name="text" >
+          <string/>
+         </property>
+         <property name="pixmap" >
+          <pixmap/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" >
+        <widget class="QPushButton" name="btnsettings" >
+         <property name="text" >
+          <string>&amp;Settings</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2" >
+        <widget class="QPushButton" name="btnabout" >
+         <property name="text" >
+          <string>&amp;About</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="../resources/images/first4.qrc" >:/help_index.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" >
+        <widget class="QPushButton" name="btnexit" >
+         <property name="text" >
+          <string>&amp;Exit</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="../resources/images/first4.qrc" >:/exit.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="0" >
      <widget class="QToolBox" name="maintoolbox" >
       <property name="autoFillBackground" >
        <bool>false</bool>
       </property>
       <property name="currentIndex" >
-       <number>7</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="page_1" >
        <property name="geometry" >
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>165</width>
-         <height>51</height>
+         <width>317</width>
+         <height>234</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Directories</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/kdmconfig.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kdmconfig.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
         <property name="leftMargin" >
@@ -111,7 +188,7 @@
            <string>Browse Directories</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kdmconfig.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -141,15 +218,15 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>184</width>
-         <height>117</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Datatables</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/kfm.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
         <property name="leftMargin" >
@@ -216,7 +293,7 @@
            <string>Browse Tables</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kfm32x32.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -272,7 +349,7 @@
            <string>View purchase orders</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kfind.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -328,7 +405,7 @@
            <string>Make inventory</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -358,15 +435,15 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>96</width>
-         <height>26</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Orders</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
        </attribute>
        <widget class="QPushButton" name="btnneworder" >
         <property name="geometry" >
@@ -421,7 +498,7 @@
          <string>New Order</string>
         </property>
         <property name="icon" >
-         <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
         </property>
         <property name="checkable" >
          <bool>false</bool>
@@ -483,7 +560,7 @@
          <string>Browse Orders</string>
         </property>
         <property name="icon" >
-         <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
         </property>
         <property name="checkable" >
          <bool>false</bool>
@@ -498,15 +575,15 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>167</width>
-         <height>90</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Documents</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
         <item row="0" column="0" >
@@ -555,7 +632,7 @@
            <string>Browse documents</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -611,7 +688,7 @@
            <string>New document</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -649,7 +726,7 @@
         <string>Finances</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
        </attribute>
        <layout class="QGridLayout" >
         <item row="0" column="0" >
@@ -698,7 +775,7 @@
            <string>Browse accounts</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -754,7 +831,7 @@
            <string>New payment</string>
           </property>
           <property name="icon" >
-           <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+           <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
           </property>
           <property name="checkable" >
            <bool>false</bool>
@@ -784,31 +861,15 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>96</width>
-         <height>26</height>
+         <width>317</width>
+         <height>206</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Messages</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/message.png</iconset>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="page_7" >
-       <property name="geometry" >
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>96</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <attribute name="label" >
-        <string>Various</string>
-       </attribute>
-       <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/message2.png</iconset>
        </attribute>
       </widget>
       <widget class="QWidget" name="page" >
@@ -817,14 +878,14 @@
          <x>0</x>
          <y>0</y>
          <width>317</width>
-         <height>206</height>
+         <height>234</height>
         </rect>
        </property>
        <attribute name="label" >
         <string>Information</string>
        </attribute>
        <attribute name="icon" >
-        <iconset resource="first.qrc" >:/images/images/xmag.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
        </attribute>
        <widget class="QGroupBox" name="groupBox_2" >
         <property name="geometry" >
@@ -920,75 +981,12 @@
       </widget>
      </widget>
     </item>
-    <item row="1" column="0" >
-     <widget class="QGroupBox" name="groupBox" >
-      <property name="title" >
-       <string/>
-      </property>
-      <layout class="QGridLayout" >
-       <property name="leftMargin" >
-        <number>9</number>
-       </property>
-       <property name="topMargin" >
-        <number>9</number>
-       </property>
-       <property name="rightMargin" >
-        <number>9</number>
-       </property>
-       <property name="bottomMargin" >
-        <number>9</number>
-       </property>
-       <property name="horizontalSpacing" >
-        <number>6</number>
-       </property>
-       <property name="verticalSpacing" >
-        <number>6</number>
-       </property>
-       <item row="0" column="0" >
-        <widget class="QLabel" name="lblmsg" >
-         <property name="text" >
-          <string>-</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" >
-        <widget class="QPushButton" name="btnsettings" >
-         <property name="text" >
-          <string>&amp;Settings</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/package_utilities.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" >
-        <widget class="QPushButton" name="btnabout" >
-         <property name="text" >
-          <string>&amp;About</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/help_index.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" >
-        <widget class="QPushButton" name="btnexit" >
-         <property name="text" >
-          <string>&amp;Exit</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/exit.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
    </layout>
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>
