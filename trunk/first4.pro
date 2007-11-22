@@ -104,7 +104,7 @@ RESOURCES = resources/images/first4.qrc
 TARGET = first4
 TEMPLATE = app
 UI_DIR = ui
-TRANSLATIONS = langfiles/de.ts langfiles/it.ts
+TRANSLATIONS = resources/translations/de.ts resources/translations/it.ts
 mac {
  MOC_DIR +=  build/first4/mac/moc
  OBJECTS_DIR +=  build/first4/mac/obj

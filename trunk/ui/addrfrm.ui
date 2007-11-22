@@ -13,29 +13,48 @@
    <string>Directories...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset/>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
+   <property name="leftMargin" >
     <number>9</number>
    </property>
-   <property name="spacing" >
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="rightMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing" >
     <number>6</number>
    </property>
    <item row="2" column="0" colspan="2" >
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
      <property name="spacing" >
       <number>6</number>
+     </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
      </property>
      <item>
       <widget class="QLabel" name="label_5" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -48,9 +67,7 @@
      <item>
       <widget class="QLabel" name="lbluser" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -120,9 +137,7 @@
    <item row="1" column="1" >
     <widget class="QTabWidget" name="maintab" >
      <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>5</hsizetype>
-       <vsizetype>5</vsizetype>
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -135,10 +150,22 @@
        <string>Address</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="2" >
@@ -210,9 +237,7 @@
        <item row="2" column="1" colspan="4" >
         <widget class="QLineEdit" name="adr3" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>7</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -326,9 +351,7 @@
        <item row="0" column="4" >
         <widget class="QLabel" name="adr1" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -345,10 +368,22 @@
        <string>Communication</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="13" column="1" >
@@ -575,10 +610,22 @@
        <string>Customer</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="4" column="0" colspan="3" >
@@ -597,9 +644,7 @@
        <item row="3" column="1" >
         <widget class="QLineEdit" name="adr22" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -683,84 +728,86 @@
        <string>Ulterior Data</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="7" column="0" >
         <widget class="QPushButton" name="btnadrcust5" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
        <item row="6" column="0" >
         <widget class="QPushButton" name="btnadrcust4" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
        <item row="5" column="0" >
         <widget class="QPushButton" name="btnadrcust3" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
        <item row="4" column="0" >
         <widget class="QPushButton" name="btnadrcust2" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
        <item row="3" column="0" >
         <widget class="QPushButton" name="btnadrcust1" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
@@ -781,9 +828,7 @@
        <item row="10" column="5" >
         <widget class="QLabel" name="adr30" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -802,9 +847,7 @@
        <item row="10" column="2" colspan="2" >
         <widget class="QLabel" name="adr29" >
          <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>0</hsizetype>
-           <vsizetype>0</vsizetype>
+          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -947,10 +990,22 @@
        <string>Documents</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="0" >
@@ -958,6 +1013,11 @@
          <property name="contextMenuPolicy" >
           <enum>Qt::CustomContextMenu</enum>
          </property>
+         <column>
+          <property name="text" >
+           <string>1</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>
@@ -967,14 +1027,32 @@
        <string>Procedures</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>9</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>9</number>
+       </property>
+       <property name="rightMargin" >
+        <number>9</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>9</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="0" >
-        <widget class="QTreeWidget" name="listproc" />
+        <widget class="QTreeWidget" name="listproc" >
+         <column>
+          <property name="text" >
+           <string>1</string>
+          </property>
+         </column>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -982,24 +1060,45 @@
    </item>
    <item row="0" column="0" colspan="2" >
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
      <property name="spacing" >
       <number>6</number>
      </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
      <item>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>0</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>0</number>
+       </property>
+       <property name="rightMargin" >
+        <number>0</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="1" column="3" >
         <widget class="QPushButton" name="btnclear" >
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/kill.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
@@ -1020,7 +1119,7 @@
        <item row="1" column="2" >
         <widget class="QPushButton" name="btnsearch" >
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+          <iconset/>
          </property>
         </widget>
        </item>
@@ -1047,10 +1146,22 @@
      </item>
      <item>
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>0</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>0</number>
+       </property>
+       <property name="rightMargin" >
+        <number>0</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="0" >
@@ -1068,7 +1179,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1093,7 +1204,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/editdelete.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1134,7 +1245,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/undo.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1159,7 +1270,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/filesave.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1184,7 +1295,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/fileprint.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1209,7 +1320,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/impexp.png</iconset>
+          <iconset/>
          </property>
          <property name="iconSize" >
           <size>
@@ -1226,9 +1337,7 @@
    <item row="1" column="0" >
     <widget class="QTreeWidget" name="mainlistview" >
      <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>0</hsizetype>
-       <vsizetype>7</vsizetype>
+      <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -1242,12 +1351,17 @@
      <property name="contextMenuPolicy" >
       <enum>Qt::CustomContextMenu</enum>
      </property>
+     <column>
+      <property name="text" >
+       <string>1</string>
+      </property>
+     </column>
     </widget>
    </item>
   </layout>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>
