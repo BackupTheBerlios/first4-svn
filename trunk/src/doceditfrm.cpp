@@ -1300,7 +1300,8 @@ void doceditfrm::writetexfile()
     QProcess *proccp = new QProcess( this );
     args.clear();
     args << QDir::homePath() + "/.first4/tmp/output.dvi" << docfolder+"/"+lblID->text()+"/"+docfile;
-    proccp->start("mv", args);
+    //proccp->start("mv", args);
+    output.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile);
 }
 ////
 void doceditfrm::printpreview()

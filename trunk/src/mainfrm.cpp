@@ -111,11 +111,10 @@ void mainfrm::checkmsg()
 	query.bindValue ( ":user", "%"+username+"%" );
 	query.exec();
 	query.next();
-	lblmsg->setText ( tr ( "Messages: %1" ).arg ( query.size(), 0, 10 ) );
-	//QString("Messages: %1").arg(query.size(), 0, 10)
+	lblmsg->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
 	if ( lbluser->text() == "Administrator" )
 	{ /*
-				//AuftrÃ¤ge Ã¼berprfen
+				//Auftr�ge �berprfen
 				QSqlQuery query1;
 				query1.prepare( "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `complete_until` < :complete_until;");
 				query1.bindValue( ":complete_until", QDate::currentDate().toString("yyyy-MM-dd") );
@@ -132,7 +131,7 @@ void mainfrm::checkmsg()
 				    }
 				}
 
-				//Ein/Aus Ã¼berprfen
+				//Ein/Aus �berprfen
 				QString connstr = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM ietab WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
 				QSqlQuery query3(connstr);
 				if(query3.isActive())
@@ -177,8 +176,7 @@ void mainfrm::checkmsg()
 void mainfrm::config()
 {
 	cfgfrm *cfg = new cfgfrm;
-	cfg->initfrm();
-	cfg->lbluser->setText ( username );
+	cfg->init();
 	cfg->show();
 }
 //

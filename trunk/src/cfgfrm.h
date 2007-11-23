@@ -10,7 +10,7 @@ public:
 	cfgfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 private slots:
 public:
-	void initfrm();
+	void init();
 	QString cryptpwd(QString pwd);
 	void loadlangfile();
 	void loaddbinfo();
@@ -47,6 +47,10 @@ public slots:
 	void savedefaultpath();
 	void savesettings();
 	void saveowndata();
+	void load_local_tools();
+	void load_db_tools();
+	void save_local_tools();
+	void save_db_tools();
 };
 #endif
 

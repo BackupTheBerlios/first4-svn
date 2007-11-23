@@ -460,6 +460,9 @@
       <property name="text" >
        <string>&amp;Change</string>
       </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+      </property>
      </widget>
      <widget class="QLabel" name="label_6" >
       <property name="geometry" >
@@ -2941,7 +2944,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset/>
+        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
        </property>
        <property name="flat" >
         <bool>false</bool>
@@ -2958,7 +2961,7 @@ p, li { white-space: pre-wrap; }
          <x>9</x>
          <y>9</y>
          <width>671</width>
-         <height>132</height>
+         <height>141</height>
         </rect>
        </property>
        <property name="title" >
@@ -2967,8 +2970,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btnsavepath" >
         <property name="geometry" >
          <rect>
-          <x>549</x>
-          <y>94</y>
+          <x>550</x>
+          <y>100</y>
           <width>110</width>
           <height>26</height>
          </rect>
@@ -2989,7 +2992,7 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset/>
+         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_65" >
@@ -3030,22 +3033,22 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btntemplpath" >
         <property name="geometry" >
          <rect>
-          <x>633</x>
-          <y>70</y>
-          <width>26</width>
-          <height>26</height>
+          <x>630</x>
+          <y>60</y>
+          <width>22</width>
+          <height>22</height>
          </rect>
         </property>
         <property name="minimumSize" >
          <size>
-          <width>26</width>
-          <height>26</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="maximumSize" >
          <size>
-          <width>26</width>
-          <height>6</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="text" >
@@ -3090,22 +3093,22 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btndocpath" >
         <property name="geometry" >
          <rect>
-          <x>633</x>
-          <y>26</y>
-          <width>26</width>
-          <height>26</height>
+          <x>630</x>
+          <y>30</y>
+          <width>22</width>
+          <height>22</height>
          </rect>
         </property>
         <property name="minimumSize" >
          <size>
-          <width>26</width>
-          <height>26</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="maximumSize" >
          <size>
-          <width>26</width>
-          <height>26</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="text" >
@@ -3359,7 +3362,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset/>
+        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_67" >
@@ -3437,7 +3440,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset/>
+        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_76" >
@@ -3521,7 +3524,7 @@ p, li { white-space: pre-wrap; }
          <x>10</x>
          <y>10</y>
          <width>331</width>
-         <height>461</height>
+         <height>431</height>
         </rect>
        </property>
        <property name="title" >
@@ -3690,6 +3693,50 @@ p, li { white-space: pre-wrap; }
          <string>...</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="btn_tools_reload_local" >
+        <property name="geometry" >
+         <rect>
+          <x>190</x>
+          <y>400</y>
+          <width>30</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_tools_save_local" >
+        <property name="geometry" >
+         <rect>
+          <x>230</x>
+          <y>400</y>
+          <width>90</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>90</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>90</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string>&amp;Save</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+        </property>
+       </widget>
       </widget>
       <widget class="QGroupBox" name="groupBox_15" >
        <property name="geometry" >
@@ -3697,7 +3744,7 @@ p, li { white-space: pre-wrap; }
          <x>350</x>
          <y>10</y>
          <width>331</width>
-         <height>461</height>
+         <height>431</height>
         </rect>
        </property>
        <property name="title" >
@@ -3864,6 +3911,50 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text" >
          <string>TEX -> DVI:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_tools_reload_db" >
+        <property name="geometry" >
+         <rect>
+          <x>190</x>
+          <y>400</y>
+          <width>30</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_tools_save_db" >
+        <property name="geometry" >
+         <rect>
+          <x>230</x>
+          <y>400</y>
+          <width>90</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>90</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>90</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string>&amp;Save</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
         </property>
        </widget>
       </widget>

@@ -34,7 +34,7 @@ cfgfrm::cfgfrm ( QWidget * parent, Qt::WFlags f )
 	setupUi ( this );
 }
 //
-void cfgfrm::initfrm()
+void cfgfrm::init()
 {
 	this->setFixedSize ( this->width(), this->height() );
 	vars v;
@@ -113,6 +113,11 @@ void cfgfrm::initfrm()
 	connect ( btnsavepath, SIGNAL ( released() ), this, SLOT ( savedefaultpath() ) );
 	connect ( btnsavesettings, SIGNAL ( released() ), this, SLOT ( savesettings() ) );
 	connect ( btnowndata, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
+	
+	connect ( btn_tools_save_local, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
+	connect ( btn_tools_save_db, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
+	connect ( btn_tools_reload_local, SIGNAL ( released() ), this, SLOT ( load_local_tools() ) );
+	connect ( btn_tools_reload_db, SIGNAL ( released() ), this, SLOT ( load_db_tools() ) );
 }
 //
 void cfgfrm::closeEvent ( QCloseEvent* ce )
@@ -1193,4 +1198,24 @@ void cfgfrm::loadowndata()
 	txt_bank_clearing->setText ( fields[4] );
 	txt_bank_accountnr->setText ( fields[5] );
 	txt_bank_usrnr->setText ( fields[6] );
+}
+//
+void cfgfrm::load_local_tools()
+{
+	
+}
+//
+void cfgfrm::load_db_tools()
+{
+	
+}
+//
+void cfgfrm::save_local_tools()
+{
+	
+}
+//
+void cfgfrm::save_db_tools()
+{
+	
 }
