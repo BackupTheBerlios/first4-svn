@@ -2679,7 +2679,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex" >
-         <number>4</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="page" >
          <widget class="QLineEdit" name="txt_doctemplate" >
@@ -2687,7 +2687,7 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>10</x>
             <y>30</y>
-            <width>351</width>
+            <width>341</width>
             <height>25</height>
            </rect>
           </property>
@@ -2708,11 +2708,17 @@ p, li { white-space: pre-wrap; }
          <widget class="QPushButton" name="btndoctemplate" >
           <property name="geometry" >
            <rect>
-            <x>370</x>
+            <x>360</x>
             <y>30</y>
-            <width>31</width>
-            <height>27</height>
+            <width>26</width>
+            <height>26</height>
            </rect>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+            <horstretch>26</horstretch>
+            <verstretch>26</verstretch>
+           </sizepolicy>
           </property>
           <property name="text" >
            <string>...</string>
@@ -2762,9 +2768,9 @@ p, li { white-space: pre-wrap; }
          <widget class="QLabel" name="label_62" >
           <property name="geometry" >
            <rect>
-            <x>300</x>
-            <y>50</y>
-            <width>41</width>
+            <x>0</x>
+            <y>90</y>
+            <width>51</width>
             <height>21</height>
            </rect>
           </property>
@@ -2775,8 +2781,8 @@ p, li { white-space: pre-wrap; }
          <widget class="QLineEdit" name="txtboxcurrency" >
           <property name="geometry" >
            <rect>
-            <x>350</x>
-            <y>50</y>
+            <x>60</x>
+            <y>90</y>
             <width>51</width>
             <height>25</height>
            </rect>
@@ -2797,7 +2803,7 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>60</x>
             <y>10</y>
-            <width>341</width>
+            <width>331</width>
             <height>25</height>
            </rect>
           </property>
