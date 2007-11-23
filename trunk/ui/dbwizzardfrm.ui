@@ -12,6 +12,9 @@
   <property name="windowTitle" >
    <string>Database Connection-Wizzard...</string>
   </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
+  </property>
   <widget class="QLabel" name="label" >
    <property name="geometry" >
     <rect>
@@ -39,6 +42,9 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text" >
     <string>&amp;Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnnext" >
@@ -349,6 +355,9 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="text" >
       <string>&amp;Check</string>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
      </property>
     </widget>
     <widget class="QLabel" name="label_6" >
@@ -1694,6 +1703,8 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
  <connections/>
 </ui>

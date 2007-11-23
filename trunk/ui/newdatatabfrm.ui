@@ -13,7 +13,7 @@
    <string>New Datatable...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>false</bool>
@@ -69,6 +69,9 @@
    <property name="text" >
     <string>&amp;Create</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btncance" >
    <property name="geometry" >
@@ -81,6 +84,9 @@
    </property>
    <property name="text" >
     <string>C&amp;ancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox" >
@@ -167,7 +173,7 @@
      </rect>
     </property>
     <property name="icon" >
-     <iconset resource="first.qrc" >:/images/images/hotlistadd.png</iconset>
+     <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btnremove" >
@@ -180,7 +186,7 @@
      </rect>
     </property>
     <property name="icon" >
-     <iconset resource="first.qrc" >:/images/images/hotlistdel.png</iconset>
+     <iconset resource="../resources/images/first4.qrc" >:/hotlistdel.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btnup" >
@@ -193,7 +199,7 @@
      </rect>
     </property>
     <property name="icon" >
-     <iconset resource="first.qrc" >:/images/images/up.png</iconset>
+     <iconset resource="../resources/images/first4.qrc" >:/up.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btndown" >
@@ -206,7 +212,7 @@
      </rect>
     </property>
     <property name="icon" >
-     <iconset resource="first.qrc" >:/images/images/down.png</iconset>
+     <iconset resource="../resources/images/first4.qrc" >:/down.png</iconset>
     </property>
    </widget>
   </widget>
@@ -222,7 +228,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

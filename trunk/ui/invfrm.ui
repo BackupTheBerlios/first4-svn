@@ -19,13 +19,25 @@
    <string>Inventory...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/kfm.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
+   <property name="leftMargin" >
     <number>9</number>
    </property>
-   <property name="spacing" >
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="rightMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing" >
     <number>6</number>
    </property>
    <item row="1" column="0" >
@@ -84,10 +96,22 @@
    </item>
    <item row="0" column="0" >
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>0</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing" >
       <number>6</number>
      </property>
      <item row="0" column="4" >
@@ -112,7 +136,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/xclipboard.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -125,7 +149,7 @@
      <item row="0" column="5" >
       <widget class="QPushButton" name="btnnew" >
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -174,7 +198,7 @@
      <item row="0" column="6" >
       <widget class="QPushButton" name="btnsave" >
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/filesave.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -203,9 +227,7 @@
      <item row="0" column="1" >
       <widget class="QComboBox" name="cmbinv" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -227,7 +249,7 @@
      <item row="0" column="10" >
       <widget class="QPushButton" name="btncomplete" >
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -240,7 +262,7 @@
      <item row="0" column="8" >
       <widget class="QPushButton" name="btnprint" >
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/fileprint.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -254,10 +276,22 @@
    </item>
    <item row="2" column="0" >
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>0</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing" >
       <number>6</number>
      </property>
      <item row="0" column="2" >
@@ -324,6 +358,9 @@
        <property name="text" >
         <string>&amp;Close</string>
        </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+       </property>
       </widget>
      </item>
     </layout>
@@ -331,7 +368,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

@@ -13,7 +13,7 @@
    <string>Open draft...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
   </property>
   <widget class="QPushButton" name="btnaddr" >
    <property name="geometry" >
@@ -25,9 +25,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -36,7 +34,7 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="first.qrc" >:/images/images/contents.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnsearch" >
@@ -49,9 +47,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -60,7 +56,7 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnclear" >
@@ -73,9 +69,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -84,7 +78,7 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="first.qrc" >:/images/images/kill.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="label" >
@@ -158,9 +152,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>5</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -176,9 +168,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -207,14 +197,12 @@
     <rect>
      <x>10</x>
      <y>460</y>
-     <width>75</width>
+     <width>81</width>
      <height>27</height>
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -222,26 +210,30 @@
    <property name="text" >
     <string>&amp;Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnopen" >
    <property name="geometry" >
     <rect>
-     <x>680</x>
+     <x>674</x>
      <y>460</y>
-     <width>75</width>
+     <width>81</width>
      <height>27</height>
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
    <property name="text" >
     <string>&amp;Open</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QTreeWidget" name="treemain" >
@@ -312,9 +304,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>5</vsizetype>
+    <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -344,7 +334,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

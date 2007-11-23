@@ -13,7 +13,7 @@
    <string>New inventory from...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/kfm.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
   </property>
   <widget class="QPushButton" name="btncreate" >
    <property name="geometry" >
@@ -25,7 +25,10 @@
     </rect>
    </property>
    <property name="text" >
-    <string>OK</string>
+    <string>C&amp;reate</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btncancel" >
@@ -38,7 +41,10 @@
     </rect>
    </property>
    <property name="text" >
-    <string>Cancel</string>
+    <string>&amp;Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="label" >
@@ -89,7 +95,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

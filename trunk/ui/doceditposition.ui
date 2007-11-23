@@ -13,7 +13,7 @@
    <string>Edit position details...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
   </property>
   <widget class="QPushButton" name="btncancel" >
    <property name="geometry" >
@@ -27,6 +27,9 @@
    <property name="text" >
     <string>&amp;Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
@@ -39,6 +42,9 @@
    </property>
    <property name="text" >
     <string>&amp;Accept</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="label" >
@@ -226,7 +232,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

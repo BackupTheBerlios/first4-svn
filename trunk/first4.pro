@@ -3,7 +3,6 @@ CONFIG += plugin \
  thread \
  warn_on \
  debug
-# DEPENDPATH = src ui
 DESTDIR += bin
 FORMS = ui/aboutfrm.ui \
  ui/accountsfrm.ui \
@@ -24,7 +23,6 @@ FORMS = ui/aboutfrm.ui \
  ui/loginfrm.ui \
  ui/mainfrm.ui \
  ui/newdatatabfrm.ui \
- ui/newdbfrm.ui \
  ui/orderseditfrm.ui \
  ui/ordersfrm.ui \
  ui/printfrm.ui \
@@ -54,7 +52,6 @@ HEADERS = src/aboutfrm.h \
  src/loginfrm.h \
  src/mainfrm.h \
  src/newdatatabfrm.h \
- src/newdbfrm.h \
  src/orderseditfrm.h \
  src/ordersfrm.h \
  src/printfrm.h \
@@ -66,11 +63,8 @@ HEADERS = src/aboutfrm.h \
  src/stockselfrm.h \
  src/vars.h \
  src/vatshowfrm.h
-INCLUDEPATH += src \
- ui
-QT += core \
- gui \
- sql
+INCLUDEPATH += src ui
+QT += core gui sql
 SOURCES = src/aboutfrm.cpp \
  src/accountsfrm.cpp \
  src/addrfrm.cpp \
@@ -91,7 +85,6 @@ SOURCES = src/aboutfrm.cpp \
  src/main.cpp \
  src/mainfrm.cpp \
  src/newdatatabfrm.cpp \
- src/newdbfrm.cpp \
  src/orderseditfrm.cpp \
  src/ordersfrm.cpp \
  src/printfrm.cpp \
@@ -107,8 +100,7 @@ RESOURCES += resources/images/first4.qrc
 TARGET = first4
 TEMPLATE = app
 UI_DIR += build/first4/ui
-TRANSLATIONS += resources/translations/de.ts \
- resources/translations/it.ts
+TRANSLATIONS += resources/translations/de.ts resources/translations/it.ts
 mac {
  MOC_DIR +=  build/first4/mac/moc
  OBJECTS_DIR +=  build/first4/mac/obj

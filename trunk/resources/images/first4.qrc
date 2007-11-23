@@ -3,9 +3,11 @@
         <file>button_cancel.png</file>
         <file>button_ok.png</file>
         <file>contents.png</file>
+        <file>down.png</file>
         <file>exit.png</file>
         <file>fileclose.png</file>
         <file>filenew.png</file>
+        <file>fileopen.png</file>
         <file>fileprint.png</file>
         <file>filesave.png</file>
         <file>help_index.png</file>
@@ -14,6 +16,7 @@
         <file>impexp.png</file>
         <file>kcalc.png</file>
         <file>kdmconfig.png</file>
+        <file>kfind.png</file>
         <file>kfm.png</file>
         <file>kontact_todo.png</file>
         <file>logo.png</file>
@@ -21,7 +24,9 @@
         <file>messagebox_critical.png</file>
         <file>newsplash.png</file>
         <file>package_utilities.png</file>
+        <file>trashcan_empty.png</file>
         <file>undo.png</file>
+        <file>up.png</file>
         <file>useradd.png</file>
         <file>wordprocessing32x32.png</file>
         <file>xclipboard.png</file>

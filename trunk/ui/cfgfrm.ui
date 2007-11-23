@@ -959,7 +959,7 @@ take current password!)</string>
         </font>
        </property>
        <property name="currentIndex" >
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="contact" >
         <attribute name="title" >
@@ -1113,201 +1113,145 @@ take current password!)</string>
         <attribute name="title" >
          <string>&amp;Privat</string>
         </attribute>
-        <widget class="QWidget" name="layoutWidget" >
+        <widget class="QLineEdit" name="txt_users_privat_street" >
          <property name="geometry" >
           <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>100</width>
-           <height>30</height>
+           <x>90</x>
+           <y>20</y>
+           <width>191</width>
+           <height>20</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" >
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <property name="leftMargin" >
-           <number>0</number>
-          </property>
-          <property name="topMargin" >
-           <number>0</number>
-          </property>
-          <property name="rightMargin" >
-           <number>0</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_26" >
-            <property name="minimumSize" >
-             <size>
-              <width>110</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>110</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text" >
-             <string>Street:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_users_privat_street" />
-          </item>
-         </layout>
         </widget>
-        <widget class="QWidget" name="layoutWidget" >
+        <widget class="QLineEdit" name="txt_users_privat_location" >
          <property name="geometry" >
           <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>100</width>
-           <height>30</height>
+           <x>90</x>
+           <y>50</y>
+           <width>191</width>
+           <height>20</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" >
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <property name="leftMargin" >
-           <number>0</number>
-          </property>
-          <property name="topMargin" >
-           <number>0</number>
-          </property>
-          <property name="rightMargin" >
-           <number>0</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_27" >
-            <property name="minimumSize" >
-             <size>
-              <width>110</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>110</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text" >
-             <string>ZIP:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_users_privat_zip" />
-          </item>
-         </layout>
         </widget>
-        <widget class="QWidget" name="layoutWidget" >
+        <widget class="QLineEdit" name="txt_users_privat_zip" >
          <property name="geometry" >
           <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>100</width>
-           <height>30</height>
+           <x>90</x>
+           <y>80</y>
+           <width>191</width>
+           <height>20</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" >
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <property name="leftMargin" >
-           <number>0</number>
-          </property>
-          <property name="topMargin" >
-           <number>0</number>
-          </property>
-          <property name="rightMargin" >
-           <number>0</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_28" >
-            <property name="minimumSize" >
-             <size>
-              <width>110</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>110</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text" >
-             <string>Location:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_users_privat_location" />
-          </item>
-         </layout>
         </widget>
-        <widget class="QWidget" name="layoutWidget" >
+        <widget class="QLineEdit" name="txt_users_privat_country" >
          <property name="geometry" >
           <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>100</width>
-           <height>30</height>
+           <x>90</x>
+           <y>110</y>
+           <width>191</width>
+           <height>20</height>
           </rect>
          </property>
-         <layout class="QHBoxLayout" >
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <property name="leftMargin" >
-           <number>0</number>
-          </property>
-          <property name="topMargin" >
-           <number>0</number>
-          </property>
-          <property name="rightMargin" >
-           <number>0</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label_29" >
-            <property name="minimumSize" >
-             <size>
-              <width>110</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>110</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text" >
-             <string>Country:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_users_privat_country" />
-          </item>
-         </layout>
+        </widget>
+        <widget class="QLabel" name="label_29" >
+         <property name="geometry" >
+          <rect>
+           <x>10</x>
+           <y>108</y>
+           <width>110</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>110</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>110</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Country:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_27" >
+         <property name="geometry" >
+          <rect>
+           <x>10</x>
+           <y>78</y>
+           <width>110</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>110</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>110</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>ZIP:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_28" >
+         <property name="geometry" >
+          <rect>
+           <x>10</x>
+           <y>48</y>
+           <width>110</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>110</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>110</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Location:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26" >
+         <property name="geometry" >
+          <rect>
+           <x>10</x>
+           <y>18</y>
+           <width>110</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>110</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>110</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Street:</string>
+         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="business" >
@@ -2552,7 +2496,7 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_save" >

@@ -1207,7 +1207,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
          </property>
          <property name="iconSize" >
           <size>

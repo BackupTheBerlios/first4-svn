@@ -65,7 +65,7 @@ void doceditfrm::init()
 	item->setText("");
 	tabmain->setItem(tabmain->rowCount()-1, 1, item);
 	item = new QTableWidgetItem;
-	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+	item->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 	tabmain->setItem(0, 2, item);
 	item = new QTableWidgetItem;
 	item->setText("");
@@ -253,7 +253,7 @@ void doceditfrm::removerow()
     {
     	addrow();
 		QTableWidgetItem *item = new QTableWidgetItem;
-		item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		item->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 		tabmain->setItem(0, 2, item);
    	}
     for(i=0;i<tabmain->rowCount();i++)
@@ -314,7 +314,7 @@ void doceditfrm::addrow()
 	tabmain->setItem(tabmain->rowCount()-1, 1, item);
 		
 	item = new QTableWidgetItem;
-	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+	item->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 	tabmain->setItem(tabmain->rowCount()-1, 2, item);
 
 	item = new QTableWidgetItem;

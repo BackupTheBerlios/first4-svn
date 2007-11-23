@@ -13,7 +13,7 @@
    <string>New entry...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/kfm32x32.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
   </property>
   <widget class="QLabel" name="label_19" >
    <property name="geometry" >
@@ -136,9 +136,7 @@
     </rect>
    </property>
    <property name="sizePolicy" >
-    <sizepolicy>
-     <hsizetype>0</hsizetype>
-     <vsizetype>0</vsizetype>
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -288,6 +286,9 @@
    <property name="text" >
     <string>Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QTabWidget" name="maintab" >
    <property name="geometry" >
@@ -306,10 +307,22 @@
      <string>Supplier</string>
     </attribute>
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>9</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>9</number>
+     </property>
+     <property name="rightMargin" >
+      <number>9</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>9</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing" >
       <number>6</number>
      </property>
      <item row="0" column="0" >
@@ -596,10 +609,22 @@
      <string>Comments</string>
     </attribute>
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>9</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>9</number>
+     </property>
+     <property name="rightMargin" >
+      <number>9</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>9</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing" >
       <number>6</number>
      </property>
      <item row="0" column="0" >
@@ -771,6 +796,9 @@
    <property name="text" >
     <string>OK</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
   </widget>
  </widget>
  <tabstops>
@@ -798,7 +826,7 @@
   <tabstop>btncancel</tabstop>
  </tabstops>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

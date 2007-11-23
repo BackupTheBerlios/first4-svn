@@ -13,27 +13,51 @@
    <string>Open document...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
+   <property name="leftMargin" >
     <number>9</number>
    </property>
-   <property name="spacing" >
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="rightMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing" >
     <number>6</number>
    </property>
    <item row="2" column="0" colspan="2" >
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
      <property name="spacing" >
       <number>6</number>
+     </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
      </property>
      <item>
       <widget class="QPushButton" name="btnclose" >
        <property name="text" >
         <string>&amp;Close</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
        </property>
       </widget>
      </item>
@@ -190,10 +214,22 @@
    </item>
    <item row="0" column="0" colspan="2" >
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>0</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing" >
       <number>6</number>
      </property>
      <item row="0" column="1" >
@@ -214,10 +250,22 @@
      </item>
      <item row="0" column="0" >
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>0</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>0</number>
+       </property>
+       <property name="rightMargin" >
+        <number>0</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="6" >
@@ -226,7 +274,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/kill.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
          </property>
         </widget>
        </item>
@@ -259,7 +307,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/viewmag2.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
          </property>
         </widget>
        </item>
@@ -269,7 +317,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/contents.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
          </property>
         </widget>
        </item>
@@ -313,10 +361,22 @@
      </item>
      <item row="0" column="2" >
       <layout class="QGridLayout" >
-       <property name="margin" >
+       <property name="leftMargin" >
         <number>0</number>
        </property>
-       <property name="spacing" >
+       <property name="topMargin" >
+        <number>0</number>
+       </property>
+       <property name="rightMargin" >
+        <number>0</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>0</number>
+       </property>
+       <property name="horizontalSpacing" >
+        <number>6</number>
+       </property>
+       <property name="verticalSpacing" >
         <number>6</number>
        </property>
        <item row="0" column="4" >
@@ -337,7 +397,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/fileprint.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -381,7 +441,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/kfind.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -409,7 +469,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -437,12 +497,12 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="first.qrc" >:/images/images/editdelete.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
-           <width>32</width>
-           <height>32</height>
+           <width>24</width>
+           <height>24</height>
           </size>
          </property>
         </widget>
@@ -454,7 +514,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>
