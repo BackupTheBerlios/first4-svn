@@ -18,7 +18,6 @@
 #include <QAction>
 
 #include "cfgfrm.h"
-#include "newdbfrm.h"
 #include "vars.h"
 #include "newdatatabfrm.h"
 #include "dbwizzardfrm.h"
@@ -228,8 +227,6 @@ void cfgfrm::loaddbinfo()
 //
 void cfgfrm::addservers()
 {
-	//newdbfrm* ndb = new newdbfrm;
-	//ndb->init();
 	dbwizzardfrm* wiz = new dbwizzardfrm;
 	wiz->init();
 	if ( wiz->exec() )

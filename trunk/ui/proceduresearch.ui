@@ -13,7 +13,7 @@
    <string>Search order...</string>
   </property>
   <property name="windowIcon" >
-   <iconset/>
+   <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
   </property>
   <layout class="QGridLayout" >
    <property name="leftMargin" >
@@ -96,6 +96,9 @@
        <property name="text" >
         <string>Cancel</string>
        </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+       </property>
       </widget>
      </item>
      <item>
@@ -115,6 +118,9 @@
       <widget class="QPushButton" name="btnaccept" >
        <property name="text" >
         <string>OK</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
        </property>
       </widget>
      </item>
@@ -208,7 +214,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset/>
+        <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
        </property>
       </widget>
      </item>
@@ -224,12 +230,12 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset/>
+        <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>

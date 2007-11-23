@@ -4,15 +4,14 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-
+//
 #include "loginfrm.h"
 #include "cfgfrm.h"
 #include "vars.h"
-#include "newdbfrm.h"
-
+//
 extern QString username, fullname, docfolder, templatefolder;
 extern QString dbhost, dbname, dbuid, dbpwd,dbport;
-
+//
 QStringList dbserver,dbname_local,uid,pwd,port;
 //
 loginfrm::loginfrm( QWidget * parent, Qt::WFlags f) 

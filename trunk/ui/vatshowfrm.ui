@@ -13,7 +13,7 @@
    <string>VAT overview...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/kcalc.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
   </property>
   <widget class="QTreeWidget" name="treemain" >
    <property name="geometry" >
@@ -43,19 +43,22 @@
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
-     <x>310</x>
+     <x>304</x>
      <y>160</y>
-     <width>75</width>
-     <height>27</height>
+     <width>81</width>
+     <height>28</height>
     </rect>
    </property>
    <property name="text" >
     <string>&amp;OK</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

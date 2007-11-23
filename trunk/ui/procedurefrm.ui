@@ -16,46 +16,23 @@
    <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <property name="leftMargin" >
-    <number>9</number>
-   </property>
-   <property name="topMargin" >
-    <number>9</number>
-   </property>
-   <property name="rightMargin" >
-    <number>9</number>
-   </property>
-   <property name="bottomMargin" >
-    <number>9</number>
-   </property>
-   <property name="horizontalSpacing" >
-    <number>6</number>
-   </property>
-   <property name="verticalSpacing" >
-    <number>6</number>
-   </property>
    <item row="0" column="0" >
     <layout class="QGridLayout" >
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
-      <number>0</number>
-     </property>
-     <property name="horizontalSpacing" >
-      <number>6</number>
-     </property>
-     <property name="verticalSpacing" >
-      <number>6</number>
-     </property>
-     <item row="0" column="4" >
-      <widget class="QPushButton" name="btnedit" >
+     <item row="0" column="0" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>511</width>
+         <height>42</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QPushButton" name="btnsearch" >
        <property name="sizePolicy" >
         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
@@ -66,7 +43,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -75,6 +52,19 @@
         </size>
        </property>
       </widget>
+     </item>
+     <item row="0" column="2" >
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>21</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item row="0" column="3" >
       <widget class="QPushButton" name="btnadd" >
@@ -98,8 +88,8 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="7" >
-      <widget class="QPushButton" name="btndocument" >
+     <item row="0" column="4" >
+      <widget class="QPushButton" name="btnedit" >
        <property name="sizePolicy" >
         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
@@ -110,29 +100,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
-       </property>
-       <property name="iconSize" >
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="8" >
-      <widget class="QPushButton" name="btncomplete" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -180,18 +148,49 @@
        </property>
       </spacer>
      </item>
-     <item row="0" column="0" >
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
+     <item row="0" column="7" >
+      <widget class="QPushButton" name="btndocument" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="sizeHint" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
+       </property>
+       <property name="iconSize" >
         <size>
-         <width>471</width>
-         <height>42</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
-      </spacer>
+      </widget>
+     </item>
+     <item row="0" column="8" >
+      <widget class="QPushButton" name="btncomplete" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

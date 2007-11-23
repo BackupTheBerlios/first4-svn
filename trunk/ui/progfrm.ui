@@ -13,7 +13,7 @@
    <string>Progress...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
   </property>
   <widget class="QProgressBar" name="progbar" >
    <property name="geometry" >
@@ -43,7 +43,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections/>
 </ui>
