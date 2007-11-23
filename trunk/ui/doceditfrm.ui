@@ -702,6 +702,9 @@
           <property name="text" >
            <string/>
           </property>
+          <property name="icon" >
+           <iconset resource="../resources/images/first4.qrc" >:/viewmag2.png</iconset>
+          </property>
          </column>
          <column>
           <property name="text" >

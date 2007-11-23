@@ -13,45 +13,51 @@
    <string>Browse orders...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/kontact_todo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <property name="margin" >
+   <property name="leftMargin" >
     <number>9</number>
    </property>
-   <property name="spacing" >
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="rightMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing" >
     <number>6</number>
    </property>
    <item row="0" column="0" >
     <layout class="QGridLayout" >
-     <property name="margin" >
+     <property name="leftMargin" >
       <number>0</number>
      </property>
-     <property name="spacing" >
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing" >
       <number>6</number>
      </property>
-     <item row="0" column="2" >
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>20</width>
-         <height>42</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
+     <property name="verticalSpacing" >
+      <number>6</number>
+     </property>
      <item row="0" column="4" >
       <widget class="QPushButton" name="btnedit" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -60,43 +66,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/kfind.png</iconset>
-       </property>
-       <property name="iconSize" >
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" >
-      <widget class="QPushButton" name="btnsearch" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>46</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>46</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/xmag.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
@@ -109,9 +79,7 @@
      <item row="0" column="3" >
       <widget class="QPushButton" name="btnadd" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -120,12 +88,12 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -133,9 +101,7 @@
      <item row="0" column="7" >
       <widget class="QPushButton" name="btndocument" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -144,12 +110,12 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/wordprocessing.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -157,9 +123,7 @@
      <item row="0" column="8" >
       <widget class="QPushButton" name="btncomplete" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -168,12 +132,12 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -181,9 +145,7 @@
      <item row="0" column="5" >
       <widget class="QPushButton" name="btndelete" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>0</vsizetype>
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -192,12 +154,12 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/editdelete.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
        </property>
        <property name="iconSize" >
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -235,18 +197,25 @@
    </item>
    <item row="1" column="0" >
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
      <property name="spacing" >
       <number>6</number>
+     </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
      </property>
      <item>
       <widget class="QTreeWidget" name="treeindex" >
        <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>7</vsizetype>
+        <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -366,9 +335,6 @@
         <property name="text" >
          <string/>
         </property>
-        <property name="icon" >
-         <iconset resource="first.qrc" >:/images/images/button_ok_small.png</iconset>
-        </property>
        </column>
        <column>
         <property name="text" >
@@ -396,16 +362,28 @@
    </item>
    <item row="2" column="0" >
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
      <property name="spacing" >
       <number>6</number>
+     </property>
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
      </property>
      <item>
       <widget class="QPushButton" name="btnclose" >
        <property name="text" >
         <string>&amp;Close</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
        </property>
       </widget>
      </item>
@@ -457,7 +435,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

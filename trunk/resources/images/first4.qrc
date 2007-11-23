@@ -2,6 +2,7 @@
     <qresource prefix="/" >
         <file>button_cancel.png</file>
         <file>button_ok.png</file>
+        <file>button_ok_small.png</file>
         <file>contents.png</file>
         <file>down.png</file>
         <file>exit.png</file>
@@ -28,6 +29,7 @@
         <file>undo.png</file>
         <file>up.png</file>
         <file>useradd.png</file>
+        <file>viewmag2.png</file>
         <file>wordprocessing32x32.png</file>
         <file>xclipboard.png</file>
         <file>xmag.png</file>

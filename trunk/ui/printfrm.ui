@@ -13,7 +13,7 @@
    <string>Print...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
   </property>
   <widget class="QPushButton" name="btncancel" >
    <property name="geometry" >
@@ -27,6 +27,9 @@
    <property name="text" >
     <string>Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
@@ -39,6 +42,9 @@
    </property>
    <property name="text" >
     <string>OK</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QGroupBox" name="grpprint" >
@@ -108,7 +114,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>
