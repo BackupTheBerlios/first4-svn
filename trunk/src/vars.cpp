@@ -14,33 +14,33 @@ QString username, fullname;
 void vars::savegeo(QString frname, bool max, int x, int y, int width, int height)
 {
     QStringList lines;
-    QFile file(QDir::homePath()+"/.first4/"+username+".first4.conf" );
+    QFile file(QDir::homePath()+"/.first4/wingeometry.conf" );
     if(file.open(QIODevice::ReadOnly))
     {
 		QTextStream stream(&file);
 		while(!stream.atEnd())
-			lines << stream.readLine();
+		    lines << stream.readLine();
 		file.close();    
     }
-
+    
     bool found = FALSE;
     int i;
     if(file.open(QIODevice::WriteOnly))
     {
-		for(i=0;i<lines.count()-1;i++)
+		QTextStream stream(&file);
+		for(i=0;i<lines.count();i++)
 		{
-			//QMessageBox::warning ( 0, "Changing password..." , lines[i] );
-	    	if(lines[i].section("=",0,0) == frname)
+		    if(lines[i].section("=",0,0) == frname)
 		    {
 				found = TRUE;
 				stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";
-	    	}  
+		    }  
 		    else
-				stream << lines[i] << "\n";
-			//if(!found)
-    		//	stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";
-		} 
-		file.close();
+			stream << lines[i] << "\n";
+		}
+		if(!found)
+		    stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";
+		file.close();    
     }
 }
 //
