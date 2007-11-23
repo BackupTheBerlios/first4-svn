@@ -1,10 +1,15 @@
 <RCC>
     <qresource prefix="/" >
+        <file>button_cancel.png</file>
         <file>button_ok.png</file>
         <file>contents.png</file>
         <file>exit.png</file>
+        <file>fileclose.png</file>
         <file>filenew.png</file>
+        <file>filesave.png</file>
         <file>help_index.png</file>
+        <file>hotlistadd.png</file>
+        <file>hotlistdel.png</file>
         <file>kcalc.png</file>
         <file>kdmconfig.png</file>
         <file>kfm.png</file>
@@ -14,6 +19,8 @@
         <file>messagebox_critical.png</file>
         <file>newsplash.png</file>
         <file>package_utilities.png</file>
+        <file>undo.png</file>
+        <file>useradd.png</file>
         <file>wordprocessing32x32.png</file>
         <file>xmag.png</file>
     </qresource>

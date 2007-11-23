@@ -15,22 +15,6 @@
 
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
-bool createConnection()
-{
-	// create the default database connection
-	QSqlDatabase firstDB = QSqlDatabase::addDatabase ( "QMYSQL" );
-	firstDB.setDatabaseName ( dbname );
-	firstDB.setUserName ( dbuid );
-	firstDB.setPassword ( dbpwd );
-	firstDB.setHostName ( dbhost );
-	firstDB.setPort ( dbport.toInt() );
-	if ( !firstDB.open() )
-	{
-		QMessageBox::critical ( 0,"Error...", "Unable to connect to database server!" );
-	}
-	return TRUE;
-}
-
 int main ( int argc, char ** argv )
 {
 	QApplication app ( argc, argv );
@@ -66,8 +50,7 @@ int main ( int argc, char ** argv )
 	if ( logfrm.exec() )
 	{
 		logfrm.saveservers();
-		createConnection();
-		QSplashScreen splash ( QPixmap ( ":/images/images/newsplash.png" ) );
+		QSplashScreen splash ( QPixmap ( ":/newsplash.png" ) );
 		splash.show();
 		app.processEvents();
 		mainfrm *mfrm = new mainfrm();

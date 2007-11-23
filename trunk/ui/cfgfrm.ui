@@ -16,7 +16,7 @@
    <string>Settings...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="first.qrc" >:/images/images/logo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
   </property>
   <widget class="QTabWidget" name="maintab" >
    <property name="geometry" >
@@ -28,7 +28,7 @@
     </rect>
    </property>
    <property name="currentIndex" >
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="user" >
     <attribute name="title" >
@@ -392,7 +392,7 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="first.qrc" >:/images/images/hotlistadd.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="btndeldb" >
@@ -420,7 +420,7 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="first.qrc" >:/images/images/hotlistdel.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >:/hotlistdel.png</iconset>
       </property>
      </widget>
     </widget>
@@ -632,7 +632,7 @@
       </rect>
      </property>
      <property name="currentIndex" >
-      <number>6</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="database" >
       <attribute name="title" >
@@ -801,6 +801,9 @@
         <property name="text" >
          <string>&amp;Update</string>
         </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+        </property>
        </widget>
        <widget class="QLabel" name="label_15" >
         <property name="geometry" >
@@ -956,7 +959,7 @@ take current password!)</string>
         </font>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="contact" >
         <attribute name="title" >
@@ -1110,203 +1113,170 @@ take current password!)</string>
         <attribute name="title" >
          <string>&amp;Privat</string>
         </attribute>
-        <layout class="QGridLayout" >
-         <property name="leftMargin" >
-          <number>9</number>
-         </property>
-         <property name="topMargin" >
-          <number>9</number>
-         </property>
-         <property name="rightMargin" >
-          <number>9</number>
-         </property>
-         <property name="bottomMargin" >
-          <number>9</number>
-         </property>
-         <property name="horizontalSpacing" >
-          <number>6</number>
-         </property>
-         <property name="verticalSpacing" >
-          <number>6</number>
-         </property>
-         <item row="4" column="0" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0" >
-          <layout class="QHBoxLayout" >
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_26" >
-             <property name="minimumSize" >
-              <size>
-               <width>110</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>110</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string>Street:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="txt_users_privat_street" />
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0" >
-          <layout class="QHBoxLayout" >
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_27" >
-             <property name="minimumSize" >
-              <size>
-               <width>110</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>110</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string>ZIP:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="txt_users_privat_zip" />
-           </item>
-          </layout>
-         </item>
-         <item row="2" column="0" >
-          <layout class="QHBoxLayout" >
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_28" >
-             <property name="minimumSize" >
-              <size>
-               <width>110</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>110</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string>Location:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="txt_users_privat_location" />
-           </item>
-          </layout>
-         </item>
-         <item row="3" column="0" >
-          <layout class="QHBoxLayout" >
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_29" >
-             <property name="minimumSize" >
-              <size>
-               <width>110</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize" >
-              <size>
-               <width>110</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string>Country:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="txt_users_privat_country" />
-           </item>
-          </layout>
-         </item>
-        </layout>
+        <widget class="QWidget" name="" >
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_26" >
+            <property name="minimumSize" >
+             <size>
+              <width>110</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string>Street:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txt_users_privat_street" />
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="" >
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_27" >
+            <property name="minimumSize" >
+             <size>
+              <width>110</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string>ZIP:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txt_users_privat_zip" />
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="" >
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_28" >
+            <property name="minimumSize" >
+             <size>
+              <width>110</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string>Location:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txt_users_privat_location" />
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="" >
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_29" >
+            <property name="minimumSize" >
+             <size>
+              <width>110</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>110</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string>Country:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txt_users_privat_country" />
+          </item>
+         </layout>
+        </widget>
        </widget>
        <widget class="QWidget" name="business" >
         <attribute name="title" >
@@ -2522,7 +2492,7 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/filenew.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/useradd.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_delete" >
@@ -2550,7 +2520,7 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/editdelete.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_save" >
@@ -2578,7 +2548,7 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/filesave.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_cancel" >
@@ -2606,7 +2576,7 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/undo.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >:/undo.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_17" >
@@ -2995,7 +2965,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+        <iconset/>
        </property>
        <property name="flat" >
         <bool>false</bool>
@@ -3043,7 +3013,7 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+         <iconset/>
         </property>
        </widget>
        <widget class="QLabel" name="label_65" >
@@ -3413,7 +3383,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+        <iconset/>
        </property>
       </widget>
       <widget class="QLabel" name="label_67" >
@@ -3491,7 +3461,7 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset resource="first.qrc" >:/images/images/button_ok.png</iconset>
+        <iconset/>
        </property>
       </widget>
       <widget class="QLabel" name="label_76" >
@@ -3949,6 +3919,9 @@ p, li { white-space: pre-wrap; }
    <property name="text" >
     <string>&amp;Close</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+   </property>
   </widget>
   <widget class="QProgressBar" name="progbar" >
    <property name="geometry" >
@@ -4096,7 +4069,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_bank_usrnr</tabstop>
  </tabstops>
  <resources>
-  <include location="first.qrc" />
+  <include location="../resources/images/first4.qrc" />
  </resources>
  <connections>
   <connection>

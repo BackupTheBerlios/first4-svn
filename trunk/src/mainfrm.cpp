@@ -7,7 +7,6 @@
 #include <QPluginLoader>
 #include <QStatusBar>
 #include <QCloseEvent>
-#include <QDebug>
 //
 #include "mainfrm.h"
 #include "vars.h"

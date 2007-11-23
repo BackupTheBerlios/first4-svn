@@ -63,13 +63,13 @@ void loginfrm::checkpwd()
 {
     if(boxuser->text() != "")
     {	
-		QSqlDatabase pwdcheckDB = QSqlDatabase::addDatabase("QMYSQL");
-		pwdcheckDB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
-		pwdcheckDB.setUserName(uid[cmbdb->currentIndex()]);
-		pwdcheckDB.setPassword(pwd[cmbdb->currentIndex()]);
-		pwdcheckDB.setPort(port[cmbdb->currentIndex()].toInt());
-		pwdcheckDB.setHostName(dbserver[cmbdb->currentIndex()]);
-		if(pwdcheckDB.open())
+		QSqlDatabase first4DB = QSqlDatabase::addDatabase("QMYSQL");
+		first4DB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
+		first4DB.setUserName(uid[cmbdb->currentIndex()]);
+		first4DB.setPassword(pwd[cmbdb->currentIndex()]);
+		first4DB.setPort(port[cmbdb->currentIndex()].toInt());
+		first4DB.setHostName(dbserver[cmbdb->currentIndex()]);
+		if(first4DB.open())
 		{
 		    // Database successfully opened;
 		    cfgfrm cfrm;
@@ -93,10 +93,10 @@ void loginfrm::checkpwd()
 				    boxpwd->setText("");
 				    boxuser->setFocus();
 				    boxuser->selectAll();
+				    first4DB.close();
+				    QSqlDatabase::removeDatabase("first4DB");
 				}
 		    }
-		    pwdcheckDB.close();
-		    QSqlDatabase::removeDatabase("pwdcheckDB");
 		} else {
 		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!"));
 		}

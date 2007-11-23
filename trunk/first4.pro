@@ -3,8 +3,8 @@ CONFIG += plugin \
  thread \
  warn_on \
  debug
-DEPENDPATH = src ui
-DESTDIR = bin
+# DEPENDPATH = src ui
+DESTDIR += bin
 FORMS = ui/aboutfrm.ui \
  ui/accountsfrm.ui \
  ui/addrfrm.ui \
@@ -66,8 +66,11 @@ HEADERS = src/aboutfrm.h \
  src/stockselfrm.h \
  src/vars.h \
  src/vatshowfrm.h
-INCLUDEPATH = src ui
-QT += core gui sql
+INCLUDEPATH += src \
+ ui
+QT += core \
+ gui \
+ sql
 SOURCES = src/aboutfrm.cpp \
  src/accountsfrm.cpp \
  src/addrfrm.cpp \
@@ -100,11 +103,12 @@ SOURCES = src/aboutfrm.cpp \
  src/stockselfrm.cpp \
  src/vars.cpp \
  src/vatshowfrm.cpp
-RESOURCES = resources/images/first4.qrc
+RESOURCES += resources/images/first4.qrc
 TARGET = first4
 TEMPLATE = app
-UI_DIR = ui
-TRANSLATIONS = resources/translations/de.ts resources/translations/it.ts
+UI_DIR += build/first4/ui
+TRANSLATIONS += resources/translations/de.ts \
+ resources/translations/it.ts
 mac {
  MOC_DIR +=  build/first4/mac/moc
  OBJECTS_DIR +=  build/first4/mac/obj
