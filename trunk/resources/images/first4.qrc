@@ -6,10 +6,12 @@
         <file>exit.png</file>
         <file>fileclose.png</file>
         <file>filenew.png</file>
+        <file>fileprint.png</file>
         <file>filesave.png</file>
         <file>help_index.png</file>
         <file>hotlistadd.png</file>
         <file>hotlistdel.png</file>
+        <file>impexp.png</file>
         <file>kcalc.png</file>
         <file>kdmconfig.png</file>
         <file>kfm.png</file>
@@ -22,6 +24,7 @@
         <file>undo.png</file>
         <file>useradd.png</file>
         <file>wordprocessing32x32.png</file>
+        <file>xclipboard.png</file>
         <file>xmag.png</file>
     </qresource>
 </RCC>

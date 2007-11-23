@@ -13,7 +13,7 @@
    <string>Directories...</string>
   </property>
   <property name="windowIcon" >
-   <iconset/>
+   <iconset resource="../resources/images/first4.qrc" >:/kdmconfig.png</iconset>
   </property>
   <layout class="QGridLayout" >
    <property name="leftMargin" >
@@ -129,6 +129,9 @@
       <widget class="QPushButton" name="btnclose" >
        <property name="text" >
         <string>&amp;Close</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
        </property>
       </widget>
      </item>
@@ -755,7 +758,7 @@
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
          </property>
         </widget>
        </item>
@@ -768,7 +771,7 @@
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
          </property>
         </widget>
        </item>
@@ -781,7 +784,7 @@
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
          </property>
         </widget>
        </item>
@@ -794,7 +797,7 @@
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
          </property>
         </widget>
        </item>
@@ -807,7 +810,7 @@
           </sizepolicy>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xclipboard.png</iconset>
          </property>
         </widget>
        </item>
@@ -1098,7 +1101,7 @@
        <item row="1" column="3" >
         <widget class="QPushButton" name="btnclear" >
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
          </property>
         </widget>
        </item>
@@ -1119,7 +1122,7 @@
        <item row="1" column="2" >
         <widget class="QPushButton" name="btnsearch" >
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
          </property>
         </widget>
        </item>
@@ -1179,7 +1182,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/useradd.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -1204,7 +1207,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -1245,7 +1248,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/undo.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -1270,7 +1273,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -1295,7 +1298,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -1320,7 +1323,7 @@
           </size>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
          </property>
          <property name="iconSize" >
           <size>

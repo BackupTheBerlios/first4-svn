@@ -1113,7 +1113,15 @@ take current password!)</string>
         <attribute name="title" >
          <string>&amp;Privat</string>
         </attribute>
-        <widget class="QWidget" name="" >
+        <widget class="QWidget" name="layoutWidget" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
          <layout class="QHBoxLayout" >
           <property name="spacing" >
            <number>6</number>
@@ -1154,7 +1162,15 @@ take current password!)</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="" >
+        <widget class="QWidget" name="layoutWidget" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
          <layout class="QHBoxLayout" >
           <property name="spacing" >
            <number>6</number>
@@ -1195,7 +1211,15 @@ take current password!)</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="" >
+        <widget class="QWidget" name="layoutWidget" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
          <layout class="QHBoxLayout" >
           <property name="spacing" >
            <number>6</number>
@@ -1236,7 +1260,15 @@ take current password!)</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="" >
+        <widget class="QWidget" name="layoutWidget" >
+         <property name="geometry" >
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>100</width>
+           <height>30</height>
+          </rect>
+         </property>
          <layout class="QHBoxLayout" >
           <property name="spacing" >
            <number>6</number>
@@ -3969,7 +4001,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>243</x>
      <y>576</y>
-     <width>16</width>
+     <width>231</width>
      <height>24</height>
     </rect>
    </property>

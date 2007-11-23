@@ -97,6 +97,12 @@
    <property name="icon" >
     <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
    </property>
+   <property name="iconSize" >
+    <size>
+     <width>12</width>
+     <height>12</height>
+    </size>
+   </property>
   </widget>
   <widget class="QPushButton" name="btncancel" >
    <property name="geometry" >
@@ -110,6 +116,9 @@
    <property name="text" >
     <string>&amp;Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
@@ -122,6 +131,9 @@
    </property>
    <property name="text" >
     <string>&amp;Accept</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QTreeWidget" name="treemain" >
@@ -162,9 +174,9 @@
   <widget class="QProgressBar" name="progbar" >
    <property name="geometry" >
     <rect>
-     <x>200</x>
+     <x>180</x>
      <y>333</y>
-     <width>118</width>
+     <width>181</width>
      <height>20</height>
     </rect>
    </property>
@@ -188,7 +200,16 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>12</width>
+     <height>12</height>
+    </size>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+S</string>
    </property>
   </widget>
  </widget>
