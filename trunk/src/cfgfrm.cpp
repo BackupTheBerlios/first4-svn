@@ -2,6 +2,7 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
@@ -79,6 +80,8 @@ void cfgfrm::init()
 	loadressources();
 	loadsettings();
 	loadowndata();
+	load_db_tools();
+	load_local_tools();
 
 	resdefframe->setCurrentIndex ( 3 );
 
@@ -114,8 +117,8 @@ void cfgfrm::init()
 	connect ( btnsavesettings, SIGNAL ( released() ), this, SLOT ( savesettings() ) );
 	connect ( btnowndata, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
 	
-	connect ( btn_tools_save_local, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
-	connect ( btn_tools_save_db, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
+	connect ( btn_tools_save_local, SIGNAL ( released() ), this, SLOT ( save_local_tools() ) );
+	connect ( btn_tools_save_db, SIGNAL ( released() ), this, SLOT ( save_db_tools() ) );
 	connect ( btn_tools_reload_local, SIGNAL ( released() ), this, SLOT ( load_local_tools() ) );
 	connect ( btn_tools_reload_db, SIGNAL ( released() ), this, SLOT ( load_db_tools() ) );
 }
@@ -179,7 +182,7 @@ void cfgfrm::changepwd()
 //
 void cfgfrm::loadlangfile()
 {
-	QFile file ( QDir::homePath() +"/.first4/lang.conf" );
+	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
 		QTextStream stream ( &file );
@@ -197,7 +200,7 @@ void cfgfrm::selectlangfile()
 	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Open Lang-File" ),
 	                   QDir::homePath() +"/.first4",
 	                   tr ( "Lang-File (*.qm)" ) );
-	QFile file ( QDir::homePath() +"/.first4/lang.conf" );
+	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
 	if ( file.open ( QIODevice::WriteOnly ) )
 	{
 		QTextStream stream ( &file );
@@ -1202,20 +1205,143 @@ void cfgfrm::loadowndata()
 //
 void cfgfrm::load_local_tools()
 {
-	
+	QFile file ( QDir::homePath() +"/.first4/"+username+".first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		QString line;
+		while(stream.readLine() != "[EXT_TOOLS]" && !stream.atEnd());
+		do {
+			line = stream.readLine();
+			if(line.section("=", 0, 0) == "DVI2PS")
+				txt_tool_dvi2ps->setText(line.section("=", 1, 1));
+			if(line.section("=", 0, 0) == "DVIVIEWER")
+				txt_tool_dviviewer->setText(line.section("=", 1, 1));
+			if(line.section("=", 0, 0) == "PRINT")
+				txt_tool_print->setText(line.section("=", 1, 1));
+			if(line.section("=", 0, 0) == "TEX2DVI")
+				txt_tool_tex2dvi->setText(line.section("=", 1, 1));
+		} while (line != "");
+		file.close();
+	}
 }
 //
 void cfgfrm::load_db_tools()
 {
-	
+	QString os = "";
+	#ifdef Q_OS_LINUX
+		os="lnx";
+	#endif
+	#ifdef Q_OS_WIN32
+		os="win";
+	#endif
+	#ifdef Q_OS_MAC
+		os="mac";
+	#endif
+	QString qstr1 = QString("SELECT var, value FROM maincfgtab WHERE `var`='tool_%1_tex2dvi' OR `var`='tool_%1_dviview' OR `var`='tool_%1_dvi2ps' OR `var`='tool_%1_print' ORDER BY var;").arg(os);
+	QSqlQuery querytools(qstr1);
+	if ( querytools.isActive())
+	{
+		querytools.next();
+		txt_tool_db_dvi2ps->setText(querytools.value(1).toString());
+		querytools.next();
+		txt_tool_db_dviviewer->setText(querytools.value(1).toString());
+		querytools.next();
+		txt_tool_db_print->setText(querytools.value(1).toString());
+		querytools.next();
+		txt_tool_db_tex2dvi->setText(querytools.value(1).toString());
+	}
+	else
+	{
+		QSqlError sqlerror = querytools.lastError();
+		QMessageBox::critical(0,"Error...",tr("Unable to read settings from database!")+"\n\n"+sqlerror.text());
+	}
 }
 //
 void cfgfrm::save_local_tools()
 {
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/"+username+".first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		while(!stream.atEnd())
+			lines << stream.readLine();
+	}
+	file.close();
 	
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i;
+		QTextStream stream ( &file );
+		for(i=0;i<lines.count();i++)
+		{
+			if(lines[i] != "[EXT_TOOLS]")
+				stream << lines[i] << "\n";
+			else
+			{
+				stream << lines[i] << "\n"; // write [EXT_TOOLS]
+				stream << "DVI2PS=" << txt_tool_dvi2ps->text() << "\n";
+				stream << "DVIVIEWER=" << txt_tool_dviviewer->text() << "\n";
+				stream << "PRINT=" << txt_tool_print->text() << "\n";
+				stream << "TEX2DVI=" << txt_tool_tex2dvi->text() << "\n";
+				while(lines[i] != "")
+					i++;
+				stream << "\n";
+			}
+		}
+		file.close();
+	}
+	else
+		QMessageBox::warning(0,"External tools...", tr("Can't write to configuration file."));
 }
 //
 void cfgfrm::save_db_tools()
 {
+	QString os = "";
+	#ifdef Q_OS_LINUX
+		os="lnx";
+	#endif
+	#ifdef Q_OS_WIN32
+		os="win";
+	#endif
+	#ifdef Q_OS_MAC
+		os="mac";
+	#endif
 	
+	// SAVE DVI2PS
+	QString qstr1 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dvi2ps' LIMIT 1;").arg(txt_tool_db_dvi2ps->text()).arg(os);
+	QSqlQuery querytools1(qstr1);
+	if(querytools1.numRowsAffected() == 0)
+	{
+		qstr1 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dvi2ps").arg(txt_tool_db_dvi2ps->text());
+		QSqlQuery querytools_insert1(qstr1);
+	}
+	
+	// SAVE DVIVIEWER
+	QString qstr2 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dviview' LIMIT 1;").arg(txt_tool_db_dviviewer->text()).arg(os);
+	QSqlQuery querytools2(qstr2);
+	if(querytools2.numRowsAffected() == 0)
+	{
+		qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviview").arg(txt_tool_db_dviviewer->text());
+		QSqlQuery querytools_insert2(qstr2);
+	}
+	
+	// SAVE PRINTCMD
+	QString qstr3 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_print' LIMIT 1;").arg(txt_tool_db_print->text()).arg(os);
+	QSqlQuery querytools3(qstr3);
+	if(querytools3.numRowsAffected() == 0)
+	{
+		qstr3 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_print").arg(txt_tool_db_print->text());
+		QSqlQuery querytools_insert3(qstr3);
+	}
+	
+	// SAVE TEX2DVI
+	QString qstr4 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_tex2dvi' LIMIT 1;").arg(txt_tool_db_tex2dvi->text()).arg(os);
+	QSqlQuery querytools4(qstr4);
+	if(querytools4.numRowsAffected() == 0)
+	{
+		qstr4 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
+		QSqlQuery querytools_insert4(qstr4);
+	}
 }

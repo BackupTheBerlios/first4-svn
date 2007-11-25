@@ -962,7 +962,7 @@ take current password!)</string>
         </font>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>4</number>
        </property>
        <widget class="QWidget" name="contact" >
         <attribute name="title" >
@@ -4063,6 +4063,8 @@ p, li { white-space: pre-wrap; }
   <tabstop>btndeldb</tabstop>
   <tabstop>txtlang</tabstop>
   <tabstop>btnsellangfile</tabstop>
+  <tabstop>txtPlugin</tabstop>
+  <tabstop>btnselplugindir</tabstop>
   <tabstop>cfgtab</tabstop>
   <tabstop>boxdbsqlfile</tabstop>
   <tabstop>btnopensqlfile</tabstop>
@@ -4071,35 +4073,37 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_users_user</tabstop>
   <tabstop>txt_users_pwd1</tabstop>
   <tabstop>txt_users_pwd2</tabstop>
+  <tabstop>btn_users_new</tabstop>
+  <tabstop>btn_users_save</tabstop>
+  <tabstop>btn_users_cancel</tabstop>
+  <tabstop>btn_users_delete</tabstop>
+  <tabstop>txt_users_id</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>txt_users_firstname</tabstop>
   <tabstop>txt_users_lastname</tabstop>
   <tabstop>txt_users_fullname</tabstop>
   <tabstop>txtdob</tabstop>
   <tabstop>txt_users_privat_street</tabstop>
-  <tabstop>txt_users_privat_zip</tabstop>
   <tabstop>txt_users_privat_location</tabstop>
+  <tabstop>txt_users_privat_zip</tabstop>
   <tabstop>txt_users_privat_country</tabstop>
   <tabstop>txt_users_business_prof</tabstop>
   <tabstop>txt_users_business_unit</tabstop>
   <tabstop>txt_users_business_position</tabstop>
-  <tabstop>txt_users_business_type</tabstop>
   <tabstop>txt_users_business_grade</tabstop>
+  <tabstop>txt_users_business_type</tabstop>
   <tabstop>txt_users_business_street</tabstop>
   <tabstop>txt_users_business_zip</tabstop>
   <tabstop>txt_users_business_location</tabstop>
   <tabstop>txt_users_business_country</tabstop>
+  <tabstop>btndoctemplate</tabstop>
   <tabstop>txt_users_private_tel</tabstop>
+  <tabstop>txtstartid</tabstop>
   <tabstop>txt_users_private_fax</tabstop>
-  <tabstop>btnsavesettings</tabstop>
   <tabstop>txt_users_private_mobile</tabstop>
   <tabstop>txt_users_private_pager</tabstop>
   <tabstop>txt_users_private_voip</tabstop>
-  <tabstop>btnowndata</tabstop>
   <tabstop>txt_users_private_email1</tabstop>
-  <tabstop>btnclose</tabstop>
-  <tabstop>daysofgrace</tabstop>
-  <tabstop>txtdocprefix</tabstop>
   <tabstop>txt_users_private_email2</tabstop>
   <tabstop>txt_users_private_email3</tabstop>
   <tabstop>txt_users_private_website</tabstop>
@@ -4113,20 +4117,8 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_users_business_email2</tabstop>
   <tabstop>txt_users_business_email3</tabstop>
   <tabstop>txtnotes</tabstop>
-  <tabstop>btn_users_new</tabstop>
-  <tabstop>btn_users_save</tabstop>
-  <tabstop>btn_users_cancel</tabstop>
-  <tabstop>btn_users_delete</tabstop>
-  <tabstop>txt_users_id</tabstop>
   <tabstop>listressources</tabstop>
   <tabstop>listpermissions</tabstop>
-  <tabstop>txt_doctemplate</tabstop>
-  <tabstop>btndoctemplate</tabstop>
-  <tabstop>txtboxbank</tabstop>
-  <tabstop>txtboxaccountnr</tabstop>
-  <tabstop>txtboxclearing</tabstop>
-  <tabstop>txtboxcurrency</tabstop>
-  <tabstop>txtstartid</tabstop>
   <tabstop>btnsavepermissions</tabstop>
   <tabstop>txtdocpath</tabstop>
   <tabstop>btndocpath</tabstop>
@@ -4140,6 +4132,36 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_bank_clearing</tabstop>
   <tabstop>txt_bank_accountnr</tabstop>
   <tabstop>txt_bank_usrnr</tabstop>
+  <tabstop>btnowndata</tabstop>
+  <tabstop>daysofgrace</tabstop>
+  <tabstop>txtdocprefix</tabstop>
+  <tabstop>txt_tool_tex2dvi</tabstop>
+  <tabstop>btn_tool_tex2dvi</tabstop>
+  <tabstop>txt_tool_dviviewer</tabstop>
+  <tabstop>btn_tool_dviviewer</tabstop>
+  <tabstop>txt_tool_dvi2ps</tabstop>
+  <tabstop>btn_tool_dvi2ps</tabstop>
+  <tabstop>txt_tool_print</tabstop>
+  <tabstop>btn_tool_print</tabstop>
+  <tabstop>btn_tools_reload_local</tabstop>
+  <tabstop>btn_tools_save_local</tabstop>
+  <tabstop>txt_tool_db_tex2dvi</tabstop>
+  <tabstop>btn_tool_db_tex2dvi</tabstop>
+  <tabstop>txt_tool_db_dviviewer</tabstop>
+  <tabstop>btn_tool_db_dviviewer</tabstop>
+  <tabstop>txt_tool_db_dvi2ps</tabstop>
+  <tabstop>btn_tool_db_dvi2ps</tabstop>
+  <tabstop>txt_tool_db_print</tabstop>
+  <tabstop>btn_tool_db_print</tabstop>
+  <tabstop>btn_tools_reload_db</tabstop>
+  <tabstop>btn_tools_save_db</tabstop>
+  <tabstop>btnclose</tabstop>
+  <tabstop>txtboxcurrency</tabstop>
+  <tabstop>txtboxbank</tabstop>
+  <tabstop>txtboxaccountnr</tabstop>
+  <tabstop>btnsavesettings</tabstop>
+  <tabstop>txt_doctemplate</tabstop>
+  <tabstop>txtboxclearing</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />

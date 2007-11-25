@@ -34,7 +34,7 @@
    </size>
   </property>
   <property name="windowTitle" >
-   <string>Login...</string>
+   <string>Login - </string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
@@ -116,7 +116,7 @@
     <rect>
      <x>10</x>
      <y>140</y>
-     <width>75</width>
+     <width>101</width>
      <height>30</height>
     </rect>
    </property>
@@ -133,9 +133,9 @@
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
-     <x>270</x>
+     <x>244</x>
      <y>140</y>
-     <width>75</width>
+     <width>101</width>
      <height>30</height>
     </rect>
    </property>

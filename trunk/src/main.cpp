@@ -19,7 +19,7 @@ int main ( int argc, char ** argv )
 {
 	QApplication app ( argc, argv );
 	QString langfile;
-	QFile file ( QDir::homePath() +"/.first4/lang.conf" );
+	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
 		QTextStream stream ( &file );
@@ -68,7 +68,7 @@ int main ( int argc, char ** argv )
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		
 		int sec = QTime::currentTime().second();
-		while(sec != QTime::currentTime().second()-2) ; //wait 2 secs
+		while(sec != QTime::currentTime().second()-1) ; //wait 2 secs
 		
 	    mfrm->show();
 		

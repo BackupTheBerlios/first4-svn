@@ -9,8 +9,8 @@
 #include "cfgfrm.h"
 #include "vars.h"
 //
-extern QString username, fullname, docfolder, templatefolder;
-extern QString dbhost, dbname, dbuid, dbpwd,dbport;
+extern QString username, fullname, docfolder, templatefolder, firstver;
+extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 //
 QStringList dbserver,dbname_local,uid,pwd,port;
 //
@@ -24,6 +24,7 @@ loginfrm::loginfrm( QWidget * parent, Qt::WFlags f)
 bool loginfrm::loadservers()
 {
     this->setFixedSize(this->width(), this->height());
+    this->setWindowTitle(this->windowTitle()+firstver);
     vars v;
     QStringList sgeo = v.loadgeo(this->objectName());
     if(sgeo.size() > 0	)
