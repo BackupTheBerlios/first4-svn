@@ -51,6 +51,8 @@ public slots:
 	void load_db_tools();
 	void save_local_tools();
 	void save_db_tools();
+private slots:
+	void tools_filedialog();
 };
 #endif
 

@@ -717,6 +717,9 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip" >
+       <string>%1 = Input file, %2 = Output file</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="txt_tool_dviviewer" >
       <property name="geometry" >
@@ -726,6 +729,9 @@
         <width>211</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="toolTip" >
+       <string>%1 DVI-File</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="txt_tool_dvi2ps" >
@@ -737,6 +743,9 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="toolTip" >
+       <string>%1 = Input file, %2 = Output file</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="txt_tool_print" >
       <property name="geometry" >
@@ -746,6 +755,9 @@
         <width>211</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="toolTip" >
+       <string>%1 = PS-File, %2 = Printer</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_tool_tex2dvi" >
@@ -3739,7 +3751,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>126</x>
          <y>10</y>
-         <width>553</width>
+         <width>61</width>
          <height>20</height>
         </rect>
        </property>
@@ -3769,6 +3781,9 @@ p, li { white-space: pre-wrap; }
           <width>211</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="toolTip" >
+         <string>%1 = Input file, %2 = Output file</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_81" >
@@ -3864,6 +3879,9 @@ p, li { white-space: pre-wrap; }
           <height>20</height>
          </rect>
         </property>
+        <property name="toolTip" >
+         <string>%1 = DVI-File</string>
+        </property>
        </widget>
        <widget class="QLineEdit" name="txt_tool_db_print" >
         <property name="geometry" >
@@ -3874,6 +3892,9 @@ p, li { white-space: pre-wrap; }
           <height>20</height>
          </rect>
         </property>
+        <property name="toolTip" >
+         <string>%1 = PS-File, %2 = Printer</string>
+        </property>
        </widget>
        <widget class="QLineEdit" name="txt_tool_db_dvi2ps" >
         <property name="geometry" >
@@ -3883,6 +3904,9 @@ p, li { white-space: pre-wrap; }
           <width>211</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="toolTip" >
+         <string>%1 = Input file, %2 = Output file</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_83" >

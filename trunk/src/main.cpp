@@ -18,15 +18,32 @@ extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 int main ( int argc, char ** argv )
 {
 	QApplication app ( argc, argv );
+	
 	QString langfile;
-	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	QTextStream stream ( &file );
+	
+	if(!file.exists())
+	{
+		if ( file.open ( QIODevice::WriteOnly ) )
+		{
+			stream << "[GENERAL]" << "\n" << "TRANSLATION=" << "\n";
+			file.close();
+		}
+	}
+	
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
-		QTextStream stream ( &file );
-		langfile = stream.readLine();
+		QString line;
+		while(!stream.atEnd())
+		{
+			line = stream.readLine();
+			if(line.section("=",0,0) == "TRANSLATION")
+				langfile = line.section("=", 1, 1);	
+		}
 		file.close();
 	}
-
+	
 	QTranslator translator;
 	translator.load ( langfile );
 	app.installTranslator ( &translator );

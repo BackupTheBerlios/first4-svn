@@ -25,6 +25,7 @@ bool loginfrm::loadservers()
 {
     this->setFixedSize(this->width(), this->height());
     this->setWindowTitle(this->windowTitle()+firstver);
+    
     vars v;
     QStringList sgeo = v.loadgeo(this->objectName());
     if(sgeo.size() > 0	)
@@ -80,21 +81,21 @@ void loginfrm::checkpwd()
 				if(query.size()>0)
 				{
 				    query.next();
+				    vars v;
+					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				    username = boxuser->text();
 				    fullname = query.value(0).toString();
 				    loadsysvars();
-				    vars v;
-					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				    this->accept();
 				}
 				else
 				{
-				    QMessageBox::warning(this,"Login...",tr("Invalid Username or Password"));
+				    first4DB.close();
+				    QSqlDatabase::removeDatabase("first4DB");
 				    boxpwd->setText("");
 				    boxuser->setFocus();
 				    boxuser->selectAll();
-				    first4DB.close();
-				    QSqlDatabase::removeDatabase("first4DB");
+				    QMessageBox::warning(this,"Login...",tr("Invalid Username or Password"));
 				}
 		    }
 		} else {

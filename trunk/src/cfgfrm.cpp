@@ -135,6 +135,15 @@ void cfgfrm::init()
 	connect ( btn_tools_reload_local, SIGNAL ( released() ), this, SLOT ( load_local_tools() ) );
 	connect ( btn_tools_reload_db, SIGNAL ( released() ), this, SLOT ( load_db_tools() ) );
 	
+	connect ( btn_tool_tex2dvi, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_dviviewer, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_dvi2ps, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_print, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_db_tex2dvi, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_db_dviviewer, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_db_dvi2ps, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	connect ( btn_tool_db_print, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	
 	progbar->setValue ( 100 );
 }
 //
@@ -197,13 +206,17 @@ void cfgfrm::changepwd()
 //
 void cfgfrm::loadlangfile()
 {
-	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
+		QString line;
 		QTextStream stream ( &file );
-		QString streamline;
-		streamline = stream.readLine();
-		txtlang->setText ( streamline );
+		while(!stream.atEnd())
+		{
+			line = stream.readLine();
+			if(line.section("=",0,0) == "TRANSLATION")
+				txtlang->setText(line.section("=", 1, 1));
+		}
 		file.close();
 	}
 }
@@ -213,11 +226,28 @@ void cfgfrm::selectlangfile()
 	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Open Lang-File" ),
 	                   QDir::homePath() +"/.first4",
 	                   tr ( "Lang-File (*.qm)" ) );
-	QFile file ( QDir::homePath() +"/.first4/translation.conf" );
-	if ( file.open ( QIODevice::WriteOnly ) )
+	
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
 	{
 		QTextStream stream ( &file );
-		stream << filename;
+		while(!stream.atEnd())
+			lines << stream.readLine();
+		file.close();
+	}
+	
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i;
+		QTextStream stream ( &file );
+		for(i=0;i<lines.count();i++)
+		{
+			if(lines[i].section("=",0,0) == "TRANSLATION")
+				stream << "TRANSLATION=" << filename << "\n";
+			else
+				stream << lines[i] << "\n";
+		}
 		txtlang->setText ( filename );
 		QMessageBox::information ( 0,"Info...", tr ( "Please restart the application." ) );
 		file.close();
@@ -1110,7 +1140,6 @@ void cfgfrm::deltab()
 //
 void cfgfrm::selectdocpath()
 {
-	//QString s = QFileDialog::getExistingDirectory("/", 0, 0, tr("Docfolder..."), TRUE, TRUE);
 	QString dir = QFileDialog::getExistingDirectory ( this, tr ( "Docfolder..." ),
 	              QDir::homePath(),
 	              QFileDialog::ShowDirsOnly
@@ -1311,6 +1340,7 @@ void cfgfrm::save_local_tools()
 			stream << "DVIVIEWER=" << txt_tool_dviviewer->text() << "\n";
 			stream << "PRINT=" << txt_tool_print->text() << "\n";
 			stream << "TEX2DVI=" << txt_tool_tex2dvi->text() << "\n";
+			stream << "\n";
 		}
 		file.close();
 	}
@@ -1366,4 +1396,30 @@ void cfgfrm::save_db_tools()
 		qstr4 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
 		QSqlQuery querytools_insert4(qstr4);
 	}
+}
+//
+void cfgfrm::tools_filedialog()
+{
+	QObject *toolobj = QObject::sender();
+
+	QString toolname = QFileDialog::getOpenFileName ( this, tr ( "Application..." ),
+	                   QDir::rootPath(),
+	                   tr ( "All files (*.*)" ) );
+	
+	if(toolobj->objectName() == "btn_tool_tex2dvi")
+		txt_tool_tex2dvi->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_dviviewer")
+		txt_tool_dviviewer->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_dvi2ps")
+		txt_tool_dvi2ps->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_print")
+		txt_tool_print->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_db_tex2dvi")
+		txt_tool_db_tex2dvi->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_db_dviviewer")
+		txt_tool_db_dviviewer->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_db_dvi2ps")
+		txt_tool_db_dvi2ps->setText(toolname);
+	else if(toolobj->objectName() == "btn_tool_db_print")
+		txt_tool_db_print->setText(toolname);
 }
