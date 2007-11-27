@@ -165,7 +165,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton" >
+      <widget class="QPushButton" name="btnclose" >
        <property name="text" >
         <string>&amp;Close</string>
        </property>

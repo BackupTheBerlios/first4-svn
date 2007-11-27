@@ -37,6 +37,7 @@ cfgfrm::cfgfrm ( QWidget * parent, Qt::WFlags f )
 //
 void cfgfrm::init()
 {
+	progbar->setValue ( 0 );
 	this->setFixedSize ( this->width(), this->height() );
 	vars v;
 	QStringList sgeo = v.loadgeo ( this->objectName() );
@@ -48,9 +49,6 @@ void cfgfrm::init()
 	}
 	lbluser->setText ( username );
 	txtuser->setText ( username );
-
-	if ( username != "Administrator" )
-		cfgtab->setEnabled ( false );
 
 	maintab->setCurrentIndex ( 0 );
 	cfgtab->setCurrentIndex ( 0 );
@@ -73,16 +71,31 @@ void cfgfrm::init()
 	listpermissions->setColumnWidth ( 2, 40 );
 
 	//init functions
-	loadlangfile();
-	loaddbinfo();
-	loadservers();
-	loadusers();
-	loadressources();
-	loadsettings();
-	loadowndata();
-	load_db_tools();
-	load_local_tools();
 
+	loadlangfile();
+	progbar->setValue ( 10 );
+	loaddbinfo();
+	progbar->setValue ( 20 );
+	loadservers();
+	progbar->setValue ( 30 );
+	loadsettings();
+	progbar->setValue ( 40 );
+	loadowndata();
+	progbar->setValue ( 50 );
+	load_local_tools();
+	progbar->setValue ( 60 );
+	if ( username != "Administrator" )
+		cfgtab->setEnabled ( false );
+	else
+	{
+		loadusers();
+		progbar->setValue ( 70 );
+		load_db_tools();
+		progbar->setValue ( 80 );
+		loadressources();
+	}
+	
+	progbar->setValue ( 80 );
 	resdefframe->setCurrentIndex ( 3 );
 
 	txtdocpath->setText ( docfolder );
@@ -121,6 +134,8 @@ void cfgfrm::init()
 	connect ( btn_tools_save_db, SIGNAL ( released() ), this, SLOT ( save_db_tools() ) );
 	connect ( btn_tools_reload_local, SIGNAL ( released() ), this, SLOT ( load_local_tools() ) );
 	connect ( btn_tools_reload_db, SIGNAL ( released() ), this, SLOT ( load_db_tools() ) );
+	
+	progbar->setValue ( 100 );
 }
 //
 void cfgfrm::closeEvent ( QCloseEvent* ce )
@@ -191,8 +206,6 @@ void cfgfrm::loadlangfile()
 		txtlang->setText ( streamline );
 		file.close();
 	}
-	else
-		QMessageBox::critical ( 0,"Error...", tr ( "Error during Language-File reading!" ) );
 }
 //
 void cfgfrm::selectlangfile()
@@ -330,7 +343,6 @@ void cfgfrm::loadusers()
 {
 	if ( lbluser->text() == "Administrator" )
 	{
-		progbar->setValue ( 10 );
 		QSqlQuery querybenutzer ( "SELECT username, fullname FROM userstab;" ); //Lade Benutzer
 		listallusers.clear();
 		listusers->clear();
@@ -1273,6 +1285,7 @@ void cfgfrm::save_local_tools()
 	if ( file.open ( QIODevice::WriteOnly ) )
 	{
 		int i;
+		bool found = FALSE;
 		QTextStream stream ( &file );
 		for(i=0;i<lines.count();i++)
 		{
@@ -1288,7 +1301,16 @@ void cfgfrm::save_local_tools()
 				while(lines[i] != "")
 					i++;
 				stream << "\n";
+				found = TRUE;
 			}
+		}
+		if(!found)
+		{
+			stream << "[EXT_TOOLS]" << "\n";
+			stream << "DVI2PS=" << txt_tool_dvi2ps->text() << "\n";
+			stream << "DVIVIEWER=" << txt_tool_dviviewer->text() << "\n";
+			stream << "PRINT=" << txt_tool_print->text() << "\n";
+			stream << "TEX2DVI=" << txt_tool_tex2dvi->text() << "\n";
 		}
 		file.close();
 	}

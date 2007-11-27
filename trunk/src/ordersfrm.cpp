@@ -51,6 +51,7 @@ int ordersfrm::init()
 	connect(btndelete, SIGNAL(released()), this, SLOT(deleteentry()));
 	connect(btncompleted, SIGNAL(released()), this, SLOT(complete()));
 	connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
+	connect(btnclose, SIGNAL(released()), this, SLOT(close()));
 
     return r;
 }
@@ -86,16 +87,21 @@ void ordersfrm::countentries()
 int ordersfrm::checkrights()
 {
     int permission = 0;
-    QString conn = "SELECT users FROM orderscfgtab WHERE `users` LIKE '%"+username+" [1%';";
-    QSqlQuery query(conn);
-    if ( query.isActive())
+    if(username != "Administrator" )
     {
-		query.next();
-		if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1)=="[10]")
-		    permission = 1;
-		if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1)=="[11]")
-		    permission = 2;
-    }
+	    QString conn = "SELECT users FROM orderscfgtab WHERE `users` LIKE '%"+username+" [1%';";
+    	QSqlQuery query(conn);
+	    if ( query.isActive())
+    	{
+			query.next();
+			if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1)=="[10]")
+		    	permission = 1;
+			if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1)=="[11]")
+		    	permission = 2;
+    	}	
+   	}
+   	else
+   		permission = 2;
     return permission;
 }
 //

@@ -30,15 +30,15 @@ int invfrm::init()
 {
     switch (this->checkrights())
     {
-    case 0:
-		QMessageBox::information(0, tr("Authorization Required..."), tr("You are not authorized to open this modul\n\nPlease contact your Administrator")); 
-		return 0;
-	break;
-    case 1:
-		btnnew->setEnabled(FALSE);
-		btnsave->setEnabled(FALSE);
-		btncomplete->setEnabled(FALSE);
-	break;
+    	case 0:
+			QMessageBox::information(0, tr("Authorization Required..."), tr("You are not authorized to open this modul\n\nPlease contact your Administrator")); 
+			return 0;
+		break;
+	    case 1:
+			btnnew->setEnabled(FALSE);
+			btnsave->setEnabled(FALSE);
+			btncomplete->setEnabled(FALSE);
+		break;
     }
     
 	maintab->hideColumn(0);
@@ -94,17 +94,22 @@ int invfrm::init()
 int invfrm::checkrights()
 {
     int permission = 0;
-    QString qstr = "SELECT users FROM invcfgtab WHERE `users` LIKE '%"+username+" [1%';";
-    QSqlQuery query(qstr);
-    if(query.isActive())
+    if(username != "Administrator")
     {
-		if(query.next())
-		{
-		    permission = 1;
-		    if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1) == "[11]")
-				permission = 2;
-		}
-    }
+    	QString qstr = "SELECT users FROM invcfgtab WHERE `users` LIKE '%"+username+" [1%';";
+	    QSqlQuery query(qstr);
+    	if(query.isActive())
+	    {
+			if(query.next())
+			{
+		    	permission = 1;
+			    if(query.value(0).toString().section(username, 1, 1).section(" ", 1, 1) == "[11]")
+					permission = 2;
+			}
+    	}
+   	}
+   	else
+   		permission = 2;
     return permission;
 }
 //

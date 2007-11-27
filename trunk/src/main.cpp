@@ -26,8 +26,6 @@ int main ( int argc, char ** argv )
 		langfile = stream.readLine();
 		file.close();
 	}
-	else
-		QMessageBox::critical ( 0,"Error...", "Error during Language-File reading!" );
 
 	QTranslator translator;
 	translator.load ( langfile );
