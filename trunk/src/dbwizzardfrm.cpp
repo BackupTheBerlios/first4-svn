@@ -238,7 +238,8 @@ sqlcreatelist << "CREATE TABLE `userstab` (`ID` int(11) NOT NULL auto_increment,
 sqlcreatelist << "LOCK TABLES `userstab` WRITE;";
 sqlcreatelist << "INSERT INTO `userstab` VALUES (11,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
 sqlcreatelist << "UNLOCK TABLES;";
-sqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";	
+sqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+sqlcreatelist << "INSERT INTO datatabs (name, description, users, cols, tabtyp) VALUES ('vattab', 'VAT-Table', '"+txtnewadminuser->text()+" [11] , ', 'Tax:70#Comments:200', 'vattab');";
 //	
 
 	QSqlError sqlerror;

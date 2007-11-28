@@ -13,7 +13,7 @@
    <string>Stock / Datatables</string>
   </property>
   <property name="windowIcon" >
-   <iconset/>
+   <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
   </property>
   <layout class="QGridLayout" >
    <property name="leftMargin" >

@@ -82,8 +82,8 @@ int main ( int argc, char ** argv )
 
 		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 		
-		int sec = QTime::currentTime().second();
-		while(sec != QTime::currentTime().second()-1) ; //wait 2 secs
+		QTime now = QTime::currentTime();
+		while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
 		
 	    mfrm->show();
 		

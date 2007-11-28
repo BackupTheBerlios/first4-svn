@@ -123,7 +123,7 @@ void doceditfrm::init()
     connect(btnsearchaddr, SIGNAL(released()), this, SLOT(selectaddress()));
     connect(cmbdoc, SIGNAL(activated(int)), this, SLOT(selecteddocument()));
     connect(tabmain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-	connect(tabmain, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
+	connect(tabmain, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
 	connect(btnclearsearch, SIGNAL(released()), this, SLOT(clearlblid()));
 	connect(btncomplete, SIGNAL(released()), this, SLOT(completedoc()));
 	connect(btnopen, SIGNAL(released()), this, SLOT(opendoc()));

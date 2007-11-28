@@ -38,14 +38,15 @@ void vars::savegeo(QString frname, bool max, int x, int y, int width, int height
 		{
 			if(lines[i] == "[WINDOW_POSITIONS]")
 				foundsec = TRUE;
-			if(foundsec && lines[i].section("=",0,0) == frname)
+			if(foundsec && lines[i].section("=",0,0) == frname && !foundfrm)
 			{
 				stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";	
 				foundfrm = TRUE;
 			}
-			else if(foundsec && lines[i].simplified() == "")
+			else if(foundsec && lines[i].section("=",0,0) == frname && foundfrm) {	}
+			else if(foundsec && lines[i].simplified() == "" && !foundfrm)
 			{
-				stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";
+				stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n\n";
 				foundfrm = TRUE;
 			}
 			else
@@ -55,11 +56,11 @@ void vars::savegeo(QString frname, bool max, int x, int y, int width, int height
 		}
 		if(!foundsec)
 		{
-			stream << "[WINDOW_POSITIONS]" << "\n";
+			stream << "\n" << "[WINDOW_POSITIONS]" << "\n";
 			stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";
 			stream << "\n";
 		}
-		if(foundsec && ! foundfrm)
+		if(foundsec && !foundfrm)
 		{
 			stream << frname << QString("=%1,%2,%3,%4,%5").arg(max).arg(x).arg(y).arg(width).arg(height) << "\n";	
 			stream << "\n";
@@ -102,52 +103,74 @@ QStringList vars::loadgeo(QString frmname)
 //
 void vars::savecolwidth(QString frmname, QString obj, QStringList colwidth)
 {
-    QStringList lines;
-    QFile file(QDir::homePath()+"/.first4/columns.conf" );
-    if(file.open(QIODevice::ReadOnly))
-    {
-		QTextStream stream(&file);
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/"+username+".first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
 		while(!stream.atEnd())
-		    lines << stream.readLine();
-		file.close();    
-    }
+			lines << stream.readLine();
+	}
+	file.close();
     
-    bool found = FALSE;
-    int i;
-    if(file.open(QIODevice::WriteOnly))
-    {
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i;
 		QTextStream stream(&file);
+		bool foundsec = FALSE;
+		bool foundobj = FALSE;
 		for(i=0;i<lines.count();i++)
 		{
-		    if(lines[i].section("-",0,0) == frmname && lines[i].section("-", 1, 1).section("-", 0, 0) == obj)
-		    {
-				found = TRUE;
+			if(lines[i] == "[COLUMNS]")
+				foundsec = TRUE;
+			if(foundsec && lines[i].section("-",0,0) == frmname && lines[i].section("-", 1, 1).section("-", 0, 0) == obj && !foundobj)
+			{
 				stream << QString("%1-%2-%3").arg(frmname).arg(obj).arg(colwidth.join(";")) << "\n";
-		    }  
-		    else
-			stream << lines[i] << "\n";
+				foundobj = TRUE;
+			}
+			else if(foundsec && lines[i].section("-",0,0) == frmname && lines[i].section("-", 1, 1).section("-", 0, 0) == obj && foundobj) { }
+			else if(foundsec && lines[i].simplified() == "")
+			{
+				stream << QString("%1-%2-%3").arg(frmname).arg(obj).arg(colwidth.join(";")) << "\n\n";
+				foundobj = TRUE;
+			}
+			else
+			{
+				stream << lines[i] << "\n";	
+			}
 		}
-		if(!found)
-		    stream << QString("%1-%2-%3").arg(frmname).arg(obj).arg(colwidth.join(";")) << "\n";
-		file.close();    
-    }
+		if(!foundsec)
+		{
+			stream << "\n\n" << "[COLUMNS]" << "\n";
+			stream << QString("%1-%2-%3").arg(frmname).arg(obj).arg(colwidth.join(";")) << "\n";
+			stream << "\n";
+		}
+		if(foundsec && ! foundobj)
+		{
+			stream << QString("%1-%2-%3").arg(frmname).arg(obj).arg(colwidth.join(";")) << "\n";
+			stream << "\n";
+		}
+		file.close();
+	}
+	else
+		QMessageBox::warning(0, "Window positions...", "Can't write to configuration file.");
 }
 //
 QStringList vars::loadcolwidth(QString frmname, QString obj)
-{
-    QString tmpstr;
-    QStringList cols;
-    QFile file(QDir::homePath()+"/.first4/columns.conf");
-    if(file.open(QIODevice::ReadOnly))
-    {
-		QTextStream stream(&file);
-		while(!stream.atEnd())
-		{
-		    tmpstr = stream.readLine();
-		    if(tmpstr.section("-", 0, 0) == frmname && tmpstr.section("-", 1, 1).section("-", 0, 0) == obj)
-		    	cols = tmpstr.section("-", 2, 2).split(";");
-		}
-		file.close();    
-    }
+{	
+	QString line;
+	QStringList cols;
+	QFile file ( QDir::homePath() +"/.first4/"+username+".first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		while(stream.readLine() != "[COLUMNS]" && !stream.atEnd());
+		do {
+			line = stream.readLine();
+			if(line.section("-", 0, 0) == frmname && line.section("-", 1, 1).section("-", 0, 0) == obj)
+				cols = line.section("-", 2, 2).split(";");
+		} while (line != "");
+		file.close();
+	}
     return cols;
 }
