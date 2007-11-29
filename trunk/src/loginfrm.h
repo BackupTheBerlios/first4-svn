@@ -12,6 +12,7 @@ public:
 	bool loadservers();
 	void saveservers();
 	void loadsysvars();
+	void init();
 public slots:
 	void checkpwd();
 };

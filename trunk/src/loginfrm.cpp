@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 //
 #include "loginfrm.h"
 #include "cfgfrm.h"
@@ -21,10 +22,10 @@ loginfrm::loginfrm( QWidget * parent, Qt::WFlags f)
 }
 //
 //
-bool loginfrm::loadservers()
+void loginfrm::init()
 {
     this->setFixedSize(this->width(), this->height());
-    this->setWindowTitle(this->windowTitle()+firstver);
+    this->setWindowTitle(this->windowTitle()+firstver);	
     
     vars v;
     QStringList sgeo = v.loadgeo(this->objectName());
@@ -34,25 +35,33 @@ bool loginfrm::loadservers()
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
 	    this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
     }	
-	
+    
 	connect( btnok, SIGNAL( released() ), this, SLOT( checkpwd() ) );
-    QFile file(QDir::homePath()+"/.first4/servers.conf" );
-    if(file.open(QIODevice::ReadOnly))
-    {
-		QTextStream stream(&file);
+}
+//
+bool loginfrm::loadservers()
+{
+	QStringList tmp;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
 		QString streamline;
-		while(!stream.atEnd())
-		{
-	    	streamline = stream.readLine();
-		    uid.append(streamline.section("@",0,0).section(":",0,0));
-	    	pwd.append(streamline.section("@",0,0).section(":",1,1));
-		    dbserver.append(streamline.section("@",1,1).section("/",0,0));
-	    	dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-		    port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
-	    	cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-		}
-		file.close();    
-    }
+		QTextStream stream ( &file );
+		while(stream.readLine() != "[SERVERS]" && !stream.atEnd());
+		do {
+			streamline = stream.readLine();
+			if(streamline != "")
+			{
+			    uid.append(streamline.section("@",0,0).section(":",0,0));
+	    		pwd.append(streamline.section("@",0,0).section(":",1,1));
+			    dbserver.append(streamline.section("@",1,1).section("/",0,0));
+	    		dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
+			    port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
+	    		cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0));	
+			}
+		} while (streamline != "" && !stream.atEnd());
+		file.close();
+	}
     
     if(cmbdb->count()==0)
     	return FALSE;
@@ -91,13 +100,17 @@ void loginfrm::checkpwd()
 				else
 				{
 				    first4DB.close();
-				    QSqlDatabase::removeDatabase("first4DB");
 				    boxpwd->setText("");
 				    boxuser->setFocus();
 				    boxuser->selectAll();
 				    QMessageBox::warning(this,"Login...",tr("Invalid Username or Password"));
 				}
 		    }
+			else
+    		{
+    			QSqlError sqlerror = first4DB.lastError();
+				QMessageBox::critical(0,"Error...", tr("Query Error.")+"\n\n"+sqlerror.text());
+			}
 		} else {
 		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!"));
 		}
@@ -106,38 +119,82 @@ void loginfrm::checkpwd()
 //
 void loginfrm::saveservers()
 {
-    int i = cmbdb->currentIndex();
+    int ii = cmbdb->currentIndex();
     
-    dbhost= dbserver[i];
-    dbname = dbname_local[i];
-    dbuid = uid[i];
-    dbpwd = pwd[i];
-    dbport = port[i];
+    dbhost= dbserver[ii];
+    dbname = dbname_local[ii];
+    dbuid = uid[ii];
+    dbpwd = pwd[ii];
+    dbport = port[ii];
    
     QDir d(QDir::homePath()+"/.first4");
     if(!d.exists() )
     {
-	if(!d.mkdir(QDir::homePath()+"/.first4"))
-	    QMessageBox::critical(0,"Error...", tr("Error when storing the server list!"));
+		if(!d.mkdir(QDir::homePath()+"/.first4"))
+	    	QMessageBox::critical(0,"Error...", tr("Error when storing the server list!"));
     }
     QDir tmpdir(QDir::homePath()+"/.first4/tmp");
     if(!tmpdir.exists() )
     {
-	if(!tmpdir.mkdir(QDir::homePath()+"/.first4/tmp"))
-	    QMessageBox::critical(0,"Error...", tr("Error when storing the server list!"));
+		if(!tmpdir.mkdir(QDir::homePath()+"/.first4/tmp"))
+	    	QMessageBox::critical(0,"Error...", tr("Error when storing the server list!"));
     }
    
-    QFile file(QDir::homePath()+"/.first4/servers.conf");
-    if(file.open(QIODevice::WriteOnly))
-    {
-		QTextStream stream(&file);	
-		stream << uid[i] << ":" << pwd[i] << "@" << dbserver[i] << "/" << dbname_local[i] << ":" << port[i] << "\n";
-		for(i=0;i<cmbdb->currentIndex();i++)
-		    stream << uid[i] << ":" << pwd[i] << "@" << dbserver[i] << "/" << dbname_local[i] << ":" << port[i] << "\n";
-		for(i=cmbdb->currentIndex()+1;i<cmbdb->count();i++)
-		    stream << uid[i] << ":" << pwd[i] << "@" << dbserver[i] << "/" << dbname_local[i] << ":" << port[i] << "\n";
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		while(!stream.atEnd())
+			lines << stream.readLine();
+	}
+	file.close();
+    
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i;
+		QTextStream stream(&file);
+		bool foundsec = FALSE;
+		for(i=0;i<lines.count();i++)
+		{
+			if(lines[i] == "[SERVERS]")
+			{
+				foundsec = TRUE;
+				stream << "[SERVERS]" << "\n";
+
+				stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				for(ii=0;ii<cmbdb->currentIndex();ii++)
+		    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
+		    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+
+				while(lines[i].simplified() != "")
+					i++;
+				while(i<lines.count())
+				{
+					stream << lines[i] << "\n";	
+					i++;
+				}
+			}
+			else
+			{
+				stream << lines[i] << "\n";	
+			}
+		}
+		if(!foundsec)
+		{
+			stream << "\n" << "[SERVERS]" << "\n";
+			stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			for(ii=0;ii<cmbdb->currentIndex();ii++)
+	    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
+	    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			stream << "\n";
+		}
 		file.close();
-    }
+	}
+	else
+		QMessageBox::warning(0, "Window positions...", "Can't write to configuration file.");
 }
 //
 void loginfrm::loadsysvars()

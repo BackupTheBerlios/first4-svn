@@ -5,8 +5,6 @@
 #include <QTextStream>
 #include <QDir>
 #include <QTranslator>
-#include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QTime>
 
 #include "mainfrm.h"
@@ -49,6 +47,7 @@ int main ( int argc, char ** argv )
 	app.installTranslator ( &translator );
 
 	loginfrm logfrm;
+	logfrm.init();
 	if(!logfrm.loadservers())
 	{
 		dbwizzardfrm dbwiz;
@@ -89,7 +88,6 @@ int main ( int argc, char ** argv )
 		
 		splash.finish( mfrm );
 		return app.exec();
-		QSqlDatabase::removeDatabase ( "firstDB" );
 	}
 	return 0;
 }

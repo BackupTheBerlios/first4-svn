@@ -54,7 +54,6 @@ void dbwizzardfrm::next()
 		else if(rbtnmysqlnew->isChecked())
 		{
 			createnewmysql();
-			//writeconffile();
 		}
 	}
 
@@ -122,7 +121,7 @@ void dbwizzardfrm::enable_next()
 //
 void dbwizzardfrm::checkdbs()
 {
-    QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL", "checkdb");
     checkDB.setUserName(txtexuser->text());
     checkDB.setPassword(txtexpwd->text());
     checkDB.setHostName(txtexhost->text());
@@ -130,15 +129,13 @@ void dbwizzardfrm::checkdbs()
     if(checkDB.open())
     {
 		// Database successfully opened;
-		QSqlQuery query;
-		query.prepare( "SHOW DATABASES;");
-		query.exec();
+		QSqlQuery query("SHOW DATABASES", checkDB);
 		if(query.isActive())
 		{
 		    while(query.next())
 		    {
 				QString qstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
-				QSqlQuery query2(qstr);
+				QSqlQuery query2(qstr, checkDB);
 				query2.next();
 				QString firstversion = query2.value(0).toString();
 				if(firstversion == "")
@@ -153,6 +150,7 @@ void dbwizzardfrm::checkdbs()
     	QSqlError sqlerror = checkDB.lastError();
 		QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
     }
+	QSqlDatabase::removeDatabase ( "checkdb" );
 }
 //
 void dbwizzardfrm::writeconffile()
@@ -163,32 +161,59 @@ void dbwizzardfrm::writeconffile()
 		if(!d.mkdir(QDir::homePath()+"/.first4"))
 	    	QMessageBox::critical(0,"Error...", tr("Error when storing the server list!"));
     }    
-   
-    QFile file(QDir::homePath()+"/.first4/servers.conf");
-    if(!file.exists ())
-    {
-		if(file.open(QIODevice::WriteOnly))
+       
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		while(!stream.atEnd())
+			lines << stream.readLine();
+	}
+	file.close();
+    
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i;
+		QTextStream stream(&file);
+		bool foundsec = FALSE;
+		for(i=0;i<lines.count();i++)
 		{
-	    	QTextStream stream(&file);
+			if(lines[i] == "[SERVERS]")
+			{
+				foundsec = TRUE;
+				stream << lines[i] << "\n";
+
+	    		if(rbtnmysqlex->isChecked())
+		    		stream << lblexuser->text() << ":" << txtexpwd->text() << "@" << lblexhost->text() << "/" << lblexdbname->text() << ":" << lblexport->text() << "\n";
+		    	else if(rbtnmysqlnew->isChecked())
+		    		stream << txtnewfirstuser->text() << ":" << txtnewfirstpwd->text() << "@" << txtnewhost->text() << "/" << txtnewdbname->text() << ":" << txtnewport->text() << "\n";
+				i++;
+				while(i<lines.count())
+				{
+					stream << lines[i] << "\n";	
+					i++;
+				}
+			}
+			else
+			{
+				stream << lines[i] << "\n";	
+			}
+		}
+		if(!foundsec)
+		{
+			stream << "\n" << "[SERVERS]" << "\n";
 	    	if(rbtnmysqlex->isChecked())
 		    	stream << lblexuser->text() << ":" << txtexpwd->text() << "@" << lblexhost->text() << "/" << lblexdbname->text() << ":" << lblexport->text() << "\n";
 		    else if(rbtnmysqlnew->isChecked())
 		    	stream << txtnewfirstuser->text() << ":" << txtnewfirstpwd->text() << "@" << txtnewhost->text() << "/" << txtnewdbname->text() << ":" << txtnewport->text() << "\n";
+			stream << "\n";
 		}
 		file.close();
-    }
-    else
-    {
-		if(file.open(QIODevice::WriteOnly | QIODevice::Append ))
-		{
-	    	QTextStream stream(&file);	
-	    	if(rbtnmysqlex->isChecked())
-		    	stream << lblexuser->text() << ":" << txtexpwd->text() << "@" << lblexhost->text() << "/" << lblexdbname->text() << ":" << lblexport->text() << "\n";
-		    else if(rbtnmysqlnew->isChecked())
-		    	stream << txtnewfirstuser->text() << ":" << txtnewfirstpwd->text() << "@" << txtnewhost->text() << "/" << txtnewdbname->text() << ":" << txtnewport->text() << "\n";
-		}
-		file.close();
-    }
+	}
+	else
+		QMessageBox::warning(0, "Window positions...", "Can't write to configuration file.");
+    
     this->accept();
 }
 //

@@ -288,35 +288,81 @@ void cfgfrm::delservers()
 {
 	if ( listservers->currentItem() )
 		listservers->takeItem ( listservers->currentRow() );
-	QFile file ( QDir::homePath() +"/.first4/servers.conf" );
-	if ( file.open ( QIODevice::WriteOnly ) )
+	
+	QStringList lines;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
 	{
-		int i;
-		for ( i=0;i<listservers->count();i++ )
-		{
-			listservers->setCurrentRow ( i );
-			QListWidgetItem *item = listservers->currentItem();
-			QTextStream stream ( &file );
-			stream << item->text() << "\n";
-		}
+		QTextStream stream ( &file );
+		while(!stream.atEnd())
+			lines << stream.readLine();
 	}
 	file.close();
+    
+	if ( file.open ( QIODevice::WriteOnly ) )
+	{
+		int i, ii;
+		QTextStream stream(&file);
+		bool foundsec = FALSE;
+		for(i=0;i<lines.count();i++)
+		{
+			if(lines[i] == "[SERVERS]")
+			{
+				foundsec = TRUE;
+				stream << "[SERVERS]" << "\n";
+				for (ii=0;ii<listservers->count();ii++ )
+				{
+					listservers->setCurrentRow ( ii );
+					QListWidgetItem *item = listservers->currentItem();
+					stream << item->text() << "\n";
+				}
+				while(lines[i].simplified() != "")
+					i++;
+				while(i<lines.count())
+				{
+					stream << lines[i] << "\n";	
+					i++;
+				}
+			}
+			else
+			{
+				stream << lines[i] << "\n";	
+			}
+		}
+		if(!foundsec)
+		{
+			stream << "\n" << "[SERVERS]" << "\n";
+			for (ii=0;ii<listservers->count();ii++ )
+			{
+				listservers->setCurrentRow ( ii );
+				QListWidgetItem *item = listservers->currentItem();
+				stream << item->text() << "\n";
+			}
+			stream << "\n";
+		}
+		file.close();
+	}
+	else
+		QMessageBox::warning(0, "Window positions...", "Can't write to configuration file.");
+	
 	loadservers();
 }
 //
 void cfgfrm::loadservers()
 {
 	listservers->clear();
-	QFile file ( QDir::homePath() +"/.first4/servers.conf" );
+    QStringList tmp;
+	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
+		QString line;
 		QTextStream stream ( &file );
-		QString streamline;
-		while ( !stream.atEnd() )
-		{
-			streamline = stream.readLine();
-			listservers->insertItem ( -1, streamline );
-		}
+		while(stream.readLine() != "[SERVERS]" && !stream.atEnd());
+		do {
+			line = stream.readLine();
+			if(line != "")
+				listservers->insertItem ( -1, line );
+		} while (line != "" && !stream.atEnd());
 		file.close();
 	}
 }
@@ -396,53 +442,48 @@ void cfgfrm::selectuser()
 		query.next();
 		txt_users_fullname->setText ( query.value ( 2 ).toString().simplified() );
 		txt_users_id->setText ( query.value ( 0 ).toString().simplified() );
-		if ( seluser == "Administrator" )
-			cfgtab->setEnabled ( FALSE );
-		else
-		{
-			cfgtab->setEnabled ( TRUE );
-			txt_users_pwd1->setText("");
-			txt_users_pwd2->setText("");
-			txt_users_firstname->setText ( query.value ( 3 ).toString().simplified() );
-			txt_users_lastname->setText ( query.value ( 4 ).toString().simplified() );
-			QString s = query.value ( 5 ).toString();
-			txtdob->setDate ( QDate::QDate ( s.section ( "-", 0, 0 ).toInt(), s.section ( "-", 1, 1 ).toInt(), s.section ( "-", 2, 2 ).toInt() ) );
-			if (s == "")
-				txtdob->setDate ( QDate::QDate(1970, 01, 01 ));
-				
-			txt_users_privat_street->setText ( query.value ( 6 ).toString() );
-			txt_users_privat_zip->setText ( query.value ( 7 ).toString() );
-			txt_users_privat_location->setText ( query.value ( 8 ).toString() );
-			txt_users_privat_country->setText ( query.value ( 9 ).toString() );
-			txt_users_business_street->setText ( query.value ( 10 ).toString() );
-			txt_users_business_zip->setText ( query.value ( 11 ).toString() );
-			txt_users_business_location->setText ( query.value ( 12 ).toString() );
-			txt_users_business_country->setText ( query.value ( 13 ).toString() );
-			txt_users_business_prof->setText ( query.value ( 14 ).toString() );
-			txt_users_business_unit->setText ( query.value ( 15 ).toString() );
-			txt_users_business_position->setText ( query.value ( 16 ).toString() );
-			txt_users_business_type->setEditText ( query.value ( 17 ).toString() );
-			txt_users_business_grade->setText ( query.value ( 37 ).toString() );
-			txt_users_private_tel->setText ( query.value ( 18 ).toString() );
-			txt_users_private_fax->setText ( query.value ( 19 ).toString() );
-			txt_users_private_mobile->setText ( query.value ( 20 ).toString() );
-			txt_users_private_pager->setText ( query.value ( 21 ).toString() );
-			txt_users_private_voip->setText ( query.value ( 22 ).toString() );
-			txt_users_private_email1->setText ( query.value ( 23 ).toString() );
-			txt_users_private_email2->setText ( query.value ( 24 ).toString() );
-			txt_users_private_email3->setText ( query.value ( 25 ).toString() );
-			txt_users_private_website->setText ( query.value ( 26 ).toString() );
-			txt_users_business_tel->setText ( query.value ( 27 ).toString() );
-			txt_users_business_teldir->setText ( query.value ( 28 ).toString() );
-			txt_users_business_fax->setText ( query.value ( 29 ).toString() );
-			txt_users_business_mobile->setText ( query.value ( 30 ).toString() );
-			txt_users_business_pager->setText ( query.value ( 31 ).toString() );
-			txt_users_business_voip->setText ( query.value ( 32 ).toString() );
-			txt_users_business_email1->setText ( query.value ( 33 ).toString() );
-			txt_users_business_email2->setText ( query.value ( 34 ).toString() );
-			txt_users_business_email3->setText ( query.value ( 35 ).toString() );
-			txtnotes->setText ( query.value ( 36 ).toString() );
-		}
+
+		txt_users_pwd1->setText("");
+		txt_users_pwd2->setText("");
+		txt_users_firstname->setText ( query.value ( 3 ).toString().simplified() );
+		txt_users_lastname->setText ( query.value ( 4 ).toString().simplified() );
+		QString s = query.value ( 5 ).toString();
+		txtdob->setDate ( QDate::QDate ( s.section ( "-", 0, 0 ).toInt(), s.section ( "-", 1, 1 ).toInt(), s.section ( "-", 2, 2 ).toInt() ) );
+		if (s == "")
+			txtdob->setDate ( QDate::QDate(1970, 01, 01 ));
+			
+		txt_users_privat_street->setText ( query.value ( 6 ).toString() );
+		txt_users_privat_zip->setText ( query.value ( 7 ).toString() );
+		txt_users_privat_location->setText ( query.value ( 8 ).toString() );
+		txt_users_privat_country->setText ( query.value ( 9 ).toString() );
+		txt_users_business_street->setText ( query.value ( 10 ).toString() );
+		txt_users_business_zip->setText ( query.value ( 11 ).toString() );
+		txt_users_business_location->setText ( query.value ( 12 ).toString() );
+		txt_users_business_country->setText ( query.value ( 13 ).toString() );
+		txt_users_business_prof->setText ( query.value ( 14 ).toString() );
+		txt_users_business_unit->setText ( query.value ( 15 ).toString() );
+		txt_users_business_position->setText ( query.value ( 16 ).toString() );
+		txt_users_business_type->setEditText ( query.value ( 17 ).toString() );
+		txt_users_business_grade->setText ( query.value ( 37 ).toString() );
+		txt_users_private_tel->setText ( query.value ( 18 ).toString() );
+		txt_users_private_fax->setText ( query.value ( 19 ).toString() );
+		txt_users_private_mobile->setText ( query.value ( 20 ).toString() );
+		txt_users_private_pager->setText ( query.value ( 21 ).toString() );
+		txt_users_private_voip->setText ( query.value ( 22 ).toString() );
+		txt_users_private_email1->setText ( query.value ( 23 ).toString() );
+		txt_users_private_email2->setText ( query.value ( 24 ).toString() );
+		txt_users_private_email3->setText ( query.value ( 25 ).toString() );
+		txt_users_private_website->setText ( query.value ( 26 ).toString() );
+		txt_users_business_tel->setText ( query.value ( 27 ).toString() );
+		txt_users_business_teldir->setText ( query.value ( 28 ).toString() );
+		txt_users_business_fax->setText ( query.value ( 29 ).toString() );
+		txt_users_business_mobile->setText ( query.value ( 30 ).toString() );
+		txt_users_business_pager->setText ( query.value ( 31 ).toString() );
+		txt_users_business_voip->setText ( query.value ( 32 ).toString() );
+		txt_users_business_email1->setText ( query.value ( 33 ).toString() );
+		txt_users_business_email2->setText ( query.value ( 34 ).toString() );
+		txt_users_business_email3->setText ( query.value ( 35 ).toString() );
+		txtnotes->setText ( query.value ( 36 ).toString() );
 	}
 }
 //
