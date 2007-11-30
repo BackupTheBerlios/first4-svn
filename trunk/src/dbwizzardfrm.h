@@ -17,5 +17,8 @@ private slots:
 private:
 	void writeconffile();
 	void createnewmysql();
+	void createnewsqlite();
+private slots:
+	void openfd();
 };
 #endif
