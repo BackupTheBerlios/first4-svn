@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QDebug>
 //
 #include "loginfrm.h"
 #include "cfgfrm.h"
@@ -52,12 +53,26 @@ bool loginfrm::loadservers()
 			streamline = stream.readLine();
 			if(streamline != "")
 			{
-			    uid.append(streamline.section("@",0,0).section(":",0,0));
-	    		pwd.append(streamline.section("@",0,0).section(":",1,1));
-			    dbserver.append(streamline.section("@",1,1).section("/",0,0));
-	    		dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-			    port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
-	    		cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0));	
+				if(streamline.section(":", 0, 0) == "SQLITE")
+				{
+					streamline = streamline.section(":", 1, 10);
+			    	uid.append("");
+		    		pwd.append("");
+			    	dbserver.append("");
+		    		dbname_local.append(streamline);
+			    	port.append("");
+					cmbdb->addItem(streamline + " (SQLite3)");
+				}
+				else
+				{
+					streamline = streamline.section(":", 1, 10);
+			    	uid.append(streamline.section("@",0,0).section(":",0,0));
+		    		pwd.append(streamline.section("@",0,0).section(":",1,1));
+			    	dbserver.append(streamline.section("@",1,1).section("/",0,0));
+		    		dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
+			    	port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
+		    		cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0) + " (MySQL)");
+				}
 			}
 		} while (streamline != "" && !stream.atEnd());
 		file.close();
@@ -73,28 +88,46 @@ void loginfrm::checkpwd()
 {
     if(boxuser->text() != "")
     {	
-		QSqlDatabase first4DB = QSqlDatabase::addDatabase("QMYSQL");
-		first4DB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
-		first4DB.setUserName(uid[cmbdb->currentIndex()]);
-		first4DB.setPassword(pwd[cmbdb->currentIndex()]);
-		first4DB.setPort(port[cmbdb->currentIndex()].toInt());
-		first4DB.setHostName(dbserver[cmbdb->currentIndex()]);
+    	QSqlDatabase first4DB;
+    	if(dbserver[cmbdb->currentIndex()] != "")
+    	{
+			first4DB = QSqlDatabase::addDatabase("QMYSQL");
+			first4DB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
+			first4DB.setUserName(uid[cmbdb->currentIndex()]);
+			first4DB.setPassword(pwd[cmbdb->currentIndex()]);
+			first4DB.setPort(port[cmbdb->currentIndex()].toInt());
+			first4DB.setHostName(dbserver[cmbdb->currentIndex()]);	
+   		}
+   		else
+   		{
+   			first4DB = QSqlDatabase::addDatabase("QSQLITE");
+   			first4DB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
+  		}
 		if(first4DB.open())
 		{
 		    // Database successfully opened;
 		    cfgfrm cfrm;
-		    QString qstr = QString( "SELECT fullname FROM userstab WHERE username='%1' AND userpass = '%2'").arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
+		    QString qstr = QString( "SELECT fullname FROM userstab WHERE username='%1' AND userpass = '%2';").arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
 		    QSqlQuery query(qstr);
 		    if(query.isActive())
 		    {
+				query.next();
 				if(query.size()>0)
 				{
-				    query.next();
 				    vars v;
 					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				    username = boxuser->text();
 				    fullname = query.value(0).toString();
 				    loadsysvars();
+				    this->accept();
+				}
+				else if(query.size() == -1 && query.value(0).toString() != "")
+				{
+				   	vars v;
+					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
+				   	username = boxuser->text();
+				    fullname = query.value(0).toString();
+				   	loadsysvars();
 				    this->accept();
 				}
 				else
@@ -161,12 +194,24 @@ void loginfrm::saveservers()
 			{
 				foundsec = TRUE;
 				stream << "[SERVERS]" << "\n";
-
-				stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				if(dbserver[ii] != "")
+					stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				else
+					stream << "SQLITE:" << dbname_local[ii] << "\n";
 				for(ii=0;ii<cmbdb->currentIndex();ii++)
-		    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				{
+					if(dbserver[ii] != "")
+		    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+		    		else
+		    			stream << "SQLITE:" << dbname_local[ii] << "\n";
+				}
 				for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
-		    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				{
+					if(dbserver[ii] != "")
+		    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+		    		else
+		    			stream << "SQLITE:" << dbname_local[ii] << "\n";
+				}
 
 				while(lines[i].simplified() != "")
 					i++;
@@ -184,11 +229,26 @@ void loginfrm::saveservers()
 		if(!foundsec)
 		{
 			stream << "\n" << "[SERVERS]" << "\n";
-			stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			
+			if(dbserver[ii] != "")
+				stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			else
+				stream << "SQLITE:" << dbname_local[ii] << "\n";
+				
 			for(ii=0;ii<cmbdb->currentIndex();ii++)
-	    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			{
+				if(dbserver[ii] != "")
+	    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+	    		else
+	    			stream << "SQLITE:" << dbname_local[ii] << "\n";
+			}
 			for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
-	    		stream << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+			{
+				if(dbserver[ii] != "")
+	    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+	    		else
+	    			stream << "SQLITE:" << dbname_local[ii] << "\n";
+			}
 			stream << "\n";
 		}
 		file.close();

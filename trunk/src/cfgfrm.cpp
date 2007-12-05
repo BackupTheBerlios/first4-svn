@@ -361,7 +361,7 @@ void cfgfrm::loadservers()
 		do {
 			line = stream.readLine();
 			if(line != "")
-				listservers->insertItem ( -1, line );
+				listservers->insertItem ( -1, line.section(":", 1, 10) );
 		} while (line != "" && !stream.atEnd());
 		file.close();
 	}
