@@ -145,7 +145,8 @@ void loginfrm::checkpwd()
 				QMessageBox::critical(0,"Error...", tr("Query Error.")+"\n\n"+sqlerror.text());
 			}
 		} else {
-		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!"));
+			QSqlError sqlerror = first4DB.lastError();
+		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!\n\n")+sqlerror.text());
 		}
     }
 }

@@ -3,6 +3,8 @@
 #include <QDir>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QSqlQuery>
+#include <QSqlError>
 
 #include "vars.h"
 
@@ -173,4 +175,48 @@ QStringList vars::loadcolwidth(QString frmname, QString obj)
 		file.close();
 	}
     return cols;
+}
+//
+QString vars::get_tool(QString toolname)
+{
+	QString tool = "";
+	QFile file ( QDir::homePath() +"/.first4/"+username+".first4.conf" );
+	if ( file.open ( QIODevice::ReadOnly ) )
+	{
+		QTextStream stream ( &file );
+		QString streamline;
+		while(!stream.atEnd())
+		{
+			streamline = stream.readLine();
+			if(streamline.contains(toolname+"=", Qt::CaseSensitive))
+				tool = streamline.section("=", 1, 1);
+		}
+		file.close();
+	}
+	if(tool == "")
+	{
+		QString os = "";
+		#ifdef Q_OS_LINUX
+			os="lnx";
+		#endif
+		#ifdef Q_OS_WIN32
+			os="win";
+		#endif
+		#ifdef Q_OS_MAC
+			os="mac";
+		#endif
+		QString qstr1 = QString("SELECT var, value FROM maincfgtab WHERE `var`='tool_%1_"+toolname.toLower()+"';").arg(os);
+		QSqlQuery querytools(qstr1);
+		if ( querytools.isActive())
+		{
+			querytools.next();
+			tool = querytools.value(1).toString();
+		}
+		else
+		{
+			QSqlError sqlerror = querytools.lastError();
+			QMessageBox::critical(0,"Error...", "Unable to read settings from database!\n\n"+sqlerror.text());
+		}
+	}
+	return tool;
 }

@@ -118,7 +118,7 @@ void doceditfrm::init()
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
 	    this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
     }
-    
+
     connect(btnclose, SIGNAL(released()), this, SLOT(close()));
     connect(btnsearchaddr, SIGNAL(released()), this, SLOT(selectaddress()));
     connect(cmbdoc, SIGNAL(activated(int)), this, SLOT(selecteddocument()));
@@ -1306,6 +1306,8 @@ void doceditfrm::writetexfile()
 ////
 void doceditfrm::printpreview()
 {
+	vars v;
+	QString tool = v.get_tool("DVIVIEWER");
     if(tabmain->rowCount()>1)
     {
 		if(lblID->text()!="")
@@ -1315,7 +1317,7 @@ void doceditfrm::printpreview()
 		    QProcess *procshow = new QProcess( this );
 		    QStringList args;
 		    args << docfolder+"/"+lblID->text()+"/"+docfile;
-		    procshow->start("kdvi", args);
+		    procshow->start(tool, args);
 		    if(procshow->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
 

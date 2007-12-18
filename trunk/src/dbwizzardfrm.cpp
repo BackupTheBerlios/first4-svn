@@ -201,18 +201,18 @@ void dbwizzardfrm::writeconffile()
 	if(rbtnmysqlex->isChecked() || rbtnmysqlnew->isChecked())
 	{
 	    if(rbtnmysqlex->isChecked())
-			writestr = lblexuser->text() + ":" + txtexpwd->text() + "@" + lblexhost->text() + "/" + lblexdbname->text() + ":" + lblexport->text() + "\n";
+			writestr = "MYSQL:" + lblexuser->text() + ":" + txtexpwd->text() + "@" + lblexhost->text() + "/" + lblexdbname->text() + ":" + lblexport->text() + "\n";
 		else if(rbtnmysqlnew->isChecked())
-			writestr = txtnewfirstuser->text() + ":" + txtnewfirstpwd->text() + "@" + txtnewhost->text() + "/" + txtnewdbname->text() + ":" + txtnewport->text() + "\n";
+			writestr = "MYSQL:" + txtnewfirstuser->text() + ":" + txtnewfirstpwd->text() + "@" + txtnewhost->text() + "/" + txtnewdbname->text() + ":" + txtnewport->text() + "\n";
 	}
 	else if(rbtnsqliteex->isChecked() || rbtnsqlitenew->isChecked())
 	{
 		if(rbtnsqliteex->isChecked())
-			writestr = txtliteopendb->text();
+			writestr = "SQLITE:" + txtliteopendb->text();
 		else if(rbtnsqlitenew->isChecked())
-			writestr = txtnewdbfolder_sqllite->text().replace("\\", "/")+"/"+txtnewdbname_sqllite->text()+".db";
+			writestr = "SQLITE:" + txtnewdbfolder_sqllite->text().replace("\\", "/")+"/"+txtnewdbname_sqllite->text()+".db";
 	}
-	QMessageBox::critical(0,"Error...", writestr);
+
     QDir d(QDir::homePath()+"/.first4");
     if(!d.exists() )
 	{
@@ -316,7 +316,7 @@ mysqsqlcreatelist << "CREATE TABLE `proceduretab` (`ID` int(11) NOT NULL auto_in
 mysqsqlcreatelist << "CREATE TABLE `proceduretasks` (`ID` int(11) NOT NULL auto_increment,`PROC_ID` text,`STATE` int(11) default NULL,`TASK` text,`DATE` text,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `userstab` (`ID` int(11) NOT NULL auto_increment,`username` text character set latin1 NOT NULL,`userpass` text character set latin1 NOT NULL,`fullname` text character set latin1 NOT NULL,`firstname` text character set latin1 NOT NULL,`lastname` text character set latin1 NOT NULL,`dob` date NOT NULL default '0000-00-00',`p_street` text character set latin1 NOT NULL,`p_zip` text character set latin1 NOT NULL,`p_location` text character set latin1 NOT NULL,`p_country` text character set latin1 NOT NULL,`b_street` text character set latin1 NOT NULL,`b_zip` text character set latin1 NOT NULL,`b_location` text character set latin1 NOT NULL,`b_country` text character set latin1 NOT NULL,`profession` text character set latin1 NOT NULL,`org_unit` text character set latin1 NOT NULL,`position` text character set latin1 NOT NULL,`emp_type` text character set latin1 NOT NULL,`p_tel` text character set latin1 NOT NULL,`p_fax` text character set latin1 NOT NULL,`p_mobile` text character set latin1 NOT NULL,`p_pager` text character set latin1 NOT NULL,`p_ip` text character set latin1 NOT NULL,`email1` text character set latin1 NOT NULL,`email2` text character set latin1 NOT NULL,`email3` text character set latin1 NOT NULL,`p_web` text character set latin1 NOT NULL,`b_tel` text character set latin1 NOT NULL,`b_teldir` text character set latin1 NOT NULL,`b_fax` text character set latin1 NOT NULL,`b_mobile` text character set latin1 NOT NULL,`b_pager` text character set latin1 NOT NULL,`b_ip` text character set latin1 NOT NULL,`email4` text character set latin1 NOT NULL,`email5` text character set latin1 NOT NULL,`email6` text character set latin1 NOT NULL,`notes` text character set latin1 NOT NULL,`emp_grade` text character set latin1 NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "LOCK TABLES `userstab` WRITE;";
-mysqsqlcreatelist << "INSERT INTO `userstab` VALUES (11,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
+mysqsqlcreatelist << "INSERT INTO `userstab` VALUES (0,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
 mysqsqlcreatelist << "UNLOCK TABLES;";
 mysqsqlcreatelist << "CREATE TABLE `vattab` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "INSERT INTO datatabs (name, description, users, cols, tabtyp) VALUES ('vattab', 'VAT-Table', '"+txtnewadminuser->text()+" [11] , ', 'Tax:70#Comments:200', 'vattab');";
@@ -424,7 +424,7 @@ sqlitecreatelist << "CREATE TABLE `procedureorders` (`ID` integer PRIMARY KEY AU
 sqlitecreatelist << "CREATE TABLE `proceduretab` (`ID` integer PRIMARY KEY AUTOINCREMENT,`status` text NOT NULL,`completed` text NOT NULL,`priority` text NOT NULL,`date` date NOT NULL default '0000-00-00',`client` text NOT NULL,`contactperson` text NOT NULL,`orderid` text NOT NULL,`description` text NOT NULL,`resp_person` text NOT NULL,`complete_until` date NOT NULL default '0000-00-00' ) ;";
 sqlitecreatelist << "CREATE TABLE `proceduretasks` (`ID` integer PRIMARY KEY AUTOINCREMENT,`PROC_ID` text,`STATE` int(11) default NULL,`TASK` text,`DATE` text ) ;";
 sqlitecreatelist << "CREATE TABLE `userstab` (`ID` integer PRIMARY KEY AUTOINCREMENT,`username` text NOT NULL,`userpass` text NOT NULL,`fullname` text NOT NULL,`firstname` text NOT NULL,`lastname` text NOT NULL,`dob` date NOT NULL default '0000-00-00',`p_street` text NOT NULL,`p_zip` text NOT NULL,`p_location` text NOT NULL,`p_country` text NOT NULL,`b_street` text NOT NULL,`b_zip` text NOT NULL,`b_location` text NOT NULL,`b_country` text NOT NULL,`profession` text NOT NULL,`org_unit` text NOT NULL,`position` text NOT NULL,`emp_type` text NOT NULL,`p_tel` text NOT NULL,`p_fax` text NOT NULL,`p_mobile` text NOT NULL,`p_pager` text NOT NULL,`p_ip` text NOT NULL,`email1` text NOT NULL,`email2` text NOT NULL,`email3` text NOT NULL,`p_web` text NOT NULL,`b_tel` text NOT NULL,`b_teldir` text NOT NULL,`b_fax` text NOT NULL,`b_mobile` text NOT NULL,`b_pager` text NOT NULL,`b_ip` text NOT NULL,`email4` text NOT NULL,`email5` text NOT NULL,`email6` text NOT NULL,`notes` text NOT NULL,`emp_grade` text NOT NULL ) ;";
-sqlitecreatelist << "INSERT INTO `userstab` VALUES (11,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
+sqlitecreatelist << "INSERT INTO `userstab` VALUES (0,'Administrator','"+cfrm.cryptpwd(txtnewfadminpwd->text())+"','Administrator','','','0000-00-00','','','','0','','','','','','','','','','','','','','','','','','','','','','','','','','','','');";
 
 sqlitecreatelist << "CREATE TABLE `vattab` (`ID` integer PRIMARY KEY AUTOINCREMENT,`col1` text NOT NULL,`col2` text NOT NULL);";
 sqlitecreatelist << "INSERT INTO datatabs (name, description, users, cols, tabtyp) VALUES ('vattab', 'VAT-Table', '"+txtnewadminuser->text()+" [11] , ', 'Tax:70#Comments:200', 'vattab');";
