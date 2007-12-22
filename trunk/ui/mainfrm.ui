@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>270</width>
-    <height>431</height>
+    <height>461</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -28,7 +28,7 @@
       <x>9</x>
       <y>9</y>
       <width>252</width>
-      <height>325</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="autoFillBackground" >
@@ -43,7 +43,7 @@
        <x>0</x>
        <y>0</y>
        <width>252</width>
-       <height>115</height>
+       <height>144</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -148,7 +148,7 @@
        <x>0</x>
        <y>0</y>
        <width>252</width>
-       <height>115</height>
+       <height>134</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -365,7 +365,7 @@
        <x>0</x>
        <y>0</y>
        <width>252</width>
-       <height>115</height>
+       <height>108</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -507,8 +507,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>138</width>
-       <height>82</height>
+       <width>252</width>
+       <height>108</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -650,8 +650,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>129</width>
-       <height>82</height>
+       <width>252</width>
+       <height>144</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -793,8 +793,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>96</width>
-       <height>26</height>
+       <width>252</width>
+       <height>144</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -810,7 +810,7 @@
        <x>0</x>
        <y>0</y>
        <width>252</width>
-       <height>115</height>
+       <height>134</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -823,7 +823,7 @@
       <property name="geometry" >
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>0</y>
         <width>251</width>
         <height>101</height>
        </rect>
@@ -876,7 +876,7 @@
          <x>100</x>
          <y>70</y>
          <width>141</width>
-         <height>21</height>
+         <height>18</height>
         </rect>
        </property>
        <property name="text" >
@@ -889,7 +889,7 @@
          <x>10</x>
          <y>70</y>
          <width>81</width>
-         <height>21</height>
+         <height>18</height>
         </rect>
        </property>
        <property name="text" >
@@ -915,8 +915,8 @@
    <widget class="QGroupBox" name="groupBox" >
     <property name="geometry" >
      <rect>
-      <x>9</x>
-      <y>340</y>
+      <x>10</x>
+      <y>370</y>
       <width>252</width>
       <height>82</height>
      </rect>
@@ -1017,7 +1017,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="" >
+   <widget class="QWidget" name="layoutWidget" >
     <property name="geometry" >
      <rect>
       <x>0</x>

@@ -1297,11 +1297,9 @@ void doceditfrm::writetexfile()
 				QMessageBox::critical(0,"Error...", tr("Can't convert TEX-File."));
 
     //copy file in the correct folder
-    QProcess *proccp = new QProcess( this );
-    args.clear();
-    args << QDir::homePath() + "/.first4/tmp/output.dvi" << docfolder+"/"+lblID->text()+"/"+docfile;
-    //proccp->start("mv", args);
-    output.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile);
+    QFile dvifile(QDir::homePath() + "/.first4/tmp/output.dvi");
+    if(!dvifile.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile))
+	    QMessageBox::critical(0,"Error...", tr("Can't move file to customer folder."));
 }
 ////
 void doceditfrm::printpreview()
@@ -1322,7 +1320,6 @@ void doceditfrm::printpreview()
 				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
 
 		    QFile file(docfolder+"/"+lblID->text()+"/"+docfile);
-		    file.remove();
 		}
     }    
 }
