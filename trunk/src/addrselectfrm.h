@@ -9,10 +9,11 @@ Q_OBJECT
 public:
 	addrselectfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
-	QString getadress();
+	QString getaddress();
 	QString getrabatt();
-private slots:
+public slots:
 	void searchaddress();
+private slots:
 	void clearsearch();
 };
 #endif

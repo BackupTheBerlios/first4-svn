@@ -27,9 +27,3 @@ aboutfrm::aboutfrm( QWidget * parent, Qt::WFlags f)
 	textEditLicense->setPlainText( lineLic );
 }
 //
-
-
-void aboutfrm::on_okButton_clicked()
-{
-}
-//

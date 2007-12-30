@@ -196,7 +196,7 @@ void dataeditfrm::seladdress()
     saddrfrm->init();
     if(saddrfrm->exec())
     {
-       QString answer = saddrfrm->getadress();
+       QString answer = saddrfrm->getaddress();
        QStringList fields = answer.split(":#:");
        
        if(tabsuppliers->currentRow() != -1)

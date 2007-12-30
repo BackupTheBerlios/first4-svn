@@ -110,7 +110,7 @@ void procedureeditfrm::searchaddress()
     seladdr->init();
     if(seladdr->exec())
     {
-       QString answer = seladdr->getadress();
+       QString answer = seladdr->getaddress();
        QStringList fields = answer.split(":#:");
        txtcustomer->setText(fields[0].replace("<BR>", "\n"));
        lblcustomerid->setText(fields[1]);

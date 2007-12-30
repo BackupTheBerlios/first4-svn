@@ -1,5 +1,4 @@
 #include "QSqlQuery"
-#include "QMessageBox"
 #include "QCloseEvent"
 //
 #include "docopendraftsfrm.h"
@@ -208,7 +207,7 @@ void docopendraftsfrm::openseladdressfrm()
     addrselectfrm *addrfrm = new addrselectfrm;   
     addrfrm->init();
     if(addrfrm->exec())
-		txtsearch->setText(addrfrm->getadress().replace("<BR>", ";").replace(":#:", " (")+")");
+		txtsearch->setText(addrfrm->getaddress().replace("<BR>", ";").replace(":#:", " (")+")");
 }
 //
 void docopendraftsfrm::adressbtnonoff()

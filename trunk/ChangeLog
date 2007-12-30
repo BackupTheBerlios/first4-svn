@@ -1,5 +1,13 @@
 first4:
 
+first4-alpha3 (1.3.93)
+* New Finance-Modul
+* Account-Management
+* Incomes and Expenditures management
+* ESR-Import, CSV-Export
+* IMPORTANT: DB must be updatet
+* Fixed Bug # (Taking over data from a completed document)
+
 20071218
 * ID of Administrator set to 0
 * Updatet German Translation

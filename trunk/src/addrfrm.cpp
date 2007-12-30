@@ -55,8 +55,6 @@ void addrfrm::init()
 			mainlistview->setColumnWidth(i, colwidth[i].toInt());
 	}
     
-    //QSqlDatabase* adrfirstDB = QSqlDatabase::database();
-    
     lbluser->setText(username);  
     QString connstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [1%';").arg(username);
     QString permissions;
@@ -350,7 +348,7 @@ void addrfrm::loaddocs(QString dbID)
 				itemdoc->setText(1, query.value(0).toString());
 				itemli->addChild(itemdoc);
 		    }
-		    else if(query.value(1).toString()=="4 bill")
+		    else if(query.value(1).toString()=="4 invoice")
 		    {
 				QString status = "";
 				//Prfe ob Rechnung bezahlt
@@ -585,9 +583,9 @@ void addrfrm::saveaddr()
 	
     QSqlQuery queryadrsave(conn1);
     if( !queryadrsave.exec() ) {
-	QSqlError err = queryadrsave.lastError();
-	QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n\nMessage:\t" + err.databaseText() );
-	return;
+		QSqlError err = queryadrsave.lastError();
+		QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n\nMessage:\t" + err.databaseText() );
+		return;
     }
 
     lastadrtab = "";

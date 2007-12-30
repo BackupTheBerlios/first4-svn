@@ -23,7 +23,7 @@
 #include "newdatatabfrm.h"
 #include "dbwizzardfrm.h"
 
-extern QString username, fullname, firstver, templatefolder, docfolder;
+extern QString username, fullname, firstver, templatefolder, docfolder, build;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
 QString cfgdbver;
@@ -107,7 +107,7 @@ void cfgfrm::init()
 	connect ( btnadddb, SIGNAL ( released() ), this, SLOT ( addservers() ) );
 	connect ( btndeldb, SIGNAL ( released() ), this, SLOT ( delservers() ) );
 	connect ( btnopensqlfile, SIGNAL ( released() ), this, SLOT ( opendbspec() ) );
-	connect ( btndbapply, SIGNAL ( released() ), this, SLOT ( opendbspec() ) );
+	connect ( btndbapply, SIGNAL ( released() ), this, SLOT ( applydbspec() ) ); // nicht fertig
 	connect ( listusers, SIGNAL ( itemClicked ( QListWidgetItem* ) ), this, SLOT ( selectuser() ) );
 	connect ( btn_users_new, SIGNAL ( released() ), this, SLOT ( newuser() ) );
 	connect ( btn_users_save, SIGNAL ( released() ), this, SLOT ( saveuserchange() ) );
@@ -264,6 +264,8 @@ void cfgfrm::loaddbinfo()
 	lbldbhost_2->setText ( dbhost );
 	lblfirstversion->setText ( firstver );
 	lblfirstversion_2->setText ( firstver );
+	lblbuild->setText( build );
+	lblbuild_2->setText( build );
 
 	QString connstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
 	QSqlQuery query ( connstr );
@@ -402,6 +404,9 @@ void cfgfrm::applydbspec()
 				{
 					QString connstr =  stream.readLine();
 					QSqlQuery query ( connstr.simplified() );
+					QSqlError qerror = query.lastError();
+					if(qerror.isValid())
+						QMessageBox::information ( 0, tr ( "Error during update..." ), qerror.text() );
 				}
 				QString conn =  "UPDATE `maincfgtab` SET `value`='"+ver+"' WHERE `var`='dbversion';";
 				QSqlQuery query ( conn );
@@ -1093,7 +1098,7 @@ void cfgfrm::newaccount()
 		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`) VALUES (NULL, '%1', '%2', '', '', '', '')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
-		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL DEFAULT '' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
+		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
 		QSqlQuery querykontonew5 ( qstr3 );
 		loadressources();
 	}

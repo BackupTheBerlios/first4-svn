@@ -20,7 +20,9 @@ private slots:
 	void browseorders();
 	void neworder();
 	void browseaccounts();
-	void newpayment();
+	void browsemsgs();
+private:
+	void cleanup();
 public:
 	void loaduserdata();
 	void initplugins();

@@ -21,6 +21,8 @@
 #include "plugininterface.h"
 #include "procedurefrm.h"
 #include "accountsfrm.h"
+#include "accountseditfrm.h"
+#include "msgfrm.h"
 //
 extern QString username, fullname, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
@@ -40,7 +42,7 @@ void mainfrm::loaduserdata()
 	lblserver->setText ( dbhost );
 	this->setWindowTitle ( QString ( "first %1" ).arg ( firstver ) );
 
-	maintoolbox->setCurrentIndex ( maintoolbox->count() );
+	maintoolbox->setCurrentIndex ( maintoolbox->count()-1 );
 
 	QTimer *timer = new QTimer();
 	connect ( timer, SIGNAL ( timeout() ), this, SLOT ( checkmsg() ) );
@@ -67,8 +69,7 @@ void mainfrm::loaduserdata()
 	connect ( btnbrowseorders, SIGNAL ( released() ), this, SLOT ( browseorders() ) );
 	connect ( btnneworder, SIGNAL ( released() ), this, SLOT ( neworder() ) );
 	connect ( btnbrowseaccounts, SIGNAL ( released() ), this, SLOT ( browseaccounts() ) );
-	connect ( btnnewpayment, SIGNAL ( released() ), this, SLOT ( newpayment() ) );
-
+	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
 void mainfrm::initplugins() {
@@ -114,7 +115,7 @@ void mainfrm::checkmsg()
 	lblmsg->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
 	if ( lbluser->text() == "Administrator" )
 	{ /*
-				//Aufträge Überprfen
+				//Auftrge berprfen
 				QSqlQuery query1;
 				query1.prepare( "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `complete_until` < :complete_until;");
 				query1.bindValue( ":complete_until", QDate::currentDate().toString("yyyy-MM-dd") );
@@ -131,7 +132,7 @@ void mainfrm::checkmsg()
 				    }
 				}
 
-				//Ein/Aus Überprfen
+				//Ein/Aus berprfen
 				QString connstr = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM ietab WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
 				QSqlQuery query3(connstr);
 				if(query3.isActive())
@@ -188,6 +189,7 @@ void mainfrm::about()
 //
 void mainfrm::closeEvent ( QCloseEvent* ce )
 {
+	cleanup();
 	int r = QMessageBox::question ( this, tr ( "Exit..." ),tr ( "Exit First?" ), QMessageBox::Yes, QMessageBox::No );
 	if ( r == QMessageBox::Yes )
 	{
@@ -263,7 +265,21 @@ void mainfrm::browseaccounts()
 		afrm->show();
 }
 //
-void mainfrm::newpayment()
+void mainfrm::cleanup()
 {
-	
+	QDir tmpfolder = QDir::homePath() + "/.first4/tmp/";
+	QStringList filelist = tmpfolder.entryList(QDir::Files);
+	QString file;
+	foreach(file,filelist)
+	{
+		QFile f(QDir::homePath() + "/.first4/tmp/"+file);
+		f.remove();
+	}
+}
+//
+void mainfrm::browsemsgs()
+{
+	msgfrm *mfrm = new msgfrm;
+	mfrm->init();
+	mfrm->show();
 }

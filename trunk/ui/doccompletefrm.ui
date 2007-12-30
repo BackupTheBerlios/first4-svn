@@ -33,7 +33,7 @@
     <rect>
      <x>10</x>
      <y>250</y>
-     <width>91</width>
+     <width>111</width>
      <height>27</height>
     </rect>
    </property>
@@ -47,9 +47,9 @@
   <widget class="QPushButton" name="btncomplete" >
    <property name="geometry" >
     <rect>
-     <x>300</x>
+     <x>280</x>
      <y>250</y>
-     <width>91</width>
+     <width>111</width>
      <height>27</height>
     </rect>
    </property>

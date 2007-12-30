@@ -39,7 +39,7 @@ void addrselectfrm::init()
 		searchaddress();
 }
 //
-QString addrselectfrm::getadress()
+QString addrselectfrm::getaddress()
 {
 	QTreeWidgetItem *item = treemain->currentItem();
 	return item->text(3);

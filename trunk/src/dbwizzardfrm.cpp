@@ -279,6 +279,8 @@ void dbwizzardfrm::createnewmysql()
 //Set SqlArray
 QStringList mysqsqlcreatelist;
 mysqsqlcreatelist << "CREATE TABLE `accounttab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`accountnr` text NOT NULL,`bank` text NOT NULL,`blz` text NOT NULL,`currency` text NOT NULL,`users` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+mysqsqlcreatelist << "INSERT INTO accounttab VALUES (1,'ietab', 'Archive Incomes / Expenditures','','','','','');";
+mysqsqlcreatelist << "INSERT INTO accounttab VALUES (1,'ietabarchiv', 'Archive','','','','','');";
 mysqsqlcreatelist << "CREATE TABLE `adrtabs` (`ID` int(11) unsigned NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,`idcounter` int(10) unsigned NOT NULL default '0', PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `datatabs` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,`cols` text NOT NULL,`tabtyp` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `docdrafts` (`ID` int(11) NOT NULL auto_increment,`doctyp` text NOT NULL,`date` text NOT NULL,`client` text NOT NULL,`comments` text NOT NULL,`amount` text NOT NULL,`discount` text NOT NULL,`docID` text NOT NULL,`salutation` text NOT NULL,`introduction` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
@@ -288,6 +290,8 @@ mysqsqlcreatelist << "CREATE TABLE `doctab` (`ID` int(11) NOT NULL auto_incremen
 mysqsqlcreatelist << "LOCK TABLES `doctab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `doctab` VALUES (1,'1 offer','','0001',''),(2,'2 orderconf','','0001',''),(3,'3 deliverynote','/','0001',''),(4,'4 bill','','0002','');";
 mysqsqlcreatelist << "UNLOCK TABLES;";
+mysqsqlcreatelist << "CREATE TABLE `ietab` (`ID` int(11) NOT NULL auto_increment, `refnr` text NOT NULL, `type` text NOT NULL, `state` text NOT NULL, `date` date NOT NULL default '0000-00-00', `address` text NOT NULL, `description` text NOT NULL, `code` text NOT NULL, `amount` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+mysqsqlcreatelist << "CREATE TABLE `ietabarchiv` (`ID` int(11) NOT NULL auto_increment, `refnr` text NOT NULL, `type` text NOT NULL, `state` text NOT NULL, `date` date NOT NULL default '0000-00-00', `address` text NOT NULL, `description` text NOT NULL, `code` text NOT NULL, `amount` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `invcfgtab` (`ID` int(11) NOT NULL auto_increment,`USERS` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "LOCK TABLES `invcfgtab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `invcfgtab` VALUES (1,'');";

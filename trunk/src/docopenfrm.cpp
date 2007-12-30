@@ -308,5 +308,5 @@ void docopenfrm::openseladressfrm()
     addrselectfrm *adrfrm = new addrselectfrm;   
     adrfrm->init();
     if(adrfrm->exec())
-		txtsearch->setText(adrfrm->getadress().replace(":#:", " (")+")");
+		txtsearch->setText(adrfrm->getaddress().replace(":#:", " (")+")");
 }

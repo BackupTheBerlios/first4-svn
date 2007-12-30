@@ -16,7 +16,6 @@ public:
 	void loaddbinfo();
 	void loadservers();
 	void closeEvent(QCloseEvent* ce );
-	void applydbspec();
 	void loadusers();
 	void loadressources();
 	void loadsettings();
@@ -53,6 +52,7 @@ public slots:
 	void save_db_tools();
 private slots:
 	void tools_filedialog();
+	void applydbspec();
 };
 #endif
 

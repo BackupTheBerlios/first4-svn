@@ -15,6 +15,7 @@
 #include "docopendraftsfrm.h"
 #include "vatshowfrm.h"
 #include "doceditposition.h"
+#include "accountseditfrm.h"
 //
 extern QString username, fullname, docfolder, templatefolder;
 //
@@ -49,7 +50,7 @@ void doceditfrm::init()
     tabmain->setColumnWidth(2,20);
     tabmain->setColumnWidth(3,225);
     tabmain->setColumnWidth(4,55);
-    tabmain->setColumnWidth(5,40);
+    tabmain->setColumnWidth(5,50);
     tabmain->setColumnWidth(6,100);
     tabmain->setColumnWidth(7,100);
     tabmain->setColumnWidth(8,50);
@@ -88,7 +89,7 @@ void doceditfrm::init()
 		item->setText(vatlist[0]);
 		tabmain->setItem(tabmain->rowCount()-1, 8, item);	
 	} else {
-		QMessageBox::information(0,tr("Stock..."), tr("Please define VAT first!"));			
+		QMessageBox::information(0,tr("Stock..."), tr("Please define VAT first!"));
 	}
     
     mainwidget->setCurrentIndex(1);
@@ -304,6 +305,8 @@ void doceditfrm::navtable()
 //
 void doceditfrm::addrow()
 {
+	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
+	
 	tabmain->setRowCount(tabmain->rowCount()+1);
 	 
 	QTableWidgetItem *item = new QTableWidgetItem;
@@ -344,6 +347,7 @@ void doceditfrm::addrow()
 	} else {
 		QMessageBox::information(0,tr("Stock..."), tr("Please define VAT first!"));			
 	}
+	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 }
 //
 void doceditfrm::checkdb()
@@ -570,7 +574,7 @@ void doceditfrm::selectaddress()
     safrm->init();
     if(safrm->exec())
     {
-       QString answer = safrm->getadress();
+       QString answer = safrm->getaddress();
        boxdiscount->setText(safrm->getrabatt());
        QStringList fields = answer.split(":#:");
        boxaddress->setText(fields[0].replace("<BR>", "\n"));
@@ -586,6 +590,7 @@ void doceditfrm::completedoc()
 		{ 
 		    doccompletefrm *complfrm = new doccompletefrm;
 		    complfrm->init();
+		    QMessageBox::information(0, tr("Save..."), docdef[cmbdoc->currentIndex()]);
 		    if(docdef[cmbdoc->currentIndex()] != "3 deliverynote" && docdef[cmbdoc->currentIndex()] != "4 invoice")
 		    {
 				complfrm->chkbox_2->setChecked(FALSE);
@@ -710,20 +715,20 @@ void doceditfrm::revenue(QString dbID, QString amount)
 }
 //
 void doceditfrm::registeramount()
-{/*
-    editkontenfrm *ekonto = new editkontenfrm;
-    ekonto->initfrm();
-    QString refnr = doccount->text().right(8);
-    refnr = refnr.rightJustify(15, '0', TRUE);    
-    ekonto->txtRefNr->setText(refnr);
-    ekonto->boxdatum->setDate(boxdatum->date());
-    ekonto->txtCode->setText("RE");
-    ekonto->txtadresse->setText(boxadress->text());
-    ekonto->lbladrID->setText(lblID->text());
-    ekonto->txtbeschreibung->setText(tr("Invoice %1").arg(doccount->text()));
-    ekonto->txtbetrag->setText(box_tot_inkl->text());
-    ekonto->setdbID("ietab");
-    ekonto->newentry("ietab");*/
+{
+    accountseditfrm *acc = new accountseditfrm;
+    acc->init();
+    QString refnr = txtdoccount->text().right(8);
+    refnr = refnr.rightJustified(15, '0', TRUE);    
+    acc->txtRefNr->setText(refnr);
+    acc->date1->setDate(boxdate->date());
+    acc->txtCode->setText("INV");
+    acc->txtaddress->setText(boxaddress->toPlainText());
+    acc->lbladdrID->setText(lblID->text());
+    acc->txtdescription->setText(tr("Invoice %1").arg(txtdoccount->text()));
+    acc->txtamount->setText(boxtot_incl->text());
+    acc->setdbID("ietab");
+    acc->newentry("ietab");
 }
 //
 void doceditfrm::newdocument()
@@ -750,8 +755,9 @@ void doceditfrm::newdocument()
 		    boxtot_excl->setText("0.00");
 		    boxvat->setText("0.00");
 		    boxtot_incl->setText("0.00");
+		    boxtot->setText("0.00");
 		    tabmain->setRowCount(0);
-			navtable();
+			addrow();
 		}
 		btncomplete->setEnabled(TRUE);
 		btnsave->setEnabled(TRUE);
@@ -1318,8 +1324,6 @@ void doceditfrm::printpreview()
 		    procshow->start(tool, args);
 		    if(procshow->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
-
-		    QFile file(docfolder+"/"+lblID->text()+"/"+docfile);
 		}
     }    
 }

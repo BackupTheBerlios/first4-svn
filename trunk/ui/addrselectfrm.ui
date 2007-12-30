@@ -109,7 +109,7 @@
     <rect>
      <x>10</x>
      <y>330</y>
-     <width>75</width>
+     <width>111</width>
      <height>27</height>
     </rect>
    </property>
@@ -123,9 +123,9 @@
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>470</x>
+     <x>444</x>
      <y>330</y>
-     <width>75</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
