@@ -1,0 +1,6 @@
+<1.3.93>
+INSERT INTO accounttab VALUES (1,'ietab', 'Archive Incomes / Expenditures','','','','','');
+INSERT INTO accounttab VALUES (1,'ietabarchiv', 'Archive','','','','','');
+CREATE TABLE `ietab` (`ID` int(11) NOT NULL auto_increment, `refnr` text NOT NULL, `type` text NOT NULL, `state` text NOT NULL, `date` date NOT NULL default '0000-00-00', `address` text NOT NULL, `description` text NOT NULL, `code` text NOT NULL, `amount` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `ietabarchiv` (`ID` int(11) NOT NULL auto_increment, `refnr` text NOT NULL, `type` text NOT NULL, `state` text NOT NULL, `date` date NOT NULL default '0000-00-00', `address` text NOT NULL, `description` text NOT NULL, `code` text NOT NULL, `amount` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE msgtab (ID int(11) NOT NULL auto_increment, typ text NOT NULL, user text NOT NULL, date date NOT NULL default '0000-00-00', msgtext text NOT NULL, data1 text NOT NULL, data2 text NOT NULL, data3 text NOT NULL, data4 text NOT NULL, data5 text NOT NULL, PRIMARY KEY  (ID)) ENGINE=InnoDB DEFAULT CHARSET=latin1;
