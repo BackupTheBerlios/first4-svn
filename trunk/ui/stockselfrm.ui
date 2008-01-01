@@ -20,7 +20,7 @@
     <rect>
      <x>10</x>
      <y>360</y>
-     <width>81</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
@@ -34,9 +34,9 @@
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>554</x>
+     <x>534</x>
      <y>360</y>
-     <width>81</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
@@ -99,6 +99,11 @@
    <column>
     <property name="text" >
      <string>tab_id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>supplier</string>
     </property>
    </column>
   </widget>

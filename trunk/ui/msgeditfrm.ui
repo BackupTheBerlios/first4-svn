@@ -1,0 +1,770 @@
+<ui version="4.0" >
+ <class>msgeditfrm</class>
+ <widget class="QDialog" name="msgeditfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>601</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/message2.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btnaccept" >
+   <property name="geometry" >
+    <rect>
+     <x>490</x>
+     <y>520</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Accept</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>57</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Msg-ID:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblID" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>10</y>
+     <width>57</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>57</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Type:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbmsgtype" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>50</y>
+     <width>201</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Personal</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>General</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Stock</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Order</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Finance</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>400</x>
+     <y>50</y>
+     <width>57</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Date:</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="date" >
+   <property name="geometry" >
+    <rect>
+     <x>460</x>
+     <y>50</y>
+     <width>110</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="displayFormat" >
+    <string>dd.mm.yyyy</string>
+   </property>
+   <property name="calendarPopup" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackmain" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>581</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="currentIndex" >
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="page" >
+    <widget class="QLabel" name="label_4" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>81</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Message:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="per_msg" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>561</width>
+       <height>341</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2" >
+    <widget class="QLabel" name="label_5" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Select recipient:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="gen_msg" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>561</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTreeWidget" name="gen_users" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>321</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text" >
+       <string/>
+      </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/button_ok_small.png</iconset>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>User:</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>userid</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label_6" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>81</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Message:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3" >
+    <widget class="QLabel" name="label_7" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Definition:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Description:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Supplier:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Stock:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Min. quantity:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>360</y>
+       <width>131</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Purchase Price:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>131</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Sell Price:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sto_def" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sto_onstock" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>300</y>
+       <width>81</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sto_min" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>330</y>
+       <width>81</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sto_pprice" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>360</y>
+       <width>81</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sto_sprice" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>390</y>
+       <width>81</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="sto_description" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>50</y>
+       <width>341</width>
+       <height>141</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="sto_btncheck" >
+     <property name="geometry" >
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+     </property>
+    </widget>
+    <widget class="QTreeWidget" name="sto_supplier" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>200</y>
+       <width>341</width>
+       <height>94</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Supplier</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4" >
+    <widget class="QLabel" name="label_14" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Customer:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Order-Nr.:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Entrydate:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>111</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Complete until:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="ord_customer" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>261</width>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ord_ordernr" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>150</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="ord_date1" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>200</y>
+       <width>110</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="displayFormat" >
+      <string>dd.mm.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="ord_date2" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>240</y>
+       <width>110</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="displayFormat" >
+      <string>dd.mm.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ord_btncheck" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>20</y>
+       <width>30</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ord_btnclear" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>30</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ord_lbladdrid" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>110</y>
+       <width>57</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>-</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5" >
+    <widget class="QLabel" name="iem_lbladdrid" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>110</y>
+       <width>57</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Payment date:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="iem_btncheck" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>20</y>
+       <width>30</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="iem_date1" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>200</y>
+       <width>110</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="displayFormat" >
+      <string>dd.mm.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="iem_customer" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>261</width>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="iem_ordernr" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>150</y>
+       <width>211</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Customer:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Order-Nr.:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="iem_btnclear" >
+     <property name="geometry" >
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>30</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/messagebox_critical.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Amount:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="iem_amount" >
+     <property name="geometry" >
+      <rect>
+       <x>130</x>
+       <y>240</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="iem_currency" >
+     <property name="geometry" >
+      <rect>
+       <x>230</x>
+       <y>240</y>
+       <width>72</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_6" >
+    <widget class="QCheckBox" name="chknew" >
+     <property name="geometry" >
+      <rect>
+       <x>90</x>
+       <y>50</y>
+       <width>83</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>New MSG</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections/>
+</ui>

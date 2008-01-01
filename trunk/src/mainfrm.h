@@ -21,8 +21,10 @@ private slots:
 	void neworder();
 	void browseaccounts();
 	void browsemsgs();
+	void newmsg();
 private:
 	void cleanup();
+	void admtasks();
 public:
 	void loaduserdata();
 	void initplugins();

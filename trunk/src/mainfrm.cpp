@@ -23,6 +23,7 @@
 #include "accountsfrm.h"
 #include "accountseditfrm.h"
 #include "msgfrm.h"
+#include "msgeditfrm.h"
 //
 extern QString username, fullname, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
@@ -70,6 +71,8 @@ void mainfrm::loaduserdata()
 	connect ( btnneworder, SIGNAL ( released() ), this, SLOT ( neworder() ) );
 	connect ( btnbrowseaccounts, SIGNAL ( released() ), this, SLOT ( browseaccounts() ) );
 	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
+	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
+	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
 void mainfrm::initplugins() {
@@ -106,71 +109,70 @@ void mainfrm::initplugins() {
 //
 void mainfrm::checkmsg()
 {
-	QStringList queryreturn1, queryreturn2;
 	QSqlQuery query;
 	query.prepare ( "SELECT * FROM msgtab WHERE `user` LIKE :user;" );
 	query.bindValue ( ":user", "%"+username+"%" );
 	query.exec();
 	query.next();
-	lblmsg->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
-	if ( lbluser->text() == "Administrator" )
-	{ /*
-				//Auftrge berprfen
-				QSqlQuery query1;
-				query1.prepare( "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `complete_until` < :complete_until;");
-				query1.bindValue( ":complete_until", QDate::currentDate().toString("yyyy-MM-dd") );
-				query1.exec();
+	lblmsgcount->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
+	if(lbluser->text() == "Administrator" )
+		admtasks();
+}
+//
+void mainfrm::admtasks()
+{
+	QStringList queryreturn1, queryreturn2;
+	//Auftraege ueberpruefen
+	QString qstr1 = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `complete_until` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QSqlQuery query1(qstr1);
 
-				if(query1.isActive())
-				{
-				    while(query1.next())
-				    {
-						QString connstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query1.value(6).toString()).arg(query1.value(5).toString()).arg(query1.value(10).toString());
-						QSqlQuery query2(connstr2);
-						if(query2.size()==0)
-						    queryreturn1.append(query1.value(3).toString()+"//"+query1.value(6).toString()+"//"+query1.value(5).toString()+"//"+query1.value(10).toString());
-				    }
-				}
-
-				//Ein/Aus berprfen
-				QString connstr = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM ietab WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
-				QSqlQuery query3(connstr);
-				if(query3.isActive())
-				{
-				    while(query3.next())
-				    {
-						QString connstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query3.value(3).toString()).arg(query3.value(2).toString()).arg(query3.value(7).toString());
-						QSqlQuery query4(connstr2);
-						if(query4.size()==0)
-						    queryreturn2.append(query3.value(4).toString()+"//"+query3.value(3).toString()+"//"+query3.value(2).toString()+"//"+query3.value(7).toString());
-				    }
-				}
-
-				unsigned int i;
-				editmsgfrm *emsg = new editmsgfrm;
-				emsg->initfrm("auftr");
-				for(i=0;i<queryreturn1.count();i++)
-				{
-				    emsg->txtkunde->setText(queryreturn1[i].section("//", 0, 0).section(" (", 0, 0));
-				    emsg->lbladrID->setText(queryreturn1[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
-				    emsg->txtauftragnr->setText(queryreturn1[i].section("//", 1, 1));
-				    QString s = queryreturn1[i].section("//", 2, 2);
-				    emsg->dateein->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
-				    s = queryreturn1[i].section("//", 3, 3);
-				    emsg->datebis->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
-				    emsg->newentry();
-				}
-				emsg->initfrm("einau");
-				for(i=0;i<queryreturn2.count();i++)
-				{
-				    emsg->txtkunde_2->setText(queryreturn2[i].section("//", 0, 0).section(" (", 0, 0));
-				    emsg->lbladrID_2->setText(queryreturn2[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
-				    emsg->txtauftragnr_2->setText(queryreturn2[i].section("//", 1, 1));
-				    QString s = queryreturn2[i].section("//", 2, 2);
-				    emsg->datefrist->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
-				    emsg->txtbetrag->setText(queryreturn2[i].section("//", 3, 3));
-				    emsg->newentry();
-				}*/
+	if(query1.isActive())
+	{
+		while(query1.next())
+		{
+			QString qstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query1.value(6).toString()).arg(query1.value(5).toString()).arg(query1.value(10).toString());
+			QSqlQuery query2(qstr2);
+			if(query2.size()==0)
+				queryreturn1.append(query1.value(3).toString()+"//"+query1.value(6).toString()+"//"+query1.value(5).toString()+"//"+query1.value(10).toString());
+	    }
+	}
+		//Ein/Aus ueberpruefen
+	QString qstr3 = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM ietab WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QSqlQuery query3(qstr3);
+	if(query3.isActive())
+	{
+	    while(query3.next())
+	    {
+			QString qstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query3.value(3).toString()).arg(query3.value(2).toString()).arg(query3.value(7).toString());
+			QSqlQuery query4(qstr2);
+			if(query4.size()==0)
+			    queryreturn2.append(query3.value(4).toString()+"//"+query3.value(3).toString()+"//"+query3.value(2).toString()+"//"+query3.value(7).toString());
+	    }
+	}
+	int i;
+	msgeditfrm *emsg = new msgeditfrm;
+	emsg->init("ord");
+	for(i=0;i<queryreturn1.count();i++)
+	{
+	    emsg->ord_customer->setText(queryreturn1[i].section("//", 0, 0).section(" (", 0, 0));
+	    emsg->ord_lbladdrid->setText(queryreturn1[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
+	    emsg->ord_ordernr->setText(queryreturn1[i].section("//", 1, 1));
+	    QString s = queryreturn1[i].section("//", 2, 2);
+	    emsg->ord_date1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+	    s = queryreturn1[i].section("//", 3, 3);
+	    emsg->ord_date2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+	    emsg->newentry();
+	}
+	emsg->init("iem");
+	for(i=0;i<queryreturn2.count();i++)
+	{
+	    emsg->iem_customer->setText(queryreturn2[i].section("//", 0, 0).section(" (", 0, 0));
+	    emsg->iem_lbladdrid->setText(queryreturn2[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
+	    emsg->iem_ordernr->setText(queryreturn2[i].section("//", 1, 1));
+	    QString s = queryreturn2[i].section("//", 2, 2);
+	    emsg->iem_date1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+	    emsg->iem_amount->setText(queryreturn2[i].section("//", 3, 3));
+	    emsg->newentry();
 	}
 }
 //
@@ -282,4 +284,12 @@ void mainfrm::browsemsgs()
 	msgfrm *mfrm = new msgfrm;
 	mfrm->init();
 	mfrm->show();
+}
+//
+void mainfrm::newmsg()
+{
+	msgeditfrm *emsg = new msgeditfrm;
+	emsg->init("per");
+	emsg->date->setDate(QDate::currentDate());
+	emsg->exec();
 }

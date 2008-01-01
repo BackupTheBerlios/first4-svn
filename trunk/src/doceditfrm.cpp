@@ -16,6 +16,7 @@
 #include "vatshowfrm.h"
 #include "doceditposition.h"
 #include "accountseditfrm.h"
+#include "msgeditfrm.h"
 //
 extern QString username, fullname, docfolder, templatefolder;
 //
@@ -590,7 +591,6 @@ void doceditfrm::completedoc()
 		{ 
 		    doccompletefrm *complfrm = new doccompletefrm;
 		    complfrm->init();
-		    QMessageBox::information(0, tr("Save..."), docdef[cmbdoc->currentIndex()]);
 		    if(docdef[cmbdoc->currentIndex()] != "3 deliverynote" && docdef[cmbdoc->currentIndex()] != "4 invoice")
 		    {
 				complfrm->chkbox_2->setChecked(FALSE);
@@ -677,21 +677,17 @@ void doceditfrm::refreshstockdb()
 		 
 		 	item = tabmain->item(i, 8);
 		    if((aktmenge - neuemenge) <= item->text().toInt())
-		    {/*
-				editmsgfrm *emsg = new editmsgfrm;
-				emsg->initfrm("sto");
-				emsg->boxdatum->setDate(QDate::currentDate());
-				emsg->txtbezeichnung->setText(maintable->text(i,1));
+		    {
+				msgeditfrm *emsg = new msgeditfrm;
+				emsg->init("sto");
+				emsg->date->setDate(QDate::currentDate());
+				QTableWidgetItem *defitem = tabmain->item(i, 1);
+				emsg->sto_def->setText(defitem->text());
 				emsg->checkstock();
-				emsg->txtlager->setText(QString("%1").arg(aktmenge-neuemenge, 0, 'f',0));
-
-				item = tabmain->item(i, 8);
-				emsg->txtmin->setText(item->text());
+				emsg->sto_onstock->setText(QString("%1").arg(aktmenge-neuemenge, 0, 'f',0));
+				emsg->sto_min->setText(item->text());
 				emsg->newentry();
-		    */}
-			///////////////////////////////////////////////////////////////
-			//Meldung auslöen wenn aktmenge < minmenge//
-			///////////////////////////////////////////////////////////////		 
+		    }
 		}
     }
 }

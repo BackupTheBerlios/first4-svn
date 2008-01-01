@@ -18,7 +18,7 @@ void stockselfrm::init()
 	treemain->hideColumn(0);
 	treemain->hideColumn(7);
 	treemain->hideColumn(8);
-		
+	treemain->hideColumn(9);
 
 	int i;
 	vars v;
