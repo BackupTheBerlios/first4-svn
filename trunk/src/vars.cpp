@@ -9,7 +9,7 @@
 #include "vars.h"
 
 QString firstver = "1.3.94-pre-beta1";
-QString build = "202";
+QString build = "205";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
