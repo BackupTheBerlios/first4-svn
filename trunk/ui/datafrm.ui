@@ -396,10 +396,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>30</width>
+           <height>26</height>
+          </size>
+         </property>
          <property name="maximumSize" >
           <size>
-           <width>31</width>
-           <height>31</height>
+           <width>30</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text" >
@@ -410,8 +416,8 @@
          </property>
          <property name="iconSize" >
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>16</width>
+           <height>16</height>
           </size>
          </property>
         </widget>
@@ -424,10 +430,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>30</width>
+           <height>26</height>
+          </size>
+         </property>
          <property name="maximumSize" >
           <size>
-           <width>31</width>
-           <height>31</height>
+           <width>30</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text" >
@@ -438,8 +450,8 @@
          </property>
          <property name="iconSize" >
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>16</width>
+           <height>16</height>
           </size>
          </property>
         </widget>
@@ -452,10 +464,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>30</width>
+           <height>26</height>
+          </size>
+         </property>
          <property name="maximumSize" >
           <size>
-           <width>31</width>
-           <height>31</height>
+           <width>30</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text" >
@@ -466,8 +484,8 @@
          </property>
          <property name="iconSize" >
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>16</width>
+           <height>16</height>
           </size>
          </property>
         </widget>
@@ -496,10 +514,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>30</width>
+           <height>26</height>
+          </size>
+         </property>
          <property name="maximumSize" >
           <size>
-           <width>31</width>
-           <height>31</height>
+           <width>30</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text" >
@@ -510,8 +534,8 @@
          </property>
          <property name="iconSize" >
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>16</width>
+           <height>16</height>
           </size>
          </property>
         </widget>
@@ -540,10 +564,16 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>30</width>
+           <height>26</height>
+          </size>
+         </property>
          <property name="maximumSize" >
           <size>
-           <width>31</width>
-           <height>31</height>
+           <width>30</width>
+           <height>26</height>
           </size>
          </property>
          <property name="text" >
@@ -554,8 +584,8 @@
          </property>
          <property name="iconSize" >
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>16</width>
+           <height>16</height>
           </size>
          </property>
          <property name="shortcut" >

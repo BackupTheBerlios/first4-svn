@@ -1201,6 +1201,18 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
                <property name="text" >
                 <string/>
                </property>
@@ -1209,8 +1221,8 @@
                </property>
                <property name="iconSize" >
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>16</width>
+                 <height>16</height>
                 </size>
                </property>
               </widget>
@@ -1223,6 +1235,18 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
                <property name="text" >
                 <string/>
                </property>
@@ -1231,8 +1255,8 @@
                </property>
                <property name="iconSize" >
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>16</width>
+                 <height>16</height>
                 </size>
                </property>
               </widget>
@@ -1245,6 +1269,18 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
                <property name="text" >
                 <string/>
                </property>
@@ -1253,8 +1289,8 @@
                </property>
                <property name="iconSize" >
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>16</width>
+                 <height>16</height>
                 </size>
                </property>
               </widget>
@@ -1267,6 +1303,18 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
                <property name="text" >
                 <string/>
                </property>
@@ -1275,8 +1323,8 @@
                </property>
                <property name="iconSize" >
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>16</width>
+                 <height>16</height>
                 </size>
                </property>
               </widget>
@@ -1305,6 +1353,18 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="minimumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>30</width>
+                 <height>26</height>
+                </size>
+               </property>
                <property name="text" >
                 <string/>
                </property>
@@ -1313,8 +1373,8 @@
                </property>
                <property name="iconSize" >
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>16</width>
+                 <height>16</height>
                 </size>
                </property>
               </widget>

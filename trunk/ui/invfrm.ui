@@ -140,8 +140,8 @@
        </property>
        <property name="iconSize" >
         <size>
-         <width>22</width>
-         <height>22</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>
@@ -153,8 +153,8 @@
        </property>
        <property name="iconSize" >
         <size>
-         <width>22</width>
-         <height>22</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>
@@ -202,8 +202,8 @@
        </property>
        <property name="iconSize" >
         <size>
-         <width>22</width>
-         <height>22</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>
@@ -253,8 +253,8 @@
        </property>
        <property name="iconSize" >
         <size>
-         <width>22</width>
-         <height>22</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>
@@ -266,8 +266,8 @@
        </property>
        <property name="iconSize" >
         <size>
-         <width>22</width>
-         <height>22</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
       </widget>
