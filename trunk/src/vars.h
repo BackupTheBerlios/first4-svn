@@ -13,6 +13,8 @@ public:
     void savecolwidth(QString frname, QString obj, QStringList colwidth);
     QStringList loadcolwidth(QString frmname, QString obj);
     QString get_tool(QString toolname);
+	int check_db_structure();
+	void update_db_structure();
 private slots:
 };
 #endif

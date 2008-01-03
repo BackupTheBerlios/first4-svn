@@ -14,7 +14,7 @@
 extern QString username, fullname, docfolder, templatefolder, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 //
-QStringList dbserver,dbname_local,uid,pwd,port;
+QStringList dbserver, dbname_local, uids, pwd, port;
 //
 loginfrm::loginfrm( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
@@ -56,7 +56,7 @@ bool loginfrm::loadservers()
 				if(streamline.section(":", 0, 0) == "SQLITE")
 				{
 					streamline = streamline.section(":", 1, 10);
-			    	uid.append("");
+			    	uids.append("");
 		    		pwd.append("");
 			    	dbserver.append("");
 		    		dbname_local.append(streamline);
@@ -66,7 +66,7 @@ bool loginfrm::loadservers()
 				else
 				{
 					streamline = streamline.section(":", 1, 10);
-			    	uid.append(streamline.section("@",0,0).section(":",0,0));
+			    	uids.append(streamline.section("@",0,0).section(":",0,0));
 		    		pwd.append(streamline.section("@",0,0).section(":",1,1));
 			    	dbserver.append(streamline.section("@",1,1).section("/",0,0));
 		    		dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
@@ -93,7 +93,7 @@ void loginfrm::checkpwd()
     	{
 			first4DB = QSqlDatabase::addDatabase("QMYSQL");
 			first4DB.setDatabaseName(dbname_local[cmbdb->currentIndex()]);
-			first4DB.setUserName(uid[cmbdb->currentIndex()]);
+			first4DB.setUserName(uids[cmbdb->currentIndex()]);
 			first4DB.setPassword(pwd[cmbdb->currentIndex()]);
 			first4DB.setPort(port[cmbdb->currentIndex()].toInt());
 			first4DB.setHostName(dbserver[cmbdb->currentIndex()]);	
@@ -157,7 +157,7 @@ void loginfrm::saveservers()
     
     dbhost= dbserver[ii];
     dbname = dbname_local[ii];
-    dbuid = uid[ii];
+    dbuid = uids[ii];
     dbpwd = pwd[ii];
     dbport = port[ii];
    
@@ -196,20 +196,20 @@ void loginfrm::saveservers()
 				foundsec = TRUE;
 				stream << "[SERVERS]" << "\n";
 				if(dbserver[ii] != "")
-					stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+					stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
 				else
 					stream << "SQLITE:" << dbname_local[ii] << "\n";
 				for(ii=0;ii<cmbdb->currentIndex();ii++)
 				{
 					if(dbserver[ii] != "")
-		    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+		    			stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
 		    		else
 		    			stream << "SQLITE:" << dbname_local[ii] << "\n";
 				}
 				for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
 				{
 					if(dbserver[ii] != "")
-		    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+		    			stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
 		    		else
 		    			stream << "SQLITE:" << dbname_local[ii] << "\n";
 				}
@@ -232,21 +232,21 @@ void loginfrm::saveservers()
 			stream << "\n" << "[SERVERS]" << "\n";
 			
 			if(dbserver[ii] != "")
-				stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+				stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
 			else
 				stream << "SQLITE:" << dbname_local[ii] << "\n";
 				
 			for(ii=0;ii<cmbdb->currentIndex();ii++)
 			{
 				if(dbserver[ii] != "")
-	    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
+	    			stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";	
 	    		else
 	    			stream << "SQLITE:" << dbname_local[ii] << "\n";
 			}
 			for(ii=cmbdb->currentIndex()+1;ii<cmbdb->count();ii++)
 			{
 				if(dbserver[ii] != "")
-	    			stream << "MYSQL:" << uid[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
+	    			stream << "MYSQL:" << uids[ii] << ":" << pwd[ii] << "@" << dbserver[ii] << "/" << dbname_local[ii] << ":" << port[ii] << "\n";
 	    		else
 	    			stream << "SQLITE:" << dbname_local[ii] << "\n";
 			}

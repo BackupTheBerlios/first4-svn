@@ -143,7 +143,7 @@ void cfgfrm::init()
 	connect ( btn_tool_db_dviviewer, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
 	connect ( btn_tool_db_dvi2ps, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
 	connect ( btn_tool_db_print, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
-	
+
 	progbar->setValue ( 100 );
 }
 //

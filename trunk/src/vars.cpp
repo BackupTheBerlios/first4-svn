@@ -12,7 +12,7 @@ QString firstver = "1.3.94-pre-beta1";
 QString build = "205";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
-QString username, fullname;
+QString uid, username, fullname;
 
 void vars::savegeo(QString frname, bool max, int x, int y, int width, int height)
 {
@@ -220,4 +220,14 @@ QString vars::get_tool(QString toolname)
 		}
 	}
 	return tool;
+}
+//
+int vars::check_db_structure()
+{
+	return 0;
+}
+//
+void vars::update_db_structure()
+{
+		
 }
