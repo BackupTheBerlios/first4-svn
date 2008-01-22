@@ -22,7 +22,9 @@
 #include "vars.h"
 #include "newdatatabfrm.h"
 #include "dbwizzardfrm.h"
+#include "templateeditfrm.h"
 
+extern int uid;
 extern QString username, fullname, firstver, templatefolder, docfolder, build;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
@@ -101,13 +103,33 @@ void cfgfrm::init()
 	txtdocpath->setText ( docfolder );
 	txttemplatepath->setText ( templatefolder );
 
+	//Check DB-Structure for templates
+	if(v.check_db_structure("templates") != 0)
+	{
+		if(uid != 0)
+			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
+		else
+		{
+			int r = QMessageBox::question ( this, tr ( "DB update..." ),tr ( "The database must be updated.\nDo you want to do it now?" ), QMessageBox::Yes, QMessageBox::No );
+			if ( r == QMessageBox::Yes )
+			{
+				v.update_db_structure("templates");
+				QMessageBox::information( 0, tr ( "DB update..." ), tr ( "The database was successfully updated." ) );
+			}
+		}
+	}
+	else
+	{
+		templates_load();
+	}
+
 	//slot connections
 	connect ( btnchangepwd, SIGNAL ( released() ), this, SLOT ( changepwd() ) );
 	connect ( btnsellangfile, SIGNAL ( released() ), this, SLOT ( selectlangfile() ) );
 	connect ( btnadddb, SIGNAL ( released() ), this, SLOT ( addservers() ) );
 	connect ( btndeldb, SIGNAL ( released() ), this, SLOT ( delservers() ) );
 	connect ( btnopensqlfile, SIGNAL ( released() ), this, SLOT ( opendbspec() ) );
-	connect ( btndbapply, SIGNAL ( released() ), this, SLOT ( applydbspec() ) ); // nicht fertig
+	connect ( btndbapply, SIGNAL ( released() ), this, SLOT ( applydbspec() ) );
 	connect ( listusers, SIGNAL ( itemClicked ( QListWidgetItem* ) ), this, SLOT ( selectuser() ) );
 	connect ( btn_users_new, SIGNAL ( released() ), this, SLOT ( newuser() ) );
 	connect ( btn_users_save, SIGNAL ( released() ), this, SLOT ( saveuserchange() ) );
@@ -143,6 +165,10 @@ void cfgfrm::init()
 	connect ( btn_tool_db_dviviewer, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
 	connect ( btn_tool_db_dvi2ps, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
 	connect ( btn_tool_db_print, SIGNAL ( released() ), this, SLOT ( tools_filedialog() ) );
+	
+	connect ( btnnewtemplate, SIGNAL ( released() ), this, SLOT ( templates_new() ) );
+	connect ( btnedittemplate, SIGNAL ( released() ), this, SLOT ( templates_edit() ) );
+	connect ( btndeletetemplate, SIGNAL ( released() ), this, SLOT ( templates_delete() ) );
 
 	progbar->setValue ( 100 );
 }
@@ -1468,4 +1494,32 @@ void cfgfrm::tools_filedialog()
 		txt_tool_db_dvi2ps->setText(toolname);
 	else if(toolobj->objectName() == "btn_tool_db_print")
 		txt_tool_db_print->setText(toolname);
+}
+//
+void cfgfrm::templates_load()
+{
+	
+}
+//
+void cfgfrm::templates_new()
+{
+	templateeditfrm* tfrm = new templateeditfrm;
+	tfrm->init();
+	tfrm->show();
+}
+//
+void cfgfrm::templates_edit()
+{
+	QTreeWidgetItem *item = tem_tree->currentItem();
+	if(item != 0)
+	{
+		templateeditfrm* tfrm = new templateeditfrm;
+		tfrm->init();
+		tfrm->opentemplate(item->text(1).toInt());		
+	}
+}
+//
+void cfgfrm::templates_delete()
+{
+	
 }

@@ -6,4 +6,12 @@ templateeditfrm::templateeditfrm( QWidget * parent, Qt::WFlags f)
 	setupUi(this);
 }
 //
-
+void templateeditfrm::init() 
+{
+	
+}
+//
+void templateeditfrm::opentemplate(int dbid) 
+{
+	
+}

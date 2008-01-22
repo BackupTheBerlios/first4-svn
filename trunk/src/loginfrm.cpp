@@ -11,6 +11,7 @@
 #include "cfgfrm.h"
 #include "vars.h"
 //
+extern int uid;
 extern QString username, fullname, docfolder, templatefolder, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 //
@@ -107,7 +108,7 @@ void loginfrm::checkpwd()
 		{
 		    // Database successfully opened;
 		    cfgfrm cfrm;
-		    QString qstr = QString( "SELECT fullname FROM userstab WHERE username='%1' AND userpass = '%2';").arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
+		    QString qstr = QString( "SELECT fullname, id FROM userstab WHERE username='%1' AND userpass = '%2';").arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
 		    QSqlQuery query(qstr);
 		    if(query.isActive())
 		    {
@@ -118,6 +119,7 @@ void loginfrm::checkpwd()
 					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				    username = boxuser->text();
 				    fullname = query.value(0).toString();
+				    uid = query.value(1).toInt();
 				    loadsysvars();
 				    this->accept();
 				}
@@ -127,6 +129,7 @@ void loginfrm::checkpwd()
 					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				   	username = boxuser->text();
 				    fullname = query.value(0).toString();
+				    uid = query.value(1).toInt();
 				   	loadsysvars();
 				    this->accept();
 				}

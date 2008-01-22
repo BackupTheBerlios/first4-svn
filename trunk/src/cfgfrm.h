@@ -53,6 +53,10 @@ public slots:
 private slots:
 	void tools_filedialog();
 	void applydbspec();
+	void templates_load();
+	void templates_new();
+	void templates_edit();
+	void templates_delete();
 };
 #endif
 

@@ -8,11 +8,12 @@
 
 #include "vars.h"
 
+int uid;
 QString firstver = "1.3.94-pre-beta1";
 QString build = "205";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
-QString uid, username, fullname;
+QString username, fullname;
 
 void vars::savegeo(QString frname, bool max, int x, int y, int width, int height)
 {
@@ -222,12 +223,22 @@ QString vars::get_tool(QString toolname)
 	return tool;
 }
 //
-int vars::check_db_structure()
+int vars::check_db_structure(QString section)
 {
-	return 0;
+	int retrcode = 0;
+	if(section == "templates")
+	{
+		QSqlQuery query("SHOW TABLES LIKE '%templatestab%';");
+		if(query.size() !=1 )
+			retrcode = 1;
+	}
+	return retrcode;
 }
 //
-void vars::update_db_structure()
+void vars::update_db_structure(QString section)
 {
-		
+	if(section == "templates")
+	{
+		QSqlQuery query("CREATE TABLE `templatestab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL, `data` mediumtext NOT NULL,`created_by` text NOT NULL,`created` date NOT NULL default '0000-00-00',`modificated_by` text NOT NULL, `modificated` date NOT NULL default '0000-00-00',   PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+	}
 }
