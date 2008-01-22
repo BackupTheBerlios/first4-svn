@@ -390,7 +390,7 @@ sqlitecreatelist << "CREATE TABLE `doctab` (`ID` integer PRIMARY KEY AUTOINCREME
 sqlitecreatelist << "INSERT INTO `doctab` VALUES (1,'1 offer','','0001','');";
 sqlitecreatelist << "INSERT INTO `doctab` VALUES (2,'2 orderconf','','0001','');";
 sqlitecreatelist << "INSERT INTO `doctab` VALUES (3,'3 deliverynote','/','0001','');";
-sqlitecreatelist << "INSERT INTO `doctab` VALUES (4,'4 bill','','0002','');";
+sqlitecreatelist << "INSERT INTO `doctab` VALUES (4,'4 invoice','','0002','');";
 
 sqlitecreatelist << "CREATE TABLE `invcfgtab` (`ID` integer PRIMARY KEY AUTOINCREMENT,`USERS` text NOT NULL );";
 sqlitecreatelist << "INSERT INTO `invcfgtab` VALUES (1,'');";

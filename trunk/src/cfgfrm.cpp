@@ -751,7 +751,7 @@ void cfgfrm::loadressources()
 	{
 		int tmpid;
 		QStringList cfgdocnames;
-		cfgdocnames << tr ( "Offer" ) << tr ( "Order confirmation" ) << tr ( "Delivery note" ) << tr ( "Bill" );
+		cfgdocnames << tr ( "Offer" ) << tr ( "Order confirmation" ) << tr ( "Delivery note" ) << tr ( "Invoice" );
 		while ( querydoc.next() )
 		{
 			QTreeWidgetItem* childitem = new QTreeWidgetItem ( item );
