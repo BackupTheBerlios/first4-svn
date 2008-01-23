@@ -9,8 +9,14 @@ Q_OBJECT
 public:
 	templateeditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
-	void opentemplate(int dbid);
+	void opentemplate(QString dbid);
 private slots:
+	void importfile();
+	void savetemplate();
+private:
+	void closeEvent(QCloseEvent* ce );
+	void inserttemplate();
+	void updatetemplate();
 };
 #endif
 

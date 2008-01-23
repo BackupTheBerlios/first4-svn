@@ -5,9 +5,9 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlError>
-
+//
 #include "vars.h"
-
+//
 int uid;
 QString firstver = "1.3.94-pre-beta1";
 QString build = "205";
@@ -232,13 +232,33 @@ int vars::check_db_structure(QString section)
 		if(query.size() !=1 )
 			retrcode = 1;
 	}
+	else if(section == "msg")
+	{
+		QSqlQuery query("SHOW TABLES LIKE '%msgtab%';");
+		if(query.size() !=1 )
+			retrcode = 1;
+	}
 	return retrcode;
 }
 //
 void vars::update_db_structure(QString section)
 {
-	if(section == "templates")
+	if(uid != 0)
+		QMessageBox::warning( 0, "DB update needed..." , "The database must be updated.\nPlease log-in as Administrator and perform the update." );
+	else
 	{
-		QSqlQuery query("CREATE TABLE `templatestab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL, `data` mediumtext NOT NULL,`created_by` text NOT NULL,`created` date NOT NULL default '0000-00-00',`modificated_by` text NOT NULL, `modificated` date NOT NULL default '0000-00-00',   PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+		int r = QMessageBox::question ( 0, "DB update..." , "The database must be updated.\nDo you want to do it now?" , QMessageBox::Yes, QMessageBox::No );
+		if ( r == QMessageBox::Yes )
+		{
+			if(section == "templates")
+			{
+				QSqlQuery query("CREATE TABLE `templatestab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL, `data` mediumtext NOT NULL,`created_by` text NOT NULL,`created` date NOT NULL default '0000-00-00',`modificated_by` text NOT NULL, `modificated` date NOT NULL default '0000-00-00',   PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+			}
+				else if(section == "msg")
+			{
+				QSqlQuery query("CREATE TABLE `msgtab` (`ID` int(11) NOT NULL auto_increment, `typ` text NOT NULL, `user` text NOT NULL,  `date` date NOT NULL default '0000-00-00',`msgtext` text NOT NULL,`data1` text NOT NULL,`data2` text NOT NULL,`data3` text NOT NULL,`data4` text NOT NULL,`data5` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+			}
+			QMessageBox::information( 0, "DB update..." , "The database was successfully updated."  );
+		}
 	}
 }

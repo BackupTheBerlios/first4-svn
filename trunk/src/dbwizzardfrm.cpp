@@ -301,6 +301,7 @@ mysqsqlcreatelist << "CREATE TABLE `maincfgtab` (`ID` int(11) NOT NULL auto_incr
 mysqsqlcreatelist << "LOCK TABLES `maincfgtab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `maincfgtab` VALUES (1,'docfolder',''),(2,'templatefolder',''),(3,'dbversion','"+firstver+"'),(4,'company','"+txtcompany->text()+"'),(5,'companyaddress','"+txtstreetnr->text()+"'),(6,'bankname',''),(7,'bankaddress',''),(8,'bankblz',''),(9,'bankaccountnr',''),(10,'banktnr',''),(11,'docpref',''),(12,'DoG','');";
 mysqsqlcreatelist << "UNLOCK TABLES;";
+mysqsqlcreatelist << "CREATE TABLE `msgtab` (`ID` int(11) NOT NULL auto_increment, `typ` text NOT NULL, `user` text NOT NULL,  `date` date NOT NULL default '0000-00-00',`msgtext` text NOT NULL,`data1` text NOT NULL,`data2` text NOT NULL,`data3` text NOT NULL,`data4` text NOT NULL,`data5` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `msgcfgtab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "LOCK TABLES `msgcfgtab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `msgcfgtab` VALUES (1,'gen','1 general',''),(2,'sto','2 stock',''),(3,'ord','3 order',''),(4,'iem','4 incexp','');";

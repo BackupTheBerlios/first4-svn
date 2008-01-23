@@ -29,7 +29,7 @@ extern QString username, fullname, firstver, templatefolder, docfolder, build;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
 QString cfgdbver;
-QStringList listallusers;
+QStringList listallusers, templateids;
 
 cfgfrm::cfgfrm ( QWidget * parent, Qt::WFlags f )
 		: QWidget ( parent, f )
@@ -52,8 +52,8 @@ void cfgfrm::init()
 	lbluser->setText ( username );
 	txtuser->setText ( username );
 
-	maintab->setCurrentIndex ( 0 );
-	cfgtab->setCurrentIndex ( 0 );
+	maintab->setCurrentIndex( 0 );
+	cfgtab->setCurrentIndex( 0 );
 
 	//init listressoureces
 	listressources->header()-> setClickable ( FALSE );
@@ -66,11 +66,13 @@ void cfgfrm::init()
 	listressources->hideColumn ( 1 );
 	listressources->hideColumn ( 2 );
 	listressources->hideColumn ( 3 );
-	listressources->hideColumn ( 4 );
+	//listressources->hideColumn ( 4 );
 
 	listpermissions->setColumnWidth ( 0, 300 );
 	listpermissions->setColumnWidth ( 1, 40 );
 	listpermissions->setColumnWidth ( 2, 40 );
+
+	tem_tree->hideColumn(2);
 
 	//init functions
 
@@ -109,14 +111,7 @@ void cfgfrm::init()
 		if(uid != 0)
 			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
 		else
-		{
-			int r = QMessageBox::question ( this, tr ( "DB update..." ),tr ( "The database must be updated.\nDo you want to do it now?" ), QMessageBox::Yes, QMessageBox::No );
-			if ( r == QMessageBox::Yes )
-			{
-				v.update_db_structure("templates");
-				QMessageBox::information( 0, tr ( "DB update..." ), tr ( "The database was successfully updated." ) );
-			}
-		}
+			v.update_db_structure("templates");
 	}
 	else
 	{
@@ -151,6 +146,7 @@ void cfgfrm::init()
 	connect ( btnsavepath, SIGNAL ( released() ), this, SLOT ( savedefaultpath() ) );
 	connect ( btnsavesettings, SIGNAL ( released() ), this, SLOT ( savesettings() ) );
 	connect ( btnowndata, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
+	connect ( cmbtemplatename, SIGNAL ( activated(int) ), this, SLOT ( applyresourcesdetails() ) );
 	
 	connect ( btn_tools_save_local, SIGNAL ( released() ), this, SLOT ( save_local_tools() ) );
 	connect ( btn_tools_save_db, SIGNAL ( released() ), this, SLOT ( save_db_tools() ) );
@@ -169,6 +165,8 @@ void cfgfrm::init()
 	connect ( btnnewtemplate, SIGNAL ( released() ), this, SLOT ( templates_new() ) );
 	connect ( btnedittemplate, SIGNAL ( released() ), this, SLOT ( templates_edit() ) );
 	connect ( btndeletetemplate, SIGNAL ( released() ), this, SLOT ( templates_delete() ) );
+	connect ( btnrefreshtempaltes, SIGNAL ( released() ), this, SLOT ( templates_load() ) );
+	connect ( tem_tree, SIGNAL ( itemClicked ( QTreeWidgetItem*, int ) ), this, SLOT ( templates_loaddetails() ) );
 
 	progbar->setValue ( 100 );
 }
@@ -914,7 +912,7 @@ void cfgfrm::applyresourcesdetails()
 		if ( item->text ( 2 ).left ( 3 ) =="adr" || item->text ( 2 ) =="p_orders" || item->text ( 2 ) =="orders" )
 			item->setText ( 4, txtstartid->text() );
 		if ( item->text ( 2 ) =="doc" )
-			item->setText ( 4, txt_doctemplate->text() );
+			item->setText ( 4, templateids[cmbtemplatename->currentIndex()]);
 		if ( item->text ( 2 ).left ( 7 ) =="account" )
 			item->setText ( 4, txtboxbank->text() +";"+txtboxaccountnr->text() +";"+txtboxclearing->text() +";"+txtboxcurrency->text() );
 	}
@@ -1248,12 +1246,26 @@ void cfgfrm::loadsettings()
 	QString qstr = "SELECT value FROM maincfgtab WHERE `var`='DoG';";
 	QSqlQuery loadsettings_1 ( qstr );
 	loadsettings_1.next();
-	daysofgrace->setValue ( loadsettings_1.value ( 0 ).toInt() );
+	if(loadsettings_1.size()>0)
+		daysofgrace->setValue ( loadsettings_1.value ( 0 ).toInt() );
+	else
+		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('DoG', '');");
 
 	qstr = "SELECT value FROM maincfgtab WHERE `var`='docpref';";
 	QSqlQuery loadsettings_2 ( qstr );
 	loadsettings_2.next();
-	txtdocprefix->setText ( loadsettings_2.value ( 0 ).toString() );
+	if(loadsettings_2.size()>0)
+		txtdocprefix->setText ( loadsettings_2.value ( 0 ).toString() );
+	else
+		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('docpref', '');");
+		
+	qstr = "SELECT value FROM maincfgtab WHERE `var`='def_currency';";
+	QSqlQuery loadsettings_3 ( qstr );
+	loadsettings_3.next();
+	if(loadsettings_3.size()>0)
+		txtdocprefix->setText ( loadsettings_3.value ( 0 ).toString() );
+	else
+		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('def_currency', '');");
 }
 //
 void cfgfrm::savesettings()
@@ -1266,6 +1278,10 @@ void cfgfrm::savesettings()
 	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='docpref';" );
 	savesettings_2.bindValue ( ":prefix", txtdocprefix->text() );
 	savesettings_2.exec();
+	QSqlQuery savesettings_3;
+	savesettings_3.prepare ( "UPDATE maincfgtab SET `value`=:def_currency WHERE `var`='def_currency';" );
+	savesettings_3.bindValue ( ":prefix", txtdefcurrency->text() );
+	savesettings_3.exec();
 	QMessageBox::information ( 0, tr ( "Settings..." ), tr ( "New settings are saved and now active." ) );
 }
 //
@@ -1498,7 +1514,28 @@ void cfgfrm::tools_filedialog()
 //
 void cfgfrm::templates_load()
 {
-	
+	cmbtemplatename->clear();
+	templateids.clear();
+	tem_tree->clear();
+	QSqlQuery query("SELECT name, description, ID FROM templatestab ORDER BY ID ASC");
+	if ( query.isActive())
+	{
+		while(query.next())
+		{
+			QTreeWidgetItem *item = new QTreeWidgetItem(tem_tree);
+			item->setText(0, query.value(0).toString());
+			item->setText(1, query.value(1).toString());
+			item->setText(2, query.value(2).toString());
+						
+			cmbtemplatename->addItem(query.value(0).toString());
+			templateids << query.value(2).toString();
+		}
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load templates..." ), qerror.text() );
+	}
 }
 //
 void cfgfrm::templates_new()
@@ -1515,11 +1552,53 @@ void cfgfrm::templates_edit()
 	{
 		templateeditfrm* tfrm = new templateeditfrm;
 		tfrm->init();
-		tfrm->opentemplate(item->text(1).toInt());		
+		tfrm->opentemplate(item->text(2));
+		tfrm->show();
 	}
 }
 //
 void cfgfrm::templates_delete()
 {
-	
+	QTreeWidgetItem *item = tem_tree->currentItem();
+	if(item != 0)
+	{
+		int r = QMessageBox::warning ( this, tr ( "Deleting..." ),tr ( "Delete template '%1'?" ).arg ( item->text(0) ), QMessageBox::Yes, QMessageBox::No );
+		if ( r == QMessageBox::Yes )
+		{
+			QString qstr = QString("DELETE FROM templatestab WHERE `ID`='%1';").arg(item->text(2));
+			QSqlQuery query(qstr);
+			QSqlError qerror = query.lastError();
+			if(qerror.isValid())
+				QMessageBox::warning ( 0, tr ( "Template not deleted..." ), qerror.text());
+			else
+				templates_load();
+		}
+	}
+}
+//
+void cfgfrm::templates_loaddetails()
+{
+	QTreeWidgetItem *item = tem_tree->currentItem();
+	if(item != 0)
+	{
+		QString qstr = QString("SELECT name, description, created_by, created, modificated_by, modificated FROM templatestab WHERE `ID`='%1';").arg(item->text(2));
+		QSqlQuery query(qstr);
+		if ( query.isActive())
+		{
+			query.next();
+			tem_name->setText(query.value(0).toString());
+			tem_description->setText(query.value(1).toString());
+			QString s  = query.value(3).toString();
+			tem_created->setText(s.section("-", 2, 2)+"."+s.section("-", 1, 1)+"."+s.section("-", 0, 0));
+			tem_createdby->setText(query.value(2).toString());
+			s  = query.value(5).toString();
+			tem_modification->setText(s.section("-", 2, 2)+"."+s.section("-", 1, 1)+"."+s.section("-", 0, 0));
+			tem_modificatedby->setText(query.value(4).toString());
+		}
+		else
+		{
+			QSqlError qerror = query.lastError();
+			QMessageBox::warning ( 0, tr ( "Can't load templates..." ), qerror.text() );
+		}	
+	}
 }

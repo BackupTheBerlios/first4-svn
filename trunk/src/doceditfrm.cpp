@@ -23,7 +23,7 @@ extern QString username, fullname, docfolder, templatefolder;
 QString opendocID = "";
 QString opendocSource = "";
 QString b_text = "";
-QString docprefix, tnr, companyaddress, docfile;
+QString docprefix, tnr, companyaddress, docfile, currency;
 QStringList vatlist, vatamount, docnames, filename, doccount, docdef;
 //
 doceditfrm::doceditfrm( QWidget * parent, Qt::WFlags f) 
@@ -556,16 +556,18 @@ void doceditfrm::initvat()
 //
 void doceditfrm::loadmaincfg()
 {
-    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'firmanschrift' ORDER BY var;");
+    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'firmanschrift' OR `var` = 'def_currency' ORDER BY var;");
     QSqlQuery query(connstr);
     if(query.isActive())
     {
 		query.next();
-		tnr = query.value(0).toString();	    
+		tnr = query.value(0).toString();
+		query.next();
+		currency = query.value(0).toString();
 		query.next();
 		docprefix = query.value(0).toString();
 		query.next();
-		companyaddress = query.value(0).toString();	    
+		companyaddress = query.value(0).toString();
     }
 }
 //
@@ -1164,11 +1166,11 @@ void doceditfrm::writetexfile()
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 6);
-			tabcontent += item->text() + " CHF & ";
+			tabcontent += item->text() + currency + " & ";
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 7);
-			tabcontent += item->text() + " CHF & ";
+			tabcontent += item->text() + currency + " & ";
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 8);
@@ -1214,28 +1216,28 @@ void doceditfrm::writetexfile()
 		    while ( !instream.atEnd() )
 		    {
 				line = instream.readLine();
-				line = line.replace("###DATE###", boxdate->date().toString("dd. MMMM yyyy"));
-				line = line.replace("###RECIPIENT###", boxaddress->toPlainText().replace("\n", "\\newline "));
-				line = line.replace("###DOCTYPE###", cmbdoc->currentText());
-				line = line.replace("###DOCID###", txtdoccount->text());
-				line = line.replace("###TABHEAD###", tabhead);
-				line = line.replace("###TABCONTENT###", tabcontent);
-				line = line.replace("###DoG###", boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
-				if(line.contains("###DISCOUNT###") > 0)
+				line = line.replace("+++DATE+++", boxdate->date().toString("dd. MMMM yyyy"));
+				line = line.replace("+++RECIPIENT+++", boxaddress->toPlainText().replace("\n", "\\newline "));
+				line = line.replace("+++DOCTYPE+++", cmbdoc->currentText());
+				line = line.replace("+++DOCID+++", txtdoccount->text());
+				line = line.replace("+++TABHEAD+++", tabhead);
+				line = line.replace("+++TABCONTENT+++", tabcontent);
+				line = line.replace("+++DoG+++", boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
+				if(line.contains("+++DISCOUNT+++") > 0)
 				{
 				    if(boxdiscount->text().toDouble()>0)
 				    {
-						QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+boxtot->text()+" CHF} \\\\ \n";
+						QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+boxtot->text()+" "+currency+"} \\\\ \n";
 						tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+boxdiscount->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(boxtot->text().toDouble()/100*boxdiscount->text().toDouble(), 0, 'f',2)+" CHF \\end{scriptsize} \\\\ \n";
-						line = line.replace("###DISCOUNT###", tmpdiscount);
+						line = line.replace("+++DISCOUNT+++", tmpdiscount);
 				    }
 				    else
-						line = line.replace("###DISCOUNT###", "");
+						line = line.replace("+++DISCOUNT+++", "");
 				}
-				line = line.replace("###TOTEXCL_DESC###", tr("Amount excl. VAT:"));
-				line = line.replace("###TOTEXCL###", boxtot_excl->text()+ " CHF");
+				line = line.replace("+++TOTEXCL_DESC+++", tr("Amount excl. VAT:"));
+				line = line.replace("+++TOTEXCL+++", boxtot_excl->text()+ " CHF");
 		
-				if(line.contains("###VAT###") > 0)
+				if(line.contains("+++VAT+++") > 0)
 				{
 				    QString tmpvat = "\\begin{scriptsize}"+tr("VAT rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("VAT amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("VAT")+"\\end{scriptsize} \\\\ \n";
 				    
@@ -1247,25 +1249,26 @@ void doceditfrm::writetexfile()
 						if(vatamount[i].toDouble() > 0)
 						    tmpvat += "\\begin{scriptsize}"+vatlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+vatamount[i]+" CHF \\end{scriptsize} & \\begin{scriptsize}"+vattmp+" CHF \\end{scriptsize} \\\\ \n";
 				    }
-				    line = line.replace("###VAT###", tmpvat);
+				    line = line.replace("+++VAT+++", tmpvat);
 				}		
 		
-				line = line.replace("###TOTINCL_DESC###", tr("Net amount:"));		
-				line = line.replace("###TOTINCL###", boxtot_incl->text()+ " CHF");
-				line = line.replace("###USER###", fullname);
-				line = line.replace("###CUSTOMER###", boxaddress->toPlainText().section("\n", 0, 0));
+				line = line.replace("+++TOTINCL_DESC+++", tr("Net amount:"));		
+				line = line.replace("+++TOTINCL+++", boxtot_incl->text()+ " CHF");
+				line = line.replace("+++KIND_REGARDS+++", "Kind regards");
+				line = line.replace("+++USER+++", fullname);
+				line = line.replace("+++CUSTOMER+++", boxaddress->toPlainText().section("\n", 0, 0));
 		
 				if(txtsalutation->text() != "")
-				    line = line.replace("###SALUTATION###", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+txtsalutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
+				    line = line.replace("+++SALUTATION+++", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+txtsalutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
 				else
-				    line = line.replace("###SALUTATION###", "");
+				    line = line.replace("+++SALUTATION+++", "");
 		
 				if(boxotherinfo->toPlainText() != "")
-				    line = line.replace("###INTRODUCTION###", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+boxotherinfo->toPlainText().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
+				    line = line.replace("+++INTRODUCTION+++", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+boxotherinfo->toPlainText().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
 				else
-				    line = line.replace("###INTRODUCTION###", "");
+				    line = line.replace("+++INTRODUCTION+++", "");
 
-				if(line.contains("###COMMENTS###") > 0)
+				if(line.contains("+++COMMENTS+++") > 0)
 				{
 				    if(boxcomments->toPlainText() != "")
 				    {
@@ -1273,10 +1276,10 @@ void doceditfrm::writetexfile()
 						tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
 						tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n") + " \\\\ \n";
 						tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
-						line = line.replace("###COMMENTS###", tmpcomments);
+						line = line.replace("+++COMMENTS+++", tmpcomments);
 				    }
 				    else
-						line = line.replace("###COMMENTS###", "");
+						line = line.replace("+++COMMENTS+++", "");
 				}
 				outstream << line << "\n";
 		    }

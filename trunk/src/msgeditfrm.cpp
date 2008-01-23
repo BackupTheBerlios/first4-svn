@@ -1,8 +1,6 @@
 #include <QDate>
 #include <QSqlQuery>
 #include <QHeaderView>
-#include <QMessageBox>
-//
 #include "msgeditfrm.h"
 #include "stockselfrm.h"
 #include "addrselectfrm.h"
@@ -178,7 +176,6 @@ void msgeditfrm::newentry()
 			break;
     }
     QSqlQuery query(qstr);
-    QMessageBox::information(this, tr("Delete entry..."), qstr);
     this->accept();
 }
 //

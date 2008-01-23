@@ -11,6 +11,7 @@
 #include "printfrm.h"
 #include "msgeditfrm.h"
 //
+extern int uid;
 extern QString username, fullname, templatefolder;
 //
 msgfrm::msgfrm( QWidget * parent, Qt::WFlags f) 
@@ -49,7 +50,18 @@ void msgfrm::init()
    	
    	loadmsgcfg();
    	treeindex->setCurrentItem(treeindex->topLevelItem(0));
-   	loadmsg();
+   	if(v.check_db_structure("msg") != 0)
+	{
+		if(uid != 0)
+			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
+		else
+			v.update_db_structure("msg");
+	}
+	else
+	{
+   		loadmsg();
+	}
+   	
 }
 //
 void msgfrm::closeEvent(QCloseEvent* ce )

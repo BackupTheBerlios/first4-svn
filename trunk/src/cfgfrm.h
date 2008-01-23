@@ -57,6 +57,7 @@ private slots:
 	void templates_new();
 	void templates_edit();
 	void templates_delete();
+	void templates_loaddetails();
 };
 #endif
 
