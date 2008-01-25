@@ -25,7 +25,7 @@
 #include "templateeditfrm.h"
 
 extern int uid;
-extern QString username, fullname, firstver, templatefolder, docfolder, build;
+extern QString username, fullname, firstver, docfolder, build;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
 QString cfgdbver;
@@ -55,18 +55,18 @@ void cfgfrm::init()
 	maintab->setCurrentIndex( 0 );
 	cfgtab->setCurrentIndex( 0 );
 
-	//init listressoureces
-	listressources->header()-> setClickable ( FALSE );
-	listressources->header()->setResizeMode ( QHeaderView::Fixed );
-	listressources->headerItem()->setText ( 0, QApplication::translate ( "cfgfrm", "Ressources", 0, QApplication::UnicodeUTF8 ) );
-	listressources->headerItem()->setText ( 1, QApplication::translate ( "cfgfrm", "ID", 0, QApplication::UnicodeUTF8 ) );
-	listressources->headerItem()->setText ( 2, QApplication::translate ( "cfgfrm", "name", 0, QApplication::UnicodeUTF8 ) );
-	listressources->headerItem()->setText ( 3, QApplication::translate ( "cfgfrm", "users", 0, QApplication::UnicodeUTF8 ) );
-	listressources->headerItem()->setText ( 4, QApplication::translate ( "cfgfrm", "details", 0, QApplication::UnicodeUTF8 ) );
-	listressources->hideColumn ( 1 );
-	listressources->hideColumn ( 2 );
-	listressources->hideColumn ( 3 );
-	//listressources->hideColumn ( 4 );
+	//init listresoureces
+	listresources->header()-> setClickable ( FALSE );
+	listresources->header()->setResizeMode ( QHeaderView::Fixed );
+	listresources->headerItem()->setText ( 0, QApplication::translate ( "cfgfrm", "Resources", 0, QApplication::UnicodeUTF8 ) );
+	listresources->headerItem()->setText ( 1, QApplication::translate ( "cfgfrm", "ID", 0, QApplication::UnicodeUTF8 ) );
+	listresources->headerItem()->setText ( 2, QApplication::translate ( "cfgfrm", "name", 0, QApplication::UnicodeUTF8 ) );
+	listresources->headerItem()->setText ( 3, QApplication::translate ( "cfgfrm", "users", 0, QApplication::UnicodeUTF8 ) );
+	listresources->headerItem()->setText ( 4, QApplication::translate ( "cfgfrm", "details", 0, QApplication::UnicodeUTF8 ) );
+	listresources->hideColumn ( 1 );
+	listresources->hideColumn ( 2 );
+	listresources->hideColumn ( 3 );
+	listresources->hideColumn ( 4 );
 
 	listpermissions->setColumnWidth ( 0, 300 );
 	listpermissions->setColumnWidth ( 1, 40 );
@@ -96,14 +96,13 @@ void cfgfrm::init()
 		progbar->setValue ( 70 );
 		load_db_tools();
 		progbar->setValue ( 80 );
-		loadressources();
+		loadresources();
 	}
 	
 	progbar->setValue ( 80 );
 	resdefframe->setCurrentIndex ( 3 );
 
 	txtdocpath->setText ( docfolder );
-	txttemplatepath->setText ( templatefolder );
 
 	//Check DB-Structure for templates
 	if(v.check_db_structure("templates") != 0)
@@ -130,20 +129,17 @@ void cfgfrm::init()
 	connect ( btn_users_save, SIGNAL ( released() ), this, SLOT ( saveuserchange() ) );
 	connect ( btn_users_delete, SIGNAL ( released() ), this, SLOT ( deluser() ) );
 	connect ( btn_users_cancel, SIGNAL ( released() ), this, SLOT ( canceluser() ) );
-	connect ( listressources, SIGNAL ( itemClicked ( QTreeWidgetItem*,int ) ), this, SLOT ( loadressourcesdetails() ) );
-	connect ( btndoctemplate, SIGNAL ( released() ), this, SLOT ( seldoctemplate() ) );
+	connect ( listresources, SIGNAL ( itemClicked ( QTreeWidgetItem*,int ) ), this, SLOT ( loadresourcesdetails() ) );
 	connect ( listpermissions, SIGNAL ( itemClicked ( QTreeWidgetItem*, int ) ), this, SLOT ( applyresourcesdetails() ) );
 	connect ( btnsavepermissions, SIGNAL ( released() ), this, SLOT ( saveresourcesdetails() ) );
 	connect ( txtstartid, SIGNAL ( textChanged ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
-	connect ( txt_doctemplate, SIGNAL ( textChanged ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
 	connect ( txtboxbank, SIGNAL ( textEdited ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
 	connect ( txtboxaccountnr, SIGNAL ( textEdited ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
 	connect ( txtboxclearing, SIGNAL ( textEdited ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
 	connect ( txtboxcurrency, SIGNAL ( textEdited ( QString ) ), this, SLOT ( applyresourcesdetails() ) );
-	connect ( listressources, SIGNAL ( customContextMenuRequested ( QPoint ) ), this, SLOT ( contmenu() ) );
+	connect ( listresources, SIGNAL ( customContextMenuRequested ( QPoint ) ), this, SLOT ( contmenu() ) );
 	connect ( btndocpath, SIGNAL ( released() ), this, SLOT ( selectdocpath() ) );
-	connect ( btntemplpath, SIGNAL ( released() ), this, SLOT ( selecttemplpath() ) );
-	connect ( btnsavepath, SIGNAL ( released() ), this, SLOT ( savedefaultpath() ) );
+	connect ( btnsavepath, SIGNAL ( released() ), this, SLOT ( savedocsettings() ) );
 	connect ( btnsavesettings, SIGNAL ( released() ), this, SLOT ( savesettings() ) );
 	connect ( btnowndata, SIGNAL ( released() ), this, SLOT ( saveowndata() ) );
 	connect ( cmbtemplatename, SIGNAL ( activated(int) ), this, SLOT ( applyresourcesdetails() ) );
@@ -629,27 +625,27 @@ void cfgfrm::deluser()
 		QMessageBox::warning(0,"Fehler...", tr("Administrator cannot be deleted!"));
 }
 //
-void cfgfrm::loadressources()
+void cfgfrm::loadresources()
 {
-	listressources->clear();
-	QTreeWidgetItem *item = new QTreeWidgetItem ( listressources );
+	listresources->clear();
+	QTreeWidgetItem *item = new QTreeWidgetItem ( listresources );
 	item->setText ( 0, tr ( "Directories" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0,  tr ( "Data & Stock" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0,  tr ( "Inventory" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0,  tr ( "Purchase orders" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0, tr ( "Orders" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0, tr ( "Documents" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0, tr ( "Accounts" ) );
-	item = new QTreeWidgetItem ( listressources, item );
+	item = new QTreeWidgetItem ( listresources, item );
 	item->setText ( 0, tr ( "Messages" ) );
 
-	QTreeWidgetItemIterator it ( listressources );
+	QTreeWidgetItemIterator it ( listresources );
 	item = *it;
 	QSqlQuery queryadr ( "SELECT ID, name, description, users, idcounter FROM adrtabs ORDER BY ID ASC;" );
 	if ( queryadr.isActive() )
@@ -814,9 +810,9 @@ void cfgfrm::loadressources()
 	}
 }
 //
-void cfgfrm::loadressourcesdetails()
+void cfgfrm::loadresourcesdetails()
 {
-	QTreeWidgetItem* item = listressources->currentItem();
+	QTreeWidgetItem* item = listresources->currentItem();
 	if ( item->childCount() == 0 )
 	{
 		listpermissions->clear();
@@ -842,7 +838,8 @@ void cfgfrm::loadressourcesdetails()
 		}
 		if ( item->text ( 2 ) =="doc" ) //Dokumentvorlage laden
 		{
-			txt_doctemplate->setText ( item->text ( 4 ) );
+			if(templateids.indexOf(item->text(4)) != -1 )
+				cmbtemplatename->setCurrentIndex(templateids.indexOf(item->text(4)));
 			resdefframe->setCurrentIndex ( 0 );
 		}
 		else if ( item->text ( 2 ).left ( 7 ) =="account" )
@@ -867,20 +864,11 @@ void cfgfrm::loadressourcesdetails()
 	}
 }
 //
-void cfgfrm::seldoctemplate()
-{
-	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Select Template..." ),
-	                   templatefolder,
-	                   tr ( "Template (*.tex)" ) );
-	txt_doctemplate->setText ( filename );
-	applyresourcesdetails();
-}
-//
 void cfgfrm::applyresourcesdetails()
 {
 	int i;
 	QString tmpstr = "";
-	QTreeWidgetItem* item = listressources->currentItem();
+	QTreeWidgetItem* item = listresources->currentItem();
 	if ( item->childCount() ==0 )
 	{
 		QTreeWidgetItemIterator it ( listpermissions );
@@ -912,7 +900,10 @@ void cfgfrm::applyresourcesdetails()
 		if ( item->text ( 2 ).left ( 3 ) =="adr" || item->text ( 2 ) =="p_orders" || item->text ( 2 ) =="orders" )
 			item->setText ( 4, txtstartid->text() );
 		if ( item->text ( 2 ) =="doc" )
+		{
+			templates_loaddescription();
 			item->setText ( 4, templateids[cmbtemplatename->currentIndex()]);
+		}
 		if ( item->text ( 2 ).left ( 7 ) =="account" )
 			item->setText ( 4, txtboxbank->text() +";"+txtboxaccountnr->text() +";"+txtboxclearing->text() +";"+txtboxcurrency->text() );
 	}
@@ -921,7 +912,7 @@ void cfgfrm::applyresourcesdetails()
 void cfgfrm::saveresourcesdetails()
 {
 	//Adressbcher speichern
-	QTreeWidgetItemIterator it ( listressources );
+	QTreeWidgetItemIterator it ( listresources );
 	QTreeWidgetItem *item;
 	while ( *it )
 	{
@@ -1014,7 +1005,7 @@ void cfgfrm::saveresourcesdetails()
 //
 void cfgfrm::contmenu()
 {
-	QTreeWidgetItem* item = listressources->currentItem();
+	QTreeWidgetItem* item = listresources->currentItem();
 	QMenu* contextMenu = new QMenu ( this );
 	Q_CHECK_PTR ( contextMenu );
 	if ( item->childCount() > 0 )
@@ -1081,7 +1072,7 @@ void cfgfrm::newaddr()
 		QSqlQuery queryadrnew2 ( qstr2 );
 		QString qstr3 = "CREATE TABLE `" + QString( adrname ) + "` (  `ID` int(11) NOT NULL auto_increment, `clientid` text NOT NULL, `company` text NOT NULL, `lastname` text NOT NULL, `firstname` text NOT NULL, `nameadd` text NOT NULL, `pobox` text NOT NULL, `street_nr` text NOT NULL, `zip_location` text NOT NULL, `tel_b` text NOT NULL, `tel_direct` text NOT NULL, `fax_b` text NOT NULL, `tel_p` text NOT NULL, `fax_p` text NOT NULL, `mobile` text NOT NULL, `email1` text NOT NULL, `email2` text NOT NULL, `email3` text NOT NULL, `homepage` text NOT NULL, `revenueaj` text NOT NULL, `revenuelj` text NOT NULL, `discount` text NOT NULL, `clienttyp` text NOT NULL, `comments` text NOT NULL, `custom1` text NOT NULL, `custom2` text NOT NULL, `custom3` text NOT NULL, `custom4` text NOT NULL, `custom5` text NOT NULL, `created` text NOT NULL, `modified` text NOT NULL, KEY `ID` (`ID`)) ENGINE=InnoDB CHARSET=latin1;";
 		QSqlQuery queryadrnew3 ( qstr3 );
-		loadressources();
+		loadresources();
 	}
 }
 //
@@ -1090,7 +1081,7 @@ void cfgfrm::newdata()
 	newdatatabfrm newtab;
 	newtab.init();
 	if ( newtab.exec() )
-		loadressources();
+		loadresources();
 }
 //
 void cfgfrm::newaccount()
@@ -1124,13 +1115,13 @@ void cfgfrm::newaccount()
 
 		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
 		QSqlQuery querykontonew5 ( qstr3 );
-		loadressources();
+		loadresources();
 	}
 }
 //
 void cfgfrm::rentab()
 {
-	QTreeWidgetItem* item = listressources->currentItem();
+	QTreeWidgetItem* item = listresources->currentItem();
 	if ( item->text ( 2 ) !="" )
 	{
 		bool ok;
@@ -1162,7 +1153,7 @@ void cfgfrm::rentab()
 //
 void cfgfrm::deltab()
 {
-	QTreeWidgetItem* item = listressources->currentItem();
+	QTreeWidgetItem* item = listresources->currentItem();
 	if ( item->text ( 2 ) !="" )
 	{
 		int r = QMessageBox::warning ( this, tr ( "Deleting..." ),tr ( "Delete '%1'?" ).arg ( item->text ( 0 ) ), QMessageBox::Yes, QMessageBox::No );
@@ -1175,7 +1166,7 @@ void cfgfrm::deltab()
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
 				QSqlQuery queryadrdel3 ( conn3 );
-				loadressources();
+				loadresources();
 			}
 			else if ( item->text ( 2 ).mid ( 0, 4 ) == "data" )
 			{
@@ -1184,7 +1175,7 @@ void cfgfrm::deltab()
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
 				QSqlQuery querydatadel3 ( conn3 );
-				loadressources();
+				loadresources();
 			}
 			else if ( item->text ( 2 ).left ( 7 ) =="account" )
 			{
@@ -1193,7 +1184,7 @@ void cfgfrm::deltab()
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
 				QSqlQuery querykontodel3 ( conn3 );
-				loadressources();
+				loadresources();
 			}
 			else if ( item->text ( 2 ).mid ( 0, 3 ) == "inv" )
 			{
@@ -1202,7 +1193,7 @@ void cfgfrm::deltab()
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
 				QSqlQuery querykontodel3 ( conn3 );
-				loadressources();
+				loadresources();
 			}
 		}
 	}
@@ -1217,55 +1208,56 @@ void cfgfrm::selectdocpath()
 	txtdocpath->setText ( dir );
 }
 //
-void cfgfrm::selecttemplpath()
+void cfgfrm::savedocsettings()
 {
-	QString dir = QFileDialog::getExistingDirectory ( this, tr ( "Templatefolder..." ),
-	              QDir::homePath(),
-	              QFileDialog::ShowDirsOnly
-	              | QFileDialog::DontResolveSymlinks );
-	txttemplatepath->setText ( dir );
-}
-//
-void cfgfrm::savedefaultpath()
-{
-	QSqlQuery query;
-	query.prepare ( "UPDATE maincfgtab SET `value` = :value WHERE var = 'docfolder';" );
-	query.bindValue ( ":value", txtdocpath->text() );
-	query.exec();
+	QSqlQuery savesettings_1;
+	savesettings_1.prepare ( "UPDATE maincfgtab SET `value` = :value WHERE var = 'docfolder';" );
+	savesettings_1.bindValue ( ":value", txtdocpath->text() );
+	savesettings_1.exec();
 	docfolder=txtdocpath->text();
+	
+	QSqlQuery savesettings_2;
+	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='docpref';" );
+	savesettings_2.bindValue ( ":prefix", txtdocprefix->text() );
+	savesettings_2.exec();
 
-	query.prepare ( "UPDATE maincfgtab SET `value` = :value WHERE var = 'templatefolder';" );
-	query.bindValue ( ":value", txttemplatepath->text() );
-	query.exec();
-	QMessageBox::information ( 0, tr ( "Default paths..." ), tr ( "New settings are saved and now active." ) );
-	templatefolder=txttemplatepath->text();
+	QSqlQuery savesettings_3;
+	savesettings_3.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='doc_generalinfo';" );
+	savesettings_3.bindValue ( ":prefix", txtgeneralinfo->toPlainText().replace("\\", "\\\\" ) );
+	savesettings_3.exec();
+
+	QMessageBox::information ( 0, tr ( "Documents settings..." ), tr ( "New settings are saved and now active." ) );
 }
 //
 void cfgfrm::loadsettings()
 {
-	QString qstr = "SELECT value FROM maincfgtab WHERE `var`='DoG';";
-	QSqlQuery loadsettings_1 ( qstr );
+	QSqlQuery loadsettings_1 ( "SELECT value FROM maincfgtab WHERE `var`='DoG';" );
 	loadsettings_1.next();
 	if(loadsettings_1.size()>0)
 		daysofgrace->setValue ( loadsettings_1.value ( 0 ).toInt() );
 	else
 		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('DoG', '');");
 
-	qstr = "SELECT value FROM maincfgtab WHERE `var`='docpref';";
-	QSqlQuery loadsettings_2 ( qstr );
+	QSqlQuery loadsettings_2 ( "SELECT value FROM maincfgtab WHERE `var`='docpref';" );
 	loadsettings_2.next();
 	if(loadsettings_2.size()>0)
 		txtdocprefix->setText ( loadsettings_2.value ( 0 ).toString() );
 	else
 		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('docpref', '');");
 		
-	qstr = "SELECT value FROM maincfgtab WHERE `var`='def_currency';";
-	QSqlQuery loadsettings_3 ( qstr );
+	QSqlQuery loadsettings_3 ( "SELECT value FROM maincfgtab WHERE `var`='def_currency';" );
 	loadsettings_3.next();
 	if(loadsettings_3.size()>0)
-		txtdocprefix->setText ( loadsettings_3.value ( 0 ).toString() );
+		txtdefcurrency->setText ( loadsettings_3.value ( 0 ).toString() );
 	else
 		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('def_currency', '');");
+		
+	QSqlQuery loadsettings_4 ( "SELECT value FROM maincfgtab WHERE `var`='doc_generalinfo';" );
+	loadsettings_4.next();
+	if(loadsettings_4.size()>0)
+		txtgeneralinfo->setText ( loadsettings_4.value ( 0 ).toString() );
+	else
+		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('doc_generalinfo', '');");
 }
 //
 void cfgfrm::savesettings()
@@ -1275,22 +1267,18 @@ void cfgfrm::savesettings()
 	savesettings_1.bindValue ( ":dog", daysofgrace->cleanText() );
 	savesettings_1.exec();
 	QSqlQuery savesettings_2;
-	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='docpref';" );
-	savesettings_2.bindValue ( ":prefix", txtdocprefix->text() );
+	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:def_currency WHERE `var`='def_currency';" );
+	savesettings_2.bindValue ( ":prefix", txtdefcurrency->text() );
 	savesettings_2.exec();
-	QSqlQuery savesettings_3;
-	savesettings_3.prepare ( "UPDATE maincfgtab SET `value`=:def_currency WHERE `var`='def_currency';" );
-	savesettings_3.bindValue ( ":prefix", txtdefcurrency->text() );
-	savesettings_3.exec();
 	QMessageBox::information ( 0, tr ( "Settings..." ), tr ( "New settings are saved and now active." ) );
 }
 //
 void cfgfrm::saveowndata()
 {
 	QStringList fields;
-	fields << txtcompany->text() << txtaddress->toPlainText()  << txt_bank_name->text() << txt_bank_addr->text() << txt_bank_clearing->text() << txt_bank_accountnr->text() << txt_bank_usrnr->text();
+	fields << txtcompany->text() << txtaddress->toPlainText() << txtlocation->text() << txtzip->text() << txtcountry->text() << txt_bank_name->text() << txt_bank_addr->text() << txt_bank_clearing->text() << txt_bank_accountnr->text() << txt_bank_usrnr->text();
 	QStringList rowname;
-	rowname << "company" << "companyaddress" << "bankname" << "bankaddress" << "bankblz" << "bankaccountnr" << "banktnr";
+	rowname << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry" << "bankname" << "bankaddress" << "bankblz" << "bankaccountnr" << "banktnr";
 	int i;
 	QString qstr;
 	for ( i=0; i<rowname.count(); i++ )
@@ -1313,7 +1301,7 @@ void cfgfrm::loadowndata()
 {
 	QStringList fields;
 	QStringList rowname;
-	rowname << "company" << "companyaddress" << "bankname" << "bankaddress" << "bankblz" << "bankaccountnr" << "banktnr";
+	rowname << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry" << "bankname" << "bankaddress" << "bankblz" << "bankaccountnr" << "banktnr";
 	int i;
 	QString qstr;
 	for ( i=0;i<rowname.count(); i++ )
@@ -1325,11 +1313,14 @@ void cfgfrm::loadowndata()
 	}
 	txtcompany->setText ( fields[0] );
 	txtaddress->setText ( fields[1] );
-	txt_bank_name->setText ( fields[2] );
-	txt_bank_addr->setText ( fields[3] );
-	txt_bank_clearing->setText ( fields[4] );
-	txt_bank_accountnr->setText ( fields[5] );
-	txt_bank_usrnr->setText ( fields[6] );
+	txtlocation->setText ( fields[2] );
+	txtzip->setText ( fields[3] );
+	txtcountry->setText ( fields[4] );
+	txt_bank_name->setText ( fields[5] );
+	txt_bank_addr->setText ( fields[6] );
+	txt_bank_clearing->setText ( fields[7] );
+	txt_bank_accountnr->setText ( fields[8] );
+	txt_bank_usrnr->setText ( fields[9] );
 }
 //
 void cfgfrm::load_local_tools()
@@ -1600,5 +1591,21 @@ void cfgfrm::templates_loaddetails()
 			QSqlError qerror = query.lastError();
 			QMessageBox::warning ( 0, tr ( "Can't load templates..." ), qerror.text() );
 		}	
+	}
+}
+//
+void cfgfrm::templates_loaddescription()
+{
+	QString qstr = QString("SELECT description FROM templatestab WHERE `ID`='%1';").arg(templateids[cmbtemplatename->currentIndex()]);
+	QSqlQuery query(qstr);
+	if ( query.isActive())
+	{
+		query.next();
+		templatedescription->setText(query.value(0).toString());
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
 	}
 }

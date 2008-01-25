@@ -25,6 +25,7 @@
 #include "msgfrm.h"
 #include "msgeditfrm.h"
 //
+extern int uid;
 extern QString username, fullname, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
 
@@ -73,6 +74,14 @@ void mainfrm::loaduserdata()
 	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
+	
+	if(v.check_db_structure("filename2templateid") != 0)
+	{
+		if(uid != 0)
+			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
+		else
+			v.update_db_structure("filename2templateid");
+	}
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
 void mainfrm::initplugins() {

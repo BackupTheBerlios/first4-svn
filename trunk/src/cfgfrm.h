@@ -17,7 +17,7 @@ public:
 	void loadservers();
 	void closeEvent(QCloseEvent* ce );
 	void loadusers();
-	void loadressources();
+	void loadresources();
 	void loadsettings();
 	void loadowndata();
 public slots:
@@ -31,8 +31,7 @@ public slots:
 	void saveuserchange();
 	void canceluser();
 	void deluser();
-	void loadressourcesdetails();
-	void seldoctemplate();
+	void loadresourcesdetails();
 	void applyresourcesdetails();
 	void saveresourcesdetails();
 	void contmenu();
@@ -42,8 +41,7 @@ public slots:
 	void rentab();
  	void deltab();
 	void selectdocpath();
-	void selecttemplpath();
-	void savedefaultpath();
+	void savedocsettings();
 	void savesettings();
 	void saveowndata();
 	void load_local_tools();
@@ -58,6 +56,8 @@ private slots:
 	void templates_edit();
 	void templates_delete();
 	void templates_loaddetails();
+private:
+	void templates_loaddescription();
 };
 #endif
 

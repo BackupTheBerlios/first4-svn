@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
+#include <QSqlError>
 //
 #include "doceditfrm.h"
 #include "vars.h"
@@ -23,8 +24,8 @@ extern QString username, fullname, docfolder, templatefolder;
 QString opendocID = "";
 QString opendocSource = "";
 QString b_text = "";
-QString docprefix, tnr, companyaddress, docfile, currency;
-QStringList vatlist, vatamount, docnames, filename, doccount, docdef;
+QString docprefix, tnr, companyaddress, location, docfile, currency;
+QStringList vatlist, vatamount, docnames, doccount, docdef, temp_id;
 //
 doceditfrm::doceditfrm( QWidget * parent, Qt::WFlags f) 
 	: QWidget(parent, f)
@@ -148,11 +149,11 @@ void doceditfrm::closeEvent( QCloseEvent* ce )
 void doceditfrm::readdoctab()
 {
     cmbdoc->clear();
-    filename.clear();
+    temp_id.clear();
     doccount.clear();
     docdef.clear();
     
-    QString qstr = "SELECT name, filename, count, users FROM doctab ORDER BY ID;";
+    QString qstr = "SELECT name, templateid, count, users FROM doctab ORDER BY ID;";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -165,7 +166,7 @@ void doceditfrm::readdoctab()
 		    else
 				cmbdoc->addItem("*" + docnames[tmpid]);
 		    docdef << query.value(0).toString();
-		    filename << query.value(1).toString();
+		    temp_id << query.value(1).toString();
 		    doccount << query.value(2).toString();
 		}
     }
@@ -556,7 +557,7 @@ void doceditfrm::initvat()
 //
 void doceditfrm::loadmaincfg()
 {
-    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'firmanschrift' OR `var` = 'def_currency' ORDER BY var;");
+    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'def_currency' ORDER BY var;");
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -566,9 +567,22 @@ void doceditfrm::loadmaincfg()
 		currency = query.value(0).toString();
 		query.next();
 		docprefix = query.value(0).toString();
-		query.next();
-		companyaddress = query.value(0).toString();
     }
+    
+    QStringList address;
+    QStringList fields;
+    fields << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry"; 
+    int i;
+    companyaddress = "";
+    for(i=0;i<fields.count();i++)
+    {
+    	QString qstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = '%1';").arg(fields[i]);
+    	QSqlQuery queryaddr(qstr);
+    	queryaddr.next();
+    	address << queryaddr.value(0).toString();
+    }
+    companyaddress = address[0]+"\n"+address[1]+"\n"+address[3]+"\n"+address[2]+"\n"+address[4]+"\n";
+    location = address[2];
 }
 //
 void doceditfrm::selectaddress()
@@ -1121,7 +1135,7 @@ void doceditfrm::savecompletedoc()
 	    query3.exec();
     }
     
-    //falls vorhande entwurf löchen
+    //if exists delete draft
     QString connstr4 = "DELETE FROM `docdrafts` WHERE `ID` = '"+opendocID+"';";
     QSqlQuery query4(connstr4);
     
@@ -1132,7 +1146,6 @@ void doceditfrm::savecompletedoc()
 void doceditfrm::writetexfile()
 {
     int i;
-    
     //Check DoG
     QSqlQuery querydays;
     querydays.prepare("SELECT value FROM maincfgtab WHERE `var`='DoG'");
@@ -1204,96 +1217,88 @@ void doceditfrm::writetexfile()
     if ( !d.exists() )
 		d.mkdir(docfolder+"/"+lblID->text());
     
-    QFile textemplate(filename[cmbdoc->currentIndex()]);
-    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
-    if ( textemplate.open( QIODevice::ReadOnly ) )
-    {
-		if ( output.open( QIODevice::WriteOnly ) )
-		{
-		    QString line;
-		    QTextStream instream( &textemplate );
-		    QTextStream outstream( &output );
-		    while ( !instream.atEnd() )
-		    {
-				line = instream.readLine();
-				line = line.replace("+++DATE+++", boxdate->date().toString("dd. MMMM yyyy"));
-				line = line.replace("+++RECIPIENT+++", boxaddress->toPlainText().replace("\n", "\\newline "));
-				line = line.replace("+++DOCTYPE+++", cmbdoc->currentText());
-				line = line.replace("+++DOCID+++", txtdoccount->text());
-				line = line.replace("+++TABHEAD+++", tabhead);
-				line = line.replace("+++TABCONTENT+++", tabcontent);
-				line = line.replace("+++DoG+++", boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
-				if(line.contains("+++DISCOUNT+++") > 0)
-				{
-				    if(boxdiscount->text().toDouble()>0)
-				    {
-						QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+boxtot->text()+" "+currency+"} \\\\ \n";
-						tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+boxdiscount->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(boxtot->text().toDouble()/100*boxdiscount->text().toDouble(), 0, 'f',2)+" CHF \\end{scriptsize} \\\\ \n";
-						line = line.replace("+++DISCOUNT+++", tmpdiscount);
-				    }
-				    else
-						line = line.replace("+++DISCOUNT+++", "");
-				}
-				line = line.replace("+++TOTEXCL_DESC+++", tr("Amount excl. VAT:"));
-				line = line.replace("+++TOTEXCL+++", boxtot_excl->text()+ " CHF");
-		
-				if(line.contains("+++VAT+++") > 0)
-				{
-				    QString tmpvat = "\\begin{scriptsize}"+tr("VAT rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("VAT amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("VAT")+"\\end{scriptsize} \\\\ \n";
-				    
-				    double vattot = 0;
-				    for(i=0;i<vatlist.count();i++)
-				    {
-						vattot += vatamount[i].toDouble() * (vatlist[i].toDouble() / 100);
-						QString vattmp = QString("%1").arg(vatamount[i].toDouble() * (vatlist[i].toDouble() / 100), 0, 'f',2);
-						if(vatamount[i].toDouble() > 0)
-						    tmpvat += "\\begin{scriptsize}"+vatlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+vatamount[i]+" CHF \\end{scriptsize} & \\begin{scriptsize}"+vattmp+" CHF \\end{scriptsize} \\\\ \n";
-				    }
-				    line = line.replace("+++VAT+++", tmpvat);
-				}		
-		
-				line = line.replace("+++TOTINCL_DESC+++", tr("Net amount:"));		
-				line = line.replace("+++TOTINCL+++", boxtot_incl->text()+ " CHF");
-				line = line.replace("+++KIND_REGARDS+++", "Kind regards");
-				line = line.replace("+++USER+++", fullname);
-				line = line.replace("+++CUSTOMER+++", boxaddress->toPlainText().section("\n", 0, 0));
-		
-				if(txtsalutation->text() != "")
-				    line = line.replace("+++SALUTATION+++", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+txtsalutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
-				else
-				    line = line.replace("+++SALUTATION+++", "");
-		
-				if(boxotherinfo->toPlainText() != "")
-				    line = line.replace("+++INTRODUCTION+++", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+boxotherinfo->toPlainText().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
-				else
-				    line = line.replace("+++INTRODUCTION+++", "");
+    QString templatestr = loadtemplatedata(temp_id[cmbdoc->currentIndex()].toInt());
 
-				if(line.contains("+++COMMENTS+++") > 0)
-				{
-				    if(boxcomments->toPlainText() != "")
-				    {
-						QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
-						tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
-						tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n") + " \\\\ \n";
-						tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
-						line = line.replace("+++COMMENTS+++", tmpcomments);
-				    }
-				    else
-						line = line.replace("+++COMMENTS+++", "");
-				}
-				outstream << line << "\n";
+    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
+	if ( output.open( QIODevice::WriteOnly ) )
+	{
+	    QString line;
+	    QTextStream outstream( &output );
+		templatestr = templatestr.replace("+++DATE+++", boxdate->date().toString("dd. MMMM yyyy"));
+		templatestr = templatestr.replace("+++RECIPIENT+++", boxaddress->toPlainText().replace("\n", "\\newline "));
+		templatestr = templatestr.replace("+++LOCATION+++", location);
+		templatestr = templatestr.replace("+++DOCTYPE+++", cmbdoc->currentText());
+		templatestr = templatestr.replace("+++DOCID+++", txtdoccount->text());
+		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
+		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent);
+		templatestr = templatestr.replace("+++DoG+++", boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy"));
+		if(templatestr.contains("+++DISCOUNT+++") > 0)
+		{
+		    if(boxdiscount->text().toDouble()>0)
+		    {
+				QString tmpdiscount = "\\multicolumn{2}{@{}l}{\\textbf{Total:}} & \\textbf{"+boxtot->text()+" "+currency+"} \\\\ \n";
+				tmpdiscount += "\\begin{scriptsize}"+tr("Discount")+"\\end{scriptsize} & \\begin{scriptsize}"+boxdiscount->text()+"\\% \\end{scriptsize}  & \\begin{scriptsize}"+QString("%1").arg(boxtot->text().toDouble()/100*boxdiscount->text().toDouble(), 0, 'f',2)+" "+currency+" \\end{scriptsize} \\\\ \n";
+				templatestr = templatestr.replace("+++DISCOUNT+++", tmpdiscount);
 		    }
-		    output.close();
-		} else {
-		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+		    else
+				templatestr = templatestr.replace("+++DISCOUNT+++", "");
 		}
-		textemplate.close();
-    } else {
-		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
-    }
+		templatestr = templatestr.replace("+++TOTEXCL_DESC+++", tr("Amount excl. VAT:"));
+		templatestr = templatestr.replace("+++TOTEXCL+++", boxtot_excl->text()+ " "+currency);
+
+		if(templatestr.contains("+++VAT+++") > 0)
+		{
+		    QString tmpvat = "\\begin{scriptsize}"+tr("VAT rate")+"\\end{scriptsize} &\\begin{scriptsize}"+tr("VAT amount")+"\\end{scriptsize} & \\begin{scriptsize}"+tr("VAT")+"\\end{scriptsize} \\\\ \n";
+		    
+		    double vattot = 0;
+		    for(i=0;i<vatlist.count();i++)
+		    {
+				vattot += vatamount[i].toDouble() * (vatlist[i].toDouble() / 100);
+				QString vattmp = QString("%1").arg(vatamount[i].toDouble() * (vatlist[i].toDouble() / 100), 0, 'f',2);
+				if(vatamount[i].toDouble() > 0)
+				    tmpvat += "\\begin{scriptsize}"+vatlist[i].replace("%", "\%")+"\\end{scriptsize} & \\begin{scriptsize}"+vatamount[i]+" "+currency+" \\end{scriptsize} & \\begin{scriptsize}"+vattmp+" "+currency+" \\end{scriptsize} \\\\ \n";
+		    }
+		    templatestr = templatestr.replace("+++VAT+++", tmpvat);
+		}		
+
+		templatestr = templatestr.replace("+++TOTINCL_DESC+++", tr("Net amount:"));		
+		templatestr = templatestr.replace("+++TOTINCL+++", boxtot_incl->text()+ " "+currency);
+		templatestr = templatestr.replace("+++KIND_REGARDS+++", tr("Kind regards"));
+		templatestr = templatestr.replace("+++GENERAL+++", tr("General informations:"));
+		templatestr = templatestr.replace("+++GENERAL_INFORMATIONS+++", loadgeneralinfo());
+		templatestr = templatestr.replace("+++USER+++", fullname);
+		templatestr = templatestr.replace("+++CUSTOMER+++", boxaddress->toPlainText().section("\n", 0, 0));
+		
+		if(txtsalutation->text() != "")
+		    templatestr = templatestr.replace("+++SALUTATION+++", "\\begin{footnotesize} \\vspace{8mm} \\begin{tabular}{@{}l} \\textbf{"+txtsalutation->text()+"} \\\\ \\end{tabular} \\end{footnotesize}");
+		else
+		    templatestr = templatestr.replace("+++SALUTATION+++", "");
+		
+		if(boxotherinfo->toPlainText() != "")
+		    templatestr = templatestr.replace("+++INTRODUCTION+++", "\\begin{footnotesize} \\vspace{6mm} \\begin{tabular}{@{}l} "+boxotherinfo->toPlainText().replace("\n", " \\\\ \n")+" \\\\ \\end{tabular} \\end{footnotesize}");
+		else
+		    templatestr = templatestr.replace("+++INTRODUCTION+++", "");
+
+		if(templatestr.contains("+++COMMENTS+++") > 0)
+		{
+		    if(boxcomments->toPlainText() != "")
+		    {
+				QString tmpcomments = "\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17.5cm}{l}\n\\hline\n";
+				tmpcomments += "\\textbf{"+tr("Comments:")+"}\\\\ \n";
+				tmpcomments += boxcomments->toPlainText().replace("\n", " \\\\ \n") + " \\\\ \n";
+				tmpcomments += "\\end{tabular*} \n \\vspace{5mm} \n";
+				templatestr = templatestr.replace("+++COMMENTS+++", tmpcomments);
+		    }
+		    else
+				templatestr = templatestr.replace("+++COMMENTS+++", "");
+		}
+		outstream << templatestr << "\n";
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
     
-    //converting text to dvi
-    
+    //converting text to dvi   
     QProcess *procdvi = new QProcess( this );
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
@@ -1301,12 +1306,12 @@ void doceditfrm::writetexfile()
  	if(procdvi->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't convert TEX-File."));
 
-    //copy file in the correct folder
+    //move file in the correct folder
     QFile dvifile(QDir::homePath() + "/.first4/tmp/output.dvi");
     if(!dvifile.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile))
 	    QMessageBox::critical(0,"Error...", tr("Can't move file to customer folder."));
 }
-////
+//
 void doceditfrm::printpreview()
 {
 	vars v;
@@ -1519,3 +1524,27 @@ void doceditfrm::navtabonoff(bool state)
 		disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 }
 //
+QString doceditfrm::loadtemplatedata(int dbid)
+{
+	QString answ;
+	QString qstr = QString("SELECT data FROM templatestab WHERE `ID`='%1';").arg(dbid);
+	QSqlQuery query(qstr);
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
+	return answ;
+}
+//
+QString doceditfrm::loadgeneralinfo()
+{
+	QSqlQuery query( "SELECT value FROM maincfgtab WHERE `var`='doc_generalinfo';" );
+	query.next();
+	return query.value(0).toString();
+}

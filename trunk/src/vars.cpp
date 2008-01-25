@@ -10,7 +10,7 @@
 //
 int uid;
 QString firstver = "1.3.94-pre-beta1";
-QString build = "205";
+QString build = "213";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
@@ -226,16 +226,22 @@ QString vars::get_tool(QString toolname)
 int vars::check_db_structure(QString section)
 {
 	int retrcode = 0;
-	if(section == "templates")
+	if(section == "templates") //beta1
 	{
 		QSqlQuery query("SHOW TABLES LIKE '%templatestab%';");
 		if(query.size() !=1 )
 			retrcode = 1;
 	}
-	else if(section == "msg")
+	else if(section == "msg") //beta1
 	{
 		QSqlQuery query("SHOW TABLES LIKE '%msgtab%';");
 		if(query.size() !=1 )
+			retrcode = 1;
+	}
+	else if(section == "filename2templateid") //beta1
+	{
+		QSqlQuery query("SHOW COLUMNS FROM doctab WHERE field='filename';");
+		if(query.size() !=0 )
 			retrcode = 1;
 	}
 	return retrcode;
@@ -257,6 +263,11 @@ void vars::update_db_structure(QString section)
 				else if(section == "msg")
 			{
 				QSqlQuery query("CREATE TABLE `msgtab` (`ID` int(11) NOT NULL auto_increment, `typ` text NOT NULL, `user` text NOT NULL,  `date` date NOT NULL default '0000-00-00',`msgtext` text NOT NULL,`data1` text NOT NULL,`data2` text NOT NULL,`data3` text NOT NULL,`data4` text NOT NULL,`data5` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+			}
+			else if(section == "filename2templateid")
+			{
+				QSqlQuery query1("ALTER TABLE doctab CHANGE filename templateid TEXT;");
+				QSqlQuery query2("ALTER TABLE doctab CHANGE templateid templateid INT(11) NOT NULL;");
 			}
 			QMessageBox::information( 0, "DB update..." , "The database was successfully updated."  );
 		}

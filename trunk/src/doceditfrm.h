@@ -10,6 +10,8 @@ private:
 	void closeEvent( QCloseEvent* ce );
 	void readdoctab();
 	void writetexfile();
+	QString loadtemplatedata(int dbid);
+	QString loadgeneralinfo();
 private slots:
 	void selectaddress();
 	void printpreview();
