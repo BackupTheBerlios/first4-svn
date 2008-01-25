@@ -4193,7 +4193,7 @@ p, li { white-space: pre-wrap; }
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="ext_tools" >
+     <widget class="QWidget" name="templates" >
       <attribute name="title" >
        <string>&amp;Templates</string>
       </attribute>
@@ -4504,6 +4504,92 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="templ_assignment" >
+      <attribute name="title" >
+       <string>Templ. assignment</string>
+      </attribute>
+      <widget class="QTreeWidget" name="treeWidget" >
+       <property name="geometry" >
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>521</width>
+         <height>441</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text" >
+         <string>Modules</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Template</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>temp_id</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="btnnewassign" >
+       <property name="geometry" >
+        <rect>
+         <x>550</x>
+         <y>50</y>
+         <width>26</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btndeleteassign" >
+       <property name="geometry" >
+        <rect>
+         <x>580</x>
+         <y>50</y>
+         <width>26</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
        </property>
       </widget>
      </widget>

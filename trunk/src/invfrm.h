@@ -23,5 +23,7 @@ public slots:
 	void viewcomments();
 	void savedata();
 	void loaddata();
+private:
+	QString loadtemplatedata(int dbid);
 };
 #endif

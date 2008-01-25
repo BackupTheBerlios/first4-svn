@@ -9,6 +9,7 @@
 #include <QTextStream>
 #include <QDate>
 #include <QCloseEvent>
+#include <QSqlError>
 //
 #include "invfrm.h"
 #include "vars.h"
@@ -406,4 +407,22 @@ void invfrm::closeEvent(QCloseEvent* ce )
 		v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 		ce->accept();
    	}
+}
+//
+QString invfrm::loadtemplatedata(int dbid)
+{
+	QString answ;
+	QString qstr = QString("SELECT data FROM templatestab WHERE `ID`='%1';").arg(dbid);
+	QSqlQuery query(qstr);
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
+	return answ;
 }

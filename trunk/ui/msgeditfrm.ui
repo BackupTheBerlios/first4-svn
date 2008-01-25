@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Dialog</string>
+   <string>Nachricht...</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/images/first4.qrc" >:/message2.png</iconset>

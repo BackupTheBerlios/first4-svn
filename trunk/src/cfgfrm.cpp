@@ -740,7 +740,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querydoc ( "SELECT ID, name, users, filename FROM doctab ORDER BY ID ASC;" );
+	QSqlQuery querydoc ( "SELECT ID, name, users, templateid FROM doctab ORDER BY ID ASC;" );
 	if ( querydoc.isActive() )
 	{
 		int tmpid;
