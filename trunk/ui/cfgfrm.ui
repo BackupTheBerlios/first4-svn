@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>733</width>
-    <height>611</height>
+    <width>789</width>
+    <height>649</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -23,8 +23,8 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>715</width>
-     <height>553</height>
+     <width>771</width>
+     <height>591</height>
     </rect>
    </property>
    <property name="currentIndex" >
@@ -118,7 +118,7 @@
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>693</width>
+       <width>741</width>
        <height>118</height>
       </rect>
      </property>
@@ -321,7 +321,7 @@
       <rect>
        <x>10</x>
        <y>450</y>
-       <width>693</width>
+       <width>741</width>
        <height>64</height>
       </rect>
      </property>
@@ -394,7 +394,7 @@
       <rect>
        <x>10</x>
        <y>380</y>
-       <width>693</width>
+       <width>741</width>
        <height>64</height>
       </rect>
      </property>
@@ -470,9 +470,9 @@
     <widget class="QGroupBox" name="groupBox" >
      <property name="geometry" >
       <rect>
-       <x>10</x>
+       <x>2</x>
        <y>10</y>
-       <width>343</width>
+       <width>381</width>
        <height>230</height>
       </rect>
      </property>
@@ -666,9 +666,9 @@
     <widget class="QGroupBox" name="groupBox_14" >
      <property name="geometry" >
       <rect>
-       <x>370</x>
+       <x>390</x>
        <y>10</y>
-       <width>331</width>
+       <width>361</width>
        <height>231</height>
       </rect>
      </property>
@@ -903,10 +903,10 @@
     <widget class="QTabWidget" name="cfgtab" >
      <property name="geometry" >
       <rect>
-       <x>9</x>
-       <y>9</y>
-       <width>693</width>
-       <height>511</height>
+       <x>-1</x>
+       <y>-1</y>
+       <width>761</width>
+       <height>551</height>
       </rect>
      </property>
      <property name="currentIndex" >
@@ -919,11 +919,17 @@
       <widget class="QGroupBox" name="groupBox_6" >
        <property name="geometry" >
         <rect>
-         <x>9</x>
-         <y>67</y>
-         <width>671</width>
-         <height>96</height>
+         <x>10</x>
+         <y>100</y>
+         <width>741</width>
+         <height>149</height>
         </rect>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>149</height>
+        </size>
        </property>
        <property name="title" >
         <string>Current database</string>
@@ -931,10 +937,10 @@
        <widget class="QLabel" name="label_12" >
         <property name="geometry" >
          <rect>
-          <x>12</x>
-          <y>26</y>
+          <x>10</x>
+          <y>30</y>
           <width>110</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -956,10 +962,10 @@
        <widget class="QLabel" name="lbldbname_2" >
         <property name="geometry" >
          <rect>
-          <x>128</x>
-          <y>26</y>
-          <width>531</width>
-          <height>16</height>
+          <x>130</x>
+          <y>30</y>
+          <width>511</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text" >
@@ -969,10 +975,10 @@
        <widget class="QLabel" name="label_13" >
         <property name="geometry" >
          <rect>
-          <x>12</x>
-          <y>48</y>
+          <x>10</x>
+          <y>60</y>
           <width>110</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -994,10 +1000,10 @@
        <widget class="QLabel" name="lbldbhost_2" >
         <property name="geometry" >
          <rect>
-          <x>128</x>
-          <y>48</y>
-          <width>531</width>
-          <height>16</height>
+          <x>130</x>
+          <y>60</y>
+          <width>511</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text" >
@@ -1007,10 +1013,10 @@
        <widget class="QLabel" name="label_14" >
         <property name="geometry" >
          <rect>
-          <x>12</x>
-          <y>70</y>
+          <x>10</x>
+          <y>90</y>
           <width>110</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -1032,10 +1038,10 @@
        <widget class="QLabel" name="lbldbversion_2" >
         <property name="geometry" >
          <rect>
-          <x>128</x>
-          <y>70</y>
-          <width>531</width>
-          <height>16</height>
+          <x>130</x>
+          <y>90</y>
+          <width>511</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text" >
@@ -1046,11 +1052,17 @@
       <widget class="QGroupBox" name="groupBox_7" >
        <property name="geometry" >
         <rect>
-         <x>9</x>
-         <y>169</y>
-         <width>671</width>
-         <height>98</height>
+         <x>10</x>
+         <y>260</y>
+         <width>741</width>
+         <height>121</height>
         </rect>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>121</height>
+        </size>
        </property>
        <property name="title" >
         <string>DB-Updates</string>
@@ -1058,8 +1070,8 @@
        <widget class="QPushButton" name="btndbapply" >
         <property name="geometry" >
          <rect>
-          <x>549</x>
-          <y>60</y>
+          <x>540</x>
+          <y>80</y>
           <width>110</width>
           <height>26</height>
          </rect>
@@ -1086,10 +1098,10 @@
        <widget class="QLabel" name="label_15" >
         <property name="geometry" >
          <rect>
-          <x>12</x>
-          <y>26</y>
+          <x>10</x>
+          <y>40</y>
           <width>110</width>
-          <height>26</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -1111,18 +1123,18 @@
        <widget class="QLineEdit" name="boxdbsqlfile" >
         <property name="geometry" >
          <rect>
-          <x>128</x>
-          <y>29</y>
+          <x>120</x>
+          <y>40</y>
           <width>499</width>
-          <height>20</height>
+          <height>31</height>
          </rect>
         </property>
        </widget>
        <widget class="QPushButton" name="btnopensqlfile" >
         <property name="geometry" >
          <rect>
-          <x>633</x>
-          <y>26</y>
+          <x>630</x>
+          <y>40</y>
           <width>26</width>
           <height>26</height>
          </rect>
@@ -1147,11 +1159,17 @@
       <widget class="QGroupBox" name="groupBox_5" >
        <property name="geometry" >
         <rect>
-         <x>9</x>
-         <y>9</y>
-         <width>671</width>
-         <height>52</height>
+         <x>10</x>
+         <y>0</y>
+         <width>741</width>
+         <height>91</height>
         </rect>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>91</height>
+        </size>
        </property>
        <property name="title" >
         <string>Version</string>
@@ -1159,10 +1177,10 @@
        <widget class="QLabel" name="label_11" >
         <property name="geometry" >
          <rect>
-          <x>12</x>
-          <y>26</y>
+          <x>9</x>
+          <y>36</y>
           <width>110</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -1184,10 +1202,10 @@
        <widget class="QLabel" name="lblfirstversion_2" >
         <property name="geometry" >
          <rect>
-          <x>128</x>
-          <y>26</y>
-          <width>200</width>
-          <height>16</height>
+          <x>123</x>
+          <y>36</y>
+          <width>233</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text" >
@@ -1197,10 +1215,10 @@
        <widget class="QLabel" name="lblbuild_2" >
         <property name="geometry" >
          <rect>
-          <x>420</x>
-          <y>26</y>
-          <width>100</width>
-          <height>16</height>
+          <x>429</x>
+          <y>36</y>
+          <width>233</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text" >
@@ -1210,10 +1228,10 @@
        <widget class="QLabel" name="label_87" >
         <property name="geometry" >
          <rect>
-          <x>350</x>
-          <y>26</y>
+          <x>360</x>
+          <y>36</y>
           <width>65</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize" >
@@ -1260,13 +1278,13 @@ take current password!)</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QTabWidget" name="tabWidget" >
+      <widget class="QTabWidget" name="usertab" >
        <property name="geometry" >
         <rect>
          <x>217</x>
          <y>127</y>
-         <width>463</width>
-         <height>351</height>
+         <width>531</width>
+         <height>381</height>
         </rect>
        </property>
        <property name="font" >
@@ -1950,9 +1968,9 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="groupBox_9" >
          <property name="geometry" >
           <rect>
-           <x>229</x>
-           <y>9</y>
-           <width>221</width>
+           <x>260</x>
+           <y>10</y>
+           <width>251</width>
            <height>309</height>
           </rect>
          </property>
@@ -2278,9 +2296,9 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="groupBox_8" >
          <property name="geometry" >
           <rect>
-           <x>9</x>
-           <y>9</y>
-           <width>211</width>
+           <x>10</x>
+           <y>10</y>
+           <width>241</width>
            <height>309</height>
           </rect>
          </property>
@@ -2663,7 +2681,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>334</x>
          <y>72</y>
-         <width>110</width>
+         <width>130</width>
          <height>20</height>
         </rect>
        </property>
@@ -2751,7 +2769,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>334</x>
          <y>100</y>
-         <width>110</width>
+         <width>130</width>
          <height>20</height>
         </rect>
        </property>
@@ -2901,7 +2919,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>334</x>
          <y>44</y>
-         <width>110</width>
+         <width>130</width>
          <height>20</height>
         </rect>
        </property>
@@ -2937,7 +2955,7 @@ p, li { white-space: pre-wrap; }
          <x>10</x>
          <y>30</y>
          <width>200</width>
-         <height>447</height>
+         <height>471</height>
         </rect>
        </property>
        <property name="minimumSize" >
@@ -2963,8 +2981,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>265</x>
          <y>284</y>
-         <width>415</width>
-         <height>160</height>
+         <width>471</width>
+         <height>191</height>
         </rect>
        </property>
        <property name="minimumSize" >
@@ -2976,7 +2994,7 @@ p, li { white-space: pre-wrap; }
        <property name="maximumSize" >
         <size>
          <width>16777215</width>
-         <height>160</height>
+         <height>16777215</height>
         </size>
        </property>
        <property name="title" >
@@ -2987,8 +3005,8 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>11</x>
           <y>25</y>
-          <width>393</width>
-          <height>124</height>
+          <width>451</width>
+          <height>151</height>
          </rect>
         </property>
         <property name="currentIndex" >
@@ -3023,8 +3041,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>10</x>
             <y>60</y>
-            <width>371</width>
-            <height>51</height>
+            <width>431</width>
+            <height>81</height>
            </rect>
           </property>
           <property name="text" >
@@ -3170,7 +3188,7 @@ p, li { white-space: pre-wrap; }
          <x>9</x>
          <y>29</y>
          <width>250</width>
-         <height>415</height>
+         <height>471</height>
         </rect>
        </property>
        <property name="minimumSize" >
@@ -3199,7 +3217,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>265</x>
          <y>29</y>
-         <width>415</width>
+         <width>471</width>
          <height>249</height>
         </rect>
        </property>
@@ -3235,8 +3253,8 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnsavepermissions" >
        <property name="geometry" >
         <rect>
-         <x>569</x>
-         <y>451</y>
+         <x>630</x>
+         <y>480</y>
          <width>110</width>
          <height>26</height>
         </rect>
@@ -3675,8 +3693,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>9</x>
          <y>9</y>
-         <width>671</width>
-         <height>461</height>
+         <width>731</width>
+         <height>491</height>
         </rect>
        </property>
        <property name="title" >
@@ -3852,9 +3870,9 @@ p, li { white-space: pre-wrap; }
       <widget class="QGroupBox" name="groupBox_15" >
        <property name="geometry" >
         <rect>
-         <x>340</x>
+         <x>380</x>
          <y>10</y>
-         <width>331</width>
+         <width>361</width>
          <height>431</height>
         </rect>
        </property>
@@ -4086,7 +4104,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>321</width>
+         <width>351</width>
          <height>141</height>
         </rect>
        </property>
@@ -4202,8 +4220,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>10</x>
          <y>40</y>
-         <width>391</width>
-         <height>431</height>
+         <width>441</width>
+         <height>441</height>
         </rect>
        </property>
        <column>
@@ -4225,7 +4243,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnnewtemplate" >
        <property name="geometry" >
         <rect>
-         <x>450</x>
+         <x>650</x>
          <y>40</y>
          <width>26</width>
          <height>26</height>
@@ -4253,7 +4271,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btndeletetemplate" >
        <property name="geometry" >
         <rect>
-         <x>510</x>
+         <x>710</x>
          <y>40</y>
          <width>26</width>
          <height>26</height>
@@ -4281,7 +4299,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnedittemplate" >
        <property name="geometry" >
         <rect>
-         <x>480</x>
+         <x>680</x>
          <y>40</y>
          <width>26</width>
          <height>26</height>
@@ -4322,8 +4340,8 @@ p, li { white-space: pre-wrap; }
       <widget class="QGroupBox" name="groupBox_17" >
        <property name="geometry" >
         <rect>
-         <x>410</x>
-         <y>79</y>
+         <x>460</x>
+         <y>80</y>
          <width>271</width>
          <height>391</height>
         </rect>
@@ -4481,7 +4499,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnrefreshtempaltes" >
        <property name="geometry" >
         <rect>
-         <x>410</x>
+         <x>460</x>
          <y>40</y>
          <width>26</width>
          <height>26</height>
@@ -4506,177 +4524,117 @@ p, li { white-space: pre-wrap; }
         <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
        </property>
       </widget>
-     </widget>
-     <widget class="QWidget" name="templ_assignment" >
-      <attribute name="title" >
-       <string>Templ. assignment</string>
-      </attribute>
-      <widget class="QTreeWidget" name="treeWidget" >
+      <widget class="QCheckBox" name="chksystemplates" >
        <property name="geometry" >
         <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>521</width>
-         <height>441</height>
+         <x>10</x>
+         <y>480</y>
+         <width>221</width>
+         <height>23</height>
         </rect>
-       </property>
-       <column>
-        <property name="text" >
-         <string>Modules</string>
-        </property>
-       </column>
-       <column>
-        <property name="text" >
-         <string>Template</string>
-        </property>
-       </column>
-       <column>
-        <property name="text" >
-         <string>temp_id</string>
-        </property>
-       </column>
-      </widget>
-      <widget class="QPushButton" name="btnnewassign" >
-       <property name="geometry" >
-        <rect>
-         <x>550</x>
-         <y>50</y>
-         <width>26</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
        </property>
        <property name="text" >
-        <string/>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btndeleteassign" >
-       <property name="geometry" >
-        <rect>
-         <x>580</x>
-         <y>50</y>
-         <width>26</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
+        <string>Show system-templates</string>
        </property>
       </widget>
      </widget>
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="btnclose" >
+  <widget class="QWidget" name="layoutWidget" >
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>575</y>
-     <width>110</width>
-     <height>26</height>
+     <y>610</y>
+     <width>771</width>
+     <height>28</height>
     </rect>
    </property>
-   <property name="minimumSize" >
-    <size>
-     <width>110</width>
-     <height>26</height>
-    </size>
-   </property>
-   <property name="maximumSize" >
-    <size>
-     <width>110</width>
-     <height>26</height>
-    </size>
-   </property>
-   <property name="text" >
-    <string>&amp;Close</string>
-   </property>
-   <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="progbar" >
-   <property name="geometry" >
-    <rect>
-     <x>492</x>
-     <y>577</y>
-     <width>231</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="value" >
-    <number>0</number>
-   </property>
-   <property name="orientation" >
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label" >
-   <property name="geometry" >
-    <rect>
-     <x>127</x>
-     <y>576</y>
-     <width>110</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="minimumSize" >
-    <size>
-     <width>110</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize" >
-    <size>
-     <width>110</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="text" >
-    <string>Username:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbluser" >
-   <property name="geometry" >
-    <rect>
-     <x>243</x>
-     <y>576</y>
-     <width>231</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text" >
-    <string>-</string>
-   </property>
+   <layout class="QHBoxLayout" >
+    <item>
+     <widget class="QPushButton" name="btnclose" >
+      <property name="minimumSize" >
+       <size>
+        <width>110</width>
+        <height>26</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>110</width>
+        <height>26</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>&amp;Close</string>
+      </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label" >
+      <property name="minimumSize" >
+       <size>
+        <width>110</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>Username:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbluser" >
+      <property name="minimumSize" >
+       <size>
+        <width>150</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>-</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer>
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" >
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progbar" >
+      <property name="maximumSize" >
+       <size>
+        <width>280</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="value" >
+       <number>0</number>
+      </property>
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <tabstops>
@@ -4699,7 +4657,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>btn_users_cancel</tabstop>
   <tabstop>btn_users_delete</tabstop>
   <tabstop>txt_users_id</tabstop>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>usertab</tabstop>
   <tabstop>txt_users_firstname</tabstop>
   <tabstop>txt_users_lastname</tabstop>
   <tabstop>txt_users_fullname</tabstop>

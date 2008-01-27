@@ -51,9 +51,10 @@ void cfgfrm::init()
 	}
 	lbluser->setText ( username );
 	txtuser->setText ( username );
-
+	
 	maintab->setCurrentIndex( 0 );
 	cfgtab->setCurrentIndex( 0 );
+	usertab->setCurrentIndex ( 1 );
 
 	//init listresoureces
 	listresources->header()-> setClickable ( FALSE );
@@ -163,6 +164,7 @@ void cfgfrm::init()
 	connect ( btndeletetemplate, SIGNAL ( released() ), this, SLOT ( templates_delete() ) );
 	connect ( btnrefreshtempaltes, SIGNAL ( released() ), this, SLOT ( templates_load() ) );
 	connect ( tem_tree, SIGNAL ( itemClicked ( QTreeWidgetItem*, int ) ), this, SLOT ( templates_loaddetails() ) );
+	connect ( chksystemplates, SIGNAL ( stateChanged(int)), this, SLOT ( templates_load() ) );
 
 	progbar->setValue ( 100 );
 }
@@ -972,9 +974,9 @@ void cfgfrm::saveresourcesdetails()
 		else if ( item->text ( 2 ) == "doc" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `doctab` SET `users` = :users, `filename` = :filename WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `doctab` SET `users` = :users, `templateid` = :templateid WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
-			querysave.bindValue ( ":filename", item->text ( 4 ) );
+			querysave.bindValue ( ":templateid", item->text ( 4 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
 			querysave.exec();
 		}
@@ -1508,7 +1510,12 @@ void cfgfrm::templates_load()
 	cmbtemplatename->clear();
 	templateids.clear();
 	tem_tree->clear();
-	QSqlQuery query("SELECT name, description, ID FROM templatestab ORDER BY ID ASC");
+	QString qstr;
+	if(chksystemplates->checkState() == Qt::Unchecked)
+		qstr = "SELECT name, description, ID FROM templatestab WHERE name NOT LIKE 'sys_%' ORDER BY ID ASC";
+	else			
+		qstr = "SELECT name, description, ID FROM templatestab ORDER BY ID ASC";
+	QSqlQuery query(qstr);
 	if ( query.isActive())
 	{
 		while(query.next())

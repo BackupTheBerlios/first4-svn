@@ -254,31 +254,21 @@ void invfrm::writetexfile()
 		tabcontent = tabcontent.mid(0, tabcontent.length()-3) + "\\\\ \\hline \n";
     }
     
-    QFile textemplate(templatefolder+"/inventory.tex");
+    QString templatestr = loadtemplatedata();
+
     QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
-    if ( textemplate.open(QIODevice::ReadOnly) )
-    {
-		if ( output.open(QIODevice::WriteOnly) )
-		{
-		    QString line;
-		    QTextStream instream( &textemplate );
-		    QTextStream outstream( &output );
-		    while ( !instream.atEnd() )
-		    {
-				line = instream.readLine();
-				line = line.replace("###TITLE###", cmbinv->currentText().replace("_", "\\_"));
-				line = line.replace("###TABHEAD###", tabhead);
-				line = line.replace("###TABCONTENT###", tabcontent);
-				outstream << line << "\n";
-		    }
-		    output.close();
-		} else {
-		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
-		}
-		textemplate.close();
+	if(output.open(QIODevice::WriteOnly) )
+	{
+	    //QString line;
+	    QTextStream outstream( &output );
+		templatestr = templatestr.replace("+++TITLE+++", cmbinv->currentText().replace("_", "\\_"));
+		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
+		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent);
+		outstream << templatestr << "\n";
+	    output.close();
 	} else {
-		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
-    }
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
     
     //converting text to dvi
     QProcess *procdvi = new QProcess( this );
@@ -342,11 +332,9 @@ void invfrm::newinv()
 
 		QString conn2 = "INSERT INTO `invtab` (ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS) VALUES ('', '"+invname+"', '"+tabname[ninv->cmbinv->currentIndex()]+"', '"+ninv->cmbinv->currentText()+"', '"+QDate::currentDate().toString("yyyy-MM-dd")+"','Administrator [11] , "+username+" [11]', '0', '"+ninv->txtcomments->toPlainText()+"');";
 		QSqlQuery query2(conn2);
-		QMessageBox::information(this, tr("Save Data..."), conn2);
 	
 		QString conn3 = "CREATE TABLE `"+invname+"` (`ID` INT(11)  NOT NULL AUTO_INCREMENT, `STOCK_ID` TEXT  NOT NULL, `NAME` TEXT  NOT NULL,`DESCRIPTION` TEXT  NOT NULL,`QUANTITY` TEXT  NOT NULL, `EP` TEXT NOT NULL, `VP` TEXT NOT NULL, `AP` TEXT NOT NULL, `NEW_QUANTITY` TEXT NOT NULL, `COMMENTS` TEXT  NOT NULL, PRIMARY KEY(`ID`)) TYPE = MYISAM;";
 		QSqlQuery query3(conn3);
-		QMessageBox::information(this, tr("Save Data..."), conn3);
 	
 		progfrm* pfrm = new progfrm;
 		QString conn4 = "SELECT ID, col1, col2, col3, col7, col8 FROM "+tabname[ninv->cmbinv->currentIndex()]+";";
@@ -409,11 +397,10 @@ void invfrm::closeEvent(QCloseEvent* ce )
    	}
 }
 //
-QString invfrm::loadtemplatedata(int dbid)
+QString invfrm::loadtemplatedata()
 {
 	QString answ;
-	QString qstr = QString("SELECT data FROM templatestab WHERE `ID`='%1';").arg(dbid);
-	QSqlQuery query(qstr);
+	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_inventory';");
 	if ( query.isActive())
 	{
 		query.next();

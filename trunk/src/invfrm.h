@@ -24,6 +24,6 @@ public slots:
 	void savedata();
 	void loaddata();
 private:
-	QString loadtemplatedata(int dbid);
+	QString loadtemplatedata();
 };
 #endif

@@ -19,6 +19,7 @@
 #include "accountseditfrm.h"
 #include "msgeditfrm.h"
 //
+extern int uid;
 extern QString username, fullname, docfolder, templatefolder;
 //
 QString opendocID = "";
@@ -1143,7 +1144,7 @@ void doceditfrm::savecompletedoc()
     btnsave->setEnabled(FALSE);
 }
 //
-void doceditfrm::writetexfile()
+QString doceditfrm::writetexfile()
 {
     int i;
     //Check DoG
@@ -1219,10 +1220,12 @@ void doceditfrm::writetexfile()
     
     QString templatestr = loadtemplatedata(temp_id[cmbdoc->currentIndex()].toInt());
 
-    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
+	QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
 	if ( output.open( QIODevice::WriteOnly ) )
 	{
-	    QString line;
+	    //QString line;
 	    QTextStream outstream( &output );
 		templatestr = templatestr.replace("+++DATE+++", boxdate->date().toString("dd. MMMM yyyy"));
 		templatestr = templatestr.replace("+++RECIPIENT+++", boxaddress->toPlainText().replace("\n", "\\newline "));
@@ -1306,10 +1309,7 @@ void doceditfrm::writetexfile()
  	if(procdvi->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't convert TEX-File."));
 
-    //move file in the correct folder
-    QFile dvifile(QDir::homePath() + "/.first4/tmp/output.dvi");
-    if(!dvifile.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile))
-	    QMessageBox::critical(0,"Error...", tr("Can't move file to customer folder."));
+	return output.fileName().replace(".tex", ".dvi");
 }
 //
 void doceditfrm::printpreview()
@@ -1320,11 +1320,12 @@ void doceditfrm::printpreview()
     {
 		if(lblID->text()!="")
 		{
-		    this->writetexfile();
-		    //Show Report
+		    QString document = writetexfile();
+		    
+			//Show Report
 		    QProcess *procshow = new QProcess( this );
 		    QStringList args;
-		    args << docfolder+"/"+lblID->text()+"/"+docfile;
+		    args << document;
 		    procshow->start(tool, args);
 		    if(procshow->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
@@ -1409,25 +1410,33 @@ void doceditfrm::printreport(bool complete)
     {
 		if(lblID->text()!="")
 		{
-		    writetexfile();
+		    QString document = writetexfile();
+		    
+		    QTime now = QTime::currentTime();
+			while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
+		    		    
+		    QString psfile = document;
 		    QProcess *procps = new QProcess( this );
 		    QStringList args;
-		    args << "-o" << docfolder+"/"+lblID->text()+"/"+docfile.replace(".dvi", ".ps") << docfolder+"/"+lblID->text()+"/"+docfile;
+		    args << "-o" << psfile.replace(".dvi", ".ps") << document;
+		
 		    procps->start("dvips", args);
 		    if(procps->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
-	    
+    
 		    QProcess *procprint = new QProcess( this );
 		    args.clear();
-		    args << docfolder+"/"+lblID->text()+"/"+docfile.replace(".dvi", ".ps");
+		    args << document.replace(".dvi", ".ps");
 		    procprint->start("kprinter", args);
    		    if(procprint->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't print File."));
 	    
-		    if(!complete)
+		    if(complete)
 		    {
-				QFile file(docfolder+"/"+lblID->text()+"/"+docfile);
-				file.remove();
+			    //move file in the correct folder
+    			QFile dvifile(document);
+    			if(!dvifile.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile))
+					QMessageBox::critical(0,"Error...", tr("Can't move file to customer folder."));
 		    }
 		}
     }
