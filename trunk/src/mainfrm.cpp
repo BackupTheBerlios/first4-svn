@@ -200,10 +200,10 @@ void mainfrm::about()
 //
 void mainfrm::closeEvent ( QCloseEvent* ce )
 {
-	cleanup();
 	int r = QMessageBox::question ( this, tr ( "Exit..." ),tr ( "Exit First?" ), QMessageBox::Yes, QMessageBox::No );
 	if ( r == QMessageBox::Yes )
 	{
+		cleanup();
 		vars v;
 		v.savegeo ( this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height() );
 		ce->accept();

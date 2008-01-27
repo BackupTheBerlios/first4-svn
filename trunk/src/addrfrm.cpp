@@ -15,7 +15,7 @@
 #include "addrfrm.h"
 #include "vars.h"
 
-QString lastadrtab;
+QString lastadrtab, rev_currency;
 QStringList adrnamelist, rightslist;
 
 extern QString username, templatefolder, docfolder, dbname;
@@ -55,19 +55,27 @@ void addrfrm::init()
 			mainlistview->setColumnWidth(i, colwidth[i].toInt());
 	}
     
-    lbluser->setText(username);  
-    QString connstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [1%';").arg(username);
+    lbluser->setText(username);
     QString permissions;
-    QSqlQuery query(connstr);
-    if ( query.isActive())
+    QString qstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [1%';").arg(username);
+    QSqlQuery query1(qstr);
+    if ( query1.isActive())
     {
-		while ( query.next())
+		while ( query1.next())
 		{
-		    cmbdir->addItem(query.value(2).toString());
-		    adrnamelist.append(query.value(1).toString());
-		    rightslist.append(query.value(3).toString().section(username, 1, 1).section(" ", 1, 1));
+		    cmbdir->addItem(query1.value(2).toString());
+		    adrnamelist.append(query1.value(1).toString());
+		    rightslist.append(query1.value(3).toString().section(username, 1, 1).section(" ", 1, 1));
 		}
     }
+    
+    QSqlQuery query2("SELECT value FROM `maincfgtab` WHERE `var` = 'def_currency';");
+    if(query2.isActive())
+    {
+		query2.next();
+		rev_currency = query2.value(0).toString();
+    }
+    
     listdocs->headerItem()->setText(0, QApplication::translate("addrfrm", "Clientdata", 0, QApplication::UnicodeUTF8));
     listdocs->headerItem()->setText(1, QApplication::translate("addrfrm", "docID", 0, QApplication::UnicodeUTF8));
     listdocs->headerItem()->setText(2, QApplication::translate("addrfrm", "data", 0, QApplication::UnicodeUTF8));
@@ -676,97 +684,88 @@ void addrfrm::search()
 //
 void addrfrm::printaddr()
 {
-    this->writetexfile();
+    QString document = writetexfile();
 
     //Show Report
     QStringList args;
-    args << QDir::homePath()+"/.first4/tmp/output.dvi";
+    args << document;
     QProcess *procshow = new QProcess( this );
     procshow->start("kdvi", args);
 	if(procshow->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
-    QFile file(QDir::homePath()+"/.first4/tmp/output.dvi");
+    QFile file(document);
     file.remove();
 }
 //
-void addrfrm::writetexfile()
+QString addrfrm::writetexfile()
 {
     QString tabhead = "";
     QString tabcontent = "";
     
-    QFile textemplate(templatefolder+"/address.tex");
-    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
-    if ( textemplate.open(QIODevice::ReadOnly ) )
-    {
-		if ( output.open(QIODevice::WriteOnly) )
+    QString templatestr = loadtemplatedata();
+    QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
+	if ( output.open(QIODevice::WriteOnly) )
+	{
+	    QTextStream outstream( &output );
+	    if(adr3->text() != "")
+			templatestr = templatestr.replace("+++TITLE+++", adr3->text());
+	    else
+			templatestr = templatestr.replace("+++TITLE+++", adr4->text() +", " +adr5->text());
+
+	    QString tmpstr = "";
+	    tmpstr += "\\textbf{ID:} & " + adr2->text() + " & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("Company")+":} & " + adr3->text() + " & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("Salutation")+":} & " + adr6->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Name")+":} & " + adr4->text() + "& \\textbf{Vorname:} & " + adr5->text() + " \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("P.O. Box")+":} & " + adr7->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Street \\& Nr.")+":} & " + adr8->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("ZIP, Location")+":} & " + adr9->text() + " & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("Business phone")+":} & " + adr10->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Direct phone")+":} & " + adr11->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Business fax")+":} & " + adr12->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Private phone")+":} & " +  adr13->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Private fax")+":} & " + adr14->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Mobile")+":} & " + adr15->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("E-Mail 1")+":} & " + adr16->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("E-Mail 2")+":} & " + adr17->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("E-Mail 3")+":} & " + adr18->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Website")+":} & " + adr19->text() + " & & \\\\ \n  \\hline \n";
+		QTreeWidgetItem *item = listrevenue->topLevelItem(0);
+		if(item != 0)
 		{
-		    QString line;
-		    QTextStream instream( &textemplate );
-		    QTextStream outstream( &output );
-		    while ( !instream.atEnd() )
-		    {
-				line = instream.readLine();
-				if(line.contains("###TITLE###") > 0)
-				{
-				    if(adr3->text() != "")
-						line = line.replace("###TITLE###", adr3->text());
-				    else
-						line = line.replace("###TITLE###", adr4->text() +", " +adr5->text());
-				    outstream << line << "\n";
-				} 
-				else if(line.contains("###DATA###") > 0)
-				{
-				    QString tmpstr = "";
-				    tmpstr += "\\textbf{ID:} & " + adr2->text() + " & & \\\\ \n \\hline \n";
-				    tmpstr += "\\textbf{Firma:} & " + adr3->text() + " & & \\\\ \n \\hline \n";
-				    tmpstr += "\\textbf{Anrede:} & " + adr6->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Name:} & " + adr4->text() + "& \\textbf{Vorname:} & " + adr5->text() + " \\\\ \n";
-				    tmpstr += "\\textbf{Postfach:} & " + adr7->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Strasse Nr.:} & " + adr8->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{PLZ, Ort:} & " + adr9->text() + " & & \\\\ \n \\hline \n";
-				    tmpstr += "\\textbf{Tel. Geschäft:} & " + adr10->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Tel. direkt:} & " + adr11->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Fax Geschäft:} & " + adr12->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Tel. Privat:} & " +  adr13->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Fax. Privat:} & " + adr14->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Mobile:} & " + adr15->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{E-Mail 1:} & " + adr16->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{E-Mail 2:} & " + adr17->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{E-Mail 3:} & " + adr18->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Webseite:} & " + adr19->text() + " & & \\\\ \n  \\hline \n";
-				    //tmpstr += "\\textbf{Umsatz:} & " + revtable->text(0,1) + " & & \\\\ \n";
-				    tmpstr += "\\textbf{Rabatt:} & " + adr22->text() + "\\% & & \\\\ \n \\hline \n";
-				    tmpstr += "\\textbf{Bemerkungen:} & " + adr23->toPlainText() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{" + lbladr24->text() + "} & " + adr24->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{" + lbladr25->text() + "} & " + adr25->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{" + lbladr26->text() + "} & " + adr26->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{" + lbladr27->text() + "} & " + adr27->text() + " & & \\\\ \n";
-				    tmpstr += "\\textbf{" + lbladr28->text() + "} & " + adr28->text() + " & & \\\\ \n \\hline \n";
-				    tmpstr += "\\textbf{Created:} &" + adr29->text() + " & \\textbf{Modified:} & " + adr30->text() + " \\\\ \n";
-				    //outstream << trUtf8(tmpstr);
-				    outstream << tmpstr;
-				}
-				else
-				{
-				    outstream << line << "\n";
-				}
-		    }
-		    output.close();
-		} else {
-		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+			int i;
+			for(i=0;i<listrevenue->topLevelItemCount();i++)
+			{
+				tmpstr += "\\textbf{"+tr("Revenue")+":} & "+item->text(0)+": "+item->text(1)+" "+rev_currency+" & & \\\\ \n";	
+			}
 		}
-		textemplate.close();
-    } else {
-		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
-    }
-    
+		else
+			tmpstr += "\\textbf{"+tr("Revenue")+":} & - "+rev_currency+" & & \\\\ \n";
+		tmpstr += "\\textbf{"+tr("Discount")+":} & " + adr22->text() + "\\% & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("Comments")+":} & " + adr23->toPlainText() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{" + lbladr24->text() + "} & " + adr24->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{" + lbladr25->text() + "} & " + adr25->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{" + lbladr26->text() + "} & " + adr26->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{" + lbladr27->text() + "} & " + adr27->text() + " & & \\\\ \n";
+	    tmpstr += "\\textbf{" + lbladr28->text() + "} & " + adr28->text() + " & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("Created")+":} &" + adr29->text() + " & \\textbf{"+tr("Modified")+":} & " + adr30->text() + " \\\\ \n";
+	    outstream << templatestr.replace("+++DATA+++", tmpstr);
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
+
     //converting text to dvi
     QStringList args;
-    args <<  "-output-directory="+QDir::homePath()+"/.first4/tmp/ " << output.fileName();
+    args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
     QProcess *procdvi = new QProcess( this );
     procdvi->start("latex", args);
     if(procdvi->exitCode()!=0)
 		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+		
+	return output.fileName().replace(".tex", ".dvi");
 }
 //
 void addrfrm::opendoc()
@@ -927,4 +926,21 @@ void addrfrm::impexp()
 		loadaddrs();
     }
     */
+}
+//
+QString addrfrm::loadtemplatedata()
+{
+	QString answ;
+	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_address';");
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
+	return answ;
 }

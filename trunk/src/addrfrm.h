@@ -36,8 +36,9 @@ public:
 	void checkrights();
 	void loaddocs(QString);
 	void loadauftr(QString);
-	void writetexfile();
 	void copyaddr(QString dest);
-private slots:
+private:
+	QString writetexfile();
+	QString loadtemplatedata();
 };
 #endif

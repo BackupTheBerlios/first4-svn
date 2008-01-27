@@ -226,7 +226,7 @@ void doceditfrm::selecteddocument()
 			docfile = "dn"+date.toString("ddMMyyyy")+txtdoccount->text().mid(2)+".dvi"; 
 			break;
 		case 3:
-			docfile = "bi"+date.toString("ddMMyyyy")+txtdoccount->text().mid(2)+".dvi"; 
+			docfile = "in"+date.toString("ddMMyyyy")+txtdoccount->text().mid(2)+".dvi"; 
 			break;    
 		}      
 	}
@@ -1426,7 +1426,7 @@ void doceditfrm::printreport(bool complete)
     
 		    QProcess *procprint = new QProcess( this );
 		    args.clear();
-		    args << document.replace(".dvi", ".ps");
+		    args << psfile;
 		    procprint->start("kprinter", args);
    		    if(procprint->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't print File."));
@@ -1435,6 +1435,7 @@ void doceditfrm::printreport(bool complete)
 		    {
 			    //move file in the correct folder
     			QFile dvifile(document);
+    		
     			if(!dvifile.rename(docfolder+QDir::separator()+lblID->text()+QDir::separator()+docfile))
 					QMessageBox::critical(0,"Error...", tr("Can't move file to customer folder."));
 		    }
