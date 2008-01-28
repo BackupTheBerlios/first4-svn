@@ -285,7 +285,7 @@ void doceditfrm::navtable()
     tmpitem = tabmain->item(row, 9);
     tmpstr = tmpitem->text();
     double actquantity = tmpstr.toDouble();
-    if (tmpstr != " " && tmpstr != "-")
+    if (tmpstr.simplified() != "" && tmpstr != "-")
     {
 		if(quantity > actquantity)
 		    QMessageBox::information(0,tr("Stock..."),tr("The entered quantity exceeds the stock!")); 
@@ -1180,11 +1180,11 @@ QString doceditfrm::writetexfile()
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 6);
-			tabcontent += item->text() + currency + " & ";
+			tabcontent += item->text() + " " + currency + " & ";
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 7);
-			tabcontent += item->text() + currency + " & ";
+			tabcontent += item->text() + " " + currency + " & ";
 			
 			item = new QTableWidgetItem;
 			item = tabmain->item(i, 8);
@@ -1494,7 +1494,7 @@ void doceditfrm::editposition()
     if(tabmain->item(tabmain->currentRow(),6)->text()!="")
 		epos->txtprice->setText(tabmain->item(tabmain->currentRow(),6)->text());
     else
-	epos->txtprice->setText("0.00");
+		epos->txtprice->setText("0.00");
     
     if(epos->exec())
     {

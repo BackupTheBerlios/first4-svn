@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>269</width>
-    <height>456</height>
+    <width>288</width>
+    <height>459</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -27,7 +27,7 @@
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>252</width>
+      <width>271</width>
       <height>351</height>
      </rect>
     </property>
@@ -35,15 +35,15 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex" >
-     <number>5</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="page_1" >
      <property name="geometry" >
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>137</width>
-       <height>50</height>
+       <width>201</width>
+       <height>54</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -147,8 +147,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>151</width>
-       <height>114</height>
+       <width>219</width>
+       <height>126</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -364,8 +364,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>119</width>
-       <height>82</height>
+       <width>165</width>
+       <height>76</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -507,8 +507,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>138</width>
-       <height>82</height>
+       <width>261</width>
+       <height>124</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -650,8 +650,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>129</width>
-       <height>70</height>
+       <width>261</width>
+       <height>124</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -737,8 +737,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>252</width>
-       <height>141</height>
+       <width>261</width>
+       <height>124</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -750,10 +750,10 @@
      <widget class="QPushButton" name="btnbrowsemsgs" >
       <property name="geometry" >
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>234</width>
-        <height>27</height>
+        <x>4</x>
+        <y>4</y>
+        <width>253</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="palette" >
@@ -812,10 +812,10 @@
      <widget class="QPushButton" name="btnnewmsg" >
       <property name="geometry" >
        <rect>
-        <x>10</x>
-        <y>46</y>
-        <width>234</width>
-        <height>27</height>
+        <x>4</x>
+        <y>38</y>
+        <width>253</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="palette" >
@@ -877,8 +877,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>96</width>
-       <height>26</height>
+       <width>261</width>
+       <height>124</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -985,8 +985,8 @@
      <rect>
       <x>10</x>
       <y>370</y>
-      <width>252</width>
-      <height>77</height>
+      <width>271</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="title" >

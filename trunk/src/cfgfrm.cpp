@@ -54,7 +54,7 @@ void cfgfrm::init()
 	
 	maintab->setCurrentIndex( 0 );
 	cfgtab->setCurrentIndex( 0 );
-	usertab->setCurrentIndex ( 1 );
+	usertab->setCurrentIndex ( 0 );
 
 	//init listresoureces
 	listresources->header()-> setClickable ( FALSE );
