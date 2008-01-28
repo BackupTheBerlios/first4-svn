@@ -206,10 +206,16 @@ void invfrm::savedata()
 //
 void invfrm::print()
 {
-    this->writetexfile();
+    QString documentfile = writetexfile();
+    
+    QTime now = QTime::currentTime();
+	while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
+		    		    
+    QString psfile = documentfile;
+    
     QProcess *procps = new QProcess( this );
     QStringList args;
-    args << "-o" << QDir::homePath()+"/.first4/tmp/output.ps" << QDir::homePath()+"/.first4/tmp/output.dvi";
+    args << "-o" << psfile.replace(".dvi", ".ps") << documentfile;
     procps->start("dvips", args);
 	if(procps->exitStatus() == QProcess::CrashExit ) 
 		QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
@@ -217,7 +223,7 @@ void invfrm::print()
 	{
 	    QProcess *procprint = new QProcess( this );
     	args.clear();
-	    args << QDir::homePath()+"/.first4/tmp/output.ps";
+	    args << psfile;
 	    procprint->start("kprinter", args);
 	    if(procprint->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Error during printing process."));
@@ -226,16 +232,16 @@ void invfrm::print()
 //
 void invfrm::printpreview()
 {
-    this->writetexfile();
+    QString documentfile = writetexfile();
     QProcess *procshow = new QProcess( this );
     QStringList args;
-    args << QDir::homePath()+"/.first4/tmp/output.dvi";
+    args << documentfile;
 	procshow->start("kdvi", args);
 	if(procshow->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
 }
 //
-void invfrm::writetexfile()
+QString invfrm::writetexfile()
 {
     int i, ii;
     QString tabhead;
@@ -256,7 +262,9 @@ void invfrm::writetexfile()
     
     QString templatestr = loadtemplatedata();
 
-    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
+    QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
 	if(output.open(QIODevice::WriteOnly) )
 	{
 	    //QString line;
@@ -277,6 +285,8 @@ void invfrm::writetexfile()
     procdvi->start("latex", args);
 	if(procdvi->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Error during conversion to DVI file."));
+			
+	return output.fileName().replace(".tex", ".dvi");
 }
 //
 void invfrm::complete()
@@ -409,7 +419,7 @@ QString invfrm::loadtemplatedata()
 	else
 	{
 		QSqlError qerror = query.lastError();
-		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+		QMessageBox::warning ( 0, tr ( "Can't load template..." ), qerror.text() );
 	}
 	return answ;
 }

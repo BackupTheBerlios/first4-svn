@@ -848,38 +848,30 @@ void accountsfrm::writetexfile(int type)
 			}
 			break;
 	}
-	QFile textemplate(templatefolder+"/ieoverview.tex");
-	QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
-	if ( textemplate.open( QIODevice::ReadOnly ) )
+
+    QString templatestr = loadtemplatedata();
+    QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
+		
+	if ( output.open( QIODevice::WriteOnly ) )
 	{
-		if ( output.open( QIODevice::WriteOnly ) )
-		{
-		    QString line;
-		    QTextStream instream( &textemplate );
-		    QTextStream outstream( &output );
-		    while ( !instream.atEnd() )
-		    {
-				line = instream.readLine();
-				line = line.replace("+++TITLE+++", lblname->text());
-				line = line.replace("+++TABHEAD+++", tabhead);
-				line = line.replace("+++TABCONTENT+++", tabcontent);
-				line = line.replace("+++ACCOUNTNR+++", lblaccountnr->text());
-				line = line.replace("+++BANK+++", lblbank->text());
-				line = line.replace("+++BLZ+++", lblclearing->text());
-				line = line.replace("+++CURRENCY+++", lblcurrency->text());
-				line = line.replace("+++SALDO+++", tot->text());
-				line = line.replace("+++EIN+++", totin->text());
-				line = line.replace("+++AUS+++", totout->text());
-				outstream << line << "\n";
-		    }
-		    output.close();
-		} else {
-		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
-		}
-		textemplate.close();
-    } else {
-		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
-    }
+	    QTextStream outstream( &output );
+		templatestr = templatestr.replace("+++TITLE+++", lblname->text());
+		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
+		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent);
+		templatestr = templatestr.replace("+++ACCOUNTNR+++", lblaccountnr->text());
+		templatestr = templatestr.replace("+++BANK+++", lblbank->text());
+		templatestr = templatestr.replace("+++CLEARING+++", lblclearing->text());
+		templatestr = templatestr.replace("+++CURRENCY+++", lblcurrency->text());
+		templatestr = templatestr.replace("+++AMOUNT+++", tot->text());
+		templatestr = templatestr.replace("+++IN+++", totin->text());
+		templatestr = templatestr.replace("+++OUT+++", totout->text());
+		outstream << templatestr << "\n";
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
     
     //converting text to dvi
     vars v;
@@ -894,8 +886,25 @@ void accountsfrm::writetexfile(int type)
 	tool = v.get_tool("DVIVIEWER");
     QProcess *procshow = new QProcess( this );
     args.clear();
-    args << QDir::homePath()+"/.first4/tmp/output.dvi";
+    args << output.fileName().replace(".tex", ".dvi");
     procshow->start(tool, args);
     if ( procdvi->exitStatus() == QProcess::CrashExit ) 
 		QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+}
+//
+QString accountsfrm::loadtemplatedata()
+{
+	QString answ;
+	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_ieoverview';");
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
+	}
+	return answ;
 }

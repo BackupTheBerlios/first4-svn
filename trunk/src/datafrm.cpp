@@ -10,6 +10,7 @@
 #include <QProcess>
 #include <QTextStream>
 #include <QMenu>
+#include <QSqlError>
 //
 #include "datafrm.h"
 #include "vars.h"
@@ -520,31 +521,23 @@ void datafrm::writetexfile(int type)
 		break;
     }
    
-    QFile textemplate(templatefolder+"/stocklist.tex");
-    QFile output(QDir::homePath()+"/.first4/tmp/output.tex");
-    if ( textemplate.open( QIODevice::ReadOnly ) )
-    {
-		if ( output.open( QIODevice::WriteOnly ) )
-		{
-		    QString line;
-		    QTextStream instream( &textemplate );
-		    QTextStream outstream( &output );
-		    while ( !instream.atEnd() )
-		    {
-				line = instream.readLine();
-				line = line.replace("###STOCKNAME###", cmbdata->currentText().replace("_", "\\_"));
-				line = line.replace("###TABHEAD###", tabhead);
-				line = line.replace("###TABCONTENT###", tabcontent.replace("#",""));
-				outstream << line << "\n";
-		    }
-		    output.close();
-		} else {
-		    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
-		}
-		textemplate.close();
-    } else {
-		QMessageBox::critical(0,"Error...",tr("Can't open template!"));
-    }
+	QString templatestr = loadtemplatedata();
+
+	QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
+
+	if ( output.open( QIODevice::WriteOnly ) )
+	{
+	    QTextStream outstream( &output );
+		templatestr = templatestr.replace("+++STOCKNAME+++", cmbdata->currentText().replace("_", "\\_"));
+		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
+		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent.replace("#",""));
+		outstream << templatestr << "\n";
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
 	    
     //converting text to dvi
 	QStringList args;
@@ -555,11 +548,12 @@ void datafrm::writetexfile(int type)
 		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
 
 	args.clear();
-    args <<  QDir::homePath()+"/.first4/tmp/output.dvi";
+    args <<  QDir::homePath()+"/.first4/tmp/"+output.fileName().replace(".tex", ".dvi");
     QProcess *procshow = new QProcess( this );
     procshow->start("kdvi", args);
     if(procshow->exitCode()!=0)
-		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+		QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
+	
 }
 void datafrm::contmenudata()
 {
@@ -1064,4 +1058,21 @@ void datafrm::impdata(QString filestr)
     {
 	QMessageBox::critical(0,"Error...", tr("Error during reading of the File!"));
     }*/
+}
+//
+QString datafrm::loadtemplatedata()
+{
+	QString answ;
+	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_stocklist';");
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template..." ), qerror.text() );
+	}
+	return answ;
 }

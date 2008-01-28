@@ -940,7 +940,7 @@ QString addrfrm::loadtemplatedata()
 	else
 	{
 		QSqlError qerror = query.lastError();
-		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
 	}
 	return answ;
 }

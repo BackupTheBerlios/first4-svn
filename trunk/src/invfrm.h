@@ -10,7 +10,6 @@ public:
 	invfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	int init();
 	int checkrights();
-	void writetexfile();
 private slots:
 	void closeEvent( QCloseEvent* ce );
 public slots:
@@ -25,5 +24,6 @@ public slots:
 	void loaddata();
 private:
 	QString loadtemplatedata();
+	QString writetexfile();
 };
 #endif

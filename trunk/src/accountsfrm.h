@@ -32,6 +32,7 @@ private:
 	void writetexfile(int type);
 	void esrimport();
 	void csvexport();
+	QString loadtemplatedata();
 };
 #endif
 

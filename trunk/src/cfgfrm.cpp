@@ -1512,9 +1512,9 @@ void cfgfrm::templates_load()
 	tem_tree->clear();
 	QString qstr;
 	if(chksystemplates->checkState() == Qt::Unchecked)
-		qstr = "SELECT name, description, ID FROM templatestab WHERE name NOT LIKE 'sys_%' ORDER BY ID ASC";
+		qstr = "SELECT name, description, ID FROM templatestab WHERE name NOT LIKE 'sys_%' ORDER BY name";
 	else			
-		qstr = "SELECT name, description, ID FROM templatestab ORDER BY ID ASC";
+		qstr = "SELECT name, description, ID FROM templatestab ORDER BY name";
 	QSqlQuery query(qstr);
 	if ( query.isActive())
 	{

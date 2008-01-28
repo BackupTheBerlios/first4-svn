@@ -10,7 +10,6 @@ public:
 	datafrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
 	void checkrights();
-	void writetexfile(int);
 	void searchdata();
 	void searchstock();
 	void expstock(QString, bool);
@@ -34,6 +33,9 @@ private slots:
     void searchentries();
     void clearsearch();
     void impexp();
+private:
+	QString loadtemplatedata();
+	void writetexfile(int);
 };
 #endif
 
