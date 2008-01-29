@@ -1316,21 +1316,26 @@ void doceditfrm::printpreview()
 {
 	vars v;
 	QString tool = v.get_tool("DVIVIEWER");
-    if(tabmain->rowCount()>1)
-    {
-		if(lblID->text()!="")
-		{
-		    QString document = writetexfile();
+	if(tool != "")
+	{
+    	if(tabmain->rowCount()>1)
+	    {
+			if(lblID->text()!="")
+			{
+		    	QString document = writetexfile();
 		    
-			//Show Report
-		    QProcess *procshow = new QProcess( this );
-		    QStringList args;
-		    args << document;
-		    procshow->start(tool, args);
-		    if(procshow->exitStatus() == QProcess::CrashExit ) 
-				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
-		}
-    }    
+				//Show Report
+		    	QProcess *procshow = new QProcess( this );
+			    QStringList args;
+		    	args << document;
+			    procshow->start(tool, args);
+		    	if(procshow->exitStatus() == QProcess::CrashExit ) 
+					QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+			}
+    	}
+	}
+	else
+		QMessageBox::critical(0,"Error...", tr("You must first define a DVI-Viewer like KDVI or Okular in the settings module"));
 }
 
 void doceditfrm::print()

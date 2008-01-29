@@ -1010,7 +1010,7 @@ void cfgfrm::contmenu()
 	QTreeWidgetItem* item = listresources->currentItem();
 	QMenu* contextMenu = new QMenu ( this );
 	Q_CHECK_PTR ( contextMenu );
-	if ( item->childCount() > 0 )
+	if ( item->text(1) == "" )
 	{
 		QAction* cnt_newaddr = new QAction ( tr ( "New Directory" ), this );
 		connect ( cnt_newaddr , SIGNAL ( triggered() ), this, SLOT ( newaddr() ) );
@@ -1021,10 +1021,11 @@ void cfgfrm::contmenu()
 		contextMenu->addAction ( cnt_newaddr );
 		contextMenu->addAction ( cnt_newdata );
 		contextMenu->addAction ( cnt_newaccount );
+		contextMenu->exec ( QCursor::pos() );
 	}
 	else
 	{
-		if ( item->text ( 0 ) != tr ( "General" ) && item->text ( 2 ) !="ietab" && item->text ( 2 ) !="taxtab" && item->text ( 2 ) !="*doc*" )
+		if ( item->text(0)!= tr("General") && item->text(2)!="ietab" && item->text(2)!="taxtab" && item->text(2)!="doc" && item->text(2).mid(0, 4)!="msg_")
 		{
 			QAction* cnt_rename = new QAction ( tr ( "Rename \'%1\'" ).arg ( item->text ( 0 ) ), this );
 			connect ( cnt_rename , SIGNAL ( triggered() ), this, SLOT ( rentab() ) );
@@ -1032,9 +1033,9 @@ void cfgfrm::contmenu()
 			connect ( cnt_delete , SIGNAL ( triggered() ), this, SLOT ( deltab() ) );
 			contextMenu->addAction ( cnt_rename );
 			contextMenu->addAction ( cnt_delete );
+			contextMenu->exec ( QCursor::pos() );
 		}
 	}
-	contextMenu->exec ( QCursor::pos() );
 	delete contextMenu;
 }
 //

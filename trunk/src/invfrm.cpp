@@ -232,13 +232,20 @@ void invfrm::print()
 //
 void invfrm::printpreview()
 {
-    QString documentfile = writetexfile();
-    QProcess *procshow = new QProcess( this );
-    QStringList args;
-    args << documentfile;
-	procshow->start("kdvi", args);
-	if(procshow->exitStatus() != QProcess::NormalExit ) 
+	vars v;
+	QString tool = v.get_tool("DVIVIEWER");
+	if(tool != "")
+	{
+    	QString documentfile = writetexfile();
+	    QProcess *procshow = new QProcess( this );
+    	QStringList args;
+	    args << documentfile;
+		procshow->start(tool, args);
+		if(procshow->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
+	}
+	else
+		QMessageBox::critical(0,"Error...", tr("You must first define a DVI-Viewer like KDVI or Okular in the settings module"));
 }
 //
 QString invfrm::writetexfile()
@@ -269,6 +276,8 @@ QString invfrm::writetexfile()
 	{
 	    //QString line;
 	    QTextStream outstream( &output );
+	    templatestr = templatestr.replace("+++DATE+++", today.toString("dd. MMMM yyyy"));
+	    templatestr = templatestr.replace("+++PAGE+++", tr("Page:"));
 		templatestr = templatestr.replace("+++TITLE+++", cmbinv->currentText().replace("_", "\\_"));
 		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
 		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent);

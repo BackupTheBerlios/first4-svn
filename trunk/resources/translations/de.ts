@@ -800,22 +800,17 @@ p, li { white-space: pre-wrap; }
         <translation>Postgebühren: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="877"/>
+        <location filename="../../src/accountsfrm.cpp" line="875"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="881"/>
-        <source>Can&apos;t open template!</source>
-        <translation>Kann Vorlage nicht öffnen!</translation>
-    </message>
-    <message>
-        <location filename="../../src/accountsfrm.cpp" line="892"/>
+        <location filename="../../src/accountsfrm.cpp" line="886"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="900"/>
+        <location filename="../../src/accountsfrm.cpp" line="894"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
@@ -833,6 +828,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/accountsfrm.cpp" line="777"/>
         <source>Payment for Invoice: </source>
         <translation>Bezahlung für Rechnung: </translation>
+    </message>
+    <message>
+        <location filename="../../src/accountsfrm.cpp" line="861"/>
+        <source>Page:</source>
+        <translation>Seite:</translation>
+    </message>
+    <message>
+        <location filename="../../src/accountsfrm.cpp" line="909"/>
+        <source>Can&apos;t load template data...</source>
+        <translation>Kann Vorlage nicht laden...</translation>
     </message>
 </context>
 <context>
@@ -1537,7 +1542,7 @@ p, li { white-space: pre-wrap; }
         <translation>Datenbunk wurde upgedatet.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1130"/>
+        <location filename="../../src/cfgfrm.cpp" line="1131"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
@@ -1652,7 +1657,7 @@ p, li { white-space: pre-wrap; }
         <translation>Berechtigungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1299"/>
+        <location filename="../../src/cfgfrm.cpp" line="1300"/>
         <source>New settings are saved and now active.</source>
         <translation>Neue Einstellungen wurden gespeichert und sind nun aktiv.</translation>
     </message>
@@ -1672,62 +1677,62 @@ p, li { white-space: pre-wrap; }
         <translation>Neues Konto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1029"/>
+        <location filename="../../src/cfgfrm.cpp" line="1030"/>
         <source>Rename &apos;%1&apos;</source>
         <translation>&apos;%1&apos; umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1031"/>
+        <location filename="../../src/cfgfrm.cpp" line="1032"/>
         <source>Delete &apos;%1&apos;</source>
         <translation>&apos;%1&apos; löschen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1045"/>
+        <location filename="../../src/cfgfrm.cpp" line="1046"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1093"/>
+        <location filename="../../src/cfgfrm.cpp" line="1094"/>
         <source>Accountname:</source>
         <translation>Kontoname:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1131"/>
+        <location filename="../../src/cfgfrm.cpp" line="1132"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1136"/>
+        <location filename="../../src/cfgfrm.cpp" line="1137"/>
         <source>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1142"/>
+        <location filename="../../src/cfgfrm.cpp" line="1143"/>
         <source>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1148"/>
+        <location filename="../../src/cfgfrm.cpp" line="1149"/>
         <source>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1563"/>
+        <location filename="../../src/cfgfrm.cpp" line="1564"/>
         <source>Deleting...</source>
         <translation>Löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1161"/>
+        <location filename="../../src/cfgfrm.cpp" line="1162"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation>&apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1206"/>
+        <location filename="../../src/cfgfrm.cpp" line="1207"/>
         <source>Docfolder...</source>
         <translation>Dokumentordner...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1299"/>
+        <location filename="../../src/cfgfrm.cpp" line="1300"/>
         <source>Own data...</source>
         <translation>Eingene Daten...</translation>
     </message>
@@ -2197,22 +2202,22 @@ p, li { white-space: pre-wrap; }
         <translation>Administrator kann nicht gelöscht werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1379"/>
+        <location filename="../../src/cfgfrm.cpp" line="1380"/>
         <source>Unable to read settings from database!</source>
         <translation>Fehler beim lesen der Einstellungen von der Datenbank!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1429"/>
+        <location filename="../../src/cfgfrm.cpp" line="1430"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation>Kann Konfigurationsdatei nicht schreiben.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1486"/>
+        <location filename="../../src/cfgfrm.cpp" line="1487"/>
         <source>Application...</source>
         <translation>Programm...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1488"/>
+        <location filename="../../src/cfgfrm.cpp" line="1489"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
@@ -2282,7 +2287,7 @@ p, li { white-space: pre-wrap; }
         <translation>Fehler beim updaten...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1118"/>
+        <location filename="../../src/cfgfrm.cpp" line="1119"/>
         <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
         <translation>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</translation>
     </message>
@@ -2329,27 +2334,27 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1231"/>
+        <location filename="../../src/cfgfrm.cpp" line="1232"/>
         <source>Documents settings...</source>
         <translation>Dokumenteneinstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1599"/>
+        <location filename="../../src/cfgfrm.cpp" line="1600"/>
         <source>Can&apos;t load templates...</source>
         <translation>Kann Template nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1563"/>
+        <location filename="../../src/cfgfrm.cpp" line="1564"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation>Template &apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1570"/>
+        <location filename="../../src/cfgfrm.cpp" line="1571"/>
         <source>Template not deleted...</source>
         <translation>Template nicht gelöscht...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1616"/>
+        <location filename="../../src/cfgfrm.cpp" line="1617"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Template-Beschreibung nicht laden...</translation>
     </message>
@@ -2678,12 +2683,12 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="163"/>
+        <location filename="../../src/datafrm.cpp" line="164"/>
         <source>Save changes...</source>
         <translation>Ändrungen speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="163"/>
+        <location filename="../../src/datafrm.cpp" line="164"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
@@ -2718,42 +2723,37 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>Datentabelle:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="455"/>
+        <location filename="../../src/datafrm.cpp" line="456"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="455"/>
+        <location filename="../../src/datafrm.cpp" line="456"/>
         <source>Delete entry %1?</source>
         <translation>Eintrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="542"/>
+        <location filename="../../src/datafrm.cpp" line="541"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="546"/>
-        <source>Can&apos;t open template!</source>
-        <translation>Kann Vorlage nicht öffnen!</translation>
-    </message>
-    <message>
-        <location filename="../../src/datafrm.cpp" line="562"/>
+        <location filename="../../src/datafrm.cpp" line="550"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="569"/>
+        <location filename="../../src/datafrm.cpp" line="565"/>
         <source>Delete &amp;Row</source>
         <translation>&amp;Zeile löschen</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="582"/>
+        <location filename="../../src/datafrm.cpp" line="578"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="585"/>
+        <location filename="../../src/datafrm.cpp" line="581"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
@@ -2767,6 +2767,21 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <source>1</source>
         <translation>1</translation>
     </message>
+    <message>
+        <location filename="../../src/datafrm.cpp" line="534"/>
+        <source>Page:</source>
+        <translation>Seite:</translation>
+    </message>
+    <message>
+        <location filename="../../src/datafrm.cpp" line="557"/>
+        <source>Can&apos;t show DVI file.</source>
+        <translation>Kann DVI-Datei nicht anzeigen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/datafrm.cpp" line="1077"/>
+        <source>Can&apos;t load template...</source>
+        <translation>Kann Vorlage nicht laden...</translation>
+    </message>
 </context>
 <context>
     <name>dbwizzardfrm</name>
@@ -2776,7 +2791,7 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>&amp;Weiter &gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="358"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="361"/>
         <source>Unable to connect to server!</source>
         <translation>Verbindung zum Server nicht möglich!</translation>
     </message>
@@ -2786,7 +2801,7 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>Fehler beim Speichern der Serverliste!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="461"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="464"/>
         <source>Database successfully created.</source>
         <translation>Datenbank erfolgreich erstellt.</translation>
     </message>
@@ -3077,27 +3092,27 @@ p, li { white-space: pre-wrap; }
         <translation>Bestehende SQLite3 Datenbank öffnen...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="441"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="444"/>
         <source>Initializing database...</source>
         <translation>Datenbank initialisieren...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="467"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="470"/>
         <source>Unable to connect to database!</source>
         <translation>Verbindung zur Datenbank nicht möglich!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="479"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="482"/>
         <source>Open Directory</source>
         <translation>Öffne Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="486"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="489"/>
         <source>Open SQLite DB-File</source>
         <translation>Öffne SQLite DB-Datei</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="488"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="491"/>
         <source>SQLite3 File (*.db)</source>
         <translation>SQLite3 File (*.db)</translation>
     </message>
@@ -3443,27 +3458,27 @@ p, li { white-space: pre-wrap; }
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1425"/>
+        <location filename="../../src/doceditfrm.cpp" line="1430"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1341"/>
+        <location filename="../../src/doceditfrm.cpp" line="1346"/>
         <source>Please select a receiver</source>
         <translation>Bitte Empfänger auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1432"/>
+        <location filename="../../src/doceditfrm.cpp" line="1437"/>
         <source>Can&apos;t print File.</source>
         <translation>Kann Datei nicht ausdrucken.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1451"/>
+        <location filename="../../src/doceditfrm.cpp" line="1456"/>
         <source>Document not saved...</source>
         <translation>Dokument nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1451"/>
+        <location filename="../../src/doceditfrm.cpp" line="1456"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
@@ -3472,7 +3487,7 @@ p, li { white-space: pre-wrap; }
 Als Entwurf speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1341"/>
+        <location filename="../../src/doceditfrm.cpp" line="1346"/>
         <source>Address...</source>
         <translation>Adresse...</translation>
     </message>
@@ -3512,7 +3527,7 @@ Als Entwurf speichern?</translation>
         <translation>Rechnung %1</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1440"/>
+        <location filename="../../src/doceditfrm.cpp" line="1445"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation>Kann Datei nicht ins Zielverzeichnis verschieben.</translation>
     </message>
@@ -3527,9 +3542,14 @@ Als Entwurf speichern?</translation>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1550"/>
+        <location filename="../../src/doceditfrm.cpp" line="1555"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Templatebeschreibung nicht laden...</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="1338"/>
+        <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
+        <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
 </context>
 <context>
@@ -3588,11 +3608,6 @@ Als Entwurf speichern?</translation>
         <location filename="../../ui/doceditposition.ui" line="181"/>
         <source>CHF</source>
         <translation>CHF</translation>
-    </message>
-    <message>
-        <location filename="../../ui/doceditposition.ui" line="207"/>
-        <source>0.00; </source>
-        <translation>0.00; </translation>
     </message>
 </context>
 <context>
@@ -3883,17 +3898,17 @@ Bitte kontaktieren Sie ihre Administrator.</translation>
         <translation>&amp;Drucken</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="270"/>
+        <location filename="../../src/invfrm.cpp" line="287"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="284"/>
+        <location filename="../../src/invfrm.cpp" line="303"/>
         <source>Complete Inventory...</source>
         <translation>Inventar abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="284"/>
+        <location filename="../../src/invfrm.cpp" line="303"/>
         <source>Completed Inventories can&apos;t be edited!
 
 Complete nevertheless?</source>
@@ -3902,12 +3917,12 @@ Complete nevertheless?</source>
 Trotzdem abschliessen?</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="377"/>
+        <location filename="../../src/invfrm.cpp" line="396"/>
         <source>Save Data...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="377"/>
+        <location filename="../../src/invfrm.cpp" line="396"/>
         <source>Save Inventory?</source>
         <translation>Inventar speichern?</translation>
     </message>
@@ -3987,29 +4002,39 @@ Trotzdem abschliessen?</translation>
         <translation>Eink. Preis</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="215"/>
+        <location filename="../../src/invfrm.cpp" line="221"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="223"/>
+        <location filename="../../src/invfrm.cpp" line="229"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="235"/>
+        <location filename="../../src/invfrm.cpp" line="245"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="279"/>
+        <location filename="../../src/invfrm.cpp" line="296"/>
         <source>Error during conversion to DVI file.</source>
         <translation>Fehler beim konvertieren zu DVI.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="412"/>
-        <source>Can&apos;t load template description...</source>
-        <translation>Kann Templatebeschreibung nicht laden...</translation>
+        <location filename="../../src/invfrm.cpp" line="248"/>
+        <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
+        <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
+    </message>
+    <message>
+        <location filename="../../src/invfrm.cpp" line="280"/>
+        <source>Page:</source>
+        <translation>Seite:</translation>
+    </message>
+    <message>
+        <location filename="../../src/invfrm.cpp" line="431"/>
+        <source>Can&apos;t load template...</source>
+        <translation>Kann Vorlage nicht laden...</translation>
     </message>
 </context>
 <context>

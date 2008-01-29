@@ -530,6 +530,8 @@ void datafrm::writetexfile(int type)
 	if ( output.open( QIODevice::WriteOnly ) )
 	{
 	    QTextStream outstream( &output );
+	    templatestr = templatestr.replace("+++DATE+++", today.toString("dd. MMMM yyyy"));
+	    templatestr = templatestr.replace("+++PAGE+++", tr("Page:"));
 		templatestr = templatestr.replace("+++STOCKNAME+++", cmbdata->currentText().replace("_", "\\_"));
 		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
 		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent.replace("#",""));

@@ -857,6 +857,8 @@ void accountsfrm::writetexfile(int type)
 	if ( output.open( QIODevice::WriteOnly ) )
 	{
 	    QTextStream outstream( &output );
+	    templatestr = templatestr.replace("+++DATE+++", today.toString("dd. MMMM yyyy"));
+	    templatestr = templatestr.replace("+++PAGE+++", tr("Page:"));
 		templatestr = templatestr.replace("+++TITLE+++", lblname->text());
 		templatestr = templatestr.replace("+++TABHEAD+++", tabhead);
 		templatestr = templatestr.replace("+++TABCONTENT+++", tabcontent);
