@@ -86,7 +86,7 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="currentIndex" >
-    <number>8</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page" >
     <widget class="Line" name="line" >
@@ -130,7 +130,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QRadioButton" name="rbtnsqlitenew" >
      <property name="enabled" >
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry" >
       <rect>
@@ -146,7 +146,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QRadioButton" name="rbtnsqliteex" >
      <property name="enabled" >
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry" >
       <rect>

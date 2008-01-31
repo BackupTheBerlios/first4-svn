@@ -281,7 +281,13 @@ void vars::update_db_structure(QString section)
 			}
 			else if(section == "userlocktab")
 			{
-				QSqlQuery query("CREATE TABLE `userlocktab` (`ID` int(11) NOT NULL auto_increment, `table` text NOT NULL, `tabid` text NOT NULL,  `user` text NOT NULL, `timestamp` TIMESTAMP NOT NULL , PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+				QSqlQuery query1("SHOW TABLE STATUS WHERE (Name LIKE 'data%' OR Name LIKE 'inv%') AND Engine = 'MyISAM';");
+				while(query1.next())
+				{
+					QString qstr = QString("ALTER TABLE %1 ENGINE = InnoDB;").arg(query1.value(0).toString());
+					QSqlQuery query2(qstr);
+				}
+				QSqlQuery query3("CREATE TABLE `userlocktab` (`ID` int(11) NOT NULL auto_increment, `table` text NOT NULL, `tabid` text NOT NULL,  `user` text NOT NULL, `timestamp` TIMESTAMP NOT NULL , PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 			}
 			QMessageBox::information( 0, "DB update..." , "The database was successfully updated."  );
 		}

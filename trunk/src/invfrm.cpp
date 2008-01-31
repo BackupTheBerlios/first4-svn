@@ -352,7 +352,7 @@ void invfrm::newinv()
 		QString conn2 = "INSERT INTO `invtab` (ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS) VALUES ('', '"+invname+"', '"+tabname[ninv->cmbinv->currentIndex()]+"', '"+ninv->cmbinv->currentText()+"', '"+QDate::currentDate().toString("yyyy-MM-dd")+"','Administrator [11] , "+username+" [11]', '0', '"+ninv->txtcomments->toPlainText()+"');";
 		QSqlQuery query2(conn2);
 	
-		QString conn3 = "CREATE TABLE `"+invname+"` (`ID` INT(11)  NOT NULL AUTO_INCREMENT, `STOCK_ID` TEXT  NOT NULL, `NAME` TEXT  NOT NULL,`DESCRIPTION` TEXT  NOT NULL,`QUANTITY` TEXT  NOT NULL, `EP` TEXT NOT NULL, `VP` TEXT NOT NULL, `AP` TEXT NOT NULL, `NEW_QUANTITY` TEXT NOT NULL, `COMMENTS` TEXT  NOT NULL, PRIMARY KEY(`ID`)) TYPE = MYISAM;";
+		QString conn3 = "CREATE TABLE `"+invname+"` (`ID` INT(11)  NOT NULL AUTO_INCREMENT, `STOCK_ID` TEXT  NOT NULL, `NAME` TEXT  NOT NULL,`DESCRIPTION` TEXT  NOT NULL,`QUANTITY` TEXT  NOT NULL, `EP` TEXT NOT NULL, `VP` TEXT NOT NULL, `AP` TEXT NOT NULL, `NEW_QUANTITY` TEXT NOT NULL, `COMMENTS` TEXT  NOT NULL, PRIMARY KEY(`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 		QSqlQuery query3(conn3);
 	
 		progfrm* pfrm = new progfrm;

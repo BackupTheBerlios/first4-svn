@@ -124,7 +124,7 @@ void newdatatabfrm::createtable()
 			    for(i=0;i<listcols->count();i++)
 					conn5 += QString("`col%1` TEXT NOT NULL,").arg(i+1,0,10);
 			}
-			conn5 += " PRIMARY KEY  (`ID`),  KEY `ID` (`ID`)) TYPE=InnoDB;";
+			conn5 += " PRIMARY KEY  (`ID`),  KEY `ID` (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 			QSqlQuery querydatanew5(conn5);
 			done(1);
 	    }  
