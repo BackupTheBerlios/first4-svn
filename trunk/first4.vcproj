@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8,00"
 	Name="first4"
-	ProjectGUID="{31B6FD69-896E-3265-8015-87FEA4E5FF69}"
+	ProjectGUID="{F6641E1B-BEFE-338C-819E-0DB3E78A9F1E}"
 	Keyword="Qt4VSv1.0"
 	>
 	<Platforms>
