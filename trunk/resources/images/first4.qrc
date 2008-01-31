@@ -36,4 +36,7 @@
         <file>xclipboard.png</file>
         <file>xmag.png</file>
     </qresource>
+    <qresource prefix="/license" >
+        <file>../../COPYING</file>
+    </qresource>
 </RCC>
