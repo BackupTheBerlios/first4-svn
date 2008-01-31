@@ -441,8 +441,6 @@ void datafrm::editstockentry()
 		estock->loadentry(tabnamelist[cmbdata->currentIndex()]+"_"+tmpitem->text(1));
 		if(estock->exec())
 		    loadstock();
-		else
-			QSqlDatabase::database().rollback();
     }
 }
 //

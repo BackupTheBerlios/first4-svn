@@ -290,15 +290,14 @@ void vars::update_db_structure(QString section)
 //
 void vars::lockrow(QString table, QString rowID)
 {
-	QString qstr = QString("INSERT INTO userlocktab () VALUES ()").arg(table).arg(rowID);
+	QString qstr = QString("INSERT INTO userlocktab (`table`, `tabid`, `user`) VALUES ('%1', '%2', '%3');").arg(table).arg(rowID).arg(username);
 	QSqlQuery query(qstr);
-	query.next();
-	return query.value(0).toString();	
 }
 //
 void vars::unlockrow(QString table, QString rowID)
 {
-	
+	QString qstr = QString("DELETE FROM userlocktab WHERE `table`='%1' AND `tabid`='%2' AND `user`='%3' LIMIT 1;").arg(table).arg(rowID).arg(username);
+	QSqlQuery query(qstr);	
 }
 //
 void vars::locktable(QString table)
@@ -313,7 +312,7 @@ void vars::unlocktable(QString table)
 //
 QString vars::checklockstate(QString table, QString rowID)
 {
-	QString qstr = QString("SELECT user FROM userlocktab WHERE table='%1' AND tabid='%2';").arg(table).arg(rowID);
+	QString qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `tabid`='%2';").arg(table).arg(rowID);
 	QSqlQuery query(qstr);
 	query.next();
 	return query.value(0).toString();

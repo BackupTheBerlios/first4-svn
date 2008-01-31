@@ -34,6 +34,14 @@ void dataeditfrm::init()
 	connect(txtsellprice, SIGNAL(editingFinished()), this, SLOT(calc_gw()));
 }
 //
+void dataeditfrm::reject()
+{
+	QSqlDatabase::database().rollback();
+	vars v;
+	v.unlockrow(lbldatatab->text(), lblID->text());
+	done(0);
+}
+//
 void dataeditfrm::loadentry(QString dbID)
 {
     bool ok;
@@ -44,13 +52,14 @@ void dataeditfrm::loadentry(QString dbID)
 	QString userlock = v.checklockstate(dbID.section("_", 0, 0), dbID.section("_", 1, 1));
 	if(userlock != "")
 	{
-		QMessageBox::warning ( 0, tr ( "Entry locked..." ), QString("This entry is locked by user '%1'").arg(userlock) );
+		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
 		btnok->setEnabled(FALSE);
 		qstr = QString("SELECT ID, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, col19, col20, col21 FROM `%1` WHERE `ID` = '%2';").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1));
 	}
 	else
 	{
-		qstr = QString("SELECT ID, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, col19, col20, col21 FROM `%1` WHERE `ID` = '%2' FOR UPDATE;").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1));	
+		qstr = QString("SELECT ID, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, col19, col20, col21 FROM `%1` WHERE `ID` = '%2' FOR UPDATE;").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1));
+		v.lockrow(dbID.section("_", 0, 0), dbID.section("_", 1, 1));
 	}
 	QSqlDatabase::database().transaction();
 	
@@ -121,8 +130,8 @@ void dataeditfrm::loadvat()
     QSqlQuery query(connstr);
     if(query.isActive())
     {
-	while(query.next())
-	    cmbvat->addItem(query.value(0).toString());
+		while(query.next())
+	    	cmbvat->addItem(query.value(0).toString());
     }   
 }
 //
@@ -191,6 +200,8 @@ void dataeditfrm::updateentry()
     connstr += QString("`col15`='%1', `col16`='%2', `col17`='%3', `col18`='%4', `col19`='%5', `col20`='%6', `col21`='%7'").arg(txtwebimage->text()).arg(txtweburl->text()).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(txtsalesdate->date().toString("yyyy-MM-dd")).arg(txtcomments->toPlainText()).arg(txtstockpos->text());
     connstr += QString(" WHERE `ID`=%1 LIMIT 1;").arg(lblID->text());
     QSqlQuery query(connstr);
+    vars v;
+    v.unlockrow(lbldatatab->text(), lblID->text());
 }
 //
 void dataeditfrm::calc_gw()

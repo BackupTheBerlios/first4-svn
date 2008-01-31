@@ -21,5 +21,7 @@ public slots:
 	void acceptsp();
 	void removerow();
 	void addrow();
+private:
+	void reject();
 };
 #endif
