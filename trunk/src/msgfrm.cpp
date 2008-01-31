@@ -52,10 +52,7 @@ void msgfrm::init()
    	treeindex->setCurrentItem(treeindex->topLevelItem(0));
    	if(v.check_db_structure("msg") != 0)
 	{
-		if(uid != 0)
-			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
-		else
-			v.update_db_structure("msg");
+		v.update_db_structure("msg");
 	}
 	else
 	{

@@ -106,7 +106,6 @@ void datafrm::checkrights()
 {
     if(lbluser->text() == "Administrator" || stockrightslist[cmbdata->currentIndex()]=="[11]")
     {
-		//maintable->setReadOnly(FALSE);
 		btntransfer->setEnabled(TRUE);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
 		{
@@ -127,9 +126,6 @@ void datafrm::checkrights()
     }
     else
     {
-		//QHeader *tvh = maintable->verticalHeader();
-		//tvh->setLabel(maintable->numRows()-1, "" );
-		//maintable->setReadOnly(TRUE);
 		btnsave->setEnabled(FALSE);
 		btnnew->setEnabled(FALSE);
 		btnedit->setEnabled(FALSE);
@@ -445,6 +441,8 @@ void datafrm::editstockentry()
 		estock->loadentry(tabnamelist[cmbdata->currentIndex()]+"_"+tmpitem->text(1));
 		if(estock->exec())
 		    loadstock();
+		else
+			QSqlDatabase::database().rollback();
     }
 }
 //

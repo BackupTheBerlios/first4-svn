@@ -124,7 +124,7 @@ void newdatatabfrm::createtable()
 			    for(i=0;i<listcols->count();i++)
 					conn5 += QString("`col%1` TEXT NOT NULL,").arg(i+1,0,10);
 			}
-			conn5 += " PRIMARY KEY  (`ID`),  KEY `ID` (`ID`)) TYPE=MyISAM;";
+			conn5 += " PRIMARY KEY  (`ID`),  KEY `ID` (`ID`)) TYPE=InnoDB;";
 			QSqlQuery querydatanew5(conn5);
 			done(1);
 	    }  

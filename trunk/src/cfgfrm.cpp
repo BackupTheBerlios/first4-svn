@@ -108,10 +108,7 @@ void cfgfrm::init()
 	//Check DB-Structure for templates
 	if(v.check_db_structure("templates") != 0)
 	{
-		if(uid != 0)
-			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
-		else
-			v.update_db_structure("templates");
+		v.update_db_structure("templates");
 	}
 	else
 	{

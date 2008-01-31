@@ -15,6 +15,11 @@ public:
     QString get_tool(QString toolname);
 	int check_db_structure(QString section);
 	void update_db_structure(QString section);
+	void lockrow(QString table, QString rowID);
+	void unlockrow(QString table, QString rowID);
+	void locktable(QString table);
+	void unlocktable(QString table);
+	QString checklockstate(QString table, QString rowID);
 private slots:
 };
 #endif

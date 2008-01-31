@@ -11,15 +11,16 @@
 #include <QDir>
 #include <QTextStream>
 #include <QMenu>
-
+//
 #include "addrfrm.h"
 #include "vars.h"
-
+#include "doceditfrm.h"
+//
 QString lastadrtab, rev_currency;
 QStringList adrnamelist, rightslist;
-
+//
 extern QString username, templatefolder, docfolder, dbname;
-
+//
 addrfrm::addrfrm( QWidget * parent, Qt::WFlags f) 
 	: QWidget(parent, f)
 {
@@ -773,17 +774,15 @@ void addrfrm::opendoc()
     QTreeWidgetItem *item = listdocs->currentItem();
     if(item->text(1) != "")
     {
-    	/*
-		docsfrm *doc = new docsfrm;
-		doc->initdocsfrm();
+		doceditfrm *doc = new doceditfrm;
+		doc->init();
 		doc->opendocfromid("docs", item->text(1));
-		doc->btnnewdoc->setEnabled(FALSE);
+		doc->btnnew->setEnabled(FALSE);
 		doc->btnsave->setEnabled(FALSE);
 		doc->btnprint->setEnabled(TRUE);
 		doc->btncomplete->setEnabled(FALSE);
-		doc->btnopendoc->setEnabled(FALSE);
+		doc->btnopen->setEnabled(FALSE);
 		doc->show();
-		*/
     }
 }
 //

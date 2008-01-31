@@ -77,10 +77,11 @@ void mainfrm::loaduserdata()
 	
 	if(v.check_db_structure("filename2templateid") != 0)
 	{
-		if(uid != 0)
-			QMessageBox::warning( 0, tr ( "DB update needed..." ), tr ( "The database must be updated.\nPlease log-in as Administrator and perform the update." ) );
-		else
-			v.update_db_structure("filename2templateid");
+		v.update_db_structure("filename2templateid");
+	}
+   	if(v.check_db_structure("userlocktab") != 0)
+	{
+		v.update_db_structure("userlocktab");
 	}
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)
