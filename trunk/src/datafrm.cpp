@@ -97,7 +97,9 @@ void datafrm::init()
 //
 void datafrm::closeEvent(QCloseEvent* ce )
 {
+	QSqlDatabase::database().rollback();
 	vars v;
+	v.unlocktable(lastdatatab);
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 	ce->accept();
 }
@@ -139,6 +141,9 @@ void datafrm::changecmb()
     btnprint->setEnabled(FALSE);
     if(cmbdata->currentText() != lastdatatab)
     {
+    	QSqlDatabase::database().rollback();
+    	vars v;
+    	v.unlocktable(lastdatatab);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
 		{
 		    checkrights();
@@ -252,7 +257,7 @@ void datafrm::loadstock()
 		    progbar->setValue(++countrow);
 		}
     }	
-    lastdatatab = cmbdata->currentText();
+    lastdatatab = tabnamelist[cmbdata->currentIndex()];
 }
 //
 void datafrm::loaddata()
@@ -260,7 +265,7 @@ void datafrm::loaddata()
     mainwidget->setCurrentIndex(1);
     maintable->setRowCount(0);
     maintable->setColumnCount(0);
-    
+       
     bool ok;
     QStringList cols = colslist[cmbdata->currentIndex()].split("#");
     int colcount;
@@ -280,9 +285,24 @@ void datafrm::loaddata()
 	maintable->setHorizontalHeaderItem(maintable->columnCount()-1, new_item);
     maintable->setColumnWidth(0,0);
     maintable->setColumnWidth(maintable->columnCount()-1, 0);
-	    
-    QString connstr = "SELECT * FROM " +tabnamelist[cmbdata->currentIndex()]+" ORDER BY col1;";
-    QSqlQuery query(connstr);
+
+	vars v;
+	QString qstr;
+	QString userlock = v.checklockstate(tabnamelist[cmbdata->currentIndex()], "");
+	if(userlock != "")
+	{
+		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+		btnsave->setEnabled(FALSE);
+		qstr = QString("SELECT * FROM %1 ORDER BY col1;").arg(tabnamelist[cmbdata->currentIndex()]);
+	}
+	else
+	{
+		qstr = QString("SELECT * FROM %1 ORDER BY col1 FOR UPDATE;").arg(tabnamelist[cmbdata->currentIndex()]);
+		v.locktable(tabnamelist[cmbdata->currentIndex()]);
+	}
+	QSqlDatabase::database().transaction();
+
+    QSqlQuery query(qstr);
     if(query.isActive())
     {
 		progbar->setMaximum(query.size());
@@ -311,7 +331,7 @@ void datafrm::loaddata()
 		    maintable->setItem(maintable->rowCount()-1, maintable->columnCount()-1, item);
 		}
     }		
-    lastdatatab = cmbdata->currentText();
+    lastdatatab = tabnamelist[cmbdata->currentIndex()];
 }
 //
 void datafrm::savetable()
@@ -397,6 +417,8 @@ void datafrm::savetable()
 		    maintable->setItem(i, maintable->columnCount()-1, new_item);
 		}
 		progbar->setValue(i);
+		QSqlDatabase::database().commit(); //Close open transaction and
+		QSqlDatabase::database().transaction(); //Start a new one
 	}
 }
 //
@@ -647,7 +669,7 @@ void datafrm::searchdata()
 		    maintable->setItem(maintable->rowCount()-1, maintable->columnCount()-1, item);
 		}  
     }		
-    lastdatatab = cmbdata->currentText();
+    lastdatatab = tabnamelist[cmbdata->currentIndex()];
 }
 //
 void datafrm::searchstock()
@@ -711,7 +733,7 @@ void datafrm::searchstock()
 		    progbar->setValue(++countrow);
 	    }
 	}    
-	lastdatatab = cmbdata->currentText();    
+	lastdatatab = tabnamelist[cmbdata->currentIndex()];    
 }
 //
 void datafrm::clearsearch()

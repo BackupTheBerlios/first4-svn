@@ -289,7 +289,7 @@ void vars::update_db_structure(QString section)
 				}
 				QSqlQuery query3("CREATE TABLE `userlocktab` (`ID` int(11) NOT NULL auto_increment, `table` text NOT NULL, `tabid` text NOT NULL,  `user` text NOT NULL, `timestamp` TIMESTAMP NOT NULL , PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 			}
-			QMessageBox::information( 0, "DB update..." , "The database was successfully updated."  );
+			QMessageBox::information( 0, "DB update..." , "The database was successfully updated.");
 		}
 	}
 }
@@ -308,17 +308,23 @@ void vars::unlockrow(QString table, QString rowID)
 //
 void vars::locktable(QString table)
 {
-	
+	QString qstr = QString("INSERT INTO userlocktab (`table`, `user`) VALUES ('%1', '%2');").arg(table).arg(username);
+	QSqlQuery query(qstr);
 }
 //
 void vars::unlocktable(QString table)
 {
-	
+	QString qstr = QString("DELETE FROM userlocktab WHERE `table`='%1' AND `user`='%2' LIMIT 1;").arg(table).arg(username);
+	QSqlQuery query(qstr);
 }
 //
 QString vars::checklockstate(QString table, QString rowID)
 {
-	QString qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `tabid`='%2';").arg(table).arg(rowID);
+	QString qstr;
+	if(rowID != "")
+		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `tabid`='%2' AND `user`='%3';").arg(table).arg(rowID).arg(username);
+	else
+		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `user`='%2';").arg(table).arg(username);
 	QSqlQuery query(qstr);
 	query.next();
 	return query.value(0).toString();
