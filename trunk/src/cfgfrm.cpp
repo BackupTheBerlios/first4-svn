@@ -309,7 +309,7 @@ void cfgfrm::delservers()
 {
 	if ( listservers->currentItem() )
 		listservers->takeItem ( listservers->currentRow() );
-	
+		
 	QStringList lines;
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
@@ -365,7 +365,6 @@ void cfgfrm::delservers()
 	}
 	else
 		QMessageBox::warning(0, "Window positions...", "Can't write to configuration file.");
-	
 	loadservers();
 }
 //
