@@ -142,6 +142,28 @@ void datafrm::changecmb()
     if(cmbdata->currentText() != lastdatatab)
     {
     	QSqlDatabase::database().rollback();
+    	
+	    int updatecount = 0;
+	    QString updatestr = "";
+	    QTableWidgetItem *item = new QTableWidgetItem;
+	    do{
+	    	item = maintable->item(updatecount, maintable->columnCount()-1);
+	    	if(item!=0)
+		    	updatestr = item->text();
+			updatecount++;
+	    }while(updatestr == "" && updatecount < maintable->rowCount()-1);
+	    if(updatestr != "")
+	    {
+			int answ=QMessageBox::warning(this, tr("Save changes..."), tr("Save changes?"),QMessageBox::Yes, QMessageBox::No);
+			if(answ == QMessageBox::Yes)
+			{
+			    QString newselection = cmbdata->currentText();
+			    cmbdata->setEditText(lastdatatab);
+			    savetable();
+			    cmbdata->setEditText(newselection);
+			}
+	    }
+	        	
     	vars v;
     	v.unlocktable(lastdatatab);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
@@ -151,26 +173,6 @@ void datafrm::changecmb()
 		}
 		else
 		{
-		    int updatecount = 0;
-		    QString updatestr = "";
-		    QTableWidgetItem *item = new QTableWidgetItem;
-		    do{
-		    	item = maintable->item(updatecount, maintable->columnCount()-1);
-		    	if(item!=0)
-			    	updatestr = item->text();
-				updatecount++;
-		    }while(updatestr == "" && updatecount < maintable->rowCount()-1);
-		    if(updatestr != "")
-		    {
-				int answ=QMessageBox::warning(this, tr("Save changes..."), tr("Save changes?"),QMessageBox::Yes, QMessageBox::No);
-				if(answ == QMessageBox::Yes)
-				{
-				    QString newselection = cmbdata->currentText();
-				    cmbdata->setEditText(lastdatatab);
-				    savetable();
-				    cmbdata->setEditText(newselection);
-				}
-		    }
 		    checkrights();	    
 		    loaddata();
 		}
@@ -370,7 +372,7 @@ void datafrm::savetable()
 		    connstr += "' LIMIT 1;";
 		    QSqlQuery query(connstr);
 		    query.exec();
-		    this->loaddata();
+		    //this->loaddata();
 		}
 		else if (item->text()=="n")
 		{
@@ -416,8 +418,8 @@ void datafrm::savetable()
    		    new_item->setText("");
 		    maintable->setItem(i, maintable->columnCount()-1, new_item);
 		}
-		progbar->setValue(i);
-		QSqlDatabase::database().commit(); //Close open transaction and
+		progbar->setValue(progbar->maximum());
+		QSqlDatabase::database().commit(); //Close open transaction and for save
 		QSqlDatabase::database().transaction(); //Start a new one
 	}
 }
@@ -615,10 +617,11 @@ void datafrm::removerow()
 		    QString connstr = "DELETE FROM "+tabnamelist[cmbdata->currentIndex()]+" WHERE `ID`='"+item->text()+"' LIMIT 1;";
 		    QSqlQuery query(connstr);
 		    query.exec();
+			maintable->removeRow(item->row());
 		}
-    }    
+    }
     lastdatatab = "";
-    loaddata();
+    //loaddata();
     
     if(maintable->rowCount() == 0)
     	maintable->setRowCount(1);
