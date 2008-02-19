@@ -378,7 +378,6 @@ void datafrm::savetable()
 		    connstr += "' LIMIT 1;";
 		    QSqlQuery query(connstr);
 		    query.exec();
-		    //this->loaddata();
 		}
 		else if (item->text()=="n")
 		{

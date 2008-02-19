@@ -296,26 +296,34 @@ void vars::update_db_structure(QString section)
 //
 void vars::lockrow(QString table, QString rowID)
 {
+	QSqlDatabase::database().transaction();
 	QString qstr = QString("INSERT INTO userlocktab (`table`, `tabid`, `user`) VALUES ('%1', '%2', '%3');").arg(table).arg(rowID).arg(username);
 	QSqlQuery query(qstr);
+	QSqlDatabase::database().commit();
 }
 //
 void vars::unlockrow(QString table, QString rowID)
 {
+	QSqlDatabase::database().transaction();
 	QString qstr = QString("DELETE FROM userlocktab WHERE `table`='%1' AND `tabid`='%2' AND `user`='%3' LIMIT 1;").arg(table).arg(rowID).arg(username);
-	QSqlQuery query(qstr);	
+	QSqlQuery query(qstr);
+	QSqlDatabase::database().commit();
 }
 //
 void vars::locktable(QString table)
 {
+	QSqlDatabase::database().transaction();
 	QString qstr = QString("INSERT INTO userlocktab (`table`, `user`) VALUES ('%1', '%2');").arg(table).arg(username);
 	QSqlQuery query(qstr);
+	QSqlDatabase::database().commit();
 }
 //
 void vars::unlocktable(QString table)
 {
+	QSqlDatabase::database().transaction();
 	QString qstr = QString("DELETE FROM userlocktab WHERE `table`='%1' AND `user`='%2' LIMIT 1;").arg(table).arg(username);
 	QSqlQuery query(qstr);
+	QSqlDatabase::database().commit();
 }
 //
 QString vars::checklockstate(QString table, QString rowID)
