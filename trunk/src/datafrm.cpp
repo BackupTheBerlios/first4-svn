@@ -138,6 +138,7 @@ void datafrm::checkrights()
 
 void datafrm::changecmb()
 {
+	disconnect(cmbdata, SIGNAL(activated(int)), this, SLOT(changecmb()));
     btnprint->setEnabled(FALSE);
     if(cmbdata->currentText() != lastdatatab)
     {
@@ -154,16 +155,15 @@ void datafrm::changecmb()
 	    }while(updatestr == "" && updatecount < maintable->rowCount()-1);
 	    if(updatestr != "")
 	    {
-			int answ=QMessageBox::warning(this, tr("Save changes..."), tr("Save changes?"),QMessageBox::Yes, QMessageBox::No);
+			int answ=QMessageBox::warning(this, tr("Save changes..."), tr("Save changes?"), QMessageBox::Yes, QMessageBox::No);
 			if(answ == QMessageBox::Yes)
 			{
-			    QString newselection = cmbdata->currentText();
-			    cmbdata->setEditText(lastdatatab);
+			    int newselection = cmbdata->currentIndex();
+			    cmbdata->setCurrentIndex(tabnamelist.lastIndexOf(lastdatatab));
 			    savetable();
-			    cmbdata->setEditText(newselection);
+			    cmbdata->setCurrentIndex(newselection);
 			}
 	    }
-	        	
     	vars v;
     	v.unlocktable(lastdatatab);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
@@ -177,11 +177,16 @@ void datafrm::changecmb()
 		    loaddata();
 		}
     }
+	connect(cmbdata, SIGNAL(activated(int)), this, SLOT(changecmb()));
 }
 //
 void datafrm::loadstock()
 {
     mainwidget->setCurrentIndex(0);
+    
+    maintable->setRowCount(0);
+    maintable->setColumnCount(0);
+    
     maintree->clear();
     maintree->setColumnCount(0);
    
@@ -293,12 +298,13 @@ void datafrm::loaddata()
 	QString userlock = v.checklockstate(tabnamelist[cmbdata->currentIndex()], "");
 	if(userlock != "")
 	{
-		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+		this->setWindowTitle(QString("Stock / Datatables ( Locked by User: %1 )").arg(userlock));
 		btnsave->setEnabled(FALSE);
 		qstr = QString("SELECT * FROM %1 ORDER BY col1;").arg(tabnamelist[cmbdata->currentIndex()]);
 	}
 	else
 	{
+		this->setWindowTitle(QString("Stock / Datatables"));
 		qstr = QString("SELECT * FROM %1 ORDER BY col1 FOR UPDATE;").arg(tabnamelist[cmbdata->currentIndex()]);
 		v.locktable(tabnamelist[cmbdata->currentIndex()]);
 	}
