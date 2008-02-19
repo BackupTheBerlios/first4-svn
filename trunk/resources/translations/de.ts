@@ -62,346 +62,6 @@ Plugins: Alexander Saal</source>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/>    GNU GENERAL PUBLIC LICENSE&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/>       Version 2, June 1991&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/> Copyright (C) 1989, 1991 Free Software Foundation, Inc.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;                       59 Temple Place, Suite 330, Boston, MA  02111-1307  USA&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/> Everyone is permitted to copy and distribute verbatim copies&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/> of this license document, but changing it is not allowed.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/>    Preamble&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  The licenses for most software are designed to take away your&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;freedom to share and change it.  By contrast, the GNU General Public&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;License is intended to guarantee your freedom to share and change free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;software--to make sure the software is free for all its users.  This&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;General Public License applies to most of the Free Software&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Foundation&apos;s software and to any other program whose authors commit to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;using it.  (Some other Free Software Foundation software is covered by&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the GNU Library General Public License instead.)  You can apply it to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;your programs, too.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  When we speak of free software, we are referring to freedom, not&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;price.  Our General Public Licenses are designed to make sure that you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;have the freedom to distribute copies of free software (and charge for&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;this service if you wish), that you receive source code or can get it&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;if you want it, that you can change the software or use pieces of it&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;in new free programs; and that you know you can do these things.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  To protect your rights, we need to make restrictions that forbid&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;anyone to deny you these rights or to ask you to surrender the rights.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;These restrictions translate to certain responsibilities for you if you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute copies of the software, or if you modify it.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  For example, if you distribute copies of such a program, whether&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;gratis or for a fee, you must give the recipients all the rights that&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;you have.  You must make sure that they, too, receive or can get the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;source code.  And you must show them these terms so they know their&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;rights.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  We protect your rights with two steps: (1) copyright the software, and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;(2) offer you this license which gives you legal permission to copy,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute and/or modify the software.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  Also, for each author&apos;s protection and ours, we want to make certain&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;that everyone understands that there is no warranty for this free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;software.  If the software is modified by someone else and passed on, we&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;want its recipients to know that what they have is not the original, so&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;that any problems introduced by others will not reflect on the original&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;authors&apos; reputations.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  Finally, any free program is threatened constantly by software&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;patents.  We wish to avoid the danger that redistributors of a free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;program will individually obtain patent licenses, in effect making the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;program proprietary.  To prevent this, we have made it clear that any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;patent must be licensed for everyone&apos;s free use or not licensed at all.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  The precise terms and conditions for copying, distribution and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;modification follow.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/>    GNU GENERAL PUBLIC LICENSE&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  0. This License applies to any program or other work which contains&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;a notice placed by the copyright holder saying it may be distributed&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;under the terms of this General Public License.  The &quot;Program&quot;, below,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;refers to any such program or work, and a &quot;work based on the Program&quot;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;means either the Program or any derivative work under copyright law:&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;that is to say, a work containing the Program or a portion of it,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;either verbatim or with modifications and/or translated into another&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;language.  (Hereinafter, translation is included without limitation in&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the term &quot;modification&quot;.)  Each licensee is addressed as &quot;you&quot;.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Activities other than copying, distribution and modification are not&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;covered by this License; they are outside its scope.  The act of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;running the Program is not restricted, and the output from the Program&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;is covered only if its contents constitute a work based on the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Program (independent of having been made by running the Program).&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Whether that is true depends on what the Program does.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  1. You may copy and distribute verbatim copies of the Program&apos;s&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;source code as you receive it, in any medium, provided that you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;conspicuously and appropriately publish on each copy an appropriate&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;copyright notice and disclaimer of warranty; keep intact all the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;notices that refer to this License and to the absence of any warranty;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;and give any other recipients of the Program a copy of this License&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;along with the Program.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may charge a fee for the physical act of transferring a copy, and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;you may at your option offer warranty protection in exchange for a fee.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  2. You may modify your copy or copies of the Program or any portion&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;of it, thus forming a work based on the Program, and copy and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute such modifications or work under the terms of Section 1&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;above, provided that you also meet all of these conditions:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    a) You must cause the modified files to carry prominent notices&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    stating that you changed the files and the date of any change.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    b) You must cause any work that you distribute or publish, that in&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    whole or in part contains or is derived from the Program or any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    part thereof, to be licensed as a whole at no charge to all third&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    parties under the terms of this License.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    c) If the modified program normally reads commands interactively&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    when run, you must cause it, when started running for such&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    interactive use in the most ordinary way, to print or display an&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    announcement including an appropriate copyright notice and a&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    notice that there is no warranty (or else, saying that you provide&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    a warranty) and that users may redistribute the program under&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    these conditions, and telling the user how to view a copy of this&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    License.  (Exception: if the Program itself is interactive but&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    does not normally print such an announcement, your work based on&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    the Program is not required to print an announcement.)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;These requirements apply to the modified work as a whole.  If&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;identifiable sections of that work are not derived from the Program,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;and can be reasonably considered independent and separate works in&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;themselves, then this License, and its terms, do not apply to those&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;sections when you distribute them as separate works.  But when you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute the same sections as part of a whole which is a work based&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;on the Program, the distribution of the whole must be on the terms of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;this License, whose permissions for other licensees extend to the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;entire whole, and thus to each and every part regardless of who wrote it.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Thus, it is not the intent of this section to claim rights or contest&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;your rights to work written entirely by you; rather, the intent is to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;exercise the right to control the distribution of derivative or&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;collective works based on the Program.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;In addition, mere aggregation of another work not based on the Program&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;with the Program (or with a work based on the Program) on a volume of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;a storage or distribution medium does not bring the other work under&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the scope of this License.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  3. You may copy and distribute the Program (or a work based on it,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;under Section 2) in object code or executable form under the terms of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Sections 1 and 2 above provided that you also do one of the following:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    a) Accompany it with the complete corresponding machine-readable&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    source code, which must be distributed under the terms of Sections&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    1 and 2 above on a medium customarily used for software interchange; or,&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    b) Accompany it with a written offer, valid for at least three&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    years, to give any third party, for a charge no more than your&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    cost of physically performing source distribution, a complete&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    machine-readable copy of the corresponding source code, to be&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    distributed under the terms of Sections 1 and 2 above on a medium&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    customarily used for software interchange; or,&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    c) Accompany it with the information you received as to the offer&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    to distribute corresponding source code.  (This alternative is&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    allowed only for noncommercial distribution and only if you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    received the program in object code or executable form with such&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    an offer, in accord with Subsection b above.)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;The source code for a work means the preferred form of the work for&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;making modifications to it.  For an executable work, complete source&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;code means all the source code for all modules it contains, plus any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;associated interface definition files, plus the scripts used to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;control compilation and installation of the executable.  However, as a&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;special exception, the source code distributed need not include&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;anything that is normally distributed (in either source or binary&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;form) with the major components (compiler, kernel, and so on) of the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;operating system on which the executable runs, unless that component&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;itself accompanies the executable.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;If distribution of executable or object code is made by offering&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;access to copy from a designated place, then offering equivalent&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;access to copy the source code from the same place counts as&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribution of the source code, even though third parties are not&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;compelled to copy the source along with the object code.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  4. You may not copy, modify, sublicense, or distribute the Program&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;except as expressly provided under this License.  Any attempt&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;otherwise to copy, modify, sublicense or distribute the Program is&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;void, and will automatically terminate your rights under this License.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;However, parties who have received copies, or rights, from you under&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;this License will not have their licenses terminated so long as such&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;parties remain in full compliance.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  5. You are not required to accept this License, since you have not&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;signed it.  However, nothing else grants you permission to modify or&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute the Program or its derivative works.  These actions are&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;prohibited by law if you do not accept this License.  Therefore, by&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;modifying or distributing the Program (or any work based on the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Program), you indicate your acceptance of this License to do so, and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;all its terms and conditions for copying, distributing or modifying&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the Program or works based on it.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  6. Each time you redistribute the Program (or any work based on the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Program), the recipient automatically receives a license from the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;original licensor to copy, distribute or modify the Program subject to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;these terms and conditions.  You may not impose any further&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;restrictions on the recipients&apos; exercise of the rights granted herein.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You are not responsible for enforcing compliance by third parties to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;this License.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  7. If, as a consequence of a court judgment or allegation of patent&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;infringement or for any other reason (not limited to patent issues),&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;conditions are imposed on you (whether by court order, agreement or&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;otherwise) that contradict the conditions of this License, they do not&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;excuse you from the conditions of this License.  If you cannot&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;distribute so as to satisfy simultaneously your obligations under this&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;License and any other pertinent obligations, then as a consequence you&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;may not distribute the Program at all.  For example, if a patent&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;license would not permit royalty-free redistribution of the Program by&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;all those who receive copies directly or indirectly through you, then&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the only way you could satisfy both it and this License would be to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;refrain entirely from distribution of the Program.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;If any portion of this section is held invalid or unenforceable under&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;any particular circumstance, the balance of the section is intended to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;apply and the section as a whole is intended to apply in other&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;circumstances.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;It is not the purpose of this section to induce you to infringe any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;patents or other property right claims or to contest validity of any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;such claims; this section has the sole purpose of protecting the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;integrity of the free software distribution system, which is&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;implemented by public license practices.  Many people have made&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;generous contributions to the wide range of software distributed&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;through that system in reliance on consistent application of that&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;system; it is up to the author/donor to decide if he or she is willing&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;to distribute software through any other system and a licensee cannot&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;impose that choice.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;This section is intended to make thoroughly clear what is believed to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;be a consequence of the rest of this License.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  8. If the distribution and/or use of the Program is restricted in&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;certain countries either by patents or by copyrighted interfaces, the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;original copyright holder who places the Program under this License&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;may add an explicit geographical distribution limitation excluding&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;those countries, so that distribution is permitted only in or among&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;countries not thus excluded.  In such case, this License incorporates&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the limitation as if written in the body of this License.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  9. The Free Software Foundation may publish revised and/or new versions&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;of the General Public License from time to time.  Such new versions will&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;be similar in spirit to the present version, but may differ in detail to&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;address new problems or concerns.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Each version is given a distinguishing version number.  If the Program&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;specifies a version number of this License which applies to it and &quot;any&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;later version&quot;, you have the option of following the terms and conditions&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;either of that version or of any later version published by the Free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Software Foundation.  If the Program does not specify a version number of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;this License, you may choose any version ever published by the Free Software&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Foundation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  10. If you wish to incorporate parts of the Program into other free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;programs whose distribution conditions are different, write to the author&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;to ask for permission.  For software which is copyrighted by the Free&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Software Foundation, write to the Free Software Foundation; we sometimes&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;make exceptions for this.  Our decision will be guided by the two goals&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;of preserving the free status of all derivatives of our free software and&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;of promoting the sharing and reuse of software generally.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/>    NO WARRANTY&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;REPAIR OR CORRECTION.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;POSSIBILITY OF SUCH DAMAGES.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/>     END OF TERMS AND CONDITIONS&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt; &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;<byte value="x9"/>    How to Apply These Terms to Your New Programs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  If you develop a new program, and you want it to be of the greatest&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;possible use to the public, the best way to achieve this is to make it&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;free software which everyone can redistribute and change under these terms.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  To do so, attach the following notices to the program.  It is safest&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;to attach them to the start of each source file to most effectively&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;convey the exclusion of warranty; and each file should have at least&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;the &quot;copyright&quot; line and a pointer to where the full notice is found.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    &amp;lt;one line to give the program&apos;s name and a brief idea of what it does.&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    Copyright (C) &amp;lt;year&amp;gt;  &amp;lt;name of author&amp;gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    This program is free software; you can redistribute it and/or modify&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    it under the terms of the GNU General Public License as published by&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    the Free Software Foundation; either version 2 of the License, or&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    (at your option) any later version.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    This program is distributed in the hope that it will be useful,&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    GNU General Public License for more details.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    You should have received a copy of the GNU General Public License&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    along with this program; if not, write to the Free Software&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Also add information on how to contact you by electronic and paper mail.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;If the program is interactive, make it output a short notice like this&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;when it starts in an interactive mode:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    Gnomovision version 69, Copyright (C) year name of author&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w&apos;.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    This is free software, and you are welcome to redistribute it&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;    under certain conditions; type `show c&apos; for details.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;The hypothetical commands `show w&apos; and `show c&apos; should show the appropriate&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;parts of the General Public License.  Of course, the commands you use may&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;be called something other than `show w&apos; and `show c&apos;; they could even be&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;mouse-clicks or menu items--whatever suits your program.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You should also get your employer (if you work as a programmer) or your&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;school, if any, to sign a &quot;copyright disclaimer&quot; for the program, if&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;necessary.  Here is a sample; alter the names:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  Yoyodyne, Inc., hereby disclaims all copyright interest in the program&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  `Gnomovision&apos; (which makes passes at compilers) written by James Hacker.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  &amp;lt;signature of Ty Coon&amp;gt;, 1 April 1989&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;  Ty Coon, President of Vice&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;This General Public License does not permit incorporating your program into&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;proprietary programs.  If your program is a subroutine library, you may&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;consider it more useful to permit linking proprietary applications with the&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;library.  If this is what you want to do, use the GNU Library General&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Public License instead of this License.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -876,127 +536,127 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addrfrm</name>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="328"/>
+        <location filename="../../src/addrfrm.cpp" line="329"/>
         <source>Order confirmations</source>
         <translation>Auftragsbestätigungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="343"/>
+        <location filename="../../src/addrfrm.cpp" line="344"/>
         <source>Offer %1 - %2</source>
         <translation>Offerte %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="349"/>
+        <location filename="../../src/addrfrm.cpp" line="350"/>
         <source>Order confirmation %1 - %2</source>
         <translation>Auftragsbestätigung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="355"/>
+        <location filename="../../src/addrfrm.cpp" line="356"/>
         <source>Deliverynote %1 - %2</source>
         <translation>Lieferschein %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="367"/>
+        <location filename="../../src/addrfrm.cpp" line="368"/>
         <source>Paid </source>
         <translation>Bezahlt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="375"/>
+        <location filename="../../src/addrfrm.cpp" line="376"/>
         <source>Pendent</source>
         <translation>Pendent</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="377"/>
+        <location filename="../../src/addrfrm.cpp" line="378"/>
         <source>Completed</source>
         <translation>Abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="381"/>
+        <location filename="../../src/addrfrm.cpp" line="382"/>
         <source>Invoice %1 - %2</source>
         <translation>Rechnung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="400"/>
+        <location filename="../../src/addrfrm.cpp" line="401"/>
         <source>Status: %1</source>
         <translation>Status: %1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Incoming orders</source>
         <translation>Eingehende Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="417"/>
+        <location filename="../../src/addrfrm.cpp" line="418"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="496"/>
+        <location filename="../../src/addrfrm.cpp" line="497"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="497"/>
+        <location filename="../../src/addrfrm.cpp" line="498"/>
         <source>New Label:</source>
         <translation>Neue Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="605"/>
+        <location filename="../../src/addrfrm.cpp" line="606"/>
         <source>Delete %1 %2 %3?</source>
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="757"/>
+        <location filename="../../src/addrfrm.cpp" line="758"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="798"/>
+        <location filename="../../src/addrfrm.cpp" line="797"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="798"/>
+        <location filename="../../src/addrfrm.cpp" line="797"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="818"/>
+        <location filename="../../src/addrfrm.cpp" line="817"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="821"/>
+        <location filename="../../src/addrfrm.cpp" line="820"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="861"/>
+        <location filename="../../src/addrfrm.cpp" line="860"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="864"/>
+        <location filename="../../src/addrfrm.cpp" line="863"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
@@ -1191,17 +851,17 @@ p, li { white-space: pre-wrap; }
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="766"/>
+        <location filename="../../src/addrfrm.cpp" line="767"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="695"/>
+        <location filename="../../src/addrfrm.cpp" line="696"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="595"/>
+        <location filename="../../src/addrfrm.cpp" line="596"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1211,57 +871,57 @@ p, li { white-space: pre-wrap; }
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="719"/>
+        <location filename="../../src/addrfrm.cpp" line="720"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="45"/>
+        <location filename="../../src/addrfrm.cpp" line="46"/>
         <source>Lastname</source>
         <translation>Nachname</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="46"/>
+        <location filename="../../src/addrfrm.cpp" line="47"/>
         <source>Firstname</source>
         <translation>Vorname</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="47"/>
+        <location filename="../../src/addrfrm.cpp" line="48"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="79"/>
+        <location filename="../../src/addrfrm.cpp" line="80"/>
         <source>Clientdata</source>
         <translation>Kundendaten</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="80"/>
+        <location filename="../../src/addrfrm.cpp" line="81"/>
         <source>docID</source>
         <translation>docID</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="81"/>
+        <location filename="../../src/addrfrm.cpp" line="82"/>
         <source>data</source>
         <translation>data</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="82"/>
+        <location filename="../../src/addrfrm.cpp" line="83"/>
         <source>status</source>
         <translation>status</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="87"/>
+        <location filename="../../src/addrfrm.cpp" line="88"/>
         <source>State</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="88"/>
+        <location filename="../../src/addrfrm.cpp" line="89"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="89"/>
+        <location filename="../../src/addrfrm.cpp" line="90"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
@@ -1271,102 +931,102 @@ p, li { white-space: pre-wrap; }
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="720"/>
+        <location filename="../../src/addrfrm.cpp" line="721"/>
         <source>Salutation</source>
         <translation>Anrede</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="721"/>
+        <location filename="../../src/addrfrm.cpp" line="722"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="722"/>
+        <location filename="../../src/addrfrm.cpp" line="723"/>
         <source>P.O. Box</source>
         <translation>Postfach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="723"/>
+        <location filename="../../src/addrfrm.cpp" line="724"/>
         <source>Street \&amp; Nr.</source>
         <translation>Strasse Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="724"/>
+        <location filename="../../src/addrfrm.cpp" line="725"/>
         <source>ZIP, Location</source>
         <translation>PLZ, Ort</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="725"/>
+        <location filename="../../src/addrfrm.cpp" line="726"/>
         <source>Business phone</source>
         <translation>Telefon Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="726"/>
+        <location filename="../../src/addrfrm.cpp" line="727"/>
         <source>Direct phone</source>
         <translation>Telefon direkt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="727"/>
+        <location filename="../../src/addrfrm.cpp" line="728"/>
         <source>Business fax</source>
         <translation>Fax Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="728"/>
+        <location filename="../../src/addrfrm.cpp" line="729"/>
         <source>Private phone</source>
         <translation>Telefon Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="729"/>
+        <location filename="../../src/addrfrm.cpp" line="730"/>
         <source>Private fax</source>
         <translation>Fax Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="730"/>
+        <location filename="../../src/addrfrm.cpp" line="731"/>
         <source>Mobile</source>
         <translation>Mobile</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="731"/>
+        <location filename="../../src/addrfrm.cpp" line="732"/>
         <source>E-Mail 1</source>
         <translation>E-Mail 1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="732"/>
+        <location filename="../../src/addrfrm.cpp" line="733"/>
         <source>E-Mail 2</source>
         <translation>E-Mail 2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="733"/>
+        <location filename="../../src/addrfrm.cpp" line="734"/>
         <source>E-Mail 3</source>
         <translation>E-Mail 3</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="734"/>
+        <location filename="../../src/addrfrm.cpp" line="735"/>
         <source>Website</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="746"/>
+        <location filename="../../src/addrfrm.cpp" line="747"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="747"/>
+        <location filename="../../src/addrfrm.cpp" line="748"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="753"/>
+        <location filename="../../src/addrfrm.cpp" line="754"/>
         <source>Created</source>
         <translation>Erstellt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="753"/>
+        <location filename="../../src/addrfrm.cpp" line="754"/>
         <source>Modified</source>
         <translation>Bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="943"/>
+        <location filename="../../src/addrfrm.cpp" line="942"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -1462,152 +1122,152 @@ p, li { white-space: pre-wrap; }
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="187"/>
+        <location filename="../../src/cfgfrm.cpp" line="184"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="600"/>
+        <location filename="../../src/cfgfrm.cpp" line="596"/>
         <source>Change password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="210"/>
+        <location filename="../../src/cfgfrm.cpp" line="207"/>
         <source>Password was changed!</source>
         <translation>Passwort wurde geändert!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="218"/>
+        <location filename="../../src/cfgfrm.cpp" line="215"/>
         <source>Changing password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="218"/>
+        <location filename="../../src/cfgfrm.cpp" line="215"/>
         <source>Actual password wrong.</source>
         <translation>Aktuelles Passwort falsch.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="600"/>
+        <location filename="../../src/cfgfrm.cpp" line="596"/>
         <source>New password does not agree with password confirmation!</source>
         <translation>Neues Passwort und Passwortbestätigung stimmen nicht überein!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="248"/>
+        <location filename="../../src/cfgfrm.cpp" line="245"/>
         <source>Open Lang-File</source>
         <translation>Öffne Sprachdatei</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="250"/>
+        <location filename="../../src/cfgfrm.cpp" line="247"/>
         <source>Lang-File (*.qm)</source>
         <translation>Sprach-Datei (*.qm)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="274"/>
+        <location filename="../../src/cfgfrm.cpp" line="271"/>
         <source>Please restart the application.</source>
         <translation>Bitte Applikation neu starten.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="278"/>
+        <location filename="../../src/cfgfrm.cpp" line="275"/>
         <source>Language-File cannot be written!</source>
         <translation>Sprachdatei kann nicht geändert werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="396"/>
+        <location filename="../../src/cfgfrm.cpp" line="392"/>
         <source>Select DB-Structurfile...</source>
         <translation>DB-Strukturdatei auswählen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="398"/>
+        <location filename="../../src/cfgfrm.cpp" line="394"/>
         <source>DB-Structurfile (*.fdb)</source>
         <translation>DB-Strukturdatei (*.fdb)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="423"/>
+        <location filename="../../src/cfgfrm.cpp" line="419"/>
         <source>Update Database...</source>
         <translation>Datenbankupdate...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="423"/>
+        <location filename="../../src/cfgfrm.cpp" line="419"/>
         <source>Update Database?</source>
         <translation>Datenbank updaten?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="435"/>
+        <location filename="../../src/cfgfrm.cpp" line="431"/>
         <source>Update...</source>
         <translation>Update...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="435"/>
+        <location filename="../../src/cfgfrm.cpp" line="431"/>
         <source>Database was updated.</source>
         <translation>Datenbunk wurde upgedatet.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1131"/>
+        <location filename="../../src/cfgfrm.cpp" line="1127"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="521"/>
+        <location filename="../../src/cfgfrm.cpp" line="517"/>
         <source>User name:</source>
         <translation>Benutzername:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="532"/>
+        <location filename="../../src/cfgfrm.cpp" line="528"/>
         <source>New User...</source>
         <translation>Neuer Benutzer...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="532"/>
+        <location filename="../../src/cfgfrm.cpp" line="528"/>
         <source>User already exists!</source>
         <translation>Benutzer existiert bereits!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="595"/>
+        <location filename="../../src/cfgfrm.cpp" line="591"/>
         <source>Change personal data...</source>
         <translation>Persönlich Daten anpassen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="595"/>
+        <location filename="../../src/cfgfrm.cpp" line="591"/>
         <source>Personal data successfully changed.</source>
         <translation>Persönliche Daten erfolgreich gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="634"/>
+        <location filename="../../src/cfgfrm.cpp" line="630"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="636"/>
+        <location filename="../../src/cfgfrm.cpp" line="632"/>
         <source>Data &amp; Stock</source>
         <translation>Daten &amp; Lager</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="638"/>
+        <location filename="../../src/cfgfrm.cpp" line="634"/>
         <source>Inventory</source>
         <translation>Inventar</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="640"/>
+        <location filename="../../src/cfgfrm.cpp" line="636"/>
         <source>Purchase orders</source>
         <translation>Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="642"/>
+        <location filename="../../src/cfgfrm.cpp" line="638"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="644"/>
+        <location filename="../../src/cfgfrm.cpp" line="640"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="646"/>
+        <location filename="../../src/cfgfrm.cpp" line="642"/>
         <source>Accounts</source>
         <translation>Konti</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="648"/>
+        <location filename="../../src/cfgfrm.cpp" line="644"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
@@ -1617,122 +1277,122 @@ p, li { white-space: pre-wrap; }
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="750"/>
+        <location filename="../../src/cfgfrm.cpp" line="746"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="750"/>
+        <location filename="../../src/cfgfrm.cpp" line="746"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="750"/>
+        <location filename="../../src/cfgfrm.cpp" line="746"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="802"/>
+        <location filename="../../src/cfgfrm.cpp" line="798"/>
         <source>General message</source>
         <translation>Allgemeine Nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="802"/>
+        <location filename="../../src/cfgfrm.cpp" line="798"/>
         <source>Stockmessage</source>
         <translation>Lagermeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="802"/>
+        <location filename="../../src/cfgfrm.cpp" line="798"/>
         <source>Ordermessage</source>
         <translation>Auftragsmeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="802"/>
+        <location filename="../../src/cfgfrm.cpp" line="798"/>
         <source>Inc/Exp-Message</source>
         <translation>Ein/Aus-Meldungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1005"/>
+        <location filename="../../src/cfgfrm.cpp" line="1001"/>
         <source>Permissions...</source>
         <translation>Berechtigungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1300"/>
+        <location filename="../../src/cfgfrm.cpp" line="1296"/>
         <source>New settings are saved and now active.</source>
         <translation>Neue Einstellungen wurden gespeichert und sind nun aktiv.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1015"/>
+        <location filename="../../src/cfgfrm.cpp" line="1011"/>
         <source>New Directory</source>
         <translation>New Adressbuch</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1017"/>
+        <location filename="../../src/cfgfrm.cpp" line="1013"/>
         <source>New Datatable</source>
         <translation>Neue Datentabelle</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1019"/>
+        <location filename="../../src/cfgfrm.cpp" line="1015"/>
         <source>New Account</source>
         <translation>Neues Konto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1030"/>
+        <location filename="../../src/cfgfrm.cpp" line="1026"/>
         <source>Rename &apos;%1&apos;</source>
         <translation>&apos;%1&apos; umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1032"/>
+        <location filename="../../src/cfgfrm.cpp" line="1028"/>
         <source>Delete &apos;%1&apos;</source>
         <translation>&apos;%1&apos; löschen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1046"/>
+        <location filename="../../src/cfgfrm.cpp" line="1042"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1094"/>
+        <location filename="../../src/cfgfrm.cpp" line="1090"/>
         <source>Accountname:</source>
         <translation>Kontoname:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1132"/>
+        <location filename="../../src/cfgfrm.cpp" line="1128"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1137"/>
+        <location filename="../../src/cfgfrm.cpp" line="1133"/>
         <source>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1143"/>
+        <location filename="../../src/cfgfrm.cpp" line="1139"/>
         <source>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1149"/>
+        <location filename="../../src/cfgfrm.cpp" line="1145"/>
         <source>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1564"/>
+        <location filename="../../src/cfgfrm.cpp" line="1560"/>
         <source>Deleting...</source>
         <translation>Löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1162"/>
+        <location filename="../../src/cfgfrm.cpp" line="1158"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation>&apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1207"/>
+        <location filename="../../src/cfgfrm.cpp" line="1203"/>
         <source>Docfolder...</source>
         <translation>Dokumentordner...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1300"/>
+        <location filename="../../src/cfgfrm.cpp" line="1296"/>
         <source>Own data...</source>
         <translation>Eingene Daten...</translation>
     </message>
@@ -2187,37 +1847,37 @@ p, li { white-space: pre-wrap; }
         <translation>Pluginverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="616"/>
+        <location filename="../../src/cfgfrm.cpp" line="612"/>
         <source>Delete User...</source>
         <translation>User löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="616"/>
+        <location filename="../../src/cfgfrm.cpp" line="612"/>
         <source>Delete User &apos;%1&apos; ?</source>
         <translation>Lösche User &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="627"/>
+        <location filename="../../src/cfgfrm.cpp" line="623"/>
         <source>Administrator cannot be deleted!</source>
         <translation>Administrator kann nicht gelöscht werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1380"/>
+        <location filename="../../src/cfgfrm.cpp" line="1376"/>
         <source>Unable to read settings from database!</source>
         <translation>Fehler beim lesen der Einstellungen von der Datenbank!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1430"/>
+        <location filename="../../src/cfgfrm.cpp" line="1426"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation>Kann Konfigurationsdatei nicht schreiben.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1487"/>
+        <location filename="../../src/cfgfrm.cpp" line="1483"/>
         <source>Application...</source>
         <translation>Programm...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1489"/>
+        <location filename="../../src/cfgfrm.cpp" line="1485"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
@@ -2282,12 +1942,12 @@ p, li { white-space: pre-wrap; }
         <translation>Build:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="431"/>
+        <location filename="../../src/cfgfrm.cpp" line="427"/>
         <source>Error during update...</source>
         <translation>Fehler beim updaten...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1119"/>
+        <location filename="../../src/cfgfrm.cpp" line="1115"/>
         <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
         <translation>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</translation>
     </message>
@@ -2317,44 +1977,32 @@ p, li { white-space: pre-wrap; }
         <translation>details</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="112"/>
-        <source>DB update needed...</source>
-        <translation>DB Update nötig...</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="112"/>
-        <source>The database must be updated.
-Please log-in as Administrator and perform the update.</source>
-        <translation>Die Datenbank muss upgedatet werden.
-Bitte als Administrator einloggen und updates durchführen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="750"/>
+        <location filename="../../src/cfgfrm.cpp" line="746"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1232"/>
+        <location filename="../../src/cfgfrm.cpp" line="1228"/>
         <source>Documents settings...</source>
         <translation>Dokumenteneinstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1600"/>
+        <location filename="../../src/cfgfrm.cpp" line="1596"/>
         <source>Can&apos;t load templates...</source>
         <translation>Kann Template nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1564"/>
+        <location filename="../../src/cfgfrm.cpp" line="1560"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation>Template &apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1571"/>
+        <location filename="../../src/cfgfrm.cpp" line="1567"/>
         <source>Template not deleted...</source>
         <translation>Template nicht gelöscht...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1617"/>
+        <location filename="../../src/cfgfrm.cpp" line="1613"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Template-Beschreibung nicht laden...</translation>
     </message>
@@ -2475,22 +2123,22 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
 <context>
     <name>dataeditfrm</name>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="38"/>
+        <location filename="../../src/dataeditfrm.cpp" line="48"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="220"/>
+        <location filename="../../src/dataeditfrm.cpp" line="251"/>
         <source>&amp;Check Address</source>
         <translation>&amp;Adresse überprüfen</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="223"/>
+        <location filename="../../src/dataeditfrm.cpp" line="254"/>
         <source>&amp;Add Supplier</source>
         <translation>&amp;Lieferant hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="226"/>
+        <location filename="../../src/dataeditfrm.cpp" line="257"/>
         <source>&amp;Delete Supplier</source>
         <translation>Lieferant &amp;entfernen</translation>
     </message>
@@ -2679,16 +2327,21 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <source>OK</source>
         <translation>OK</translation>
     </message>
+    <message>
+        <location filename="../../src/dataeditfrm.cpp" line="175"/>
+        <source>Error during update...</source>
+        <translation>Fehler beim updaten...</translation>
+    </message>
 </context>
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="164"/>
+        <location filename="../../src/datafrm.cpp" line="157"/>
         <source>Save changes...</source>
         <translation>Ändrungen speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="164"/>
+        <location filename="../../src/datafrm.cpp" line="157"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
@@ -2723,37 +2376,37 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>Datentabelle:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="456"/>
+        <location filename="../../src/datafrm.cpp" line="476"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="456"/>
+        <location filename="../../src/datafrm.cpp" line="476"/>
         <source>Delete entry %1?</source>
         <translation>Eintrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="541"/>
+        <location filename="../../src/datafrm.cpp" line="561"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="550"/>
+        <location filename="../../src/datafrm.cpp" line="570"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="565"/>
+        <location filename="../../src/datafrm.cpp" line="585"/>
         <source>Delete &amp;Row</source>
         <translation>&amp;Zeile löschen</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="578"/>
+        <location filename="../../src/datafrm.cpp" line="598"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="581"/>
+        <location filename="../../src/datafrm.cpp" line="601"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
@@ -2768,17 +2421,17 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="534"/>
+        <location filename="../../src/datafrm.cpp" line="554"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="557"/>
+        <location filename="../../src/datafrm.cpp" line="577"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="1077"/>
+        <location filename="../../src/datafrm.cpp" line="1098"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -2786,12 +2439,12 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
 <context>
     <name>dbwizzardfrm</name>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="63"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="66"/>
         <source>&amp;Next &gt;&gt;</source>
         <translation>&amp;Weiter &gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="361"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="364"/>
         <source>Unable to connect to server!</source>
         <translation>Verbindung zum Server nicht möglich!</translation>
     </message>
@@ -2801,7 +2454,7 @@ Bitte als Administrator einloggen und updates durchführen.</translation>
         <translation>Fehler beim Speichern der Serverliste!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="464"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="481"/>
         <source>Database successfully created.</source>
         <translation>Datenbank erfolgreich erstellt.</translation>
     </message>
@@ -2824,32 +2477,32 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="76"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="82"/>
         <source>&lt;&lt; &amp;Back</source>
         <translation>&lt;&lt; &amp;Zurück</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="115"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="121"/>
         <source>New or existing database...</source>
         <translation>Neue oder bestehende Datenbank...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="128"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="134"/>
         <source>What do you want:</source>
         <translation>Was möchten Sie:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="144"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="150"/>
         <source>Create a new SQLite3 database</source>
         <translation>Neue SQLite3 Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="160"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="166"/>
         <source>Open a existing SQLite3 database</source>
         <translation>Bestehende SQLite3 Datenbank öffnen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="176"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="182"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2860,87 +2513,87 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für Einzelplatzinstallationen eignet sich besser SQLite.&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für eine Mehrbenutzerinstallation ist besser MySQL.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="195"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="201"/>
         <source>Create a new MySQL database</source>
         <translation>Neue MySQL Datenbank erstellen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="208"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="214"/>
         <source>Connect to a existing MySQL database</source>
         <translation>Verbinde zu bestehender MySQL Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1662"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1668"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="760"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="766"/>
         <source>Host:</source>
         <translation>Host:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="629"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="635"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="642"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="648"/>
         <source>3306</source>
         <translation>3306</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1179"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1185"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1486"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1492"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="357"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="363"/>
         <source>&amp;Check</source>
         <translation>&amp;Check</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="537"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="543"/>
         <source>Connect to a existing MySQL database...</source>
         <translation>Zu bestehender MySQL Datenbank verbinden...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1556"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1562"/>
         <source>Step 1 / 2</source>
         <translation>Schritt 1 / 2</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1597"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1603"/>
         <source>Step 2 / 2</source>
         <translation>Schritt 2 / 2</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1700"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1706"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1649"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1655"/>
         <source>Database Version:</source>
         <translation>Datenbank Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1636"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1642"/>
         <source>Summary:</source>
         <translation>Zusammenfassun:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1741"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1747"/>
         <source>Step 1 / 5</source>
         <translation>Schritt 1 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="681"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="687"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2949,17 +2602,17 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben sie einen Benutzer an, dass die Bereichtigung hat Datenbanken zu erstellen.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default user: &lt;span style=&quot; font-weight:600;&quot;&gt;root&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="708"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="714"/>
         <source>root</source>
         <translation>root</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1428"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1434"/>
         <source>Create a new MySQL database...</source>
         <translation>Neue MySQL Datenbank erstellen...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="788"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="794"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2968,7 +2621,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben Sie einen Benutzername und Passwort ein mit dem sich first4 mit der DB verbinden wird.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default username: &lt;span style=&quot; font-weight:600;&quot;&gt;first4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1819"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1825"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2977,67 +2630,67 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Bitte geben Sie einen Datenbanknamen an&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default Datenbankname: &lt;span style=&quot; font-weight:600;&quot;&gt;first4db&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1790"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1796"/>
         <source>DB-Name:</source>
         <translation>DB-Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1803"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1809"/>
         <source>first4db</source>
         <translation>first4db</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1980"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1986"/>
         <source>Step 2 / 5</source>
         <translation>Schritt 2 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="890"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="896"/>
         <source>first4</source>
         <translation>first4</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1925"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1931"/>
         <source>Company:</source>
         <translation>Unternehmen:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1838"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1844"/>
         <source>Street / Nr.:</source>
         <translation>Strasse Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1938"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1944"/>
         <source>City:</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1851"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1857"/>
         <source>ZIP:</source>
         <translation>PLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1967"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1973"/>
         <source>You can edit this details after the installation in the settings window.</source>
         <translation>Diese Einstellungen können nach der Installation im Konfigurationsfenster angepasst werden.</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1880"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1886"/>
         <source>Please enter your Company details:</source>
         <translation>Bitte Unternehmensdaten eingeben:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1099"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1105"/>
         <source>Step 3 / 5</source>
         <translation>Schritt 3 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1140"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1146"/>
         <source>Step 4 / 5</source>
         <translation>Schritt 4 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1205"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1211"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -3047,82 +2700,82 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1223"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1229"/>
         <source>Administrator</source>
         <translation>Administrator</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1254"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1260"/>
         <source>Step 5 / 5</source>
         <translation>Schritt 5 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1318"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1324"/>
         <source>DB-Host:</source>
         <translation>DB-Host:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1331"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1337"/>
         <source>DB-Port:</source>
         <translation>DB-Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1396"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1402"/>
         <source>Administrator:</source>
         <translation>Administrator:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1441"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1447"/>
         <source>first4 User:</source>
         <translation>first4 User:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1520"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1526"/>
         <source>Filename:</source>
         <translation>Dateiname:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1777"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1783"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1610"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1616"/>
         <source>Open a existing SQLite3 database...</source>
         <translation>Bestehende SQLite3 Datenbank öffnen...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="444"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="461"/>
         <source>Initializing database...</source>
         <translation>Datenbank initialisieren...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="470"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="487"/>
         <source>Unable to connect to database!</source>
         <translation>Verbindung zur Datenbank nicht möglich!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="482"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="499"/>
         <source>Open Directory</source>
         <translation>Öffne Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="489"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="506"/>
         <source>Open SQLite DB-File</source>
         <translation>Öffne SQLite DB-Datei</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="491"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="508"/>
         <source>SQLite3 File (*.db)</source>
         <translation>SQLite3 File (*.db)</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1993"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1999"/>
         <source>Create a new SQLite3 database...</source>
         <translation>Erstelle eine neue SQLite3 Datenbank...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1754"/>
+        <location filename="../../ui/dbwizzardfrm.ui" line="1760"/>
         <source>DB-Folder:</source>
         <translation>DB-Verzeichnis:</translation>
     </message>
@@ -4195,12 +3848,12 @@ Trotzdem abschliessen?</translation>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="203"/>
+        <location filename="../../src/mainfrm.cpp" line="204"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="203"/>
+        <location filename="../../src/mainfrm.cpp" line="204"/>
         <source>Exit First?</source>
         <translation>First beenden?</translation>
     </message>
@@ -4255,20 +3908,9 @@ Trotzdem abschliessen?</translation>
         <translation>Konten durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="126"/>
+        <location filename="../../src/mainfrm.cpp" line="127"/>
         <source>%1</source>
         <translation>%1</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainfrm.cpp" line="81"/>
-        <source>DB update needed...</source>
-        <translation>DB Update nötig...</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainfrm.cpp" line="81"/>
-        <source>The database must be updated.
-Please log-in as Administrator and perform the update.</source>
-        <translation>Die Datenbank muss upgedatet werden.Bitte als Administrator einloggen und updates durchführen.</translation>
     </message>
     <message>
         <location filename="../../ui/mainfrm.ui" line="800"/>
@@ -4447,18 +4089,7 @@ Please log-in as Administrator and perform the update.</source>
 <context>
     <name>msgfrm</name>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="56"/>
-        <source>DB update needed...</source>
-        <translation>DB Update nötig...</translation>
-    </message>
-    <message>
-        <location filename="../../src/msgfrm.cpp" line="56"/>
-        <source>The database must be updated.
-Please log-in as Administrator and perform the update.</source>
-        <translation>Die Datenbank muss upgedatet werden.Bitte als Administrator einloggen und updates durchführen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/msgfrm.cpp" line="170"/>
+        <location filename="../../src/msgfrm.cpp" line="167"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -4468,32 +4099,32 @@ Please log-in as Administrator and perform the update.</source>
         <translation>type</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="174"/>
+        <location filename="../../src/msgfrm.cpp" line="171"/>
         <source>user</source>
         <translation>user</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="175"/>
+        <location filename="../../src/msgfrm.cpp" line="172"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="195"/>
+        <location filename="../../src/msgfrm.cpp" line="192"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="237"/>
+        <location filename="../../src/msgfrm.cpp" line="234"/>
         <source>info</source>
         <translation>info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="206"/>
+        <location filename="../../src/msgfrm.cpp" line="203"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="207"/>
+        <location filename="../../src/msgfrm.cpp" line="204"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
@@ -4503,92 +4134,92 @@ Please log-in as Administrator and perform the update.</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="209"/>
+        <location filename="../../src/msgfrm.cpp" line="206"/>
         <source>Min. quantity</source>
         <translation>Min. Lagermenge</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="210"/>
+        <location filename="../../src/msgfrm.cpp" line="207"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="238"/>
+        <location filename="../../src/msgfrm.cpp" line="235"/>
         <source>Client</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="223"/>
+        <location filename="../../src/msgfrm.cpp" line="220"/>
         <source>Order.-Nr.</source>
         <translation>Auftrags-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="224"/>
+        <location filename="../../src/msgfrm.cpp" line="221"/>
         <source>Date of entry</source>
         <translation>Auftragsdatum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="225"/>
+        <location filename="../../src/msgfrm.cpp" line="222"/>
         <source>Complete until</source>
         <translation>Erledigen bis</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="242"/>
+        <location filename="../../src/msgfrm.cpp" line="239"/>
         <source>data</source>
         <translation>data</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="239"/>
+        <location filename="../../src/msgfrm.cpp" line="236"/>
         <source>Ref-Nr.</source>
         <translation>Ref-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="240"/>
+        <location filename="../../src/msgfrm.cpp" line="237"/>
         <source>Last payment</source>
         <translation>Letzte Zahlung</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="241"/>
+        <location filename="../../src/msgfrm.cpp" line="238"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="262"/>
+        <location filename="../../src/msgfrm.cpp" line="259"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="278"/>
+        <location filename="../../src/msgfrm.cpp" line="275"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="291"/>
+        <location filename="../../src/msgfrm.cpp" line="288"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="291"/>
+        <location filename="../../src/msgfrm.cpp" line="288"/>
         <source>Delete entry?</source>
         <translation>Eintrag löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="307"/>
+        <location filename="../../src/msgfrm.cpp" line="304"/>
         <source>&amp;Edit Message</source>
         <translation>Nachricht &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="310"/>
+        <location filename="../../src/msgfrm.cpp" line="307"/>
         <source>&amp;Delete Message</source>
         <translation>Nachricht &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="323"/>
+        <location filename="../../src/msgfrm.cpp" line="320"/>
         <source>Complete entry...</source>
         <translation>Eintrag abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="323"/>
+        <location filename="../../src/msgfrm.cpp" line="320"/>
         <source>Complete entry</source>
         <translation>Eintrag abschliessen</translation>
     </message>
