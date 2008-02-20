@@ -24,6 +24,7 @@
 #include "accountseditfrm.h"
 #include "msgfrm.h"
 #include "msgeditfrm.h"
+#include "dbupdatefrm.h"
 //
 extern int uid;
 extern QString username, fullname, firstver;
@@ -75,13 +76,13 @@ void mainfrm::loaduserdata()
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	
-	if(v.check_db_structure("filename2templateid") != 0)
+	dbupdatefrm *updfrm = new dbupdatefrm;
+	if(updfrm->init() != 0)
 	{
-		v.update_db_structure("filename2templateid");
-	}
-   	if(v.check_db_structure("userlocktab") != 0)
-	{
-		v.update_db_structure("userlocktab");
+		if(uid == 0)
+			updfrm->exec();
+		else
+			QMessageBox::information( 0, tr("DB update..."), tr("Database update is needed.\nPlease login as Administrator to perform the update.") );
 	}
 }
 // TODO:	Add by ChMaster (aka: Alexander Saal)

@@ -50,15 +50,7 @@ void msgfrm::init()
    	
    	loadmsgcfg();
    	treeindex->setCurrentItem(treeindex->topLevelItem(0));
-   	if(v.check_db_structure("msg") != 0)
-	{
-		v.update_db_structure("msg");
-	}
-	else
-	{
-   		loadmsg();
-	}
-   	
+	loadmsg();
 }
 //
 void msgfrm::closeEvent(QCloseEvent* ce )

@@ -38,7 +38,8 @@ FORMS = ui/aboutfrm.ui \
  ui/accountsimpexpfrm.ui \
  ui/msgfrm.ui \
  ui/msgeditfrm.ui \
- ui/templateeditfrm.ui
+ ui/templateeditfrm.ui \
+ ui/dbupdatefrm.ui
 HEADERS = src/aboutfrm.h \
  src/accountsfrm.h \
  src/addrfrm.h \
@@ -74,7 +75,8 @@ HEADERS = src/aboutfrm.h \
  src/accountsimpexpfrm.h \
  src/msgfrm.h \
  src/msgeditfrm.h \
- src/templateeditfrm.h
+ src/templateeditfrm.h \
+ src/dbupdatefrm.h
 INCLUDEPATH = src ui
 QT += core gui sql
 SOURCES = src/aboutfrm.cpp \
@@ -113,7 +115,8 @@ SOURCES = src/aboutfrm.cpp \
  src/accountsimpexpfrm.cpp \
  src/msgfrm.cpp \
  src/msgeditfrm.cpp \
- src/templateeditfrm.cpp
+ src/templateeditfrm.cpp \
+ src/dbupdatefrm.cpp
 RESOURCES = resources/images/first4.qrc
 TARGET = first4
 TEMPLATE = app

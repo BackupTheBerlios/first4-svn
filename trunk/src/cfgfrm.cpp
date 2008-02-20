@@ -105,15 +105,7 @@ void cfgfrm::init()
 
 	txtdocpath->setText ( docfolder );
 
-	//Check DB-Structure for templates
-	if(v.check_db_structure("templates") != 0)
-	{
-		v.update_db_structure("templates");
-	}
-	else
-	{
-		templates_load();
-	}
+	templates_load();
 
 	//slot connections
 	connect ( btnchangepwd, SIGNAL ( released() ), this, SLOT ( changepwd() ) );
