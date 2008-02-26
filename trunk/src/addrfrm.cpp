@@ -16,7 +16,7 @@
 #include "vars.h"
 #include "doceditfrm.h"
 //
-QString lastadrtab, rev_currency;
+QString lastadrtab, rev_currency, lastaddr, wintitle;
 QStringList adrnamelist, rightslist;
 //
 extern QString username, templatefolder, docfolder, dbname;
@@ -113,21 +113,26 @@ void addrfrm::init()
     connect(listdocs, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(mainlistview, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenuaddr()));
     
+    wintitle = this->windowTitle();
+    
     if(cmbdir->count() > 0)
     {
 		lastadrtab = "";
+		lastaddr = "";
 		loadaddrs();
     }
 }
 //
 void addrfrm::closeEvent(QCloseEvent* ce )
 {
+	QSqlDatabase::database().rollback();
 	int cols;
 	QStringList colwidth;
 	for(cols=0; cols < mainlistview->columnCount(); cols++)
 			colwidth << QString("%1").arg(mainlistview->columnWidth(cols));
 	vars v;
 	v.savecolwidth(this->objectName(), "mainlistview", colwidth);
+	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
 	
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 	ce->accept();
@@ -215,6 +220,9 @@ void addrfrm::checkrights()
 //
 void addrfrm::loadaddrs()
 {
+	this->setWindowTitle(wintitle);
+	vars v;
+	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
     if(cmbdir->currentText() != lastadrtab)
     { 
 		checkrights();
@@ -243,11 +251,30 @@ void addrfrm::loadaddrs()
 }
 //
 void addrfrm::loadaddrdetail()
-{ 
+{
+	vars v;
+	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
     QTreeWidgetItem *tmpitem = mainlistview->currentItem();
     if(tmpitem!=0 && tmpitem->text(3) != "")
     {
-		QString qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2';").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
+		QString qstr;
+		QString userlock = v.checklockstate(adrnamelist[cmbdir->currentIndex()], tmpitem->text(3));
+		if(userlock != "")
+		{
+			this->setWindowTitle(wintitle+QString(" ( Locked by User: %1 )").arg(userlock));
+			btnsave->setEnabled(FALSE);
+			btndelete->setEnabled(FALSE);
+			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2';").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
+		}
+		else
+		{
+			this->setWindowTitle(wintitle);
+			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2' FOR UPDATE;").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
+			v.lockrow(adrnamelist[cmbdir->currentIndex()], tmpitem->text(3));
+			btnsave->setEnabled(TRUE);
+			btndelete->setEnabled(TRUE);
+		}
+	
 		QSqlQuery query(qstr);
 		if(query.isActive())
 		{
@@ -317,6 +344,8 @@ void addrfrm::loadaddrdetail()
 	
 		if(tmpitem->text(3).mid(0,1)!="*")
 		    loadauftr(tmpitem->text(3));
+		    
+		lastaddr = adrnamelist[cmbdir->currentIndex()] + "_" +tmpitem->text(3);
 	}
 }
 //
@@ -503,6 +532,7 @@ void addrfrm::changecust5()
 //
 void addrfrm::newaddr()
 {
+	QSqlDatabase::database().transaction();
     maintab->setCurrentIndex(0);
     QDate date = QDate::currentDate();
     
@@ -562,6 +592,7 @@ void addrfrm::newaddr()
     adr27->setText("");
     lbladr28->setText("");
     adr28->setText("");
+    QSqlDatabase::database().commit();
 	
     lastadrtab = "";
     loadaddrs();
@@ -576,6 +607,7 @@ void addrfrm::newaddr()
 //
 void addrfrm::saveaddr()
 {
+	QSqlDatabase::database().transaction();
     mainlistview->setEnabled(true);
     btnnew->setEnabled(true);
     cmbdir->setEnabled(true);
@@ -596,7 +628,7 @@ void addrfrm::saveaddr()
 		QMessageBox::critical( this, tr( "Error" ), err.driverText() + "\n\nMessage:\t" + err.databaseText() );
 		return;
     }
-
+	QSqlDatabase::database().commit();
     lastadrtab = "";
     loadaddrs();
 }

@@ -31,22 +31,23 @@ int dbupdatefrm::init()
 
 	int retrcode = 0;
 	QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
-	if(query.size() !=1 )
+	if(query1.size() !=1 )
 	  retrcode = 1;
 	
 	QSqlQuery query2("SHOW TABLES LIKE '%msgtab%';");
-	if(query.size() !=1 )
+	if(query2.size() !=1 )
 	  retrcode = 1;
 	
 	QSqlQuery query3("SHOW COLUMNS FROM doctab WHERE field='filename';");
-	if(query.size() !=0 )
+	if(query3.size() !=0 )
 	  retrcode = 1;
 	
 	QSqlQuery query4("SHOW TABLES LIKE '%userlocktab%';");
-	if(query.size() !=1 )
+	if(query4.size() !=1 )
 	  retrcode = 1;
 
 	return retrcode;
+	
 }
 //
 void dbupdatefrm::check_db_structure()
