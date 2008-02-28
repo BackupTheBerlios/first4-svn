@@ -260,9 +260,9 @@ QString vars::checklockstate(QString table, QString rowID)
 {
 	QString qstr;
 	if(rowID != "")
-		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `tabid`='%2' AND `user`='%3';").arg(table).arg(rowID).arg(username);
+		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `tabid`='%2';").arg(table).arg(rowID);
 	else
-		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1' AND `user`='%2';").arg(table).arg(username);
+		qstr = QString("SELECT user FROM userlocktab WHERE `table`='%1';").arg(table);
 	QSqlQuery query(qstr);
 	query.next();
 	return query.value(0).toString();
