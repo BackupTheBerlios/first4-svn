@@ -12,10 +12,11 @@ private:
 	QString writetexfile();
 	QString loadtemplatedata(int dbid);
 	QString loadgeneralinfo();
+	QString loadtemplatedata();
 private slots:
 	void selectaddress();
 	void printpreview();
-	void printesr();
+	void printvesr();
 	void contmenu();
 	void removerow();
 	void checkdb();
@@ -30,7 +31,7 @@ private slots:
 	void opendoc();
 	void savedoc();
 	void show_vat();
-	QStringList esr();
+	QStringList vesr();
 	void reject();
 	void excl_vat();
 	void editposition();

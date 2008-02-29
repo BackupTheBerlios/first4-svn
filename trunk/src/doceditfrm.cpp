@@ -109,9 +109,9 @@ void doceditfrm::init()
     QAction* print = new QAction( tr("&Print document"), this );
 	connect(print , SIGNAL(triggered()), this, SLOT(print())); 
 	btnprintmenu->addAction(print);
-    QAction* printesr = new QAction( tr("Paying-in &slip"), this );
-	connect(printesr , SIGNAL(triggered()), this, SLOT(printesr())); 
-	btnprintmenu->addAction(printesr);		
+    QAction* printvesr = new QAction( tr("Paying-in &slip"), this );
+	connect(printvesr , SIGNAL(triggered()), this, SLOT(printvesr())); 
+	btnprintmenu->addAction(printvesr);		
 	btnprint->setMenu(btnprintmenu);
 	
 	vars v;
@@ -1346,12 +1346,12 @@ void doceditfrm::print()
 		QMessageBox::information(0, tr("Address..."), tr("Please select a receiver"));
 }
 //
-void doceditfrm::printesr()
+void doceditfrm::printvesr()
 {
     calc_tot();
-    QStringList esrcode = esr();
+    QStringList vesrcode = vesr();
     
-    QFile file(docfolder+"/tmpesr.kud");
+    /*QFile file(docfolder+"/tmpesr.kud");
     if ( file.open( QIODevice::WriteOnly ) )
     {
 		QTextStream stream( &file );	
@@ -1359,8 +1359,8 @@ void doceditfrm::printesr()
 		stream << "<!DOCTYPE KugarData [\n    <!ATTLIST KugarData\n        Template CDATA #REQUIRED>\n]>\n";
 		stream << "<KugarData>\n";
 		stream << "<Field level=\"0\"\n";
-		stream << "esr1=\""+esrcode[0]+"\"\n";
-		stream << "esr2 = \""+esrcode[1]+"\"\n";
+		stream << "esr1=\""+vesrcode[0]+"\"\n";
+		stream << "esr2 = \""+vesrcode[1]+"\"\n";
 		stream << "company = \""+companyaddress+"\"\n";
 		stream << "date = \""+QDate::currentDate().toString("dd.MM.yyyy")+"\"\n";
 		stream << "tnr = \""+tnr+"\"\n";
@@ -1370,24 +1370,74 @@ void doceditfrm::printesr()
 		stream << "/>\n\n</KugarData>";
 		file.close();
     }
-    file.remove();
+    file.remove();*/
+
+    QString templatestr = loadtemplatedata();
+    QTime now = QTime::currentTime();
+	QDate today = QDate::currentDate();
+    QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
+	if ( output.open(QIODevice::WriteOnly) )
+	{
+	    QTextStream outstream( &output );	
+	    templatestr = templatestr.replace("+++VESR1+++", vesrcode[0]);
+	    templatestr = templatestr.replace("+++VESR2+++", vesrcode[1]);
+		templatestr = templatestr.replace("+++COMPANY+++", companyaddress);
+		templatestr = templatestr.replace("+++DATE+++", QDate::currentDate().toString("dd.MM.yyyy"));
+		templatestr = templatestr.replace("+++TNR+++", tnr);
+		templatestr = templatestr.replace("+++CUSTOMER+++", boxaddress->toPlainText());
+		templatestr = templatestr.replace("+++AMOUNT+++", boxtot_incl->text().section(".", 0, 0));
+		templatestr = templatestr.replace("+++AMOUNTCENTS+++", boxtot_incl->text().section(".", 1, 1));
+		outstream << templatestr << "\n";
+	    output.close();
+	} else {
+	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
+	}
+
+    //converting text to dvi
+    QStringList args;
+    args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
+    QProcess *procdvi = new QProcess( this );
+    procdvi->start("latex", args);
+    if(procdvi->exitCode()!=0)
+		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+		
+    now = QTime::currentTime();
+	while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
+		    		  
+	QString documentfile = output.fileName().replace(".tex", ".dvi");
+    QString psfile = documentfile;
+    QProcess *procps = new QProcess( this );
+    args.clear();
+    args << "-o" << psfile.replace(".dvi", ".ps") << documentfile;
+    procps->start("dvips", args);
+	if(procps->exitStatus() == QProcess::CrashExit ) 
+		QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
+	else
+	{
+	    QProcess *procprint = new QProcess( this );
+    	args.clear();
+	    args << psfile;
+	    procprint->start("kprinter", args);
+	    if(procprint->exitStatus() != QProcess::NormalExit ) 
+			QMessageBox::critical(0,"Error...", tr("Error during printing process."));
+	}
 }
 //
-QStringList doceditfrm::esr()
+QStringList doceditfrm::vesr()
 {
-    QStringList esrarray, returnstrlist;
-    esrarray <<"0"<<"9"<<"4"<<"6"<<"8"<<"2"<<"7"<<"1"<<"3"<<"5";
+    QStringList vesrarray, returnstrlist;
+    vesrarray <<"0"<<"9"<<"4"<<"6"<<"8"<<"2"<<"7"<<"1"<<"3"<<"5";
     double betrag = boxtot_incl->text().toDouble() * 100;
     QString betragstring = QString("%1").arg(betrag, 0, 'f', 0);
     betragstring = betragstring.rightJustified(10, '0' );
-    QString esrcode = "01"+betragstring;
+    QString vesrcode = "01"+betragstring;
     QString R1 = 0;
     int i;
-    QStringList tmplist(esrcode.split(""));
-    for(i = 0; i < esrcode.length(); i++ )				//Schleife entsprechend der Anzahl Ziffer
+    QStringList tmplist(vesrcode.split(""));
+    for(i = 0; i < vesrcode.length(); i++ )				//Schleife entsprechend der Anzahl Ziffer
     {	
 		int Rbb = R1.toInt() + tmplist[i].toInt();		//Rest plus entspr. Ziffer - Ganzzahlen
-		R1 = esrarray[Rbb % 10];				//Modulo10 Algorithmus abarbeiten
+		R1 = vesrarray[Rbb % 10];				//Modulo10 Algorithmus abarbeiten
     }
     QString P1 = QString("%1").arg((10 - R1.toInt()) % 10, 10, 0);
     
@@ -1399,13 +1449,13 @@ QStringList doceditfrm::esr()
     for (i = 0; i < refnr.length(); i++ )			//Schleife entsprechend der Anzahl Ziffer	
     {	
 		int Rpr = R2.toInt() + tmplist2[i].toInt();	//Rest plus entspr. Ziffer - Ganzzahlen
-		R2 = esrarray[Rpr % 10];			//Modulo10 Algorithmus abarbeiten
+		R2 = vesrarray[Rpr % 10];			//Modulo10 Algorithmus abarbeiten
     }
     QString P2 = QString("%1").arg((10 - R2.toInt()) % 10, 10, 0);
     
     returnstrlist.append(refnr.mid(0, 1) +" "+refnr.mid(1, 5) +" "+refnr.mid(6, 5) +" "+refnr.mid(11, 5) + P2.simplified());
     
-    returnstrlist.append(esrcode+P1.simplified()+">"+refnr + P2.simplified()+"+ "+tnr.section("-", 0, 0).leftJustified(2, '.', TRUE )+tnr.section("-", 1, 1).leftJustified(6, '0', TRUE )+tnr.section("-", 2, 2).leftJustified(1, '.', TRUE )+">");
+    returnstrlist.append(vesrcode+P1.simplified()+">"+refnr + P2.simplified()+"+ "+tnr.section("-", 0, 0).leftJustified(2, '.', TRUE )+tnr.section("-", 1, 1).leftJustified(6, '0', TRUE )+tnr.section("-", 2, 2).leftJustified(1, '.', TRUE )+">");
     return returnstrlist;
 }
 //
@@ -1562,4 +1612,21 @@ QString doceditfrm::loadgeneralinfo()
 	QSqlQuery query( "SELECT value FROM maincfgtab WHERE `var`='doc_generalinfo';" );
 	query.next();
 	return query.value(0).toString();
+}
+//
+QString doceditfrm::loadtemplatedata()
+{
+	QString answ;
+	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_vesr';");
+	if ( query.isActive())
+	{
+		query.next();
+		answ = query.value(0).toString();
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
+	}
+	return answ;	
 }

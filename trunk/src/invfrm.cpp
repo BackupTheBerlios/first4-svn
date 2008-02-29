@@ -274,7 +274,6 @@ QString invfrm::writetexfile()
     QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
 	if(output.open(QIODevice::WriteOnly) )
 	{
-	    //QString line;
 	    QTextStream outstream( &output );
 	    templatestr = templatestr.replace("+++DATE+++", today.toString("dd. MMMM yyyy"));
 	    templatestr = templatestr.replace("+++PAGE+++", tr("Page:"));
