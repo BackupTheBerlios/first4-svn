@@ -4,6 +4,7 @@
 #include "accountseditfrm.h"
 #include "addrselectfrm.h"
 #include "stockselfrm.h"
+#include "vars.h"
 //
 extern QString username;
 //
@@ -39,10 +40,24 @@ void accountseditfrm::loadentry(QString tmpdbID)
 {   
     edit = TRUE;
     dbID = tmpdbID;
+    vars v;
     if(dbID.section("_", 0, 0) == "ietab")
 	{
-		QString connstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM ietab WHERE `ID` = '%1';").arg(dbID.section("_", 1, 1)); 
-		QSqlQuery query(connstr);
+		QString qstr;
+		QString userlock = v.checklockstate("ietab", dbID.section("_", 1, 1));
+		if(userlock != "")
+		{
+			this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+			btnaccept->setEnabled(FALSE);
+			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM ietab WHERE `ID` = '%1';").arg(dbID.section("_", 1, 1));
+		}
+		else
+		{
+			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM ietab WHERE `ID` = '%1' FOR UPDATE;").arg(dbID.section("_", 1, 1));
+			v.lockrow("ietab", dbID.section("_", 1, 1));
+		}
+	
+		QSqlQuery query(qstr);
 		if ( query.isActive())
 		{
 		    query.next();
@@ -65,8 +80,21 @@ void accountseditfrm::loadentry(QString tmpdbID)
     }
     else
     {
-		QString connstr = QString("SELECT ID, refnr, date, address, description, code, amount FROM %1 WHERE `ID` = '%2';").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1)); 
-		QSqlQuery query(connstr);
+		QString qstr;
+		QString userlock = v.checklockstate(dbID.section("_", 0, 0), dbID.section("_", 1, 1));
+		if(userlock != "")
+		{
+			this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+			btnaccept->setEnabled(FALSE);
+			qstr = QString("SELECT ID, refnr, date, address, description, code, amount FROM %1 WHERE `ID` = '%2';").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1));
+		}
+		else
+		{
+			qstr = QString("SELECT ID, refnr, date, address, description, code, amount FROM %1 WHERE `ID` = '%2';").arg(dbID.section("_", 0, 0)).arg(dbID.section("_", 1, 1));
+			v.lockrow(dbID.section("_", 0, 0), dbID.section("_", 1, 1));
+		}
+    	 
+		QSqlQuery query(qstr);
 		if ( query.isActive())
 		{
 		    query.next();
@@ -100,6 +128,7 @@ void accountseditfrm::acceptdata()
 //
 void accountseditfrm::updateentry(QString tab)
 {
+	vars v;
     QString qstr = "";
     if(tab == "ietab")
     {
@@ -109,7 +138,10 @@ void accountseditfrm::updateentry(QString tab)
     {
 		qstr = QString("UPDATE `%1` SET `date`='%2', `address`='%3', `description`='%4', `code`='%5', `amount`='%6' WHERE `ID`=%7;").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text()).arg(lblID->text());
     }
+    QSqlDatabase::database().transaction();
     QSqlQuery query(qstr);
+    QSqlDatabase::database().commit();
+    v.unlockrow(tab, lblID->text());
     this->accept();    
 }
 //
@@ -124,7 +156,9 @@ void accountseditfrm::newentry(QString tab)
     {
 		qstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '%4', '%5', '%6', '%7');").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtRefNr->text()).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text());
     }
+    QSqlDatabase::database().transaction();
     QSqlQuery query(qstr);
+    QSqlDatabase::database().commit();
     this->accept();
 }
 //
@@ -213,4 +247,12 @@ void accountseditfrm::checkcode()
 void accountseditfrm::formatamount()
 {
     txtamount->setText(QString("%1").arg(txtamount->text().toDouble(), 0, 'f',2));
+}
+//
+void accountseditfrm::reject()
+{
+	QSqlDatabase::database().rollback();
+	vars v;
+	v.unlockrow(dbID.section("_", 0, 0), dbID.section("_", 1, 1));
+	done(0);
 }

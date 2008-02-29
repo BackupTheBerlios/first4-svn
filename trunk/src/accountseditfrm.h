@@ -20,6 +20,7 @@ private slots:
 	void clearaddr();
 	void checkcode();
 	void formatamount();
+	void reject();
 };
 #endif
 

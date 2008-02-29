@@ -141,7 +141,6 @@ void procedureeditfrm::acceptdata()
     {
 		QString conn = "UPDATE `procedurecfgtab` SET `auftrid`='"+QString("%1").arg((txtorderid->text().toInt()+1), 0, 10)+"';"; 
 		QSqlQuery query(conn);
-		QMessageBox::information(this, tr("Delete order..."), conn);
 		accept();
     }
     else

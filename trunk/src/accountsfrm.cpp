@@ -195,13 +195,9 @@ void accountsfrm::loadaccounts()
     QSqlQuery query1(connstr);
     if ( query1.isActive())
     {
-		progbar->setValue(0);
-		progbar->setMaximum(query1.size());
-		int count = 0;
 		QTreeWidgetItem *item = treeindex->topLevelItem(0);
 		while(query1.next())
 		{
-		    progbar->setValue(++count);
 		    QTreeWidgetItem *childitem = new QTreeWidgetItem(item);
 		    childitem->setText(0, query1.value(2).toString());
 		    childitem->setText(1, query1.value(0).toString());
@@ -418,6 +414,7 @@ void accountsfrm::loadaccountdata(QString ID)
     treemain->clear();
     QString qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date DESC;").arg(ID);
     QSqlQuery query(qstr);
+    progbar->setMaximum(query.size());
     if(query.isActive())
     {
 		bool ok;
@@ -434,8 +431,10 @@ void accountsfrm::loadaccountdata(QString ID)
 		    item->setText(6, query.value(6).toString());
 		    saldo += query.value(6).toString().toFloat(&ok);
 		    item->setText(7, QString("%1").arg(saldo, 0, 'f',2));
+		    progbar->setValue(query.at()+1);
 		}
     }
+    progbar->setValue(progbar->maximum());
 }
 //
 void accountsfrm::loadincexpdata(QString type)
@@ -443,6 +442,7 @@ void accountsfrm::loadincexpdata(QString type)
     treemain->clear();
     QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM ietab WHERE `type`= '"+type+"' ORDER BY date DESC;";
     QSqlQuery query(qstr);
+    progbar->setMaximum(query.size());
     if(query.isActive())
     {
 		while(query.next())
@@ -462,8 +462,10 @@ void accountsfrm::loadincexpdata(QString type)
 		    item->setText(6, query.value(6).toString());
 		    item->setText(7, query.value(7).toString());
 		    item->setText(8, "("+query.value(4).toString().section(" (", 1, 1));
+		    progbar->setValue(query.at()+1);
 		}
     }
+    progbar->setValue(progbar->maximum());
 }
 //
 void accountsfrm::loadarchivdata(QString type)

@@ -349,9 +349,23 @@ void procedurefrm::editorder(QString dbID)
     int i;
     procedureeditfrm *eorders = new procedureeditfrm;
     eorders->init();
-    eorders->setWindowTitle( tr("Edit order..."));
-    
-    QString qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '"+dbID+"';";
+
+	vars v;
+	QString qstr;
+	QString userlock = v.checklockstate("proceduretab", dbID);
+	if(userlock != "")
+	{
+		eorders->setWindowTitle(tr("Edit order...")+QString(" ( Locked by User: %1 )").arg(userlock));
+		eorders->btnaccept->setEnabled(FALSE);
+		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1';").arg(dbID);
+	}
+	else
+	{
+		eorders->setWindowTitle( tr("Edit order..."));
+		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
+		v.lockrow("proceduretab", dbID);
+	}
+	QSqlDatabase::database().transaction();
 	
     QSqlQuery query(qstr);
     if( query.isActive())
@@ -556,7 +570,15 @@ void procedurefrm::editorder(QString dbID)
 		treeindex->clearSelection();
 		treemain->clearSelection();	
 		this->filltable(eorders->cmbstate->currentIndex());
+		
+		QSqlDatabase::database().commit();
+		v.unlockrow("proceduretab", dbID);
     }
+    else
+    {
+    	QSqlDatabase::database().rollback();
+    	v.unlockrow("proceduretab", dbID);
+   	}
 }
 //
 void procedurefrm::editarchiveorder(QString dbID)
