@@ -18,9 +18,9 @@
   <widget class="QPushButton" name="okButton" >
    <property name="geometry" >
     <rect>
-     <x>570</x>
+     <x>534</x>
      <y>410</y>
-     <width>75</width>
+     <width>111</width>
      <height>30</height>
     </rect>
    </property>
@@ -73,7 +73,7 @@
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="text" >
-      <string>&lt;a href=http://www.linux-box.ch>http://www.procopio.ch&lt;/a></string>
+      <string>&lt;a href=http:///www.procopio.ch>http://www.procopio.ch&lt;/a></string>
      </property>
      <property name="openExternalLinks" >
       <bool>true</bool>
