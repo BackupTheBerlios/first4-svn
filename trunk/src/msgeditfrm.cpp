@@ -1,9 +1,11 @@
 #include <QDate>
 #include <QSqlQuery>
 #include <QHeaderView>
+//
 #include "msgeditfrm.h"
 #include "stockselfrm.h"
 #include "addrselectfrm.h"
+#include "vars.h"
 //
 extern QString username;
 //
@@ -59,6 +61,14 @@ void msgeditfrm::acceptdata()
 		updateentry(lblID->text());
 }
 //
+void msgeditfrm::reject()
+{
+	QSqlDatabase::database().rollback();
+	vars v;
+	v.unlockrow("msgtab", lblID->text());
+	done(0);
+}
+//
 void msgeditfrm::loadusers()
 {
     gen_users->clear();
@@ -84,8 +94,22 @@ void msgeditfrm::loadentry(QString dbID)
     chknew->setChecked(FALSE);
     lblID->setText(dbID);
 
-    QString connstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `msgtab` WHERE `ID` = '%1';").arg(lblID->text());
-    QSqlQuery query(connstr);
+	vars v;
+	QString qstr;
+	QString userlock = v.checklockstate("msgtab", dbID);
+	if(userlock != "")
+	{
+		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+		btnaccept->setEnabled(FALSE);
+		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `msgtab` WHERE `ID` = '%1';").arg(dbID);
+	}
+	else
+	{
+		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `msgtab` WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
+		v.lockrow("msgtab", dbID);
+	}
+
+    QSqlQuery query(qstr);
     if(query.isActive())
     {
 		query.next();
@@ -145,6 +169,7 @@ void msgeditfrm::newentry()
     QString usersstr = "";
     QString qstr = "";    
     
+    QSqlDatabase::database().transaction();
     switch(cmbmsgtype->currentIndex())
     {
     	case 0:
@@ -176,6 +201,7 @@ void msgeditfrm::newentry()
 			break;
     }
     QSqlQuery query(qstr);
+    QSqlDatabase::database().commit();
     this->accept();
 }
 //
@@ -186,6 +212,7 @@ void msgeditfrm::updateentry(QString dbID)
     QString usersstr = "";
     QString qstr = "";    
 
+	QSqlDatabase::database().transaction();
     switch(cmbmsgtype->currentIndex())
     {
     	case 0:
@@ -217,6 +244,9 @@ void msgeditfrm::updateentry(QString dbID)
 			break;
     }
     QSqlQuery query(qstr);
+    QSqlDatabase::database().commit();
+    vars v;
+	v.unlockrow("msgtab", dbID);
     this->accept();
 }
 //

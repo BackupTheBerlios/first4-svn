@@ -88,9 +88,9 @@ void msgfrm::loadmsg()
     QTreeWidgetItem *indexitem = treeindex->currentItem();
     initmainlistview(indexitem->text(2));
     
-    if(indexitem->text(3) == "10" || indexitem->text(3) == "11" || username == "Administrator")
+    if(indexitem->text(3) == "10" || indexitem->text(3) == "11" || uid == 0)
     {
-		if(indexitem->text(3) == "11" || username == "Administrator")
+		if(indexitem->text(3) == "11" || uid == 0)
 		{
 		    btnnew->setEnabled(TRUE);
 		    btnedit->setEnabled(TRUE);
@@ -100,7 +100,6 @@ void msgfrm::loadmsg()
 		else
 		{
 		    btnnew->setEnabled(FALSE);
-		    btnedit->setEnabled(FALSE);
 		    btndelete->setEnabled(FALSE);
 		    btncomplete->setEnabled(FALSE);
 		}
@@ -266,6 +265,8 @@ void msgfrm::editmsg()
 		emsg->init(indexitem->text(2));
 		emsg->setWindowTitle(tr("Edit entry..."));
 		emsg->loadentry(item->text(0));
+		if(!btnnew->isEnabled())
+			emsg->btnaccept->setEnabled(FALSE);
 		int r = emsg->exec();
 		if(r)
 	    	loadmsg();
@@ -298,7 +299,10 @@ void msgfrm::contmenu()
 	contextMenu->addAction(editmsg);
     QAction* deletemesg = new QAction( tr("&Delete Message"), this );
 	connect(deletemesg , SIGNAL(triggered()), this, SLOT(deletemsg()));
-	contextMenu->addAction(deletemesg);
+	
+	QTreeWidgetItem *indexitem = treeindex->currentItem();
+	if(indexitem->text(3) == "11" || uid == 0)
+		contextMenu->addAction(deletemesg);
 		
     contextMenu->exec( QCursor::pos() );
     delete contextMenu;

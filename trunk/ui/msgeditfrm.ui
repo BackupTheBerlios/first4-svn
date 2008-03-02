@@ -18,10 +18,10 @@
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>490</x>
+     <x>460</x>
      <y>520</y>
-     <width>101</width>
-     <height>27</height>
+     <width>121</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text" >
@@ -36,8 +36,8 @@
     <rect>
      <x>10</x>
      <y>520</y>
-     <width>101</width>
-     <height>27</height>
+     <width>121</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text" >

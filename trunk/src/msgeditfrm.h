@@ -20,6 +20,7 @@ private:
 	void loadusers();
 	void updateentry(QString dbID);
 	void initvat();
+	void reject();
 public slots:
 	void checkstock();
 };
