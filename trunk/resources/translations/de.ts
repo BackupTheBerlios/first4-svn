@@ -42,11 +42,6 @@
         <translation>first4</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="76"/>
-        <source>&lt;a href=http://www.linux-box.ch&gt;http://www.linux-box.ch&lt;/a&gt;</source>
-        <translation>&lt;a href=http://www.linux-box.ch&gt;http://www.linux-box.ch&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../../ui/aboutfrm.ui" line="99"/>
         <source>License</source>
         <translation>Lizenz</translation>
@@ -58,12 +53,17 @@ Plugins: Alexander Saal</source>
         <translation>first4: Orlando ProcopioPlugins: Alexander Saal</translation>
     </message>
     <message>
+        <location filename="../../ui/aboutfrm.ui" line="76"/>
+        <source>&lt;a href=http:///www.procopio.ch&gt;http://www.procopio.ch&lt;/a&gt;</source>
+        <translation>&lt;a href=http:///www.procopio.ch&gt;http://www.procopio.ch&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../../ui/aboutfrm.ui" line="114"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -182,22 +182,22 @@ p, li { white-space: pre-wrap; }
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="172"/>
+        <location filename="../../src/accountseditfrm.cpp" line="206"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="173"/>
+        <location filename="../../src/accountseditfrm.cpp" line="207"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="174"/>
+        <location filename="../../src/accountseditfrm.cpp" line="208"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="175"/>
+        <location filename="../../src/accountseditfrm.cpp" line="209"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
@@ -375,102 +375,102 @@ p, li { white-space: pre-wrap; }
         <translation>KundenID</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="538"/>
+        <location filename="../../src/accountsfrm.cpp" line="540"/>
         <source>&amp;New Entry</source>
         <translation>&amp;Neuer Eintrag</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="542"/>
+        <location filename="../../src/accountsfrm.cpp" line="544"/>
         <source>&amp;Edit Entry</source>
         <translation>Eintrag &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="546"/>
+        <location filename="../../src/accountsfrm.cpp" line="548"/>
         <source>&amp;Delete Entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="560"/>
+        <location filename="../../src/accountsfrm.cpp" line="562"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="585"/>
+        <location filename="../../src/accountsfrm.cpp" line="587"/>
         <source>Edit Entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="604"/>
+        <location filename="../../src/accountsfrm.cpp" line="606"/>
         <source>Delete Entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="604"/>
+        <location filename="../../src/accountsfrm.cpp" line="606"/>
         <source>Delete entry %1 ?</source>
         <translation>Lösche Eintrag %1 ?</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="641"/>
+        <location filename="../../src/accountsfrm.cpp" line="643"/>
         <source>Search entries, who can be completed in account &apos;%1&apos;...</source>
         <translation>Suche Einträge die in Konto &apos;%1&apos; abgeschlossen werden können...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="659"/>
+        <location filename="../../src/accountsfrm.cpp" line="661"/>
         <source>Eintries will be completed...</source>
         <translation>Einträge werden abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="708"/>
+        <location filename="../../src/accountsfrm.cpp" line="710"/>
         <source>Save file as...</source>
         <translation>Speichere Datei unter...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="710"/>
+        <location filename="../../src/accountsfrm.cpp" line="712"/>
         <source>CSV-File (*.csv)</source>
         <translation>CSV-Datei (*.csv)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="718"/>
+        <location filename="../../src/accountsfrm.cpp" line="720"/>
         <source>Data will be exported...</source>
         <translation>Daten werden exportiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="742"/>
+        <location filename="../../src/accountsfrm.cpp" line="744"/>
         <source>Open File...</source>
         <translation>Öffne Datei...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="744"/>
+        <location filename="../../src/accountsfrm.cpp" line="746"/>
         <source>ESR-File (*.*)</source>
         <translation>ESR-Datei (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="750"/>
+        <location filename="../../src/accountsfrm.cpp" line="752"/>
         <source>Data will be imported...</source>
         <translation>Daten werden importiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="783"/>
+        <location filename="../../src/accountsfrm.cpp" line="785"/>
         <source>Unknow</source>
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="793"/>
+        <location filename="../../src/accountsfrm.cpp" line="795"/>
         <source>Post office taxes: %1</source>
         <translation>Postgebühren: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="875"/>
+        <location filename="../../src/accountsfrm.cpp" line="877"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="886"/>
+        <location filename="../../src/accountsfrm.cpp" line="888"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="894"/>
+        <location filename="../../src/accountsfrm.cpp" line="896"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
@@ -485,17 +485,17 @@ p, li { white-space: pre-wrap; }
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="777"/>
+        <location filename="../../src/accountsfrm.cpp" line="779"/>
         <source>Payment for Invoice: </source>
         <translation>Bezahlung für Rechnung: </translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="861"/>
+        <location filename="../../src/accountsfrm.cpp" line="863"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="909"/>
+        <location filename="../../src/accountsfrm.cpp" line="911"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -536,127 +536,127 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addrfrm</name>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="329"/>
+        <location filename="../../src/addrfrm.cpp" line="358"/>
         <source>Order confirmations</source>
         <translation>Auftragsbestätigungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="344"/>
+        <location filename="../../src/addrfrm.cpp" line="373"/>
         <source>Offer %1 - %2</source>
         <translation>Offerte %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="350"/>
+        <location filename="../../src/addrfrm.cpp" line="379"/>
         <source>Order confirmation %1 - %2</source>
         <translation>Auftragsbestätigung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="356"/>
+        <location filename="../../src/addrfrm.cpp" line="385"/>
         <source>Deliverynote %1 - %2</source>
         <translation>Lieferschein %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="368"/>
+        <location filename="../../src/addrfrm.cpp" line="397"/>
         <source>Paid </source>
         <translation>Bezahlt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="376"/>
+        <location filename="../../src/addrfrm.cpp" line="405"/>
         <source>Pendent</source>
         <translation>Pendent</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="378"/>
+        <location filename="../../src/addrfrm.cpp" line="407"/>
         <source>Completed</source>
         <translation>Abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="382"/>
+        <location filename="../../src/addrfrm.cpp" line="411"/>
         <source>Invoice %1 - %2</source>
         <translation>Rechnung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="401"/>
+        <location filename="../../src/addrfrm.cpp" line="430"/>
         <source>Status: %1</source>
         <translation>Status: %1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Incoming orders</source>
         <translation>Eingehende Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="418"/>
+        <location filename="../../src/addrfrm.cpp" line="447"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="497"/>
+        <location filename="../../src/addrfrm.cpp" line="526"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="498"/>
+        <location filename="../../src/addrfrm.cpp" line="527"/>
         <source>New Label:</source>
         <translation>Neue Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="606"/>
+        <location filename="../../src/addrfrm.cpp" line="638"/>
         <source>Delete %1 %2 %3?</source>
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="758"/>
+        <location filename="../../src/addrfrm.cpp" line="790"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="797"/>
+        <location filename="../../src/addrfrm.cpp" line="829"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="797"/>
+        <location filename="../../src/addrfrm.cpp" line="829"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="817"/>
+        <location filename="../../src/addrfrm.cpp" line="849"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="820"/>
+        <location filename="../../src/addrfrm.cpp" line="852"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="860"/>
+        <location filename="../../src/addrfrm.cpp" line="892"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="863"/>
+        <location filename="../../src/addrfrm.cpp" line="895"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
@@ -851,17 +851,17 @@ p, li { white-space: pre-wrap; }
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="767"/>
+        <location filename="../../src/addrfrm.cpp" line="799"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="696"/>
+        <location filename="../../src/addrfrm.cpp" line="728"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="596"/>
+        <location filename="../../src/addrfrm.cpp" line="628"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -871,7 +871,7 @@ p, li { white-space: pre-wrap; }
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="720"/>
+        <location filename="../../src/addrfrm.cpp" line="752"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
@@ -931,102 +931,102 @@ p, li { white-space: pre-wrap; }
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="721"/>
+        <location filename="../../src/addrfrm.cpp" line="753"/>
         <source>Salutation</source>
         <translation>Anrede</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="722"/>
+        <location filename="../../src/addrfrm.cpp" line="754"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="723"/>
+        <location filename="../../src/addrfrm.cpp" line="755"/>
         <source>P.O. Box</source>
         <translation>Postfach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="724"/>
+        <location filename="../../src/addrfrm.cpp" line="756"/>
         <source>Street \&amp; Nr.</source>
         <translation>Strasse Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="725"/>
+        <location filename="../../src/addrfrm.cpp" line="757"/>
         <source>ZIP, Location</source>
         <translation>PLZ, Ort</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="726"/>
+        <location filename="../../src/addrfrm.cpp" line="758"/>
         <source>Business phone</source>
         <translation>Telefon Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="727"/>
+        <location filename="../../src/addrfrm.cpp" line="759"/>
         <source>Direct phone</source>
         <translation>Telefon direkt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="728"/>
+        <location filename="../../src/addrfrm.cpp" line="760"/>
         <source>Business fax</source>
         <translation>Fax Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="729"/>
+        <location filename="../../src/addrfrm.cpp" line="761"/>
         <source>Private phone</source>
         <translation>Telefon Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="730"/>
+        <location filename="../../src/addrfrm.cpp" line="762"/>
         <source>Private fax</source>
         <translation>Fax Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="731"/>
+        <location filename="../../src/addrfrm.cpp" line="763"/>
         <source>Mobile</source>
         <translation>Mobile</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="732"/>
+        <location filename="../../src/addrfrm.cpp" line="764"/>
         <source>E-Mail 1</source>
         <translation>E-Mail 1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="733"/>
+        <location filename="../../src/addrfrm.cpp" line="765"/>
         <source>E-Mail 2</source>
         <translation>E-Mail 2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="734"/>
+        <location filename="../../src/addrfrm.cpp" line="766"/>
         <source>E-Mail 3</source>
         <translation>E-Mail 3</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="735"/>
+        <location filename="../../src/addrfrm.cpp" line="767"/>
         <source>Website</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="747"/>
+        <location filename="../../src/addrfrm.cpp" line="779"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="748"/>
+        <location filename="../../src/addrfrm.cpp" line="780"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="754"/>
+        <location filename="../../src/addrfrm.cpp" line="786"/>
         <source>Created</source>
         <translation>Erstellt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="754"/>
+        <location filename="../../src/addrfrm.cpp" line="786"/>
         <source>Modified</source>
         <translation>Bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="942"/>
+        <location filename="../../src/addrfrm.cpp" line="974"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -1122,152 +1122,152 @@ p, li { white-space: pre-wrap; }
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="184"/>
+        <location filename="../../src/cfgfrm.cpp" line="176"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="596"/>
+        <location filename="../../src/cfgfrm.cpp" line="588"/>
         <source>Change password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="207"/>
+        <location filename="../../src/cfgfrm.cpp" line="199"/>
         <source>Password was changed!</source>
         <translation>Passwort wurde geändert!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="215"/>
+        <location filename="../../src/cfgfrm.cpp" line="207"/>
         <source>Changing password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="215"/>
+        <location filename="../../src/cfgfrm.cpp" line="207"/>
         <source>Actual password wrong.</source>
         <translation>Aktuelles Passwort falsch.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="596"/>
+        <location filename="../../src/cfgfrm.cpp" line="588"/>
         <source>New password does not agree with password confirmation!</source>
         <translation>Neues Passwort und Passwortbestätigung stimmen nicht überein!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="245"/>
+        <location filename="../../src/cfgfrm.cpp" line="237"/>
         <source>Open Lang-File</source>
         <translation>Öffne Sprachdatei</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="247"/>
+        <location filename="../../src/cfgfrm.cpp" line="239"/>
         <source>Lang-File (*.qm)</source>
         <translation>Sprach-Datei (*.qm)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="271"/>
+        <location filename="../../src/cfgfrm.cpp" line="263"/>
         <source>Please restart the application.</source>
         <translation>Bitte Applikation neu starten.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="275"/>
+        <location filename="../../src/cfgfrm.cpp" line="267"/>
         <source>Language-File cannot be written!</source>
         <translation>Sprachdatei kann nicht geändert werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="392"/>
+        <location filename="../../src/cfgfrm.cpp" line="384"/>
         <source>Select DB-Structurfile...</source>
         <translation>DB-Strukturdatei auswählen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="394"/>
+        <location filename="../../src/cfgfrm.cpp" line="386"/>
         <source>DB-Structurfile (*.fdb)</source>
         <translation>DB-Strukturdatei (*.fdb)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="419"/>
+        <location filename="../../src/cfgfrm.cpp" line="411"/>
         <source>Update Database...</source>
         <translation>Datenbankupdate...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="419"/>
+        <location filename="../../src/cfgfrm.cpp" line="411"/>
         <source>Update Database?</source>
         <translation>Datenbank updaten?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="431"/>
+        <location filename="../../src/cfgfrm.cpp" line="423"/>
         <source>Update...</source>
         <translation>Update...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="431"/>
+        <location filename="../../src/cfgfrm.cpp" line="423"/>
         <source>Database was updated.</source>
         <translation>Datenbunk wurde upgedatet.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1127"/>
+        <location filename="../../src/cfgfrm.cpp" line="1119"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="517"/>
+        <location filename="../../src/cfgfrm.cpp" line="509"/>
         <source>User name:</source>
         <translation>Benutzername:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="528"/>
+        <location filename="../../src/cfgfrm.cpp" line="520"/>
         <source>New User...</source>
         <translation>Neuer Benutzer...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="528"/>
+        <location filename="../../src/cfgfrm.cpp" line="520"/>
         <source>User already exists!</source>
         <translation>Benutzer existiert bereits!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="591"/>
+        <location filename="../../src/cfgfrm.cpp" line="583"/>
         <source>Change personal data...</source>
         <translation>Persönlich Daten anpassen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="591"/>
+        <location filename="../../src/cfgfrm.cpp" line="583"/>
         <source>Personal data successfully changed.</source>
         <translation>Persönliche Daten erfolgreich gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="630"/>
+        <location filename="../../src/cfgfrm.cpp" line="622"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="632"/>
+        <location filename="../../src/cfgfrm.cpp" line="624"/>
         <source>Data &amp; Stock</source>
         <translation>Daten &amp; Lager</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="634"/>
+        <location filename="../../src/cfgfrm.cpp" line="626"/>
         <source>Inventory</source>
         <translation>Inventar</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="636"/>
+        <location filename="../../src/cfgfrm.cpp" line="628"/>
         <source>Purchase orders</source>
         <translation>Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="638"/>
+        <location filename="../../src/cfgfrm.cpp" line="630"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="640"/>
+        <location filename="../../src/cfgfrm.cpp" line="632"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="642"/>
+        <location filename="../../src/cfgfrm.cpp" line="634"/>
         <source>Accounts</source>
         <translation>Konti</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="644"/>
+        <location filename="../../src/cfgfrm.cpp" line="636"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
@@ -1277,122 +1277,122 @@ p, li { white-space: pre-wrap; }
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="746"/>
+        <location filename="../../src/cfgfrm.cpp" line="738"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="746"/>
+        <location filename="../../src/cfgfrm.cpp" line="738"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="746"/>
+        <location filename="../../src/cfgfrm.cpp" line="738"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="798"/>
+        <location filename="../../src/cfgfrm.cpp" line="790"/>
         <source>General message</source>
         <translation>Allgemeine Nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="798"/>
+        <location filename="../../src/cfgfrm.cpp" line="790"/>
         <source>Stockmessage</source>
         <translation>Lagermeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="798"/>
+        <location filename="../../src/cfgfrm.cpp" line="790"/>
         <source>Ordermessage</source>
         <translation>Auftragsmeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="798"/>
+        <location filename="../../src/cfgfrm.cpp" line="790"/>
         <source>Inc/Exp-Message</source>
         <translation>Ein/Aus-Meldungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1001"/>
+        <location filename="../../src/cfgfrm.cpp" line="993"/>
         <source>Permissions...</source>
         <translation>Berechtigungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1296"/>
+        <location filename="../../src/cfgfrm.cpp" line="1288"/>
         <source>New settings are saved and now active.</source>
         <translation>Neue Einstellungen wurden gespeichert und sind nun aktiv.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1011"/>
+        <location filename="../../src/cfgfrm.cpp" line="1003"/>
         <source>New Directory</source>
         <translation>New Adressbuch</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1013"/>
+        <location filename="../../src/cfgfrm.cpp" line="1005"/>
         <source>New Datatable</source>
         <translation>Neue Datentabelle</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1015"/>
+        <location filename="../../src/cfgfrm.cpp" line="1007"/>
         <source>New Account</source>
         <translation>Neues Konto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1026"/>
+        <location filename="../../src/cfgfrm.cpp" line="1018"/>
         <source>Rename &apos;%1&apos;</source>
         <translation>&apos;%1&apos; umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1028"/>
+        <location filename="../../src/cfgfrm.cpp" line="1020"/>
         <source>Delete &apos;%1&apos;</source>
         <translation>&apos;%1&apos; löschen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1042"/>
+        <location filename="../../src/cfgfrm.cpp" line="1034"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1090"/>
+        <location filename="../../src/cfgfrm.cpp" line="1082"/>
         <source>Accountname:</source>
         <translation>Kontoname:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1128"/>
+        <location filename="../../src/cfgfrm.cpp" line="1120"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1133"/>
+        <location filename="../../src/cfgfrm.cpp" line="1125"/>
         <source>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1139"/>
+        <location filename="../../src/cfgfrm.cpp" line="1131"/>
         <source>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1145"/>
+        <location filename="../../src/cfgfrm.cpp" line="1137"/>
         <source>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1560"/>
+        <location filename="../../src/cfgfrm.cpp" line="1552"/>
         <source>Deleting...</source>
         <translation>Löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1158"/>
+        <location filename="../../src/cfgfrm.cpp" line="1150"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation>&apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1203"/>
+        <location filename="../../src/cfgfrm.cpp" line="1195"/>
         <source>Docfolder...</source>
         <translation>Dokumentordner...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1296"/>
+        <location filename="../../src/cfgfrm.cpp" line="1288"/>
         <source>Own data...</source>
         <translation>Eingene Daten...</translation>
     </message>
@@ -1847,37 +1847,37 @@ p, li { white-space: pre-wrap; }
         <translation>Pluginverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="612"/>
+        <location filename="../../src/cfgfrm.cpp" line="604"/>
         <source>Delete User...</source>
         <translation>User löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="612"/>
+        <location filename="../../src/cfgfrm.cpp" line="604"/>
         <source>Delete User &apos;%1&apos; ?</source>
         <translation>Lösche User &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="623"/>
+        <location filename="../../src/cfgfrm.cpp" line="615"/>
         <source>Administrator cannot be deleted!</source>
         <translation>Administrator kann nicht gelöscht werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1376"/>
+        <location filename="../../src/cfgfrm.cpp" line="1368"/>
         <source>Unable to read settings from database!</source>
         <translation>Fehler beim lesen der Einstellungen von der Datenbank!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1426"/>
+        <location filename="../../src/cfgfrm.cpp" line="1418"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation>Kann Konfigurationsdatei nicht schreiben.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1483"/>
+        <location filename="../../src/cfgfrm.cpp" line="1475"/>
         <source>Application...</source>
         <translation>Programm...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1485"/>
+        <location filename="../../src/cfgfrm.cpp" line="1477"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
@@ -1942,12 +1942,12 @@ p, li { white-space: pre-wrap; }
         <translation>Build:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="427"/>
+        <location filename="../../src/cfgfrm.cpp" line="419"/>
         <source>Error during update...</source>
         <translation>Fehler beim updaten...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1115"/>
+        <location filename="../../src/cfgfrm.cpp" line="1107"/>
         <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
         <translation>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</translation>
     </message>
@@ -1977,32 +1977,32 @@ p, li { white-space: pre-wrap; }
         <translation>details</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="746"/>
+        <location filename="../../src/cfgfrm.cpp" line="738"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1228"/>
+        <location filename="../../src/cfgfrm.cpp" line="1220"/>
         <source>Documents settings...</source>
         <translation>Dokumenteneinstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1596"/>
+        <location filename="../../src/cfgfrm.cpp" line="1588"/>
         <source>Can&apos;t load templates...</source>
         <translation>Kann Template nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1560"/>
+        <location filename="../../src/cfgfrm.cpp" line="1552"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation>Template &apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1567"/>
+        <location filename="../../src/cfgfrm.cpp" line="1559"/>
         <source>Template not deleted...</source>
         <translation>Template nicht gelöscht...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1613"/>
+        <location filename="../../src/cfgfrm.cpp" line="1605"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Template-Beschreibung nicht laden...</translation>
     </message>
@@ -2336,12 +2336,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="157"/>
+        <location filename="../../src/datafrm.cpp" line="158"/>
         <source>Save changes...</source>
         <translation>Ändrungen speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="157"/>
+        <location filename="../../src/datafrm.cpp" line="158"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
@@ -2376,37 +2376,37 @@ p, li { white-space: pre-wrap; }
         <translation>Datentabelle:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="476"/>
+        <location filename="../../src/datafrm.cpp" line="481"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="476"/>
+        <location filename="../../src/datafrm.cpp" line="481"/>
         <source>Delete entry %1?</source>
         <translation>Eintrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="561"/>
+        <location filename="../../src/datafrm.cpp" line="566"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="570"/>
+        <location filename="../../src/datafrm.cpp" line="575"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="585"/>
+        <location filename="../../src/datafrm.cpp" line="590"/>
         <source>Delete &amp;Row</source>
         <translation>&amp;Zeile löschen</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="598"/>
+        <location filename="../../src/datafrm.cpp" line="603"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="601"/>
+        <location filename="../../src/datafrm.cpp" line="606"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
@@ -2421,19 +2421,57 @@ p, li { white-space: pre-wrap; }
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="554"/>
+        <location filename="../../src/datafrm.cpp" line="559"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="577"/>
+        <location filename="../../src/datafrm.cpp" line="582"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="1098"/>
+        <location filename="../../src/datafrm.cpp" line="1103"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
+    </message>
+</context>
+<context>
+    <name>dbupdatefrm</name>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="13"/>
+        <source>Database update...</source>
+        <translation>Datenbank update...</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="28"/>
+        <source>&amp;Proceed</source>
+        <translation>&amp;Weiter</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="41"/>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Abbrechen</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="60"/>
+        <source>The database must be updated.</source>
+        <translation>Ein Datenbankupdate wird benötigt.</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="73"/>
+        <source>Current version:</source>
+        <translation>Aktuelle Version:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="86"/>
+        <source>New Version:</source>
+        <translation>Neue Version:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/dbupdatefrm.ui" line="112"/>
+        <source>-</source>
+        <translation>-</translation>
     </message>
 </context>
 <context>
@@ -2697,7 +2735,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Please enter the Administrator password.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;With this user you can manage all first4 settings for the created DB.&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default username: &lt;span style=&quot; font-weight:600;&quot;&gt;Administrator&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben Sie das Administratorpasswort ein.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Mit diesem User können Sie sämtliche Einstellungen für diese Datenbank ändern.&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default Username: &lt;span style=&quot; font-weight:600;&quot;&gt;Administrator&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/dbwizzardfrm.ui" line="1229"/>
@@ -2782,7 +2820,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/dbwizzardfrm.cpp" line="91"/>
         <source>&amp;Finish</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abschliessen</translation>
     </message>
 </context>
 <context>
@@ -3106,12 +3144,12 @@ p, li { white-space: pre-wrap; }
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1301"/>
+        <location filename="../../src/doceditfrm.cpp" line="1393"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1430"/>
+        <location filename="../../src/doceditfrm.cpp" line="1480"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
@@ -3121,17 +3159,17 @@ p, li { white-space: pre-wrap; }
         <translation>Bitte Empfänger auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1437"/>
+        <location filename="../../src/doceditfrm.cpp" line="1487"/>
         <source>Can&apos;t print File.</source>
         <translation>Kann Datei nicht ausdrucken.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1456"/>
+        <location filename="../../src/doceditfrm.cpp" line="1506"/>
         <source>Document not saved...</source>
         <translation>Dokument nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1456"/>
+        <location filename="../../src/doceditfrm.cpp" line="1506"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
@@ -3180,7 +3218,7 @@ Als Entwurf speichern?</translation>
         <translation>Rechnung %1</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1445"/>
+        <location filename="../../src/doceditfrm.cpp" line="1495"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation>Kann Datei nicht ins Zielverzeichnis verschieben.</translation>
     </message>
@@ -3195,7 +3233,7 @@ Als Entwurf speichern?</translation>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1555"/>
+        <location filename="../../src/doceditfrm.cpp" line="1605"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Templatebeschreibung nicht laden...</translation>
     </message>
@@ -3203,6 +3241,26 @@ Als Entwurf speichern?</translation>
         <location filename="../../src/doceditfrm.cpp" line="1338"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="1402"/>
+        <source>Error during convertion from TEXT to DVI!</source>
+        <translation>Fehler beim konvertieren zu DVI!</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="1414"/>
+        <source>Can&apos;t convert to Postscript file.</source>
+        <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="1422"/>
+        <source>Error during printing process.</source>
+        <translation>Fehler beim Druckprozess.</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="1629"/>
+        <source>Can&apos;t load template data...</source>
+        <translation>Kann Vorlage nicht laden...</translation>
     </message>
 </context>
 <context>
@@ -3551,17 +3609,17 @@ Bitte kontaktieren Sie ihre Administrator.</translation>
         <translation>&amp;Drucken</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="287"/>
+        <location filename="../../src/invfrm.cpp" line="286"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="303"/>
+        <location filename="../../src/invfrm.cpp" line="302"/>
         <source>Complete Inventory...</source>
         <translation>Inventar abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="303"/>
+        <location filename="../../src/invfrm.cpp" line="302"/>
         <source>Completed Inventories can&apos;t be edited!
 
 Complete nevertheless?</source>
@@ -3570,12 +3628,12 @@ Complete nevertheless?</source>
 Trotzdem abschliessen?</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="396"/>
+        <location filename="../../src/invfrm.cpp" line="395"/>
         <source>Save Data...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="396"/>
+        <location filename="../../src/invfrm.cpp" line="395"/>
         <source>Save Inventory?</source>
         <translation>Inventar speichern?</translation>
     </message>
@@ -3670,7 +3728,7 @@ Trotzdem abschliessen?</translation>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="296"/>
+        <location filename="../../src/invfrm.cpp" line="295"/>
         <source>Error during conversion to DVI file.</source>
         <translation>Fehler beim konvertieren zu DVI.</translation>
     </message>
@@ -3680,12 +3738,12 @@ Trotzdem abschliessen?</translation>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="280"/>
+        <location filename="../../src/invfrm.cpp" line="279"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="431"/>
+        <location filename="../../src/invfrm.cpp" line="430"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -3848,12 +3906,12 @@ Trotzdem abschliessen?</translation>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="204"/>
+        <location filename="../../src/mainfrm.cpp" line="205"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="204"/>
+        <location filename="../../src/mainfrm.cpp" line="205"/>
         <source>Exit First?</source>
         <translation>First beenden?</translation>
     </message>
@@ -3908,7 +3966,7 @@ Trotzdem abschliessen?</translation>
         <translation>Konten durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="127"/>
+        <location filename="../../src/mainfrm.cpp" line="128"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -3921,6 +3979,18 @@ Trotzdem abschliessen?</translation>
         <location filename="../../ui/mainfrm.ui" line="862"/>
         <source>New messages</source>
         <translation>Neue nachricht</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="85"/>
+        <source>DB update...</source>
+        <translation>DB update...</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="85"/>
+        <source>Database update is needed.
+Please login as Administrator to perform the update.</source>
+        <translation>Datenbankupdate wird benötigt.
+Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</translation>
     </message>
 </context>
 <context>
@@ -4089,7 +4159,7 @@ Trotzdem abschliessen?</translation>
 <context>
     <name>msgfrm</name>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="167"/>
+        <location filename="../../src/msgfrm.cpp" line="158"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -4099,32 +4169,32 @@ Trotzdem abschliessen?</translation>
         <translation>type</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="171"/>
+        <location filename="../../src/msgfrm.cpp" line="162"/>
         <source>user</source>
         <translation>user</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="172"/>
+        <location filename="../../src/msgfrm.cpp" line="163"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="192"/>
+        <location filename="../../src/msgfrm.cpp" line="183"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="234"/>
+        <location filename="../../src/msgfrm.cpp" line="225"/>
         <source>info</source>
         <translation>info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="203"/>
+        <location filename="../../src/msgfrm.cpp" line="194"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="204"/>
+        <location filename="../../src/msgfrm.cpp" line="195"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
@@ -4134,92 +4204,92 @@ Trotzdem abschliessen?</translation>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="206"/>
+        <location filename="../../src/msgfrm.cpp" line="197"/>
         <source>Min. quantity</source>
         <translation>Min. Lagermenge</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="207"/>
+        <location filename="../../src/msgfrm.cpp" line="198"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="235"/>
+        <location filename="../../src/msgfrm.cpp" line="226"/>
         <source>Client</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="220"/>
+        <location filename="../../src/msgfrm.cpp" line="211"/>
         <source>Order.-Nr.</source>
         <translation>Auftrags-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="221"/>
+        <location filename="../../src/msgfrm.cpp" line="212"/>
         <source>Date of entry</source>
         <translation>Auftragsdatum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="222"/>
+        <location filename="../../src/msgfrm.cpp" line="213"/>
         <source>Complete until</source>
         <translation>Erledigen bis</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="239"/>
+        <location filename="../../src/msgfrm.cpp" line="230"/>
         <source>data</source>
         <translation>data</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="236"/>
+        <location filename="../../src/msgfrm.cpp" line="227"/>
         <source>Ref-Nr.</source>
         <translation>Ref-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="237"/>
+        <location filename="../../src/msgfrm.cpp" line="228"/>
         <source>Last payment</source>
         <translation>Letzte Zahlung</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="238"/>
+        <location filename="../../src/msgfrm.cpp" line="229"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="259"/>
+        <location filename="../../src/msgfrm.cpp" line="250"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="275"/>
+        <location filename="../../src/msgfrm.cpp" line="266"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="288"/>
+        <location filename="../../src/msgfrm.cpp" line="281"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="288"/>
+        <location filename="../../src/msgfrm.cpp" line="281"/>
         <source>Delete entry?</source>
         <translation>Eintrag löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="304"/>
+        <location filename="../../src/msgfrm.cpp" line="297"/>
         <source>&amp;Edit Message</source>
         <translation>Nachricht &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="307"/>
+        <location filename="../../src/msgfrm.cpp" line="300"/>
         <source>&amp;Delete Message</source>
         <translation>Nachricht &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="320"/>
+        <location filename="../../src/msgfrm.cpp" line="316"/>
         <source>Complete entry...</source>
         <translation>Eintrag abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="320"/>
+        <location filename="../../src/msgfrm.cpp" line="316"/>
         <source>Complete entry</source>
         <translation>Eintrag abschliessen</translation>
     </message>
@@ -4688,27 +4758,27 @@ Bitte kontaktieren Sie ihre Administrator</translation>
 <context>
     <name>procedureeditfrm</name>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="229"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="228"/>
         <source>Stock...</source>
         <translation>Lager...</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="229"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="228"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="367"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="366"/>
         <source>&amp;Check stock</source>
         <translation>Lager prügen</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="379"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="378"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="382"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="381"/>
         <source>&amp;Delete Row</source>
         <translation>Zeilen &amp;löschen</translation>
     </message>
@@ -4912,11 +4982,6 @@ Bitte kontaktieren Sie ihre Administrator</translation>
         <source>&amp;Comments</source>
         <translation>&amp;Kommentare</translation>
     </message>
-    <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="144"/>
-        <source>Delete order...</source>
-        <translation>Auftrag löschen...</translation>
-    </message>
 </context>
 <context>
     <name>procedurefrm</name>
@@ -5078,17 +5143,17 @@ Please contact your Administrator</source>
         <translation>Neuer Auftrag...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="566"/>
+        <location filename="../../src/procedurefrm.cpp" line="588"/>
         <source>Edit order...</source>
         <translation>Auftrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="697"/>
+        <location filename="../../src/procedurefrm.cpp" line="719"/>
         <source>Delete order...</source>
         <translation>Auftrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="697"/>
+        <location filename="../../src/procedurefrm.cpp" line="719"/>
         <source>Delete order %1?</source>
         <translation>Auftrag %1 löschen?</translation>
     </message>
@@ -5113,67 +5178,67 @@ Please contact your Administrator</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="673"/>
+        <location filename="../../src/procedurefrm.cpp" line="695"/>
         <source>Close</source>
         <translation>Schliessen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="895"/>
+        <location filename="../../src/procedurefrm.cpp" line="917"/>
         <source>Procedure completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="720"/>
+        <location filename="../../src/procedurefrm.cpp" line="742"/>
         <source>Create offer for order %1 ?</source>
         <translation>Offerte für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="725"/>
+        <location filename="../../src/procedurefrm.cpp" line="747"/>
         <source>Create order confirmation for order %1 ?</source>
         <translation>Auftragsbestätigung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="730"/>
+        <location filename="../../src/procedurefrm.cpp" line="752"/>
         <source>Create deliverynote for order %1 ?</source>
         <translation>lieferschein für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="735"/>
+        <location filename="../../src/procedurefrm.cpp" line="757"/>
         <source>Create bill for order %1 ?</source>
         <translation>Rechnung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="878"/>
+        <location filename="../../src/procedurefrm.cpp" line="900"/>
         <source>Order completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="878"/>
+        <location filename="../../src/procedurefrm.cpp" line="900"/>
         <source>Change status for selected entries?</source>
         <translation>Status für ausgewählte Einträge anpassen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="895"/>
+        <location filename="../../src/procedurefrm.cpp" line="917"/>
         <source>Archive completed entries?</source>
         <translation>Abgeschlossene einträge archivieren?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="950"/>
+        <location filename="../../src/procedurefrm.cpp" line="972"/>
         <source>Create Offer</source>
         <translation>Offerte erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="954"/>
+        <location filename="../../src/procedurefrm.cpp" line="976"/>
         <source>Create Orderconfirmation</source>
         <translation>Auftragsbestätigung erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="958"/>
+        <location filename="../../src/procedurefrm.cpp" line="980"/>
         <source>Create Delivery note</source>
         <translation>Lieferschein erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="962"/>
+        <location filename="../../src/procedurefrm.cpp" line="984"/>
         <source>Create Bill</source>
         <translation>Rechnung erstellen</translation>
     </message>
