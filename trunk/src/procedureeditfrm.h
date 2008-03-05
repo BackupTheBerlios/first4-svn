@@ -10,8 +10,12 @@ public:
 	procedureeditfrm( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init();
 	void neworder();
+	void loadentry(QString tmpdbID);
+	void updateentry();
+	void newentry();
 private:
 	void initvat();
+	void reject();
 private slots:
 	void searchaddress();
 	void clearaddress();

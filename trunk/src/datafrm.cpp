@@ -19,6 +19,7 @@
 //
 QString lastdatatab;
 QStringList stockrightslist, tabnamelist, colslist, tabtyplist;
+extern int uid;
 extern QString username, templatefolder;
 //
 datafrm::datafrm( QWidget * parent, Qt::WFlags f) 
@@ -106,7 +107,7 @@ void datafrm::closeEvent(QCloseEvent* ce )
 //
 void datafrm::checkrights()
 {
-    if(lbluser->text() == "Administrator" || stockrightslist[cmbdata->currentIndex()]=="[11]")
+    if(uid == 0 || stockrightslist[cmbdata->currentIndex()]=="[11]")
     {
 		btntransfer->setEnabled(TRUE);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
@@ -130,7 +131,7 @@ void datafrm::checkrights()
     {
 		btnsave->setEnabled(FALSE);
 		btnnew->setEnabled(FALSE);
-		btnedit->setEnabled(FALSE);
+		btnedit->setEnabled(TRUE);
 		btndelete->setEnabled(FALSE);
 		btntransfer->setEnabled(FALSE);
     }
@@ -468,6 +469,10 @@ void datafrm::editstockentry()
 		dataeditfrm *estock = new dataeditfrm;
 		estock->init();
 		estock->loadentry(tabnamelist[cmbdata->currentIndex()]+"_"+tmpitem->text(1));
+		if(uid == 0 || stockrightslist[cmbdata->currentIndex()]=="[11]")
+			estock->btnok->setEnabled(TRUE);
+		else
+    		estock->btnok->setEnabled(FALSE);
 		if(estock->exec())
 		    loadstock();
     }
@@ -603,10 +608,14 @@ void datafrm::contmenustock()
     QAction* edit_entry = new QAction( tr("&Edit entry"), this );
 	connect(edit_entry , SIGNAL(triggered()), this, SLOT(editstockentry()));
 	contextMenu->addAction(edit_entry);
-    QAction* del_entry = new QAction( tr("&Delete entry"), this );
-	connect(del_entry , SIGNAL(triggered()), this, SLOT(delstockentry()));
-	contextMenu->addAction(del_entry);
-			
+	
+	if(uid == 0 || stockrightslist[cmbdata->currentIndex()]=="[11]")
+    {
+	    QAction* del_entry = new QAction( tr("&Delete entry"), this );
+		connect(del_entry , SIGNAL(triggered()), this, SLOT(delstockentry()));
+		contextMenu->addAction(del_entry);
+	}
+
     contextMenu->exec( QCursor::pos() );
     delete contextMenu;
 }

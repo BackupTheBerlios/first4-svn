@@ -19,10 +19,3 @@ public slots:
 	void checkstock();
 };
 #endif
-
-
-
-
-
-
-

@@ -238,7 +238,7 @@ void procedurefrm::neworder()
 		eorder->cmbstate->setCurrentIndex(0);
     if(eorder->exec())
     {
-		QTreeWidgetItem* row = new QTreeWidgetItem(treemain);
+		/*QTreeWidgetItem* row = new QTreeWidgetItem(treemain);
 
 		//datenbank aktualisieren
 		int i;
@@ -248,7 +248,7 @@ void procedurefrm::neworder()
 
 		if(eorder->chkcompleted->isChecked())
 		    completed = "1";
-		QString qstr = "INSERT INTO `proceduretab` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '"+QString("%1").arg(eorder->cmbstate->currentIndex(), 0, 10)+"', '"+completed+"', '"+eorder->cmbpriority->currentText()+"', '"+eorder->dateedit1->date().toString("yyyy-MM-dd")+"', '"+eorder->txtcustomer->toPlainText()+" ("+eorder->lblcustomerid->text()+")', '"+eorder->txtcontact->text()+"', '"+eorder->txtorderid->text()+"', '"+eorder->txtcomments->toPlainText()+"', '"+eorder->txtresponsible->text()+"', '"+eorder->dateedit2->date().toString("yyyy-MM-dd")+"');" ;
+		QString qstr = "INSERT INTO `proceduretab` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"', '"+completed+"', '"+cmbpriority->currentText()+"', '"+dateedit1->date().toString("yyyy-MM-dd")+"', '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")', '"+txtcontact->text()+"', '"+txtorderid->text()+"', '"+txtcomments->toPlainText()+"', '"+txtresponsible->text()+"', '"+dateedit2->date().toString("yyyy-MM-dd")+"');" ;
 		QSqlQuery query(qstr);
 		qstr = "SELECT ID FROM proceduretab WHERE `status` = '"+QString("%1").arg(eorder->cmbstate->currentIndex(), 0, 10)+"' AND `completed` = '"+completed+"' AND `priority` = '"+eorder->cmbpriority->currentText()+"' AND `date` = '"+eorder->dateedit1->date().toString("yyyy-MM-dd")+"' AND `client` = '"+eorder->txtcustomer->toPlainText()+" ("+eorder->lblcustomerid->text()+")' AND `contactperson` = '"+eorder->txtcontact->text()+"' AND `orderid` = '"+eorder->txtorderid->text()+"' AND `description` = '"+eorder->txtcomments->toPlainText()+"' AND `resp_person` = '"+eorder->txtresponsible->text()+"' AND `complete_until` = '"+eorder->dateedit2->date().toString("yyyy-MM-dd")+"';";
 		QSqlQuery query2(qstr);
@@ -306,7 +306,7 @@ void procedurefrm::neworder()
 				queryorder.bindValue( ":vat", tmpitem->text());
 				queryorder.exec();
 		    }
-		}
+		}*/
 		//ansicht aktualisieren
 		treemain->clearSelection();
 		treeindex->clearSelection();
@@ -346,239 +346,16 @@ void procedurefrm::checkdeleteID()
 //
 void procedurefrm::editorder(QString dbID)
 {
-    int i;
-    procedureeditfrm *eorders = new procedureeditfrm;
+	procedureeditfrm *eorders = new procedureeditfrm;
     eorders->init();
-
-	vars v;
-	QString qstr;
-	QString userlock = v.checklockstate("proceduretab", dbID);
-	if(userlock != "")
-	{
-		eorders->setWindowTitle(tr("Edit order...")+QString(" ( Locked by User: %1 )").arg(userlock));
-		eorders->btnaccept->setEnabled(FALSE);
-		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1';").arg(dbID);
-	}
-	else
-	{
-		eorders->setWindowTitle( tr("Edit order..."));
-		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
-		v.lockrow("proceduretab", dbID);
-	}
-	QSqlDatabase::database().transaction();
-	
-    QSqlQuery query(qstr);
-    if( query.isActive())
-    { 
-		query.next();
-		eorders->lbldbID->setText(dbID);
-		eorders->cmbstate->setCurrentIndex(query.value(1).toInt());
-		if(query.value(2).toString() == "1")
-		    eorders->chkcompleted->setCheckState(Qt::Checked);
-		eorders->txtcustomer->setText(query.value(3).toString().section(" (", 0, 0));
-		eorders->txtcomments->setText(query.value(4).toString());
-		QString s = query.value(5).toString();
-		eorders->dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
-		eorders->txtorderid->setText(query.value(6).toString());
-		s = query.value(10).toString();
-		eorders->dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
-		eorders->txtcontact->setText(query.value(8).toString());
-		eorders->lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
-		eorders->cmbpriority->setEditText(query.value(7).toString());    
-		eorders->txtresponsible->setText(query.value(9).toString());  	
-
-		QString qstr = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='%1' ORDER BY ID;").arg(query.value(0).toString());
-		QSqlQuery tasks(qstr);
-
-		while(tasks.next())
-		{
-		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
-   		    if(tasks.value(0).toString() == "1")
-			    tmpitem->setCheckState(Qt::Checked);
-			else
-				tmpitem->setCheckState(Qt::Unchecked);
-		    eorders->tabtasks->setItem(tasks.at(), 0, tmpitem);
-			
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(tasks.value(1).toString());
-		    eorders->tabtasks->setItem(tasks.at(), 1, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(tasks.value(2).toString());
-		    eorders->tabtasks->setItem(tasks.at(), 2, tmpitem);
-		    eorders->navtasktab(tasks.at());
-		}
-		
-		qstr = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='%1' ORDER BY ID;").arg(query.value(0).toString());
-		QSqlQuery orders(qstr);
-
-		while(orders.next())
-		{
-		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
-   		    if(orders.value(2).toString() == "1")
-			    tmpitem->setCheckState(Qt::Checked);
-			else
-				tmpitem->setCheckState(Qt::Unchecked);
-		    eorders->taborders->setItem(orders.at(), 0, tmpitem);
-
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(3).toString());
-		    eorders->taborders->setItem(orders.at(), 1, tmpitem);
-
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
-		    eorders->taborders->setItem(orders.at(), 2, tmpitem);
-
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(4).toString());
-		    eorders->taborders->setItem(orders.at(), 3, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(5).toString());
-		    eorders->taborders->setItem(orders.at(), 4, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(6).toString());
-		    eorders->taborders->setItem(orders.at(), 5, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));
-		    eorders->taborders->setItem(orders.at(), 6, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(8).toString());
-		    eorders->taborders->setItem(orders.at(), 7, tmpitem);
-		    
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(orders.value(0).toString()+":#:"+orders.value(1).toString());
-		    eorders->taborders->setItem(orders.at(), 10, tmpitem);
-		    
-		    QString qstr2 = QString("SELECT col3, col4 FROM %1 WHERE `ID`='%2';").arg(orders.value(0).toString()).arg(orders.value(1).toString());
-		    QSqlQuery checkdbquery(qstr2);
-		    checkdbquery.next();
-		    
-		    //Actual quantity
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(checkdbquery.value(0).toString());
-		    eorders->taborders->setItem(orders.at(), 8, tmpitem);
-		    
-		    //Minimal quantity
-		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setText(checkdbquery.value(1).toString());
-		    eorders->taborders->setItem(orders.at(), 9, tmpitem);
-		    
-		    eorders->navordertabs(orders.at());
-		}
-    }
-    
+	eorders->loadentry(dbID);
     if(eorders->exec())
-    {	    
-		if(eorders->tabtasks->rowCount()>1)
-		{
-		    //Alte Daten löschen
-		    QSqlQuery querytask_clean;
-		    querytask_clean.prepare("DELETE FROM `proceduretasks` WHERE `PROC_ID`=:id;");
-		    querytask_clean.bindValue(":id", dbID);
-		    querytask_clean.exec();
-		    
-		    for(i=0;i<eorders->tabtasks->rowCount()-1;i++)
-		    {
-		    	QTableWidgetItem *tmpitem = eorders->tabtasks->item(i, 1);
-				if(tmpitem->text() != "") 
-				{
-					tmpitem = eorders->tabtasks->item(i, 0);
-					QString state;
-					if(tmpitem->checkState() == Qt::Checked)
-					    state ="1";
-					else
-					    state ="0";
-					QSqlQuery querytask;
-					querytask.prepare("INSERT INTO `proceduretasks` (`PROC_ID`, `STATE`, `TASK`, `DATE`) VALUE (:proc_id, :state, :task, :date);");
-					querytask.bindValue(":proc_id", dbID);
-					querytask.bindValue(":state", state);
-					tmpitem = eorders->tabtasks->item(i, 1);
-					querytask.bindValue(":task", tmpitem->text());
-					tmpitem = eorders->tabtasks->item(i, 2);
-					querytask.bindValue(":date", tmpitem->text());
-					querytask.exec();
-					
-
-				}
-		    }
-		}
-	
-		if(eorders->taborders->rowCount() > 1)
-		{
-		    //Alte Daten löschen
-		    QSqlQuery queryorder_clean;
-		    queryorder_clean.prepare("DELETE FROM `procedureorders` WHERE `PROC_ID`=:id;");
-		    queryorder_clean.bindValue(":id", dbID);
-		    queryorder_clean.exec();
-		    for(i=0; i < eorders->taborders->rowCount()-1; i++)
-		    {
-		    	QTableWidgetItem *tmpitem = eorders->taborders->item(i, 0);
-				
-				QString state;
-				if(tmpitem->checkState() == Qt::Checked)
-				    state = "1";
-				else
-				    state = "0";
-				    
-				QStringList strlorders;
-	
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 10);
-				strlorders << tmpitem->text().section(":#:", 0, 0) << tmpitem->text().section(":#:", 1, 1) << state;
-	
-			    tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 1);
-				strlorders << tmpitem->text();
-				
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 3);
-				strlorders << tmpitem->text();
-				
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 4);
-				strlorders << tmpitem->text();
-				
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 5);
-				strlorders << tmpitem->text();
-				
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 6);
-				strlorders << tmpitem->text();
-				
-				tmpitem = new QTableWidgetItem;
-			    tmpitem = eorders->taborders->item(i, 7);
-				strlorders << tmpitem->text();
-				
-				QString qstr = QString("INSERT INTO `procedureorders` (`ID`, `PROC_ID`, `STOCK`, `STOCK_ID`, `STATE`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`) VALUES ('', '"+dbID+"', '%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9');").arg(strlorders[0]).arg(strlorders[1]).arg(strlorders[2]).arg(strlorders[3]).arg(strlorders[4]).arg(strlorders[5]).arg(strlorders[6]).arg(strlorders[7]).arg(strlorders[8]);
-				QSqlQuery queryorders(qstr);
-		    }
-		}
-		
-		//datenbank aktualisieren
-		QString completed = "0";
-		if(eorders->chkcompleted->isChecked())
-		    completed = "1";
-		QString connstr = "UPDATE `proceduretab` SET `status` = '"+QString("%1").arg(eorders->cmbstate->currentIndex(), 0, 10)+"', `completed` = '"+completed+"', `client` = '"+eorders->txtcustomer->toPlainText()+" ("+eorders->lblcustomerid->text()+")', `description` = '"+eorders->txtcomments->toPlainText()+"', `date` = '"+eorders->dateedit1->date().toString("yyyy-MM-dd")+"', `orderid` = '"+eorders->txtorderid->text()+"', `priority` = '"+eorders->cmbpriority->currentText()+"', `contactperson` = '"+eorders->txtcontact->text()+"', `resp_person` = '"+eorders->txtresponsible->text()+"',  `complete_until` = '"+eorders->dateedit2->date().toString("yyyy-MM-dd")+"' WHERE `ID` = '"+dbID+"' LIMIT 1;";
-		QSqlQuery query(connstr);		
-		
-		//ansicht aktualisieren
+    {
+    	//ansicht aktualisieren
 		treeindex->clearSelection();
 		treemain->clearSelection();	
 		this->filltable(eorders->cmbstate->currentIndex());
-		
-		QSqlDatabase::database().commit();
-		v.unlockrow("proceduretab", dbID);
     }
-    else
-    {
-    	QSqlDatabase::database().rollback();
-    	v.unlockrow("proceduretab", dbID);
-   	}
 }
 //
 void procedurefrm::editarchiveorder(QString dbID)
