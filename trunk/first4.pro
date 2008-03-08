@@ -129,6 +129,8 @@ mac {
 unix {
  MOC_DIR =  build/first4/unix/moc
  OBJECTS_DIR =  build/first4/unix/obj
+ target.path +=  /opt/first4/bin/
+ INSTALLS +=  target
 }
 win32 {
  MOC_DIR =  build/first4/win/moc
