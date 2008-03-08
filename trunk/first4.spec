@@ -30,9 +30,11 @@ make
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}/opt/first4/bin
 mkdir -p %{buildroot}/opt/first4/translations
+mkdir -p %{buildroot}/usr/share/applications
 cp bin/first4 %{buildroot}/opt/first4/bin/first4
 cp resources/images/logo.png %{buildroot}/opt/first4/bin/logo.png
 cp resources/translations/*.qm %{buildroot}/opt/first4/translations/
+cp resources/first4.desktop %{buildroot}/usr/share/applications/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 /opt/first4/bin/first4
 /opt/first4/bin/logo.png
 /opt/first4/translations/*.qm
+/usr/share/applications/first4.desktop
 
 %changelog
 * Fri Mar 7 2008 Orlando Procopio <orlando@procopio.ch>
