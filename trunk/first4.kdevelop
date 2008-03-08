@@ -202,4 +202,38 @@
     <customTagfilePath>/home/chmaster/projekte/first4/tags</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>
+  <dist>
+    <custom>false</custom>
+    <bzip>false</bzip>
+    <archname/>
+    <appname>first4</appname>
+    <version>1.3.93</version>
+    <release>1</release>
+    <vendor>procopio.ch</vendor>
+    <licence>GPL</licence>
+    <summary>first4 QT-Based ERP Solution</summary>
+    <group>Productivity/Office</group>
+    <packager>O. Procopio</packager>
+    <description>first4 is a QT4-based free ERP-Solution using MySQL.
+
+
+
+
+
+</description>
+    <changelog>* Fri Mar 7 2008 Orlando Procopio &lt;orlando@procopio.ch>
+- First draft of the spec file
+
+
+</changelog>
+    <devpackage>false</devpackage>
+    <docspackage>false</docspackage>
+    <appicon>false</appicon>
+    <arch>1</arch>
+    <genHTML>false</genHTML>
+    <useRPM>false</useRPM>
+    <ftpkde>false</ftpkde>
+    <appskde>false</appskde>
+    <url/>
+  </dist>
 </kdevelop>
