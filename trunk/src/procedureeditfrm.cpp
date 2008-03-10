@@ -228,6 +228,116 @@ void procedureeditfrm::loadentry(QString dbID)
     }
 }
 //
+void procedureeditfrm::loadarchiveentry(QString dbID)
+{
+    QString qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchiv WHERE `ID` = '"+dbID+"';";
+	
+    QSqlQuery query(qstr);
+    if( query.isActive())
+    { 
+		query.next();
+		lbldbID->setText(dbID);
+		cmbstate->setCurrentIndex(query.value(1).toInt());
+		if(query.value(2).toString() == "1")
+		    chkcompleted->setCheckState(Qt::Checked);
+		txtcustomer->setText(query.value(3).toString().section(" (", 0, 0));
+		txtcomments->setText(query.value(4).toString());
+		QString s = query.value(5).toString();
+		dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
+		txtorderid->setText(query.value(6).toString());
+		s = query.value(10).toString();
+		dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
+		txtcontact->setText(query.value(8).toString());
+		lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
+		cmbpriority->setEditText(query.value(7).toString());    
+		txtresponsible->setText(query.value(9).toString());  	
+
+		QString qstr = QString("SELECT state, task, date FROM proceduretasks WHERE `PROC_ID`='A_%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery tasks(qstr);
+
+		while(tasks.next())
+		{
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(tasks.value(0).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    tabtasks->setItem(tasks.at(), 0, tmpitem);
+			
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(1).toString());
+		    tabtasks->setItem(tasks.at(), 1, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(tasks.value(2).toString());
+		    tabtasks->setItem(tasks.at(), 2, tmpitem);
+		    navtasktab(tasks.at());
+		}
+		
+		qstr = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='A_%1' ORDER BY ID;").arg(query.value(0).toString());
+		QSqlQuery orders(qstr);
+
+		while(orders.next())
+		{
+		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
+   		    if(orders.value(2).toString() == "1")
+			    tmpitem->setCheckState(Qt::Checked);
+			else
+				tmpitem->setCheckState(Qt::Unchecked);
+		    taborders->setItem(orders.at(), 0, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(3).toString());
+		    taborders->setItem(orders.at(), 1, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		    taborders->setItem(orders.at(), 2, tmpitem);
+
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(4).toString());
+		    taborders->setItem(orders.at(), 3, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(5).toString());
+		    taborders->setItem(orders.at(), 4, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(6).toString());
+		    taborders->setItem(orders.at(), 5, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(QString("%1").arg(orders.value(7).toString().toFloat(), 0, 'f',2));
+		    taborders->setItem(orders.at(), 6, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(8).toString());
+		    taborders->setItem(orders.at(), 7, tmpitem);
+		    
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(orders.value(0).toString()+":#:"+orders.value(1).toString());
+		    taborders->setItem(orders.at(), 10, tmpitem);
+		    
+		    QString qstr2 = QString("SELECT col3, col4 FROM %1 WHERE `ID`='%2';").arg(orders.value(0).toString()).arg(orders.value(1).toString());
+		    QSqlQuery checkdbquery(qstr2);
+		    checkdbquery.next();
+		    
+		    //Actual quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(0).toString());
+		    taborders->setItem(orders.at(), 8, tmpitem);
+		    
+		    //Minimal quantity
+		    tmpitem = new QTableWidgetItem;
+		    tmpitem->setText(checkdbquery.value(1).toString());
+		    taborders->setItem(orders.at(), 9, tmpitem);
+		    
+		    navordertabs(orders.at());
+		}
+    }
+    btnaccept->setText(tr("Close"));
+}
+//
 void procedureeditfrm::searchaddress()
 {
     addrselectfrm *seladdr = new addrselectfrm;

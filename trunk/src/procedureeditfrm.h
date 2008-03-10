@@ -13,6 +13,7 @@ public:
 	void loadentry(QString tmpdbID);
 	void updateentry();
 	void newentry();
+	void loadarchiveentry(QString dbID);
 private:
 	void initvat();
 	void reject();

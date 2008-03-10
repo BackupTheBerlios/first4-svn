@@ -808,9 +808,24 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
     btncomplete->setEnabled(TRUE);
     this->newdocument();
-    QString connstr = "SELECT ID, doctyp, docID, date, client, amount, discount, comments, salutation, introduction FROM "+source+" WHERE ID = '"+dbID+"';";
+    
+	vars v;
+	QString qstr;
+	QString userlock = v.checklockstate(source, dbID);
+	if(userlock != "")
+	{
+		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
+		btnsave->setEnabled(FALSE);
+		btncomplete->setEnabled(FALSE);
+		qstr = QString("SELECT ID, doctyp, docID, date, client, amount, discount, comments, salutation, introduction FROM %1 WHERE ID = '%2';").arg(source).arg(dbID);
+	}
+	else
+	{
+		qstr = QString("SELECT ID, doctyp, docID, date, client, amount, discount, comments, salutation, introduction FROM %1 WHERE ID = '%2' FOR UPDATE;").arg(source).arg(dbID);
+		v.lockrow(source, dbID);
+	}
 
-    QSqlQuery query(connstr);
+    QSqlQuery query(qstr);
     if(query.isActive())
     {
 		query.next();
@@ -856,8 +871,8 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		}
 		lblID->setText(query.value(4).toString());
 		
-		connstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location FROM adr"+lblID->text().section("_", 0, 0)+" WHERE ID = '"+lblID->text().section("_", 1, 1)+"';";
-		QSqlQuery query2(connstr);
+		qstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location FROM adr"+lblID->text().section("_", 0, 0)+" WHERE ID = '"+lblID->text().section("_", 1, 1)+"';";
+		QSqlQuery query2(qstr);
 		query2.next();
 		QString adresse ="";
 		if(query2.value(0).toString()!="")
@@ -880,8 +895,8 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		boxtot->setText(query.value(5).toString());
 		boxdiscount->setText(query.value(6).toString());
 		
-		connstr = "SELECT ID, DOCID, STOCK, STOCK_ID, DOC_POSITION, LABEL, DESCRIPTION, QUANTITY, UNIT, PRICE, VAT FROM docpositions WHERE DOCID = '"+query.value(0).toString()+"' AND `TYPE`='"+source+"' ORDER BY DOC_POSITION;";
-		QSqlQuery querypos(connstr);
+		qstr = "SELECT ID, DOCID, STOCK, STOCK_ID, DOC_POSITION, LABEL, DESCRIPTION, QUANTITY, UNIT, PRICE, VAT FROM docpositions WHERE DOCID = '"+query.value(0).toString()+"' AND `TYPE`='"+source+"' ORDER BY DOC_POSITION;";
+		QSqlQuery querypos(qstr);
 		if(querypos.isActive())
 		{
 		    tabmain->setRowCount(querypos.size());
@@ -920,8 +935,8 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		    	tabmain->setItem(querypos.at(), 8, item);
 		    	
 				//check act. quantity and min. quantity
-				connstr = "SELECT col3, col4 FROM "+querypos.value(2).toString()+" WHERE `ID` = "+querypos.value(3).toString()+";";
-				QSqlQuery querycheckdb(connstr);
+				qstr = "SELECT col3, col4 FROM "+querypos.value(2).toString()+" WHERE `ID` = "+querypos.value(3).toString()+";";
+				QSqlQuery querycheckdb(qstr);
 				querycheckdb.next();
 
 		    	item = new QTableWidgetItem;
@@ -1507,7 +1522,12 @@ void doceditfrm::reject()
 		if(r==0)
 		    savedoc();
     }
-    this->close();
+
+	QSqlDatabase::database().rollback();
+	vars v;
+	v.unlockrow(opendocSource, opendocID);
+
+	this->close();
 }
 //
 void doceditfrm::excl_vat()
