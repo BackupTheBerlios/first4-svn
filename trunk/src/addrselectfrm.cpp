@@ -42,13 +42,19 @@ void addrselectfrm::init()
 QString addrselectfrm::getaddress()
 {
 	QTreeWidgetItem *item = treemain->currentItem();
-	return item->text(3);
+	if(item)
+		return item->text(3);
+	else
+		return " ";
 }
 //
 QString addrselectfrm::getrabatt()
 {
 	QTreeWidgetItem *item = treemain->currentItem();
-	return item->text(4);
+		if(item)
+		return item->text(4);
+	else
+		return "0";
 }
 //
 void addrselectfrm::searchaddress()

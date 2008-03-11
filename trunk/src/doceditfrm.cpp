@@ -1007,22 +1007,32 @@ void doceditfrm::savedoc()
 		    query3.bindValue( ":docid", opendocID);
 		    
 		    item = tabmain->item(row, 11);
-		    query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
-		    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+		    if(item)
+		    {
+		    	query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+			    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+	    	}
 		    item = tabmain->item(row, 0);
-		    query3.bindValue( ":doc_pos", item->text());
+		    if(item)
+		    	query3.bindValue( ":doc_pos", item->text());
 		    item = tabmain->item(row, 1);
-		    query3.bindValue( ":label", item->text());
+			if(item)
+		    	query3.bindValue( ":label", item->text());
 		    item = tabmain->item(row, 3);
-		    query3.bindValue( ":description", item->text());
+		    if(item)
+		    	query3.bindValue( ":description", item->text());
 		    item = tabmain->item(row, 4);
-		    query3.bindValue( ":quantity", item->text());
+		    if(item)
+		    	query3.bindValue( ":quantity", item->text());
 		    item = tabmain->item(row, 5);
-		    query3.bindValue( ":unit", item->text());
+		    if(item)
+		    	query3.bindValue( ":unit", item->text());
 		    item = tabmain->item(row, 6);
-		    query3.bindValue( ":price", item->text());
+		    if(item)
+		    	query3.bindValue( ":price", item->text());
 		    item = tabmain->item(row, 8);
-		    query3.bindValue( ":vat", item->text());
+		    if(item)
+		    	query3.bindValue( ":vat", item->text());
 		    query3.exec();
 		}
     }
@@ -1041,8 +1051,9 @@ void doceditfrm::savedoc()
 		query.bindValue( ":discount", boxdiscount->text());
 		query.exec();
 	
-		QSqlQuery query2;
-		query2.prepare("SELECT ID FROM docdrafts WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
+		QString qstr = QString("SELECT ID FROM docdrafts WHERE doctyp = '%1' AND date = '%2' AND client = '%3' AND salutation = '%4' AND introduction = '%5' AND comments = '%6' AND amount = '%7' AND `discount` = '%8' ORDER BY ID DESC;").arg(docdef[cmbdoc->currentIndex()]).arg(s).arg(lblID->text()).arg(txtsalutation->text()).arg(boxotherinfo->toPlainText()).arg(boxcomments->toPlainText()).arg(boxtot->text()).arg(boxdiscount->text());
+		QSqlQuery query2(qstr);
+		/*query2.prepare("SELECT ID FROM docdrafts WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
 		query2.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
 		query2.bindValue( ":date", s);
 		query2.bindValue( ":client", lblID->text());
@@ -1051,9 +1062,11 @@ void doceditfrm::savedoc()
 		query2.bindValue( ":comments", boxcomments->toPlainText());
 		query2.bindValue( ":amount", boxtot->text());
 		query2.bindValue( ":discount", boxdiscount->text());
-		query2.exec();
+		query2.exec();*/
 		query2.next();  
 		opendocID = query2.value(0).toString();
+	
+	QMessageBox::information(this, tr("New Document..."), qstr +"\n"+opendocID);
 	
 		QSqlQuery query3;
 		for(row=0;row<tabmain->rowCount()-1;row++)
@@ -1064,23 +1077,53 @@ void doceditfrm::savedoc()
 		    query3.bindValue( ":docid", opendocID);
 		    
 		    item = tabmain->item(row, 11);
-		    query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
-		    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+		    if(item)
+		    {
+				query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+				query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+	    	}
+	    	else
+		    {
+				query3.bindValue( ":stock", "");
+				query3.bindValue( ":stock_id", "");
+	    	}
 		    item = tabmain->item(row, 0);
-		    query3.bindValue( ":doc_pos", item->text());
+		    if(item)
+		    	query3.bindValue( ":doc_pos", item->text());
+		    else
+		    	query3.bindValue( ":doc_pos", "");
 		    item = tabmain->item(row, 1);
-		    query3.bindValue( ":label", item->text());
+		    if(item)
+		    	query3.bindValue( ":label", item->text());
+		    else
+		    	query3.bindValue( ":label", "");
 		    item = tabmain->item(row, 3);
-		    query3.bindValue( ":description", item->text());
+		    if(item)
+		    	query3.bindValue( ":description", item->text());
+		    else
+		    	query3.bindValue( ":description", "");
 		    item = tabmain->item(row, 4);
-		    query3.bindValue( ":quantity", item->text());
+		    if(item)
+		    	query3.bindValue( ":quantity", item->text());
+		    else
+		    	query3.bindValue( ":quantity", "");
 		    item = tabmain->item(row, 5);
-		    query3.bindValue( ":unit", item->text());
+		    if(item)
+		    	query3.bindValue( ":unit", item->text());
+		    else
+		    	query3.bindValue( ":unit", "");
 		    item = tabmain->item(row, 6);
-		    query3.bindValue( ":price", item->text());
+		    if(item)
+		    	query3.bindValue( ":price", item->text());
+		    else
+		    	query3.bindValue( ":price", "");
 		    item = tabmain->item(row, 8);
-		    query3.bindValue( ":vat", item->text());
+		    if(item)
+		    	query3.bindValue( ":vat", item->text());
+		    else
+		    	query3.bindValue( ":vat", "");
 		    query3.exec();
+		    QMessageBox::information(this, tr("New Document..."), query3.executedQuery());
 		}
     }
 }

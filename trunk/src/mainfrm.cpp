@@ -254,6 +254,8 @@ void mainfrm::newdoc()
 {
 	doceditfrm *docfrm = new doceditfrm;
 	docfrm->init();
+    docfrm->cmbdoc->setCurrentIndex(0);
+	docfrm->selecteddocument();
 	docfrm->show();
 }
 //

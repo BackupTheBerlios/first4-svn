@@ -21,7 +21,7 @@
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>55</height>
+     <height>68</height>
     </rect>
    </property>
    <layout class="QGridLayout" >
@@ -123,9 +123,9 @@
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>444</x>
+     <x>430</x>
      <y>330</y>
-     <width>101</width>
+     <width>111</width>
      <height>27</height>
     </rect>
    </property>
