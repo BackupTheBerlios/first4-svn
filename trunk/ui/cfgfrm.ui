@@ -4538,6 +4538,70 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="unlocks" >
+      <attribute name="title" >
+       <string>Unlock</string>
+      </attribute>
+      <widget class="QLabel" name="label_98" >
+       <property name="geometry" >
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>151</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>Locked entries by users:</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="lock_tree" >
+       <property name="geometry" >
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>521</width>
+         <height>441</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text" >
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Table</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Entry</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>User</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="lock_btnunlock" >
+       <property name="geometry" >
+        <rect>
+         <x>540</x>
+         <y>40</y>
+         <width>101</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>&amp;Unlock</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/unlock.png</iconset>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </widget>
   </widget>

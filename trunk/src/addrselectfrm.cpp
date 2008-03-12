@@ -45,7 +45,7 @@ QString addrselectfrm::getaddress()
 	if(item)
 		return item->text(3);
 	else
-		return " ";
+		return ":#:";
 }
 //
 QString addrselectfrm::getrabatt()

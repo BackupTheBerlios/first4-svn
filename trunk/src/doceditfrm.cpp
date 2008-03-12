@@ -136,6 +136,7 @@ void doceditfrm::init()
 	connect(btnvat, SIGNAL(released()), this, SLOT(show_vat()));
 	connect(boxtot_excl, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
 	connect(boxvat, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
+	connect(btnnew, SIGNAL(released()), this, SLOT(newdocument()));
 	navtabonoff(true);
 	
 }
@@ -144,6 +145,11 @@ void doceditfrm::closeEvent( QCloseEvent* ce )
 {
 	vars v;
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
+	
+	QSqlDatabase::database().rollback();
+
+	v.unlockrow(opendocSource, opendocID);
+	
 	ce->accept();
 }
 //
@@ -197,10 +203,17 @@ void doceditfrm::selecteddocument()
 				break;    
 	    	}
 		    btnnew->setEnabled(TRUE);
-		    btnsave->setEnabled(TRUE);
+		    if(!this->windowTitle().contains("Locked by User"))
+		    {
+		    	btnsave->setEnabled(TRUE);
+		    	btncomplete->setEnabled(TRUE);
+	    	} 
+	    	else
+	    	{
+		    	btnsave->setEnabled(FALSE);
+		    	btncomplete->setEnabled(FALSE);
+	    	} 
 		    btnprint->setEnabled(TRUE);
-		    btncomplete->setEnabled(TRUE);
-		    //tabmain->setReadOnly(FALSE);
 		}
 		else
 		{
@@ -208,7 +221,6 @@ void doceditfrm::selecteddocument()
 		    btnsave->setEnabled(FALSE);
 		    btnprint->setEnabled(FALSE);
 		    btncomplete->setEnabled(FALSE);
-		    //tabmain->setReadOnly(TRUE);
 		    QMessageBox::information(0,"Error...",tr("You are not authorized to provide the selected document"));
 		}
 	}
@@ -753,10 +765,10 @@ void doceditfrm::newdocument()
 		int r = QMessageBox::information(this, tr("New Document..."), tr("Take over existing data?"), QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{
-		    int tmp = cmbdoc->currentIndex();
-		    readdoctab();
-		    cmbdoc->setCurrentIndex(tmp);
-		    selecteddocument();
+			int tmp = cmbdoc->currentIndex();
+			readdoctab();
+			cmbdoc->setCurrentIndex(tmp);
+			selecteddocument();
 		}
 		else
 		{
@@ -780,8 +792,6 @@ void doceditfrm::newdocument()
 	    QDate date = QDate::currentDate();
 		boxdate->setDate(date);
 	    mainwidget->setCurrentIndex(1);
-	    opendocID = "";
-	    opendocSource = "";
 	    readdoctab();
 		boxaddress->setText("");
 		lblID->setText("");
@@ -814,7 +824,6 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 	QString userlock = v.checklockstate(source, dbID);
 	if(userlock != "")
 	{
-		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
 		btnsave->setEnabled(FALSE);
 		btncomplete->setEnabled(FALSE);
 		qstr = QString("SELECT ID, doctyp, docID, date, client, amount, discount, comments, salutation, introduction FROM %1 WHERE ID = '%2';").arg(source).arg(dbID);
@@ -829,6 +838,7 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
     if(query.isActive())
     {
 		query.next();
+		
 		opendocID = dbID;
 		opendocSource = source;
 		if(query.value(1).toString()=="1 offer")
@@ -847,7 +857,15 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		{
 		    cmbdoc->setCurrentIndex(3);
 		}
+		
+		//Change WindowTitle
+		if(userlock != "")
+			this->setWindowTitle(tr("Document: ###docid### ( Locked by User: %1 )").arg(userlock));
+		else
+			this->setWindowTitle(tr("Document: ###docid###"));
 		selecteddocument();
+		this->setWindowTitle(this->windowTitle().replace("###docid###", txtdoccount->text()));
+		
 		QString convdate = query.value(3).toString().section(".", 2, 2)+"-"+query.value(3).toString().section(".", 1, 1)+"-"+query.value(3).toString().section(".", 0, 0);
 		boxdate->setDate(QDate::fromString(convdate,Qt::ISODate));	    
 		if(query.value(2).toString()!="")
@@ -1009,30 +1027,49 @@ void doceditfrm::savedoc()
 		    item = tabmain->item(row, 11);
 		    if(item)
 		    {
-		    	query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
-			    query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+				query3.bindValue( ":stock", item->text().section(":#:", 0, 0));
+				query3.bindValue( ":stock_id", item->text().section(":#:", 1, 1));
+	    	}
+	    	else
+		    {
+				query3.bindValue( ":stock", "");
+				query3.bindValue( ":stock_id", "");
 	    	}
 		    item = tabmain->item(row, 0);
 		    if(item)
 		    	query3.bindValue( ":doc_pos", item->text());
+		    else
+		    	query3.bindValue( ":doc_pos", "");
 		    item = tabmain->item(row, 1);
-			if(item)
+		    if(item)
 		    	query3.bindValue( ":label", item->text());
+		    else
+		    	query3.bindValue( ":label", "");
 		    item = tabmain->item(row, 3);
 		    if(item)
 		    	query3.bindValue( ":description", item->text());
+		    else
+		    	query3.bindValue( ":description", "");
 		    item = tabmain->item(row, 4);
 		    if(item)
 		    	query3.bindValue( ":quantity", item->text());
+		    else
+		    	query3.bindValue( ":quantity", "");
 		    item = tabmain->item(row, 5);
 		    if(item)
 		    	query3.bindValue( ":unit", item->text());
+		    else
+		    	query3.bindValue( ":unit", "");
 		    item = tabmain->item(row, 6);
 		    if(item)
 		    	query3.bindValue( ":price", item->text());
+		    else
+		    	query3.bindValue( ":price", "");
 		    item = tabmain->item(row, 8);
 		    if(item)
 		    	query3.bindValue( ":vat", item->text());
+		    else
+		    	query3.bindValue( ":vat", "");
 		    query3.exec();
 		}
     }
@@ -1053,20 +1090,9 @@ void doceditfrm::savedoc()
 	
 		QString qstr = QString("SELECT ID FROM docdrafts WHERE doctyp = '%1' AND date = '%2' AND client = '%3' AND salutation = '%4' AND introduction = '%5' AND comments = '%6' AND amount = '%7' AND `discount` = '%8' ORDER BY ID DESC;").arg(docdef[cmbdoc->currentIndex()]).arg(s).arg(lblID->text()).arg(txtsalutation->text()).arg(boxotherinfo->toPlainText()).arg(boxcomments->toPlainText()).arg(boxtot->text()).arg(boxdiscount->text());
 		QSqlQuery query2(qstr);
-		/*query2.prepare("SELECT ID FROM docdrafts WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
-		query2.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
-		query2.bindValue( ":date", s);
-		query2.bindValue( ":client", lblID->text());
-		query2.bindValue( ":salutation", txtsalutation->text());
-		query2.bindValue( ":introduction", boxotherinfo->toPlainText());
-		query2.bindValue( ":comments", boxcomments->toPlainText());
-		query2.bindValue( ":amount", boxtot->text());
-		query2.bindValue( ":discount", boxdiscount->text());
-		query2.exec();*/
 		query2.next();  
+		
 		opendocID = query2.value(0).toString();
-	
-	QMessageBox::information(this, tr("New Document..."), qstr +"\n"+opendocID);
 	
 		QSqlQuery query3;
 		for(row=0;row<tabmain->rowCount()-1;row++)
@@ -1123,7 +1149,6 @@ void doceditfrm::savedoc()
 		    else
 		    	query3.bindValue( ":vat", "");
 		    query3.exec();
-		    QMessageBox::information(this, tr("New Document..."), query3.executedQuery());
 		}
     }
 }

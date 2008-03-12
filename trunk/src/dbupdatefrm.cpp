@@ -46,13 +46,18 @@ int dbupdatefrm::init()
 	if(query4.size() !=1 )
 	  retrcode = 1;
 
+	QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
+	query5.next();
+	if(query5.value(2) == "NO")
+	  retrcode = 1;
+
 	return retrcode;
 	
 }
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(4);
+	    progbar->setMaximum(5);
 
 	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	    if(query1.size() !=1 )
@@ -74,7 +79,13 @@ void dbupdatefrm::check_db_structure()
 	      update_db_structure("userlocktab");
 	    progbar->setValue(4);
 	    
-	QSqlQuery query5(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
+		query5.next();
+		if(query5.value(2) == "NO")
+			update_db_structure("docpositions");
+		progbar->setValue(5);
+	    
+	QSqlQuery query6(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
 	QMessageBox::information( 0, "DB update..." , "Update completed." );
 	this->accept();
 }
@@ -107,5 +118,28 @@ void dbupdatefrm::update_db_structure(QString section)
 					QSqlQuery query2(qstr);
 				}
 				QSqlQuery query3("CREATE TABLE `userlocktab` (`ID` int(11) NOT NULL auto_increment, `table` text NOT NULL, `tabid` text NOT NULL,  `user` text NOT NULL, `timestamp` TIMESTAMP NOT NULL , PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+			}
+			else if(section == "docpositions")
+			{
+				QSqlQuery query1("ALTER TABLE docpositions MODIFY STOCK text;");
+				QSqlQuery query2("ALTER TABLE docpositions MODIFY STOCK_ID text;");
+				QSqlQuery query3("ALTER TABLE docpositions MODIFY DOC_POSITION int(11);");
+				QSqlQuery query4("ALTER TABLE docpositions MODIFY LABEL text;");
+				QSqlQuery query5("ALTER TABLE docpositions MODIFY DESCRIPTION text;");
+				QSqlQuery query6("ALTER TABLE docpositions MODIFY QUANTITY float;");
+				QSqlQuery query7("ALTER TABLE docpositions MODIFY UNIT text;");
+				QSqlQuery query8("ALTER TABLE docpositions MODIFY PRICE float;");
+				QSqlQuery query9("ALTER TABLE docpositions MODIFY VAT float;");
+
+				//procedureorders
+				QSqlQuery query11("ALTER TABLE procedureorders MODIFY STOCK text;");
+				QSqlQuery query12("ALTER TABLE procedureorders MODIFY STOCK_ID text;");
+				QSqlQuery query13("ALTER TABLE procedureorders MODIFY STATE char(1);");
+				QSqlQuery query14("ALTER TABLE procedureorders MODIFY LABEL text;");
+				QSqlQuery query15("ALTER TABLE procedureorders MODIFY DESCRIPTION text;");
+				QSqlQuery query16("ALTER TABLE procedureorders MODIFY QUANTITY float;");
+				QSqlQuery query17("ALTER TABLE procedureorders MODIFY UNIT text;");
+				QSqlQuery query18("ALTER TABLE procedureorders MODIFY PRICE float;");
+				QSqlQuery query19("ALTER TABLE procedureorders MODIFY VAT float;");
 			}
 }

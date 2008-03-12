@@ -2336,12 +2336,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="158"/>
+        <location filename="../../src/datafrm.cpp" line="159"/>
         <source>Save changes...</source>
         <translation>Ändrungen speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="158"/>
+        <location filename="../../src/datafrm.cpp" line="159"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
@@ -2376,37 +2376,37 @@ p, li { white-space: pre-wrap; }
         <translation>Datentabelle:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="481"/>
+        <location filename="../../src/datafrm.cpp" line="486"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="481"/>
+        <location filename="../../src/datafrm.cpp" line="486"/>
         <source>Delete entry %1?</source>
         <translation>Eintrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="566"/>
+        <location filename="../../src/datafrm.cpp" line="571"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="575"/>
+        <location filename="../../src/datafrm.cpp" line="580"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="590"/>
+        <location filename="../../src/datafrm.cpp" line="595"/>
         <source>Delete &amp;Row</source>
         <translation>&amp;Zeile löschen</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="603"/>
+        <location filename="../../src/datafrm.cpp" line="608"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="606"/>
+        <location filename="../../src/datafrm.cpp" line="614"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
@@ -2421,17 +2421,17 @@ p, li { white-space: pre-wrap; }
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="559"/>
+        <location filename="../../src/datafrm.cpp" line="564"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="582"/>
+        <location filename="../../src/datafrm.cpp" line="587"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="1103"/>
+        <location filename="../../src/datafrm.cpp" line="1112"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -2914,7 +2914,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Einzahlungsschein</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="212"/>
+        <location filename="../../src/doceditfrm.cpp" line="224"/>
         <source>You are not authorized to provide the selected document</source>
         <translation>Sie sind nicht berechtigt dieses Dokument zu öffnen</translation>
     </message>
@@ -3084,92 +3084,92 @@ p, li { white-space: pre-wrap; }
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="351"/>
+        <location filename="../../src/doceditfrm.cpp" line="363"/>
         <source>Stock...</source>
         <translation>Lager...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="351"/>
+        <location filename="../../src/doceditfrm.cpp" line="363"/>
         <source>Please define VAT first!</source>
         <translation>Bitte zuerst MwSt. definieren!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="240"/>
+        <location filename="../../src/doceditfrm.cpp" line="252"/>
         <source>&amp;Edit Entry</source>
         <translation>Eintrag &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="243"/>
+        <location filename="../../src/doceditfrm.cpp" line="255"/>
         <source>&amp;Delete Row</source>
         <translation>Zeilen &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="291"/>
+        <location filename="../../src/doceditfrm.cpp" line="303"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="665"/>
+        <location filename="../../src/doceditfrm.cpp" line="677"/>
         <source>Save...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="665"/>
+        <location filename="../../src/doceditfrm.cpp" line="677"/>
         <source>Document completed and saved in Database</source>
         <translation>Dokument abgeschlossen und in Datenbank gespeichert</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="753"/>
+        <location filename="../../src/doceditfrm.cpp" line="765"/>
         <source>New Document...</source>
         <translation>Neues Dokument...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="753"/>
+        <location filename="../../src/doceditfrm.cpp" line="765"/>
         <source>Take over existing data?</source>
         <translation>Bestehende Daten übernehmen?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1243"/>
+        <location filename="../../src/doceditfrm.cpp" line="1326"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1267"/>
+        <location filename="../../src/doceditfrm.cpp" line="1350"/>
         <source>Net amount:</source>
-        <translation>Netto Betrag</translation>
+        <translation>Netto Betrag:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1290"/>
+        <location filename="../../src/doceditfrm.cpp" line="1373"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1393"/>
+        <location filename="../../src/doceditfrm.cpp" line="1476"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1480"/>
+        <location filename="../../src/doceditfrm.cpp" line="1563"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1346"/>
+        <location filename="../../src/doceditfrm.cpp" line="1429"/>
         <source>Please select a receiver</source>
         <translation>Bitte Empfänger auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1487"/>
+        <location filename="../../src/doceditfrm.cpp" line="1570"/>
         <source>Can&apos;t print File.</source>
         <translation>Kann Datei nicht ausdrucken.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1506"/>
+        <location filename="../../src/doceditfrm.cpp" line="1589"/>
         <source>Document not saved...</source>
         <translation>Dokument nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1506"/>
+        <location filename="../../src/doceditfrm.cpp" line="1589"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
@@ -3178,22 +3178,22 @@ p, li { white-space: pre-wrap; }
 Als Entwurf speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1346"/>
+        <location filename="../../src/doceditfrm.cpp" line="1429"/>
         <source>Address...</source>
         <translation>Adresse...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1249"/>
+        <location filename="../../src/doceditfrm.cpp" line="1332"/>
         <source>Amount excl. VAT:</source>
         <translation>Betrag exkl. MwSt:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1254"/>
+        <location filename="../../src/doceditfrm.cpp" line="1337"/>
         <source>VAT rate</source>
         <translation>MwSt. Satz</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1254"/>
+        <location filename="../../src/doceditfrm.cpp" line="1337"/>
         <source>VAT amount</source>
         <translation>MwSt. Betrag</translation>
     </message>
@@ -3203,7 +3203,7 @@ Als Entwurf speichern?</translation>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1310"/>
+        <location filename="../../src/doceditfrm.cpp" line="1393"/>
         <source>Can&apos;t convert TEX-File.</source>
         <translation>Kann TEX-Datei nicht konvertieren.</translation>
     </message>
@@ -3213,54 +3213,64 @@ Als Entwurf speichern?</translation>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="741"/>
+        <location filename="../../src/doceditfrm.cpp" line="753"/>
         <source>Invoice %1</source>
         <translation>Rechnung %1</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1495"/>
+        <location filename="../../src/doceditfrm.cpp" line="1578"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation>Kann Datei nicht ins Zielverzeichnis verschieben.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1269"/>
+        <location filename="../../src/doceditfrm.cpp" line="1352"/>
         <source>Kind regards</source>
         <translation>Freundliche Grüsse</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1270"/>
+        <location filename="../../src/doceditfrm.cpp" line="1353"/>
         <source>General informations:</source>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1605"/>
+        <location filename="../../src/doceditfrm.cpp" line="1693"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Templatebeschreibung nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1338"/>
+        <location filename="../../src/doceditfrm.cpp" line="1421"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1402"/>
+        <location filename="../../src/doceditfrm.cpp" line="1485"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1414"/>
+        <location filename="../../src/doceditfrm.cpp" line="1497"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1422"/>
+        <location filename="../../src/doceditfrm.cpp" line="1505"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1629"/>
+        <location filename="../../src/doceditfrm.cpp" line="1717"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="863"/>
+        <source>Document: ###docid### ( Locked by User: %1 )</source>
+        <translation>Dokument: ###docid### ( Gesperrt durch Benutzer: %1 )</translation>
+    </message>
+    <message>
+        <location filename="../../src/doceditfrm.cpp" line="865"/>
+        <source>Document: ###docid###</source>
+        <translation>Dokument: ###docid###</translation>
     </message>
 </context>
 <context>
@@ -4758,27 +4768,27 @@ Bitte kontaktieren Sie ihre Administrator</translation>
 <context>
     <name>procedureeditfrm</name>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="228"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="460"/>
         <source>Stock...</source>
         <translation>Lager...</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="228"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="460"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="366"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="777"/>
         <source>&amp;Check stock</source>
         <translation>Lager prügen</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="378"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="789"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="381"/>
+        <location filename="../../src/procedureeditfrm.cpp" line="792"/>
         <source>&amp;Delete Row</source>
         <translation>Zeilen &amp;löschen</translation>
     </message>
@@ -4982,6 +4992,16 @@ Bitte kontaktieren Sie ihre Administrator</translation>
         <source>&amp;Comments</source>
         <translation>&amp;Kommentare</translation>
     </message>
+    <message>
+        <location filename="../../src/procedureeditfrm.cpp" line="121"/>
+        <source>Edit order...</source>
+        <translation>Auftrag bearbeiten...</translation>
+    </message>
+    <message>
+        <location filename="../../src/procedureeditfrm.cpp" line="338"/>
+        <source>Close</source>
+        <translation>Schliessen</translation>
+    </message>
 </context>
 <context>
     <name>procedurefrm</name>
@@ -5143,17 +5163,12 @@ Please contact your Administrator</source>
         <translation>Neuer Auftrag...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="588"/>
-        <source>Edit order...</source>
-        <translation>Auftrag bearbeiten...</translation>
-    </message>
-    <message>
-        <location filename="../../src/procedurefrm.cpp" line="719"/>
+        <location filename="../../src/procedurefrm.cpp" line="320"/>
         <source>Delete order...</source>
         <translation>Auftrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="719"/>
+        <location filename="../../src/procedurefrm.cpp" line="320"/>
         <source>Delete order %1?</source>
         <translation>Auftrag %1 löschen?</translation>
     </message>
@@ -5178,67 +5193,62 @@ Please contact your Administrator</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="695"/>
-        <source>Close</source>
-        <translation>Schliessen</translation>
-    </message>
-    <message>
-        <location filename="../../src/procedurefrm.cpp" line="917"/>
+        <location filename="../../src/procedurefrm.cpp" line="518"/>
         <source>Procedure completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="742"/>
+        <location filename="../../src/procedurefrm.cpp" line="343"/>
         <source>Create offer for order %1 ?</source>
         <translation>Offerte für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="747"/>
+        <location filename="../../src/procedurefrm.cpp" line="348"/>
         <source>Create order confirmation for order %1 ?</source>
         <translation>Auftragsbestätigung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="752"/>
+        <location filename="../../src/procedurefrm.cpp" line="353"/>
         <source>Create deliverynote for order %1 ?</source>
         <translation>lieferschein für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="757"/>
+        <location filename="../../src/procedurefrm.cpp" line="358"/>
         <source>Create bill for order %1 ?</source>
         <translation>Rechnung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="900"/>
+        <location filename="../../src/procedurefrm.cpp" line="501"/>
         <source>Order completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="900"/>
+        <location filename="../../src/procedurefrm.cpp" line="501"/>
         <source>Change status for selected entries?</source>
         <translation>Status für ausgewählte Einträge anpassen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="917"/>
+        <location filename="../../src/procedurefrm.cpp" line="518"/>
         <source>Archive completed entries?</source>
         <translation>Abgeschlossene einträge archivieren?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="972"/>
+        <location filename="../../src/procedurefrm.cpp" line="573"/>
         <source>Create Offer</source>
         <translation>Offerte erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="976"/>
+        <location filename="../../src/procedurefrm.cpp" line="577"/>
         <source>Create Orderconfirmation</source>
         <translation>Auftragsbestätigung erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="980"/>
+        <location filename="../../src/procedurefrm.cpp" line="581"/>
         <source>Create Delivery note</source>
         <translation>Lieferschein erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="984"/>
+        <location filename="../../src/procedurefrm.cpp" line="585"/>
         <source>Create Bill</source>
         <translation>Rechnung erstellen</translation>
     </message>
