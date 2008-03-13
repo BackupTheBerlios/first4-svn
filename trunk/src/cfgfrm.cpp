@@ -158,6 +158,7 @@ void cfgfrm::init()
 	connect ( chksystemplates, SIGNAL ( stateChanged(int)), this, SLOT ( templates_load() ) );
 
 	connect ( lock_btnunlock, SIGNAL ( released()), this, SLOT ( locks_unlockentry() ) );
+	connect ( lock_btnrefresh, SIGNAL ( released()), this, SLOT ( locks_loaduserlocks() ) );
 
 	progbar->setValue ( 100 );
 }
@@ -1612,7 +1613,9 @@ void cfgfrm::templates_loaddescription()
 //
 void cfgfrm::locks_loaduserlocks()
 {
+	lock_tree->clear();
 	lock_tree->hideColumn(0);
+	lock_tree->setColumnWidth(2, 80);
 	QSqlQuery query("SELECT `ID`, `table`, `tabid`, `user`, `timestamp` FROM userlocktab ORDER BY `table`, `ID`;");
 	if(query.isActive())
 	{
@@ -1623,7 +1626,7 @@ void cfgfrm::locks_loaduserlocks()
 			item->setText(1, query.value(1).toString());
 			item->setText(2, query.value(2).toString());
 			item->setText(3, query.value(3).toString());
-			item->setText(4, query.value(4).toString());
+			item->setText(4, query.value(4).toString().replace("T", " "));
 			if(query.value(1).toString().mid(0, 3) == "adr")
 			{
 				QSqlQuery query2(QString("SELECT lastname, firstname FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
@@ -1665,9 +1668,14 @@ void cfgfrm::locks_loaduserlocks()
 //
 void cfgfrm::locks_unlockentry()
 {
-	int r = QMessageBox::warning ( this, tr ( "Unlocking..." ),tr("Do you want to unlock the selected entry?" ) , QMessageBox::Yes, QMessageBox::No );
-	if ( r == QMessageBox::Yes )
+	QTreeWidgetItem *item = lock_tree->currentItem();
+	if(item)
 	{
-		
+		int r = QMessageBox::warning ( this, tr ( "Unlocking..." ),tr("Do you want to unlock the selected entry?" ) , QMessageBox::Yes, QMessageBox::No );
+		if ( r == QMessageBox::Yes )
+		{
+			QSqlQuery query(QString("DELETE FROM userlocktab WHERE `ID`='%1'").arg(item->text(0)));
+			locks_loaduserlocks();
+		}
 	}
 }

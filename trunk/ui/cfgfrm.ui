@@ -4586,6 +4586,11 @@ p, li { white-space: pre-wrap; }
        </column>
        <column>
         <property name="text" >
+         <string>Timestamp</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
          <string>Description</string>
         </property>
        </column>
@@ -4604,6 +4609,22 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/unlock.png</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="lock_btnrefresh" >
+       <property name="geometry" >
+        <rect>
+         <x>640</x>
+         <y>70</y>
+         <width>101</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text" >
+        <string>&amp;Refresh</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
        </property>
       </widget>
      </widget>
