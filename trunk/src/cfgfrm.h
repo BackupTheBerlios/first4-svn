@@ -56,6 +56,8 @@ private slots:
 	void templates_edit();
 	void templates_delete();
 	void templates_loaddetails();
+	void locks_loaduserlocks();
+	void locks_unlockentry();
 private:
 	void templates_loaddescription();
 };

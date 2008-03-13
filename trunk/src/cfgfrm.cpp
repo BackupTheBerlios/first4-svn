@@ -96,16 +96,18 @@ void cfgfrm::init()
 		loadusers();
 		progbar->setValue ( 70 );
 		load_db_tools();
-		progbar->setValue ( 80 );
+		progbar->setValue ( 75 );
 		loadresources();
+		progbar->setValue ( 80 );
+		locks_loaduserlocks();
+		progbar->setValue ( 85 );
+		templates_load();
 	}
 	
-	progbar->setValue ( 80 );
+	progbar->setValue ( 85 );
 	resdefframe->setCurrentIndex ( 3 );
 
 	txtdocpath->setText ( docfolder );
-
-	templates_load();
 
 	//slot connections
 	connect ( btnchangepwd, SIGNAL ( released() ), this, SLOT ( changepwd() ) );
@@ -154,6 +156,8 @@ void cfgfrm::init()
 	connect ( btnrefreshtempaltes, SIGNAL ( released() ), this, SLOT ( templates_load() ) );
 	connect ( tem_tree, SIGNAL ( itemClicked ( QTreeWidgetItem*, int ) ), this, SLOT ( templates_loaddetails() ) );
 	connect ( chksystemplates, SIGNAL ( stateChanged(int)), this, SLOT ( templates_load() ) );
+
+	connect ( lock_btnunlock, SIGNAL ( released()), this, SLOT ( locks_unlockentry() ) );
 
 	progbar->setValue ( 100 );
 }
@@ -1099,7 +1103,7 @@ void cfgfrm::newaccount()
 				}
 			}
 			if ( accountname == "" )
-				accountname = QString ( "konto%1" ).arg ( accountcount++,0,10 );
+				accountname = QString ( "account%1" ).arg ( accountcount++,0,10 );
 		}
 		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`) VALUES (NULL, '%1', '%2', '', '', '', '')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
@@ -1603,5 +1607,67 @@ void cfgfrm::templates_loaddescription()
 	{
 		QSqlError qerror = query.lastError();
 		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
+}
+//
+void cfgfrm::locks_loaduserlocks()
+{
+	lock_tree->hideColumn(0);
+	QSqlQuery query("SELECT `ID`, `table`, `tabid`, `user`, `timestamp` FROM userlocktab ORDER BY `table`, `ID`;");
+	if(query.isActive())
+	{
+		while(query.next())
+		{
+			QTreeWidgetItem *item = new QTreeWidgetItem(lock_tree);
+			item->setText(0, query.value(0).toString());
+			item->setText(1, query.value(1).toString());
+			item->setText(2, query.value(2).toString());
+			item->setText(3, query.value(3).toString());
+			item->setText(4, query.value(4).toString());
+			if(query.value(1).toString().mid(0, 3) == "adr")
+			{
+				QSqlQuery query2(QString("SELECT lastname, firstname FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
+				query2.next();
+				item->setText(5, query2.value(0).toString()+", "+query2.value(1).toString());
+			}
+			else if(query.value(1).toString().mid(0, 4) == "data")
+			{
+				QSqlQuery query2(QString("SELECT col1 FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
+				query2.next();
+				item->setText(5, query2.value(0).toString());
+			}
+			else if(query.value(1).toString().mid(0, 9) == "procedure")
+			{
+				QSqlQuery query2(QString("SELECT client FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
+				query2.next();
+				item->setText(5, query2.value(0).toString());
+			}
+			else if(query.value(1).toString().mid(0, 3) == "doc")
+			{
+				QSqlQuery query2(QString("").arg(query.value(1).toString()).arg(query.value(2).toString()));
+				query2.next();
+				item->setText(5, query2.value(0).toString().section(" ", 1, 1)+", "+query2.value(1).toString());
+			}
+			else if(query.value(1).toString().mid(0, 7) == "account" || query.value(1).toString() == "ietab")
+			{
+				QSqlQuery query2(QString("SELECT refnr, description FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
+				query2.next();
+				item->setText(5, query2.value(0).toString()+", "+query2.value(1).toString());
+			}
+		}
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load userlocks..." ), qerror.text() );
+	}	
+}
+//
+void cfgfrm::locks_unlockentry()
+{
+	int r = QMessageBox::warning ( this, tr ( "Unlocking..." ),tr("Do you want to unlock the selected entry?" ) , QMessageBox::Yes, QMessageBox::No );
+	if ( r == QMessageBox::Yes )
+	{
+		
 	}
 }
