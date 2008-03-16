@@ -12,7 +12,7 @@ private:
 	QString writetexfile();
 	QString loadtemplatedata(int dbid);
 	QString loadgeneralinfo();
-	QString loadtemplatedata();
+	QString loadesrtemplate();
 private slots:
 	void selectaddress();
 	void printpreview();

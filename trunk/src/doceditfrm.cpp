@@ -1433,29 +1433,8 @@ void doceditfrm::printvesr()
 {
     calc_tot();
     QStringList vesrcode = vesr();
-    
-    /*QFile file(docfolder+"/tmpesr.kud");
-    if ( file.open( QIODevice::WriteOnly ) )
-    {
-		QTextStream stream( &file );	
-		stream << "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
-		stream << "<!DOCTYPE KugarData [\n    <!ATTLIST KugarData\n        Template CDATA #REQUIRED>\n]>\n";
-		stream << "<KugarData>\n";
-		stream << "<Field level=\"0\"\n";
-		stream << "esr1=\""+vesrcode[0]+"\"\n";
-		stream << "esr2 = \""+vesrcode[1]+"\"\n";
-		stream << "company = \""+companyaddress+"\"\n";
-		stream << "date = \""+QDate::currentDate().toString("dd.MM.yyyy")+"\"\n";
-		stream << "tnr = \""+tnr+"\"\n";
-		stream << "client = \""+boxaddress->toPlainText()+"\"\n";
-		stream << "amount = \""+boxtot_incl->text().section(".", 0, 0)+"\"\n";
-		stream << "amountcents = \""+boxtot_incl->text().section(".", 1, 1)+"\"\n";
-		stream << "/>\n\n</KugarData>";
-		file.close();
-    }
-    file.remove();*/
 
-    QString templatestr = loadtemplatedata();
+    QString templatestr = loadesrtemplate();
     QTime now = QTime::currentTime();
 	QDate today = QDate::currentDate();
     QFile output(QDir::homePath()+"/.first4/tmp/"+username+"-"+today.toString("yyyyMMdd")+now.toString("hhmmsszzz")+".tex");
@@ -1702,7 +1681,7 @@ QString doceditfrm::loadgeneralinfo()
 	return query.value(0).toString();
 }
 //
-QString doceditfrm::loadtemplatedata()
+QString doceditfrm::loadesrtemplate()
 {
 	QString answ;
 	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_vesr';");
