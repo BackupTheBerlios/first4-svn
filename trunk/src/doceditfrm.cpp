@@ -25,7 +25,7 @@ extern QString username, fullname, docfolder, templatefolder;
 QString opendocID = "";
 QString opendocSource = "";
 QString b_text = "";
-QString docprefix, tnr, companyaddress, location, docfile, currency;
+QString docprefix, tnr, companyaddress, location, docfile, currency, vesrcompanyaddress;
 QStringList vatlist, vatamount, docnames, doccount, docdef, temp_id;
 //
 doceditfrm::doceditfrm( QWidget * parent, Qt::WFlags f) 
@@ -587,6 +587,7 @@ void doceditfrm::loadmaincfg()
     fields << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry"; 
     int i;
     companyaddress = "";
+    vesrcompanyaddress = "";
     for(i=0;i<fields.count();i++)
     {
     	QString qstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = '%1';").arg(fields[i]);
@@ -595,6 +596,7 @@ void doceditfrm::loadmaincfg()
     	address << queryaddr.value(0).toString();
     }
     companyaddress = address[0]+"\n"+address[1]+"\n"+address[3]+"\n"+address[2]+"\n"+address[4]+"\n";
+    vesrcompanyaddress = address[0]+"\\newline "+address[1]+"\\newline "+address[3]+" "+address[2]+"\\newline";
     location = address[2];
 }
 //
@@ -1434,6 +1436,11 @@ void doceditfrm::printvesr()
     calc_tot();
     QStringList vesrcode = vesr();
 
+    QSqlQuery querydays;
+    querydays.prepare("SELECT value FROM maincfgtab WHERE `var`='DoG'");
+    querydays.exec();
+    querydays.next();
+
     QString templatestr = loadesrtemplate();
     QTime now = QTime::currentTime();
 	QDate today = QDate::currentDate();
@@ -1443,10 +1450,10 @@ void doceditfrm::printvesr()
 	    QTextStream outstream( &output );	
 	    templatestr = templatestr.replace("+++VESR1+++", vesrcode[0]);
 	    templatestr = templatestr.replace("+++VESR2+++", vesrcode[1]);
-		templatestr = templatestr.replace("+++COMPANY+++", companyaddress);
+		templatestr = templatestr.replace("+++COMPANY+++", vesrcompanyaddress+tr("\\footnotesize\\newline Invoice: %1 \\newline Payable until: %2").arg(txtdoccount->text()).arg(boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy")));
 		templatestr = templatestr.replace("+++DATE+++", QDate::currentDate().toString("dd.MM.yyyy"));
 		templatestr = templatestr.replace("+++TNR+++", tnr);
-		templatestr = templatestr.replace("+++CUSTOMER+++", boxaddress->toPlainText());
+		templatestr = templatestr.replace("+++CUSTOMER+++", boxaddress->toPlainText().replace("\n","\\newline "));
 		templatestr = templatestr.replace("+++AMOUNT+++", boxtot_incl->text().section(".", 0, 0));
 		templatestr = templatestr.replace("+++AMOUNTCENTS+++", boxtot_incl->text().section(".", 1, 1));
 		outstream << templatestr << "\n";
@@ -1492,28 +1499,30 @@ QStringList doceditfrm::vesr()
     double betrag = boxtot_incl->text().toDouble() * 100;
     QString betragstring = QString("%1").arg(betrag, 0, 'f', 0);
     betragstring = betragstring.rightJustified(10, '0' );
+
     QString vesrcode = "01"+betragstring;
     QString R1 = 0;
     int i;
+    int Rbb;
     QStringList tmplist(vesrcode.split(""));
-    for(i = 0; i < vesrcode.length(); i++ )				//Schleife entsprechend der Anzahl Ziffer
+    for(i = 1; i <= vesrcode.length(); i++ )				//Schleife entsprechend der Anzahl Ziffer
     {	
-		int Rbb = R1.toInt() + tmplist[i].toInt();		//Rest plus entspr. Ziffer - Ganzzahlen
+		Rbb = R1.toInt() + tmplist[i].toInt();		//Rest plus entspr. Ziffer - Ganzzahlen
 		R1 = vesrarray[Rbb % 10];				//Modulo10 Algorithmus abarbeiten
     }
-    QString P1 = QString("%1").arg((10 - R1.toInt()) % 10, 10, 0);
+    QString P1 = QString("%1").arg((10 - R1.toInt()) % 10, 0, 10);
     
     QString refnr = txtdoccount->text().right(8);
     refnr = refnr.rightJustified(15, '0', TRUE);
     
     QStringList tmplist2(refnr.split(""));
     QString R2 = 0;
-    for (i = 0; i < refnr.length(); i++ )			//Schleife entsprechend der Anzahl Ziffer	
+    for (i = 1; i <= refnr.length(); i++ )			//Schleife entsprechend der Anzahl Ziffer	
     {	
 		int Rpr = R2.toInt() + tmplist2[i].toInt();	//Rest plus entspr. Ziffer - Ganzzahlen
 		R2 = vesrarray[Rpr % 10];			//Modulo10 Algorithmus abarbeiten
     }
-    QString P2 = QString("%1").arg((10 - R2.toInt()) % 10, 10, 0);
+    QString P2 = QString("%1").arg((10 - R2.toInt()) % 10, 0, 10);
     
     returnstrlist.append(refnr.mid(0, 1) +" "+refnr.mid(1, 5) +" "+refnr.mid(6, 5) +" "+refnr.mid(11, 5) + P2.simplified());
     

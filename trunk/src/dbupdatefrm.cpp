@@ -19,7 +19,7 @@ int dbupdatefrm::init()
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
 	QString cfgdbver;
-	newdbver = "1.4.0.1";
+	newdbver = "1.4.0.2";
 	QSqlQuery query ( "SELECT value FROM maincfgtab WHERE var = 'dbversion';");
 	if(query.isActive())
 	{
@@ -48,7 +48,11 @@ int dbupdatefrm::init()
 
 	QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
 	query5.next();
-	if(query5.value(2) == "NO")
+	if(query5.value(2).toString() == "NO")
+	  retrcode = 1;
+
+	QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
+	if(query6.size() != 1)
 	  retrcode = 1;
 
 	return retrcode;
@@ -57,7 +61,7 @@ int dbupdatefrm::init()
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(5);
+	    progbar->setMaximum(6);
 
 	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	    if(query1.size() !=1 )
@@ -81,11 +85,17 @@ void dbupdatefrm::check_db_structure()
 	    
 		QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
 		query5.next();
-		if(query5.value(2) == "NO")
+		if(query5.value(2).toString() == "NO")
 			update_db_structure("docpositions");
 		progbar->setValue(5);
+
+		QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
+		if(query6.size() != 1)
+			update_db_structure("sys_vesr");
+
+		progbar->setValue(6);
 	    
-	QSqlQuery query6(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+	QSqlQuery query7(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
 	QMessageBox::information( 0, "DB update..." , "Update completed." );
 	this->accept();
 }
@@ -141,5 +151,9 @@ void dbupdatefrm::update_db_structure(QString section)
 				QSqlQuery query17("ALTER TABLE procedureorders MODIFY UNIT text;");
 				QSqlQuery query18("ALTER TABLE procedureorders MODIFY PRICE float;");
 				QSqlQuery query19("ALTER TABLE procedureorders MODIFY VAT float;");
+			}
+			else if(section == "sys_vesr")
+			{
+				QSqlQuery query1(QString("INSERT INTO `templatestab` VALUES ('','sys_vesr','VESR default Template (A4)','\\documentclass[a4paper,10pt]{report}\n\n% Title Page\n\\title{ESR}\n\\author{procopio.ch}\n\n\\usepackage{textpos}\n\\usepackage {multirow}\n\\usepackage{helvet}\n\\usepackage[T1]{fontenc}\n\\usepackage{ocr}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=6mm,right=6mm,top=18.5cm,bottom=6mm]{geometry}\n\n\\newcommand\\topboxX{0mm} \\newcommand\\topboxY{0mm}\n\\newcommand\\topboxW{50mm} \\newcommand\\topboxH{40mm}\n\\textblockorigin{10mm}{10mm}\n\\TPGrid[1mm,1mm]\n\n\\begin{document}\n\\sffamily\n\\begin{textblock*}{\\topboxH}(0,12mm)%\n    \\parbox[t]{\\topboxW}{+++COMPANY+++}\n\\end{textblock*}\n\n\\begin{textblock*}{\\topboxH}(55mm,12mm)%\n    \\parbox[t]{\\topboxW}{+++COMPANY+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(110mm,32mm)\n    \\parbox[t]{9cm}{\\ocrfamily\\fontsize{10pt}{9.5pt}\\selectfont+++VESR1+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(20mm,38mm)\n    \\parbox[t]{40mm}{\\flushleft{\\small{+++TNR+++}}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(0,45mm)\n    \\parbox[t]{33mm}{\\flushright{\\ocrfamily+++AMOUNT+++}}\n\\end{textblock*}\n\\begin{textblock*}{10mm}(10mm,45mm)\n    \\parbox[t]{35mm}{\\flushright{\\ocrfamily+++AMOUNTCENTS+++}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(57mm,45mm)\n    \\parbox[t]{33mm}{\\flushright{\\ocrfamily+++AMOUNT+++}}\n\\end{textblock*}\n\\begin{textblock*}{10mm}(67mm,45mm)\n    \\parbox[t]{35mm}{\\flushright{\\ocrfamily+++AMOUNTCENTS+++}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(0,60mm)%\n    \\parbox[t]{\\topboxW}{+++CUSTOMER+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(112mm,50mm)%\n    \\parbox[t]{\\topboxW}{+++CUSTOMER+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(60mm,90mm)%\n    \\parbox[t]{14cm}{\\ocrfamily+++VESR2+++}\n\\end{textblock*}\n\n\\end{document}','Administrator','2008-03-18','','0000-00-00');").replace("\\", "\\\\"));
 			}
 }
