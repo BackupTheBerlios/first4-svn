@@ -4,22 +4,22 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="" line="7471221"/>
         <source>Initializing ...</source>
         <translation>Initialisierung ...</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Initializing userdata ...</source>
         <translation>Initialisiere Benutzerdaten ...</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="" line="7471221"/>
         <source>Initializing plugins ...</source>
         <translation>Initialisiere Plugins ...</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="79"/>
+        <location filename="" line="7471221"/>
         <source>Initializing messages ...</source>
         <translation>Initialisiere Nachrichten ...</translation>
     </message>
@@ -27,38 +27,38 @@
 <context>
     <name>aboutfrm</name>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>About first4...</source>
         <translation>Über first4...</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="45"/>
+        <location filename="" line="7471221"/>
         <source>first4</source>
         <translation>first4</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="99"/>
+        <location filename="" line="7471221"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="92"/>
+        <location filename="" line="7471221"/>
         <source>first4: Orlando Procopio
 Plugins: Alexander Saal</source>
         <translation>first4: Orlando ProcopioPlugins: Alexander Saal</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="76"/>
+        <location filename="" line="7471221"/>
         <source>&lt;a href=http:///www.procopio.ch&gt;http://www.procopio.ch&lt;/a&gt;</source>
         <translation>&lt;a href=http:///www.procopio.ch&gt;http://www.procopio.ch&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/aboutfrm.ui" line="114"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -69,42 +69,42 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>accountscomplfrm</name>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Complete payments...</source>
         <translation>Zahlung abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Complete payments:</source>
         <translation>Zahlung abschliessen:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="41"/>
+        <location filename="" line="7471221"/>
         <source>Tasks</source>
         <translation>Aufgaben</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Close checked entries</source>
         <translation>Schliesse überprüfte Einträge</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="66"/>
+        <location filename="" line="7471221"/>
         <source>Check all entries</source>
         <translation>Schliesse alle Einträge</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="79"/>
+        <location filename="" line="7471221"/>
         <source>Check and complete all entries</source>
         <translation>Überprüfe und schliesse Einträge</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="93"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountscomplfrm.ui" line="106"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -112,97 +112,97 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>accountseditfrm</name>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="33"/>
+        <location filename="" line="7471221"/>
         <source>Reference Nr.:</source>
         <translation>Referenz Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="69"/>
+        <location filename="" line="7471221"/>
         <source>Amount:</source>
         <translation>Betrag:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="292"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="111"/>
+        <location filename="" line="7471221"/>
         <source>Entry-ID:</source>
         <translation>Eintr.-ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="132"/>
+        <location filename="" line="7471221"/>
         <source>Type:</source>
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="153"/>
+        <location filename="" line="7471221"/>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="189"/>
+        <location filename="" line="7471221"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="210"/>
+        <location filename="" line="7471221"/>
         <source>Code:</source>
         <translation>Code:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="232"/>
+        <location filename="" line="7471221"/>
         <source>Income</source>
         <translation>Einnahmen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="237"/>
+        <location filename="" line="7471221"/>
         <source>Expenditure</source>
         <translation>Ausgaben</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="256"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="308"/>
+        <location filename="" line="7471221"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="321"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="337"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="206"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="207"/>
+        <location filename="" line="7471221"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="208"/>
+        <location filename="" line="7471221"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="209"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountseditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
@@ -210,292 +210,292 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>accountsfrm</name>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Browse accounts...</source>
         <translation>Durchsuche Konten...</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="58"/>
+        <location filename="" line="7471221"/>
         <source>No details</source>
         <translation>Keine Details</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="576"/>
+        <location filename="" line="7471221"/>
         <source>Overview</source>
         <translation>Übersicht</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="804"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Saldo:</source>
         <translation>Saldo:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="238"/>
+        <location filename="" line="7471221"/>
         <source>Incomes:</source>
         <translation>Einnahmen:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="280"/>
+        <location filename="" line="7471221"/>
         <source>Expenditures:</source>
         <translation>Ausgaben:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="299"/>
+        <location filename="" line="7471221"/>
         <source>Account overview</source>
         <translation>Konto übersicht</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="462"/>
+        <location filename="" line="7471221"/>
         <source>Account-Nr.:</source>
         <translation>Konto-Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="606"/>
+        <location filename="" line="7471221"/>
         <source>Currency</source>
         <translation>Währung</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="534"/>
+        <location filename="" line="7471221"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="556"/>
+        <location filename="" line="7471221"/>
         <source>Bank:</source>
         <translation>Bank:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="581"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="586"/>
+        <location filename="" line="7471221"/>
         <source>name</source>
         <translation>name</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="591"/>
+        <location filename="" line="7471221"/>
         <source>AccountNr</source>
         <translation>KontoNr</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="596"/>
+        <location filename="" line="7471221"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="601"/>
+        <location filename="" line="7471221"/>
         <source>Clearing</source>
         <translation>BLZ</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="611"/>
+        <location filename="" line="7471221"/>
         <source>Permissions</source>
         <translation>Berechtigungen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="775"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="787"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="82"/>
+        <location filename="" line="7471221"/>
         <source>Accounts</source>
         <translation>Konten</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="101"/>
+        <location filename="" line="7471221"/>
         <source>Incomes</source>
         <translation>Einnahmen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="105"/>
+        <location filename="" line="7471221"/>
         <source>Expenditures</source>
         <translation>Ausgaben</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="96"/>
+        <location filename="" line="7471221"/>
         <source>Archiv</source>
         <translation>Archiv</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="171"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="172"/>
+        <location filename="" line="7471221"/>
         <source>RefNr.</source>
         <translation>RefNr.</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="173"/>
+        <location filename="" line="7471221"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="174"/>
+        <location filename="" line="7471221"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="175"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="176"/>
+        <location filename="" line="7471221"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="144"/>
+        <location filename="" line="7471221"/>
         <source>Account</source>
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="145"/>
+        <location filename="" line="7471221"/>
         <source>Account-Nr.</source>
         <translation>Konto-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="177"/>
+        <location filename="" line="7471221"/>
         <source>ClientID</source>
         <translation>KundenID</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="540"/>
+        <location filename="" line="7471221"/>
         <source>&amp;New Entry</source>
         <translation>&amp;Neuer Eintrag</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="544"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit Entry</source>
         <translation>Eintrag &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="548"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="562"/>
+        <location filename="" line="7471221"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="587"/>
+        <location filename="" line="7471221"/>
         <source>Edit Entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="606"/>
+        <location filename="" line="7471221"/>
         <source>Delete Entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="606"/>
+        <location filename="" line="7471221"/>
         <source>Delete entry %1 ?</source>
         <translation>Lösche Eintrag %1 ?</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="643"/>
+        <location filename="" line="7471221"/>
         <source>Search entries, who can be completed in account &apos;%1&apos;...</source>
         <translation>Suche Einträge die in Konto &apos;%1&apos; abgeschlossen werden können...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="661"/>
+        <location filename="" line="7471221"/>
         <source>Eintries will be completed...</source>
         <translation>Einträge werden abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="710"/>
+        <location filename="" line="7471221"/>
         <source>Save file as...</source>
         <translation>Speichere Datei unter...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="712"/>
+        <location filename="" line="7471221"/>
         <source>CSV-File (*.csv)</source>
         <translation>CSV-Datei (*.csv)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="720"/>
+        <location filename="" line="7471221"/>
         <source>Data will be exported...</source>
         <translation>Daten werden exportiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="744"/>
+        <location filename="" line="7471221"/>
         <source>Open File...</source>
         <translation>Öffne Datei...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="746"/>
+        <location filename="" line="7471221"/>
         <source>ESR-File (*.*)</source>
         <translation>ESR-Datei (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="752"/>
+        <location filename="" line="7471221"/>
         <source>Data will be imported...</source>
         <translation>Daten werden importiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="785"/>
+        <location filename="" line="7471221"/>
         <source>Unknow</source>
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="795"/>
+        <location filename="" line="7471221"/>
         <source>Post office taxes: %1</source>
         <translation>Postgebühren: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="877"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="888"/>
+        <location filename="" line="7471221"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="896"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="512"/>
+        <location filename="" line="7471221"/>
         <source>Clearing:</source>
         <translation>BLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="797"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="779"/>
+        <location filename="" line="7471221"/>
         <source>Payment for Invoice: </source>
         <translation>Bezahlung für Rechnung: </translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="863"/>
+        <location filename="" line="7471221"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="911"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -503,32 +503,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>accountsimpexpfrm</name>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Data Import / Export</source>
         <translation>Daten Import / Export</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="40"/>
+        <location filename="" line="7471221"/>
         <source>Import ESR-File</source>
         <translation>Importiere ESR-Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Export to CSV-File</source>
         <translation>Exportiere CSV-Fatei</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="67"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="80"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Next</source>
         <translation>&amp;Weiter</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsimpexpfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Account import &amp; export...</source>
         <translation>Konten import &amp; export...</translation>
     </message>
@@ -536,497 +536,447 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addrfrm</name>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="358"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmations</source>
         <translation>Auftragsbestätigungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="373"/>
+        <location filename="" line="7471221"/>
         <source>Offer %1 - %2</source>
         <translation>Offerte %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="379"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmation %1 - %2</source>
         <translation>Auftragsbestätigung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="385"/>
+        <location filename="" line="7471221"/>
         <source>Deliverynote %1 - %2</source>
         <translation>Lieferschein %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="397"/>
+        <location filename="" line="7471221"/>
         <source>Paid </source>
         <translation>Bezahlt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="405"/>
+        <location filename="" line="7471221"/>
         <source>Pendent</source>
         <translation>Pendent</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="407"/>
+        <location filename="" line="7471221"/>
         <source>Completed</source>
         <translation>Abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="411"/>
+        <location filename="" line="7471221"/>
         <source>Invoice %1 - %2</source>
         <translation>Rechnung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="430"/>
+        <location filename="" line="7471221"/>
         <source>Status: %1</source>
         <translation>Status: %1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Incoming orders</source>
         <translation>Eingehende Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="447"/>
+        <location filename="" line="7471221"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="526"/>
+        <location filename="" line="7471221"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="527"/>
+        <location filename="" line="7471221"/>
         <source>New Label:</source>
         <translation>Neue Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="638"/>
+        <location filename="" line="7471221"/>
         <source>Delete %1 %2 %3?</source>
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="790"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="829"/>
+        <location filename="" line="7471221"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="829"/>
+        <location filename="" line="7471221"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="849"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="852"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="892"/>
+        <location filename="" line="7471221"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="895"/>
+        <location filename="" line="7471221"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Directories...</source>
         <translation>Adressbücher...</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="63"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="917"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="131"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="153"/>
+        <location filename="" line="7471221"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="190"/>
+        <location filename="" line="7471221"/>
         <source>ID:</source>
         <translation>ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="197"/>
+        <location filename="" line="7471221"/>
         <source>Address-ID:</source>
         <translation>Adress-ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="253"/>
+        <location filename="" line="7471221"/>
         <source>Company:</source>
         <translation>Firma:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="260"/>
+        <location filename="" line="7471221"/>
         <source>Mr. / Ms.:</source>
         <translation>Anschrift:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="277"/>
+        <location filename="" line="7471221"/>
         <source>Firstname:</source>
         <translation>Vorname:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="284"/>
+        <location filename="" line="7471221"/>
         <source>Lastname:</source>
         <translation>Nachname:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="310"/>
+        <location filename="" line="7471221"/>
         <source>PO-Box:</source>
         <translation>Postfach:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="327"/>
+        <location filename="" line="7471221"/>
         <source>Street &amp; Nr.:</source>
         <translation>Strasse Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="334"/>
+        <location filename="" line="7471221"/>
         <source>ZIP, Location:</source>
         <translation>PLZ, Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="371"/>
+        <location filename="" line="7471221"/>
         <source>Communication</source>
         <translation>Kommunikation</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="408"/>
+        <location filename="" line="7471221"/>
         <source>Telefon P:</source>
         <translation>Telefon P:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="415"/>
+        <location filename="" line="7471221"/>
         <source>Fax B:</source>
         <translation>Fax G:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="422"/>
+        <location filename="" line="7471221"/>
         <source>Telefon B:</source>
         <translation>Telefon G:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="429"/>
+        <location filename="" line="7471221"/>
         <source>Mobile:</source>
         <translation>Mobile:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="436"/>
+        <location filename="" line="7471221"/>
         <source>Fax P:</source>
         <translation>Fax P:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="443"/>
+        <location filename="" line="7471221"/>
         <source>Telefon dir. B:</source>
         <translation>Telefon dir. G:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="450"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 1:</source>
         <translation>E-Mail 1:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="471"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 2:</source>
         <translation>E-Mail 2:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="478"/>
+        <location filename="" line="7471221"/>
         <source>Website:</source>
         <translation>Webseite:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="485"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 3:</source>
         <translation>E-Mail 3:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="613"/>
+        <location filename="" line="7471221"/>
         <source>Customer</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="682"/>
+        <location filename="" line="7471221"/>
         <source>Discount %:</source>
         <translation>Rabatt %:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="702"/>
+        <location filename="" line="7471221"/>
         <source>Revenue in CHF:</source>
         <translation>Umsatz in CHF:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="710"/>
+        <location filename="" line="7471221"/>
         <source>Year</source>
         <translation>Jahr</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="715"/>
+        <location filename="" line="7471221"/>
         <source>Revenue</source>
         <translation>Umsatz</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="731"/>
+        <location filename="" line="7471221"/>
         <source>Ulterior Data</source>
         <translation>Zusätzliche Angaben</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="872"/>
+        <location filename="" line="7471221"/>
         <source>Created:</source>
         <translation>Erstellt:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="879"/>
+        <location filename="" line="7471221"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="972"/>
+        <location filename="" line="7471221"/>
         <source>Modified:</source>
         <translation>Bearbeitet:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="993"/>
+        <location filename="" line="7471221"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="1030"/>
+        <location filename="" line="7471221"/>
         <source>Procedures</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="1129"/>
+        <location filename="" line="7471221"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="1136"/>
+        <location filename="" line="7471221"/>
         <source>Search:</source>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="799"/>
+        <location filename="" line="7471221"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="728"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="628"/>
+        <location filename="" line="7471221"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../ui/addrfrm.ui" line="1401"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="752"/>
+        <location filename="" line="7471221"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="46"/>
-        <source>Lastname</source>
-        <translation>Nachname</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="47"/>
-        <source>Firstname</source>
-        <translation>Vorname</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="48"/>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="80"/>
-        <source>Clientdata</source>
-        <translation>Kundendaten</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="81"/>
-        <source>docID</source>
-        <translation>docID</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="82"/>
-        <source>data</source>
-        <translation>data</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="83"/>
-        <source>status</source>
-        <translation>status</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="88"/>
-        <source>State</source>
-        <translation>Status</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="89"/>
-        <source>Description</source>
-        <translation>Beschreibung</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrfrm.cpp" line="90"/>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <location filename="../../ui/addrfrm.ui" line="1324"/>
+        <location filename="" line="7471221"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="753"/>
+        <location filename="" line="7471221"/>
         <source>Salutation</source>
         <translation>Anrede</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="754"/>
+        <location filename="" line="7471221"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="755"/>
+        <location filename="" line="7471221"/>
         <source>P.O. Box</source>
         <translation>Postfach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="756"/>
+        <location filename="" line="7471221"/>
         <source>Street \&amp; Nr.</source>
         <translation>Strasse Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="757"/>
+        <location filename="" line="7471221"/>
         <source>ZIP, Location</source>
         <translation>PLZ, Ort</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="758"/>
+        <location filename="" line="7471221"/>
         <source>Business phone</source>
         <translation>Telefon Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="759"/>
+        <location filename="" line="7471221"/>
         <source>Direct phone</source>
         <translation>Telefon direkt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="760"/>
+        <location filename="" line="7471221"/>
         <source>Business fax</source>
         <translation>Fax Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="761"/>
+        <location filename="" line="7471221"/>
         <source>Private phone</source>
         <translation>Telefon Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="762"/>
+        <location filename="" line="7471221"/>
         <source>Private fax</source>
         <translation>Fax Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="763"/>
+        <location filename="" line="7471221"/>
         <source>Mobile</source>
         <translation>Mobile</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="764"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 1</source>
         <translation>E-Mail 1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="765"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 2</source>
         <translation>E-Mail 2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="766"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 3</source>
         <translation>E-Mail 3</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="767"/>
+        <location filename="" line="7471221"/>
         <source>Website</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="779"/>
+        <location filename="" line="7471221"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="780"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="786"/>
+        <location filename="" line="7471221"/>
         <source>Created</source>
         <translation>Erstellt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="786"/>
+        <location filename="" line="7471221"/>
         <source>Modified</source>
         <translation>Bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="974"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -1034,57 +984,57 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>addrselectfrm</name>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="72"/>
+        <location filename="" line="7471221"/>
         <source>Search:</source>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="79"/>
+        <location filename="" line="7471221"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="117"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="133"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="155"/>
+        <location filename="" line="7471221"/>
         <source>Lastname</source>
         <translation>Nachname</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="160"/>
+        <location filename="" line="7471221"/>
         <source>Firstname</source>
         <translation>Vorname</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="165"/>
+        <location filename="" line="7471221"/>
         <source>adrcompl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="170"/>
+        <location filename="" line="7471221"/>
         <source>discount</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="212"/>
+        <location filename="" line="7471221"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
@@ -1092,519 +1042,519 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>cfgfrm</name>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="16"/>
+        <location filename="" line="7471221"/>
         <source>Settings...</source>
         <translation>Einstellungen...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4569"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3226"/>
+        <location filename="" line="7471221"/>
         <source>User</source>
         <translation>Benutzer</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="901"/>
+        <location filename="" line="7471221"/>
         <source>Administrator</source>
         <translation>Administrator</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4591"/>
+        <location filename="" line="7471221"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4604"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="176"/>
+        <location filename="" line="7471221"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="588"/>
+        <location filename="" line="7471221"/>
         <source>Change password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="199"/>
+        <location filename="" line="7471221"/>
         <source>Password was changed!</source>
         <translation>Passwort wurde geändert!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="207"/>
+        <location filename="" line="7471221"/>
         <source>Changing password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="207"/>
+        <location filename="" line="7471221"/>
         <source>Actual password wrong.</source>
         <translation>Aktuelles Passwort falsch.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="588"/>
+        <location filename="" line="7471221"/>
         <source>New password does not agree with password confirmation!</source>
         <translation>Neues Passwort und Passwortbestätigung stimmen nicht überein!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="237"/>
+        <location filename="" line="7471221"/>
         <source>Open Lang-File</source>
         <translation>Öffne Sprachdatei</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="239"/>
+        <location filename="" line="7471221"/>
         <source>Lang-File (*.qm)</source>
         <translation>Sprach-Datei (*.qm)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="263"/>
+        <location filename="" line="7471221"/>
         <source>Please restart the application.</source>
         <translation>Bitte Applikation neu starten.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="267"/>
+        <location filename="" line="7471221"/>
         <source>Language-File cannot be written!</source>
         <translation>Sprachdatei kann nicht geändert werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="384"/>
+        <location filename="" line="7471221"/>
         <source>Select DB-Structurfile...</source>
         <translation>DB-Strukturdatei auswählen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="386"/>
+        <location filename="" line="7471221"/>
         <source>DB-Structurfile (*.fdb)</source>
         <translation>DB-Strukturdatei (*.fdb)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="411"/>
+        <location filename="" line="7471221"/>
         <source>Update Database...</source>
         <translation>Datenbankupdate...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="411"/>
+        <location filename="" line="7471221"/>
         <source>Update Database?</source>
         <translation>Datenbank updaten?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="423"/>
+        <location filename="" line="7471221"/>
         <source>Update...</source>
         <translation>Update...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="423"/>
+        <location filename="" line="7471221"/>
         <source>Database was updated.</source>
         <translation>Datenbunk wurde upgedatet.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1119"/>
+        <location filename="" line="7471221"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="509"/>
+        <location filename="" line="7471221"/>
         <source>User name:</source>
         <translation>Benutzername:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="520"/>
+        <location filename="" line="7471221"/>
         <source>New User...</source>
         <translation>Neuer Benutzer...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="520"/>
+        <location filename="" line="7471221"/>
         <source>User already exists!</source>
         <translation>Benutzer existiert bereits!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="583"/>
+        <location filename="" line="7471221"/>
         <source>Change personal data...</source>
         <translation>Persönlich Daten anpassen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="583"/>
+        <location filename="" line="7471221"/>
         <source>Personal data successfully changed.</source>
         <translation>Persönliche Daten erfolgreich gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="622"/>
+        <location filename="" line="7471221"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="624"/>
+        <location filename="" line="7471221"/>
         <source>Data &amp; Stock</source>
         <translation>Daten &amp; Lager</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="626"/>
+        <location filename="" line="7471221"/>
         <source>Inventory</source>
         <translation>Inventar</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="628"/>
+        <location filename="" line="7471221"/>
         <source>Purchase orders</source>
         <translation>Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="630"/>
+        <location filename="" line="7471221"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="632"/>
+        <location filename="" line="7471221"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="634"/>
+        <location filename="" line="7471221"/>
         <source>Accounts</source>
         <translation>Konti</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="636"/>
+        <location filename="" line="7471221"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="35"/>
+        <location filename="" line="7471221"/>
         <source>General</source>
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="738"/>
+        <location filename="" line="7471221"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="738"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="738"/>
+        <location filename="" line="7471221"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="790"/>
+        <location filename="" line="7471221"/>
         <source>General message</source>
         <translation>Allgemeine Nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="790"/>
+        <location filename="" line="7471221"/>
         <source>Stockmessage</source>
         <translation>Lagermeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="790"/>
+        <location filename="" line="7471221"/>
         <source>Ordermessage</source>
         <translation>Auftragsmeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="790"/>
+        <location filename="" line="7471221"/>
         <source>Inc/Exp-Message</source>
         <translation>Ein/Aus-Meldungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="993"/>
+        <location filename="" line="7471221"/>
         <source>Permissions...</source>
         <translation>Berechtigungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1288"/>
+        <location filename="" line="7471221"/>
         <source>New settings are saved and now active.</source>
         <translation>Neue Einstellungen wurden gespeichert und sind nun aktiv.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1003"/>
+        <location filename="" line="7471221"/>
         <source>New Directory</source>
         <translation>New Adressbuch</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1005"/>
+        <location filename="" line="7471221"/>
         <source>New Datatable</source>
         <translation>Neue Datentabelle</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1007"/>
+        <location filename="" line="7471221"/>
         <source>New Account</source>
         <translation>Neues Konto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1018"/>
+        <location filename="" line="7471221"/>
         <source>Rename &apos;%1&apos;</source>
         <translation>&apos;%1&apos; umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1020"/>
+        <location filename="" line="7471221"/>
         <source>Delete &apos;%1&apos;</source>
         <translation>&apos;%1&apos; löschen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1034"/>
+        <location filename="" line="7471221"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1082"/>
+        <location filename="" line="7471221"/>
         <source>Accountname:</source>
         <translation>Kontoname:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1120"/>
+        <location filename="" line="7471221"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1125"/>
+        <location filename="" line="7471221"/>
         <source>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1131"/>
+        <location filename="" line="7471221"/>
         <source>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `datatabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1137"/>
+        <location filename="" line="7471221"/>
         <source>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
         <translation>UPDATE `accounttab` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1552"/>
+        <location filename="" line="7471221"/>
         <source>Deleting...</source>
         <translation>Löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1150"/>
+        <location filename="" line="7471221"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation>&apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1195"/>
+        <location filename="" line="7471221"/>
         <source>Docfolder...</source>
         <translation>Dokumentordner...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1288"/>
+        <location filename="" line="7471221"/>
         <source>Own data...</source>
         <translation>Eingene Daten...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="402"/>
+        <location filename="" line="7471221"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="426"/>
+        <location filename="" line="7471221"/>
         <source>Language-File:</source>
         <translation>Sprach-Datei:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3976"/>
+        <location filename="" line="7471221"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="126"/>
+        <location filename="" line="7471221"/>
         <source>Current Database</source>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1035"/>
+        <location filename="" line="7471221"/>
         <source>DB-Version:</source>
         <translation>DB-Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="188"/>
+        <location filename="" line="7471221"/>
         <source>DB-Server:</source>
         <translation>DB-Server:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="959"/>
+        <location filename="" line="7471221"/>
         <source>DB-Name:</source>
         <translation>DB-Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1199"/>
+        <location filename="" line="7471221"/>
         <source>First-Version:</source>
         <translation>First-Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="47"/>
+        <location filename="" line="7471221"/>
         <source>Databases</source>
         <translation>Datenbanken</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2764"/>
+        <location filename="" line="7471221"/>
         <source>Confirmation:</source>
         <translation>Bestätigung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="611"/>
+        <location filename="" line="7471221"/>
         <source>Old Password:</source>
         <translation>Altes Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="586"/>
+        <location filename="" line="7471221"/>
         <source>New Password:</source>
         <translation>Neues Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="504"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Change</source>
         <translation>Ä&amp;ndern</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="917"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Database</source>
         <translation>&amp;Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1175"/>
+        <location filename="" line="7471221"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="935"/>
+        <location filename="" line="7471221"/>
         <source>Current database</source>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="997"/>
+        <location filename="" line="7471221"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1068"/>
+        <location filename="" line="7471221"/>
         <source>DB-Updates</source>
         <translation>DB-Updates</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1120"/>
+        <location filename="" line="7471221"/>
         <source>File:</source>
         <translation>Datei:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1092"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Update</source>
         <translation>&amp;Update</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1257"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Users</source>
         <translation>&amp;Benutzer</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2714"/>
+        <location filename="" line="7471221"/>
         <source>ID:</source>
         <translation>ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1274"/>
+        <location filename="" line="7471221"/>
         <source>(Leave fields empty to
 take current password!)</source>
         <translation>(Felder leer lassen um
 aktuelles Passwort zu behalten!)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2676"/>
+        <location filename="" line="7471221"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2949"/>
+        <location filename="" line="7471221"/>
         <source>Users:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1300"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Contact</source>
         <translation>&amp;Kontakt</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1324"/>
+        <location filename="" line="7471221"/>
         <source>Firstname:</source>
         <translation>Vorname:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1384"/>
+        <location filename="" line="7471221"/>
         <source>Lastname:</source>
         <translation>Nachname:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1419"/>
+        <location filename="" line="7471221"/>
         <source>Fullname:</source>
         <translation>Kompl.Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1359"/>
+        <location filename="" line="7471221"/>
         <source>Date of birth:</source>
         <translation>Geburtsdatum:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1448"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Privat</source>
         <translation>&amp;Privat</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1695"/>
+        <location filename="" line="7471221"/>
         <source>Street:</source>
         <translation>Strasse:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3628"/>
+        <location filename="" line="7471221"/>
         <source>ZIP:</source>
         <translation>PLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3603"/>
+        <location filename="" line="7471221"/>
         <source>Location:</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3653"/>
+        <location filename="" line="7471221"/>
         <source>Country:</source>
         <translation>Land:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1593"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Business</source>
         <translation>&amp;Geschäft</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1800"/>
+        <location filename="" line="7471221"/>
         <source>Empl. grade:</source>
         <translation>Einstel.Grad:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1825"/>
+        <location filename="" line="7471221"/>
         <source>Empl. type:</source>
         <translation>Einstel.art:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1850"/>
+        <location filename="" line="7471221"/>
         <source>Position:</source>
         <translation>Position:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1875"/>
+        <location filename="" line="7471221"/>
         <source>Org. Unit:</source>
         <translation>Abteilung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1900"/>
+        <location filename="" line="7471221"/>
         <source>Profession:</source>
         <translation>Beruf:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1667"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -1612,510 +1562,540 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PLZ:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1914"/>
+        <location filename="" line="7471221"/>
         <source>10%</source>
         <translation>10%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1919"/>
+        <location filename="" line="7471221"/>
         <source>20%</source>
         <translation>20%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1924"/>
+        <location filename="" line="7471221"/>
         <source>30%</source>
         <translation>30%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1929"/>
+        <location filename="" line="7471221"/>
         <source>40%</source>
         <translation>40%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1934"/>
+        <location filename="" line="7471221"/>
         <source>50%</source>
         <translation>50%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1939"/>
+        <location filename="" line="7471221"/>
         <source>60%</source>
         <translation>60%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1944"/>
+        <location filename="" line="7471221"/>
         <source>70%</source>
         <translation>70%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1949"/>
+        <location filename="" line="7471221"/>
         <source>80%</source>
         <translation>80%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1954"/>
+        <location filename="" line="7471221"/>
         <source>90%</source>
         <translation>90%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1959"/>
+        <location filename="" line="7471221"/>
         <source>100%</source>
         <translation>100%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1966"/>
+        <location filename="" line="7471221"/>
         <source>C&amp;ommunication</source>
         <translation>&amp;Kommunikation</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1978"/>
+        <location filename="" line="7471221"/>
         <source>Business</source>
         <translation>Geschäft</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2505"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 1:</source>
         <translation>E-Mail 1:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2430"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 2:</source>
         <translation>E-Mail 2:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2455"/>
+        <location filename="" line="7471221"/>
         <source>E-Mail 3:</source>
         <translation>E-Mail 3:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2530"/>
+        <location filename="" line="7471221"/>
         <source>VoIP:</source>
         <translation>VoIP:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2405"/>
+        <location filename="" line="7471221"/>
         <source>Pager:</source>
         <translation>Pager:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2380"/>
+        <location filename="" line="7471221"/>
         <source>Mobile:</source>
         <translation>Mobile:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2355"/>
+        <location filename="" line="7471221"/>
         <source>Fax:</source>
         <translation>Fax:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2330"/>
+        <location filename="" line="7471221"/>
         <source>Telefon:</source>
         <translation>Telefon:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2177"/>
+        <location filename="" line="7471221"/>
         <source>Tel. direct:</source>
         <translation>Tel. direkt:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2306"/>
+        <location filename="" line="7471221"/>
         <source>Privat</source>
         <translation>Privat</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2480"/>
+        <location filename="" line="7471221"/>
         <source>Website:</source>
         <translation>Webseite:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2627"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Notes</source>
         <translation>&amp;Notizen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4350"/>
+        <location filename="" line="7471221"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3026"/>
+        <location filename="" line="7471221"/>
         <source>Template:</source>
         <translation>Vorlage:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3067"/>
+        <location filename="" line="7471221"/>
         <source>Acc.Nr.</source>
         <translation>Konto-Nr.</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3456"/>
+        <location filename="" line="7471221"/>
         <source>Bank:</source>
         <translation>Bank:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3386"/>
+        <location filename="" line="7471221"/>
         <source>Clearing:</source>
         <translation>BLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3106"/>
+        <location filename="" line="7471221"/>
         <source>Curr.:</source>
         <translation>Währ.:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3164"/>
+        <location filename="" line="7471221"/>
         <source>Start ID:</source>
         <translation>Start ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3231"/>
+        <location filename="" line="7471221"/>
         <source>Read</source>
         <translation>Lesen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3236"/>
+        <location filename="" line="7471221"/>
         <source>Write</source>
         <translation>Schreiben</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4171"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Save</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4337"/>
+        <location filename="" line="7471221"/>
         <source>Templates:</source>
         <translation>Vorlagen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3753"/>
+        <location filename="" line="7471221"/>
         <source>Documents:</source>
         <translation>Dokumente:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3290"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Own data</source>
         <translation>&amp;Eigene Angaben</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3505"/>
+        <location filename="" line="7471221"/>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3558"/>
+        <location filename="" line="7471221"/>
         <source>Company:</source>
         <translation>Firma:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3302"/>
+        <location filename="" line="7471221"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3351"/>
+        <location filename="" line="7471221"/>
         <source>Account:</source>
         <translation>Konto:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3326"/>
+        <location filename="" line="7471221"/>
         <source>Usernumber:</source>
         <translation>Teilnehmernr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3479"/>
+        <location filename="" line="7471221"/>
         <source>00-000000-0; </source>
         <translation>00-000000-0;</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4136"/>
+        <location filename="" line="7471221"/>
         <source>Days of grace:</source>
         <translation>Zahlungsfrist:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3823"/>
+        <location filename="" line="7471221"/>
         <source>Doc. Prefix:</source>
         <translation>Dok.Vorlage:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="329"/>
+        <location filename="" line="7471221"/>
         <source>Plugin</source>
         <translation>Plugin</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="353"/>
+        <location filename="" line="7471221"/>
         <source>Plugindirectory:</source>
         <translation>Pluginverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="604"/>
+        <location filename="" line="7471221"/>
         <source>Delete User...</source>
         <translation>User löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="604"/>
+        <location filename="" line="7471221"/>
         <source>Delete User &apos;%1&apos; ?</source>
         <translation>Lösche User &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="615"/>
+        <location filename="" line="7471221"/>
         <source>Administrator cannot be deleted!</source>
         <translation>Administrator kann nicht gelöscht werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1368"/>
+        <location filename="" line="7471221"/>
         <source>Unable to read settings from database!</source>
         <translation>Fehler beim lesen der Einstellungen von der Datenbank!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1418"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation>Kann Konfigurationsdatei nicht schreiben.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1475"/>
+        <location filename="" line="7471221"/>
         <source>Application...</source>
         <translation>Programm...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1477"/>
+        <location filename="" line="7471221"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4054"/>
+        <location filename="" line="7471221"/>
         <source>TEX -&gt; DVI:</source>
         <translation>TEX -&gt; DVI:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4041"/>
+        <location filename="" line="7471221"/>
         <source>DVI Viewer:</source>
         <translation>DVI Viewer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4028"/>
+        <location filename="" line="7471221"/>
         <source>DVI -&gt; PS:</source>
         <translation>DVI -&gt; PS:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3905"/>
+        <location filename="" line="7471221"/>
         <source>Print:</source>
         <translation>Drucken:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3950"/>
+        <location filename="" line="7471221"/>
         <source>Document creating and printing</source>
         <translation>Dokument erstellen und ausdrucken</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4015"/>
+        <location filename="" line="7471221"/>
         <source>%1 = Input file, %2 = Output file</source>
         <translation>%1 = Eingabedatei, %2 = Ausgabedatei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="772"/>
+        <location filename="" line="7471221"/>
         <source>%1 DVI-File</source>
         <translation>%1 DVI-Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4002"/>
+        <location filename="" line="7471221"/>
         <source>%1 = PS-File, %2 = Printer</source>
         <translation>%1 = PS-Datei, %2 = Drucker</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1442"/>
+        <location filename="" line="7471221"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3211"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3989"/>
+        <location filename="" line="7471221"/>
         <source>%1 = DVI-File</source>
         <translation>%1 = DVI-Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1250"/>
+        <location filename="" line="7471221"/>
         <source>Build:</source>
         <translation>Build:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="419"/>
+        <location filename="" line="7471221"/>
         <source>Error during update...</source>
         <translation>Fehler beim updaten...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1107"/>
+        <location filename="" line="7471221"/>
         <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
         <translation>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="62"/>
-        <source>Resources</source>
-        <translation>Ressourcen</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="63"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="64"/>
-        <source>name</source>
-        <translation>name</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="65"/>
-        <source>users</source>
-        <translation>users</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="66"/>
-        <source>details</source>
-        <translation>details</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="738"/>
+        <location filename="" line="7471221"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1220"/>
+        <location filename="" line="7471221"/>
         <source>Documents settings...</source>
         <translation>Dokumenteneinstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1588"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load templates...</source>
         <translation>Kann Template nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1552"/>
+        <location filename="" line="7471221"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation>Template &apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1559"/>
+        <location filename="" line="7471221"/>
         <source>Template not deleted...</source>
         <translation>Template nicht gelöscht...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1605"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Template-Beschreibung nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="676"/>
+        <location filename="" line="7471221"/>
         <source>Tools (Local)</source>
         <translation>Tools (Lokal)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2977"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Resources</source>
         <translation>&amp;Ressourcen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3250"/>
+        <location filename="" line="7471221"/>
         <source>Resources:</source>
         <translation>Ressourcen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3689"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Document settings</source>
         <translation>&amp;Dokumenten Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3701"/>
+        <location filename="" line="7471221"/>
         <source>Path</source>
         <translation>Pfad</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3858"/>
+        <location filename="" line="7471221"/>
         <source>General informations:</source>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3868"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Settings &amp;&amp; Tools</source>
         <translation>&amp;Einstellungen &amp;&amp; Tools</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3880"/>
+        <location filename="" line="7471221"/>
         <source>Tools (Global)</source>
         <translation>Tools (Global)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4112"/>
+        <location filename="" line="7471221"/>
         <source>General Settings</source>
         <translation>Allgemeine Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4209"/>
+        <location filename="" line="7471221"/>
         <source>Default Currency:</source>
         <translation>Standard Währung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4216"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Templates</source>
         <translation>&amp;Vorlagen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4229"/>
+        <location filename="" line="7471221"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4234"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4239"/>
+        <location filename="" line="7471221"/>
         <source>template_id</source>
         <translation>template_id</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4362"/>
+        <location filename="" line="7471221"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4375"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4401"/>
+        <location filename="" line="7471221"/>
         <source>Created:</source>
         <translation>Erstellt:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4414"/>
+        <location filename="" line="7471221"/>
         <source>Last modification:</source>
         <translation>Letzte Bearbeitung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4537"/>
+        <location filename="" line="7471221"/>
         <source>Show system-templates</source>
         <translation>Systemvorlagen anzeigen</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Unlock</source>
+        <translation>Entsperren</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Locked entries by users:</source>
+        <translation>Gesperrt durch Benutzer:</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Entry</source>
+        <translation>Eintrag</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Timestamp</source>
+        <translation>Zeitstempel</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>&amp;Unlock</source>
+        <translation>&amp;Entsperren</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>&amp;Refresh</source>
+        <translation>&amp;Aktualisieren</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Can&apos;t load userlocks...</source>
+        <translation>Kann Benutzersperrungen nicht laden...</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Unlocking...</source>
+        <translation>Entsperren...</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>Do you want to unlock the selected entry?</source>
+        <translation>Möchten Sie den markierten Eintrag entsperren?</translation>
     </message>
 </context>
 <context>
     <name>cmntfrm</name>
     <message>
-        <location filename="../../ui/cmntfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Comments...</source>
         <translation>Kommentare...</translation>
     </message>
     <message>
-        <location filename="../../ui/cmntfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/cmntfrm.ui" line="54"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -2123,212 +2103,212 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>dataeditfrm</name>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="48"/>
+        <location filename="" line="7471221"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="251"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Check Address</source>
         <translation>&amp;Adresse überprüfen</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="254"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Add Supplier</source>
         <translation>&amp;Lieferant hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="257"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Supplier</source>
         <translation>Lieferant &amp;entfernen</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>New entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Created:</source>
         <translation>Erstellt:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="734"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="54"/>
+        <location filename="" line="7471221"/>
         <source>Modified:</source>
         <translation>Bearbeitet:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="80"/>
+        <location filename="" line="7471221"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="126"/>
+        <location filename="" line="7471221"/>
         <source>Profit:</source>
         <translation>Gewinn:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="721"/>
+        <location filename="" line="7471221"/>
         <source>Stock:</source>
         <translation>Lager:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="170"/>
+        <location filename="" line="7471221"/>
         <source>Min. quantity:</source>
         <translation>Min. Lagermenge:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="183"/>
+        <location filename="" line="7471221"/>
         <source>Order quantity:</source>
         <translation>Bestellmenge:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="196"/>
+        <location filename="" line="7471221"/>
         <source>Margin:</source>
         <translation>Marge:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="209"/>
+        <location filename="" line="7471221"/>
         <source>Unit:</source>
         <translation>Einh.:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="222"/>
+        <location filename="" line="7471221"/>
         <source>Purchase price:</source>
         <translation>Eink. Preis:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="235"/>
+        <location filename="" line="7471221"/>
         <source>Sell price:</source>
         <translation>Verk. Preis:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="274"/>
+        <location filename="" line="7471221"/>
         <source>CHF</source>
         <translation>CHF</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="287"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="341"/>
+        <location filename="" line="7471221"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="346"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="351"/>
+        <location filename="" line="7471221"/>
         <source>Purchase price</source>
         <translation>Eink. Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="356"/>
+        <location filename="" line="7471221"/>
         <source>Part number</source>
         <translation>Artikelnr,</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="609"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="370"/>
+        <location filename="" line="7471221"/>
         <source>add. Informations</source>
         <translation>zus. Informationen</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="392"/>
+        <location filename="" line="7471221"/>
         <source>Sales date:</source>
         <translation>Verkaufsdatum:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="405"/>
+        <location filename="" line="7471221"/>
         <source>State:</source>
         <translation>Status:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="418"/>
+        <location filename="" line="7471221"/>
         <source>VAT:</source>
         <translation>MwSt.:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="431"/>
+        <location filename="" line="7471221"/>
         <source>Weight:</source>
         <translation>Gewicht:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="444"/>
+        <location filename="" line="7471221"/>
         <source>kg</source>
         <translation>kg</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="457"/>
+        <location filename="" line="7471221"/>
         <source>Package:</source>
         <translation>Verpackung:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="490"/>
+        <location filename="" line="7471221"/>
         <source>Stock position:</source>
         <translation>Lager position:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="529"/>
+        <location filename="" line="7471221"/>
         <source>Active</source>
         <translation>Aktiv</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="535"/>
+        <location filename="" line="7471221"/>
         <source>Web</source>
         <translation>Web</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="547"/>
+        <location filename="" line="7471221"/>
         <source>Web-Name:</source>
         <translation>Web-Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="590"/>
+        <location filename="" line="7471221"/>
         <source>Web-Image:</source>
         <translation>Web-Bild:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="603"/>
+        <location filename="" line="7471221"/>
         <source>Web-URL:</source>
         <translation>Web-URL:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="682"/>
+        <location filename="" line="7471221"/>
         <source>Label:</source>
         <translation>Definition:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="695"/>
+        <location filename="" line="7471221"/>
         <source>Entry-ID:</source>
         <translation>Eintr.-ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="708"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/dataeditfrm.ui" line="797"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/dataeditfrm.cpp" line="175"/>
+        <location filename="" line="7471221"/>
         <source>Error during update...</source>
         <translation>Fehler beim updaten...</translation>
     </message>
@@ -2336,102 +2316,102 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="159"/>
+        <location filename="" line="7471221"/>
         <source>Save changes...</source>
         <translation>Ändrungen speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="159"/>
+        <location filename="" line="7471221"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Stock / Datatables</source>
         <translation>Lager / Datentabellen</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="136"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="162"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="175"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="236"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Save</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="288"/>
+        <location filename="" line="7471221"/>
         <source>Datatable:</source>
         <translation>Datentabelle:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="486"/>
+        <location filename="" line="7471221"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="486"/>
+        <location filename="" line="7471221"/>
         <source>Delete entry %1?</source>
         <translation>Eintrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="571"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="580"/>
+        <location filename="" line="7471221"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="595"/>
+        <location filename="" line="7471221"/>
         <source>Delete &amp;Row</source>
         <translation>&amp;Zeile löschen</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="608"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="614"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="592"/>
+        <location filename="" line="7471221"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../../ui/datafrm.ui" line="69"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="564"/>
+        <location filename="" line="7471221"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="587"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="1112"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -2439,37 +2419,37 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>dbupdatefrm</name>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Database update...</source>
         <translation>Datenbank update...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Proceed</source>
         <translation>&amp;Weiter</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="41"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>The database must be updated.</source>
         <translation>Ein Datenbankupdate wird benötigt.</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Current version:</source>
         <translation>Aktuelle Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="86"/>
+        <location filename="" line="7471221"/>
         <source>New Version:</source>
         <translation>Neue Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="112"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
@@ -2477,32 +2457,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>dbwizzardfrm</name>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="66"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Next &gt;&gt;</source>
         <translation>&amp;Weiter &gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="364"/>
+        <location filename="" line="7471221"/>
         <source>Unable to connect to server!</source>
         <translation>Verbindung zum Server nicht möglich!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="220"/>
+        <location filename="" line="7471221"/>
         <source>Error when storing the server list!</source>
         <translation>Fehler beim Speichern der Serverliste!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="481"/>
+        <location filename="" line="7471221"/>
         <source>Database successfully created.</source>
         <translation>Datenbank erfolgreich erstellt.</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Database Connection-Wizzard...</source>
         <translation>Datenbank Wizzard...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2510,37 +2490,37 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;first4 Datenbank Wizzard:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="82"/>
+        <location filename="" line="7471221"/>
         <source>&lt;&lt; &amp;Back</source>
         <translation>&lt;&lt; &amp;Zurück</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="121"/>
+        <location filename="" line="7471221"/>
         <source>New or existing database...</source>
         <translation>Neue oder bestehende Datenbank...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="134"/>
+        <location filename="" line="7471221"/>
         <source>What do you want:</source>
         <translation>Was möchten Sie:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Create a new SQLite3 database</source>
         <translation>Neue SQLite3 Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="166"/>
+        <location filename="" line="7471221"/>
         <source>Open a existing SQLite3 database</source>
         <translation>Bestehende SQLite3 Datenbank öffnen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="182"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2551,87 +2531,87 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für Einzelplatzinstallationen eignet sich besser SQLite.&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Für eine Mehrbenutzerinstallation ist besser MySQL.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="201"/>
+        <location filename="" line="7471221"/>
         <source>Create a new MySQL database</source>
         <translation>Neue MySQL Datenbank erstellen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="214"/>
+        <location filename="" line="7471221"/>
         <source>Connect to a existing MySQL database</source>
         <translation>Verbinde zu bestehender MySQL Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1668"/>
+        <location filename="" line="7471221"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="766"/>
+        <location filename="" line="7471221"/>
         <source>Host:</source>
         <translation>Host:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="635"/>
+        <location filename="" line="7471221"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="648"/>
+        <location filename="" line="7471221"/>
         <source>3306</source>
         <translation>3306</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1185"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1492"/>
+        <location filename="" line="7471221"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="363"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Check</source>
         <translation>&amp;Check</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="543"/>
+        <location filename="" line="7471221"/>
         <source>Connect to a existing MySQL database...</source>
         <translation>Zu bestehender MySQL Datenbank verbinden...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1562"/>
+        <location filename="" line="7471221"/>
         <source>Step 1 / 2</source>
         <translation>Schritt 1 / 2</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1603"/>
+        <location filename="" line="7471221"/>
         <source>Step 2 / 2</source>
         <translation>Schritt 2 / 2</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1706"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1655"/>
+        <location filename="" line="7471221"/>
         <source>Database Version:</source>
         <translation>Datenbank Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1642"/>
+        <location filename="" line="7471221"/>
         <source>Summary:</source>
         <translation>Zusammenfassun:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1747"/>
+        <location filename="" line="7471221"/>
         <source>Step 1 / 5</source>
         <translation>Schritt 1 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="687"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2640,17 +2620,17 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben sie einen Benutzer an, dass die Bereichtigung hat Datenbanken zu erstellen.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default user: &lt;span style=&quot; font-weight:600;&quot;&gt;root&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="714"/>
+        <location filename="" line="7471221"/>
         <source>root</source>
         <translation>root</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1434"/>
+        <location filename="" line="7471221"/>
         <source>Create a new MySQL database...</source>
         <translation>Neue MySQL Datenbank erstellen...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="794"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2659,7 +2639,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben Sie einen Benutzername und Passwort ein mit dem sich first4 mit der DB verbinden wird.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default username: &lt;span style=&quot; font-weight:600;&quot;&gt;first4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1825"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2668,67 +2648,67 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Bitte geben Sie einen Datenbanknamen an&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default Datenbankname: &lt;span style=&quot; font-weight:600;&quot;&gt;first4db&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1796"/>
+        <location filename="" line="7471221"/>
         <source>DB-Name:</source>
         <translation>DB-Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1809"/>
+        <location filename="" line="7471221"/>
         <source>first4db</source>
         <translation>first4db</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1986"/>
+        <location filename="" line="7471221"/>
         <source>Step 2 / 5</source>
         <translation>Schritt 2 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="896"/>
+        <location filename="" line="7471221"/>
         <source>first4</source>
         <translation>first4</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1931"/>
+        <location filename="" line="7471221"/>
         <source>Company:</source>
         <translation>Unternehmen:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1844"/>
+        <location filename="" line="7471221"/>
         <source>Street / Nr.:</source>
         <translation>Strasse Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1944"/>
+        <location filename="" line="7471221"/>
         <source>City:</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1857"/>
+        <location filename="" line="7471221"/>
         <source>ZIP:</source>
         <translation>PLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1973"/>
+        <location filename="" line="7471221"/>
         <source>You can edit this details after the installation in the settings window.</source>
         <translation>Diese Einstellungen können nach der Installation im Konfigurationsfenster angepasst werden.</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1886"/>
+        <location filename="" line="7471221"/>
         <source>Please enter your Company details:</source>
         <translation>Bitte Unternehmensdaten eingeben:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1105"/>
+        <location filename="" line="7471221"/>
         <source>Step 3 / 5</source>
         <translation>Schritt 3 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1146"/>
+        <location filename="" line="7471221"/>
         <source>Step 4 / 5</source>
         <translation>Schritt 4 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1211"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2738,145 +2718,140 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Bitte geben Sie das Administratorpasswort ein.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Mit diesem User können Sie sämtliche Einstellungen für diese Datenbank ändern.&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Default Username: &lt;span style=&quot; font-weight:600;&quot;&gt;Administrator&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1229"/>
+        <location filename="" line="7471221"/>
         <source>Administrator</source>
         <translation>Administrator</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1260"/>
+        <location filename="" line="7471221"/>
         <source>Step 5 / 5</source>
         <translation>Schritt 5 / 5</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1324"/>
+        <location filename="" line="7471221"/>
         <source>DB-Host:</source>
         <translation>DB-Host:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1337"/>
+        <location filename="" line="7471221"/>
         <source>DB-Port:</source>
         <translation>DB-Port:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1402"/>
+        <location filename="" line="7471221"/>
         <source>Administrator:</source>
         <translation>Administrator:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1447"/>
+        <location filename="" line="7471221"/>
         <source>first4 User:</source>
         <translation>first4 User:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1526"/>
+        <location filename="" line="7471221"/>
         <source>Filename:</source>
         <translation>Dateiname:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1783"/>
+        <location filename="" line="7471221"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1616"/>
+        <location filename="" line="7471221"/>
         <source>Open a existing SQLite3 database...</source>
         <translation>Bestehende SQLite3 Datenbank öffnen...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="461"/>
+        <location filename="" line="7471221"/>
         <source>Initializing database...</source>
         <translation>Datenbank initialisieren...</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="487"/>
+        <location filename="" line="7471221"/>
         <source>Unable to connect to database!</source>
         <translation>Verbindung zur Datenbank nicht möglich!</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="499"/>
+        <location filename="" line="7471221"/>
         <source>Open Directory</source>
         <translation>Öffne Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="506"/>
+        <location filename="" line="7471221"/>
         <source>Open SQLite DB-File</source>
         <translation>Öffne SQLite DB-Datei</translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="508"/>
+        <location filename="" line="7471221"/>
         <source>SQLite3 File (*.db)</source>
         <translation>SQLite3 File (*.db)</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1999"/>
+        <location filename="" line="7471221"/>
         <source>Create a new SQLite3 database...</source>
         <translation>Erstelle eine neue SQLite3 Datenbank...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbwizzardfrm.ui" line="1760"/>
+        <location filename="" line="7471221"/>
         <source>DB-Folder:</source>
         <translation>DB-Verzeichnis:</translation>
-    </message>
-    <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="91"/>
-        <source>&amp;Finish</source>
-        <translation>&amp;Abschliessen</translation>
     </message>
 </context>
 <context>
     <name>doccompletefrm</name>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Complete document...</source>
         <translation>Dokument abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Complete document and refresh stock?</source>
         <translation>Dokument abschliessen und Lager aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="41"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Complete</source>
         <translation>&amp;Abschliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Tasks</source>
         <translation>Aufgaben</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="85"/>
+        <location filename="" line="7471221"/>
         <source>Add conversion</source>
         <translation>Umsatz addieren</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="98"/>
+        <location filename="" line="7471221"/>
         <source>Register</source>
         <translation>Verbuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="111"/>
+        <location filename="" line="7471221"/>
         <source>Print paying-in slip</source>
         <translation>Einzahlungsschein drucken</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="124"/>
+        <location filename="" line="7471221"/>
         <source>Refresh stock</source>
         <translation>Lager aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="137"/>
+        <location filename="" line="7471221"/>
         <source>Calc total</source>
         <translation>Total berechnen</translation>
     </message>
     <message>
-        <location filename="../../ui/doccompletefrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Create document</source>
         <translation>Dokument erstellen</translation>
     </message>
@@ -2884,292 +2859,292 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>doceditfrm</name>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="45"/>
+        <location filename="" line="7471221"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="45"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="45"/>
+        <location filename="" line="7471221"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="106"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Print pre&amp;view</source>
         <translation>Druck&amp;vorschau</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="109"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Print document</source>
         <translation>&amp;Print Dokument</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="112"/>
+        <location filename="" line="7471221"/>
         <source>Paying-in &amp;slip</source>
         <translation>&amp;Einzahlungsschein</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="224"/>
+        <location filename="" line="7471221"/>
         <source>You are not authorized to provide the selected document</source>
         <translation>Sie sind nicht berechtigt dieses Dokument zu öffnen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Documents...</source>
         <translation>Dokumente...</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="305"/>
+        <location filename="" line="7471221"/>
         <source>Document:</source>
         <translation>Dokument:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="157"/>
+        <location filename="" line="7471221"/>
         <source>Customer:</source>
         <translation>Kunde:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="380"/>
+        <location filename="" line="7471221"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="170"/>
+        <location filename="" line="7471221"/>
         <source>Document #:</source>
         <translation>Dokument #:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="135"/>
+        <location filename="" line="7471221"/>
         <source>Customer ID:</source>
         <translation>Kunden ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="904"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="920"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="927"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="370"/>
+        <location filename="" line="7471221"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="994"/>
+        <location filename="" line="7471221"/>
         <source>Total incl. VAT:</source>
         <translation>Total incl. VAT:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1319"/>
+        <location filename="" line="7471221"/>
         <source>Total:</source>
         <translation>Total:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1225"/>
+        <location filename="" line="7471221"/>
         <source>Total excl. VAT:</source>
         <translation>Total excl. VAT:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1110"/>
+        <location filename="" line="7471221"/>
         <source>VAT:</source>
         <translation>MwSt.:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1272"/>
+        <location filename="" line="7471221"/>
         <source>Discount:</source>
         <translation>Rabatt:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1244"/>
+        <location filename="" line="7471221"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1038"/>
+        <location filename="" line="7471221"/>
         <source>C&amp;alc</source>
         <translation>&amp;Berechnen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="636"/>
+        <location filename="" line="7471221"/>
         <source>Introduction</source>
         <translation>Einleitung</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="660"/>
+        <location filename="" line="7471221"/>
         <source>Salutation:</source>
         <translation>Begrüßung:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="667"/>
+        <location filename="" line="7471221"/>
         <source>Other informations:</source>
         <translation>Zusätzliche Informationen:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="681"/>
+        <location filename="" line="7471221"/>
         <source>Positions</source>
         <translation>Positionen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="714"/>
+        <location filename="" line="7471221"/>
         <source>Pos</source>
         <translation>Pos</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="719"/>
+        <location filename="" line="7471221"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="732"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="737"/>
+        <location filename="" line="7471221"/>
         <source>Quantity</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="742"/>
+        <location filename="" line="7471221"/>
         <source>Unit</source>
         <translation>Einheit</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="747"/>
+        <location filename="" line="7471221"/>
         <source>Price/Unit</source>
         <translation>Preis/Einheit</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="752"/>
+        <location filename="" line="7471221"/>
         <source>Price</source>
         <translation>Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="757"/>
+        <location filename="" line="7471221"/>
         <source>VAT</source>
         <translation>MwSt</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="762"/>
+        <location filename="" line="7471221"/>
         <source>actquantity</source>
         <translation>aktuelle Quantität</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="767"/>
+        <location filename="" line="7471221"/>
         <source>minquantity</source>
         <translation>minimale Quantität</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="772"/>
+        <location filename="" line="7471221"/>
         <source>artID</source>
         <translation>artID</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="781"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="363"/>
+        <location filename="" line="7471221"/>
         <source>Stock...</source>
         <translation>Lager...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="363"/>
+        <location filename="" line="7471221"/>
         <source>Please define VAT first!</source>
         <translation>Bitte zuerst MwSt. definieren!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="252"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit Entry</source>
         <translation>Eintrag &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="255"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Row</source>
         <translation>Zeilen &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="303"/>
+        <location filename="" line="7471221"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="677"/>
+        <location filename="" line="7471221"/>
         <source>Save...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="677"/>
+        <location filename="" line="7471221"/>
         <source>Document completed and saved in Database</source>
         <translation>Dokument abgeschlossen und in Datenbank gespeichert</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="765"/>
+        <location filename="" line="7471221"/>
         <source>New Document...</source>
         <translation>Neues Dokument...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="765"/>
+        <location filename="" line="7471221"/>
         <source>Take over existing data?</source>
         <translation>Bestehende Daten übernehmen?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1326"/>
+        <location filename="" line="7471221"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1350"/>
+        <location filename="" line="7471221"/>
         <source>Net amount:</source>
         <translation>Netto Betrag:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1373"/>
+        <location filename="" line="7471221"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1476"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1563"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1429"/>
+        <location filename="" line="7471221"/>
         <source>Please select a receiver</source>
         <translation>Bitte Empfänger auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1570"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t print File.</source>
         <translation>Kann Datei nicht ausdrucken.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1589"/>
+        <location filename="" line="7471221"/>
         <source>Document not saved...</source>
         <translation>Dokument nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1589"/>
+        <location filename="" line="7471221"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
@@ -3178,155 +3153,160 @@ p, li { white-space: pre-wrap; }
 Als Entwurf speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1429"/>
+        <location filename="" line="7471221"/>
         <source>Address...</source>
         <translation>Adresse...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1332"/>
+        <location filename="" line="7471221"/>
         <source>Amount excl. VAT:</source>
         <translation>Betrag exkl. MwSt:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1337"/>
+        <location filename="" line="7471221"/>
         <source>VAT rate</source>
         <translation>MwSt. Satz</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1337"/>
+        <location filename="" line="7471221"/>
         <source>VAT amount</source>
         <translation>MwSt. Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="45"/>
+        <location filename="" line="7471221"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1393"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t convert TEX-File.</source>
         <translation>Kann TEX-Datei nicht konvertieren.</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="1144"/>
+        <location filename="" line="7471221"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="753"/>
+        <location filename="" line="7471221"/>
         <source>Invoice %1</source>
         <translation>Rechnung %1</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1578"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation>Kann Datei nicht ins Zielverzeichnis verschieben.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1352"/>
+        <location filename="" line="7471221"/>
         <source>Kind regards</source>
         <translation>Freundliche Grüsse</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1353"/>
+        <location filename="" line="7471221"/>
         <source>General informations:</source>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1693"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Templatebeschreibung nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1421"/>
+        <location filename="" line="7471221"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1485"/>
+        <location filename="" line="7471221"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1497"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1505"/>
+        <location filename="" line="7471221"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1717"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="863"/>
+        <location filename="" line="7471221"/>
         <source>Document: ###docid### ( Locked by User: %1 )</source>
         <translation>Dokument: ###docid### ( Gesperrt durch Benutzer: %1 )</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="865"/>
+        <location filename="" line="7471221"/>
         <source>Document: ###docid###</source>
         <translation>Dokument: ###docid###</translation>
+    </message>
+    <message>
+        <location filename="" line="7471221"/>
+        <source>\footnotesize\newline Invoice: %1 \newline Payable until: %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>doceditposition</name>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Edit position details...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>Position:</source>
         <translation>Position:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Label:</source>
         <translation>Bezeichnung:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="86"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="99"/>
+        <location filename="" line="7471221"/>
         <source>Price:</source>
         <translation>Preis:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="112"/>
+        <location filename="" line="7471221"/>
         <source>Quantity:</source>
         <translation>Menge:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="125"/>
+        <location filename="" line="7471221"/>
         <source>VAT:</source>
         <translation>MwSt.:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="138"/>
+        <location filename="" line="7471221"/>
         <source>Unit:</source>
         <translation>Einh.:</translation>
     </message>
     <message>
-        <location filename="../../ui/doceditposition.ui" line="181"/>
+        <location filename="" line="7471221"/>
         <source>CHF</source>
         <translation>CHF</translation>
     </message>
@@ -3334,117 +3314,117 @@ Als Entwurf speichern?</translation>
 <context>
     <name>docopendraftsfrm</name>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="111"/>
+        <location filename="" line="7471221"/>
         <source>No Address found in database!</source>
         <translation>Keine Adresse in der Datenbank gefunden!</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Open draft...</source>
         <translation>Öffne Entwurf...</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="94"/>
+        <location filename="" line="7471221"/>
         <source>Search in:</source>
         <translation>Suchen in:</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="268"/>
+        <location filename="" line="7471221"/>
         <source>Customer</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="113"/>
+        <location filename="" line="7471221"/>
         <source>Document-ID</source>
         <translation>Dokument ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="263"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="123"/>
+        <location filename="" line="7471221"/>
         <source>Positions</source>
         <translation>Positionen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="283"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="142"/>
+        <location filename="" line="7471221"/>
         <source>for:</source>
         <translation>nach:</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="211"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="233"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Open</source>
         <translation>Ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="253"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="258"/>
+        <location filename="" line="7471221"/>
         <source>DocumentID</source>
         <translation>DocumentID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="273"/>
+        <location filename="" line="7471221"/>
         <source>Amount</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="278"/>
+        <location filename="" line="7471221"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="288"/>
+        <location filename="" line="7471221"/>
         <source>ClientID</source>
         <translation>ClientID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="293"/>
+        <location filename="" line="7471221"/>
         <source>ClientAddr</source>
         <translation>ClientAddr</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="326"/>
+        <location filename="" line="7471221"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../ui/docopendraftfrm.ui" line="331"/>
+        <location filename="" line="7471221"/>
         <source>name</source>
         <translation>name</translation>
     </message>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="53"/>
+        <location filename="" line="7471221"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
@@ -3452,142 +3432,142 @@ Als Entwurf speichern?</translation>
 <context>
     <name>docopenfrm</name>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="27"/>
+        <location filename="" line="7471221"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="27"/>
+        <location filename="" line="7471221"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="27"/>
+        <location filename="" line="7471221"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="138"/>
+        <location filename="" line="7471221"/>
         <source>No Address found in database!</source>
         <translation>Keine Adresse in der Datenbank gefunden!</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="173"/>
+        <location filename="" line="7471221"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="173"/>
+        <location filename="" line="7471221"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Open document...</source>
         <translation>Dokument öffnen...</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="284"/>
+        <location filename="" line="7471221"/>
         <source>Text:</source>
         <translation>Text:</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="328"/>
+        <location filename="" line="7471221"/>
         <source>Client</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="333"/>
+        <location filename="" line="7471221"/>
         <source>Document-ID</source>
         <translation>Dokumenten ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="338"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="343"/>
+        <location filename="" line="7471221"/>
         <source>Positions</source>
         <translation>Positionen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="348"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="356"/>
+        <location filename="" line="7471221"/>
         <source>Search in:</source>
         <translation>Suchen in:</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="200"/>
+        <location filename="" line="7471221"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="205"/>
+        <location filename="" line="7471221"/>
         <source>name</source>
         <translation>name</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="210"/>
+        <location filename="" line="7471221"/>
         <source>sort</source>
         <translation>sort</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="80"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="87"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="145"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Document ID</source>
         <translation>Dokumenten ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="160"/>
+        <location filename="" line="7471221"/>
         <source>Customer</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="165"/>
+        <location filename="" line="7471221"/>
         <source>Amount</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="170"/>
+        <location filename="" line="7471221"/>
         <source>Discount</source>
         <translation>Diskont</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="180"/>
+        <location filename="" line="7471221"/>
         <source>ClientID</source>
         <translation>Klient ID</translation>
     </message>
     <message>
-        <location filename="../../ui/docopenfrm.ui" line="185"/>
+        <location filename="" line="7471221"/>
         <source>ClientAddr</source>
         <translation>Klientadresse</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="27"/>
+        <location filename="" line="7471221"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
@@ -3595,12 +3575,12 @@ Als Entwurf speichern?</translation>
 <context>
     <name>invfrm</name>
     <message>
-        <location filename="../../src/invfrm.cpp" line="35"/>
+        <location filename="" line="7471221"/>
         <source>Authorization Required...</source>
         <translation>Keine Berechtigung...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="35"/>
+        <location filename="" line="7471221"/>
         <source>You are not authorized to open this modul
 
 Please contact your Administrator</source>
@@ -3609,27 +3589,27 @@ Please contact your Administrator</source>
 Bitte kontaktieren Sie ihre Administrator.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="66"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Print pre&amp;view</source>
         <translation>Druck&amp;vorschau</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="69"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Print</source>
         <translation>&amp;Drucken</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="286"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="302"/>
+        <location filename="" line="7471221"/>
         <source>Complete Inventory...</source>
         <translation>Inventar abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="302"/>
+        <location filename="" line="7471221"/>
         <source>Completed Inventories can&apos;t be edited!
 
 Complete nevertheless?</source>
@@ -3638,122 +3618,122 @@ Complete nevertheless?</source>
 Trotzdem abschliessen?</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="395"/>
+        <location filename="" line="7471221"/>
         <source>Save Data...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="395"/>
+        <location filename="" line="7471221"/>
         <source>Save Inventory?</source>
         <translation>Inventar speichern?</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="19"/>
+        <location filename="" line="7471221"/>
         <source>Inventory...</source>
         <translation>Inventar...</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="47"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="52"/>
+        <location filename="" line="7471221"/>
         <source>Stock ID</source>
         <translation>Lager ID</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>Def.</source>
         <translation>Def.</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="62"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="67"/>
+        <location filename="" line="7471221"/>
         <source>Quantity</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="77"/>
+        <location filename="" line="7471221"/>
         <source>Resell Price</source>
         <translation>Verk. Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="82"/>
+        <location filename="" line="7471221"/>
         <source>Actual Price</source>
         <translation>Akt. Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="87"/>
+        <location filename="" line="7471221"/>
         <source>New quantity</source>
         <translation>Neue Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="92"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="194"/>
+        <location filename="" line="7471221"/>
         <source>Inventory:</source>
         <translation>Inventar:</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="300"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="339"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="359"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/invfrm.ui" line="72"/>
+        <location filename="" line="7471221"/>
         <source>Purchase Price</source>
         <translation>Eink. Preis</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="221"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="229"/>
+        <location filename="" line="7471221"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="245"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="295"/>
+        <location filename="" line="7471221"/>
         <source>Error during conversion to DVI file.</source>
         <translation>Fehler beim konvertieren zu DVI.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="248"/>
+        <location filename="" line="7471221"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="279"/>
+        <location filename="" line="7471221"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="430"/>
+        <location filename="" line="7471221"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -3761,27 +3741,27 @@ Trotzdem abschliessen?</translation>
 <context>
     <name>invnewfrm</name>
     <message>
-        <location filename="../../ui/invnewfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>New inventory from...</source>
         <translation>Neues Inventar...</translation>
     </message>
     <message>
-        <location filename="../../ui/invnewfrm.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>Inventory from:</source>
         <translation>Inventar von:</translation>
     </message>
     <message>
-        <location filename="../../ui/invnewfrm.ui" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../ui/invnewfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>C&amp;reate</source>
         <translation>&amp;Erstellen</translation>
     </message>
     <message>
-        <location filename="../../ui/invnewfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
@@ -3789,52 +3769,52 @@ Trotzdem abschliessen?</translation>
 <context>
     <name>loginfrm</name>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="142"/>
+        <location filename="" line="7471221"/>
         <source>Invalid Username or Password</source>
         <translation>Benutzername oder Passwort ungültig</translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="177"/>
+        <location filename="" line="7471221"/>
         <source>Error when storing the server list!</source>
         <translation>Fehler beim Speichern der Serverliste!</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="52"/>
+        <location filename="" line="7471221"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="65"/>
+        <location filename="" line="7471221"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="78"/>
+        <location filename="" line="7471221"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="143"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="124"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="148"/>
+        <location filename="" line="7471221"/>
         <source>Query Error.</source>
         <translation>Abfragefehler.</translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="37"/>
+        <location filename="" line="7471221"/>
         <source>Login - </source>
         <translation>Login - </translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="152"/>
+        <location filename="" line="7471221"/>
         <source>Unable to connect to database server!
 
 </source>
@@ -3846,157 +3826,157 @@ Trotzdem abschliessen?</translation>
 <context>
     <name>mainfrm</name>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="19"/>
+        <location filename="" line="7471221"/>
         <source>first</source>
         <translation>first</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="1099"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Exit</source>
         <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="1039"/>
+        <location filename="" line="7471221"/>
         <source>&amp;About</source>
         <translation>Übe&amp;r first</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="1083"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Settings</source>
         <translation>&amp;Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="50"/>
+        <location filename="" line="7471221"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="155"/>
+        <location filename="" line="7471221"/>
         <source>Datatables</source>
         <translation>Datentabellen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="515"/>
+        <location filename="" line="7471221"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="658"/>
+        <location filename="" line="7471221"/>
         <source>Finances</source>
         <translation>Finanzen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="951"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="745"/>
+        <location filename="" line="7471221"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="885"/>
+        <location filename="" line="7471221"/>
         <source>Information</source>
         <translation>Informationen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="912"/>
+        <location filename="" line="7471221"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="964"/>
+        <location filename="" line="7471221"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="977"/>
+        <location filename="" line="7471221"/>
         <source>Database:</source>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="205"/>
+        <location filename="" line="7471221"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="205"/>
+        <location filename="" line="7471221"/>
         <source>Exit First?</source>
         <translation>First beenden?</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="117"/>
+        <location filename="" line="7471221"/>
         <source>Browse Directories</source>
         <translation>Adressbücher durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="278"/>
+        <location filename="" line="7471221"/>
         <source>View purchase orders</source>
         <translation>Bestellungen öffnen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="334"/>
+        <location filename="" line="7471221"/>
         <source>Make inventory</source>
         <translation>Inventar erstellen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="222"/>
+        <location filename="" line="7471221"/>
         <source>Browse Tables</source>
         <translation>Datentabellen durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="564"/>
+        <location filename="" line="7471221"/>
         <source>Browse documents</source>
         <translation>Dokument durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="620"/>
+        <location filename="" line="7471221"/>
         <source>New document</source>
         <translation>Neues Dokument</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="372"/>
+        <location filename="" line="7471221"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="477"/>
+        <location filename="" line="7471221"/>
         <source>New Order</source>
         <translation>Neuer Auftrag</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="421"/>
+        <location filename="" line="7471221"/>
         <source>Browse Orders</source>
         <translation>Aufträge durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="707"/>
+        <location filename="" line="7471221"/>
         <source>Browse accounts</source>
         <translation>Konten durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="128"/>
+        <location filename="" line="7471221"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="800"/>
+        <location filename="" line="7471221"/>
         <source>Browse messages</source>
         <translation>Nachrichten durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="862"/>
+        <location filename="" line="7471221"/>
         <source>New messages</source>
         <translation>Neue nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="85"/>
+        <location filename="" line="7471221"/>
         <source>DB update...</source>
         <translation>DB update...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="85"/>
+        <location filename="" line="7471221"/>
         <source>Database update is needed.
 Please login as Administrator to perform the update.</source>
         <translation>Datenbankupdate wird benötigt.
@@ -4006,162 +3986,162 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 <context>
     <name>msgeditfrm</name>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>Msg-ID:</source>
         <translation>Msg-ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="602"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="86"/>
+        <location filename="" line="7471221"/>
         <source>Type:</source>
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="100"/>
+        <location filename="" line="7471221"/>
         <source>Personal</source>
         <translation>Persönlich</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="105"/>
+        <location filename="" line="7471221"/>
         <source>General</source>
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="110"/>
+        <location filename="" line="7471221"/>
         <source>Stock</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="115"/>
+        <location filename="" line="7471221"/>
         <source>Order</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="120"/>
+        <location filename="" line="7471221"/>
         <source>Finance</source>
         <translation>Finanzen</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="134"/>
+        <location filename="" line="7471221"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="644"/>
+        <location filename="" line="7471221"/>
         <source>dd.mm.yyyy</source>
         <translation>dd.mm.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="252"/>
+        <location filename="" line="7471221"/>
         <source>Message:</source>
         <translation>Nachricht:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="201"/>
+        <location filename="" line="7471221"/>
         <source>Select recipient:</source>
         <translation>Empfänger:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="233"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="238"/>
+        <location filename="" line="7471221"/>
         <source>userid</source>
         <translation>userid</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="267"/>
+        <location filename="" line="7471221"/>
         <source>Definition:</source>
         <translation>Bezeichnung:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="280"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="293"/>
+        <location filename="" line="7471221"/>
         <source>Supplier:</source>
         <translation>Lieferant:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="306"/>
+        <location filename="" line="7471221"/>
         <source>Stock:</source>
         <translation>Lager:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="319"/>
+        <location filename="" line="7471221"/>
         <source>Min. quantity:</source>
         <translation>Min. Lagermenge:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="332"/>
+        <location filename="" line="7471221"/>
         <source>Purchase Price:</source>
         <translation>Einkaufspreis:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="345"/>
+        <location filename="" line="7471221"/>
         <source>Sell Price:</source>
         <translation>Verkaufspreis:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="435"/>
+        <location filename="" line="7471221"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="680"/>
+        <location filename="" line="7471221"/>
         <source>Customer:</source>
         <translation>Kunde:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="693"/>
+        <location filename="" line="7471221"/>
         <source>Order-Nr.:</source>
         <translation>Auftrags-Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="477"/>
+        <location filename="" line="7471221"/>
         <source>Entrydate:</source>
         <translation>Auftragsdatum:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="490"/>
+        <location filename="" line="7471221"/>
         <source>Complete until:</source>
         <translation>Erledigen bis:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="615"/>
+        <location filename="" line="7471221"/>
         <source>Payment date:</source>
         <translation>Bezahlen bis:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="722"/>
+        <location filename="" line="7471221"/>
         <source>Amount:</source>
         <translation>Betrag:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="757"/>
+        <location filename="" line="7471221"/>
         <source>New MSG</source>
         <translation>Neue MSG</translation>
     </message>
     <message>
-        <location filename="../../ui/msgeditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Nachricht...</source>
         <translation>Nachricht...</translation>
     </message>
@@ -4169,217 +4149,217 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 <context>
     <name>msgfrm</name>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="158"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="51"/>
+        <location filename="" line="7471221"/>
         <source>type</source>
         <translation>type</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="162"/>
+        <location filename="" line="7471221"/>
         <source>user</source>
         <translation>user</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="163"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="183"/>
+        <location filename="" line="7471221"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="225"/>
+        <location filename="" line="7471221"/>
         <source>info</source>
         <translation>info</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="194"/>
+        <location filename="" line="7471221"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="195"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="95"/>
+        <location filename="" line="7471221"/>
         <source>Stock</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="197"/>
+        <location filename="" line="7471221"/>
         <source>Min. quantity</source>
         <translation>Min. Lagermenge</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="198"/>
+        <location filename="" line="7471221"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="226"/>
+        <location filename="" line="7471221"/>
         <source>Client</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="211"/>
+        <location filename="" line="7471221"/>
         <source>Order.-Nr.</source>
         <translation>Auftrags-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="212"/>
+        <location filename="" line="7471221"/>
         <source>Date of entry</source>
         <translation>Auftragsdatum</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="213"/>
+        <location filename="" line="7471221"/>
         <source>Complete until</source>
         <translation>Erledigen bis</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="230"/>
+        <location filename="" line="7471221"/>
         <source>data</source>
         <translation>data</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="227"/>
+        <location filename="" line="7471221"/>
         <source>Ref-Nr.</source>
         <translation>Ref-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="228"/>
+        <location filename="" line="7471221"/>
         <source>Last payment</source>
         <translation>Letzte Zahlung</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="229"/>
+        <location filename="" line="7471221"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="250"/>
+        <location filename="" line="7471221"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="266"/>
+        <location filename="" line="7471221"/>
         <source>Edit entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="281"/>
+        <location filename="" line="7471221"/>
         <source>Delete entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="281"/>
+        <location filename="" line="7471221"/>
         <source>Delete entry?</source>
         <translation>Eintrag löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="297"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit Message</source>
         <translation>Nachricht &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="300"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Message</source>
         <translation>Nachricht &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="316"/>
+        <location filename="" line="7471221"/>
         <source>Complete entry...</source>
         <translation>Eintrag abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="316"/>
+        <location filename="" line="7471221"/>
         <source>Complete entry</source>
         <translation>Eintrag abschliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Messages...</source>
         <translation>Nachrichten...</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="41"/>
+        <location filename="" line="7471221"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="46"/>
+        <location filename="" line="7471221"/>
         <source>sort</source>
         <translation>sort</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="56"/>
+        <location filename="" line="7471221"/>
         <source>rw</source>
         <translation>rw</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="61"/>
+        <location filename="" line="7471221"/>
         <source>Personal</source>
         <translation>Persönlich</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="67"/>
+        <location filename="" line="7471221"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="78"/>
+        <location filename="" line="7471221"/>
         <source>General</source>
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="285"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="101"/>
+        <location filename="" line="7471221"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="112"/>
+        <location filename="" line="7471221"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="118"/>
+        <location filename="" line="7471221"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="129"/>
+        <location filename="" line="7471221"/>
         <source>Accounts</source>
         <translation>Konti</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="135"/>
+        <location filename="" line="7471221"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="295"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="305"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/msgfrm.ui" line="312"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
@@ -4387,72 +4367,72 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 <context>
     <name>newdatatabfrm</name>
     <message>
-        <location filename="../../src/newdatatabfrm.cpp" line="30"/>
+        <location filename="" line="7471221"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/newdatatabfrm.cpp" line="31"/>
+        <location filename="" line="7471221"/>
         <source>Rowname:</source>
         <translation>Spaltenname:</translation>
     </message>
     <message>
-        <location filename="../../src/newdatatabfrm.cpp" line="94"/>
+        <location filename="" line="7471221"/>
         <source>INSERT INTO `datatabs` ( `ID` , `name` , `description` , `users` , `cols` , `tabtyp` ) VALUES (&apos;&apos;, &apos;%1&apos;, &apos;%2</source>
         <translation>INSERT INTO `datatabs` ( `ID` , `name` , `description` , `users` , `cols` , `tabtyp` ) VALUES (&apos;&apos;, &apos;%1&apos;, &apos;%2</translation>
     </message>
     <message>
-        <location filename="../../src/newdatatabfrm.cpp" line="132"/>
+        <location filename="" line="7471221"/>
         <source>Select kind of Datatable!</source>
         <translation>Tabellenart auswählen!</translation>
     </message>
     <message>
-        <location filename="../../src/newdatatabfrm.cpp" line="135"/>
+        <location filename="" line="7471221"/>
         <source>Enter Datatablename!</source>
         <translation>Tabellennamen eingeben!</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>New Datatable...</source>
         <translation>Neue Tabelle...</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="31"/>
+        <location filename="" line="7471221"/>
         <source>Type:</source>
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>Columns:</source>
         <translation>Spalten:</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="70"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Create</source>
         <translation>&amp;Erstellen</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="86"/>
+        <location filename="" line="7471221"/>
         <source>C&amp;ancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="114"/>
+        <location filename="" line="7471221"/>
         <source>Stock</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="127"/>
+        <location filename="" line="7471221"/>
         <source>IE-Codelist</source>
         <translation>IE-Codeliste</translation>
     </message>
     <message>
-        <location filename="../../ui/newdatatabfrm.ui" line="140"/>
+        <location filename="" line="7471221"/>
         <source>Custom</source>
         <translation>Benutzerdefiniert</translation>
     </message>
@@ -4460,72 +4440,72 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 <context>
     <name>orderseditfrm</name>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Orders...</source>
         <translation>Bestellungen...</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Order #:</source>
         <translation>Bestellung Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="41"/>
+        <location filename="" line="7471221"/>
         <source>Stock:</source>
         <translation>Lager:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="54"/>
+        <location filename="" line="7471221"/>
         <source>Label:</source>
         <translation>Definition:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="67"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="124"/>
+        <location filename="" line="7471221"/>
         <source>Quantity:</source>
         <translation>Menge:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="137"/>
+        <location filename="" line="7471221"/>
         <source>Supplier:</source>
         <translation>Lieferant:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="150"/>
+        <location filename="" line="7471221"/>
         <source>Price:</source>
         <translation>Preis:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="163"/>
+        <location filename="" line="7471221"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="194"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="217"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="307"/>
+        <location filename="" line="7471221"/>
         <source>CHF</source>
         <translation>CHF</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="312"/>
+        <location filename="" line="7471221"/>
         <source>EUR</source>
         <translation>EUR</translation>
     </message>
     <message>
-        <location filename="../../ui/orderseditfrm.ui" line="317"/>
+        <location filename="" line="7471221"/>
         <source>USD</source>
         <translation>USD</translation>
     </message>
@@ -4533,12 +4513,12 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 <context>
     <name>ordersfrm</name>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="26"/>
+        <location filename="" line="7471221"/>
         <source>Authorization Required...</source>
         <translation>Keine Berechtigung...</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="26"/>
+        <location filename="" line="7471221"/>
         <source>You are not authorized to open this modul
 
 Please contact your Administrator</source>
@@ -4547,177 +4527,177 @@ Please contact your Administrator</source>
 Bitte kontaktieren Sie ihre Administrator</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="174"/>
+        <location filename="" line="7471221"/>
         <source>Delete purchase order...</source>
         <translation>Bestellung löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="174"/>
+        <location filename="" line="7471221"/>
         <source>Delete purchase order for %1?</source>
         <translation>Lösche Bestellung für %1?</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="229"/>
+        <location filename="" line="7471221"/>
         <source>Complete items...</source>
         <translation>Eintrag abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="187"/>
+        <location filename="" line="7471221"/>
         <source>Change status for completed items?</source>
         <translation>Status für abgeschlossenen Einträge ändern?</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="243"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/ordersfrm.cpp" line="247"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Purchase orders...</source>
         <translation>Bestellung...</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>Search:</source>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="67"/>
+        <location filename="" line="7471221"/>
         <source>Field:</source>
         <translation>Feld:</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="75"/>
+        <location filename="" line="7471221"/>
         <source>Order #</source>
         <translation>Bestell Nr</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="80"/>
+        <location filename="" line="7471221"/>
         <source>Supplier</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="244"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="234"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="170"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="180"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="229"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="239"/>
+        <location filename="" line="7471221"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="311"/>
+        <location filename="" line="7471221"/>
         <source>Quantity</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="254"/>
+        <location filename="" line="7471221"/>
         <source>Price</source>
         <translation>Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="259"/>
+        <location filename="" line="7471221"/>
         <source>Order nr</source>
         <translation>Bestell nr</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="264"/>
+        <location filename="" line="7471221"/>
         <source>Ordered by</source>
         <translation>Bestellt von</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="269"/>
+        <location filename="" line="7471221"/>
         <source>Stock</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="274"/>
+        <location filename="" line="7471221"/>
         <source>Suppliers</source>
         <translation>Lieferant</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="279"/>
+        <location filename="" line="7471221"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="306"/>
+        <location filename="" line="7471221"/>
         <source>State</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="316"/>
+        <location filename="" line="7471221"/>
         <source>sort</source>
         <translation>sort</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="321"/>
+        <location filename="" line="7471221"/>
         <source>New orders</source>
         <translation>Neue Bestellung</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="338"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="327"/>
+        <location filename="" line="7471221"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="332"/>
+        <location filename="" line="7471221"/>
         <source>Pending orders</source>
         <translation>Pendente Best.</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="349"/>
+        <location filename="" line="7471221"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="343"/>
+        <location filename="" line="7471221"/>
         <source>Delivered orders</source>
         <translation>Ausgel. Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="360"/>
+        <location filename="" line="7471221"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="354"/>
+        <location filename="" line="7471221"/>
         <source>Archive</source>
         <translation>Archiv</translation>
     </message>
     <message>
-        <location filename="../../ui/ordersfrm.ui" line="357"/>
+        <location filename="" line="7471221"/>
         <source>4</source>
         <translation>4</translation>
     </message>
@@ -4725,42 +4705,42 @@ Bitte kontaktieren Sie ihre Administrator</translation>
 <context>
     <name>printfrm</name>
     <message>
-        <location filename="../../ui/printfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>Print</source>
         <translation>Drucken</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="72"/>
+        <location filename="" line="7471221"/>
         <source>Print selected entries (Single)</source>
         <translation>Ausgewählte Eintäge ausdrucken? (Einzeln)</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="85"/>
+        <location filename="" line="7471221"/>
         <source>Print all (Single)</source>
         <translation>Alles ausdrucken (Einzeln)</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="98"/>
+        <location filename="" line="7471221"/>
         <source>Print selected entries (Table)</source>
         <translation>Ausgewählte Eintäge ausdrucken? (Tabelle)</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="111"/>
+        <location filename="" line="7471221"/>
         <source>Print all (Table)</source>
         <translation>Alles ausdrucken (Tabelle)</translation>
     </message>
     <message>
-        <location filename="../../ui/printfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Print...</source>
         <translation>Drucken...</translation>
     </message>
@@ -4768,237 +4748,237 @@ Bitte kontaktieren Sie ihre Administrator</translation>
 <context>
     <name>procedureeditfrm</name>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="460"/>
+        <location filename="" line="7471221"/>
         <source>Stock...</source>
         <translation>Lager...</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="460"/>
+        <location filename="" line="7471221"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation>Die eingegebene Menge überschreitet den Lagerbestand!</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="777"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Check stock</source>
         <translation>Lager prügen</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="789"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Edit entry</source>
         <translation>&amp;Eintrag bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="792"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Delete Row</source>
         <translation>Zeilen &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Edit Order...</source>
         <translation>Auftrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Order ID:</source>
         <translation>Auftrags ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="548"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="532"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="58"/>
+        <location filename="" line="7471221"/>
         <source>&amp;General</source>
         <translation>All&amp;gemein</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="70"/>
+        <location filename="" line="7471221"/>
         <source>State:</source>
         <translation>Status:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="83"/>
+        <location filename="" line="7471221"/>
         <source>Customer:</source>
         <translation>Kunde:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="97"/>
+        <location filename="" line="7471221"/>
         <source>Incomming order</source>
         <translation>Eingehender Auftrag</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="102"/>
+        <location filename="" line="7471221"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="107"/>
+        <location filename="" line="7471221"/>
         <source>Open order</source>
         <translation>Offene Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="112"/>
+        <location filename="" line="7471221"/>
         <source>Completed order</source>
         <translation>Abgeschlossene Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="117"/>
+        <location filename="" line="7471221"/>
         <source>Deliverynote</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="122"/>
+        <location filename="" line="7471221"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="146"/>
+        <location filename="" line="7471221"/>
         <source>Completed ?</source>
         <translation>Abgeschlossen?</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="343"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="172"/>
+        <location filename="" line="7471221"/>
         <source>Customer-ID:</source>
         <translation>Kunden-ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="185"/>
+        <location filename="" line="7471221"/>
         <source>Priority:</source>
         <translation>Priorität:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="198"/>
+        <location filename="" line="7471221"/>
         <source>Date of entry:</source>
         <translation>Auftragsdatum:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="224"/>
+        <location filename="" line="7471221"/>
         <source>dd.mm.yyyy</source>
         <translation>dd.mm.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="237"/>
+        <location filename="" line="7471221"/>
         <source>Complete until:</source>
         <translation>Abschliessen bis:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="250"/>
+        <location filename="" line="7471221"/>
         <source>Resp. person:</source>
         <translation>Verantwortlicher:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="263"/>
+        <location filename="" line="7471221"/>
         <source>Contact person:</source>
         <translation>Ansprechsperson:</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="309"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="314"/>
+        <location filename="" line="7471221"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="319"/>
+        <location filename="" line="7471221"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="324"/>
+        <location filename="" line="7471221"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="329"/>
+        <location filename="" line="7471221"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="390"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Tasks</source>
         <translation>&amp;Aufgaben</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="466"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="419"/>
+        <location filename="" line="7471221"/>
         <source>Complete until</source>
         <translation>Abschliessen bis</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="426"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Orders / Work</source>
         <translation>&amp;Bestellungen / Arbeiten</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="453"/>
+        <location filename="" line="7471221"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="471"/>
+        <location filename="" line="7471221"/>
         <source>Quantity</source>
         <translation>Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="476"/>
+        <location filename="" line="7471221"/>
         <source>Unit</source>
         <translation>Einheit</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="481"/>
+        <location filename="" line="7471221"/>
         <source>Price / Unit</source>
         <translation>Preis / Einh</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="486"/>
+        <location filename="" line="7471221"/>
         <source>VAT</source>
         <translation>MwSt</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="491"/>
+        <location filename="" line="7471221"/>
         <source>actquantity</source>
         <translation>aktuelle Quantität</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="496"/>
+        <location filename="" line="7471221"/>
         <source>minquantity</source>
         <translation>minimale Quantität</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="501"/>
+        <location filename="" line="7471221"/>
         <source>artID</source>
         <translation>artID</translation>
     </message>
     <message>
-        <location filename="../../ui/procedureeditfrm.ui" line="508"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Comments</source>
         <translation>&amp;Kommentare</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="121"/>
+        <location filename="" line="7471221"/>
         <source>Edit order...</source>
         <translation>Auftrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/procedureeditfrm.cpp" line="338"/>
+        <location filename="" line="7471221"/>
         <source>Close</source>
         <translation>Schliessen</translation>
     </message>
@@ -5006,249 +4986,249 @@ Bitte kontaktieren Sie ihre Administrator</translation>
 <context>
     <name>procedurefrm</name>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Browse orders...</source>
         <translation>Aufträge durchsuchen...</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="233"/>
+        <location filename="" line="7471221"/>
         <source>Orders</source>
         <translation>Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="399"/>
+        <location filename="" line="7471221"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="243"/>
+        <location filename="" line="7471221"/>
         <source>sort</source>
         <translation>sort</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="248"/>
+        <location filename="" line="7471221"/>
         <source>Incomming orders</source>
         <translation>Eingehende Aufträge</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="254"/>
+        <location filename="" line="7471221"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="259"/>
+        <location filename="" line="7471221"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="265"/>
+        <location filename="" line="7471221"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="270"/>
+        <location filename="" line="7471221"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="276"/>
+        <location filename="" line="7471221"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="281"/>
+        <location filename="" line="7471221"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="287"/>
+        <location filename="" line="7471221"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="292"/>
+        <location filename="" line="7471221"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="298"/>
+        <location filename="" line="7471221"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="303"/>
+        <location filename="" line="7471221"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="309"/>
+        <location filename="" line="7471221"/>
         <source>5</source>
         <translation>5</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="314"/>
+        <location filename="" line="7471221"/>
         <source>Archive</source>
         <translation>Archiv</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="320"/>
+        <location filename="" line="7471221"/>
         <source>6</source>
         <translation>6</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="382"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="392"/>
+        <location filename="" line="7471221"/>
         <source>User:</source>
         <translation>User:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="31"/>
+        <location filename="" line="7471221"/>
         <source>Authorization Required...</source>
         <translation>Keine Berechtigung...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="31"/>
+        <location filename="" line="7471221"/>
         <source>You are not authorized to open this modul
 
 Please contact your Administrator</source>
         <translation>Sie sind nicht berechtigt dieses Modul zu öffnen.Bitte kontaktieren Sie ihre Administrator</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="162"/>
+        <location filename="" line="7471221"/>
         <source>Tasks</source>
         <translation>Aufgaben</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="192"/>
+        <location filename="" line="7471221"/>
         <source>Quantity: %1</source>
         <translation>Menge: %1</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="196"/>
+        <location filename="" line="7471221"/>
         <source>Order ID:</source>
         <translation>Auftrags ID:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="200"/>
+        <location filename="" line="7471221"/>
         <source>Priority:</source>
         <translation>Priorität:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="204"/>
+        <location filename="" line="7471221"/>
         <source>Contact:</source>
         <translation>Kontakt:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="208"/>
+        <location filename="" line="7471221"/>
         <source>Client ID:</source>
         <translation>Kunden ID:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="212"/>
+        <location filename="" line="7471221"/>
         <source>Resp. Person:</source>
         <translation>Verantwortlicher:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="216"/>
+        <location filename="" line="7471221"/>
         <source>Complete until:</source>
         <translation>Abschliessen bis:</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="229"/>
+        <location filename="" line="7471221"/>
         <source>New order...</source>
         <translation>Neuer Auftrag...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="320"/>
+        <location filename="" line="7471221"/>
         <source>Delete order...</source>
         <translation>Auftrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="320"/>
+        <location filename="" line="7471221"/>
         <source>Delete order %1?</source>
         <translation>Auftrag %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="340"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="345"/>
+        <location filename="" line="7471221"/>
         <source>Customer</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="350"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/procedurefrm.ui" line="355"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="518"/>
+        <location filename="" line="7471221"/>
         <source>Procedure completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="343"/>
+        <location filename="" line="7471221"/>
         <source>Create offer for order %1 ?</source>
         <translation>Offerte für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="348"/>
+        <location filename="" line="7471221"/>
         <source>Create order confirmation for order %1 ?</source>
         <translation>Auftragsbestätigung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="353"/>
+        <location filename="" line="7471221"/>
         <source>Create deliverynote for order %1 ?</source>
         <translation>lieferschein für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="358"/>
+        <location filename="" line="7471221"/>
         <source>Create bill for order %1 ?</source>
         <translation>Rechnung für Auftrag %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="501"/>
+        <location filename="" line="7471221"/>
         <source>Order completed...</source>
         <translation>Auftrag abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="501"/>
+        <location filename="" line="7471221"/>
         <source>Change status for selected entries?</source>
         <translation>Status für ausgewählte Einträge anpassen?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="518"/>
+        <location filename="" line="7471221"/>
         <source>Archive completed entries?</source>
         <translation>Abgeschlossene einträge archivieren?</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="573"/>
+        <location filename="" line="7471221"/>
         <source>Create Offer</source>
         <translation>Offerte erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="577"/>
+        <location filename="" line="7471221"/>
         <source>Create Orderconfirmation</source>
         <translation>Auftragsbestätigung erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="581"/>
+        <location filename="" line="7471221"/>
         <source>Create Delivery note</source>
         <translation>Lieferschein erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/procedurefrm.cpp" line="585"/>
+        <location filename="" line="7471221"/>
         <source>Create Bill</source>
         <translation>Rechnung erstellen</translation>
     </message>
@@ -5256,102 +5236,102 @@ Please contact your Administrator</source>
 <context>
     <name>proceduresearch</name>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Incomming orders</source>
         <translation>Eingehende Aufträge</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../src/proceduresearch.cpp" line="46"/>
+        <location filename="" line="7471221"/>
         <source>Archive</source>
         <translation>Archiv</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Search order...</source>
         <translation>Suche Auftrag...</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="47"/>
+        <location filename="" line="7471221"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="57"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="191"/>
+        <location filename="" line="7471221"/>
         <source>Customer</source>
         <translation>Kunde</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="196"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="72"/>
+        <location filename="" line="7471221"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="97"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="120"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="149"/>
+        <location filename="" line="7471221"/>
         <source>Search:</source>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="172"/>
+        <location filename="" line="7471221"/>
         <source>in:</source>
         <translation>in:</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="186"/>
+        <location filename="" line="7471221"/>
         <source>Order Nr.</source>
         <translation>Auftrags-Nr.</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="201"/>
+        <location filename="" line="7471221"/>
         <source>Tasks</source>
         <translation>Aufgaben</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduresearch.ui" line="206"/>
+        <location filename="" line="7471221"/>
         <source>Orders</source>
         <translation>Bestellungen</translation>
     </message>
@@ -5359,32 +5339,32 @@ Please contact your Administrator</source>
 <context>
     <name>proceduretask</name>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Edit task...</source>
         <translation>Auftrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="60"/>
+        <location filename="" line="7471221"/>
         <source>Complete until:</source>
         <translation>Abschliesen bis:</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="73"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/proceduretask.ui" line="96"/>
+        <location filename="" line="7471221"/>
         <source>dd.mm.yyyy</source>
         <translation>dd.mm.yyyy</translation>
     </message>
@@ -5392,7 +5372,7 @@ Please contact your Administrator</source>
 <context>
     <name>progfrm</name>
     <message>
-        <location filename="../../ui/progfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Progress...</source>
         <translation>Fortschritt...</translation>
     </message>
@@ -5400,67 +5380,67 @@ Please contact your Administrator</source>
 <context>
     <name>stockselfrm</name>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Select stock item...</source>
         <translation>Eintrag aus Lager auswählen...</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="28"/>
+        <location filename="" line="7471221"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="44"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="61"/>
+        <location filename="" line="7471221"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="66"/>
+        <location filename="" line="7471221"/>
         <source>Label</source>
         <translation>Def</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="71"/>
+        <location filename="" line="7471221"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="76"/>
+        <location filename="" line="7471221"/>
         <source>Stock</source>
         <translation>Lager</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="81"/>
+        <location filename="" line="7471221"/>
         <source>Unit</source>
         <translation>Einheit</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="86"/>
+        <location filename="" line="7471221"/>
         <source>Price</source>
         <translation>Preis</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="91"/>
+        <location filename="" line="7471221"/>
         <source>VAT</source>
         <translation>MwSt</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="96"/>
+        <location filename="" line="7471221"/>
         <source>Min. Stock</source>
         <translation>Mind. Menge</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="101"/>
+        <location filename="" line="7471221"/>
         <source>tab_id</source>
         <translation>tab_id</translation>
     </message>
     <message>
-        <location filename="../../ui/stockselfrm.ui" line="106"/>
+        <location filename="" line="7471221"/>
         <source>supplier</source>
         <translation>lieferant</translation>
     </message>
@@ -5468,47 +5448,47 @@ Please contact your Administrator</source>
 <context>
     <name>templateeditfrm</name>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="61"/>
+        <location filename="" line="7471221"/>
         <source>Import Tex-Template</source>
         <translation>TEX-Vorlage importieren</translation>
     </message>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="63"/>
+        <location filename="" line="7471221"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="67"/>
+        <location filename="" line="7471221"/>
         <source>Importing template...</source>
         <translation>Vorlage importieren...</translation>
     </message>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="105"/>
+        <location filename="" line="7471221"/>
         <source>Template not saved...</source>
         <translation>Vorlage nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="106"/>
+        <location filename="" line="7471221"/>
         <source>Template saved...</source>
         <translation>Vorlage gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/templateeditfrm.cpp" line="106"/>
+        <location filename="" line="7471221"/>
         <source>Template successfully saved in the database.</source>
         <translation>Vorlage erfolgreich in Datenbank gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>Template...</source>
         <translation>Vorlage...</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="24"/>
+        <location filename="" line="7471221"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="54"/>
+        <location filename="" line="7471221"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5516,22 +5496,22 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Von Datei importieren&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="72"/>
+        <location filename="" line="7471221"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="95"/>
+        <location filename="" line="7471221"/>
         <source>Code:</source>
         <translation>Code:</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="119"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/templateeditfrm.ui" line="154"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
@@ -5539,27 +5519,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>vatshowfrm</name>
     <message>
-        <location filename="../../ui/vatshowfrm.ui" line="13"/>
+        <location filename="" line="7471221"/>
         <source>VAT overview...</source>
         <translation>MwSt. Übersicht...</translation>
     </message>
     <message>
-        <location filename="../../ui/vatshowfrm.ui" line="29"/>
+        <location filename="" line="7471221"/>
         <source>VAT percent</source>
         <translation>MwSt. Satz</translation>
     </message>
     <message>
-        <location filename="../../ui/vatshowfrm.ui" line="34"/>
+        <location filename="" line="7471221"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../ui/vatshowfrm.ui" line="39"/>
+        <location filename="" line="7471221"/>
         <source>VAT amount</source>
         <translation>MwSt. Betrag</translation>
     </message>
     <message>
-        <location filename="../../ui/vatshowfrm.ui" line="53"/>
+        <location filename="" line="7471221"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
