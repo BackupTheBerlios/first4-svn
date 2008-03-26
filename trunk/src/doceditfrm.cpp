@@ -1386,11 +1386,14 @@ QString doceditfrm::writetexfile()
 	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
 	}
     
+    vars v;
+    QString tool = v.get_tool("TEX2DVI");
+    
     //converting text to dvi   
     QProcess *procdvi = new QProcess( this );
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
- 	procdvi->start("latex", args);
+ 	procdvi->start(tool, args);
  	if(procdvi->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't convert TEX-File."));
 
@@ -1463,33 +1466,39 @@ void doceditfrm::printvesr()
 	}
 
     //converting text to dvi
+    vars v;
+    QString tool = v.get_tool("TEX2DVI");
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
     QProcess *procdvi = new QProcess( this );
-    procdvi->start("latex", args);
+    procdvi->start(tool, args);
     if(procdvi->exitCode()!=0)
 		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
 		
     now = QTime::currentTime();
 	while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
-		    		  
+
 	QString documentfile = output.fileName().replace(".tex", ".dvi");
-    QString psfile = documentfile;
-    QProcess *procps = new QProcess( this );
-    args.clear();
-    args << "-o" << psfile.replace(".dvi", ".ps") << documentfile;
-    procps->start("dvips", args);
-	if(procps->exitStatus() == QProcess::CrashExit ) 
-		QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
-	else
-	{
-	    QProcess *procprint = new QProcess( this );
-    	args.clear();
-	    args << psfile;
-	    procprint->start("kprinter", args);
-	    if(procprint->exitStatus() != QProcess::NormalExit ) 
-			QMessageBox::critical(0,"Error...", tr("Error during printing process."));
-	}
+	QString psfile = documentfile;
+
+	#ifdef Q_OS_LINUX //if Linux then convert to ps
+		tool = v.get_tool("DVI2PS");
+    	QProcess *procps = new QProcess( this );
+	    args.clear();
+    	args << "-o" << psfile.replace(".dvi", ".ps") << documentfile;
+	    procps->start(tool, args);
+		if(procps->exitStatus() == QProcess::CrashExit ) 
+			QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
+	#endif
+
+	tool = v.get_tool("PRINT");
+    QProcess *procprint = new QProcess( this );
+   	args.clear();
+    args << psfile;
+    procprint->start(tool, args);
+    if(procprint->exitStatus() != QProcess::NormalExit ) 
+		QMessageBox::critical(0,"Error...", tr("Error during printing process."));
+
 }
 //
 QStringList doceditfrm::vesr()
@@ -1540,20 +1549,26 @@ void doceditfrm::printreport(bool complete)
 		    
 		    QTime now = QTime::currentTime();
 			while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
-		    		    
+		    
+		    vars v;
 		    QString psfile = document;
-		    QProcess *procps = new QProcess( this );
+		    QString tool;
 		    QStringList args;
-		    args << "-o" << psfile.replace(".dvi", ".ps") << document;
-		
-		    procps->start("dvips", args);
-		    if(procps->exitStatus() == QProcess::CrashExit ) 
-				QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+		    
+			#ifdef Q_OS_LINUX //if Linux then convert to ps
+	    		tool = v.get_tool("DVI2PS");
+		    	QProcess *procps = new QProcess( this );
+		    	args << "-o" << psfile.replace(".dvi", ".ps") << document;
+			    procps->start(tool, args);
+		    	if(procps->exitStatus() == QProcess::CrashExit ) 
+					QMessageBox::critical(0,"Error...", tr("Can't find DVI-File."));
+			#endif
     
+    		tool = v.get_tool("PRINT");
 		    QProcess *procprint = new QProcess( this );
 		    args.clear();
 		    args << psfile;
-		    procprint->start("kprinter", args);
+		    procprint->start(tool, args);
    		    if(procprint->exitStatus() == QProcess::CrashExit ) 
 				QMessageBox::critical(0,"Error...", tr("Can't print File."));
 	    

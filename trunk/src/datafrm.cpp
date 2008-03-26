@@ -571,18 +571,22 @@ void datafrm::writetexfile(int type)
 	    QMessageBox::critical(0,"Error...",tr("Can't write ouputfile!"));
 	}
 	    
+    vars v;
+    QString tool = v.get_tool("TEX2DVI");
+	    
     //converting text to dvi
 	QStringList args;
     args <<  "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
     QProcess *procdvi = new QProcess( this );
-    procdvi->start("latex", args);
+    procdvi->start(tool, args);
     if(procdvi->exitCode()!=0)
 		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
 
+	tool = v.get_tool("DVIVIEWER");
 	args.clear();
     args <<  QDir::homePath()+"/.first4/tmp/"+output.fileName().replace(".tex", ".dvi");
     QProcess *procshow = new QProcess( this );
-    procshow->start("kdvi", args);
+    procshow->start(tool, args);
     if(procshow->exitCode()!=0)
 		QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
 	

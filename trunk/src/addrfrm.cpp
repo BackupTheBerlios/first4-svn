@@ -719,11 +719,14 @@ void addrfrm::printaddr()
 {
     QString document = writetexfile();
 
+	vars v;
+	QString tool = v.get_tool("DVIVIEWER");
+	
     //Show Report
     QStringList args;
     args << document;
     QProcess *procshow = new QProcess( this );
-    procshow->start("kdvi", args);
+    procshow->start(tool, args);
 	if(procshow->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
     QFile file(document);

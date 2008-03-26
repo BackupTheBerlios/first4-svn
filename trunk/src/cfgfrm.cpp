@@ -1354,7 +1354,7 @@ void cfgfrm::load_db_tools()
 	#ifdef Q_OS_MAC
 		os="mac";
 	#endif
-	QString qstr1 = QString("SELECT var, value FROM maincfgtab WHERE `var`='tool_%1_tex2dvi' OR `var`='tool_%1_dviview' OR `var`='tool_%1_dvi2ps' OR `var`='tool_%1_print' ORDER BY var;").arg(os);
+	QString qstr1 = QString("SELECT var, value FROM maincfgtab WHERE `var`='tool_%1_tex2dvi' OR `var`='tool_%1_dviviewer' OR `var`='tool_%1_dvi2ps' OR `var`='tool_%1_print' ORDER BY var;").arg(os);
 	QSqlQuery querytools(qstr1);
 	if ( querytools.isActive())
 	{
@@ -1446,11 +1446,11 @@ void cfgfrm::save_db_tools()
 	}
 	
 	// SAVE DVIVIEWER
-	QString qstr2 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dviview' LIMIT 1;").arg(txt_tool_db_dviviewer->text()).arg(os);
+	QString qstr2 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dviviewer' LIMIT 1;").arg(txt_tool_db_dviviewer->text()).arg(os);
 	QSqlQuery querytools2(qstr2);
 	if(querytools2.numRowsAffected() == 0)
 	{
-		qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviview").arg(txt_tool_db_dviviewer->text());
+		qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviviewer").arg(txt_tool_db_dviviewer->text());
 		QSqlQuery querytools_insert2(qstr2);
 	}
 	
