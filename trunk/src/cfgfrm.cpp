@@ -1436,41 +1436,25 @@ void cfgfrm::save_db_tools()
 		os="mac";
 	#endif
 	
+	//First cleanup
+	QString qstr = QString("DELETE FROM maincfgtab WHERE `var` LIKE '%tool_%1_%';").arg(os);
+	QSqlQuery querycleanup(qstr);
+	
 	// SAVE DVI2PS
-	QString qstr1 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dvi2ps' LIMIT 1;").arg(txt_tool_db_dvi2ps->text()).arg(os);
+	QString qstr1 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dvi2ps").arg(txt_tool_db_dvi2ps->text());
 	QSqlQuery querytools1(qstr1);
-	if(querytools1.numRowsAffected() == 0)
-	{
-		qstr1 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dvi2ps").arg(txt_tool_db_dvi2ps->text());
-		QSqlQuery querytools_insert1(qstr1);
-	}
 	
 	// SAVE DVIVIEWER
-	QString qstr2 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_dviviewer' LIMIT 1;").arg(txt_tool_db_dviviewer->text()).arg(os);
+	QString qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviviewer").arg(txt_tool_db_dviviewer->text());
 	QSqlQuery querytools2(qstr2);
-	if(querytools2.numRowsAffected() == 0)
-	{
-		qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviviewer").arg(txt_tool_db_dviviewer->text());
-		QSqlQuery querytools_insert2(qstr2);
-	}
 	
 	// SAVE PRINTCMD
-	QString qstr3 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_print' LIMIT 1;").arg(txt_tool_db_print->text()).arg(os);
+	QString qstr3 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_print").arg(txt_tool_db_print->text());
 	QSqlQuery querytools3(qstr3);
-	if(querytools3.numRowsAffected() == 0)
-	{
-		qstr3 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_print").arg(txt_tool_db_print->text());
-		QSqlQuery querytools_insert3(qstr3);
-	}
 	
 	// SAVE TEX2DVI
-	QString qstr4 = QString("UPDATE maincfgtab SET `value`='%1' WHERE `var`='tool_%2_tex2dvi' LIMIT 1;").arg(txt_tool_db_tex2dvi->text()).arg(os);
+	QString qstr4 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
 	QSqlQuery querytools4(qstr4);
-	if(querytools4.numRowsAffected() == 0)
-	{
-		qstr4 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
-		QSqlQuery querytools_insert4(qstr4);
-	}
 }
 //
 void cfgfrm::tools_filedialog()
