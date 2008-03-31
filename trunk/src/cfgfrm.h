@@ -25,7 +25,6 @@ public slots:
 	void selectlangfile();
 	void addservers();
 	void delservers();
-	void opendbspec();
 	void selectuser();
 	void newuser();
 	void saveuserchange();
@@ -50,7 +49,6 @@ public slots:
 	void save_db_tools();
 private slots:
 	void tools_filedialog();
-	void applydbspec();
 	void templates_load();
 	void templates_new();
 	void templates_edit();

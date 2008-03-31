@@ -305,7 +305,6 @@ mysqsqlcreatelist << "CREATE TABLE `msgcfgtab` (`ID` int(11) NOT NULL auto_incre
 mysqsqlcreatelist << "LOCK TABLES `msgcfgtab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `msgcfgtab` VALUES ('','gen','1 general',''),('','sto','2 stock',''),('','ord','3 order',''),('','iem','4 incexp','');";
 mysqsqlcreatelist << "UNLOCK TABLES;";
-mysqsqlcreatelist << "CREATE TABLE msgtab (ID int(11) NOT NULL auto_increment, typ text NOT NULL, user text NOT NULL, date date NOT NULL default '0000-00-00', msgtext text NOT NULL, data1 text NOT NULL, data2 text NOT NULL, data3 text NOT NULL, data4 text NOT NULL, data5 text NOT NULL, PRIMARY KEY  (ID)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `orderscfgtab` (`ID` int(11) NOT NULL auto_increment,`USERS` text NOT NULL,`COUNTER` int(11) NOT NULL default '0',PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "LOCK TABLES `orderscfgtab` WRITE;";
 mysqsqlcreatelist << "INSERT INTO `orderscfgtab` VALUES (1,'',5000);";

@@ -1049,113 +1049,6 @@
         </property>
        </widget>
       </widget>
-      <widget class="QGroupBox" name="groupBox_7" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>260</y>
-         <width>741</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>16777215</width>
-         <height>121</height>
-        </size>
-       </property>
-       <property name="title" >
-        <string>DB-Updates</string>
-       </property>
-       <widget class="QPushButton" name="btndbapply" >
-        <property name="geometry" >
-         <rect>
-          <x>540</x>
-          <y>80</y>
-          <width>110</width>
-          <height>26</height>
-         </rect>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>110</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>110</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="text" >
-         <string>&amp;Update</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_15" >
-        <property name="geometry" >
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>110</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>110</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>110</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text" >
-         <string>File:</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="boxdbsqlfile" >
-        <property name="geometry" >
-         <rect>
-          <x>120</x>
-          <y>40</y>
-          <width>499</width>
-          <height>31</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="btnopensqlfile" >
-        <property name="geometry" >
-         <rect>
-          <x>630</x>
-          <y>40</y>
-          <width>26</width>
-          <height>26</height>
-         </rect>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>26</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>26</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="text" >
-         <string>...</string>
-        </property>
-       </widget>
-      </widget>
       <widget class="QGroupBox" name="groupBox_5" >
        <property name="geometry" >
         <rect>
@@ -4735,9 +4628,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>txtnewpwd2</tabstop>
   <tabstop>btnchangepwd</tabstop>
   <tabstop>cfgtab</tabstop>
-  <tabstop>boxdbsqlfile</tabstop>
-  <tabstop>btnopensqlfile</tabstop>
-  <tabstop>btndbapply</tabstop>
   <tabstop>listusers</tabstop>
   <tabstop>txt_users_user</tabstop>
   <tabstop>txt_users_pwd1</tabstop>

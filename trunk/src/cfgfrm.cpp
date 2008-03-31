@@ -114,8 +114,6 @@ void cfgfrm::init()
 	connect ( btnsellangfile, SIGNAL ( released() ), this, SLOT ( selectlangfile() ) );
 	connect ( btnadddb, SIGNAL ( released() ), this, SLOT ( addservers() ) );
 	connect ( btndeldb, SIGNAL ( released() ), this, SLOT ( delservers() ) );
-	connect ( btnopensqlfile, SIGNAL ( released() ), this, SLOT ( opendbspec() ) );
-	connect ( btndbapply, SIGNAL ( released() ), this, SLOT ( applydbspec() ) );
 	connect ( listusers, SIGNAL ( itemClicked ( QListWidgetItem* ) ), this, SLOT ( selectuser() ) );
 	connect ( btn_users_new, SIGNAL ( released() ), this, SLOT ( newuser() ) );
 	connect ( btn_users_save, SIGNAL ( released() ), this, SLOT ( saveuserchange() ) );
@@ -380,57 +378,6 @@ void cfgfrm::loadservers()
 			if(line != "")
 				listservers->insertItem ( -1, line.section(":", 1, 10) );
 		} while (line != "" && !stream.atEnd());
-		file.close();
-	}
-}
-//
-void cfgfrm::opendbspec()
-{
-	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Select DB-Structurfile..." ),
-	                   QDir::homePath(),
-	                   tr ( "DB-Structurfile (*.fdb)" ) );
-	boxdbsqlfile->setText ( filename );
-}
-//
-void cfgfrm::applydbspec()
-{
-	QFile file ( boxdbsqlfile->text() );
-	if ( file.open ( QIODevice::ReadOnly ) )
-	{
-		bool ok;
-		QTextStream stream ( &file );
-		QString ver = stream.readLine();
-		ver = ver.mid ( 1, ver.length()-2 );
-		int a1, b1, c1, a2, b2, c2, d1, d2;
-		a1 = ver.section ( ".", 0, 0 ).toInt ( &ok, 10 );
-		b1 = ver.section ( ".", 1, 1 ).toInt ( &ok, 10 );
-		c1 = ver.section ( ".", 2, 2 ).section ( "-", 0, 0 ).toInt ( &ok, 10 );
-		d1 = ver.section ( ".", 2, 2 ).section ( "-", 1, 1 ).toInt ( &ok, 10 );
-		a2 = cfgdbver.section ( ".", 0, 0 ).toInt ( &ok, 10 );
-		b2 = cfgdbver.section ( ".", 1, 1 ).toInt ( &ok, 10 );
-		c2 = cfgdbver.section ( ".", 2, 2 ).section ( "-", 0, 0 ).toInt ( &ok, 10 );
-		d2 = cfgdbver.section ( ".", 2, 2 ).section ( "-", 1, 1 ).toInt ( &ok, 10 );
-
-		if ( ( a1>a2 ) || ( a1==a2 && b1>b2 ) || ( a1==a2 && b1==b2 && c1>c2 ) || ( a1==a2 && b1==b2 && c1==c2 && d1>d2 ) )
-		{
-			if ( QMessageBox::warning ( this, tr ( "Update Database..." ), tr ( "Update Database?" ),QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes )
-			{
-				while ( !stream.atEnd() )
-				{
-					QString connstr =  stream.readLine();
-					QSqlQuery query ( connstr.simplified() );
-					QSqlError qerror = query.lastError();
-					if(qerror.isValid())
-						QMessageBox::information ( 0, tr ( "Error during update..." ), qerror.text() );
-				}
-				QString conn =  "UPDATE `maincfgtab` SET `value`='"+ver+"' WHERE `var`='dbversion';";
-				QSqlQuery query ( conn );
-				QMessageBox::information ( 0, tr ( "Update..." ), tr ( "Database was updated." ) );
-				cfgfrm::loaddbinfo();
-			}
-		}
-		else
-			QMessageBox::information ( 0,"Update not possible...", "Current version is newer than file specification!\n\nUpdate not possible...." );
 		file.close();
 	}
 }
