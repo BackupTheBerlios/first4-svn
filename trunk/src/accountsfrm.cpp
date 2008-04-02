@@ -412,7 +412,7 @@ void accountsfrm::loaddetails()
 void accountsfrm::loadaccountdata(QString ID)
 {
     treemain->clear();
-    QString qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date DESC;").arg(ID);
+    QString qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date ASC;").arg(ID);
     QSqlQuery query(qstr);
     progbar->setMaximum(query.size());
     if(query.isActive())
@@ -435,6 +435,7 @@ void accountsfrm::loadaccountdata(QString ID)
 		}
     }
     progbar->setValue(progbar->maximum());
+    treemain->sortItems(1, Qt::DescendingOrder);
 }
 //
 void accountsfrm::loadincexpdata(QString type)
