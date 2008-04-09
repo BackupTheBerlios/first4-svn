@@ -234,6 +234,17 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtpos</tabstop>
+  <tabstop>txtlabel</tabstop>
+  <tabstop>txtdescription</tabstop>
+  <tabstop>txtquantity</tabstop>
+  <tabstop>txtunit</tabstop>
+  <tabstop>txtprice</tabstop>
+  <tabstop>cmbvat</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

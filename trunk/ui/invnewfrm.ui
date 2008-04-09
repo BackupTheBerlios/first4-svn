@@ -94,6 +94,12 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>cmbinv</tabstop>
+  <tabstop>txtcomments</tabstop>
+  <tabstop>btncreate</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

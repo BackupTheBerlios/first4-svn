@@ -108,6 +108,11 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>treemain</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

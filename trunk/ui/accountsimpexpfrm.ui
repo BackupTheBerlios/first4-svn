@@ -59,28 +59,40 @@
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>75</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text" >
     <string>&amp;Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnnext" >
    <property name="geometry" >
     <rect>
-     <x>270</x>
+     <x>244</x>
      <y>130</y>
-     <width>75</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text" >
     <string>&amp;Next</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>rdbtn_1</tabstop>
+  <tabstop>rdbtn_2</tabstop>
+  <tabstop>btnnext</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

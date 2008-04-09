@@ -409,6 +409,20 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtRefNr</tabstop>
+  <tabstop>date1</tabstop>
+  <tabstop>txtCode</tabstop>
+  <tabstop>btncodecheck</tabstop>
+  <tabstop>cmbincexp</tabstop>
+  <tabstop>txtaddress</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclearsearch</tabstop>
+  <tabstop>txtdescription</tabstop>
+  <tabstop>txtamount</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

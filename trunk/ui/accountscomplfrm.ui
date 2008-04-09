@@ -85,28 +85,41 @@
     <rect>
      <x>10</x>
      <y>200</y>
-     <width>75</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text" >
     <string>Cancel</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>300</x>
+     <x>274</x>
      <y>200</y>
-     <width>75</width>
+     <width>101</width>
      <height>27</height>
     </rect>
    </property>
    <property name="text" >
     <string>OK</string>
    </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>chkbox_2</tabstop>
+  <tabstop>chkbox_1</tabstop>
+  <tabstop>chkbox_3</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

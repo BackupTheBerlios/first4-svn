@@ -42,6 +42,9 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtcomments</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

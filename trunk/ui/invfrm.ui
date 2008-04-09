@@ -367,6 +367,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>cmbinv</tabstop>
+  <tabstop>btncomments</tabstop>
+  <tabstop>btnnew</tabstop>
+  <tabstop>btnsave</tabstop>
+  <tabstop>btnprint</tabstop>
+  <tabstop>btncomplete</tabstop>
+  <tabstop>maintab</tabstop>
+  <tabstop>btnclose</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

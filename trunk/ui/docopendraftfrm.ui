@@ -333,6 +333,17 @@
    </column>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>cmbsearchrow</tabstop>
+  <tabstop>txtsearch</tabstop>
+  <tabstop>btnaddr</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclear</tabstop>
+  <tabstop>treeindex</tabstop>
+  <tabstop>treemain</tabstop>
+  <tabstop>btnopen</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

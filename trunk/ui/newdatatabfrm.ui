@@ -227,6 +227,19 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtname</tabstop>
+  <tabstop>rdbstock</tabstop>
+  <tabstop>rdbiecode</tabstop>
+  <tabstop>rdbcustom</tabstop>
+  <tabstop>btnadd</tabstop>
+  <tabstop>btnremove</tabstop>
+  <tabstop>listcols</tabstop>
+  <tabstop>btnup</tabstop>
+  <tabstop>btndown</tabstop>
+  <tabstop>btncreate</tabstop>
+  <tabstop>btncance</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

@@ -2015,6 +2015,43 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>rbtnmysqlex</tabstop>
+  <tabstop>rbtnmysqlnew</tabstop>
+  <tabstop>rbtnsqliteex</tabstop>
+  <tabstop>rbtnsqlitenew</tabstop>
+  <tabstop>btnnext</tabstop>
+  <tabstop>btnback</tabstop>
+  <tabstop>txtexhost</tabstop>
+  <tabstop>txtexport</tabstop>
+  <tabstop>txtexuser</tabstop>
+  <tabstop>txtexpwd</tabstop>
+  <tabstop>btncheckdb</tabstop>
+  <tabstop>cmbexdb</tabstop>
+  <tabstop>txtnewhost</tabstop>
+  <tabstop>txtnewport</tabstop>
+  <tabstop>txtnewuser</tabstop>
+  <tabstop>txtnewpwd</tabstop>
+  <tabstop>txtnewdbname</tabstop>
+  <tabstop>txtnewfirstuser</tabstop>
+  <tabstop>txtnewfirstpwd</tabstop>
+  <tabstop>txtcompany</tabstop>
+  <tabstop>txtstreetnr</tabstop>
+  <tabstop>txtcity</tabstop>
+  <tabstop>txtzip</tabstop>
+  <tabstop>txtnewadminuser</tabstop>
+  <tabstop>txtnewfadminpwd</tabstop>
+  <tabstop>txtliteopendb</tabstop>
+  <tabstop>btnliteopendb</tabstop>
+  <tabstop>txtnewdbname_sqllite</tabstop>
+  <tabstop>txtnewdbfolder_sqllite</tabstop>
+  <tabstop>btnlitenewdb</tabstop>
+  <tabstop>txtcompany_3</tabstop>
+  <tabstop>txtstreetnr_3</tabstop>
+  <tabstop>txtcity_3</tabstop>
+  <tabstop>txtzip_3</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

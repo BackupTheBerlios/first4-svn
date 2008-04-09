@@ -629,7 +629,7 @@
       </size>
      </property>
      <property name="currentIndex" >
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab1" >
       <attribute name="title" >
@@ -1354,6 +1354,32 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>cmbdoc</tabstop>
+  <tabstop>boxaddress</tabstop>
+  <tabstop>btnsearchaddr</tabstop>
+  <tabstop>btnclearsearch</tabstop>
+  <tabstop>txtdoccount</tabstop>
+  <tabstop>btnnew</tabstop>
+  <tabstop>btnopen</tabstop>
+  <tabstop>btnsave</tabstop>
+  <tabstop>btnprint</tabstop>
+  <tabstop>btncomplete</tabstop>
+  <tabstop>boxdate</tabstop>
+  <tabstop>mainwidget</tabstop>
+  <tabstop>txtsalutation</tabstop>
+  <tabstop>boxotherinfo</tabstop>
+  <tabstop>tabmain</tabstop>
+  <tabstop>boxcomments</tabstop>
+  <tabstop>boxtot</tabstop>
+  <tabstop>boxdiscount</tabstop>
+  <tabstop>boxtot_excl</tabstop>
+  <tabstop>btnvat</tabstop>
+  <tabstop>boxvat</tabstop>
+  <tabstop>boxtot_incl</tabstop>
+  <tabstop>btncalc</tabstop>
+  <tabstop>btnclose</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

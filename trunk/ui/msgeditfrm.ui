@@ -160,7 +160,7 @@
     </rect>
    </property>
    <property name="currentIndex" >
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page" >
     <widget class="QLabel" name="label_4" >
@@ -763,6 +763,37 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>cmbmsgtype</tabstop>
+  <tabstop>date</tabstop>
+  <tabstop>per_msg</tabstop>
+  <tabstop>gen_users</tabstop>
+  <tabstop>gen_msg</tabstop>
+  <tabstop>sto_def</tabstop>
+  <tabstop>sto_btncheck</tabstop>
+  <tabstop>sto_description</tabstop>
+  <tabstop>sto_supplier</tabstop>
+  <tabstop>sto_onstock</tabstop>
+  <tabstop>sto_min</tabstop>
+  <tabstop>sto_pprice</tabstop>
+  <tabstop>sto_sprice</tabstop>
+  <tabstop>ord_customer</tabstop>
+  <tabstop>ord_btncheck</tabstop>
+  <tabstop>ord_btnclear</tabstop>
+  <tabstop>ord_ordernr</tabstop>
+  <tabstop>ord_date1</tabstop>
+  <tabstop>ord_date2</tabstop>
+  <tabstop>iem_customer</tabstop>
+  <tabstop>iem_btncheck</tabstop>
+  <tabstop>iem_btnclear</tabstop>
+  <tabstop>iem_ordernr</tabstop>
+  <tabstop>iem_date1</tabstop>
+  <tabstop>iem_amount</tabstop>
+  <tabstop>iem_currency</tabstop>
+  <tabstop>chknew</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

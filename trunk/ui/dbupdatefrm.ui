@@ -126,6 +126,10 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>btnproceed</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

@@ -345,6 +345,21 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtordernr</tabstop>
+  <tabstop>cmbstock</tabstop>
+  <tabstop>txtlabel</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclearsearch</tabstop>
+  <tabstop>txtdescription</tabstop>
+  <tabstop>txtquantity</tabstop>
+  <tabstop>cmbsupplier</tabstop>
+  <tabstop>txtprice</tabstop>
+  <tabstop>cmbcurrency</tabstop>
+  <tabstop>txtcomments</tabstop>
+  <tabstop>btnok</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

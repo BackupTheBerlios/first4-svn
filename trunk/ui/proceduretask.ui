@@ -97,6 +97,12 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>date</tabstop>
+  <tabstop>txtdescription</tabstop>
+  <tabstop>btok</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

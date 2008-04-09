@@ -152,6 +152,16 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>chkbox_1</tabstop>
+  <tabstop>chkbox_2</tabstop>
+  <tabstop>chkbox_3</tabstop>
+  <tabstop>chkbox_4</tabstop>
+  <tabstop>chkbox_5</tabstop>
+  <tabstop>chkbox_6</tabstop>
+  <tabstop>btncomplete</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

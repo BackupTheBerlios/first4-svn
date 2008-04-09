@@ -513,6 +513,20 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>cmbsearchrow</tabstop>
+  <tabstop>txtsearch</tabstop>
+  <tabstop>btnaddr</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclearsearch</tabstop>
+  <tabstop>btnnew</tabstop>
+  <tabstop>btnedit</tabstop>
+  <tabstop>btndelete</tabstop>
+  <tabstop>btnprint</tabstop>
+  <tabstop>treeindex</tabstop>
+  <tabstop>treemain</tabstop>
+  <tabstop>btnclose</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

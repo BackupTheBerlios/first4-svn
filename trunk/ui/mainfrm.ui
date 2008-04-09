@@ -42,8 +42,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>137</width>
-       <height>50</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -147,8 +147,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>151</width>
-       <height>114</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -364,8 +364,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>119</width>
-       <height>82</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -507,8 +507,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>138</width>
-       <height>82</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -650,8 +650,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>129</width>
-       <height>70</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -737,8 +737,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>96</width>
-       <height>26</height>
+       <width>271</width>
+       <height>141</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -1116,6 +1116,23 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>btnbrowsedir</tabstop>
+  <tabstop>btnbrowsedata</tabstop>
+  <tabstop>btnvieworders</tabstop>
+  <tabstop>btninventory</tabstop>
+  <tabstop>btnbrowseorders</tabstop>
+  <tabstop>btnneworder</tabstop>
+  <tabstop>btnbrowsedoc</tabstop>
+  <tabstop>btnnewdoc</tabstop>
+  <tabstop>btnbrowseaccounts</tabstop>
+  <tabstop>btnbrowsemsgs</tabstop>
+  <tabstop>btnnewmsg</tabstop>
+  <tabstop>btnmsgicon</tabstop>
+  <tabstop>btnsettings</tabstop>
+  <tabstop>btnabout</tabstop>
+  <tabstop>btnexit</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

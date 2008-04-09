@@ -164,8 +164,8 @@ p, li { white-space: pre-wrap; }
  </widget>
  <tabstops>
   <tabstop>txtname</tabstop>
-  <tabstop>txtdescription</tabstop>
   <tabstop>btnimport</tabstop>
+  <tabstop>txtdescription</tabstop>
   <tabstop>txtdata</tabstop>
   <tabstop>btnaccept</tabstop>
   <tabstop>btncancel</tabstop>

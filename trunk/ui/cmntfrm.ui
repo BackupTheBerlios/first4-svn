@@ -58,6 +58,11 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtcomments</tabstop>
+  <tabstop>btnok</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>
