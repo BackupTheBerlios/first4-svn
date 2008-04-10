@@ -110,6 +110,7 @@ void addrfrm::init()
     connect(btnsearch, SIGNAL(released()), this, SLOT(search()));
     connect(txtsearch, SIGNAL(returnPressed()), this, SLOT(search()));
     connect(btnprint, SIGNAL(released()), this, SLOT(printaddr()));
+    connect(btnimpexp, SIGNAL(released()), this, SLOT(impexp()));
     connect(listdocs, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(mainlistview, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenuaddr()));
     
