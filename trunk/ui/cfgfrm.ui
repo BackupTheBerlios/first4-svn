@@ -3401,8 +3401,8 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="btnowndata" >
        <property name="geometry" >
         <rect>
-         <x>569</x>
-         <y>451</y>
+         <x>630</x>
+         <y>500</y>
          <width>110</width>
          <height>26</height>
         </rect>
@@ -3587,7 +3587,7 @@ p, li { white-space: pre-wrap; }
          <x>9</x>
          <y>9</y>
          <width>731</width>
-         <height>491</height>
+         <height>511</height>
         </rect>
        </property>
        <property name="title" >
@@ -3596,8 +3596,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btnsavepath" >
         <property name="geometry" >
          <rect>
-          <x>550</x>
-          <y>420</y>
+          <x>600</x>
+          <y>470</y>
           <width>110</width>
           <height>26</height>
          </rect>
@@ -3766,7 +3766,7 @@ p, li { white-space: pre-wrap; }
          <x>380</x>
          <y>10</y>
          <width>361</width>
-         <height>431</height>
+         <height>231</height>
         </rect>
        </property>
        <property name="title" >
@@ -3950,8 +3950,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btn_tools_reload_db" >
         <property name="geometry" >
          <rect>
-          <x>190</x>
-          <y>400</y>
+          <x>210</x>
+          <y>180</y>
           <width>30</width>
           <height>26</height>
          </rect>
@@ -3966,8 +3966,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btn_tools_save_db" >
         <property name="geometry" >
          <rect>
-          <x>230</x>
-          <y>400</y>
+          <x>250</x>
+          <y>180</y>
           <width>90</width>
           <height>26</height>
          </rect>
@@ -4622,21 +4622,38 @@ p, li { white-space: pre-wrap; }
  </widget>
  <tabstops>
   <tabstop>maintab</tabstop>
+  <tabstop>listservers</tabstop>
+  <tabstop>btnadddb</tabstop>
+  <tabstop>btndeldb</tabstop>
+  <tabstop>txtlang</tabstop>
+  <tabstop>btnsellangfile</tabstop>
+  <tabstop>txtPlugin</tabstop>
+  <tabstop>btnselplugindir</tabstop>
   <tabstop>txtuser</tabstop>
   <tabstop>txtoldpwd</tabstop>
   <tabstop>txtnewpwd1</tabstop>
   <tabstop>txtnewpwd2</tabstop>
   <tabstop>btnchangepwd</tabstop>
+  <tabstop>txt_tool_tex2dvi</tabstop>
+  <tabstop>btn_tool_tex2dvi</tabstop>
+  <tabstop>txt_tool_dviviewer</tabstop>
+  <tabstop>btn_tool_dviviewer</tabstop>
+  <tabstop>txt_tool_dvi2ps</tabstop>
+  <tabstop>btn_tool_dvi2ps</tabstop>
+  <tabstop>txt_tool_print</tabstop>
+  <tabstop>btn_tool_print</tabstop>
+  <tabstop>btn_tools_save_local</tabstop>
+  <tabstop>btn_tools_reload_local</tabstop>
   <tabstop>cfgtab</tabstop>
   <tabstop>listusers</tabstop>
-  <tabstop>txt_users_user</tabstop>
-  <tabstop>txt_users_pwd1</tabstop>
-  <tabstop>txt_users_pwd2</tabstop>
   <tabstop>btn_users_new</tabstop>
   <tabstop>btn_users_save</tabstop>
   <tabstop>btn_users_cancel</tabstop>
   <tabstop>btn_users_delete</tabstop>
+  <tabstop>txt_users_user</tabstop>
   <tabstop>txt_users_id</tabstop>
+  <tabstop>txt_users_pwd1</tabstop>
+  <tabstop>txt_users_pwd2</tabstop>
   <tabstop>usertab</tabstop>
   <tabstop>txt_users_firstname</tabstop>
   <tabstop>txt_users_lastname</tabstop>
@@ -4656,7 +4673,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_users_business_location</tabstop>
   <tabstop>txt_users_business_country</tabstop>
   <tabstop>txt_users_private_tel</tabstop>
-  <tabstop>txtstartid</tabstop>
   <tabstop>txt_users_private_fax</tabstop>
   <tabstop>txt_users_private_mobile</tabstop>
   <tabstop>txt_users_private_pager</tabstop>
@@ -4677,25 +4693,52 @@ p, li { white-space: pre-wrap; }
   <tabstop>txtnotes</tabstop>
   <tabstop>listresources</tabstop>
   <tabstop>listpermissions</tabstop>
+  <tabstop>cmbtemplatename</tabstop>
+  <tabstop>txtboxbank</tabstop>
+  <tabstop>txtboxaccountnr</tabstop>
+  <tabstop>txtboxclearing</tabstop>
+  <tabstop>txtboxcurrency</tabstop>
+  <tabstop>txtstartid</tabstop>
   <tabstop>btnsavepermissions</tabstop>
-  <tabstop>txtdocpath</tabstop>
-  <tabstop>btndocpath</tabstop>
-  <tabstop>btnsavepath</tabstop>
   <tabstop>txtcompany</tabstop>
   <tabstop>txtaddress</tabstop>
+  <tabstop>txtlocation</tabstop>
+  <tabstop>txtzip</tabstop>
+  <tabstop>txtcountry</tabstop>
   <tabstop>txt_bank_name</tabstop>
   <tabstop>txt_bank_addr</tabstop>
   <tabstop>txt_bank_clearing</tabstop>
   <tabstop>txt_bank_accountnr</tabstop>
   <tabstop>txt_bank_usrnr</tabstop>
   <tabstop>btnowndata</tabstop>
+  <tabstop>txtdocpath</tabstop>
+  <tabstop>btndocpath</tabstop>
+  <tabstop>txtdocprefix</tabstop>
+  <tabstop>txtgeneralinfo</tabstop>
+  <tabstop>btnsavepath</tabstop>
   <tabstop>daysofgrace</tabstop>
-  <tabstop>btnclose</tabstop>
-  <tabstop>txtboxcurrency</tabstop>
-  <tabstop>txtboxbank</tabstop>
-  <tabstop>txtboxaccountnr</tabstop>
+  <tabstop>txtdefcurrency</tabstop>
   <tabstop>btnsavesettings</tabstop>
-  <tabstop>txtboxclearing</tabstop>
+  <tabstop>txt_tool_db_tex2dvi</tabstop>
+  <tabstop>btn_tool_db_tex2dvi</tabstop>
+  <tabstop>txt_tool_db_dviviewer</tabstop>
+  <tabstop>btn_tool_db_dviviewer</tabstop>
+  <tabstop>txt_tool_db_dvi2ps</tabstop>
+  <tabstop>btn_tool_db_dvi2ps</tabstop>
+  <tabstop>txt_tool_db_print</tabstop>
+  <tabstop>btn_tool_db_print</tabstop>
+  <tabstop>btn_tools_save_db</tabstop>
+  <tabstop>btn_tools_reload_db</tabstop>
+  <tabstop>tem_tree</tabstop>
+  <tabstop>btnrefreshtempaltes</tabstop>
+  <tabstop>btnnewtemplate</tabstop>
+  <tabstop>btnedittemplate</tabstop>
+  <tabstop>btndeletetemplate</tabstop>
+  <tabstop>chksystemplates</tabstop>
+  <tabstop>lock_tree</tabstop>
+  <tabstop>lock_btnunlock</tabstop>
+  <tabstop>lock_btnrefresh</tabstop>
+  <tabstop>btnclose</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />

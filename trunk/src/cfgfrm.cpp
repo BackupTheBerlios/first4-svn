@@ -237,8 +237,9 @@ void cfgfrm::loadlangfile()
 //
 void cfgfrm::selectlangfile()
 {
+	bool found = FALSE;
 	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Open Lang-File" ),
-	                   QDir::homePath() +"/.first4",
+	                   QDir::homePath(),
 	                   tr ( "Lang-File (*.qm)" ) );
 	
 	QStringList lines;
@@ -258,10 +259,15 @@ void cfgfrm::selectlangfile()
 		for(i=0;i<lines.count();i++)
 		{
 			if(lines[i].section("=",0,0) == "TRANSLATION")
+			{
 				stream << "TRANSLATION=" << filename << "\n";
+				found = TRUE;
+			}
 			else
 				stream << lines[i] << "\n";
 		}
+		if(!found)
+			stream << "TRANSLATION=" << filename << "\n";
 		txtlang->setText ( filename );
 		QMessageBox::information ( 0,"Info...", tr ( "Please restart the application." ) );
 		file.close();
