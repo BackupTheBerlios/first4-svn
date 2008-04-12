@@ -87,6 +87,7 @@ void datafrm::init()
 	connect(maintable, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 	connect(btnnew, SIGNAL(released()), this, SLOT(newstockentry()));
 	connect(btnedit, SIGNAL(released()), this, SLOT(editstockentry()));
+	connect(maintree, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int) ), this, SLOT(editstockentry()));
 	connect(btndelete, SIGNAL(released()), this, SLOT(delstockentry()));
 	connect(btnprint, SIGNAL(released()), this, SLOT(print()));
     connect(maintable, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenudata()));

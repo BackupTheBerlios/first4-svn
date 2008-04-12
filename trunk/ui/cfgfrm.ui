@@ -359,7 +359,7 @@
         <x>128</x>
         <y>29</y>
         <width>521</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -432,7 +432,7 @@
         <x>128</x>
         <y>29</y>
         <width>521</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -1333,6 +1333,9 @@ take current password!)</string>
          </property>
          <property name="displayFormat" >
           <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup" >
+          <bool>true</bool>
          </property>
         </widget>
        </widget>

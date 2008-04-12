@@ -70,6 +70,7 @@ int procedurefrm::init()
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(settable()));
 	connect(btnadd, SIGNAL(released()), this, SLOT(neworder()));
     connect(btnedit, SIGNAL(released()), this, SLOT(checkeditID()));
+    connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int) ), this, SLOT(checkeditID()));
     connect(btndelete, SIGNAL(released()), this, SLOT(checkdeleteID()));
     connect(btndocument, SIGNAL(released()), this, SLOT(completeorder()));
     connect(btncomplete, SIGNAL(released()), this, SLOT(updatedatabase()));
@@ -391,6 +392,10 @@ void procedurefrm::createdoc_2(int doctype, QString docid)
     
     QString qstr1 = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='%1' AND `state`= '1' ORDER BY ID;").arg(docid);
     QSqlQuery orders(qstr1);
+    
+    //Change state for payed orders
+	qstr1 = QString("UPDATE procedureorders SET state = '2' WHERE `PROC_ID`='%1' AND `state`= '1';").arg(docid);
+    QSqlQuery updorders(qstr1);
 
     doc->tabmain->setRowCount(orders.size());
 

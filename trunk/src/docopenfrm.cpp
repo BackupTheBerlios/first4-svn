@@ -56,6 +56,7 @@ void docopenfrm::init()
     connect(treemain, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(loaddocsdetails()));
     connect(btnnew, SIGNAL(released()), this, SLOT(newdoc()));
     connect(btnedit, SIGNAL(released()), this, SLOT(editdoc()));
+    connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int) ), this, SLOT(editdoc()));
     connect(btndelete, SIGNAL(released()), this, SLOT(deletedoc()));
     connect(btnprint, SIGNAL(released()), this, SLOT(print()));
     connect(btnclearsearch, SIGNAL(released()), this, SLOT(clearsearch()));

@@ -505,6 +505,12 @@
        <height>0</height>
       </size>
      </property>
+     <property name="displayFormat" >
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QComboBox" name="cmbvat" >
      <property name="geometry" >

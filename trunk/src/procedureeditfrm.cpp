@@ -30,7 +30,7 @@ void procedureeditfrm::init()
     isnew = FALSE;
     
     //maintab initialisieren
-    taborders->setColumnWidth(0,30);
+    taborders->setColumnWidth(0,50);
     taborders->setColumnWidth(1,90);
     taborders->setColumnWidth(2,20);
     taborders->setColumnWidth(3,230);
@@ -49,7 +49,7 @@ void procedureeditfrm::init()
  	taborders->setItem(0, 0, item);
  	 
 	item = new QTableWidgetItem;   
- 	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+ 	item->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
  	taborders->setItem(0, 2, item);
  	
  	item = new QTableWidgetItem;
@@ -97,7 +97,7 @@ void procedureeditfrm::init()
     connect(tabtasks, SIGNAL(cellChanged(int, int)), this, SLOT(navtasktab(int)));
     connect(taborders, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(tabtasks, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-    connect(taborders, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
+    connect(taborders, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
 }
 //
 void procedureeditfrm::neworder()
@@ -173,6 +173,11 @@ void procedureeditfrm::loadentry(QString dbID)
 		    QTableWidgetItem *tmpitem = new QTableWidgetItem;
    		    if(orders.value(2).toString() == "1")
 			    tmpitem->setCheckState(Qt::Checked);
+			else if (orders.value(2).toString() == "2")
+			{
+				tmpitem->setCheckState(Qt::Checked);
+				tmpitem->setIcon(QIcon(QString::fromUtf8(":/button_ok_small.png")));
+			}
 			else
 				tmpitem->setCheckState(Qt::Unchecked);
 		    taborders->setItem(orders.at(), 0, tmpitem);
@@ -182,7 +187,7 @@ void procedureeditfrm::loadentry(QString dbID)
 		    taborders->setItem(orders.at(), 1, tmpitem);
 
 		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 		    taborders->setItem(orders.at(), 2, tmpitem);
 
 		    tmpitem = new QTableWidgetItem;
@@ -291,7 +296,7 @@ void procedureeditfrm::loadarchiveentry(QString dbID)
 		    taborders->setItem(orders.at(), 1, tmpitem);
 
 		    tmpitem = new QTableWidgetItem;
-		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+		    tmpitem->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 		    taborders->setItem(orders.at(), 2, tmpitem);
 
 		    tmpitem = new QTableWidgetItem;
@@ -415,7 +420,7 @@ void procedureeditfrm::navordertabs(int row)
 	 	taborders->setItem(taborders->rowCount()-1, 0, item);
 	 	 
 		item = new QTableWidgetItem;   
-	 	item->setIcon(QIcon(QString::fromUtf8(":/images/images/viewmag2.png")));
+	 	item->setIcon(QIcon(QString::fromUtf8(":/viewmag2.png")));
 	 	taborders->setItem(taborders->rowCount()-1, 2, item);
     
 	 	item = new QTableWidgetItem;

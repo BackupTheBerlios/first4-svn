@@ -40,6 +40,9 @@
    <property name="alignment" >
     <set>Qt::AlignRight</set>
    </property>
+   <property name="readOnly" >
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QTabWidget" name="tabmain" >
    <property name="geometry" >
@@ -208,7 +211,10 @@
       </rect>
      </property>
      <property name="displayFormat" >
-      <string>dd.mm.yyyy</string>
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QDateEdit" name="dateedit1" >
@@ -220,8 +226,17 @@
        <height>25</height>
       </rect>
      </property>
+     <property name="wrapping" >
+      <bool>true</bool>
+     </property>
+     <property name="buttonSymbols" >
+      <enum>QAbstractSpinBox::UpDownArrows</enum>
+     </property>
      <property name="displayFormat" >
-      <string>dd.mm.yyyy</string>
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup" >
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_7" >
@@ -522,10 +537,10 @@
   <widget class="QPushButton" name="btnaccept" >
    <property name="geometry" >
     <rect>
-     <x>699</x>
+     <x>680</x>
      <y>480</y>
-     <width>91</width>
-     <height>27</height>
+     <width>111</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text" >
@@ -540,8 +555,8 @@
     <rect>
      <x>10</x>
      <y>480</y>
-     <width>91</width>
-     <height>27</height>
+     <width>101</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text" >
