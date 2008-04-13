@@ -175,7 +175,7 @@ void procedureeditfrm::loadentry(QString dbID)
 			    tmpitem->setCheckState(Qt::Checked);
 			else if (orders.value(2).toString() == "2")
 			{
-				tmpitem->setCheckState(Qt::Checked);
+				//tmpitem->setCheckState(Qt::Checked);
 				tmpitem->setIcon(QIcon(QString::fromUtf8(":/button_ok_small.png")));
 			}
 			else
@@ -719,11 +719,15 @@ void procedureeditfrm::updateentry()
 			QTableWidgetItem *tmpitem = taborders->item(i, 0);
 				
 			QString state;
-			if(tmpitem->checkState() == Qt::Checked)
-			    state = "1";
+			if(!tmpitem->icon().isNull())
+				state = "2";
 			else
-			    state = "0";
-				    
+			{
+				if(tmpitem->checkState() == Qt::Checked)
+					state = "1";
+				else
+					state = "0";
+			}
 			QStringList strlorders;
 	
 			tmpitem = new QTableWidgetItem;

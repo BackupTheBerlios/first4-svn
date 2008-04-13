@@ -42,8 +42,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>201</width>
+       <height>54</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -147,8 +147,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>219</width>
+       <height>126</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -364,8 +364,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>165</width>
+       <height>76</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -507,8 +507,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>194</width>
+       <height>76</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -650,8 +650,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>180</width>
+       <height>62</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -737,8 +737,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>94</width>
+       <height>24</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -877,8 +877,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>261</width>
+       <height>124</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -995,9 +995,9 @@
     <widget class="QLabel" name="lblmsgcount" >
      <property name="geometry" >
       <rect>
-       <x>38</x>
+       <x>51</x>
        <y>12</y>
-       <width>84</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>

@@ -511,8 +511,12 @@ void procedurefrm::updatedatabase()
 			   	    QTreeWidgetItem* item = treemain->topLevelItem(i);
 					if(item->checkState(0) == Qt::Checked)
 					{
-					    QString connstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(indexitem->text(2).toInt()+1, 0, 10)+"' WHERE `ID`='"+item->text(1)+"';";
-					    QSqlQuery query(connstr);
+					    QString qstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(indexitem->text(2).toInt()+1, 0, 10)+"' WHERE `ID`='"+item->text(1)+"';";
+					    QSqlQuery query(qstr);
+						
+						//Reset state for orders
+						qstr = QString("UPDATE procedureorders SET state = '0' WHERE `PROC_ID`='%1';").arg(item->text(1));
+						QSqlQuery updorders(qstr);
 					}
 				}
 				filltable(indexitem->text(2).toInt());
