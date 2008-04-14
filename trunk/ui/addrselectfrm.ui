@@ -85,8 +85,8 @@
   <widget class="QPushButton" name="btnsearch" >
    <property name="geometry" >
     <rect>
-     <x>400</x>
-     <y>40</y>
+     <x>395</x>
+     <y>45</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -190,8 +190,8 @@
   <widget class="QPushButton" name="btncancelsearch" >
    <property name="geometry" >
     <rect>
-     <x>430</x>
-     <y>40</y>
+     <x>420</x>
+     <y>45</y>
      <width>21</width>
      <height>21</height>
     </rect>

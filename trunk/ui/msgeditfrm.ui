@@ -92,7 +92,7 @@
      <x>70</x>
      <y>50</y>
      <width>201</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <item>
@@ -140,7 +140,7 @@
      <x>460</x>
      <y>50</y>
      <width>110</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="displayFormat" >
@@ -351,7 +351,7 @@
        <x>150</x>
        <y>20</y>
        <width>231</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -361,7 +361,7 @@
        <x>150</x>
        <y>300</y>
        <width>81</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -371,7 +371,7 @@
        <x>150</x>
        <y>330</y>
        <width>81</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -381,7 +381,7 @@
        <x>150</x>
        <y>360</y>
        <width>81</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -391,7 +391,7 @@
        <x>150</x>
        <y>390</y>
        <width>81</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -506,7 +506,7 @@
        <x>130</x>
        <y>150</y>
        <width>211</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -516,7 +516,7 @@
        <x>130</x>
        <y>200</y>
        <width>110</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
      <property name="displayFormat" >
@@ -532,7 +532,7 @@
        <x>130</x>
        <y>240</y>
        <width>110</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
      <property name="displayFormat" >
@@ -637,7 +637,7 @@
        <x>130</x>
        <y>200</y>
        <width>110</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
      <property name="displayFormat" >
@@ -663,7 +663,7 @@
        <x>130</x>
        <y>150</y>
        <width>211</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -728,7 +728,7 @@
        <x>130</x>
        <y>240</y>
        <width>91</width>
-       <height>23</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -738,7 +738,7 @@
        <x>230</x>
        <y>240</y>
        <width>72</width>
-       <height>22</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>

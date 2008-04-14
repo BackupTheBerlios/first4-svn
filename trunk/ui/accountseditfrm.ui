@@ -42,7 +42,7 @@
      <x>110</x>
      <y>50</y>
      <width>251</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="font" >
@@ -162,7 +162,7 @@
      <x>110</x>
      <y>380</y>
      <width>90</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="font" >
@@ -219,7 +219,7 @@
      <x>440</x>
      <y>90</y>
      <width>120</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="font" >
@@ -265,7 +265,7 @@
      <x>110</x>
      <y>90</y>
      <width>90</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="font" >
@@ -301,7 +301,7 @@
      <x>440</x>
      <y>50</y>
      <width>121</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="displayFormat" >
@@ -368,8 +368,8 @@
     <rect>
      <x>370</x>
      <y>120</y>
-     <width>22</width>
-     <height>22</height>
+     <width>25</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -384,8 +384,8 @@
     <rect>
      <x>370</x>
      <y>150</y>
-     <width>22</width>
-     <height>22</height>
+     <width>25</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -400,8 +400,8 @@
     <rect>
      <x>210</x>
      <y>90</y>
-     <width>22</width>
-     <height>22</height>
+     <width>25</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >

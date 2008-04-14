@@ -43,9 +43,9 @@
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
-     <x>284</x>
+     <x>274</x>
      <y>160</y>
-     <width>101</width>
+     <width>111</width>
      <height>28</height>
     </rect>
    </property>

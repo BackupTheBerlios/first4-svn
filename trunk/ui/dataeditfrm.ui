@@ -99,7 +99,7 @@
      <x>141</x>
      <y>265</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -109,7 +109,7 @@
      <x>141</x>
      <y>203</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -518,7 +518,7 @@
        <x>120</x>
        <y>80</y>
        <width>111</width>
-       <height>22</height>
+       <height>25</height>
       </rect>
      </property>
     </widget>
@@ -658,7 +658,7 @@
      <x>138</x>
      <y>38</y>
      <width>305</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -746,7 +746,7 @@
      <x>141</x>
      <y>327</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -756,7 +756,7 @@
      <x>141</x>
      <y>358</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -776,7 +776,7 @@
      <x>141</x>
      <y>234</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -786,7 +786,7 @@
      <x>141</x>
      <y>296</y>
      <width>98</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

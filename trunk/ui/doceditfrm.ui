@@ -192,13 +192,13 @@
            <property name="minimumSize" >
             <size>
              <width>256</width>
-             <height>22</height>
+             <height>25</height>
             </size>
            </property>
            <property name="maximumSize" >
             <size>
              <width>16777215</width>
-             <height>22</height>
+             <height>25</height>
             </size>
            </property>
            <property name="text" >
@@ -949,7 +949,7 @@
         <property name="maximumSize" >
          <size>
           <width>281</width>
-          <height>171</height>
+          <height>188</height>
          </size>
         </property>
         <property name="title" >
@@ -959,7 +959,7 @@
          <property name="geometry" >
           <rect>
            <x>10</x>
-           <y>132</y>
+           <y>143</y>
            <width>265</width>
            <height>2</height>
           </rect>
@@ -972,7 +972,7 @@
          <property name="geometry" >
           <rect>
            <x>10</x>
-           <y>100</y>
+           <y>107</y>
            <width>265</width>
            <height>3</height>
           </rect>
@@ -985,9 +985,9 @@
          <property name="geometry" >
           <rect>
            <x>20</x>
-           <y>110</y>
+           <y>111</y>
            <width>121</width>
-           <height>17</height>
+           <height>20</height>
           </rect>
          </property>
          <property name="text" >
@@ -998,7 +998,7 @@
          <property name="geometry" >
           <rect>
            <x>9</x>
-           <y>140</y>
+           <y>150</y>
            <width>261</width>
            <height>29</height>
           </rect>
@@ -1048,7 +1048,7 @@
          <property name="geometry" >
           <rect>
            <x>10</x>
-           <y>130</y>
+           <y>140</y>
            <width>265</width>
            <height>2</height>
           </rect>
@@ -1061,21 +1061,21 @@
          <property name="geometry" >
           <rect>
            <x>160</x>
-           <y>107</y>
+           <y>110</y>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </rect>
          </property>
          <property name="minimumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="font" >
@@ -1114,7 +1114,7 @@
          <property name="geometry" >
           <rect>
            <x>130</x>
-           <y>78</y>
+           <y>83</y>
            <width>21</width>
            <height>20</height>
           </rect>
@@ -1148,9 +1148,9 @@
          <property name="geometry" >
           <rect>
            <x>160</x>
-           <y>77</y>
+           <y>81</y>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </rect>
          </property>
          <property name="sizePolicy" >
@@ -1162,13 +1162,13 @@
          <property name="minimumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
         </widget>
@@ -1176,9 +1176,9 @@
          <property name="geometry" >
           <rect>
            <x>160</x>
-           <y>54</y>
+           <y>56</y>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </rect>
          </property>
          <property name="sizePolicy" >
@@ -1190,13 +1190,13 @@
          <property name="minimumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
         </widget>
@@ -1279,9 +1279,9 @@
          <property name="geometry" >
           <rect>
            <x>160</x>
-           <y>32</y>
+           <y>31</y>
            <width>80</width>
-           <height>21</height>
+           <height>25</height>
           </rect>
          </property>
          <property name="sizePolicy" >
@@ -1293,13 +1293,13 @@
          <property name="minimumSize" >
           <size>
            <width>80</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>80</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="alignment" >
@@ -1323,9 +1323,9 @@
          <property name="geometry" >
           <rect>
            <x>160</x>
-           <y>10</y>
+           <y>6</y>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </rect>
          </property>
          <property name="sizePolicy" >
@@ -1337,13 +1337,13 @@
          <property name="minimumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>113</width>
-           <height>21</height>
+           <height>25</height>
           </size>
          </property>
         </widget>
