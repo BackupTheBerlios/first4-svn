@@ -11,7 +11,7 @@
 //
 int uid;
 QString firstver = "1.3.95-pre-beta3";
-QString build = "260";
+QString build = "271";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
