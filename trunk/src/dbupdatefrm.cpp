@@ -19,7 +19,7 @@ int dbupdatefrm::init()
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
 	QString cfgdbver;
-	newdbver = "1.4.0.2";
+	newdbver = "1.3.95.1";
 	QSqlQuery query ( "SELECT value FROM maincfgtab WHERE var = 'dbversion';");
 	if(query.isActive())
 	{
@@ -53,6 +53,10 @@ int dbupdatefrm::init()
 
 	QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
 	if(query6.size() != 1)
+	  retrcode = 1;
+
+	QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
+	if(query7.size() !=1)
 	  retrcode = 1;
 
 	return retrcode;
@@ -92,10 +96,14 @@ void dbupdatefrm::check_db_structure()
 		QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
 		if(query6.size() != 1)
 			update_db_structure("sys_vesr");
+			
+		QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
+		if(query7.size() !=1)
+			update_db_structure("orderIDdocs");
 
 		progbar->setValue(6);
 	    
-	QSqlQuery query7(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+	QSqlQuery query8(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
 	QMessageBox::information( 0, "DB update..." , "Update completed." );
 	this->accept();
 }
@@ -155,5 +163,9 @@ void dbupdatefrm::update_db_structure(QString section)
 			else if(section == "sys_vesr")
 			{
 				QSqlQuery query1(QString("INSERT INTO `templatestab` VALUES ('','sys_vesr','VESR default Template (A4)','\\documentclass[a4paper,10pt]{report}\n\n% Title Page\n\\title{ESR}\n\\author{procopio.ch}\n\n\\usepackage{textpos}\n\\usepackage {multirow}\n\\usepackage{helvet}\n\\usepackage[T1]{fontenc}\n\\usepackage{ocr}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=6mm,right=6mm,top=18.5cm,bottom=6mm]{geometry}\n\n\\newcommand\\topboxX{0mm} \\newcommand\\topboxY{0mm}\n\\newcommand\\topboxW{50mm} \\newcommand\\topboxH{40mm}\n\\textblockorigin{10mm}{10mm}\n\\TPGrid[1mm,1mm]\n\n\\begin{document}\n\\sffamily\n\\begin{textblock*}{\\topboxH}(0,12mm)%\n    \\parbox[t]{\\topboxW}{+++COMPANY+++}\n\\end{textblock*}\n\n\\begin{textblock*}{\\topboxH}(55mm,12mm)%\n    \\parbox[t]{\\topboxW}{+++COMPANY+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(110mm,32mm)\n    \\parbox[t]{9cm}{\\ocrfamily\\fontsize{10pt}{9.5pt}\\selectfont+++VESR1+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(20mm,38mm)\n    \\parbox[t]{40mm}{\\flushleft{\\small{+++TNR+++}}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(0,45mm)\n    \\parbox[t]{33mm}{\\flushright{\\ocrfamily+++AMOUNT+++}}\n\\end{textblock*}\n\\begin{textblock*}{10mm}(10mm,45mm)\n    \\parbox[t]{35mm}{\\flushright{\\ocrfamily+++AMOUNTCENTS+++}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(57mm,45mm)\n    \\parbox[t]{33mm}{\\flushright{\\ocrfamily+++AMOUNT+++}}\n\\end{textblock*}\n\\begin{textblock*}{10mm}(67mm,45mm)\n    \\parbox[t]{35mm}{\\flushright{\\ocrfamily+++AMOUNTCENTS+++}}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(0,60mm)%\n    \\parbox[t]{\\topboxW}{+++CUSTOMER+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(112mm,50mm)%\n    \\parbox[t]{\\topboxW}{+++CUSTOMER+++}\n\\end{textblock*}\n\n\\begin{textblock*}{10mm}(60mm,90mm)%\n    \\parbox[t]{14cm}{\\ocrfamily+++VESR2+++}\n\\end{textblock*}\n\n\\end{document}','Administrator','2008-03-18','','0000-00-00');").replace("\\", "\\\\"));
+			}
+			else if(section == "orderIDdocs")
+			{
+				QSqlQuery query1("ALTER TABLE `first4dbTEST`.`docs` ADD COLUMN `orderID` TEXT  AFTER `introduction`;");
 			}
 }

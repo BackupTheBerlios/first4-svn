@@ -389,13 +389,10 @@ void procedurefrm::createdoc_2(int doctype, QString docid)
     doc->lblID->setText(queryreturn[4].section(" (", 1, 1).section(")", 0, 0));
     doc->boxcomments->setText(queryreturn[7]);
     doc->lbluser->setText(queryreturn[8]);
+    doc->lblOrderID->setText(docid);
     
     QString qstr1 = QString("SELECT stock, stock_id, state, label, description, quantity, unit, price, vat FROM procedureorders WHERE `PROC_ID`='%1' AND `state`= '1' ORDER BY ID;").arg(docid);
     QSqlQuery orders(qstr1);
-    
-    //Change state for payed orders
-	qstr1 = QString("UPDATE procedureorders SET state = '2' WHERE `PROC_ID`='%1' AND `state`= '1';").arg(docid);
-    QSqlQuery updorders(qstr1);
 
     doc->tabmain->setRowCount(orders.size());
 

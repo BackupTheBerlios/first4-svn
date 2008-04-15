@@ -674,6 +674,14 @@ void doceditfrm::completedoc()
 				if(complfrm->chkbox_4->isChecked())
 				    registeramount();
 		
+				//If document is from a order then lock procedureorders
+				//Change state for payed orders
+				if(lblOrderID->text() != "" && lblOrderID->text() != "-")
+				{
+					QString p_orders = QString("UPDATE procedureorders SET state = '2' WHERE `PROC_ID`='%1' AND `state`= '1';").arg(lblOrderID->text());
+				    QSqlQuery updorders(p_orders);
+				}
+		
 				savecompletedoc();
 		
 				QMessageBox::information(0, tr("Save..."), tr("Document completed and saved in Database"));
@@ -1162,7 +1170,7 @@ void doceditfrm::savecompletedoc()
     int row;
 
     QSqlQuery query;
-    query.prepare("INSERT INTO `docs` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount`, `docID` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount, :docID);");
+    query.prepare("INSERT INTO `docs` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount`, `docID`, `orderID` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount, :docID, :orderID);");
     query.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
     query.bindValue( ":date", s);
     query.bindValue( ":client", lblID->text());
@@ -1172,6 +1180,7 @@ void doceditfrm::savecompletedoc()
     query.bindValue( ":amount", boxtot->text());
     query.bindValue( ":discount", boxdiscount->text());
     query.bindValue( ":docID", txtdoccount->text());
+    query.bindValue( ":orderID", lblOrderID->text());
     query.exec();
     
     QSqlQuery querycheck;

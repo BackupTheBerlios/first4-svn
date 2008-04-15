@@ -26,13 +26,13 @@
      </property>
      <property name="minimumSize" >
       <size>
-       <width>761</width>
+       <width>770</width>
        <height>201</height>
       </size>
      </property>
      <property name="maximumSize" >
       <size>
-       <width>761</width>
+       <width>770</width>
        <height>201</height>
       </size>
      </property>
@@ -43,9 +43,9 @@
       <property name="geometry" >
        <rect>
         <x>10</x>
-        <y>7</y>
-        <width>741</width>
-        <height>191</height>
+        <y>10</y>
+        <width>480</width>
+        <height>188</height>
        </rect>
       </property>
       <layout class="QGridLayout" >
@@ -67,7 +67,244 @@
        <property name="verticalSpacing" >
         <number>6</number>
        </property>
+       <item row="0" column="1" >
+        <widget class="QComboBox" name="cmbdoc" />
+       </item>
+       <item row="3" column="2" colspan="2" >
+        <layout class="QHBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btnclearsearch" >
+           <property name="minimumSize" >
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>26</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="icon" >
+            <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4" >
+           <property name="text" >
+            <string>Customer ID:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblID" >
+           <property name="text" >
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="label_2" >
+         <property name="maximumSize" >
+          <size>
+           <width>81</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Customer:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QLabel" name="label_6" >
+         <property name="maximumSize" >
+          <size>
+           <width>81</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Document #:</string>
+         </property>
+        </widget>
+       </item>
+       <item rowspan="2" row="2" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>82</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1" >
+        <widget class="QLineEdit" name="txtdoccount" >
+         <property name="minimumSize" >
+          <size>
+           <width>256</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>16777215</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item rowspan="3" row="0" column="3" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>121</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2" >
+        <widget class="QPushButton" name="btnsearchaddr" >
+         <property name="minimumSize" >
+          <size>
+           <width>26</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>26</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string/>
+         </property>
+         <property name="icon" >
+          <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="2" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item rowspan="3" row="1" column="1" >
+        <widget class="QTextEdit" name="boxaddress" >
+         <property name="minimumSize" >
+          <size>
+           <width>256</width>
+           <height>113</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>256</width>
+           <height>113</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="0" >
+        <widget class="QLabel" name="label" >
+         <property name="maximumSize" >
+          <size>
+           <width>81</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Document:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget" >
+      <property name="geometry" >
+       <rect>
+        <x>500</x>
+        <y>10</y>
+        <width>253</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" >
+       <item>
         <layout class="QGridLayout" >
          <property name="leftMargin" >
           <number>0</number>
@@ -87,10 +324,37 @@
          <property name="verticalSpacing" >
           <number>6</number>
          </property>
-         <item row="0" column="1" >
-          <widget class="QComboBox" name="cmbdoc" />
+         <item row="1" column="2" >
+          <widget class="QDateEdit" name="boxdate" >
+           <property name="displayFormat" >
+            <string>dd.MM.yyyy</string>
+           </property>
+           <property name="calendarPopup" >
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
-         <item row="3" column="2" colspan="2" >
+         <item row="1" column="1" >
+          <widget class="QLabel" name="label_3" >
+           <property name="text" >
+            <string>Date:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>129</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0" colspan="3" >
           <layout class="QHBoxLayout" >
            <property name="spacing" >
             <number>6</number>
@@ -108,16 +372,35 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QPushButton" name="btnclearsearch" >
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>21</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnnew" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize" >
               <size>
-               <width>26</width>
+               <width>30</width>
                <height>26</height>
               </size>
              </property>
              <property name="maximumSize" >
               <size>
-               <width>26</width>
+               <width>30</width>
                <height>26</height>
               </size>
              </property>
@@ -125,496 +408,225 @@
               <string/>
              </property>
              <property name="icon" >
-              <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+              <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
+             </property>
+             <property name="iconSize" >
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_4" >
+            <widget class="QPushButton" name="btnopen" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
+             </property>
              <property name="text" >
-              <string>Customer ID:</string>
+              <string/>
+             </property>
+             <property name="icon" >
+              <iconset resource="../resources/images/first4.qrc" >:/fileopen.png</iconset>
+             </property>
+             <property name="iconSize" >
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="lblID" >
+            <widget class="QPushButton" name="btnsave" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
+             </property>
              <property name="text" >
-              <string>-</string>
+              <string/>
+             </property>
+             <property name="icon" >
+              <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+             </property>
+             <property name="iconSize" >
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
              </property>
             </widget>
            </item>
-          </layout>
-         </item>
-         <item row="1" column="0" >
-          <widget class="QLabel" name="label_2" >
-           <property name="maximumSize" >
-            <size>
-             <width>81</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text" >
-            <string>Customer:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0" >
-          <widget class="QLabel" name="label_6" >
-           <property name="maximumSize" >
-            <size>
-             <width>81</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text" >
-            <string>Document #:</string>
-           </property>
-          </widget>
-         </item>
-         <item rowspan="2" row="2" column="0" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType" >
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>82</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="4" column="1" >
-          <widget class="QLineEdit" name="txtdoccount" >
-           <property name="minimumSize" >
-            <size>
-             <width>256</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="maximumSize" >
-            <size>
-             <width>16777215</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="text" >
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item rowspan="3" row="0" column="3" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType" >
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>121</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="2" >
-          <widget class="QPushButton" name="btnsearchaddr" >
-           <property name="minimumSize" >
-            <size>
-             <width>26</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="maximumSize" >
-            <size>
-             <width>26</width>
-             <height>26</height>
-            </size>
-           </property>
-           <property name="text" >
-            <string/>
-           </property>
-           <property name="icon" >
-            <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="2" column="2" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item rowspan="3" row="1" column="1" >
-          <widget class="QTextEdit" name="boxaddress" >
-           <property name="minimumSize" >
-            <size>
-             <width>256</width>
-             <height>113</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2" colspan="2" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0" >
-          <widget class="QLabel" name="label" >
-           <property name="maximumSize" >
-            <size>
-             <width>81</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text" >
-            <string>Document:</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="1" >
-        <layout class="QGridLayout" >
-         <property name="leftMargin" >
-          <number>0</number>
-         </property>
-         <property name="topMargin" >
-          <number>0</number>
-         </property>
-         <property name="rightMargin" >
-          <number>0</number>
-         </property>
-         <property name="bottomMargin" >
-          <number>0</number>
-         </property>
-         <property name="horizontalSpacing" >
-          <number>6</number>
-         </property>
-         <property name="verticalSpacing" >
-          <number>6</number>
-         </property>
-         <item row="1" column="0" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType" >
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>111</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0" >
-          <layout class="QGridLayout" >
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
-            <number>0</number>
-           </property>
-           <property name="horizontalSpacing" >
-            <number>6</number>
-           </property>
-           <property name="verticalSpacing" >
-            <number>6</number>
-           </property>
-           <item row="1" column="2" >
-            <widget class="QDateEdit" name="boxdate" >
-             <property name="displayFormat" >
-              <string>dd.MM.yyyy</string>
+           <item>
+            <widget class="QPushButton" name="btnprint" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-             <property name="calendarPopup" >
-              <bool>true</bool>
+             <property name="minimumSize" >
+              <size>
+               <width>46</width>
+               <height>26</height>
+              </size>
              </property>
-            </widget>
-           </item>
-           <item row="1" column="1" >
-            <widget class="QLabel" name="label_3" >
+             <property name="maximumSize" >
+              <size>
+               <width>40</width>
+               <height>26</height>
+              </size>
+             </property>
              <property name="text" >
-              <string>Date:</string>
+              <string/>
+             </property>
+             <property name="icon" >
+              <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
+             </property>
+             <property name="iconSize" >
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
              </property>
             </widget>
            </item>
-           <item row="1" column="0" >
+           <item>
             <spacer>
              <property name="orientation" >
               <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeType" >
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
              <property name="sizeHint" >
               <size>
-               <width>129</width>
+               <width>21</width>
                <height>20</height>
               </size>
              </property>
             </spacer>
            </item>
-           <item row="0" column="0" colspan="3" >
-            <layout class="QHBoxLayout" >
-             <property name="spacing" >
-              <number>6</number>
+           <item>
+            <widget class="QPushButton" name="btncomplete" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
+             <property name="minimumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
              </property>
-             <property name="topMargin" >
-              <number>0</number>
+             <property name="maximumSize" >
+              <size>
+               <width>30</width>
+               <height>26</height>
+              </size>
              </property>
-             <property name="rightMargin" >
-              <number>0</number>
+             <property name="text" >
+              <string/>
              </property>
-             <property name="bottomMargin" >
-              <number>0</number>
+             <property name="icon" >
+              <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
              </property>
-             <item>
-              <spacer>
-               <property name="orientation" >
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" >
-                <size>
-                 <width>21</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnnew" >
-               <property name="sizePolicy" >
-                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="maximumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
-               </property>
-               <property name="iconSize" >
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnopen" >
-               <property name="sizePolicy" >
-                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="maximumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../resources/images/first4.qrc" >:/fileopen.png</iconset>
-               </property>
-               <property name="iconSize" >
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnsave" >
-               <property name="sizePolicy" >
-                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="maximumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
-               </property>
-               <property name="iconSize" >
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnprint" >
-               <property name="sizePolicy" >
-                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize" >
-                <size>
-                 <width>46</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="maximumSize" >
-                <size>
-                 <width>40</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
-               </property>
-               <property name="iconSize" >
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer>
-               <property name="orientation" >
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType" >
-                <enum>QSizePolicy::Fixed</enum>
-               </property>
-               <property name="sizeHint" >
-                <size>
-                 <width>21</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btncomplete" >
-               <property name="sizePolicy" >
-                <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="maximumSize" >
-                <size>
-                 <width>30</width>
-                 <height>26</height>
-                </size>
-               </property>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
-               </property>
-               <property name="iconSize" >
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
+             <property name="iconSize" >
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QSplitter" name="splitter" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QLabel" name="label_8" >
+          <property name="text" >
+           <string>Order ID:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="margin" >
+           <number>0</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblOrderID" >
+          <property name="minimumSize" >
+           <size>
+            <width>109</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>109</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text" >
+           <string>-</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>251</width>
+           <height>71</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
