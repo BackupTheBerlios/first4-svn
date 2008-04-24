@@ -1361,6 +1361,7 @@ QString doceditfrm::writetexfile()
 		templatestr = templatestr.replace("+++TOTINCL_DESC+++", tr("Net amount:"));		
 		templatestr = templatestr.replace("+++TOTINCL+++", boxtot_incl->text()+ " "+currency);
 		templatestr = templatestr.replace("+++KIND_REGARDS+++", tr("Kind regards"));
+		templatestr = templatestr.replace("+++RECIEVED+++", tr("Recieved:"));
 		templatestr = templatestr.replace("+++GENERAL+++", tr("General informations:"));
 		templatestr = templatestr.replace("+++GENERAL_INFORMATIONS+++", loadgeneralinfo());
 		templatestr = templatestr.replace("+++USER+++", fullname);

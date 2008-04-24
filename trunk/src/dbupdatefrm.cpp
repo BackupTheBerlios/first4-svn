@@ -56,7 +56,7 @@ int dbupdatefrm::init()
 	  retrcode = 1;
 
 	QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
-	if(query7.size() !=1)
+	if(query7.size() != 1)
 	  retrcode = 1;
 
 	return retrcode;
@@ -166,6 +166,6 @@ void dbupdatefrm::update_db_structure(QString section)
 			}
 			else if(section == "orderIDdocs")
 			{
-				QSqlQuery query1("ALTER TABLE `first4dbTEST`.`docs` ADD COLUMN `orderID` TEXT  AFTER `introduction`;");
+				QSqlQuery query1("ALTER TABLE `docs` ADD COLUMN `orderID` TEXT  AFTER `introduction`;");
 			}
 }
