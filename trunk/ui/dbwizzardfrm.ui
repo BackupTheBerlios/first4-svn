@@ -36,8 +36,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>10</x>
      <y>370</y>
-     <width>75</width>
-     <height>24</height>
+     <width>101</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="text" >
@@ -56,10 +56,10 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry" >
     <rect>
-     <x>394</x>
+     <x>384</x>
      <y>370</y>
-     <width>91</width>
-     <height>24</height>
+     <width>101</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="text" >
@@ -72,10 +72,10 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="btnback" >
    <property name="geometry" >
     <rect>
-     <x>290</x>
+     <x>270</x>
      <y>370</y>
-     <width>91</width>
-     <height>24</height>
+     <width>101</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="text" >

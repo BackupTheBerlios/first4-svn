@@ -163,36 +163,32 @@ void dbwizzardfrm::enable_next()
 //
 void dbwizzardfrm::checkdbs()
 {
-    QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL", "checkdb");
-    checkDB.setUserName(txtexuser->text());
-    checkDB.setPassword(txtexpwd->text());
-    checkDB.setHostName(txtexhost->text());
-    checkDB.setPort(txtexport->text().toInt());
-    if(checkDB.open())
-    {
-		// Database successfully opened;
-		QSqlQuery query("SHOW DATABASES", checkDB);
-		if(query.isActive())
+	{
+		QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL", "checkdb");
+		checkDB.setUserName(txtexuser->text());
+		checkDB.setPassword(txtexpwd->text());
+		checkDB.setHostName(txtexhost->text());
+		checkDB.setPort(txtexport->text().toInt());
+		if(checkDB.isOpen ())
+			 checkDB.close();
+		if(checkDB.open())
 		{
-		    while(query.next())
-		    {
-				QString qstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
-				QSqlQuery query2(qstr, checkDB);
-				query2.next();
-				QString firstversion = query2.value(0).toString();
-				if(firstversion == "")
-					firstversion = "ERR";
-				cmbexdb->insertItem(-1, query.value(0).toString()+" ("+firstversion+")");	
-	    	}	
+			// Database successfully opened;
+			QSqlQuery query("SHOW DATABASES", checkDB);
+			if(query.isActive())
+			{
+				while(query.next())
+					cmbexdb->insertItem(-1, query.value(0).toString());	
+			}
+		}
+		else
+		{
+			QSqlError sqlerror = checkDB.lastError();
+			QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
 		}
 		checkDB.close();
 	}
-    else
-    {
-    	QSqlError sqlerror = checkDB.lastError();
-		QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
-    }
-	QSqlDatabase::removeDatabase ( "checkdb" );
+	QSqlDatabase::removeDatabase("checkdb");
 }
 //
 void dbwizzardfrm::writeconffile()

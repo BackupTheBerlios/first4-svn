@@ -10,6 +10,7 @@
 #include "loginfrm.h"
 #include "cfgfrm.h"
 #include "vars.h"
+#include "loginconfserversfrm.h"
 //
 extern int uid;
 extern QString username, fullname, docfolder, templatefolder, firstver;
@@ -39,10 +40,12 @@ void loginfrm::init()
     }	
     
 	connect( btnok, SIGNAL( released() ), this, SLOT( checkpwd() ) );
+	connect( btnservers, SIGNAL( released() ), this, SLOT( configure_servers() ) );
 }
 //
 bool loginfrm::loadservers()
 {
+	cmbdb->clear();
 	QStringList tmp;
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
@@ -135,7 +138,6 @@ void loginfrm::checkpwd()
 				}
 				else
 				{
-				    first4DB.close();
 				    boxpwd->setText("");
 				    boxuser->setFocus();
 				    boxuser->selectAll();
@@ -151,6 +153,7 @@ void loginfrm::checkpwd()
 			QSqlError sqlerror = first4DB.lastError();
 		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!\n\n")+sqlerror.text());
 		}
+		first4DB.close();
     }
 }
 //
@@ -269,4 +272,12 @@ void loginfrm::loadsysvars()
 	docfolder = vars.value(1).toString();
 	vars.next();
 	templatefolder = vars.value(1).toString();
+}
+//
+void loginfrm::configure_servers()
+{
+	loginconfserversfrm *conffrm = new loginconfserversfrm;
+	conffrm->init();
+	if(conffrm->exec())
+		loadservers();
 }

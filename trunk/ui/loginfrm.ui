@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>352</width>
+    <width>382</width>
     <height>180</height>
    </rect>
   </property>
@@ -17,14 +17,14 @@
   </property>
   <property name="minimumSize" >
    <size>
-    <width>352</width>
+    <width>382</width>
     <height>180</height>
    </size>
   </property>
   <property name="maximumSize" >
    <size>
-    <width>352</width>
-    <height>176</height>
+    <width>382</width>
+    <height>180</height>
    </size>
   </property>
   <property name="baseSize" >
@@ -83,7 +83,7 @@
     <rect>
      <x>120</x>
      <y>20</y>
-     <width>221</width>
+     <width>251</width>
      <height>25</height>
     </rect>
    </property>
@@ -93,7 +93,7 @@
     <rect>
      <x>120</x>
      <y>60</y>
-     <width>221</width>
+     <width>251</width>
      <height>25</height>
     </rect>
    </property>
@@ -133,20 +133,36 @@
   <widget class="QPushButton" name="btnok" >
    <property name="geometry" >
     <rect>
-     <x>244</x>
+     <x>270</x>
      <y>140</y>
      <width>101</width>
      <height>30</height>
     </rect>
    </property>
    <property name="text" >
-    <string>OK</string>
+    <string>Login</string>
    </property>
    <property name="icon" >
     <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
    </property>
    <property name="default" >
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnservers" >
+   <property name="geometry" >
+    <rect>
+     <x>347</x>
+     <y>100</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
    </property>
   </widget>
  </widget>

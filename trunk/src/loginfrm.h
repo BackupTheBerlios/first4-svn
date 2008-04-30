@@ -13,6 +13,8 @@ public:
 	void saveservers();
 	void loadsysvars();
 	void init();
+private slots:
+	void configure_servers();
 public slots:
 	void checkpwd();
 };
