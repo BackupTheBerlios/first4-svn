@@ -2485,17 +2485,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="364"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="360"/>
         <source>Unable to connect to server!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="220"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="216"/>
         <source>Error when storing the server list!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="481"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="477"/>
         <source>Database successfully created.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2786,27 +2786,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="461"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="457"/>
         <source>Initializing database...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="487"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="483"/>
         <source>Unable to connect to database!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="499"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="495"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="506"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="502"/>
         <source>Open SQLite DB-File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="508"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="504"/>
         <source>SQLite3 File (*.db)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3271,11 +3271,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/doceditfrm.cpp" line="875"/>
         <source>Document: ###docid###</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/doceditfrm.cpp" line="1466"/>
-        <source>\footnotesize\newline Invoice: %1 \newline Payable until: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3799,14 +3794,32 @@ Complete nevertheless?</source>
     </message>
 </context>
 <context>
+    <name>loginconfserversfrm</name>
+    <message>
+        <location filename="../../ui/loginconfserversfrm.ui" line="13"/>
+        <source>Configure databases...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginconfserversfrm.ui" line="106"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginconfserversfrm.ui" line="122"/>
+        <source>Databases...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>loginfrm</name>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="142"/>
+        <location filename="../../src/loginfrm.cpp" line="144"/>
         <source>Invalid Username or Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="177"/>
+        <location filename="../../src/loginfrm.cpp" line="180"/>
         <source>Error when storing the server list!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3826,17 +3839,12 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/loginfrm.ui" line="143"/>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/loginfrm.ui" line="124"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="148"/>
+        <location filename="../../src/loginfrm.cpp" line="150"/>
         <source>Query Error.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3846,10 +3854,15 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/loginfrm.cpp" line="152"/>
+        <location filename="../../src/loginfrm.cpp" line="154"/>
         <source>Unable to connect to database server!
 
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/loginfrm.ui" line="143"/>
+        <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

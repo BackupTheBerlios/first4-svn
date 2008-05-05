@@ -1463,7 +1463,7 @@ void doceditfrm::printvesr()
 	    QTextStream outstream( &output );	
 	    templatestr = templatestr.replace("+++VESR1+++", vesrcode[0]);
 	    templatestr = templatestr.replace("+++VESR2+++", vesrcode[1]);
-		templatestr = templatestr.replace("+++COMPANY+++", vesrcompanyaddress+tr("\\footnotesize\\newline Invoice: %1 \\newline Payable until: %2").arg(txtdoccount->text()).arg(boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy")));
+		templatestr = templatestr.replace("+++COMPANY+++", vesrcompanyaddress+QString("\\footnotesize\\newline Invoice: %1 \\newline %2 %3").arg(txtdoccount->text()).arg("Payable until:").arg(boxdate->date().addDays(querydays.value(0).toInt()).toString("dd.MM.yyyy")));
 		templatestr = templatestr.replace("+++DATE+++", QDate::currentDate().toString("dd.MM.yyyy"));
 		templatestr = templatestr.replace("+++TNR+++", tnr);
 		templatestr = templatestr.replace("+++CUSTOMER+++", boxaddress->toPlainText().replace("\n","\\newline "));
