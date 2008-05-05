@@ -597,21 +597,21 @@ void accountsfrm::editentry()
 //
 void accountsfrm::deleteentry()
 {
-    QTreeWidgetItem* item =  treemain->currentItem();
-    if(item != 0 && accountid != "-")
-    {    
-    	int resp;
+	QTreeWidgetItem* item =  treemain->currentItem();
+	if(item != 0 && accountid != "-")
+	{
+		int resp;
 		if(accountid=="ietab")
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(3)), QMessageBox::Yes, QMessageBox::No);
 		else
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(2)), QMessageBox::Yes, QMessageBox::No);
 		if(resp == QMessageBox::Yes)
 		{
-		    QString qstr = QString("DELETE FROM `%1` WHERE `ID` = '%2';").arg(accountid).arg(item->text(0));
-		    QSqlQuery query(qstr);
-		    loaddetails();
+			QString qstr = QString("DELETE FROM `%1` WHERE `ID` = '%2';").arg(accountid).arg(item->text(0));
+			QSqlQuery query(qstr);
+			loaddetails();
 		}
-    }
+	}
 }
 //
 void accountsfrm::completeitems()
@@ -700,8 +700,13 @@ void accountsfrm::datatransfer()
 				esrimport();
 				loaddetails();
 		    }
-		    if(impexp->rdbtn_2->isChecked())
+		    else if(impexp->rdbtn_2->isChecked())
 				csvexport();
+			else if(impexp->rdbtn_3->isChecked())
+			{
+				mt940import();
+				loaddetails();
+			}
 		}
     }
 }
@@ -798,10 +803,86 @@ void accountsfrm::esrimport()
 				qstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '%4', '%5', '', '%7');").arg(accountid).arg(date).arg(refnr).arg(address+" ("+adrID+")").arg(comments).arg(amount);
 				QSqlQuery queryadd(qstr);
 				pfrm->progbar->setValue(i);
-		    }
-		    pfrm->close();
+			}
+			pfrm->close();
 		}
-    }
+	}
+}
+void accountsfrm::mt940import()
+{
+	QString filestr = QFileDialog::getOpenFileName ( this, tr("Open File..."),
+						QDir::homePath(),
+						tr("MT940-File (*.*)") );
+	if(filestr!="")
+	{
+		int i;
+		progfrm *pfrm = new progfrm;
+		pfrm->setFixedSize(pfrm->width(), pfrm->height());
+		pfrm->txtcomments->setText(tr("Data will be imported..."));
+		pfrm->show();
+
+		QFile file(filestr);
+		if(file.open( QIODevice::ReadOnly ) )
+		{
+			QTextStream stream( &file );
+			QStringList lines;
+
+			while(!stream.atEnd())
+				lines << stream.readLine();
+			file.close();
+
+			pfrm->progbar->setMaximum(lines.count());
+
+			QString accountnumber = "";
+			QString clearing = "";
+			QString startdc = "";
+			QString startamount = "";
+			QString startdate = "";
+			QString startcurrency = "";
+
+			for(i=0;i<lines.count();i++)
+			{
+				if(lines[i].section(":",1,1).section(":",0,0) == "25" )
+				{
+					clearing = lines[i].section(":",2,2).section("/", 0, 0);
+					accountnumber = lines[i].section(":",2,2).section("/", 1, 1);
+				}
+				if(lines[i].section(":",1,1).section(":",0,0) == "60F" )
+				{
+					startdc = lines[i].section(":",2,2).mid(0, 1);
+					startdate = lines[i].section(":",2,2).mid(1, 6);
+					startcurrency = lines[i].section(":",2,2).mid(7, 3);
+					startamount = lines[i].section(":",2,2).mid(10, 15);
+				}
+			}
+			bool check = TRUE;
+			QString errordescription;
+			if(clearing != lblclearing->text().rightJustified(8, '0')) //Check clearing
+			{
+				check = FALSE;
+				errordescription = tr("Clearing number is not the same.\n\nClearing in file is: %1").arg(clearing);
+			}
+			if(accountnumber != lblaccountnr->text()) //Check account number
+			{
+				check = FALSE;
+				errordescription = tr("Account number is not the same.\n\nAccount number in file is: %1").arg(accountnumber);
+			}
+			if(startcurrency.toUpper() != lblcurrency->text().toUpper()) //Check account number
+			{
+				check = FALSE;
+				errordescription = tr("Currency is not the same.\n\nCurrency in file is: %1").arg(startcurrency);
+			}
+			
+			int r;
+			if(!check)
+				r = QMessageBox::warning(this, tr("MT940 import not possible..."), errordescription);
+			else
+			{
+				//IMPORT CODE
+			}
+			pfrm->close();
+		}
+	}
 }
 //
 void accountsfrm::print()

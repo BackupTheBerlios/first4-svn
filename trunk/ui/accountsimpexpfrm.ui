@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>358</width>
-    <height>170</height>
+    <height>186</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -21,7 +21,7 @@
      <x>10</x>
      <y>10</y>
      <width>341</width>
-     <height>101</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="title" >
@@ -44,7 +44,7 @@
     <property name="geometry" >
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>100</y>
       <width>291</width>
       <height>23</height>
      </rect>
@@ -53,12 +53,38 @@
      <string>Export to CSV-File</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="rdbtn_3" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>291</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Import MT940-File</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>321</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation" >
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="btncancel" >
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>130</y>
+     <y>150</y>
      <width>101</width>
      <height>27</height>
     </rect>
@@ -73,8 +99,8 @@
   <widget class="QPushButton" name="btnnext" >
    <property name="geometry" >
     <rect>
-     <x>244</x>
-     <y>130</y>
+     <x>250</x>
+     <y>150</y>
      <width>101</width>
      <height>27</height>
     </rect>

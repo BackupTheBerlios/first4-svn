@@ -20,7 +20,7 @@ int dbupdatefrm::init()
 
 	QString cfgdbver;
 	newdbver = "1.3.95.1";
-	QSqlQuery query ( "SELECT value FROM maincfgtab WHERE var = 'dbversion';");
+	QSqlQuery query("SELECT value FROM maincfgtab WHERE var = 'dbversion';");
 	if(query.isActive())
 	{
 		query.next();
@@ -32,32 +32,32 @@ int dbupdatefrm::init()
 	int retrcode = 0;
 	QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	if(query1.size() !=1 )
-	  retrcode = 1;
+		retrcode = 1;
 	
 	QSqlQuery query2("SHOW TABLES LIKE '%msgtab%';");
 	if(query2.size() !=1 )
-	  retrcode = 1;
+		retrcode = 1;
 	
 	QSqlQuery query3("SHOW COLUMNS FROM doctab WHERE field='filename';");
 	if(query3.size() !=0 )
-	  retrcode = 1;
+		retrcode = 1;
 	
 	QSqlQuery query4("SHOW TABLES LIKE '%userlocktab%';");
 	if(query4.size() !=1 )
-	  retrcode = 1;
+		retrcode = 1;
 
 	QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
 	query5.next();
 	if(query5.value(2).toString() == "NO")
-	  retrcode = 1;
+		retrcode = 1;
 
 	QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
 	if(query6.size() != 1)
-	  retrcode = 1;
+		retrcode = 1;
 
 	QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
 	if(query7.size() != 1)
-	  retrcode = 1;
+		retrcode = 1;
 
 	return retrcode;
 	

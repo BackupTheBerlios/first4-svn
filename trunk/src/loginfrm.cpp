@@ -90,6 +90,7 @@ bool loginfrm::loadservers()
 //
 void loginfrm::checkpwd()
 {
+	bool ok = FALSE;
     if(boxuser->text() != "")
     {	
     	QSqlDatabase first4DB;
@@ -118,6 +119,7 @@ void loginfrm::checkpwd()
 				query.next();
 				if(query.size()>0)
 				{
+					ok = TRUE;
 				    vars v;
 					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				    username = boxuser->text();
@@ -128,6 +130,7 @@ void loginfrm::checkpwd()
 				}
 				else if(query.size() == -1 && query.value(0).toString() != "")
 				{
+					ok = TRUE;
 				   	vars v;
 					v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 				   	username = boxuser->text();
@@ -153,7 +156,8 @@ void loginfrm::checkpwd()
 			QSqlError sqlerror = first4DB.lastError();
 		    QMessageBox::critical(0,"Error...",tr("Unable to connect to database server!\n\n")+sqlerror.text());
 		}
-		first4DB.close();
+		if(!ok)
+			first4DB.close();
     }
 }
 //
