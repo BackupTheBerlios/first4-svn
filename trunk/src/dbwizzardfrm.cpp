@@ -274,7 +274,7 @@ void dbwizzardfrm::createnewmysql()
 //Set SqlArray
 QStringList mysqsqlcreatelist;
 mysqsqlcreatelist << "CREATE TABLE `accounttab` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`accountnr` text NOT NULL,`bank` text NOT NULL,`blz` text NOT NULL,`currency` text NOT NULL,`users` text NOT NULL, PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-mysqsqlcreatelist << "INSERT INTO accounttab VALUES ('','ietab', 'Archive Incomes / Expenditures','','','','','');";
+mysqsqlcreatelist << "INSERT INTO accounttab VALUES ('','ietab', 'Incomes / Expenditures','','','','','');";
 mysqsqlcreatelist << "INSERT INTO accounttab VALUES ('','ietabarchiv', 'Archive','','','','','');";
 mysqsqlcreatelist << "CREATE TABLE `adrtabs` (`ID` int(11) unsigned NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,`idcounter` int(10) unsigned NOT NULL default '0', PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "CREATE TABLE `datatabs` (`ID` int(11) NOT NULL auto_increment,`name` text NOT NULL,`description` text NOT NULL,`users` text NOT NULL,`cols` text NOT NULL,`tabtyp` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";

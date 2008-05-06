@@ -15,6 +15,7 @@
 #include "addrfrm.h"
 #include "vars.h"
 #include "doceditfrm.h"
+#include "addrimpexpfrm.h"
 //
 QString lastadrtab, rev_currency, lastaddr, wintitle;
 QStringList adrnamelist, rightslist;
@@ -952,15 +953,14 @@ void addrfrm::moveaddr(QString dest)
 //
 void addrfrm::impexp()
 {
-	/*
-    adrimpexpfrm *adrimpexp = new adrimpexpfrm;
-    adrimpexp->initfrm();
-    if(adrimpexp->exec())
+	
+    addrimpexpfrm *addrimpexp = new addrimpexpfrm;
+    addrimpexp->init();
+    if(addrimpexp->exec())
     {
 		lastadrtab = "";
 		loadaddrs();
-    }
-    */
+	}
 }
 //
 QString addrfrm::loadtemplatedata()

@@ -18,6 +18,7 @@
 #include "progfrm.h"
 #include "accountsimpexpfrm.h"
 //
+extern int uid;
 extern QString username, fullname, templatefolder, docfolder;
 //
 QString accountid;
@@ -79,8 +80,12 @@ void accountsfrm::closeEvent( QCloseEvent* ce )
 void accountsfrm::initindexlist()
 {
     QTreeWidgetItem *item = new QTreeWidgetItem(treeindex, 0);
-    item->setText( 0, tr("Accounts"));
+    item->setText( 0, tr("Banc accounts"));
     item->setText( 1, "account");
+    
+	item = new QTreeWidgetItem(treeindex, item);
+    item->setText( 0, tr("Local accounts"));
+    item->setText( 1, "localaccount");
     
     item = new QTreeWidgetItem(treeindex, item );
     item->setText( 0, tr("Incomes"));
@@ -110,7 +115,7 @@ void accountsfrm::initindexlist()
 void accountsfrm::inittreemainaccounts()
 {
 	treemain->clear();
-    treemain->setColumnCount(8);
+    treemain->setColumnCount(9);
     
     //Spalten definieren
     treemain->headerItem()->setText(0, tr("ID"));
@@ -121,7 +126,9 @@ void accountsfrm::inittreemainaccounts()
     treemain->headerItem()->setText(5, tr("Description"));
     treemain->headerItem()->setText(6, tr("Amount"));
     treemain->headerItem()->setText(7, tr("Account"));
+    treemain->headerItem()->setText(8, "type");
 
+    treemain->hideColumn(8);
     treemain->hideColumn(0);
     treemain->setColumnWidth(1, 80);
     treemain->setColumnWidth(2, 100);
@@ -191,7 +198,7 @@ void accountsfrm::initmaintreeincexp()
 //
 void accountsfrm::loadaccounts()
 {
-    QString connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users FROM accounttab WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%';"; 
+    QString connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounttab WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%' AND `type`='banc';"; 
     QSqlQuery query1(connstr);
     if ( query1.isActive())
     {
@@ -207,30 +214,51 @@ void accountsfrm::loadaccounts()
 		    childitem->setText(5, query1.value(5).toString());
 		    childitem->setText(6, query1.value(6).toString());
 		    childitem->setText(7, query1.value(7).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		    childitem->setText(8, query1.value(8).toString());
 		}
     }
-    
-    connstr = "SELECT users FROM accounttab WHERE name LIKE '%ietab%';"; 
+
+    connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounttab WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%'  AND `type`='local';"; 
     QSqlQuery query2(connstr);
-    if(query2.isActive())
+    if ( query2.isActive())
     {
 		QTreeWidgetItem *item = treeindex->topLevelItem(1);
-		query2.next();
-		item->setText(7, query2.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
-		
-		item = new QTreeWidgetItem;
-		item = treeindex->topLevelItem(2);
-		item->setText(7, query2.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		while(query2.next())
+		{
+		    QTreeWidgetItem *childitem = new QTreeWidgetItem(item);
+		    childitem->setText(0, query2.value(2).toString());
+		    childitem->setText(1, query2.value(0).toString());
+		    childitem->setText(2, query2.value(1).toString());
+		    childitem->setText(3, query2.value(3).toString());
+		    childitem->setText(4, query2.value(4).toString());
+		    childitem->setText(5, query2.value(5).toString());
+		    childitem->setText(6, query2.value(6).toString());
+		    childitem->setText(7, query2.value(7).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		    childitem->setText(8, query2.value(8).toString());
+		}
+    }
 
+    connstr = "SELECT users FROM accounttab WHERE name LIKE '%ietab%';"; 
+    QSqlQuery query3(connstr);
+    if(query3.isActive())
+    {
+		QTreeWidgetItem *item = treeindex->topLevelItem(2);
+		query3.next();
+		item->setText(7, query3.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		
 		item = new QTreeWidgetItem;
 		item = treeindex->topLevelItem(3);
+		item->setText(7, query3.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
+
+		item = new QTreeWidgetItem;
+		item = treeindex->topLevelItem(4);
 		
 		QTreeWidgetItem *childitem = item->child(0);
-		childitem->setText(7, query2.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		childitem->setText(7, query3.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
 
 		childitem = new QTreeWidgetItem;
 		childitem = item->child(1);
-		childitem->setText(7, query2.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
+		childitem->setText(7, query3.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
 		
 		item->setExpanded(FALSE);
 	}
@@ -238,14 +266,14 @@ void accountsfrm::loadaccounts()
 //
 void accountsfrm::loaddetails()
 {
-    QTreeWidgetItem* item = treeindex->currentItem();
-    if(item!=0)
-    {
+	QTreeWidgetItem* item = treeindex->currentItem();
+	if(item!=0)
+	{
 		btncomplete->setEnabled(FALSE);
 		if(item->parent() != 0)
 		{
-		    if(item->text(2) != "ietabarchiv")
-		    {
+			if(item->text(2) != "ietabarchiv")
+			{
 				lblname->setText(item->text(0));
 				lblaccountnr->setText(item->text(3));
 				lblbank->setText(item->text(4));
@@ -255,12 +283,13 @@ void accountsfrm::loaddetails()
 				lblcurr2->setText("-");
 				lblcurr3->setText("-");
 				accountid = item->text(2); //lblkontoid->setText(item->text(2));
-				if(item->text(7)=="11" || username == "Administrator")
+				if(item->text(7)=="11" || uid == 0)
 				{
-				    btnnew->setEnabled(TRUE);
-				    btnedit->setEnabled(TRUE);
-				    btndelete->setEnabled(TRUE);
-				    btntransfer->setEnabled(TRUE);		
+					QMessageBox::information(this, tr("1"), item->text(1));
+					btnnew->setEnabled(TRUE);
+					btnedit->setEnabled(TRUE);
+					btndelete->setEnabled(TRUE);
+					btntransfer->setEnabled(TRUE);		
 				}
 				else
 				{
@@ -269,14 +298,21 @@ void accountsfrm::loaddetails()
 				    btndelete->setEnabled(FALSE);
 				    btntransfer->setEnabled(FALSE);
 				}
+				if(item->text(8) == "banc") //deactivating add,edit and delete for banc accounts
+				{
+				    btnnew->setEnabled(FALSE);
+				    btnedit->setEnabled(FALSE);
+				    btndelete->setEnabled(FALSE);
+				}
+				
 				tot->setText("-");
 				totin->setText("-");
 				totout->setText("-");
 				inittreemainaccounts();
 				loadaccountdata(item->text(2));
-		    }
-		    else
-		    {
+			}
+			else
+			{
 				btnnew->setEnabled(FALSE);
 				btnedit->setEnabled(FALSE);
 				btndelete->setEnabled(FALSE);
@@ -296,7 +332,7 @@ void accountsfrm::loaddetails()
 				accountid = "-";
 				initmaintreeincexp();	
 		
-				if(item->text(7)=="11" || username == "Administrator")
+				if(item->text(7)=="11" || uid == 0)
 				{
 				    btncomplete->setEnabled(TRUE);
 				    btnnew->setEnabled(TRUE);
@@ -347,6 +383,34 @@ void accountsfrm::loaddetails()
 				    mainlistitem->setText(3, tmpitem->text(4));
 				    mainlistitem->setText(4, tmpitem->text(5));
 				    mainlistitem->setText(6, tmpitem->text(6));
+
+				    //Saldo berechnen
+				    bool ok;
+				    float saldo = 0;
+				    QString qstr = "SELECT amount FROM "+tmpitem->text(2)+" ORDER BY ID DESC;"; 
+				    QSqlQuery query(qstr);
+				    while(query.next())
+				    {
+						saldo += query.value(0).toString().toFloat(&ok);
+				    }
+				    mainlistitem->setText(5, QString("%1").arg(saldo, 0, 'f',2));
+				}
+		    }
+		    else if(item->text(1) == "localaccount")
+		    {
+				inittreemainoverview();
+				int i;
+				for(i=0;i<item->childCount();i++)
+				{
+					QTreeWidgetItem* tmpitem = item->child(i);
+
+				    QTreeWidgetItem* mainlistitem = new QTreeWidgetItem(treemain);
+				    mainlistitem->setText(0, tmpitem->text(1));
+				    mainlistitem->setText(1, tmpitem->text(0));
+				    mainlistitem->setText(2, tmpitem->text(3));
+				    mainlistitem->setText(3, tmpitem->text(4));
+				    mainlistitem->setText(4, tmpitem->text(5));
+				    mainlistitem->setText(6, tmpitem->text(6));
 				    
 				    //Saldo berechnen
 				    bool ok;
@@ -364,7 +428,7 @@ void accountsfrm::loaddetails()
 		    {
 				initmaintreeincexp();
 				lblname->setText(item->text(0));
-				if(item->text(7) == "11" || username == "Administrator")
+				if(item->text(7) == "11" || uid == 0)
 				{
 				    btncomplete->setEnabled(TRUE);
 				    btnnew->setEnabled(TRUE);
@@ -434,6 +498,7 @@ void accountsfrm::loadaccountdata(QString ID)
 		    progbar->setValue(query.at()+1);
 		}
     }
+
     progbar->setValue(progbar->maximum());
     treemain->sortItems(1, Qt::DescendingOrder);
 }
@@ -688,7 +753,7 @@ void accountsfrm::datatransfer()
     {    
 		accountsimpexpfrm *impexp = new accountsimpexpfrm;
 		impexp->setFixedSize(impexp->width(), impexp->height());
-		if(item->text(7)!="11" || username != "Administrator")
+		if(item->text(7)!="11" || uid != 0)
 		{
 		    if(item->text(2).left(7) != "account")
 				impexp->rdbtn_1->setEnabled(FALSE);

@@ -709,7 +709,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querykon2 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency FROM accounttab WHERE `name` LIKE '%account%' ORDER BY ID ASC;" );
+	QSqlQuery querykon2 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency, type FROM accounttab WHERE `name` LIKE '%account%' ORDER BY ID ASC;" );
 	if ( querykon2.isActive() )
 	{
 		while ( querykon2.next() )
@@ -719,7 +719,7 @@ void cfgfrm::loadresources()
 			childitem->setText ( 1, querykon2.value ( 0 ).toString() );
 			childitem->setText ( 2, querykon2.value ( 1 ).toString() );
 			childitem->setText ( 3, querykon2.value ( 3 ).toString() );
-			childitem->setText ( 4, querykon2.value ( 4 ).toString() +";"+querykon2.value ( 5 ).toString() +";"+querykon2.value ( 6 ).toString() +";"+querykon2.value ( 7 ).toString() );
+			childitem->setText ( 4, querykon2.value ( 4 ).toString() +";"+querykon2.value ( 5 ).toString() +";"+querykon2.value ( 6 ).toString() +";"+querykon2.value ( 7 ).toString()+";"+querykon2.value ( 8 ).toString() );
 		}
 	}
 
@@ -796,6 +796,21 @@ void cfgfrm::loadresourcesdetails()
 			txtboxaccountnr->setText ( item->text ( 4 ).section ( ";", 1, 1 ) );
 			txtboxclearing->setText ( item->text ( 4 ).section ( ";", 2, 2 ) );
 			txtboxcurrency->setText ( item->text ( 4 ).section ( ";", 3, 3 ) );
+			if(item->text ( 4 ).section ( ";", 4, 4 ) == "local")
+			{
+				txtboxbank->setText ( "" );
+				txtboxaccountnr->setText ( "" );
+				txtboxclearing->setText ( "" );
+				txtboxbank->setEnabled(FALSE);
+				txtboxaccountnr->setEnabled (FALSE);
+				txtboxclearing->setEnabled(FALSE);
+			}
+			else
+			{
+				txtboxbank->setEnabled(TRUE);
+				txtboxaccountnr->setEnabled (TRUE);
+				txtboxclearing->setEnabled(TRUE);
+			}
 			resdefframe->setCurrentIndex ( 1 );
 		}
 		else if ( item->text ( 2 ).left ( 3 ) == "adr" || item->text ( 2 ) == "p_orders" || item->text ( 2 ) == "orders" )
@@ -958,15 +973,18 @@ void cfgfrm::contmenu()
 	Q_CHECK_PTR ( contextMenu );
 	if ( item->text(1) == "" )
 	{
-		QAction* cnt_newaddr = new QAction ( tr ( "New Directory" ), this );
+		QAction* cnt_newaddr = new QAction ( tr ( "New directory" ), this );
 		connect ( cnt_newaddr , SIGNAL ( triggered() ), this, SLOT ( newaddr() ) );
-		QAction* cnt_newdata = new QAction ( tr ( "New Datatable" ), this );
+		QAction* cnt_newdata = new QAction ( tr ( "New datatable" ), this );
 		connect ( cnt_newdata , SIGNAL ( triggered() ), this, SLOT ( newdata() ) );
-		QAction* cnt_newaccount = new QAction ( tr ( "New Account" ), this );
+		QAction* cnt_newaccount = new QAction ( tr ( "New banc account" ), this );
 		connect ( cnt_newaccount , SIGNAL ( triggered() ), this, SLOT ( newaccount() ) );
+		QAction* cnt_newlocalaccount = new QAction ( tr ( "New local account" ), this );
+		connect ( cnt_newlocalaccount , SIGNAL ( triggered() ), this, SLOT ( newlocalaccount() ) );
 		contextMenu->addAction ( cnt_newaddr );
 		contextMenu->addAction ( cnt_newdata );
 		contextMenu->addAction ( cnt_newaccount );
+		contextMenu->addAction ( cnt_newlocalaccount );
 		contextMenu->exec ( QCursor::pos() );
 	}
 	else
@@ -1059,7 +1077,42 @@ void cfgfrm::newaccount()
 			if ( accountname == "" )
 				accountname = QString ( "account%1" ).arg ( accountcount++,0,10 );
 		}
-		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`) VALUES (NULL, '%1', '%2', '', '', '', '')" ).arg ( accountname ).arg ( accountdesc );
+		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '', '', '', '', 'banc')" ).arg ( accountname ).arg ( accountdesc );
+		QSqlQuery querykontonew2 ( qstr2 );
+
+		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
+		QSqlQuery querykontonew5 ( qstr3 );
+		loadresources();
+	}
+}
+//
+void cfgfrm::newlocalaccount()
+{
+	bool ok;
+	QString accountdesc = QInputDialog::getText ( this, tr ( "QInputDialog::getText()" ),
+	                      tr ( "Local accountname:" ), QLineEdit::Normal,"", &ok );
+	if ( ok && !accountdesc.isEmpty() )
+	{
+		int accountcount = 1;
+		QString accountname = "";
+		QString qstr1 = "SELECT name FROM accounttab ORDER BY name ASC;";
+		QSqlQuery querykontonew1 ( qstr1 );
+		if ( querykontonew1.isActive() )
+		{
+			while ( querykontonew1.next() )
+			{
+				if ( QString ( "account%1" ).arg ( accountcount,0,10 ) == querykontonew1.value ( 0 ).toString() )
+					accountcount++;
+				else
+				{
+					if ( accountname == "" )
+						accountname = QString ( "account%1" ).arg ( accountcount,0,10 );
+				}
+			}
+			if ( accountname == "" )
+				accountname = QString ( "account%1" ).arg ( accountcount++,0,10 );
+		}
+		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '-', '-', '', '', 'local')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
 		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );

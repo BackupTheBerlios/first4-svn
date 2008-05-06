@@ -19,7 +19,7 @@ int dbupdatefrm::init()
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
 	QString cfgdbver;
-	newdbver = "1.3.95.1";
+	newdbver = "1.3.95.2";
 	QSqlQuery query("SELECT value FROM maincfgtab WHERE var = 'dbversion';");
 	if(query.isActive())
 	{
@@ -58,6 +58,10 @@ int dbupdatefrm::init()
 	QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
 	if(query7.size() != 1)
 		retrcode = 1;
+		
+	QSqlQuery query8("SHOW COLUMNS FROM accounttab WHERE field='type';");
+	if(query8.size() != 1)
+		retrcode = 1;
 
 	return retrcode;
 	
@@ -65,7 +69,7 @@ int dbupdatefrm::init()
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(6);
+	    progbar->setMaximum(9);
 
 	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	    if(query1.size() !=1 )
@@ -96,14 +100,20 @@ void dbupdatefrm::check_db_structure()
 		QSqlQuery query6("SELECT ID FROM templatestab WHERE `name`='sys_vesr';");
 		if(query6.size() != 1)
 			update_db_structure("sys_vesr");
+		progbar->setValue(6);
 			
 		QSqlQuery query7("SHOW COLUMNS FROM docs WHERE field='orderID';");
-		if(query7.size() !=1)
+		if(query7.size() != 1)
 			update_db_structure("orderIDdocs");
+		progbar->setValue(7);
+			
+		QSqlQuery query8("SHOW COLUMNS FROM accounttab WHERE field='type';");
+		if(query8.size() != 1)
+			update_db_structure("accounttype");
+		progbar->setValue(8);
 
-		progbar->setValue(6);
-	    
-	QSqlQuery query8(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+	QSqlQuery query9(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+	progbar->setValue(9);
 	QMessageBox::information( 0, "DB update..." , "Update completed." );
 	this->accept();
 }
@@ -167,5 +177,12 @@ void dbupdatefrm::update_db_structure(QString section)
 			else if(section == "orderIDdocs")
 			{
 				QSqlQuery query1("ALTER TABLE `docs` ADD COLUMN `orderID` TEXT  AFTER `introduction`;");
+			}
+			else if(section == "accounttype")
+			{
+				QSqlQuery query1("ALTER TABLE `accounttab` ADD COLUMN `type` TEXT  AFTER `users`;");
+				QSqlQuery query2("UPDATE accounttab SET `type`='local' WHERE `name`LIKE '%ietab%';");
+				QSqlQuery query3("UPDATE accounttab SET `type`='banc' WHERE `bank`!='';");
+				QSqlQuery query4("UPDATE accounttab SET `type`='local' WHERE `bank`='';");
 			}
 }

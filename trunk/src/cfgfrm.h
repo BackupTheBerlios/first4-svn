@@ -37,6 +37,7 @@ public slots:
 	void newaddr();
 	void newdata();
 	void newaccount();
+	void newlocalaccount();
 	void rentab();
  	void deltab();
 	void selectdocpath();
