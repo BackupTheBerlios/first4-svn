@@ -14,8 +14,15 @@ private slots:
 	void next();
 	void back();
 	void loaddir_expcsv();
+	void loaddir_expvcard();
+	void expcsv();
+	void expvcard();
+	void impvcard();
+	void loadfilevcard();
+	void selectfilevcard();
 private:
-	void loadcolumns();
+	void loadcolumns(QString table);
+	void loaddirs();
 };
 #endif
 

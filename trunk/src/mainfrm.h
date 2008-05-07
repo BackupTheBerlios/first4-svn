@@ -22,6 +22,7 @@ private slots:
 	void browseaccounts();
 	void browsemsgs();
 	void newmsg();
+	void addrimpexp();
 private:
 	void cleanup();
 	void admtasks();

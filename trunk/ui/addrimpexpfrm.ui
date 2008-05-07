@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>837</width>
-    <height>644</height>
+    <width>827</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -19,7 +19,7 @@
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>811</width>
      <height>571</height>
     </rect>
@@ -61,7 +61,7 @@
      </property>
      <widget class="QRadioButton" name="rbtn2" >
       <property name="enabled" >
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry" >
        <rect>
@@ -106,7 +106,7 @@
      </widget>
      <widget class="QRadioButton" name="rbtn1" >
       <property name="enabled" >
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry" >
        <rect>
@@ -142,6 +142,131 @@
       <string>Import vCards:</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_8" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>vCard:</string>
+     </property>
+    </widget>
+    <widget class="QTreeWidget" name="treeimpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>791</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="selectionMode" >
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text" >
+       <string>1</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="btnimpvcardselectfile" >
+     <property name="geometry" >
+      <rect>
+       <x>490</x>
+       <y>40</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>...</string>
+     </property>
+     <property name="icon" >
+      <iconset/>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtnimpvcardall" >
+     <property name="geometry" >
+      <rect>
+       <x>580</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>All</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtnimpvcardsel" >
+     <property name="geometry" >
+      <rect>
+       <x>680</x>
+       <y>40</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Selected</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtimpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>331</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>71</y>
+       <width>131</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Import in Directory:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbimpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>150</x>
+       <y>70</y>
+       <width>181</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnimpvcardload" >
+     <property name="geometry" >
+      <rect>
+       <x>490</x>
+       <y>70</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="Seite" >
     <widget class="QLabel" name="label_3" >
@@ -162,6 +287,112 @@
      <property name="text" >
       <string>Export vCard:</string>
      </property>
+    </widget>
+    <widget class="QPushButton" name="btnexpvcardload" >
+     <property name="geometry" >
+      <rect>
+       <x>310</x>
+       <y>40</y>
+       <width>31</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="icon" >
+      <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbexpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>120</x>
+       <y>40</y>
+       <width>181</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTreeWidget" name="treeexpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>791</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="selectionMode" >
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text" >
+       <string>1</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QRadioButton" name="rbtnexpvcardall" >
+     <property name="geometry" >
+      <rect>
+       <x>580</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>All</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtnexpvcardsel" >
+     <property name="geometry" >
+      <rect>
+       <x>680</x>
+       <y>40</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Selected</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Directory:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbexpvcardtype" >
+     <property name="geometry" >
+      <rect>
+       <x>448</x>
+       <y>40</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text" >
+       <string>One file</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Multi file</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="Seite_2" >
@@ -244,7 +475,7 @@
       <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
      </property>
     </widget>
-    <widget class="QTreeWidget" name="treeWidget" >
+    <widget class="QTreeWidget" name="treeexpcsv" >
      <property name="geometry" >
       <rect>
        <x>10</x>
@@ -252,6 +483,9 @@
        <width>791</width>
        <height>471</height>
       </rect>
+     </property>
+     <property name="selectionMode" >
+      <enum>QAbstractItemView::ExtendedSelection</enum>
      </property>
      <column>
       <property name="text" >
@@ -270,6 +504,9 @@
      </property>
      <property name="text" >
       <string>All</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="rbtnexpcsvsel" >
@@ -290,10 +527,10 @@
   <widget class="QPushButton" name="btnnext" >
    <property name="geometry" >
     <rect>
-     <x>724</x>
-     <y>610</y>
+     <x>720</x>
+     <y>590</y>
      <width>101</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="text" >
@@ -304,9 +541,9 @@
    <property name="geometry" >
     <rect>
      <x>610</x>
-     <y>610</y>
+     <y>590</y>
      <width>101</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="text" >
@@ -317,9 +554,9 @@
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>610</y>
+     <y>590</y>
      <width>101</width>
-     <height>24</height>
+     <height>28</height>
     </rect>
    </property>
    <property name="text" >
@@ -327,6 +564,19 @@
    </property>
    <property name="icon" >
     <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progbar" >
+   <property name="geometry" >
+    <rect>
+     <x>320</x>
+     <y>596</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="value" >
+    <number>0</number>
    </property>
   </widget>
  </widget>

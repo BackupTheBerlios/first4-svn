@@ -150,7 +150,8 @@ void addrfrm::checkrights()
 		adr6->setReadOnly(FALSE);
 		adr7->setReadOnly(FALSE);
 		adr8->setReadOnly(FALSE);
-		adr9->setReadOnly(FALSE);
+		adr9a->setReadOnly(FALSE);
+		adr9b->setReadOnly(FALSE);
 		adr10->setReadOnly(FALSE);
 		adr11->setReadOnly(FALSE);
 		adr12->setReadOnly(FALSE);
@@ -187,7 +188,8 @@ void addrfrm::checkrights()
 		adr6->setReadOnly(TRUE);
 		adr7->setReadOnly(TRUE);
 		adr8->setReadOnly(TRUE);
-		adr9->setReadOnly(TRUE);
+		adr9a->setReadOnly(TRUE);
+		adr9b->setReadOnly(TRUE);
 		adr10->setReadOnly(TRUE);
 		adr11->setReadOnly(TRUE);
 		adr12->setReadOnly(TRUE);
@@ -285,12 +287,13 @@ void addrfrm::loadaddrdetail()
 		    adr1->setText(query.value(0).toString());
 		    adr2->setText(query.value(1).toString());
 		    adr3->setText(query.value(2).toString());
-		    adr4->setText(query.value(3).toString());
-		    adr5->setText(query.value(4).toString());
+		    adr5->setText(query.value(3).toString());
+		    adr4->setText(query.value(4).toString());
 		    adr6->setText(query.value(5).toString());
 		    adr7->setText(query.value(6).toString());
 		    adr8->setText(query.value(7).toString());
-		    adr9->setText(query.value(8).toString());
+		    adr9a->setText(query.value(8).toString().section(" ", 0, 0));
+		    adr9b->setText(query.value(8).toString().section(" ", 1, 10));
 		    adr10->setText(query.value(9).toString());
 		    adr11->setText(query.value(10).toString());
 		    adr12->setText(query.value(11).toString());
@@ -571,7 +574,8 @@ void addrfrm::newaddr()
     adr6->setText("");
     adr7->setText("");
     adr8->setText("");
-    adr9->setText("");
+    adr9a->setText("");
+    adr9b->setText("");
     adr10->setText("");
     adr11->setText("");
     adr12->setText("");
@@ -622,7 +626,7 @@ void addrfrm::saveaddr()
     s.sprintf( "%2d.%2d.%4d", date.day(), date.month(), date.year() );
     
 
-    QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr4->text()+"',`firstname` = '"+ adr5->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`zip_location` = '"+ adr9->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
+    QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr5->text()+"',`firstname` = '"+ adr4->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`zip_location` = '"+ adr9a->text()+" "+adr9b->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
 	
     QSqlQuery queryadrsave(conn1);
     if( !queryadrsave.exec() ) {
@@ -637,7 +641,7 @@ void addrfrm::saveaddr()
 //
 void addrfrm::deladdr()
 {
-    int exit=QMessageBox::warning(this, "Info...", tr("Delete %1 %2 %3?").arg(adr3->text()).arg(adr4->text()).arg(adr5->text()),QMessageBox::Yes, QMessageBox::No);
+    int exit=QMessageBox::warning(this, "Info...", tr("Delete %1 %2 %3?").arg(adr3->text()).arg(adr5->text()).arg(adr4->text()),QMessageBox::Yes, QMessageBox::No);
     if(exit == QMessageBox::Yes)
     {
 		QString conn = "DELETE FROM `";
@@ -657,7 +661,8 @@ void addrfrm::deladdr()
 		adr6->setText("");
 		adr7->setText("");
 		adr8->setText("");
-		adr9->setText("");
+		adr9a->setText("");
+		adr9b->setText("");
 		adr10->setText("");
 		adr11->setText("");
 		adr12->setText("");
@@ -750,16 +755,16 @@ QString addrfrm::writetexfile()
 	    if(adr3->text() != "")
 			templatestr = templatestr.replace("+++TITLE+++", adr3->text());
 	    else
-			templatestr = templatestr.replace("+++TITLE+++", adr4->text() +", " +adr5->text());
+			templatestr = templatestr.replace("+++TITLE+++", adr5->text() +", " +adr4->text());
 
 	    QString tmpstr = "";
 	    tmpstr += "\\textbf{ID:} & " + adr2->text() + " & & \\\\ \n \\hline \n";
 	    tmpstr += "\\textbf{"+tr("Company")+":} & " + adr3->text() + " & & \\\\ \n \\hline \n";
 	    tmpstr += "\\textbf{"+tr("Salutation")+":} & " + adr6->text() + " & & \\\\ \n";
-	    tmpstr += "\\textbf{"+tr("Name")+":} & " + adr4->text() + "& \\textbf{Vorname:} & " + adr5->text() + " \\\\ \n";
+	    tmpstr += "\\textbf{"+tr("Name")+":} & " + adr5->text() + "& \\textbf{Vorname:} & " + adr4->text() + " \\\\ \n";
 	    tmpstr += "\\textbf{"+tr("P.O. Box")+":} & " + adr7->text() + " & & \\\\ \n";
 	    tmpstr += "\\textbf{"+tr("Street \\& Nr.")+":} & " + adr8->text() + " & & \\\\ \n";
-	    tmpstr += "\\textbf{"+tr("ZIP, Location")+":} & " + adr9->text() + " & & \\\\ \n \\hline \n";
+	    tmpstr += "\\textbf{"+tr("ZIP, Location")+":} & " + adr9a->text() +" "+adr9b->text()+ " & & \\\\ \n \\hline \n";
 	    tmpstr += "\\textbf{"+tr("Business phone")+":} & " + adr10->text() + " & & \\\\ \n";
 	    tmpstr += "\\textbf{"+tr("Direct phone")+":} & " + adr11->text() + " & & \\\\ \n";
 	    tmpstr += "\\textbf{"+tr("Business fax")+":} & " + adr12->text() + " & & \\\\ \n";
@@ -953,7 +958,6 @@ void addrfrm::moveaddr(QString dest)
 //
 void addrfrm::impexp()
 {
-	
     addrimpexpfrm *addrimpexp = new addrimpexpfrm;
     addrimpexp->init();
     if(addrimpexp->exec())

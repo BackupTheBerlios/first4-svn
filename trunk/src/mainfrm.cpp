@@ -25,6 +25,7 @@
 #include "msgfrm.h"
 #include "msgeditfrm.h"
 #include "dbupdatefrm.h"
+#include "addrimpexpfrm.h"
 //
 extern int uid;
 extern QString username, fullname, firstver;
@@ -75,6 +76,7 @@ void mainfrm::loaduserdata()
 	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
+	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
 	
 	dbupdatefrm *updfrm = new dbupdatefrm;
 	if(updfrm->init() != 0)
@@ -305,4 +307,11 @@ void mainfrm::newmsg()
 	emsg->init("per");
 	emsg->date->setDate(QDate::currentDate());
 	emsg->exec();
+}
+//
+void mainfrm::addrimpexp()
+{
+    addrimpexpfrm *addrimpexp = new addrimpexpfrm;
+    addrimpexp->init();
+    addrimpexp->exec();
 }
