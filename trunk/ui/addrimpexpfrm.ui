@@ -155,24 +155,6 @@
       <string>vCard:</string>
      </property>
     </widget>
-    <widget class="QTreeWidget" name="treeimpvcard" >
-     <property name="geometry" >
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>791</width>
-       <height>441</height>
-      </rect>
-     </property>
-     <property name="selectionMode" >
-      <enum>QAbstractItemView::ExtendedSelection</enum>
-     </property>
-     <column>
-      <property name="text" >
-       <string>1</string>
-      </property>
-     </column>
-    </widget>
     <widget class="QPushButton" name="btnimpvcardselectfile" >
      <property name="geometry" >
       <rect>
@@ -265,6 +247,16 @@
      </property>
      <property name="icon" >
       <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableimpvcard" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>791</width>
+       <height>451</height>
+      </rect>
      </property>
     </widget>
    </widget>

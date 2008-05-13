@@ -320,23 +320,41 @@ void addrfrm::loadaddrdetail()
 		    progbar->setValue(50);
 	    
 		    adr22->setText(query.value(21).toString());
+		    if(adr22->text()=="")
+		    	adr22->setText("0");
+		    	
 		    adr23->setText(query.value(22).toString());		
 		
 		    QStringList custom = query.value(23).toString().split(":#:");
-		    lbladr24->setText(custom[0]);
-		    adr24->setText(custom[1]);
+		    if(custom.count()>1)
+		    {
+				lbladr24->setText(custom[0]);
+				adr24->setText(custom[1]);
+	    	}
 		    custom = query.value(24).toString().split(":#:");
-		    lbladr25->setText(custom[0]);
-		    adr25->setText(custom[1]);
+		    if(custom.count()>1)
+		    {
+			    lbladr25->setText(custom[0]);
+			    adr25->setText(custom[1]);
+	    	}
 		    custom = query.value(25).toString().split(":#:");
-		    lbladr26->setText(custom[0]);
-		    adr26->setText(custom[1]);
+		    if(custom.count()>1)
+		    {
+		    	lbladr26->setText(custom[0]);
+			    adr26->setText(custom[1]);
+		    }
 		    custom = query.value(26).toString().split(":#:");
-		    lbladr27->setText(custom[0]);
-		    adr27->setText(custom[1]);
+		    if(custom.count()>1)
+		    {
+		    	lbladr27->setText(custom[0]);
+			    adr27->setText(custom[1]);
+		    }
 		    custom = query.value(27).toString().split(":#:");
-		    lbladr28->setText(custom[0]);
-		    adr28->setText(custom[1]);
+		    if(custom.count()>1)
+		    {
+		    	lbladr28->setText(custom[0]);
+			    adr28->setText(custom[1]);
+		    }
 		
 		    progbar->setValue(75);
 		
@@ -539,7 +557,6 @@ void addrfrm::newaddr()
 {
 	QSqlDatabase::database().transaction();
     maintab->setCurrentIndex(0);
-    QDate date = QDate::currentDate();
     
     QString qstr1 = QString("SELECT idcounter FROM adrtabs WHERE `name` = '%1';").arg(adrnamelist[cmbdir->currentIndex()]);
     QSqlQuery querycheckid(qstr1);
@@ -550,8 +567,7 @@ void addrfrm::newaddr()
     QSqlQuery queryupdateid(qstr2);
     //queryupdateid.exec();
     
-    QString s;
-    s.sprintf( "%2d.%2d.%4d", date.day(), date.month(), date.year() );
+    QString s = QDate::currentDate().toString("dd.MM.yyyy");
     QString conn1 = "INSERT INTO `";
     conn1 += adrnamelist[cmbdir->currentIndex()];
     conn1 += "` ( `ID`, `clientid`, `company`, `lastname`, `firstname`, `nameadd`, `pobox`, `street_nr`, `zip_location`, `tel_b`, `tel_direct`, `fax_b`, `tel_p`, `fax_p`, `mobile`, `email1`, `email2`, `email3`, `homepage`, `revenueaj`, `revenuelj`, `discount`, `clienttyp`, `comments`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `created`, `modified`)VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '"+s+"', '');";
@@ -621,10 +637,7 @@ void addrfrm::saveaddr()
     btncancel->setEnabled(true);
     btndelete->setEnabled(true);
     
-    QDate date = QDate::currentDate();
-    QString s;
-    s.sprintf( "%2d.%2d.%4d", date.day(), date.month(), date.year() );
-    
+    QString s = QDate::currentDate().toString("dd.MM.yyyy");    
 
     QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr5->text()+"',`firstname` = '"+ adr4->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`zip_location` = '"+ adr9a->text()+" "+adr9b->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
 	
