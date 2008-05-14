@@ -184,20 +184,22 @@ void addrimpexpfrm::expcsv()
 		{
 			if(file.open(QIODevice::WriteOnly))	    
 			{
+				QString tmpstr = "";
 				QTextStream outstream( &file );
 				QTreeWidgetItem *item = treeexpcsv->headerItem();
 				for(i=0;i<treeexpcsv->columnCount();i++)
-					outstream << item->text(i) << ";";
-				outstream << "\n";
+					tmpstr += "\"" + item->text(i) + "\";";
+				outstream << tmpstr.leftJustified(tmpstr.length()-1, '.', true) << "\n";
 				for(ii=0;ii<treeexpcsv->topLevelItemCount();ii++)
 				{
+					tmpstr = "";
 					item = new QTreeWidgetItem; 
 					item = treeexpcsv->topLevelItem(ii);
 					if(rbtnexpcsvall->isChecked() || (rbtnexpcsvsel->isChecked() && item->isSelected()))
 					{
 						for(i=0;i<treeexpcsv->columnCount();i++)
-							outstream << item->text(i) << ";";
-						outstream << "\n";
+							tmpstr += "\"" + item->text(i) + "\";";
+						outstream << tmpstr.leftJustified(tmpstr.length()-1, '.', true) << "\n";
 					}
 					progbar->setValue(ii+1); 
 				}
@@ -526,7 +528,7 @@ void addrimpexpfrm::loadfilecsv()
 		QSqlError sqlerror = query.lastError();
 		QMessageBox::critical(0,"Error...", tr("Error during database access\n\n")+sqlerror.text());
 	}
-	QMessageBox::critical(0,"Error...", cmbcols->itemText(0));
+	//QMessageBox::critical(0,"Error...", cmbcols->itemText(0));
 	//loadcolumns(dirimplist[cmbimpcsv->currentIndex()]);
 	tableimpcsv->setRowCount(1);
 	tableimpcsv->setCellWidget(0,2,cmbcols);
@@ -543,9 +545,22 @@ void addrimpexpfrm::loadfilecsv()
 	}
 	else
 		QMessageBox::critical(0,"Error...", tr("Error during reading of the File!"));
+		
+	int i, ii;
 	if(filestream.count() > 0)
 	{
-		tableimpcsv->setColumnCount(filestream[0].count(txtimpcsvseparator->text()));
+		tableimpcsv->setColumnCount(filestream[0].count(txtimpcsvseparator->text())+1);
+		tableimpcsv->setRowCount(filestream.count()+1);
+		for(i=0;i<filestream.count();i++)
+		{
+			QStringList fields = filestream[i].split("\""+txtimpcsvseparator->text()+"\"");
+			for(ii=0;ii<fields.count();ii++)
+			{
+				QTableWidgetItem *item = new QTableWidgetItem;
+				item->setText(fields[ii].replace("\"", ""));
+				tableimpcsv->setItem(i+1, ii, item);
+			}
+		}
 	}
 }
 //
