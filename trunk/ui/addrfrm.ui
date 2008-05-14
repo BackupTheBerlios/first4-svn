@@ -1405,6 +1405,56 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>cmbdir</tabstop>
+  <tabstop>txtsearch</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclear</tabstop>
+  <tabstop>btnnew</tabstop>
+  <tabstop>btnsave</tabstop>
+  <tabstop>btncancel</tabstop>
+  <tabstop>btndelete</tabstop>
+  <tabstop>btnprint</tabstop>
+  <tabstop>btnimpexp</tabstop>
+  <tabstop>mainlistview</tabstop>
+  <tabstop>maintab</tabstop>
+  <tabstop>adr2</tabstop>
+  <tabstop>adr3</tabstop>
+  <tabstop>adr6</tabstop>
+  <tabstop>adr4</tabstop>
+  <tabstop>adr5</tabstop>
+  <tabstop>adr7</tabstop>
+  <tabstop>adr8</tabstop>
+  <tabstop>adr9a</tabstop>
+  <tabstop>adr9b</tabstop>
+  <tabstop>adr31</tabstop>
+  <tabstop>adr10</tabstop>
+  <tabstop>adr11</tabstop>
+  <tabstop>adr12</tabstop>
+  <tabstop>adr13</tabstop>
+  <tabstop>adr14</tabstop>
+  <tabstop>adr15</tabstop>
+  <tabstop>adr16</tabstop>
+  <tabstop>adr17</tabstop>
+  <tabstop>adr18</tabstop>
+  <tabstop>adr19</tabstop>
+  <tabstop>listrevenue</tabstop>
+  <tabstop>adr22</tabstop>
+  <tabstop>adr23</tabstop>
+  <tabstop>btnadrcust1</tabstop>
+  <tabstop>adr24</tabstop>
+  <tabstop>btnadrcust2</tabstop>
+  <tabstop>adr25</tabstop>
+  <tabstop>btnadrcust3</tabstop>
+  <tabstop>adr26</tabstop>
+  <tabstop>btnadrcust4</tabstop>
+  <tabstop>adr27</tabstop>
+  <tabstop>btnadrcust5</tabstop>
+  <tabstop>adr28</tabstop>
+  <tabstop>listdocs</tabstop>
+  <tabstop>listproc</tabstop>
+  <tabstop>btnclose</tabstop>
+ </tabstops>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

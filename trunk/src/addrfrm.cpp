@@ -59,7 +59,7 @@ void addrfrm::init()
     
     lbluser->setText(username);
     QString permissions;
-    QString qstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [1%';").arg(username);
+    QString qstr = QString("SELECT * FROM directories WHERE users LIKE '%%1 [1%';").arg(username);
     QSqlQuery query1(qstr);
     if ( query1.isActive())
     {
@@ -106,7 +106,6 @@ void addrfrm::init()
     connect(btnnew, SIGNAL(released()), this, SLOT(newaddr()));
     connect(btnsave, SIGNAL(released()), this, SLOT(saveaddr()));
     connect(btndelete, SIGNAL(released()), this, SLOT(deladdr()));
-    connect(btndelete, SIGNAL(released()), this, SLOT(deladdr()));
     connect(btnclear, SIGNAL(released()), this, SLOT(clearsearch()));
     connect(btnsearch, SIGNAL(released()), this, SLOT(search()));
     connect(txtsearch, SIGNAL(returnPressed()), this, SLOT(search()));
@@ -152,6 +151,7 @@ void addrfrm::checkrights()
 		adr8->setReadOnly(FALSE);
 		adr9a->setReadOnly(FALSE);
 		adr9b->setReadOnly(FALSE);
+		adr31->setReadOnly(FALSE);
 		adr10->setReadOnly(FALSE);
 		adr11->setReadOnly(FALSE);
 		adr12->setReadOnly(FALSE);
@@ -190,6 +190,7 @@ void addrfrm::checkrights()
 		adr8->setReadOnly(TRUE);
 		adr9a->setReadOnly(TRUE);
 		adr9b->setReadOnly(TRUE);
+		adr31->setReadOnly(TRUE);
 		adr10->setReadOnly(TRUE);
 		adr11->setReadOnly(TRUE);
 		adr12->setReadOnly(TRUE);
@@ -268,12 +269,12 @@ void addrfrm::loadaddrdetail()
 			this->setWindowTitle(wintitle+QString(" ( Locked by User: %1 )").arg(userlock));
 			btnsave->setEnabled(FALSE);
 			btndelete->setEnabled(FALSE);
-			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2';").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
+			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, location, zip, country, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2';").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
 		}
 		else
 		{
 			this->setWindowTitle(wintitle);
-			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2' FOR UPDATE;").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
+			qstr = QString("SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, location, zip, country, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM %1 WHERE ID='%2' FOR UPDATE;").arg(adrnamelist[cmbdir->currentIndex()]).arg(tmpitem->text(3));
 			v.lockrow(adrnamelist[cmbdir->currentIndex()], tmpitem->text(3));
 			btnsave->setEnabled(TRUE);
 			btndelete->setEnabled(TRUE);
@@ -292,64 +293,65 @@ void addrfrm::loadaddrdetail()
 		    adr6->setText(query.value(5).toString());
 		    adr7->setText(query.value(6).toString());
 		    adr8->setText(query.value(7).toString());
-		    adr9a->setText(query.value(8).toString().section(" ", 0, 0));
-		    adr9b->setText(query.value(8).toString().section(" ", 1, 10));
-		    adr10->setText(query.value(9).toString());
-		    adr11->setText(query.value(10).toString());
-		    adr12->setText(query.value(11).toString());
-		    adr13->setText(query.value(12).toString());
-		    adr14->setText(query.value(13).toString());
-		    adr15->setText(query.value(14).toString());
-		    adr16->setText(query.value(15).toString());
-		    adr17->setText(query.value(16).toString());
-		    adr18->setText(query.value(17).toString());
-		    adr19->setText(query.value(18).toString());	
+		    adr9b->setText(query.value(8).toString());
+		    adr9a->setText(query.value(9).toString());
+		    adr31->setText(query.value(10).toString());
+		    adr10->setText(query.value(11).toString());
+		    adr11->setText(query.value(12).toString());
+		    adr12->setText(query.value(13).toString());
+		    adr13->setText(query.value(14).toString());
+		    adr14->setText(query.value(15).toString());
+		    adr15->setText(query.value(16).toString());
+		    adr16->setText(query.value(17).toString());
+		    adr17->setText(query.value(18).toString());
+		    adr18->setText(query.value(19).toString());
+		    adr19->setText(query.value(20).toString());	
 		    progbar->setValue(25);
 		
 			listrevenue->clear();
 	    	QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
-	    	item->setText(0, query.value(19).toString().section(";", 0, 0));
-	    	item->setText(1, query.value(19).toString().section(";", 1, 1));
+	    	item->setText(0, query.value(21).toString().section(";", 0, 0));
+	    	item->setText(1, query.value(21).toString().section(";", 1, 1));
 	    	int i;
-		    for(i=0; i<query.value(20).toString().count("#");i++)
+		    for(i=0; i<query.value(22).toString().count("#");i++)
 		    {
 		    	QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
-		    	item->setText(0, query.value(20).toString().section("#", i+1, i+1).section(";", 0, 0));
-		    	item->setText(1, query.value(20).toString().section("#", i+1, i+1).section(";", 1, 1));
+		    	item->setText(0, query.value(22).toString().section("#", i+1, i+1).section(";", 0, 0));
+		    	item->setText(1, query.value(22).toString().section("#", i+1, i+1).section(";", 1, 1));
 		    }
 		    progbar->setValue(50);
 	    
-		    adr22->setText(query.value(21).toString());
+		    adr22->setText(query.value(23).toString());
 		    if(adr22->text()=="")
 		    	adr22->setText("0");
 		    	
-		    adr23->setText(query.value(22).toString());		
+		    adr23->setText(query.value(24).toString());		
 		
-		    QStringList custom = query.value(23).toString().split(":#:");
+		    QStringList custom = query.value(25).toString().split(":#:");
 		    if(custom.count()>1)
 		    {
 				lbladr24->setText(custom[0]);
 				adr24->setText(custom[1]);
 	    	}
-		    custom = query.value(24).toString().split(":#:");
+		    custom = query.value(26).toString().split(":#:");
 		    if(custom.count()>1)
 		    {
 			    lbladr25->setText(custom[0]);
 			    adr25->setText(custom[1]);
 	    	}
-		    custom = query.value(25).toString().split(":#:");
+		    custom = query.value(27).toString().split(":#:");
 		    if(custom.count()>1)
 		    {
 		    	lbladr26->setText(custom[0]);
 			    adr26->setText(custom[1]);
 		    }
-		    custom = query.value(26).toString().split(":#:");
+		    custom = query.value(28).toString().split(":#:");
 		    if(custom.count()>1)
 		    {
 		    	lbladr27->setText(custom[0]);
 			    adr27->setText(custom[1]);
 		    }
-		    custom = query.value(27).toString().split(":#:");
+		    custom = query.value(29).toString().split(":#:");
 		    if(custom.count()>1)
 		    {
 		    	lbladr28->setText(custom[0]);
@@ -358,8 +360,8 @@ void addrfrm::loadaddrdetail()
 		
 		    progbar->setValue(75);
 		
-		    adr29->setText(query.value(28).toString());
-		    adr30->setText(query.value(29).toString());
+		    adr29->setText(query.value(30).toString());
+		    adr30->setText(query.value(31).toString());
 		    progbar->setValue(100);
 		}
 		
@@ -558,22 +560,22 @@ void addrfrm::newaddr()
 	QSqlDatabase::database().transaction();
     maintab->setCurrentIndex(0);
     
-    QString qstr1 = QString("SELECT idcounter FROM adrtabs WHERE `name` = '%1';").arg(adrnamelist[cmbdir->currentIndex()]);
+    QString qstr1 = QString("SELECT idcounter FROM directories WHERE `name` = '%1';").arg(adrnamelist[cmbdir->currentIndex()]);
     QSqlQuery querycheckid(qstr1);
     querycheckid.next();
     adr2->setText(QString("%1").arg(querycheckid.value(0).toInt()+1, 0, 10));
     
-    QString qstr2 = QString("UPDATE `adrtabs` SET `idcounter` = '%1' WHERE `name` = '%2' LIMIT 1;").arg(adr2->text()).arg(adrnamelist[cmbdir->currentIndex()]);
+    QString qstr2 = QString("UPDATE `directories` SET `idcounter` = '%1' WHERE `name` = '%2' LIMIT 1;").arg(adr2->text()).arg(adrnamelist[cmbdir->currentIndex()]);
     QSqlQuery queryupdateid(qstr2);
     //queryupdateid.exec();
     
     QString s = QDate::currentDate().toString("dd.MM.yyyy");
     QString conn1 = "INSERT INTO `";
     conn1 += adrnamelist[cmbdir->currentIndex()];
-    conn1 += "` ( `ID`, `clientid`, `company`, `lastname`, `firstname`, `nameadd`, `pobox`, `street_nr`, `zip_location`, `tel_b`, `tel_direct`, `fax_b`, `tel_p`, `fax_p`, `mobile`, `email1`, `email2`, `email3`, `homepage`, `revenueaj`, `revenuelj`, `discount`, `clienttyp`, `comments`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `created`, `modified`)VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '"+s+"', '');";
+    conn1 += "` ( `ID`, `clientid`, `company`, `lastname`, `firstname`, `nameadd`, `pobox`, `street_nr`, `location`, `zip`, `country`, `tel_b`, `tel_direct`, `fax_b`, `tel_p`, `fax_p`, `mobile`, `email1`, `email2`, `email3`, `homepage`, `revenueaj`, `revenuelj`, `discount`, `clienttyp`, `comments`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `created`, `modified`)VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '"+s+"', '');";
     QSqlQuery queryadrnew1(conn1);
 	
-    QString conn4 = "SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, zip_location, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, clienttyp, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM ";
+    QString conn4 = "SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, `location`, `zip`, `country`, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, clienttyp, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM ";
     conn4 += adrnamelist[cmbdir->currentIndex()];
     conn4 += ";";
     QSqlQuery queryadrnew4(conn4);
@@ -592,6 +594,7 @@ void addrfrm::newaddr()
     adr8->setText("");
     adr9a->setText("");
     adr9b->setText("");
+    adr31->setText("");
     adr10->setText("");
     adr11->setText("");
     adr12->setText("");
@@ -639,7 +642,7 @@ void addrfrm::saveaddr()
     
     QString s = QDate::currentDate().toString("dd.MM.yyyy");    
 
-    QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr5->text()+"',`firstname` = '"+ adr4->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`zip_location` = '"+ adr9a->text()+" "+adr9b->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
+    QString conn1 = "UPDATE `" + adrnamelist[cmbdir->currentIndex()] + "` SET `clientid` = '"+adr2->text()+"', `company` = '"+ adr3->text()+"', `lastname` = '"+ adr5->text()+"',`firstname` = '"+ adr4->text()+"',`nameadd` = '"+ adr6->text()+"',`pobox` = '"+ adr7->text()+"',`street_nr` = '"+ adr8->text()+"',`location` = '"+ adr9b->text()+"',`zip` = '"+ adr9a->text()+"',`country` = '"+ adr31->text()+"',`tel_b` = '"+ adr10->text()+"',`tel_direct` = '"+ adr11->text()+"',`fax_b` = '"+ adr12->text()+"',`tel_p` = '"+ adr13->text()+"',`fax_p` = '"+ adr14->text()+"',`mobile` = '"+ adr15->text()+"',`email1` = '"+ adr16->text()+"',`email2` = '"+ adr17->text()+"',`email3` = '"+ adr18->text()+"',`homepage` = '"+ adr19->text()+"', `discount` = '"+adr22->text()+"', `comments` = '"+ adr23->toPlainText()+"',`custom1` = '"+lbladr24->text() +":#:"+adr24->text()+"',`custom2` = '"+lbladr25->text() +":#:"+ adr25->text()+"',`custom3` = '"+lbladr26->text() +":#:"+ adr26->text()+"',`custom4` = '"+lbladr27->text() +":#:"+ adr27->text()+"',`custom5` = '"+lbladr28->text() +":#:"+ adr28->text()+"',`modified` = '"+s+"' WHERE `ID` = '" + adr1->text() + "' LIMIT 1;";	
 	
     QSqlQuery queryadrsave(conn1);
     if( !queryadrsave.exec() ) {

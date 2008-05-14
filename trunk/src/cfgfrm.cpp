@@ -595,7 +595,7 @@ void cfgfrm::loadresources()
 
 	QTreeWidgetItemIterator it ( listresources );
 	item = *it;
-	QSqlQuery queryadr ( "SELECT ID, name, description, users, idcounter FROM adrtabs ORDER BY ID ASC;" );
+	QSqlQuery queryadr ( "SELECT ID, name, description, users, idcounter FROM directories ORDER BY ID ASC;" );
 	if ( queryadr.isActive() )
 	{
 		while ( queryadr.next() )
@@ -813,7 +813,7 @@ void cfgfrm::loadresourcesdetails()
 			}
 			resdefframe->setCurrentIndex ( 1 );
 		}
-		else if ( item->text ( 2 ).left ( 3 ) == "adr" || item->text ( 2 ) == "p_orders" || item->text ( 2 ) == "orders" )
+		else if ( item->text ( 2 ).left ( 3 ) == "dir" || item->text ( 2 ) == "p_orders" || item->text ( 2 ) == "orders" )
 		{
 			txtstartid->setText ( item->text ( 4 ) );
 			resdefframe->setCurrentIndex ( 2 );
@@ -860,7 +860,7 @@ void cfgfrm::applyresourcesdetails()
 			++it;
 		}
 		item->setText ( 3, tmpstr );
-		if ( item->text ( 2 ).left ( 3 ) =="adr" || item->text ( 2 ) =="p_orders" || item->text ( 2 ) =="orders" )
+		if ( item->text ( 2 ).left ( 3 ) =="dir" || item->text ( 2 ) =="p_orders" || item->text ( 2 ) =="orders" )
 			item->setText ( 4, txtstartid->text() );
 		if ( item->text ( 2 ) =="doc" )
 		{
@@ -880,10 +880,10 @@ void cfgfrm::saveresourcesdetails()
 	while ( *it )
 	{
 		item = *it;
-		if ( item->text ( 2 ).mid ( 0,3 ) == "adr" )
+		if ( item->text ( 2 ).mid ( 0,3 ) == "dir" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `adrtabs` SET `users` = :users, `idcounter` = :idcounter WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `directories` SET `users` = :users, `idcounter` = :idcounter WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":idcounter", item->text ( 4 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
@@ -1013,31 +1013,31 @@ void cfgfrm::newaddr()
 	{
 		int adrcount = 1;
 		QString adrname = "";
-		QString qstr1 = "SELECT * FROM adrtabs ORDER BY name ASC;";
+		QString qstr1 = "SELECT * FROM directories ORDER BY name ASC;";
 		QSqlQuery queryadrnew1 ( qstr1 );
 		if ( queryadrnew1.isActive() )
 		{
 			while ( queryadrnew1.next() )
 			{
-				if ( QString ( "adr%1" ).arg ( adrcount,0,10 ) == queryadrnew1.value ( 1 ).toString() )
+				if ( QString ( "dir%1" ).arg ( adrcount,0,10 ) == queryadrnew1.value ( 1 ).toString() )
 					adrcount++;
 				else
 				{
 					if ( adrname == "" )
-						adrname = QString ( "adr%1" ).arg ( adrcount,0,10 );
+						adrname = QString ( "dir%1" ).arg ( adrcount,0,10 );
 				}
 			}
 			if ( adrname == "" )
-				adrname = QString ( "adr%1" ).arg ( adrcount++,0,10 );
+				adrname = QString ( "dir%1" ).arg ( adrcount++,0,10 );
 		}
 
-		QString qstr2 = "INSERT INTO `adrtabs` ( `ID` , `name` , `description` , `users` ) VALUES ('', '";
+		QString qstr2 = "INSERT INTO `directories` ( `ID` , `name` , `description` , `users` ) VALUES ('', '";
 		qstr2 += adrname;
 		qstr2 += "', '";
 		qstr2 += adrdesc;
 		qstr2 +=  "', '');";
 		QSqlQuery queryadrnew2 ( qstr2 );
-		QString qstr3 = "CREATE TABLE `" + QString( adrname ) + "` (  `ID` int(11) NOT NULL auto_increment, `clientid` text NOT NULL, `company` text NOT NULL, `lastname` text NOT NULL, `firstname` text NOT NULL, `nameadd` text NOT NULL, `pobox` text NOT NULL, `street_nr` text NOT NULL, `zip_location` text NOT NULL, `tel_b` text NOT NULL, `tel_direct` text NOT NULL, `fax_b` text NOT NULL, `tel_p` text NOT NULL, `fax_p` text NOT NULL, `mobile` text NOT NULL, `email1` text NOT NULL, `email2` text NOT NULL, `email3` text NOT NULL, `homepage` text NOT NULL, `revenueaj` text NOT NULL, `revenuelj` text NOT NULL, `discount` text NOT NULL, `clienttyp` text NOT NULL, `comments` text NOT NULL, `custom1` text NOT NULL, `custom2` text NOT NULL, `custom3` text NOT NULL, `custom4` text NOT NULL, `custom5` text NOT NULL, `created` text NOT NULL, `modified` text NOT NULL, KEY `ID` (`ID`)) ENGINE=InnoDB CHARSET=latin1;";
+		QString qstr3 = "CREATE TABLE `" + QString( adrname ) + "` (  `ID` int(11) NOT NULL auto_increment, `clientid` text NOT NULL, `company` text NOT NULL, `lastname` text NOT NULL, `firstname` text NOT NULL, `nameadd` text NOT NULL, `pobox` text NOT NULL, `street_nr` text NOT NULL, `location` text NOT NULL, `zip` text NOT NULL, `country` text NOT NULL, `tel_b` text NOT NULL, `tel_direct` text NOT NULL, `fax_b` text NOT NULL, `tel_p` text NOT NULL, `fax_p` text NOT NULL, `mobile` text NOT NULL, `email1` text NOT NULL, `email2` text NOT NULL, `email3` text NOT NULL, `homepage` text NOT NULL, `revenueaj` text NOT NULL, `revenuelj` text NOT NULL, `discount` text NOT NULL, `clienttyp` text NOT NULL, `comments` text NOT NULL, `custom1` text NOT NULL, `custom2` text NOT NULL, `custom3` text NOT NULL, `custom4` text NOT NULL, `custom5` text NOT NULL, `created` text NOT NULL, `modified` text NOT NULL, KEY `ID` (`ID`)) ENGINE=InnoDB CHARSET=latin1;";
 		QSqlQuery queryadrnew3 ( qstr3 );
 		loadresources();
 	}
@@ -1131,9 +1131,9 @@ void cfgfrm::rentab()
 		                  tr ( "Rename '%1' to:" ).arg ( item->text ( 0 ) ), QLineEdit::Normal,"", &ok );
 		if ( ok && !newdesc.isEmpty() )
 		{
-			if ( item->text ( 2 ).mid ( 0, 3 ) == "adr" )
+			if ( item->text ( 2 ).mid ( 0, 3 ) == "dir" )
 			{
-				QString qstr = tr ( "UPDATE `adrtabs` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
+				QString qstr = tr ( "UPDATE `directories` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
 				QSqlQuery queryadrren ( qstr );
 				item->setText ( 0, newdesc );
 			}
@@ -1161,9 +1161,9 @@ void cfgfrm::deltab()
 		int r = QMessageBox::warning ( this, tr ( "Deleting..." ),tr ( "Delete '%1'?" ).arg ( item->text ( 0 ) ), QMessageBox::Yes, QMessageBox::No );
 		if ( r == QMessageBox::Yes )
 		{
-			if ( item->text ( 2 ).mid ( 0, 3 ) == "adr" )
+			if ( item->text ( 2 ).mid ( 0, 3 ) == "dir" )
 			{
-				QString conn2 = QString ( "DELETE FROM `adrtabs` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
+				QString conn2 = QString ( "DELETE FROM `directories` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
 				QSqlQuery queryadrdel2 ( conn2 );
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
@@ -1617,7 +1617,7 @@ void cfgfrm::locks_loaduserlocks()
 			item->setText(2, query.value(2).toString());
 			item->setText(3, query.value(3).toString());
 			item->setText(4, query.value(4).toString().replace("T", " "));
-			if(query.value(1).toString().mid(0, 3) == "adr")
+			if(query.value(1).toString().mid(0, 3) == "dir")
 			{
 				QSqlQuery query2(QString("SELECT lastname, firstname FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
 				query2.next();

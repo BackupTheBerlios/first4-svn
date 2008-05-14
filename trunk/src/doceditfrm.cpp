@@ -733,18 +733,18 @@ void doceditfrm::refreshstockdb()
 //
 void doceditfrm::revenue(QString dbID, QString amount)
 {
-    QString qstr = "SELECT revenueaj, revenuelj FROM adr"+dbID.section("_", 0, 0)+" WHERE `ID` = '"+dbID.section("_", 1, 1)+"';";
+    QString qstr = "SELECT revenueaj, revenuelj FROM dir"+dbID.section("_", 0, 0)+" WHERE `ID` = '"+dbID.section("_", 1, 1)+"';";
     QSqlQuery query(qstr);
     query.next();
     if(query.value(0).toString().section(";", 0, 0) == QDate::currentDate().toString("yyyy") || query.value(0).toString().section(";", 0, 0) == "")
     {
 		double newamount = query.value(0).toString().section(";", 1, 1).toDouble() + amount.toDouble();
-		QString qstr2 = "UPDATE `adr"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+QString("%1").arg(newamount,  0, 'f', 2 )+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
+		QString qstr2 = "UPDATE `dir"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+QString("%1").arg(newamount,  0, 'f', 2 )+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
 		QSqlQuery query2(qstr2);
     }
     else
     {
-		QString qstr2 = "UPDATE `adr"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+amount+"', `revenuelj` = '"+query.value(1).toString()+"#"+query.value(0).toString()+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
+		QString qstr2 = "UPDATE `dir"+dbID.section("_", 0, 0)+"` SET `revenueaj` = '"+QDate::currentDate().toString("yyyy")+";"+amount+"', `revenuelj` = '"+query.value(1).toString()+"#"+query.value(0).toString()+"' WHERE `ID` = '"+dbID.section("_", 1, 1)+"' LIMIT 1;";
 		QSqlQuery query2(qstr2);
     }
 }
@@ -899,7 +899,7 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		}
 		lblID->setText(query.value(4).toString());
 		
-		qstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location FROM adr"+lblID->text().section("_", 0, 0)+" WHERE ID = '"+lblID->text().section("_", 1, 1)+"';";
+		qstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip, location, country FROM dir"+lblID->text().section("_", 0, 0)+" WHERE ID = '"+lblID->text().section("_", 1, 1)+"';";
 		QSqlQuery query2(qstr);
 		query2.next();
 		QString adresse ="";
@@ -914,7 +914,11 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		if(query2.value(5).toString()!="")
 		    adresse += query2.value(5).toString() + "<BR>";
 		if(query2.value(6).toString()!="")
-		    adresse += query2.value(6).toString();
+		    adresse += query2.value(6).toString() + " ";
+		if(query2.value(7).toString()!="")
+		    adresse += query2.value(7).toString() + "<BR>";
+		if(query2.value(8).toString()!="")
+		    adresse += query2.value(8).toString();
 		boxaddress->setText(adresse.replace("<BR>", "\n"));
 	
 		boxcomments->setText(query.value(7).toString());

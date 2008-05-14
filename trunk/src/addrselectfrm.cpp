@@ -20,7 +20,7 @@ void addrselectfrm::init()
 	treemain->setColumnHidden(4, TRUE);
 	dirtabname.clear();
 	
-	QString connstr = "SELECT * FROM adrtabs WHERE users LIKE '%"+username+" %';";
+	QString connstr = "SELECT * FROM directories WHERE users LIKE '%"+username+" %';";
 	  
 	QSqlQuery query(connstr);
 	if(query.isActive())
@@ -59,7 +59,7 @@ QString addrselectfrm::getrabatt()
 //
 void addrselectfrm::searchaddress()
 {
-    QString connstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location, ID, discount FROM ";
+    QString connstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip, location, country, ID, discount FROM ";
     connstr += dirtabname[cmbdir->currentIndex()];
     connstr += " WHERE company LIKE '%"+txtsearch->text()+"%' OR lastname LIKE '%"+txtsearch->text()+"%' OR firstname LIKE '%"+txtsearch->text()+"%';";
     QSqlQuery query(connstr);
@@ -88,10 +88,14 @@ void addrselectfrm::searchaddress()
 		    if(query.value(5).toString()!="")
 				col4 += query.value(5).toString() + "<BR>";
 		    if(query.value(6).toString()!="")
-				col4 += query.value(6).toString();
-		    col4 += ":#:" + QString(dirtabname[cmbdir->currentIndex()]).mid(3) + "_" + query.value(7).toString();
+				col4 += query.value(6).toString() + " ";
+		    if(query.value(7).toString()!="")
+				col4 += query.value(7).toString() + "<BR>";
+		    if(query.value(8).toString()!="")
+				col4 += query.value(8).toString();
+		    col4 += ":#:" + QString(dirtabname[cmbdir->currentIndex()]).mid(3) + "_" + query.value(9).toString();
 		    item->setText(3, col4);
-		    item->setText(4, query.value(8).toString());
+		    item->setText(4, query.value(10).toString());
 		    treemain->addTopLevelItem(item);
 		    progbar->setValue(count++);
 		}
@@ -100,7 +104,7 @@ void addrselectfrm::searchaddress()
 //
 void addrselectfrm::clearsearch()
 {
-    QString connstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location, discount, ID FROM ";
+    QString connstr = "SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip, location, country, discount, ID FROM ";
     connstr += dirtabname[cmbdir->currentIndex()];
     connstr += ";";
     QSqlQuery query(connstr);
@@ -129,7 +133,11 @@ void addrselectfrm::clearsearch()
 		    if(query.value(5).toString()!="")
 				col4 += query.value(5).toString() + ";";
 		    if(query.value(6).toString()!="")
-				col4 += query.value(6).toString();
+				col4 += query.value(6).toString() + " ";
+		    if(query.value(7).toString()!="")
+				col4 += query.value(7).toString() + ";";
+		    if(query.value(8).toString()!="")
+				col4 += query.value(8).toString();
 		    col4 += ":#:" + QString(dirtabname[cmbdir->currentIndex()]).mid(3) + "_" + query.value(8).toString();
 		    item->setText(3, col4);
 		    item->setText(4, query.value(7).toString());

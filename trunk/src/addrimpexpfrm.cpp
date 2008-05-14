@@ -33,6 +33,8 @@ void addrimpexpfrm::init()
 	connect(btnexpvcardload, SIGNAL(released()), this, SLOT(loaddir_expvcard()));
 	connect(btnimpvcardload, SIGNAL(released()), this, SLOT(loadfilevcard()));
 	connect(btnimpvcardselectfile, SIGNAL(released()), this, SLOT(selectfilevcard()));
+	connect(btnimpcsvload, SIGNAL(released()), this, SLOT(loadfilecsv()));
+	connect(btnimpcsvselectfile, SIGNAL(released()), this, SLOT(selectfilecsv()));
 	direxplist.clear();
 	dirimplist.clear();
 	cmbexpcsv->clear();
@@ -47,7 +49,7 @@ void addrimpexpfrm::init()
 //
 void addrimpexpfrm::loaddirs()
 {
-    QString qstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [1%';").arg(username);
+    QString qstr = QString("SELECT * FROM directories WHERE users LIKE '%%1 [1%';").arg(username);
     QSqlQuery query1(qstr);
     if ( query1.isActive())
     {
@@ -59,13 +61,13 @@ void addrimpexpfrm::loaddirs()
 		}
 	}
 	
-    qstr = QString("SELECT * FROM adrtabs WHERE users LIKE '%%1 [11%';").arg(username);
+    qstr = QString("SELECT * FROM directories WHERE users LIKE '%%1 [11%';").arg(username);
     QSqlQuery query2(qstr);
     if ( query2.isActive())
     {
 		while ( query2.next())
 		{
-			//cmbexpcsv->addItem(query1.value(2).toString());
+			cmbimpcsv->addItem(query2.value(2).toString());
 			cmbimpvcard->addItem(query2.value(2).toString());
 			dirimplist.append(query2.value(1).toString());
 		}
@@ -89,6 +91,8 @@ void addrimpexpfrm::next()
 	else if(rbtn3->isChecked())
 	{
 		mainstack->setCurrentIndex(3);
+		connect(btnnext, SIGNAL(released()), this, SLOT(impcsv()));
+		btnnext->setText(tr("Import"));
 	}
 	else if(rbtn4->isChecked())
 	{
@@ -104,6 +108,7 @@ void addrimpexpfrm::loadcolumns(QString table)
 	treeexpcsv->clear();
 	treeexpvcard->clear();
 	tableimpvcard->clear();
+	tableimpcsv->clear();
 	QStringList collabels;
 	QString qstr = QString("SHOW COLUMNS FROM %1").arg(table);
 	QSqlQuery query(qstr);
@@ -119,7 +124,7 @@ void addrimpexpfrm::loadcolumns(QString table)
 		else if(mainstack->currentIndex() == 2)
 			treeexpvcard->setHeaderLabels(collabels);
 		else if(mainstack->currentIndex() == 3)
-			treeexpcsv->setHeaderLabels(collabels);
+			tableimpcsv->setHorizontalHeaderLabels(collabels);
 		else if(mainstack->currentIndex() == 4)
 			treeexpcsv->setHeaderLabels(collabels);
 	}
@@ -131,6 +136,7 @@ void addrimpexpfrm::loadcolumns(QString table)
 	treeexpcsv->hideColumn(0);
 	treeexpvcard->hideColumn(0);
 	tableimpvcard->hideColumn(0);
+	tableimpcsv->hideColumn(0);
 }
 //
 void addrimpexpfrm::back()
@@ -153,9 +159,7 @@ void addrimpexpfrm::loaddir_expcsv()
 		{
 			QTreeWidgetItem *item  = new QTreeWidgetItem(treeexpcsv);
 			for(i=0;i<treeexpcsv->columnCount();i++)
-			{
 				item->setText(i, query.value(i).toString());
-			}
 		}
 	}
 	else
@@ -220,9 +224,7 @@ void addrimpexpfrm::loaddir_expvcard()
 		{
 			QTreeWidgetItem *item  = new QTreeWidgetItem(treeexpvcard);
 			for(i=0;i<treeexpvcard->columnCount();i++)
-			{
 				item->setText(i, query.value(i).toString());
-			}
 		}
 	}
 	else
@@ -260,20 +262,20 @@ void addrimpexpfrm::expvcard()
 							outstream << "N:" << "" << item->text(3) << ";" << item->text(4) << ";;" << item->text(5) << ";\n";
 							outstream << "FN:" << item->text(4) << " " << item->text(3) << "\n";
 							outstream << "ORG:" << item->text(2) << "\n";
-							outstream << "URL:" << item->text(18) << "\n";
-							if(item->text(15) != "")
-								outstream << "EMAIL;TYPE=INTERNET:" << item->text(15) << "\n";
-							if(item->text(16) != "")
-								outstream << "EMAIL;TYPE=INTERNET:" << item->text(16) << "\n";
+							outstream << "URL:" << item->text(20) << "\n";
 							if(item->text(17) != "")
 								outstream << "EMAIL;TYPE=INTERNET:" << item->text(17) << "\n";
-							outstream << "TEL;TYPE=WORK,VOICE:" << item->text(9) << "\n";
-							outstream << "TEL;TYPE=WORK,VOICE,PREF:" << item->text(10) << "\n";
-							outstream << "TEL;TYPE=WORK,FAX:" << item->text(11) << "\n";
-							outstream << "TEL;TYPE=HOME,VOICE:" << item->text(12) << "\n";
-							outstream << "TEL;TYPE=HOME,FAX:" << item->text(13) << "\n";
-							outstream << "TEL;TYPE=HOME,CELL:" << item->text(14) << "\n";
-							outstream << "ADR;TYPE=WORK:" << item->text(6) << ";;" << item->text(7) << ";" << item->text(8).section(" ",1,10) << ";;" << item->text(8).section(" ",0,0) << ";" << "\n";
+							if(item->text(18) != "")
+								outstream << "EMAIL;TYPE=INTERNET:" << item->text(18) << "\n";
+							if(item->text(19) != "")
+								outstream << "EMAIL;TYPE=INTERNET:" << item->text(19) << "\n";
+							outstream << "TEL;TYPE=WORK,VOICE:" << item->text(11) << "\n";
+							outstream << "TEL;TYPE=WORK,VOICE,PREF:" << item->text(12) << "\n";
+							outstream << "TEL;TYPE=WORK,FAX:" << item->text(13) << "\n";
+							outstream << "TEL;TYPE=HOME,VOICE:" << item->text(14) << "\n";
+							outstream << "TEL;TYPE=HOME,FAX:" << item->text(15) << "\n";
+							outstream << "TEL;TYPE=HOME,CELL:" << item->text(16) << "\n";
+							outstream << "ADR;TYPE=WORK:" << item->text(6) << ";;" << item->text(7) << ";" << item->text(8) << ";;" << item->text(9) << ";" << item->text(10) <<"\n";
 							outstream << "END:VCARD\n";
 						}
 						progbar->setValue(i+1); 
@@ -303,20 +305,20 @@ void addrimpexpfrm::expvcard()
 							outstream << "N:" << "" << item->text(3) << ";" << item->text(4) << ";;" << item->text(5) << ";\n";
 							outstream << "FN:" << item->text(4) << " " << item->text(3) << "\n";
 							outstream << "ORG:" << item->text(2) << "\n";
-							outstream << "URL:" << item->text(18) << "\n";
-							if(item->text(15) != "")
-								outstream << "EMAIL;TYPE=INTERNET:" << item->text(15) << "\n";
-							if(item->text(16) != "")
-								outstream << "EMAIL;TYPE=INTERNET:" << item->text(16) << "\n";
+							outstream << "URL:" << item->text(20) << "\n";
 							if(item->text(17) != "")
 								outstream << "EMAIL;TYPE=INTERNET:" << item->text(17) << "\n";
-							outstream << "TEL;TYPE=WORK,VOICE:" << item->text(9) << "\n";
-							outstream << "TEL;TYPE=WORK,VOICE,PREF:" << item->text(10) << "\n";
-							outstream << "TEL;TYPE=WORK,FAX:" << item->text(11) << "\n";
-							outstream << "TEL;TYPE=HOME,VOICE:" << item->text(12) << "\n";
-							outstream << "TEL;TYPE=HOME,FAX:" << item->text(13) << "\n";
-							outstream << "TEL;TYPE=CELL:" << item->text(14) << "\n";
-							outstream << "ADR;TYPE=WORK:" << item->text(6) << ";;" << item->text(7) << ";" << item->text(8).section(" ",1,10) << ";;" << item->text(8).section(" ",0,0) << ";" << "\n";
+							if(item->text(18) != "")
+								outstream << "EMAIL;TYPE=INTERNET:" << item->text(18) << "\n";
+							if(item->text(19) != "")
+								outstream << "EMAIL;TYPE=INTERNET:" << item->text(19) << "\n";
+							outstream << "TEL;TYPE=WORK,VOICE:" << item->text(11) << "\n";
+							outstream << "TEL;TYPE=WORK,VOICE,PREF:" << item->text(12) << "\n";
+							outstream << "TEL;TYPE=WORK,FAX:" << item->text(13) << "\n";
+							outstream << "TEL;TYPE=HOME,VOICE:" << item->text(14) << "\n";
+							outstream << "TEL;TYPE=HOME,FAX:" << item->text(15) << "\n";
+							outstream << "TEL;TYPE=HOME,CELL:" << item->text(16) << "\n";
+							outstream << "ADR;TYPE=WORK:" << item->text(6) << ";;" << item->text(7) << ";" << item->text(8) << ";;" << item->text(9) << ";" << item->text(10) <<"\n";
 							outstream << "END:VCARD\n";
 							file.close();
 						}
@@ -347,6 +349,7 @@ void addrimpexpfrm::loadfilevcard()
 	bool ok;
 	QStringList vcfrows, filestream, filteredfile;
 	vcfrows << "ORG:" << "N:" << "ADR;TYPE=WORK:" << "TEL;TYPE=WORK,VOICE:" << "TEL;TYPE=WORK,VOICE,PREF:" << "TEL;TYPE=WORK,FAX:" << "TEL;TYPE=HOME," << "TEL;TYPE=HOME,FAX:" << "CELL" << "EMAIL" << "URL:";
+
 	filteredfile << "" << "" << "" << "" << "" << "" << "" << "" << "" << "" << "";
 
 	QFile file(txtimpvcard->text());
@@ -405,40 +408,48 @@ void addrimpexpfrm::loadfilevcard()
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 7, item);
 			
 			item = new QTableWidgetItem();
-			item->setText(filteredfile[2].section(";",5,5)+" "+filteredfile[2].section(";",3,3));
+			item->setText(filteredfile[2].section(";",3,3));
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 8, item);
 
 			item = new QTableWidgetItem();
-			item->setText(filteredfile[3]);
+			item->setText(filteredfile[2].section(";",5,5));
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 9, item);
 
 			item = new QTableWidgetItem();
-			item->setText(filteredfile[4]);
+			item->setText(filteredfile[2].section(";",6,6));
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 10, item);
+
+			item = new QTableWidgetItem();
+			item->setText(filteredfile[3]);
+			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 11, item);
+
+			item = new QTableWidgetItem();
+			item->setText(filteredfile[4]);
+			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 12, item);
 			
 			item = new QTableWidgetItem();
 			item->setText(filteredfile[5]);
-			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 11, item);
-			
-			item = new QTableWidgetItem();
-			item->setText(filteredfile[6]);
-			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 12, item);
-
-			item = new QTableWidgetItem();
-			item->setText(filteredfile[7]);
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 13, item);
 			
 			item = new QTableWidgetItem();
-			item->setText(filteredfile[8]);
+			item->setText(filteredfile[6]);
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 14, item);
 
 			item = new QTableWidgetItem();
-			item->setText(filteredfile[9]);
+			item->setText(filteredfile[7]);
 			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 15, item);
 			
 			item = new QTableWidgetItem();
+			item->setText(filteredfile[8]);
+			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 16, item);
+
+			item = new QTableWidgetItem();
+			item->setText(filteredfile[9]);
+			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 17, item);
+			
+			item = new QTableWidgetItem();
 			item->setText(filteredfile[10]);
-			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 18, item);
+			tableimpvcard->setItem(tableimpvcard->rowCount()-1, 20, item);
 			
 			ok = FALSE;
 			filteredfile.clear();
@@ -450,6 +461,95 @@ void addrimpexpfrm::loadfilevcard()
 }
 //
 void addrimpexpfrm::impvcard()
+{
+	QString collabels = "";
+	QString qstr = QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]);
+	QSqlQuery query(qstr);
+	if(query.isActive())
+	{
+		while(query.next())
+			collabels += "`"+query.value(0).toString()+"`,";
+		collabels = collabels.leftJustified(collabels.length()-1, '.', true);
+	}
+	else
+	{
+		QSqlError sqlerror = query.lastError();
+		QMessageBox::critical(0,"Error...", tr("Error during database access\n\n")+sqlerror.text());
+	}
+	
+	int i, ii;
+	QTableWidgetItem *item = new QTableWidgetItem;
+	progbar->setValue(0);
+	progbar->setMaximum(tableimpvcard->rowCount());
+	for(i=0;i<tableimpvcard->rowCount();i++)
+	{
+		qstr = QString("INSERT INTO %1 ("+collabels+")VALUES('',").arg(dirimplist[cmbimpvcard->currentIndex()]);
+		for(ii=1;ii<tableimpvcard->columnCount()-2;ii++)
+		{
+			item = new QTableWidgetItem();
+			item = tableimpvcard->item(i, ii);
+			if(item!=0)
+				qstr += "'"+item->text()+"',";
+			else
+				qstr += "'',";
+		}
+		qstr = qstr + QString("'%1','');").arg(QDate::currentDate().toString("dd.MM.yyyy"));
+		QSqlQuery ins_query(qstr);
+		progbar->setValue(i);
+	}
+	progbar->setValue(progbar->maximum());
+	QMessageBox::information(0,"vCard import...", tr("vCard import finished."));
+	this->accept();
+}
+//
+void addrimpexpfrm::selectfilecsv()
+{
+	QString filestr = QFileDialog::getOpenFileName ( this, tr("Open CSV-File..."),
+					QDir::homePath(),
+					tr("CSV-File (*.*)") );
+	txtimpcsv->setText(filestr);
+}
+//
+void addrimpexpfrm::loadfilecsv()
+{
+	QComboBox* cmbcols = new QComboBox(this);
+	cmbcols->setObjectName("cmbcols"); 
+
+	QSqlQuery query(QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]));
+	if(query.isActive())
+	{
+		while(query.next())
+			cmbcols->addItem(query.value(0).toString());
+	}
+	else
+	{
+		QSqlError sqlerror = query.lastError();
+		QMessageBox::critical(0,"Error...", tr("Error during database access\n\n")+sqlerror.text());
+	}
+	QMessageBox::critical(0,"Error...", cmbcols->itemText(0));
+	//loadcolumns(dirimplist[cmbimpcsv->currentIndex()]);
+	tableimpcsv->setRowCount(1);
+	tableimpcsv->setCellWidget(0,2,cmbcols);
+
+	QStringList filestream;
+
+	QFile file(txtimpcsv->text());
+	if(file.open(QIODevice::ReadOnly))
+	{
+		QTextStream stream(&file);
+		while(!stream.atEnd())
+			filestream.append(stream.readLine());
+		file.close(); 
+	}
+	else
+		QMessageBox::critical(0,"Error...", tr("Error during reading of the File!"));
+	if(filestream.count() > 0)
+	{
+		tableimpcsv->setColumnCount(filestream[0].count(txtimpcsvseparator->text()));
+	}
+}
+//
+void addrimpexpfrm::impcsv()
 {
 	QString collabels = "";
 	QString qstr = QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]);

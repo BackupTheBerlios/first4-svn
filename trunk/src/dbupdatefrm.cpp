@@ -19,7 +19,7 @@ int dbupdatefrm::init()
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
 	QString cfgdbver;
-	newdbver = "1.3.95.2";
+	newdbver = "1.3.95.3";
 	QSqlQuery query("SELECT value FROM maincfgtab WHERE var = 'dbversion';");
 	if(query.isActive())
 	{
@@ -63,13 +63,22 @@ int dbupdatefrm::init()
 	if(query8.size() != 1)
 		retrcode = 1;
 
+	QSqlQuery query9a("SELECT name FROM adrtabs WHERE `name` LIKE 'adr%' LIMIT 1;");
+	if(query9a.size() > 0)
+	{
+		query9a.next();
+		QSqlQuery query9b("SHOW COLUMNS FROM "+query9a.value(0).toString()+" WHERE field='location';");
+		if(query9b.size() != 1)
+			retrcode = 1;
+	}
+
 	return retrcode;
 	
 }
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(9);
+	    progbar->setMaximum(10);
 
 	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	    if(query1.size() !=1 )
@@ -112,9 +121,18 @@ void dbupdatefrm::check_db_structure()
 			update_db_structure("accounttype");
 		progbar->setValue(8);
 
-	QSqlQuery query9(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
-	progbar->setValue(9);
-	QMessageBox::information( 0, "DB update..." , "Update completed." );
+		QSqlQuery query9a("SELECT name FROM adrtabs WHERE `name` LIKE 'adr%' LIMIT 1;");
+		if(query9a.size() > 0)
+		{
+			query9a.next();
+			QSqlQuery query9b("SHOW COLUMNS FROM "+query9a.value(0).toString()+" WHERE field='location';");
+			if(query9b.size() != 1)
+				update_db_structure("adr_dir");
+		}
+
+	QSqlQuery query10(QString("UPDATE maincfgtab SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+	progbar->setValue(10);
+	QMessageBox::information( 0, "DB update..." , tr("Update completed.") );
 	this->accept();
 }
 //
@@ -184,5 +202,18 @@ void dbupdatefrm::update_db_structure(QString section)
 				QSqlQuery query2("UPDATE accounttab SET `type`='local' WHERE `name`LIKE '%ietab%';");
 				QSqlQuery query3("UPDATE accounttab SET `type`='banc' WHERE `bank`!='';");
 				QSqlQuery query4("UPDATE accounttab SET `type`='local' WHERE `bank`='';");
+			}
+			else if(section.contains("adr_dir"))
+			{
+				QSqlQuery query1("SELECT name FROM adrtabs WHERE `name` LIKE 'adr%';");
+				while(query1.next())
+				{
+					QSqlQuery query2("ALTER TABLE "+query1.value(0).toString()+" CHANGE `zip_location` `location` TEXT NOT NULL;");
+					QSqlQuery query3("ALTER TABLE "+query1.value(0).toString()+" ADD COLUMN `zip` TEXT NOT NULL AFTER `location`;");
+					QSqlQuery query4("ALTER TABLE "+query1.value(0).toString()+" ADD COLUMN `country` TEXT NOT NULL AFTER `zip`;");
+					QSqlQuery query5("ALTER TABLE `"+query1.value(0).toString()+"` RENAME TO `"+query1.value(0).toString().replace("adr", "dir")+"`;");
+					QSqlQuery query6("UPDATE adrtabs SET `name`='"+query1.value(0).toString().replace("adr", "dir")+"' WHERE `name`='"+query1.value(0).toString()+"' LIMIT 1;");
+				}
+				QSqlQuery query7("ALTER TABLE `adrtabs` RENAME TO `directories`;");
 			}
 }

@@ -20,6 +20,9 @@ private slots:
 	void impvcard();
 	void loadfilevcard();
 	void selectfilevcard();
+	void selectfilecsv();
+	void loadfilecsv();
+	void impcsv();
 private:
 	void loadcolumns(QString table);
 	void loaddirs();

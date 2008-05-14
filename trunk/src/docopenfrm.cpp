@@ -115,7 +115,7 @@ void docopenfrm::loaddocs()
 				item->setText(5, query.value(5).toString());
 				item->setText(6, query.value(6).toString());
 		    
-				qstr2 = QString("SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location FROM adr%1 WHERE `ID`='%2';").arg(item->text(7).section( "_", 0, 0 )).arg(item->text(7).section("_", 1, 1 ));
+				qstr2 = QString("SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip, location, country FROM dir%1 WHERE `ID`='%2';").arg(item->text(7).section( "_", 0, 0 )).arg(item->text(7).section("_", 1, 1 ));
 				QSqlQuery query2(qstr2);
 				query2.next();
 				QString adresse ="";
@@ -133,7 +133,11 @@ void docopenfrm::loaddocs()
 				    if(query2.value(5).toString()!="")
 						adresse += query2.value(5).toString() + "<BR>";
 				    if(query2.value(6).toString()!="")
-						adresse += query2.value(6).toString();
+						adresse += query2.value(6).toString() + " ";
+				    if(query2.value(7).toString()!="")
+						adresse += query2.value(7).toString() + "<BR>";
+				    if(query2.value(8).toString()!="")
+						adresse += query2.value(8).toString();
 				}
 				else
 				    adresse = tr("No Address found in database!");
@@ -275,7 +279,7 @@ void docopenfrm::searchdoc()
 				item->setText(5, query.value(5).toString());
 				item->setText(6, query.value(6).toString());
 			    
-				qstr2 = QString("SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip_location FROM adr%1 WHERE `ID`='%2';").arg(item->text(7).section( "_", 0, 0 )).arg(item->text(7).section("_", 1, 1 ));
+				qstr2 = QString("SELECT company, lastname, firstname, nameadd, pobox, street_nr, zip, location, country FROM dir%1 WHERE `ID`='%2';").arg(item->text(7).section( "_", 0, 0 )).arg(item->text(7).section("_", 1, 1 ));
 				QSqlQuery query2(qstr2);
 				query2.next();
 				item->setText(3, query2.value(0).toString() + " " + query2.value(1).toString() + " " + query2.value(2).toString());
@@ -291,7 +295,11 @@ void docopenfrm::searchdoc()
 				if(query2.value(5).toString()!="")
 				    adresse += query2.value(5).toString() + "<BR>";
 				if(query2.value(6).toString()!="")
-				    adresse += query2.value(6).toString();
+				    adresse += query2.value(6).toString() + " ";
+				if(query2.value(7).toString()!="")
+				    adresse += query2.value(7).toString() + "<BR>";
+				if(query2.value(8).toString()!="")
+				    adresse += query2.value(8).toString();
 				item->setText(8, adresse);
 				progbar->setValue(query.at()+1);
 		    }
