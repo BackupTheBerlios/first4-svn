@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "ui_addrimpexpfrm.h"
 //
-class addrimpexpfrm : public QDialog, public Ui::addrimpexp
+class addrimpexpfrm : public QDialog, public Ui::addrimpexpfrm
 {
 Q_OBJECT
 public:
