@@ -1133,7 +1133,7 @@ void cfgfrm::rentab()
 		{
 			if ( item->text ( 2 ).mid ( 0, 3 ) == "dir" )
 			{
-				QString qstr = tr ( "UPDATE `directories` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
+				QString qstr = QString ( "UPDATE `directories` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
 				QSqlQuery queryadrren ( qstr );
 				item->setText ( 0, newdesc );
 			}

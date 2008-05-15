@@ -233,7 +233,7 @@ void addrfrm::loadaddrs()
 		checkrights();
 		QString connstr = "SELECT ID, company, lastname, firstname FROM ";
 		connstr += adrnamelist[cmbdir->currentIndex()];
-		connstr += ";";
+		connstr += " ORDER BY company, lastname, firstname;";
 		mainlistview->clear();
 		QSqlQuery query(connstr);
 		if ( query.isActive())
@@ -657,53 +657,57 @@ void addrfrm::saveaddr()
 //
 void addrfrm::deladdr()
 {
-    int exit=QMessageBox::warning(this, "Info...", tr("Delete %1 %2 %3?").arg(adr3->text()).arg(adr5->text()).arg(adr4->text()),QMessageBox::Yes, QMessageBox::No);
-    if(exit == QMessageBox::Yes)
-    {
-		QString conn = "DELETE FROM `";
-		conn += adrnamelist[cmbdir->currentIndex()];
-		conn += "` WHERE `ID` = '";
-		conn += adr1->text();
-		conn +=  "';";
-		QSqlQuery queryadrdel(conn);				
-		lastadrtab = "";
-		loadaddrs();
-	    
-		adr1->setText("");
-		adr2->setText("");
-		adr3->setText("");
-		adr4->setText("");
-		adr5->setText("");
-		adr6->setText("");
-		adr7->setText("");
-		adr8->setText("");
-		adr9a->setText("");
-		adr9b->setText("");
-		adr10->setText("");
-		adr11->setText("");
-		adr12->setText("");
-		adr13->setText("");
-		adr14->setText("");
-		adr15->setText("");
-		adr16->setText("");
-		adr17->setText("");
-		adr18->setText("");
-		adr19->setText("");
-		adr22->setText("");	
-		adr23->setText("");		
-		lbladr24->setText("");
-		adr24->setText("");
-		lbladr25->setText("");
-		adr25->setText("");
-		lbladr26->setText("");
-		adr26->setText("");
-		lbladr27->setText("");
-		adr27->setText("");
-		lbladr28->setText("");
-		adr28->setText("");	  
-		adr29->setText("");	
-		adr30->setText("");		
-    }
+	QTreeWidgetItem *item = mainlistview->currentItem();
+	if(item != 0)
+	{
+    	int exit=QMessageBox::warning(this, "Info...", tr("Delete %1 %2 %3?").arg(adr3->text()).arg(adr5->text()).arg(adr4->text()),QMessageBox::Yes, QMessageBox::No);
+	    if(exit == QMessageBox::Yes)
+    	{
+			QString conn = "DELETE FROM `";
+			conn += adrnamelist[cmbdir->currentIndex()];
+			conn += "` WHERE `ID` = '";
+			conn += adr1->text();
+			conn +=  "';";
+			QSqlQuery queryadrdel(conn);				
+			lastadrtab = "";
+			loadaddrs();
+
+			adr1->setText("");
+			adr2->setText("");
+			adr3->setText("");
+			adr4->setText("");
+			adr5->setText("");
+			adr6->setText("");
+			adr7->setText("");
+			adr8->setText("");
+			adr9a->setText("");
+			adr9b->setText("");
+			adr10->setText("");
+			adr11->setText("");
+			adr12->setText("");
+			adr13->setText("");
+			adr14->setText("");
+			adr15->setText("");
+			adr16->setText("");
+			adr17->setText("");
+			adr18->setText("");
+			adr19->setText("");
+			adr22->setText("");	
+			adr23->setText("");		
+			lbladr24->setText("");
+			adr24->setText("");
+			lbladr25->setText("");
+			adr25->setText("");
+			lbladr26->setText("");
+			adr26->setText("");
+			lbladr27->setText("");
+			adr27->setText("");
+			lbladr28->setText("");
+			adr28->setText("");	  
+			adr29->setText("");	
+			adr30->setText("");		
+		}
+	}
 }
 //
 void addrfrm::clearsearch()

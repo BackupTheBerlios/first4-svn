@@ -81,26 +81,29 @@ void addrimpexpfrm::next()
 		mainstack->setCurrentIndex(1);
 		connect(btnnext, SIGNAL(released()), this, SLOT(impvcard()));
 		btnnext->setText(tr("Import"));
+		btnnext->setIcon(QIcon(QString::fromUtf8(":/button_ok.png")));
 	}
 	else if(rbtn2->isChecked())
 	{
 		mainstack->setCurrentIndex(2);
 		connect(btnnext, SIGNAL(released()), this, SLOT(expvcard()));
 		btnnext->setText(tr("Export"));
+		btnnext->setIcon(QIcon(QString::fromUtf8(":/button_ok.png")));
 	}
 	else if(rbtn3->isChecked())
 	{
 		mainstack->setCurrentIndex(3);
 		connect(btnnext, SIGNAL(released()), this, SLOT(impcsv()));
 		btnnext->setText(tr("Import"));
+		btnnext->setIcon(QIcon(QString::fromUtf8(":/button_ok.png")));
 	}
 	else if(rbtn4->isChecked())
 	{
 		mainstack->setCurrentIndex(4);
 		connect(btnnext, SIGNAL(released()), this, SLOT(expcsv()));
 		btnnext->setText(tr("Export"));
+		btnnext->setIcon(QIcon(QString::fromUtf8(":/button_ok.png")));
 	}
-	btnnext->setIcon(QIcon(QString::fromUtf8(":/button_ok.png")));
 }
 //
 void addrimpexpfrm::loadcolumns(QString table)
@@ -144,6 +147,12 @@ void addrimpexpfrm::back()
 	mainstack->setCurrentIndex(0);
 	btnnext->setText(tr("Next >>"));
 	btnnext->setIcon(QIcon(QString("")));
+
+	disconnect(btnnext, SIGNAL(released()), this, SLOT(impvcard()));
+	disconnect(btnnext, SIGNAL(released()), this, SLOT(expvcard()));
+	disconnect(btnnext, SIGNAL(released()), this, SLOT(impcsv()));
+	disconnect(btnnext, SIGNAL(released()), this, SLOT(expcsv()));
+	
 	connect(btnnext, SIGNAL(released()), this, SLOT(next()));
 }
 void addrimpexpfrm::loaddir_expcsv()
@@ -188,7 +197,7 @@ void addrimpexpfrm::expcsv()
 				QTextStream outstream( &file );
 				QTreeWidgetItem *item = treeexpcsv->headerItem();
 				for(i=0;i<treeexpcsv->columnCount();i++)
-					tmpstr += "\"" + item->text(i) + "\";";
+					tmpstr += "\"" + item->text(i) + "\",";
 				outstream << tmpstr.leftJustified(tmpstr.length()-1, '.', true) << "\n";
 				for(ii=0;ii<treeexpcsv->topLevelItemCount();ii++)
 				{
@@ -198,7 +207,13 @@ void addrimpexpfrm::expcsv()
 					if(rbtnexpcsvall->isChecked() || (rbtnexpcsvsel->isChecked() && item->isSelected()))
 					{
 						for(i=0;i<treeexpcsv->columnCount();i++)
-							tmpstr += "\"" + item->text(i) + "\";";
+						{
+							if(item->text(i) != "")
+								tmpstr += "\"" + item->text(i) + "\",";
+							else
+								tmpstr += ",";
+						}
+
 						outstream << tmpstr.leftJustified(tmpstr.length()-1, '.', true) << "\n";
 					}
 					progbar->setValue(ii+1); 
@@ -514,24 +529,21 @@ void addrimpexpfrm::selectfilecsv()
 //
 void addrimpexpfrm::loadfilecsv()
 {
-	QComboBox* cmbcols = new QComboBox(this);
-	cmbcols->setObjectName("cmbcols"); 
+	QStringList columns;
+	columns << "";
 
 	QSqlQuery query(QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]));
 	if(query.isActive())
 	{
 		while(query.next())
-			cmbcols->addItem(query.value(0).toString());
+			columns << query.value(0).toString();
 	}
 	else
 	{
 		QSqlError sqlerror = query.lastError();
 		QMessageBox::critical(0,"Error...", tr("Error during database access\n\n")+sqlerror.text());
 	}
-	//QMessageBox::critical(0,"Error...", cmbcols->itemText(0));
-	//loadcolumns(dirimplist[cmbimpcsv->currentIndex()]);
 	tableimpcsv->setRowCount(1);
-	tableimpcsv->setCellWidget(0,2,cmbcols);
 
 	QStringList filestream;
 
@@ -541,7 +553,7 @@ void addrimpexpfrm::loadfilecsv()
 		QTextStream stream(&file);
 		while(!stream.atEnd())
 			filestream.append(stream.readLine());
-		file.close(); 
+		file.close();
 	}
 	else
 		QMessageBox::critical(0,"Error...", tr("Error during reading of the File!"));
@@ -553,7 +565,8 @@ void addrimpexpfrm::loadfilecsv()
 		tableimpcsv->setRowCount(filestream.count()+1);
 		for(i=0;i<filestream.count();i++)
 		{
-			QStringList fields = filestream[i].split("\""+txtimpcsvseparator->text()+"\"");
+			//QStringList fields = filestream[i].split("\""+txtimpcsvseparator->text()+"\"");
+			QStringList fields = filestream[i].split(txtimpcsvseparator->text());
 			for(ii=0;ii<fields.count();ii++)
 			{
 				QTableWidgetItem *item = new QTableWidgetItem;
@@ -562,46 +575,65 @@ void addrimpexpfrm::loadfilecsv()
 			}
 		}
 	}
+	for(i=0;i<tableimpcsv->columnCount();i++)
+	{
+		QComboBox *cmbcols;
+		cmbcols = new QComboBox(this);
+		cmbcols->addItems(columns);
+		
+		QTableWidgetItem *item = tableimpcsv->item(1, i);
+		if(item != 0)
+			cmbcols->setCurrentIndex(cmbcols->findText(item->text()));
+
+		tableimpcsv->setCellWidget(0,i,cmbcols);
+	}
 }
 //
 void addrimpexpfrm::impcsv()
 {
 	QString collabels = "";
-	QString qstr = QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]);
-	QSqlQuery query(qstr);
-	if(query.isActive())
-	{
-		while(query.next())
-			collabels += "`"+query.value(0).toString()+"`,";
-		collabels = collabels.leftJustified(collabels.length()-1, '.', true);
-	}
-	else
-	{
-		QSqlError sqlerror = query.lastError();
-		QMessageBox::critical(0,"Error...", tr("Error during database access\n\n")+sqlerror.text());
-	}
-	
 	int i, ii;
+	for(i=0;i<tableimpcsv->columnCount();i++)
+	{
+		QComboBox *readcombo = static_cast<QComboBox*>(tableimpcsv->cellWidget(0, i));
+		if(readcombo->currentText() != "") 
+			collabels += "`"+readcombo->currentText()+"`,";
+	}
+	collabels = collabels.leftJustified(collabels.length()-1, '.', true);
+
+	QString tmpstr;
 	QTableWidgetItem *item = new QTableWidgetItem;
 	progbar->setValue(0);
-	progbar->setMaximum(tableimpvcard->rowCount());
-	for(i=0;i<tableimpvcard->rowCount();i++)
+	progbar->setMaximum(tableimpcsv->rowCount());
+	for(i=spbimpcsv->value();i<tableimpcsv->rowCount();i++)
 	{
-		qstr = QString("INSERT INTO %1 ("+collabels+")VALUES('',").arg(dirimplist[cmbimpvcard->currentIndex()]);
-		for(ii=1;ii<tableimpvcard->columnCount()-2;ii++)
+		item = new QTableWidgetItem();
+		item = tableimpcsv->item(i, 0);
+		
+		if(rbtnimpcsvall->isChecked() || (rbtnimpcsvsel->isChecked() && item->isSelected()))
 		{
-			item = new QTableWidgetItem();
-			item = tableimpvcard->item(i, ii);
-			if(item!=0)
-				qstr += "'"+item->text()+"',";
-			else
-				qstr += "'',";
+		
+			tmpstr = "";
+			for(ii=0;ii<tableimpcsv->columnCount();ii++)
+			{
+				QComboBox *readcombo = static_cast<QComboBox*>(tableimpcsv->cellWidget(0, ii));
+				if(readcombo->currentText() != "")
+				{
+					item = new QTableWidgetItem();
+					item = tableimpcsv->item(i, ii);
+					if(item!=0)
+						tmpstr += "'"+item->text()+"',";
+					else
+						tmpstr += "'',";
+				}
+			}
+			tmpstr = tmpstr.leftJustified(tmpstr.length()-1, '.', true);
+			QString qstr = QString("INSERT INTO %1 (%2)VALUES(%3);").arg(dirimplist[cmbimpcsv->currentIndex()]).arg(collabels).arg(tmpstr);
+			QSqlQuery ins_query(qstr);
 		}
-		qstr = qstr + QString("'%1','');").arg(QDate::currentDate().toString("dd.MM.yyyy"));
-		QSqlQuery ins_query(qstr);
 		progbar->setValue(i);
 	}
 	progbar->setValue(progbar->maximum());
-	QMessageBox::information(0,"vCard import...", tr("vCard import finished."));
+	QMessageBox::information(0,"CSV-File import...", tr("CSV import finished."));
 	this->accept();
 }

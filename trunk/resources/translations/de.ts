@@ -583,127 +583,127 @@ Währung in Datei ist: %1</translation>
 <context>
     <name>addrfrm</name>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Offers</source>
         <translation>Offerten</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="381"/>
+        <location filename="../../src/addrfrm.cpp" line="383"/>
         <source>Order confirmations</source>
         <translation>Auftragsbestätigungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Deliverynotes</source>
         <translation>Lieferscheine</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Invoices</source>
         <translation>Rechnungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="396"/>
+        <location filename="../../src/addrfrm.cpp" line="398"/>
         <source>Offer %1 - %2</source>
         <translation>Offerte %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="402"/>
+        <location filename="../../src/addrfrm.cpp" line="404"/>
         <source>Order confirmation %1 - %2</source>
         <translation>Auftragsbestätigung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="408"/>
+        <location filename="../../src/addrfrm.cpp" line="410"/>
         <source>Deliverynote %1 - %2</source>
         <translation>Lieferschein %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="420"/>
+        <location filename="../../src/addrfrm.cpp" line="422"/>
         <source>Paid </source>
         <translation>Bezahlt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="428"/>
+        <location filename="../../src/addrfrm.cpp" line="430"/>
         <source>Pendent</source>
         <translation>Pendent</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="430"/>
+        <location filename="../../src/addrfrm.cpp" line="432"/>
         <source>Completed</source>
         <translation>Abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="434"/>
+        <location filename="../../src/addrfrm.cpp" line="436"/>
         <source>Invoice %1 - %2</source>
         <translation>Rechnung %1 - %2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="453"/>
+        <location filename="../../src/addrfrm.cpp" line="455"/>
         <source>Status: %1</source>
         <translation>Status: %1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Incoming orders</source>
         <translation>Eingehende Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Open orders</source>
         <translation>Offene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="470"/>
+        <location filename="../../src/addrfrm.cpp" line="472"/>
         <source>Completed orders</source>
         <translation>Abgeschlossene Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="549"/>
+        <location filename="../../src/addrfrm.cpp" line="551"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="550"/>
+        <location filename="../../src/addrfrm.cpp" line="552"/>
         <source>New Label:</source>
         <translation>Neue Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="657"/>
+        <location filename="../../src/addrfrm.cpp" line="663"/>
         <source>Delete %1 %2 %3?</source>
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="813"/>
+        <location filename="../../src/addrfrm.cpp" line="820"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="852"/>
+        <location filename="../../src/addrfrm.cpp" line="859"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="852"/>
+        <location filename="../../src/addrfrm.cpp" line="859"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="872"/>
+        <location filename="../../src/addrfrm.cpp" line="879"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="875"/>
+        <location filename="../../src/addrfrm.cpp" line="882"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="915"/>
+        <location filename="../../src/addrfrm.cpp" line="922"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="918"/>
+        <location filename="../../src/addrfrm.cpp" line="925"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
@@ -898,17 +898,17 @@ Währung in Datei ist: %1</translation>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="822"/>
+        <location filename="../../src/addrfrm.cpp" line="829"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="751"/>
+        <location filename="../../src/addrfrm.cpp" line="758"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="647"/>
+        <location filename="../../src/addrfrm.cpp" line="650"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -918,7 +918,7 @@ Währung in Datei ist: %1</translation>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="775"/>
+        <location filename="../../src/addrfrm.cpp" line="782"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
@@ -928,102 +928,102 @@ Währung in Datei ist: %1</translation>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="776"/>
+        <location filename="../../src/addrfrm.cpp" line="783"/>
         <source>Salutation</source>
         <translation>Anrede</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="777"/>
+        <location filename="../../src/addrfrm.cpp" line="784"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="778"/>
+        <location filename="../../src/addrfrm.cpp" line="785"/>
         <source>P.O. Box</source>
         <translation>Postfach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="779"/>
+        <location filename="../../src/addrfrm.cpp" line="786"/>
         <source>Street \&amp; Nr.</source>
         <translation>Strasse Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="780"/>
+        <location filename="../../src/addrfrm.cpp" line="787"/>
         <source>ZIP, Location</source>
         <translation>PLZ, Ort</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="781"/>
+        <location filename="../../src/addrfrm.cpp" line="788"/>
         <source>Business phone</source>
         <translation>Telefon Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="782"/>
+        <location filename="../../src/addrfrm.cpp" line="789"/>
         <source>Direct phone</source>
         <translation>Telefon direkt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="783"/>
+        <location filename="../../src/addrfrm.cpp" line="790"/>
         <source>Business fax</source>
         <translation>Fax Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="784"/>
+        <location filename="../../src/addrfrm.cpp" line="791"/>
         <source>Private phone</source>
         <translation>Telefon Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="785"/>
+        <location filename="../../src/addrfrm.cpp" line="792"/>
         <source>Private fax</source>
         <translation>Fax Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="786"/>
+        <location filename="../../src/addrfrm.cpp" line="793"/>
         <source>Mobile</source>
         <translation>Mobile</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="787"/>
+        <location filename="../../src/addrfrm.cpp" line="794"/>
         <source>E-Mail 1</source>
         <translation>E-Mail 1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="788"/>
+        <location filename="../../src/addrfrm.cpp" line="795"/>
         <source>E-Mail 2</source>
         <translation>E-Mail 2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="789"/>
+        <location filename="../../src/addrfrm.cpp" line="796"/>
         <source>E-Mail 3</source>
         <translation>E-Mail 3</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="790"/>
+        <location filename="../../src/addrfrm.cpp" line="797"/>
         <source>Website</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="802"/>
+        <location filename="../../src/addrfrm.cpp" line="809"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="803"/>
+        <location filename="../../src/addrfrm.cpp" line="810"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="809"/>
+        <location filename="../../src/addrfrm.cpp" line="816"/>
         <source>Created</source>
         <translation>Erstellt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="809"/>
+        <location filename="../../src/addrfrm.cpp" line="816"/>
         <source>Modified</source>
         <translation>Bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="995"/>
+        <location filename="../../src/addrfrm.cpp" line="1002"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -1084,7 +1084,101 @@ Währung in Datei ist: %1</translation>
     </message>
 </context>
 <context>
-    <name>addrimpexp</name>
+    <name>addrimpexpfrm</name>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="97"/>
+        <source>Import</source>
+        <translation>Importiere</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="104"/>
+        <source>Export</source>
+        <translation>Exportiere</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="544"/>
+        <source>Error during database access
+
+</source>
+        <translation>Fehler beim Datenbankzugriff
+
+</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="148"/>
+        <source>Next &gt;&gt;</source>
+        <translation>Weiter &gt;&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="186"/>
+        <source>Save CSV File...</source>
+        <translation>Speichere CSV Datei...</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="526"/>
+        <source>CSV-File (*.*)</source>
+        <translation>CSV-Datei (*.*)</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="222"/>
+        <source>Export finished.</source>
+        <translation>Export abgeschlossen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="226"/>
+        <source>Can&apos;t export CVS-file.</source>
+        <translation>Kann CSV-Datei nicht öffnen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="259"/>
+        <source>Save as vCard...</source>
+        <translation>Speichere als vCard...</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="301"/>
+        <source>Export in file &apos;%1&apos; finished.</source>
+        <translation>Export in Datei &apos;%1&apos; abgeschlossen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="343"/>
+        <source>Can&apos;t export vCard.</source>
+        <translation>Kann vCard nicht exportieren.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="348"/>
+        <source>Export of &apos;%1&apos; finished.</source>
+        <translation>Export in Datei &apos;%1&apos; abgeschlossen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="355"/>
+        <source>Open vCard...</source>
+        <translation>Öffne vCard...</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="357"/>
+        <source>vCard (*.vcf)</source>
+        <translation>vCard (*.vcf)</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="559"/>
+        <source>Error during reading of the File!</source>
+        <translation>Fehler beim Lesen der Datei!</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="518"/>
+        <source>vCard import finished.</source>
+        <translation>vCard import abgeschlossen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="524"/>
+        <source>Open CSV-File...</source>
+        <translation>Öffne CSV-Datei...</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrimpexpfrm.cpp" line="637"/>
+        <source>CSV import finished.</source>
+        <translation>CSV Import abgeschlossen.</translation>
+    </message>
     <message>
         <location filename="../../ui/addrimpexpfrm.ui" line="13"/>
         <source>Address import and export...</source>
@@ -1126,161 +1220,94 @@ Währung in Datei ist: %1</translation>
         <translation>vCard:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="168"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="426"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="498"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="682"/>
         <source>All</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="514"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="698"/>
         <source>Selected</source>
         <translation>Ausgewählte</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="223"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="468"/>
         <source>Import in Directory:</source>
         <translation>Importiere in Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="280"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="283"/>
         <source>Export vCard:</source>
         <translation>Exportiere vCard:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="484"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="668"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="441"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="622"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="380"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="386"/>
         <source>One file</source>
         <translation>Eine Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="385"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="391"/>
         <source>Multi file</source>
         <translation>Mehrere Dateien</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="407"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="413"/>
         <source>Import CSV:</source>
         <translation>Importiere CSV:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="428"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="442"/>
+        <source>CSV-File:</source>
+        <translation>CSV-Datei:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addrimpexpfrm.ui" line="546"/>
+        <source>Separator:</source>
+        <translation>Trennzeichen:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addrimpexpfrm.ui" line="559"/>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addrimpexpfrm.ui" line="572"/>
+        <source>Import from row:</source>
+        <translation>Import ab Zeile:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addrimpexpfrm.ui" line="609"/>
         <source>Export CSV:</source>
         <translation>Exportiere CSV:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="529"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="713"/>
         <source>&amp;Next &gt;&gt;</source>
         <translation>&amp;Weiter &gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="542"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="726"/>
         <source>&lt;&lt; &amp;Back</source>
         <translation>&lt;&lt; &amp;Zurück</translation>
     </message>
     <message>
-        <location filename="../../ui/addrimpexpfrm.ui" line="555"/>
+        <location filename="../../ui/addrimpexpfrm.ui" line="739"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
-    </message>
-</context>
-<context>
-    <name>addrimpexpfrm</name>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="81"/>
-        <source>Import</source>
-        <translation>Importiere</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="97"/>
-        <source>Export</source>
-        <translation>Exportiere</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="466"/>
-        <source>Error during database access
-
-</source>
-        <translation>Fehler beim Datenbankzugriff
-
-</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="139"/>
-        <source>Next &gt;&gt;</source>
-        <translation>Weiter &gt;&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="173"/>
-        <source>Save CSV File...</source>
-        <translation>Speichere CSV Datei...</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="175"/>
-        <source>CSV-File (*.*)</source>
-        <translation>CSV-Datei (*.*)</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="201"/>
-        <source>Export finished.</source>
-        <translation>Export abgeschlossen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="205"/>
-        <source>Can&apos;t export CVS-file.</source>
-        <translation>Kann CSV-Datei nicht öffnen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="240"/>
-        <source>Save as vCard...</source>
-        <translation>Speichere als vCard...</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="282"/>
-        <source>Export in file &apos;%1&apos; finished.</source>
-        <translation>Export in Datei &apos;%1&apos; abgeschlossen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="324"/>
-        <source>Can&apos;t export vCard.</source>
-        <translation>Kann vCard nicht exportieren.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="329"/>
-        <source>Export of &apos;%1&apos; finished.</source>
-        <translation>Export in Datei &apos;%1&apos; abgeschlossen.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="336"/>
-        <source>Open vCard...</source>
-        <translation>Öffne vCard...</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="338"/>
-        <source>vCard (*.vcf)</source>
-        <translation>vCard (*.vcf)</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="361"/>
-        <source>Error during reading of the File!</source>
-        <translation>Fehler beim Lesen der Datei!</translation>
-    </message>
-    <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="490"/>
-        <source>vCard import finished.</source>
-        <translation>vCard import abgeschlossen.</translation>
     </message>
 </context>
 <context>
@@ -1291,52 +1318,52 @@ Währung in Datei ist: %1</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="72"/>
+        <location filename="../../ui/addrselectfrm.ui" line="79"/>
         <source>Search:</source>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="79"/>
+        <location filename="../../ui/addrselectfrm.ui" line="86"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="117"/>
+        <location filename="../../ui/addrselectfrm.ui" line="124"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="133"/>
+        <location filename="../../ui/addrselectfrm.ui" line="140"/>
         <source>&amp;Accept</source>
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="150"/>
+        <location filename="../../ui/addrselectfrm.ui" line="157"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="155"/>
+        <location filename="../../ui/addrselectfrm.ui" line="162"/>
         <source>Lastname</source>
         <translation>Nachname</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="160"/>
+        <location filename="../../ui/addrselectfrm.ui" line="167"/>
         <source>Firstname</source>
         <translation>Vorname</translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="165"/>
+        <location filename="../../ui/addrselectfrm.ui" line="172"/>
         <source>adrcompl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="170"/>
+        <location filename="../../ui/addrselectfrm.ui" line="177"/>
         <source>discount</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addrselectfrm.ui" line="212"/>
+        <location filename="../../ui/addrselectfrm.ui" line="219"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
@@ -1567,11 +1594,6 @@ Währung in Datei ist: %1</translation>
         <location filename="../../src/cfgfrm.cpp" line="1131"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="1136"/>
-        <source>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</source>
-        <translation>UPDATE `adrtabs` SET `description` = &apos;%1&apos; WHERE ID=&apos;%2&apos; LIMIT 1;</translation>
     </message>
     <message>
         <location filename="../../src/cfgfrm.cpp" line="1142"/>
@@ -2740,6 +2762,11 @@ p, li { white-space: pre-wrap; }
         <source>-</source>
         <translation>-</translation>
     </message>
+    <message>
+        <location filename="../../src/dbupdatefrm.cpp" line="135"/>
+        <source>Update completed.</source>
+        <translation>Update abgeschlossen.</translation>
+    </message>
 </context>
 <context>
     <name>dbwizzardfrm</name>
@@ -3396,47 +3423,47 @@ p, li { white-space: pre-wrap; }
         <translation>Bestehende Daten übernehmen?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1337"/>
+        <location filename="../../src/doceditfrm.cpp" line="1341"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1361"/>
+        <location filename="../../src/doceditfrm.cpp" line="1365"/>
         <source>Net amount:</source>
         <translation>Netto Betrag:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1385"/>
+        <location filename="../../src/doceditfrm.cpp" line="1389"/>
         <source>Comments:</source>
         <translation>Bemerkungen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1475"/>
+        <location filename="../../src/doceditfrm.cpp" line="1479"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1574"/>
+        <location filename="../../src/doceditfrm.cpp" line="1578"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1444"/>
+        <location filename="../../src/doceditfrm.cpp" line="1448"/>
         <source>Please select a receiver</source>
         <translation>Bitte Empfänger auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1583"/>
+        <location filename="../../src/doceditfrm.cpp" line="1587"/>
         <source>Can&apos;t print File.</source>
         <translation>Kann Datei nicht ausdrucken.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1602"/>
+        <location filename="../../src/doceditfrm.cpp" line="1606"/>
         <source>Document not saved...</source>
         <translation>Dokument nicht gespeichert...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1602"/>
+        <location filename="../../src/doceditfrm.cpp" line="1606"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
@@ -3445,22 +3472,22 @@ p, li { white-space: pre-wrap; }
 Als Entwurf speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1444"/>
+        <location filename="../../src/doceditfrm.cpp" line="1448"/>
         <source>Address...</source>
         <translation>Adresse...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1343"/>
+        <location filename="../../src/doceditfrm.cpp" line="1347"/>
         <source>Amount excl. VAT:</source>
         <translation>Betrag exkl. MwSt:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1348"/>
+        <location filename="../../src/doceditfrm.cpp" line="1352"/>
         <source>VAT rate</source>
         <translation>MwSt. Satz</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1348"/>
+        <location filename="../../src/doceditfrm.cpp" line="1352"/>
         <source>VAT amount</source>
         <translation>MwSt. Betrag</translation>
     </message>
@@ -3470,7 +3497,7 @@ Als Entwurf speichern?</translation>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1408"/>
+        <location filename="../../src/doceditfrm.cpp" line="1412"/>
         <source>Can&apos;t convert TEX-File.</source>
         <translation>Kann TEX-Datei nicht konvertieren.</translation>
     </message>
@@ -3485,47 +3512,47 @@ Als Entwurf speichern?</translation>
         <translation>Rechnung %1</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1591"/>
+        <location filename="../../src/doceditfrm.cpp" line="1595"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation>Kann Datei nicht ins Zielverzeichnis verschieben.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1363"/>
+        <location filename="../../src/doceditfrm.cpp" line="1367"/>
         <source>Kind regards</source>
         <translation>Freundliche Grüsse</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1365"/>
+        <location filename="../../src/doceditfrm.cpp" line="1369"/>
         <source>General informations:</source>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1706"/>
+        <location filename="../../src/doceditfrm.cpp" line="1710"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Templatebeschreibung nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1436"/>
+        <location filename="../../src/doceditfrm.cpp" line="1440"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1486"/>
+        <location filename="../../src/doceditfrm.cpp" line="1490"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1501"/>
+        <location filename="../../src/doceditfrm.cpp" line="1505"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1510"/>
+        <location filename="../../src/doceditfrm.cpp" line="1514"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1730"/>
+        <location filename="../../src/doceditfrm.cpp" line="1734"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -3540,7 +3567,7 @@ Als Entwurf speichern?</translation>
         <translation>Dokument: ###docid###</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1364"/>
+        <location filename="../../src/doceditfrm.cpp" line="1368"/>
         <source>Recieved:</source>
         <translation>Erhalten:</translation>
     </message>
@@ -3626,7 +3653,7 @@ Als Entwurf speichern?</translation>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/docopendraftsfrm.cpp" line="111"/>
+        <location filename="../../src/docopendraftsfrm.cpp" line="115"/>
         <source>No Address found in database!</source>
         <translation>Keine Adresse in der Datenbank gefunden!</translation>
     </message>
@@ -3744,17 +3771,17 @@ Als Entwurf speichern?</translation>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="139"/>
+        <location filename="../../src/docopenfrm.cpp" line="143"/>
         <source>No Address found in database!</source>
         <translation>Keine Adresse in der Datenbank gefunden!</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="174"/>
+        <location filename="../../src/docopenfrm.cpp" line="178"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/docopenfrm.cpp" line="174"/>
+        <location filename="../../src/docopenfrm.cpp" line="178"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
