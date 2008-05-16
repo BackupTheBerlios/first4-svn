@@ -29,6 +29,7 @@ private:
 public:
 	void loaduserdata();
 	void initplugins();
+	int checkdb();
 public slots:
 	void checkmsg();	
 	void config();

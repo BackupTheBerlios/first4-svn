@@ -29,7 +29,7 @@
 //
 extern int uid;
 extern QString username, fullname, firstver;
-extern QString dbhost, dbname, dbuid, dbpwd, dbport;
+extern QString dbhost, dbname, dbuid, dbpwd, dbrequire;
 
 //
 mainfrm::mainfrm ( QWidget * parent, Qt::WFlags f )
@@ -77,16 +77,39 @@ void mainfrm::loaduserdata()
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
-	
+}
+//
+int mainfrm::checkdb()
+{
+	int retr = 0;
 	dbupdatefrm *updfrm = new dbupdatefrm;
 	if(updfrm->init() != 0)
 	{
 		if(uid == 0)
 			updfrm->exec();
 		else
+		{
 			QMessageBox::information( 0, tr("DB update..."), tr("Database update is needed.\nPlease login as Administrator to perform the update.") );
+			retr = 1;
+		}
 	}
+	
+	QString dbver; 
+	QString qstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
+	QSqlQuery query ( qstr );
+	if ( query.isActive() )
+	{
+		query.next();
+		dbver = query.value ( 0 ).toString();
+	}
+	if(dbrequire != dbver)
+	{
+		QMessageBox::critical( 0, tr("Wrong DB version..."), tr("This version of first4 needs at least a database with the version: %1 .\nThe selected database has version: %2").arg(dbrequire).arg(dbver) );
+		retr = 1;
+	}
+	return retr;
 }
+//
 // TODO:	Add by ChMaster (aka: Alexander Saal)
 void mainfrm::initplugins() {
 	QDir pluginsDir = QDir ( qApp->applicationDirPath() );

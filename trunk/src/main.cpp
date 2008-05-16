@@ -53,7 +53,7 @@ int main ( int argc, char ** argv )
 		dbwizzardfrm dbwiz;
 		dbwiz.init();
 		if(dbwiz.exec())
-		    logfrm.loadservers();
+			logfrm.loadservers();
 		else
 		{
 			QMessageBox::information ( 0,"No Server defined...", "You must define at least one Server." );
@@ -69,25 +69,32 @@ int main ( int argc, char ** argv )
 		app.processEvents();
 		mainfrm *mfrm = new mainfrm();
 		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignBottom, Qt::black );
+		
+		splash.showMessage ( QObject::tr ( "Checking database ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+		if(mfrm->checkdb() != 0)
+		{
+			qApp->closeAllWindows();
+		}
+		else
+		{
+			splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+			mfrm->loaduserdata();
+		
+			splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+			mfrm->initplugins();
+		
+			splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+			mfrm->checkmsg();
 
-		splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-		mfrm->loaduserdata();
-		
-		splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-		mfrm->initplugins();
-		
-		splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-		mfrm->checkmsg();
+			splash.showMessage ( QObject::tr ( "Startup completed ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 
-		app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
-		
-		QTime now = QTime::currentTime();
-		while(now.addSecs(2) >= QTime::currentTime()) ; //wait 2 secs
-		
-	    mfrm->show();
-		
-		splash.finish( mfrm );
-		return app.exec();
+			app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
+			QTime now = QTime::currentTime();
+			while(now.addSecs(1) >= QTime::currentTime()) ; //wait 1 secs
+			mfrm->show();
+			splash.finish( mfrm );
+			return app.exec();
+		}
 	}
 	return 0;
 }
