@@ -8,7 +8,7 @@
 #include "addrselectfrm.h"
 #include "doceditfrm.h"
 //
-QStringList searchrowlist, doctype, doclabel, docsource;
+QStringList searchrowlist, doctype, doclabel;
 extern QString username, fullname;
 //
 docopenfrm::docopenfrm( QWidget * parent, Qt::WFlags f) 
@@ -22,11 +22,9 @@ void docopenfrm::init()
     searchrowlist.clear();
     doclabel.clear();
     doctype.clear();
-    docsource.clear();
     searchrowlist << "client" <<  "docID" << "date" << "data" << "comments";
     doclabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoices");
     doctype << "1 offer" << "2 orderconf" << "3 deliverynote" << "4 invoice";
-    docsource << "docs" << "docdrafts";
     
     int i;
     for(i=0;i<4;i++)
@@ -99,7 +97,7 @@ void docopenfrm::loaddocs()
 		treemain->clear();
 		btnnew->setEnabled(TRUE);
 		QString qstr2;
-		QString qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docs WHERE `doctyp` LIKE '%1' ORDER BY ID;").arg(indexitem->text(1));
+		QString qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documents WHERE `doctyp` LIKE '%1' ORDER BY ID;").arg(indexitem->text(1));
 		QSqlQuery query(qstr);
 		if(query.isActive())
 		{	
@@ -153,7 +151,7 @@ void docopenfrm::loaddocsdetails()
     QTreeWidgetItem *item = treemain->currentItem();
     if(item!=0 && item->childCount() == 0)
     {
-		QString qstr = "SELECT DESCRIPTION, QUANTITY FROM docpositions WHERE DOCID = '"+item->text(0)+"' ORDER BY DOC_POSITION;";
+		QString qstr = "SELECT DESCRIPTION, QUANTITY FROM documentpositions WHERE DOCID = '"+item->text(0)+"' ORDER BY DOC_POSITION;";
 		QSqlQuery querypos(qstr);
 		if(querypos.isActive())
 		{
@@ -179,7 +177,7 @@ void docopenfrm::deletedoc()
 		if(exit == QMessageBox::Yes)
 		{
 		    QString connstr;
-		    connstr = QString("DELETE FROM `docs` WHERE `ID` = '%2';").arg(item->text(0));
+		    connstr = QString("DELETE FROM `documents` WHERE `ID` = '%2';").arg(item->text(0));
 		    QSqlQuery query(connstr);
 		    treemain->takeTopLevelItem(treemain->indexOfTopLevelItem(item));
 		}
@@ -213,7 +211,7 @@ void docopenfrm::editdoc()
     {
 		doceditfrm *doc = new doceditfrm;
 		doc->init();    
-		doc->opendocfromid("docs", item->text(0));
+		doc->opendocfromid("documents", item->text(0));
 		doc->calc_tot();
 		doc->show();
 	}
@@ -228,7 +226,7 @@ void docopenfrm::print()
     {
 		doceditfrm *doc = new doceditfrm;
 		doc->init();    
-		doc->opendocfromid("docs", item->text(0));
+		doc->opendocfromid("documents", item->text(0));
 		doc->calc_tot();
 		doc->print();
 	}
@@ -245,12 +243,12 @@ void docopenfrm::searchdoc()
 		QString qstr;
 		switch (cmbsearchrow->currentIndex()) {
 			case 0:
-				qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docs WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(searchrowlist[cmbsearchrow->currentIndex()]).arg(txtsearch->text().section(" (", 1, 1).section(")", 0, 0));
+				qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documents WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(searchrowlist[cmbsearchrow->currentIndex()]).arg(txtsearch->text().section(" (", 1, 1).section(")", 0, 0));
 				break;
 			case 3:
 				{
-					qstr = "SELECT ID, docID, date, client, amount, discount, comments FROM docs WHERE";
-					QString qstrpos = QString("SELECT DOCID FROM `docpositions` WHERE `label` LIKE '%%1%' OR `description` LIKE '%%1%';").arg(txtsearch->text());
+					qstr = "SELECT ID, docID, date, client, amount, discount, comments FROM documents WHERE";
+					QString qstrpos = QString("SELECT DOCID FROM `documentpositions` WHERE `label` LIKE '%%1%' OR `description` LIKE '%%1%';").arg(txtsearch->text());
 					QSqlQuery querypos(qstrpos);
 					while(querypos.next())
 					{
@@ -260,7 +258,7 @@ void docopenfrm::searchdoc()
 				}
 				break;
 			default:
-				qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docs WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(searchrowlist[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
+				qstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documents WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(searchrowlist[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
 				break;
 		}
 		QString qstr2;

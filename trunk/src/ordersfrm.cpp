@@ -71,7 +71,7 @@ void ordersfrm::countentries()
 	for(i=0;i<4;i++)
 	{
 		QTreeWidgetItem *item = treeindex->topLevelItem(i);
-		qstr = QString("SELECT ID FROM orderstab WHERE `STATUS`= '%1';").arg(i);
+		qstr = QString("SELECT ID FROM orders WHERE `STATUS`= '%1';").arg(i);
 		QSqlQuery query(qstr);
 		query.next();
 		if(item != 0)
@@ -89,7 +89,7 @@ int ordersfrm::checkrights()
     int permission = 0;
     if(username != "Administrator" )
     {
-	    QString conn = "SELECT users FROM orderscfgtab WHERE `users` LIKE '%"+username+" [1%';";
+	    QString conn = "SELECT users FROM ordercfg WHERE `users` LIKE '%"+username+" [1%';";
     	QSqlQuery query(conn);
 	    if ( query.isActive())
     	{
@@ -111,7 +111,7 @@ void ordersfrm::loadentries()
     QTreeWidgetItem *item = treeindex->currentItem();
     if(item != 0)
     {
-    	QString qstr = QString("SELECT ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS FROM orderstab WHERE `STATUS`= '%1' ORDER BY DATE1;").arg(item->text(2));
+    	QString qstr = QString("SELECT ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS FROM orders WHERE `STATUS`= '%1' ORDER BY DATE1;").arg(item->text(2));
 		QSqlQuery query(qstr);
 		if ( query.isActive())
 		{
@@ -174,7 +174,7 @@ void ordersfrm::deleteentry()
 		int r = QMessageBox::question(this, tr("Delete purchase order..."),tr("Delete purchase order for %1?").arg(item->text(3).mid(0,50)),QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{
-			QString qstr = QString("DELETE FROM orderstab WHERE `ID`= '%1' LIMIT 1;").arg(item->text(0));
+			QString qstr = QString("DELETE FROM orders WHERE `ID`= '%1' LIMIT 1;").arg(item->text(0));
 		    QSqlQuery query(qstr);
 		    this->loadentries();
 		    this->countentries();
@@ -194,14 +194,14 @@ void ordersfrm::complete()
 				item = treemain->topLevelItem(i);
 		    if(item->checkState(0))
 		    {
-		    	QString qstr = QString("SELECT STATUS, STOCK, DEF FROM `orderstab` WHERE `ID`=%1;").arg(item->text(0));
+		    	QString qstr = QString("SELECT STATUS, STOCK, DEF FROM `orders` WHERE `ID`=%1;").arg(item->text(0));
 				QSqlQuery query1(qstr);
 				query1.next();
 		
 				if(query1.value(0).toInt() < 2)
 				{
 				    QSqlQuery query2;
-				    query2.prepare("UPDATE `orderstab` SET `STATUS`= :status, `DATE"+QString("%1").arg(query1.value(0).toInt()+2, 0, 10)+"`= :date WHERE `ID`=:ID LIMIT 1;");
+				    query2.prepare("UPDATE `orders` SET `STATUS`= :status, `DATE"+QString("%1").arg(query1.value(0).toInt()+2, 0, 10)+"`= :date WHERE `ID`=:ID LIMIT 1;");
 				    query2.bindValue(":status", query1.value(0).toInt()+1);
 				    query2.bindValue(":date", QDate::currentDate().toString("yyyy-MM-dd"));
 				    query2.bindValue(":ID", item->text(0));
@@ -210,10 +210,10 @@ void ordersfrm::complete()
 		
 				if(query1.value(0).toInt() == 2)
 				{
-					qstr = QString("UPDATE `orderstab` SET `STATUS`= '%1' WHERE `ID`='%2' LIMIT 1;").arg(query1.value(0).toInt()+1).arg(item->text(0));
+					qstr = QString("UPDATE `orders` SET `STATUS`= '%1' WHERE `ID`='%2' LIMIT 1;").arg(query1.value(0).toInt()+1).arg(item->text(0));
 				    QSqlQuery query2(qstr);
 		    
-		    		qstr = QString("SELECT NAME, USERS FROM datatabs WHERE `DESCRIPTION`='%1';").arg(query1.value(1).toString());
+		    		qstr = QString("SELECT NAME, USERS FROM datatables WHERE `DESCRIPTION`='%1';").arg(query1.value(1).toString());
 				    QSqlQuery query3(qstr);
 				    query3.next();
 				    QString stock = query3.value(0).toString();

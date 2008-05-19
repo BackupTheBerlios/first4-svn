@@ -97,7 +97,7 @@ int invfrm::checkrights()
     int permission = 0;
     if(username != "Administrator")
     {
-    	QString qstr = "SELECT users FROM invcfgtab WHERE `users` LIKE '%"+username+" [1%';";
+    	QString qstr = "SELECT users FROM inventorycfg WHERE `users` LIKE '%"+username+" [1%';";
 	    QSqlQuery query(qstr);
     	if(query.isActive())
 	    {
@@ -121,7 +121,7 @@ void invfrm::loadinv()
     inv.clear();
     rights.clear();
     finished.clear();
-    QString qstr = "SELECT ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS FROM invtab WHERE `users` LIKE '%"+username+" [1%';";
+    QString qstr = "SELECT ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS FROM inventories WHERE `users` LIKE '%"+username+" [1%';";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -194,7 +194,7 @@ void invfrm::savedata()
 		item = maintab->item(i, 0);
 		query.bindValue( ":ID", item->text() );
 		query.exec();
-		query.prepare("UPDATE `invtab` SET `COMMENTS`=:CMNTS WHERE NAME = :NAME;");
+		query.prepare("UPDATE `inventories` SET `COMMENTS`=:CMNTS WHERE NAME = :NAME;");
 		query.bindValue( ":CMNTS", comments[cmbinv->currentIndex()] );
 		query.bindValue( ":NAME", inv[cmbinv->currentIndex()] );
 		query.exec();
@@ -304,7 +304,7 @@ void invfrm::complete()
 		this->savedata();
 		changes = FALSE;
 		QSqlQuery query;
-		query.prepare( "UPDATE `invtab` SET `FINISHED` = '1' WHERE `NAME` = :NAME LIMIT 1;");
+		query.prepare( "UPDATE `inventories` SET `FINISHED` = '1' WHERE `NAME` = :NAME LIMIT 1;");
 		query.bindValue( ":NAME",  inv[cmbinv->currentIndex()]);
 		query.exec();
 		this->loadinv();
@@ -316,7 +316,7 @@ void invfrm::newinv()
 {
     QStringList tabname;
     invnewfrm* ninv = new invnewfrm;
-    QString connstr = QString("SELECT * FROM datatabs WHERE users LIKE '%%1 [1%' AND `tabtyp` = 'stock';").arg(username);
+    QString connstr = QString("SELECT * FROM datatables WHERE users LIKE '%%1 [1%' AND `tabtyp` = 'stock';").arg(username);
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -330,7 +330,7 @@ void invfrm::newinv()
     {
 		int invcount = 1;
 		QString invname = "";
-		QString qstr = "SELECT * FROM invtab ORDER BY name ASC;";	
+		QString qstr = "SELECT * FROM inventories ORDER BY name ASC;";	
 		QSqlQuery query1(qstr);
 		if(query1.isActive())
 		{
@@ -348,7 +348,7 @@ void invfrm::newinv()
 				invname = QString("inv%1").arg(invcount++,0,10);
 		}
 
-		QString conn2 = "INSERT INTO `invtab` (ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS) VALUES ('', '"+invname+"', '"+tabname[ninv->cmbinv->currentIndex()]+"', '"+ninv->cmbinv->currentText()+"', '"+QDate::currentDate().toString("yyyy-MM-dd")+"','Administrator [11] , "+username+" [11]', '0', '"+ninv->txtcomments->toPlainText()+"');";
+		QString conn2 = "INSERT INTO `inventories` (ID, NAME, DATATABLE, TABLENAME, DATE, USERS, FINISHED, COMMENTS) VALUES ('', '"+invname+"', '"+tabname[ninv->cmbinv->currentIndex()]+"', '"+ninv->cmbinv->currentText()+"', '"+QDate::currentDate().toString("yyyy-MM-dd")+"','Administrator [11] , "+username+" [11]', '0', '"+ninv->txtcomments->toPlainText()+"');";
 		QSqlQuery query2(conn2);
 	
 		QString conn3 = "CREATE TABLE `"+invname+"` (`ID` INT(11)  NOT NULL AUTO_INCREMENT, `STOCK_ID` TEXT  NOT NULL, `NAME` TEXT  NOT NULL,`DESCRIPTION` TEXT  NOT NULL,`QUANTITY` TEXT  NOT NULL, `EP` TEXT NOT NULL, `VP` TEXT NOT NULL, `AP` TEXT NOT NULL, `NEW_QUANTITY` TEXT NOT NULL, `COMMENTS` TEXT  NOT NULL, PRIMARY KEY(`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
@@ -418,7 +418,7 @@ void invfrm::closeEvent(QCloseEvent* ce )
 QString invfrm::loadtemplatedata()
 {
 	QString answ;
-	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_inventory';");
+	QSqlQuery query("SELECT data FROM templates WHERE `name`='sys_inventory';");
 	if ( query.isActive())
 	{
 		query.next();

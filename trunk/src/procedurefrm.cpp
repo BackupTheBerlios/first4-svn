@@ -57,7 +57,7 @@ int procedurefrm::init()
 	treeindex->hideColumn(2);
 	treeindex->setCurrentItem(treemain->topLevelItem(0));
     
-    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref';");
+    QString connstr = QString("SELECT value FROM `maincfg` WHERE `var` = 'docpref';");
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -89,7 +89,7 @@ void procedurefrm::closeEvent( QCloseEvent* ce )
 int procedurefrm::checkrights()
 {
     int permission = 0;
-    QString conn = "SELECT users FROM procedurecfgtab WHERE `users` LIKE '%"+username+" [1%';";
+    QString conn = "SELECT users FROM procedurecfg WHERE `users` LIKE '%"+username+" [1%';";
     QSqlQuery query(conn);
     if ( query.isActive())
     {
@@ -109,7 +109,7 @@ void procedurefrm::countabl()
     for(i=0;i<6;i++)
     {
     	QTreeWidgetItem* item = treeindex->topLevelItem(i);
-		QString connstr = "SELECT ID FROM proceduretab WHERE `status` = '"+QString("%1").arg(i, 0, 10)+"';" ;
+		QString connstr = "SELECT ID FROM procedures WHERE `status` = '"+QString("%1").arg(i, 0, 10)+"';" ;
 		QSqlQuery query(connstr);
 		if(query.isActive())
 		    item->setText(1, QString("%1").arg(query.size(), 0, 10));
@@ -138,9 +138,9 @@ void procedurefrm::filltable(int state)
     
     QString qstr;
     if(state < 6)
-		qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `status` = '"+QString("%1").arg(state, 0, 10)+"';";
+		qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedures WHERE `status` = '"+QString("%1").arg(state, 0, 10)+"';";
     else
-		qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchiv;";
+		qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchive;";
    
     QSqlQuery query(qstr);
     if( query.isActive())
@@ -300,27 +300,27 @@ void procedurefrm::editarchiveorder(QString dbID)
 //
 void procedurefrm::deleteorder(QString dbID)
 {
-    QString conn = "SELECT orderid FROM proceduretab WHERE `ID` = '"+dbID+"';";
+    QString conn = "SELECT orderid FROM procedures WHERE `ID` = '"+dbID+"';";
     QSqlQuery query(conn);
     if( query.isActive())
 		query.next();
     if(QMessageBox::information(this, tr("Delete order..."), tr("Delete order %1?").arg(query.value(0).toString()), QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes)
     {
-		conn = "DELETE FROM `proceduretab` WHERE `ID`='"+dbID+"';";
+		conn = "DELETE FROM `procedures` WHERE `ID`='"+dbID+"';";
 		QSqlQuery query2(conn);
     }
 }
 //
 void procedurefrm::deletearchivorder(QString dbID)
 {
-    QString conn = "SELECT orderid FROM procedurearchiv WHERE `ID` = '"+dbID+"';";
+    QString conn = "SELECT orderid FROM procedurearchive WHERE `ID` = '"+dbID+"';";
 	
     QSqlQuery query(conn);
     if( query.isActive())
 		query.next();
     if(QMessageBox::information(this, tr("Delete order..."), tr("Delete order %1?").arg(query.value(0).toString()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes)
     {
-		conn = "DELETE FROM `procedurearchiv` WHERE `ID`='"+dbID+"';";
+		conn = "DELETE FROM `procedurearchive` WHERE `ID`='"+dbID+"';";
 		QSqlQuery query2(conn);
 	    this->filltable(treemain->currentItem()->text(2).toInt());
 	    treemain->setFocus();
@@ -367,7 +367,7 @@ void procedurefrm::completeorder()
 void procedurefrm::createdoc_1(QString dbID)
 {
     int i;    
-    QString connstr = "SELECT status, completed, priority, date, client, contactperson, orderid, description, resp_person, complete_until FROM proceduretab WHERE `ID` = '"+dbID+"'";
+    QString connstr = "SELECT status, completed, priority, date, client, contactperson, orderid, description, resp_person, complete_until FROM procedures WHERE `ID` = '"+dbID+"'";
     QSqlQuery query(connstr);
     query.next();
     queryreturn.clear();
@@ -508,7 +508,7 @@ void procedurefrm::updatedatabase()
 			   	    QTreeWidgetItem* item = treemain->topLevelItem(i);
 					if(item->checkState(0) == Qt::Checked)
 					{
-					    QString qstr = "UPDATE `proceduretab` SET `status`='"+QString("%1").arg(indexitem->text(2).toInt()+1, 0, 10)+"' WHERE `ID`='"+item->text(1)+"';";
+					    QString qstr = "UPDATE `procedures` SET `status`='"+QString("%1").arg(indexitem->text(2).toInt()+1, 0, 10)+"' WHERE `ID`='"+item->text(1)+"';";
 					    QSqlQuery query(qstr);
 						
 						//Reset state for orders
@@ -530,11 +530,11 @@ void procedurefrm::updatedatabase()
 					if(item->checkState(0) == Qt::Checked)
 					{
 						this->createdoc_1(item->text(1));
-					    QString connstr1 = "INSERT INTO `procedurearchiv` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
+					    QString connstr1 = "INSERT INTO `procedurearchive` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '6', '1', '"+queryreturn[2]+"', '"+queryreturn[3]+"', '"+queryreturn[4]+"', '"+queryreturn[5]+"', '"+queryreturn[6]+"', '"+queryreturn[7]+"', '"+queryreturn[8]+"', '"+queryreturn[9]+"');" ;
 					    QSqlQuery query1(connstr1);
 						    
 					    QSqlQuery checkid;
-					    checkid.prepare("SELECT id FROM procedurearchiv WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
+					    checkid.prepare("SELECT id FROM procedurearchive WHERE `priority`=:prio AND `date`=:date AND `client`=:client AND `contactperson`=:contact AND `orderid`=:orderid AND `description`=:desc AND `resp_person`=:resp AND `complete_until`=:complete;");
 					    checkid.bindValue(":prio", queryreturn[2]);
 					    checkid.bindValue(":date", queryreturn[3]);
 					    checkid.bindValue(":client", queryreturn[4]);
@@ -558,7 +558,7 @@ void procedurefrm::updatedatabase()
 					    orders.bindValue(":id", item->text(1));
 					    orders.exec();
 							    
-					    QString connstr2 = "DELETE FROM `proceduretab` WHERE `ID`="+item->text(1)+" LIMIT 1;";
+					    QString connstr2 = "DELETE FROM `procedures` WHERE `ID`="+item->text(1)+" LIMIT 1;";
 					    QSqlQuery query2(connstr2);	
 				    }
 				}

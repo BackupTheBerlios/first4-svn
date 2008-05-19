@@ -22,7 +22,7 @@ void orderseditfrm::init()
     stocklist.clear();
     supprice.clear();
     
-    QString qstr = QString("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%%1 [1%';").arg(username);
+    QString qstr = QString("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%%1 [1%';").arg(username);
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -33,7 +33,7 @@ void orderseditfrm::init()
 		}
     }
     
-    QSqlQuery querycount( "SELECT counter FROM orderscfgtab;");
+    QSqlQuery querycount( "SELECT counter FROM ordercfg;");
     querycount.next();
     txtordernr->setText(querycount.value(0).toString());
       
@@ -45,10 +45,10 @@ void orderseditfrm::init()
 //
 void orderseditfrm::newentry()
 {
-	QString qstr = QString("INSERT INTO orderstab (ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS) VALUES ('', 0, '"+username+"', '%1', '%2', '%3', '', '', '%4', '%5', '%6', '%7', '%8', '%9');").arg(txtordernr->text()).arg(cmbstock->currentText()).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(txtlabel->text()).arg(txtdescription->toPlainText()).arg(txtquantity->text()).arg(cmbsupplier->currentText()).arg(txtprice->text()).arg(txtcomments->toPlainText());
+	QString qstr = QString("INSERT INTO orders (ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS) VALUES ('', 0, '"+username+"', '%1', '%2', '%3', '', '', '%4', '%5', '%6', '%7', '%8', '%9');").arg(txtordernr->text()).arg(cmbstock->currentText()).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(txtlabel->text()).arg(txtdescription->toPlainText()).arg(txtquantity->text()).arg(cmbsupplier->currentText()).arg(txtprice->text()).arg(txtcomments->toPlainText());
 	QSqlQuery query(qstr);
   
-	query.prepare( "UPDATE `orderscfgtab` SET `counter` = :counter LIMIT 1;");
+	query.prepare( "UPDATE `ordercfg` SET `counter` = :counter LIMIT 1;");
 	query.bindValue( ":counter", QString("%1").arg(txtordernr->text().toInt()+1, 0, 10));
 	query.exec();
     
@@ -57,7 +57,7 @@ void orderseditfrm::newentry()
 //
 void orderseditfrm::editentry(QString ID)
 {
-	QString qstr = QString("SELECT ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS FROM orderstab WHERE `ID`= '%1';").arg(ID);
+	QString qstr = QString("SELECT ID, STATUS, ORDERED_BY, FOR_ORDER, STOCK, DATE1, DATE2, DATE3, DEF, DESCRIPTION, QUANTITY, SUPPLIER, PRICE, COMMENTS FROM orders WHERE `ID`= '%1';").arg(ID);
 	QSqlQuery query(qstr);
 	query.next();
 	lbldbid->setText(ID);
@@ -82,7 +82,7 @@ void orderseditfrm::editentry(QString ID)
 void orderseditfrm::updentry()
 {
     QSqlQuery updquery;
-    updquery.prepare("UPDATE `orderstab` SET `COMMENTS`= :comm WHERE `ID`=:ID LIMIT 1;");
+    updquery.prepare("UPDATE `orders` SET `COMMENTS`= :comm WHERE `ID`=:ID LIMIT 1;");
     updquery.bindValue(":comm", txtcomments->toPlainText());
     updquery.bindValue(":ID", lbldbid->text());
     updquery.exec();
@@ -105,7 +105,7 @@ void orderseditfrm::clearstock()
 void orderseditfrm::checkstock()
 {
     stockselfrm *sfrm = new stockselfrm;
-    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
+    QSqlQuery query("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
     if(query.isActive())
     {
 		while(query.next())

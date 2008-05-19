@@ -126,7 +126,7 @@ void dataeditfrm::loadentry(QString dbID)
 //
 void dataeditfrm::loadvat()
 {
-    QString connstr = QString("SELECT col1, col2 FROM `vattab` ORDER BY ID;");
+    QString connstr = QString("SELECT col1, col2 FROM `vattable` ORDER BY ID;");
     QSqlQuery query(connstr);
     if(query.isActive())
     {

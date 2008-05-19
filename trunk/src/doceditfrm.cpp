@@ -160,7 +160,7 @@ void doceditfrm::readdoctab()
     doccount.clear();
     docdef.clear();
     
-    QString qstr = "SELECT name, templateid, count, users FROM doctab ORDER BY ID;";
+    QString qstr = "SELECT name, templateid, count, users FROM documentcfg ORDER BY ID;";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -373,7 +373,7 @@ void doceditfrm::checkdb()
 	if(tabmain->currentColumn()==2 && testitem1->text()!="" && testitem2->text()=="")
     {
 		stockselfrm *sfrm = new stockselfrm;
-	    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
+	    QSqlQuery query("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
 	    if(query.isActive())
 	    {
 			while(query.next())
@@ -556,7 +556,7 @@ void doceditfrm::initvat()
     vatlist.clear();
     vatamount.clear();
     QStringList tmplist;
-    QString connstr = "SELECT col1 FROM vattab ORDER BY ID;";
+    QString connstr = "SELECT col1 FROM vattable ORDER BY ID;";
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -570,7 +570,7 @@ void doceditfrm::initvat()
 //
 void doceditfrm::loadmaincfg()
 {
-    QString connstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'def_currency' ORDER BY var;");
+    QString connstr = QString("SELECT value FROM `maincfg` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'def_currency' ORDER BY var;");
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -590,7 +590,7 @@ void doceditfrm::loadmaincfg()
     vesrcompanyaddress = "";
     for(i=0;i<fields.count();i++)
     {
-    	QString qstr = QString("SELECT value FROM `maincfgtab` WHERE `var` = '%1';").arg(fields[i]);
+    	QString qstr = QString("SELECT value FROM `maincfg` WHERE `var` = '%1';").arg(fields[i]);
     	QSqlQuery queryaddr(qstr);
     	queryaddr.next();
     	address << queryaddr.value(0).toString();
@@ -646,7 +646,7 @@ void doceditfrm::completedoc()
 				bool ok;
 				if(txtdoccount->text().mid(2).toInt(&ok, 10)<20000000)
 				{		
-				    QString connstr = "SELECT ID, count FROM doctab WHERE `name` = '"+docdef[cmbdoc->currentIndex()]+"';";	  
+				    QString connstr = "SELECT ID, count FROM documentcfg WHERE `name` = '"+docdef[cmbdoc->currentIndex()]+"';";	  
 				    QSqlQuery query(connstr);
 				    query.next();
 				    QString tmpID = query.value(0).toString();
@@ -655,7 +655,7 @@ void doceditfrm::completedoc()
 				    int newcount = tmpstr.toInt(&ok, 10)+1;
 				    tmpstr = QString("%1").arg(newcount,0,10);
 				    tmpstr = tmpstr.rightJustified(4, '0');			
-				    QString connstr2 = "UPDATE `doctab` SET `count` = '" + tmpstr + "' WHERE `ID` = '"+tmpID+"' LIMIT 1;";
+				    QString connstr2 = "UPDATE `documentcfg` SET `count` = '" + tmpstr + "' WHERE `ID` = '"+tmpID+"' LIMIT 1;";
 				    QSqlQuery query2(connstr2);
 				    doccount[cmbdoc->currentIndex()] = QString("%1").arg(newcount,0,10);
 				}
@@ -762,8 +762,8 @@ void doceditfrm::registeramount()
     acc->lbladdrID->setText(lblID->text());
     acc->txtdescription->setText(tr("Invoice %1").arg(txtdoccount->text()));
     acc->txtamount->setText(boxtot_incl->text());
-    acc->setdbID("ietab");
-    acc->newentry("ietab");
+    acc->setdbID("incexp");
+    acc->newentry("incexp");
 }
 //
 void doceditfrm::newdocument()
@@ -820,7 +820,7 @@ void doceditfrm::opendoc()
     docopen->init();
     int answ = docopen->exec();
     if(answ)
-		opendocfromid("docdrafts", QString("%1").arg(answ));
+		opendocfromid("documentdrafts", QString("%1").arg(answ));
 }
 //
 void doceditfrm::opendocfromid(QString source, QString dbID)
@@ -927,7 +927,8 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		boxtot->setText(query.value(5).toString());
 		boxdiscount->setText(query.value(6).toString());
 		
-		qstr = "SELECT ID, DOCID, STOCK, STOCK_ID, DOC_POSITION, LABEL, DESCRIPTION, QUANTITY, UNIT, PRICE, VAT FROM docpositions WHERE DOCID = '"+query.value(0).toString()+"' AND `TYPE`='"+source+"' ORDER BY DOC_POSITION;";
+		qstr = "SELECT ID, DOCID, STOCK, STOCK_ID, DOC_POSITION, LABEL, DESCRIPTION, QUANTITY, UNIT, PRICE, VAT FROM documentpositions WHERE DOCID = '"+query.value(0).toString()+"' AND `TYPE`='"+source+"' ORDER BY DOC_POSITION;";
+
 		QSqlQuery querypos(qstr);
 		if(querypos.isActive())
 		{
@@ -995,7 +996,7 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		boxvat->setText(QString("%1").arg(vat, 0, 'f',2));
 		boxtot_incl->setText(QString("%1").arg(tot_incl, 0, 'f',2));
 	}
-	if(source == "docs")
+	if(source == "documents")
 	{
 		btncomplete->setEnabled(FALSE);
 		btnsave->setEnabled(FALSE);
@@ -1013,7 +1014,7 @@ void doceditfrm::savedoc()
     {
 		//UPDATE Draft
 		QSqlQuery query;
-		query.prepare( "UPDATE `docdrafts` SET `doctyp` = :doctype, `date` = :date, `client` = :client, `salutation` = :salutation, `introduction` = :introduction, `comments` = :comments, `amount` = amount, `discount` = :discount WHERE `ID` = :ID LIMIT 1;");
+		query.prepare( "UPDATE `documentdrafts` SET `doctyp` = :doctype, `date` = :date, `client` = :client, `salutation` = :salutation, `introduction` = :introduction, `comments` = :comments, `amount` = amount, `discount` = :discount WHERE `ID` = :ID LIMIT 1;");
 		query.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
 		query.bindValue( ":date", s);
 		query.bindValue( ":client", lblID->text());
@@ -1026,7 +1027,7 @@ void doceditfrm::savedoc()
 		query.exec();
 	
 		QSqlQuery query2;
-		query2.prepare("DELETE FROM `docpositions` WHERE `DOCID` = :id;");
+		query2.prepare("DELETE FROM `documentpositions` WHERE `DOCID` = :id;");
 		query2.bindValue(":id", opendocID);
 		query2.exec();
 	
@@ -1035,7 +1036,7 @@ void doceditfrm::savedoc()
 		{
 			QTableWidgetItem *item = new QTableWidgetItem;
 			
-		    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docdrafts');");
+		    query3.prepare("INSERT INTO `documentpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'documentdrafts');");
 		    query3.bindValue( ":docid", opendocID);
 		    
 		    item = tabmain->item(row, 11);
@@ -1091,7 +1092,7 @@ void doceditfrm::savedoc()
     {
 		//INSERT
 		QSqlQuery query;
-		query.prepare("INSERT INTO `docdrafts` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount);");
+		query.prepare("INSERT INTO `documentdrafts` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount);");
 		query.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
 		query.bindValue( ":date", s);
 		query.bindValue( ":client", lblID->text());
@@ -1102,7 +1103,7 @@ void doceditfrm::savedoc()
 		query.bindValue( ":discount", boxdiscount->text());
 		query.exec();
 	
-		QString qstr = QString("SELECT ID FROM docdrafts WHERE doctyp = '%1' AND date = '%2' AND client = '%3' AND salutation = '%4' AND introduction = '%5' AND comments = '%6' AND amount = '%7' AND `discount` = '%8' ORDER BY ID DESC;").arg(docdef[cmbdoc->currentIndex()]).arg(s).arg(lblID->text()).arg(txtsalutation->text()).arg(boxotherinfo->toPlainText()).arg(boxcomments->toPlainText()).arg(boxtot->text()).arg(boxdiscount->text());
+		QString qstr = QString("SELECT ID FROM documentdrafts WHERE doctyp = '%1' AND date = '%2' AND client = '%3' AND salutation = '%4' AND introduction = '%5' AND comments = '%6' AND amount = '%7' AND `discount` = '%8' ORDER BY ID DESC;").arg(docdef[cmbdoc->currentIndex()]).arg(s).arg(lblID->text()).arg(txtsalutation->text()).arg(boxotherinfo->toPlainText()).arg(boxcomments->toPlainText()).arg(boxtot->text()).arg(boxdiscount->text());
 		QSqlQuery query2(qstr);
 		query2.next();  
 		
@@ -1113,7 +1114,7 @@ void doceditfrm::savedoc()
 		{
 			QTableWidgetItem *item = new QTableWidgetItem;
 			
-		    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docdrafts');");
+		    query3.prepare("INSERT INTO `documentpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'documentdrafts');");
 		    query3.bindValue( ":docid", opendocID);
 		    
 		    item = tabmain->item(row, 11);
@@ -1174,7 +1175,7 @@ void doceditfrm::savecompletedoc()
     int row;
 
     QSqlQuery query;
-    query.prepare("INSERT INTO `docs` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount`, `docID`, `orderID` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount, :docID, :orderID);");
+    query.prepare("INSERT INTO `documents` ( `ID` , `doctyp` , `date` , `client` , `salutation`, `introduction`, `comments`, `amount`, `discount`, `docID`, `orderID` ) VALUES ('', :doctype, :date, :client, :salutation, :introduction, :comments, :amount, :discount, :docID, :orderID);");
     query.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
     query.bindValue( ":date", s);
     query.bindValue( ":client", lblID->text());
@@ -1188,7 +1189,7 @@ void doceditfrm::savecompletedoc()
     query.exec();
     
     QSqlQuery querycheck;
-    querycheck.prepare("SELECT ID FROM docs WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
+    querycheck.prepare("SELECT ID FROM documents WHERE doctyp = :doctype AND date = :date AND client = :client AND salutation = :salutation AND introduction = :introduction AND comments = :comments AND amount = :amount AND `discount` = :discount ORDER BY ID DESC;");
     querycheck.bindValue( ":doctype", docdef[cmbdoc->currentIndex()]);
     querycheck.bindValue( ":date", s);
     querycheck.bindValue( ":client", lblID->text());
@@ -1202,7 +1203,7 @@ void doceditfrm::savecompletedoc()
     opendocID = querycheck.value(0).toString();
     
     QSqlQuery query2;
-    query2.prepare("DELETE FROM `docpositions` WHERE `DOCID` = :id;");
+    query2.prepare("DELETE FROM `documentpositions` WHERE `DOCID` = :id;");
     query2.bindValue(":id", opendocID);
     query2.exec();
 	
@@ -1211,7 +1212,7 @@ void doceditfrm::savecompletedoc()
     {
 		QTableWidgetItem *item = new QTableWidgetItem;
 			
-	    query3.prepare("INSERT INTO `docpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'docs');");
+	    query3.prepare("INSERT INTO `documentpositions` (`ID`, `DOCID`, `STOCK`, `STOCK_ID`, `DOC_POSITION`, `LABEL`, `DESCRIPTION`, `QUANTITY`, `UNIT`, `PRICE`, `VAT`, `TYPE`) VALUES ('', :docid, :stock, :stock_id, :doc_pos, :label, :description, :quantity, :unit, :price, :vat, 'documents');");
 	    query3.bindValue( ":docid", opendocID);
 		    
 	    item = tabmain->item(row, 11);
@@ -1235,7 +1236,7 @@ void doceditfrm::savecompletedoc()
     }
     
     //if exists delete draft
-    QString connstr4 = "DELETE FROM `docdrafts` WHERE `ID` = '"+opendocID+"';";
+    QString connstr4 = "DELETE FROM `documentdrafts` WHERE `ID` = '"+opendocID+"';";
     QSqlQuery query4(connstr4);
     
     btncomplete->setEnabled(FALSE);
@@ -1247,7 +1248,7 @@ QString doceditfrm::writetexfile()
     int i;
     //Check DoG
     QSqlQuery querydays;
-    querydays.prepare("SELECT value FROM maincfgtab WHERE `var`='DoG'");
+    querydays.prepare("SELECT value FROM maincfg WHERE `var`='DoG'");
     querydays.exec();
     querydays.next();
     
@@ -1454,7 +1455,7 @@ void doceditfrm::printvesr()
     QStringList vesrcode = vesr();
 
     QSqlQuery querydays;
-    querydays.prepare("SELECT value FROM maincfgtab WHERE `var`='DoG'");
+    querydays.prepare("SELECT value FROM maincfg WHERE `var`='DoG'");
     querydays.exec();
     querydays.next();
 
@@ -1697,7 +1698,7 @@ void doceditfrm::navtabonoff(bool state)
 QString doceditfrm::loadtemplatedata(int dbid)
 {
 	QString answ;
-	QString qstr = QString("SELECT data FROM templatestab WHERE `ID`='%1';").arg(dbid);
+	QString qstr = QString("SELECT data FROM templates WHERE `ID`='%1';").arg(dbid);
 	QSqlQuery query(qstr);
 	if ( query.isActive())
 	{
@@ -1714,7 +1715,7 @@ QString doceditfrm::loadtemplatedata(int dbid)
 //
 QString doceditfrm::loadgeneralinfo()
 {
-	QSqlQuery query( "SELECT value FROM maincfgtab WHERE `var`='doc_generalinfo';" );
+	QSqlQuery query( "SELECT value FROM maincfg WHERE `var`='doc_generalinfo';" );
 	query.next();
 	return query.value(0).toString();
 }
@@ -1722,7 +1723,7 @@ QString doceditfrm::loadgeneralinfo()
 QString doceditfrm::loadesrtemplate()
 {
 	QString answ;
-	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_vesr';");
+	QSqlQuery query("SELECT data FROM templates WHERE `name`='sys_vesr';");
 	if ( query.isActive())
 	{
 		query.next();

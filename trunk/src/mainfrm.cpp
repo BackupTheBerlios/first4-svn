@@ -95,7 +95,7 @@ int mainfrm::checkdb()
 	}
 	
 	QString dbver; 
-	QString qstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
+	QString qstr = "SELECT value FROM maincfg WHERE var = 'dbversion';";
 	QSqlQuery query ( qstr );
 	if ( query.isActive() )
 	{
@@ -146,7 +146,7 @@ void mainfrm::initplugins() {
 void mainfrm::checkmsg()
 {
 	QSqlQuery query;
-	query.prepare ( "SELECT * FROM msgtab WHERE `user` LIKE :user;" );
+	query.prepare ( "SELECT * FROM messages WHERE `user` LIKE :user;" );
 	query.bindValue ( ":user", "%"+username+"%" );
 	query.exec();
 	query.next();
@@ -159,27 +159,27 @@ void mainfrm::admtasks()
 {
 	QStringList queryreturn1, queryreturn2;
 	//Auftraege ueberpruefen
-	QString qstr1 = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `complete_until` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QString qstr1 = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedures WHERE `complete_until` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
 	QSqlQuery query1(qstr1);
 
 	if(query1.isActive())
 	{
 		while(query1.next())
 		{
-			QString qstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query1.value(6).toString()).arg(query1.value(5).toString()).arg(query1.value(10).toString());
+			QString qstr2 = QString("SELECT * FROM messages WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query1.value(6).toString()).arg(query1.value(5).toString()).arg(query1.value(10).toString());
 			QSqlQuery query2(qstr2);
 			if(query2.size()==0)
 				queryreturn1.append(query1.value(3).toString()+"//"+query1.value(6).toString()+"//"+query1.value(5).toString()+"//"+query1.value(10).toString());
 	    }
 	}
 		//Ein/Aus ueberpruefen
-	QString qstr3 = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM ietab WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QString qstr3 = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM incexp WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
 	QSqlQuery query3(qstr3);
 	if(query3.isActive())
 	{
 	    while(query3.next())
 	    {
-			QString qstr2 = QString("SELECT * FROM msgtab WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query3.value(3).toString()).arg(query3.value(2).toString()).arg(query3.value(7).toString());
+			QString qstr2 = QString("SELECT * FROM messages WHERE `data2`='%1' AND `data3`='%2' AND `data4`='%3';").arg(query3.value(3).toString()).arg(query3.value(2).toString()).arg(query3.value(7).toString());
 			QSqlQuery query4(qstr2);
 			if(query4.size()==0)
 			    queryreturn2.append(query3.value(4).toString()+"//"+query3.value(3).toString()+"//"+query3.value(2).toString()+"//"+query3.value(7).toString());

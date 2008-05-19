@@ -47,7 +47,7 @@ void templateeditfrm::closeEvent ( QCloseEvent* ce )
 //
 void templateeditfrm::opentemplate(QString dbid) 
 {
-	QString qstr = QString("SELECT ID, name, description, data FROM templatestab WHERE `ID`='%1';").arg(dbid);
+	QString qstr = QString("SELECT ID, name, description, data FROM templates WHERE `ID`='%1';").arg(dbid);
 	QSqlQuery query(qstr);
 	query.next();
 	txtname->setText(query.value(1).toString());
@@ -87,7 +87,7 @@ void templateeditfrm::savetemplate()
 //
 void templateeditfrm::inserttemplate()
 {
-	QString qstr = QString("INSERT INTO `templatestab` ( `ID` , `name` , `description` , `data` , `created_by` , `created` ) VALUES ('', '%1', '%2', '%3', '%4', '%5');").arg(txtname->text()).arg(txtdescription->toPlainText()).arg(txtdata->toPlainText().replace("\\", "\\\\")).arg(username).arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QString qstr = QString("INSERT INTO `templates` ( `ID` , `name` , `description` , `data` , `created_by` , `created` ) VALUES ('', '%1', '%2', '%3', '%4', '%5');").arg(txtname->text()).arg(txtdescription->toPlainText()).arg(txtdata->toPlainText().replace("\\", "\\\\")).arg(username).arg(QDate::currentDate().toString("yyyy-MM-dd"));
 	QSqlQuery query(qstr);
 	QSqlError qerror = query.lastError();
 	if(qerror.isValid())
@@ -98,7 +98,7 @@ void templateeditfrm::inserttemplate()
 //
 void templateeditfrm::updatetemplate()
 {
-	QString qstr = QString("UPDATE templatestab SET `name` = '%1', `description`='%2', `data`='%3' , `modificated_by`='%4', `modificated`='%5' WHERE `ID`='%6';").arg(txtname->text()).arg(txtdescription->toPlainText()).arg(txtdata->toPlainText().replace("\\", "\\\\")).arg(username).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(templateid);
+	QString qstr = QString("UPDATE templates SET `name` = '%1', `description`='%2', `data`='%3' , `modificated_by`='%4', `modificated`='%5' WHERE `ID`='%6';").arg(txtname->text()).arg(txtdescription->toPlainText()).arg(txtdata->toPlainText().replace("\\", "\\\\")).arg(username).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(templateid);
 	QSqlQuery query(qstr);
 	QSqlError qerror = query.lastError();
 	if(qerror.isValid())

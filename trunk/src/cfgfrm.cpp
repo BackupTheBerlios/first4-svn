@@ -187,7 +187,7 @@ void cfgfrm::changepwd()
 	{
 		// lese aktuelles Passwort aus Datenbank
 		QSqlQuery query;
-		query.prepare ( "SELECT ID FROM userstab WHERE username=:username AND userpass=:userpass;" );
+		query.prepare ( "SELECT ID FROM users WHERE username=:username AND userpass=:userpass;" );
 		query.bindValue ( ":username", txtuser->text() );
 		query.bindValue ( ":userpass", cryptpwd ( txtoldpwd->text() ) );
 		query.exec();
@@ -195,7 +195,7 @@ void cfgfrm::changepwd()
 		{
 			query.next();
 			QSqlQuery queryupdate;
-			queryupdate.prepare ( "UPDATE `userstab` SET `userpass` = :userpass WHERE `ID` = :ID LIMIT 1;" );
+			queryupdate.prepare ( "UPDATE `users` SET `userpass` = :userpass WHERE `ID` = :ID LIMIT 1;" );
 			queryupdate.bindValue ( ":userpass", cryptpwd ( txtnewpwd1->text() ) );
 			queryupdate.bindValue ( ":ID", query.value ( 0 ).toString() );
 			queryupdate.exec();
@@ -287,7 +287,7 @@ void cfgfrm::loaddbinfo()
 	lblbuild->setText( build );
 	lblbuild_2->setText( build );
 
-	QString connstr = "SELECT value FROM maincfgtab WHERE var = 'dbversion';";
+	QString connstr = "SELECT value FROM maincfg WHERE var = 'dbversion';";
 	QSqlQuery query ( connstr );
 	if ( query.isActive() )
 	{
@@ -392,7 +392,7 @@ void cfgfrm::loadusers()
 {
 	if ( lbluser->text() == "Administrator" )
 	{
-		QSqlQuery querybenutzer ( "SELECT username, fullname FROM userstab;" ); //Lade Benutzer
+		QSqlQuery querybenutzer ( "SELECT username, fullname FROM users;" ); //Lade Benutzer
 		listallusers.clear();
 		listusers->clear();
 		while ( querybenutzer.next() )
@@ -408,7 +408,7 @@ void cfgfrm::selectuser()
 	QListWidgetItem *item = listusers->currentItem();
 	QString seluser = item->text().section ( " (", 1, 1 ).section ( ")", 0, 0 );
 	txt_users_user->setText ( seluser.simplified() );
-	QString qstr = QString ( "SELECT ID,  userpass,  fullname,  firstname,  lastname,  dob,  p_street,  p_zip,  p_location,  p_country,  b_street,  b_zip,  b_location,  b_country,  profession,  org_unit,  position,  emp_type, p_tel,  p_fax,  p_mobile,  p_pager,  p_ip,  email1,  email2,  email3,  p_web,  b_tel,  b_teldir,  b_fax,  b_mobile,  b_pager,  b_ip,  email4,  email5,  email6,  notes,  emp_grade FROM userstab WHERE username='%1'" ).arg ( seluser );
+	QString qstr = QString ( "SELECT ID,  userpass,  fullname,  firstname,  lastname,  dob,  p_street,  p_zip,  p_location,  p_country,  b_street,  b_zip,  b_location,  b_country,  profession,  org_unit,  position,  emp_type, p_tel,  p_fax,  p_mobile,  p_pager,  p_ip,  email1,  email2,  email3,  p_web,  b_tel,  b_teldir,  b_fax,  b_mobile,  b_pager,  b_ip,  email4,  email5,  email6,  notes,  emp_grade FROM users WHERE username='%1'" ).arg ( seluser );
 	QSqlQuery query ( qstr );
 	if ( query.isActive() )
 	{
@@ -469,7 +469,7 @@ void cfgfrm::newuser()
 	if ( ok && !text.isEmpty() )
 	{
 		txt_users_user->setText ( text );
-		QString connstr = "SELECT * FROM userstab WHERE USERNAME='"+txt_users_user->text() +"';";
+		QString connstr = "SELECT * FROM users WHERE USERNAME='"+txt_users_user->text() +"';";
 		QSqlQuery query ( connstr );
 		if ( query.isActive() )
 		{
@@ -482,7 +482,7 @@ void cfgfrm::newuser()
 	}
 	if ( txt_users_user->text() != "" )
 	{
-		QString conn = "INSERT INTO `userstab` ( `ID` , `username` , `userpass` ) VALUES ('', '"+txt_users_user->text() +"', '');";
+		QString conn = "INSERT INTO `users` ( `ID` , `username` , `userpass` ) VALUES ('', '"+txt_users_user->text() +"', '');";
 		QSqlQuery query ( conn );
 		loadusers();
 	}
@@ -496,7 +496,7 @@ void cfgfrm::saveuserchange()
 		QSqlQuery queryupdate;
 		if ( txt_users_pwd1->text() != "" )
 			tmpstr = "`userpass` = '"+cryptpwd ( txt_users_pwd1->text() ) +"', ";
-		queryupdate.prepare ( "UPDATE `userstab` SET `username`=:username ,  "+tmpstr+" `fullname`=:fullname ,  `firstname`=:firstname,  `lastname`=:lastname,  `dob`=:dob,  `p_street`=:p_street ,  `p_zip`=:p_zip ,  `p_location`=:p_location ,  `p_country`=:p_country,  `b_street`=:b_street ,  `b_zip`=:b_zip ,  `b_location`=:b_location ,  `b_country`=:b_country ,  `profession`=:profession,  `org_unit`=:org_unit ,  `position`=:position ,  `emp_type`=:emp_type ,  `emp_grade`=:emp_grade , `p_tel`=:p_tel ,  `p_fax`=:p_fax,  `p_mobile`=:p_mobile ,  `p_pager`=:p_pager ,  `p_ip`=:p_ip ,  `email1`=:email1 ,  `email2`=:email2 ,  `email3`=:email3 ,  `p_web`=:p_web , `b_tel`=:b_tel ,  `b_teldir`=:b_teldir ,  `b_fax`=:b_fax ,  `b_mobile`=:b_mobile ,  `b_pager`=:b_pager ,  `b_ip`=:b_ip ,  `email4`=:email4 ,  `email5`=:email5 ,  `email6`=:email6 ,  `notes`=:notes WHERE `ID` = :ID LIMIT 1;" );
+		queryupdate.prepare ( "UPDATE `users` SET `username`=:username ,  "+tmpstr+" `fullname`=:fullname ,  `firstname`=:firstname,  `lastname`=:lastname,  `dob`=:dob,  `p_street`=:p_street ,  `p_zip`=:p_zip ,  `p_location`=:p_location ,  `p_country`=:p_country,  `b_street`=:b_street ,  `b_zip`=:b_zip ,  `b_location`=:b_location ,  `b_country`=:b_country ,  `profession`=:profession,  `org_unit`=:org_unit ,  `position`=:position ,  `emp_type`=:emp_type ,  `emp_grade`=:emp_grade , `p_tel`=:p_tel ,  `p_fax`=:p_fax,  `p_mobile`=:p_mobile ,  `p_pager`=:p_pager ,  `p_ip`=:p_ip ,  `email1`=:email1 ,  `email2`=:email2 ,  `email3`=:email3 ,  `p_web`=:p_web , `b_tel`=:b_tel ,  `b_teldir`=:b_teldir ,  `b_fax`=:b_fax ,  `b_mobile`=:b_mobile ,  `b_pager`=:b_pager ,  `b_ip`=:b_ip ,  `email4`=:email4 ,  `email5`=:email5 ,  `email6`=:email6 ,  `notes`=:notes WHERE `ID` = :ID LIMIT 1;" );
 		queryupdate.bindValue ( ":username" ,  txt_users_user->text() );
 		queryupdate.bindValue ( ":fullname" ,  txt_users_fullname	->text() );
 		queryupdate.bindValue ( ":firstname", txt_users_firstname->text() );
@@ -536,7 +536,7 @@ void cfgfrm::saveuserchange()
 		queryupdate.bindValue ( ":notes" , txtnotes->toPlainText() );
 		queryupdate.bindValue ( ":ID", txt_users_id->text() );
 		queryupdate.exec();
-		QSqlQuery test ( "UPDATE `userstab` SET `p_street`=:p_street WHERE `ID` = 8 LIMIT 1;" );
+		QSqlQuery test ( "UPDATE `users` SET `p_street`=:p_street WHERE `ID` = 8 LIMIT 1;" );
 		test.exec();
 		QMessageBox::information ( 0, tr ( "Change personal data..." ), tr ( "Personal data successfully changed." ) );
 		loadusers();
@@ -562,7 +562,7 @@ void cfgfrm::deluser()
 		int answ = QMessageBox::warning(this, tr("Delete User..."), tr("Delete User '%1' ?").arg(item->text()),QMessageBox::Yes, QMessageBox::No);
 		if(answ == QMessageBox::Yes)
 		{
-	    	QString conn = "DELETE FROM `userstab` WHERE `ID` = '"+txt_users_id->text()+"';";
+	    	QString conn = "DELETE FROM `users` WHERE `ID` = '"+txt_users_id->text()+"';";
 		    QSqlQuery query(conn);
 		    loadusers();
 		    listusers->setCurrentRow(0);
@@ -611,7 +611,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querydata ( "SELECT ID, name, description, users FROM datatabs ORDER BY ID ASC;" );
+	QSqlQuery querydata ( "SELECT ID, name, description, users FROM datatables ORDER BY ID ASC;" );
 	if ( querydata.isActive() )
 	{
 		while ( querydata.next() )
@@ -627,7 +627,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery queryinv ( "SELECT ID, USERS FROM invcfgtab;" );
+	QSqlQuery queryinv ( "SELECT ID, USERS FROM inventorycfg;" );
 	if ( queryinv.isActive() )
 	{
 		while ( queryinv.next() )
@@ -640,7 +640,7 @@ void cfgfrm::loadresources()
 		}
 	}
 
-	QSqlQuery queryinv2 ( "SELECT ID, NAME, DATATABLE, TABLENAME, DATE, USERS FROM invtab ORDER BY ID ASC;" );
+	QSqlQuery queryinv2 ( "SELECT ID, NAME, DATATABLE, TABLENAME, DATE, USERS FROM inventories ORDER BY ID ASC;" );
 	if ( queryinv2.isActive() )
 	{
 		while ( queryinv2.next() )
@@ -656,7 +656,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery queryorders ( "SELECT ID, USERS, COUNTER FROM orderscfgtab;" );
+	QSqlQuery queryorders ( "SELECT ID, USERS, COUNTER FROM ordercfg;" );
 	if ( queryorders.isActive() )
 	{
 		while ( queryorders.next() )
@@ -673,7 +673,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery queryabl ( "SELECT ID, users, auftrid FROM procedurecfgtab;" );
+	QSqlQuery queryabl ( "SELECT ID, users, auftrid FROM procedurecfg;" );
 	if ( queryabl.isActive() )
 	{
 		queryabl.next();
@@ -688,7 +688,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querydoc ( "SELECT ID, name, users, templateid FROM doctab ORDER BY ID ASC;" );
+	QSqlQuery querydoc ( "SELECT ID, name, users, templateid FROM documentcfg ORDER BY ID ASC;" );
 	if ( querydoc.isActive() )
 	{
 		int tmpid;
@@ -709,7 +709,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querykon2 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency, type FROM accounttab WHERE `name` LIKE '%account%' ORDER BY ID ASC;" );
+	QSqlQuery querykon2 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency, type FROM accounts WHERE `name` LIKE '%account%' ORDER BY ID ASC;" );
 	if ( querykon2.isActive() )
 	{
 		while ( querykon2.next() )
@@ -723,7 +723,7 @@ void cfgfrm::loadresources()
 		}
 	}
 
-	QSqlQuery querykon1 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency FROM accounttab WHERE `name` = 'ietab' ORDER BY ID ASC;" );
+	QSqlQuery querykon1 ( "SELECT ID, name, description, users, bank, accountnr, blz, currency FROM accounts WHERE `name` = 'incexp' ORDER BY ID ASC;" );
 	if ( querykon1.isActive() )
 	{
 		while ( querykon1.next() )
@@ -740,7 +740,7 @@ void cfgfrm::loadresources()
 	it += item->childCount();
 	++it;
 	item = *it;
-	QSqlQuery querymsg ( "SELECT ID, name, description, users FROM msgcfgtab ORDER BY ID ASC;" );
+	QSqlQuery querymsg ( "SELECT ID, name, description, users FROM messagecfg ORDER BY ID ASC;" );
 	if ( querymsg.isActive() )
 	{
 		int tmpid;
@@ -889,10 +889,10 @@ void cfgfrm::saveresourcesdetails()
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
 			querysave.exec();
 		}
-		else if ( item->text ( 2 ).mid ( 0,4 ) == "data" || item->text ( 2 ) == "vattab" )
+		else if ( item->text ( 2 ).mid ( 0,4 ) == "data" || item->text ( 2 ) == "vattable" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `datatabs` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `datatables` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
 			querysave.exec();
@@ -902,13 +902,13 @@ void cfgfrm::saveresourcesdetails()
 			QSqlQuery querysave;
 			if ( item->text ( 2 ) == "inv_general" )
 			{
-				querysave.prepare ( "UPDATE `invcfgtab` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
+				querysave.prepare ( "UPDATE `inventorycfg` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
 				querysave.bindValue ( ":users", item->text ( 3 ) );
 				querysave.bindValue ( ":ID", item->text ( 1 ) );
 			}
 			else
 			{
-				querysave.prepare ( "UPDATE `invtab` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
+				querysave.prepare ( "UPDATE `inventories` SET `users` = :users WHERE `ID` = :ID LIMIT 1;" );
 				querysave.bindValue ( ":users", item->text ( 3 ) );
 				querysave.bindValue ( ":ID", item->text ( 1 ) );
 			}
@@ -917,7 +917,7 @@ void cfgfrm::saveresourcesdetails()
 		else if ( item->text ( 2 ) == "p_orders" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `orderscfgtab` SET `users` = :users, `counter` = :counter WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `ordercfg` SET `users` = :users, `counter` = :counter WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":counter", item->text ( 4 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
@@ -935,16 +935,16 @@ void cfgfrm::saveresourcesdetails()
 		else if ( item->text ( 2 ) == "doc" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `doctab` SET `users` = :users, `templateid` = :templateid WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `documentcfg` SET `users` = :users, `templateid` = :templateid WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":templateid", item->text ( 4 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
 			querysave.exec();
 		}
-		else if ( item->text ( 2 ) == "ietab" || item->text ( 2 ).left ( 7 ) == "account" )
+		else if ( item->text ( 2 ) == "incexp" || item->text ( 2 ).left ( 7 ) == "account" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `accounttab` SET `users`=:users, `bank`=:bank, `accountnr`=:accountnr, `blz`=:blz, `currency`=:currency WHERE `ID`=:ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `accounts` SET `users`=:users, `bank`=:bank, `accountnr`=:accountnr, `blz`=:blz, `currency`=:currency WHERE `ID`=:ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":bank", item->text ( 4 ).section ( ";", 0, 0 ) );
 			querysave.bindValue ( ":accountnr", item->text ( 4 ).section ( ";", 1, 1 ) );
@@ -956,7 +956,7 @@ void cfgfrm::saveresourcesdetails()
 		else if ( item->text ( 2 ).mid ( 0,3 ) == "msg" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `msgcfgtab` SET `users`= :users WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `messagecfg` SET `users`= :users WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
 			querysave.exec();
@@ -989,7 +989,7 @@ void cfgfrm::contmenu()
 	}
 	else
 	{
-		if ( item->text(0)!= tr("General") && item->text(2)!="ietab" && item->text(2)!="taxtab" && item->text(2)!="doc" && item->text(2).mid(0, 4)!="msg_")
+		if ( item->text(0)!= tr("General") && item->text(2)!="incexp" && item->text(2)!="taxtab" && item->text(2)!="doc" && item->text(2).mid(0, 4)!="msg_")
 		{
 			QAction* cnt_rename = new QAction ( tr ( "Rename \'%1\'" ).arg ( item->text ( 0 ) ), this );
 			connect ( cnt_rename , SIGNAL ( triggered() ), this, SLOT ( rentab() ) );
@@ -1060,7 +1060,7 @@ void cfgfrm::newaccount()
 	{
 		int accountcount = 1;
 		QString accountname = "";
-		QString qstr1 = "SELECT name FROM accounttab ORDER BY name ASC;";
+		QString qstr1 = "SELECT name FROM accounts ORDER BY name ASC;";
 		QSqlQuery querykontonew1 ( qstr1 );
 		if ( querykontonew1.isActive() )
 		{
@@ -1077,7 +1077,7 @@ void cfgfrm::newaccount()
 			if ( accountname == "" )
 				accountname = QString ( "account%1" ).arg ( accountcount++,0,10 );
 		}
-		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '', '', '', '', 'banc')" ).arg ( accountname ).arg ( accountdesc );
+		QString qstr2 = QString ( "INSERT INTO `accounts` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '', '', '', '', 'banc')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
 		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
@@ -1095,7 +1095,7 @@ void cfgfrm::newlocalaccount()
 	{
 		int accountcount = 1;
 		QString accountname = "";
-		QString qstr1 = "SELECT name FROM accounttab ORDER BY name ASC;";
+		QString qstr1 = "SELECT name FROM accounts ORDER BY name ASC;";
 		QSqlQuery querykontonew1 ( qstr1 );
 		if ( querykontonew1.isActive() )
 		{
@@ -1112,7 +1112,7 @@ void cfgfrm::newlocalaccount()
 			if ( accountname == "" )
 				accountname = QString ( "account%1" ).arg ( accountcount++,0,10 );
 		}
-		QString qstr2 = QString ( "INSERT INTO `accounttab` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '-', '-', '', '', 'local')" ).arg ( accountname ).arg ( accountdesc );
+		QString qstr2 = QString ( "INSERT INTO `accounts` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '-', '-', '', '', 'local')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
 		QString qstr3 = tr ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
@@ -1139,13 +1139,13 @@ void cfgfrm::rentab()
 			}
 			else if ( item->text ( 2 ).mid ( 0, 4 ) == "data" )
 			{
-				QString qstr = tr ( "UPDATE `datatabs` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
+				QString qstr = QString ( "UPDATE `datatables` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
 				QSqlQuery querydataren ( qstr );
 				item->setText ( 0, newdesc );
 			}
 			else if ( item->text ( 2 ).left ( 7 ) =="account" )
 			{
-				QString qstr = tr ( "UPDATE `accounttab` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
+				QString qstr = QString ( "UPDATE `accounts` SET `description` = '%1' WHERE ID='%2' LIMIT 1;" ).arg ( newdesc ).arg ( item->text ( 1 ) );
 				QSqlQuery querykontoren ( qstr );
 				item->setText ( 0, newdesc );
 			}
@@ -1172,7 +1172,7 @@ void cfgfrm::deltab()
 			}
 			else if ( item->text ( 2 ).mid ( 0, 4 ) == "data" )
 			{
-				QString conn2 = QString ( "DELETE FROM `datatabs` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
+				QString conn2 = QString ( "DELETE FROM `datatables` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
 				QSqlQuery querydatadel2 ( conn2 );
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
@@ -1181,7 +1181,7 @@ void cfgfrm::deltab()
 			}
 			else if ( item->text ( 2 ).left ( 7 ) =="account" )
 			{
-				QString conn2 = QString ( "DELETE FROM `accounttab` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
+				QString conn2 = QString ( "DELETE FROM `accounts` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
 				QSqlQuery querykontodel2 ( conn2 );
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
@@ -1190,7 +1190,7 @@ void cfgfrm::deltab()
 			}
 			else if ( item->text ( 2 ).mid ( 0, 3 ) == "inv" )
 			{
-				QString conn2 = QString ( "DELETE FROM `invtab` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
+				QString conn2 = QString ( "DELETE FROM `inventories` WHERE `ID` = '%1';" ).arg ( item->text ( 1 ) );
 				QSqlQuery querykontodel2 ( conn2 );
 
 				QString conn3 = QString ( "DROP TABLE `%1`;" ).arg ( item->text ( 2 ) );
@@ -1213,18 +1213,18 @@ void cfgfrm::selectdocpath()
 void cfgfrm::savedocsettings()
 {
 	QSqlQuery savesettings_1;
-	savesettings_1.prepare ( "UPDATE maincfgtab SET `value` = :value WHERE var = 'docfolder';" );
+	savesettings_1.prepare ( "UPDATE maincfg SET `value` = :value WHERE var = 'docfolder';" );
 	savesettings_1.bindValue ( ":value", txtdocpath->text() );
 	savesettings_1.exec();
 	docfolder=txtdocpath->text();
 	
 	QSqlQuery savesettings_2;
-	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='docpref';" );
+	savesettings_2.prepare ( "UPDATE maincfg SET `value`=:prefix WHERE `var`='docpref';" );
 	savesettings_2.bindValue ( ":prefix", txtdocprefix->text() );
 	savesettings_2.exec();
 
 	QSqlQuery savesettings_3;
-	savesettings_3.prepare ( "UPDATE maincfgtab SET `value`=:prefix WHERE `var`='doc_generalinfo';" );
+	savesettings_3.prepare ( "UPDATE maincfg SET `value`=:prefix WHERE `var`='doc_generalinfo';" );
 	savesettings_3.bindValue ( ":prefix", txtgeneralinfo->toPlainText().replace("\\", "\\\\" ) );
 	savesettings_3.exec();
 
@@ -1233,43 +1233,43 @@ void cfgfrm::savedocsettings()
 //
 void cfgfrm::loadsettings()
 {
-	QSqlQuery loadsettings_1 ( "SELECT value FROM maincfgtab WHERE `var`='DoG';" );
+	QSqlQuery loadsettings_1 ( "SELECT value FROM maincfg WHERE `var`='DoG';" );
 	loadsettings_1.next();
 	if(loadsettings_1.size()>0)
 		daysofgrace->setValue ( loadsettings_1.value ( 0 ).toInt() );
 	else
-		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('DoG', '');");
+		QSqlQuery insertsetting("INSERT INTO maincfg (`var`, `value`)VALUES('DoG', '');");
 
-	QSqlQuery loadsettings_2 ( "SELECT value FROM maincfgtab WHERE `var`='docpref';" );
+	QSqlQuery loadsettings_2 ( "SELECT value FROM maincfg WHERE `var`='docpref';" );
 	loadsettings_2.next();
 	if(loadsettings_2.size()>0)
 		txtdocprefix->setText ( loadsettings_2.value ( 0 ).toString() );
 	else
-		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('docpref', '');");
+		QSqlQuery insertsetting("INSERT INTO maincfg (`var`, `value`)VALUES('docpref', '');");
 		
-	QSqlQuery loadsettings_3 ( "SELECT value FROM maincfgtab WHERE `var`='def_currency';" );
+	QSqlQuery loadsettings_3 ( "SELECT value FROM maincfg WHERE `var`='def_currency';" );
 	loadsettings_3.next();
 	if(loadsettings_3.size()>0)
 		txtdefcurrency->setText ( loadsettings_3.value ( 0 ).toString() );
 	else
-		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('def_currency', '');");
+		QSqlQuery insertsetting("INSERT INTO maincfg (`var`, `value`)VALUES('def_currency', '');");
 		
-	QSqlQuery loadsettings_4 ( "SELECT value FROM maincfgtab WHERE `var`='doc_generalinfo';" );
+	QSqlQuery loadsettings_4 ( "SELECT value FROM maincfg WHERE `var`='doc_generalinfo';" );
 	loadsettings_4.next();
 	if(loadsettings_4.size()>0)
 		txtgeneralinfo->setText ( loadsettings_4.value ( 0 ).toString() );
 	else
-		QSqlQuery insertsetting("INSERT INTO maincfgtab (`var`, `value`)VALUES('doc_generalinfo', '');");
+		QSqlQuery insertsetting("INSERT INTO maincfg (`var`, `value`)VALUES('doc_generalinfo', '');");
 }
 //
 void cfgfrm::savesettings()
 {
 	QSqlQuery savesettings_1;
-	savesettings_1.prepare ( "UPDATE maincfgtab SET `value`=:dog WHERE `var`='DoG';" );
+	savesettings_1.prepare ( "UPDATE maincfg SET `value`=:dog WHERE `var`='DoG';" );
 	savesettings_1.bindValue ( ":dog", daysofgrace->cleanText() );
 	savesettings_1.exec();
 	QSqlQuery savesettings_2;
-	savesettings_2.prepare ( "UPDATE maincfgtab SET `value`=:def_currency WHERE `var`='def_currency';" );
+	savesettings_2.prepare ( "UPDATE maincfg SET `value`=:def_currency WHERE `var`='def_currency';" );
 	savesettings_2.bindValue ( ":prefix", txtdefcurrency->text() );
 	savesettings_2.exec();
 	QMessageBox::information ( 0, tr ( "Settings..." ), tr ( "New settings are saved and now active." ) );
@@ -1285,15 +1285,15 @@ void cfgfrm::saveowndata()
 	QString qstr;
 	for ( i=0; i<rowname.count(); i++ )
 	{
-		qstr = QString ( "SELECT ID FROM `maincfgtab` WHERE `var` = '%1';" ).arg ( rowname[i] );
+		qstr = QString ( "SELECT ID FROM `maincfg` WHERE `var` = '%1';" ).arg ( rowname[i] );
 		QSqlQuery querycheck ( qstr );
 		if ( querycheck.size() >0 )
 		{
 			querycheck.next();
-			qstr = QString ( "UPDATE `maincfgtab` SET `value`='%1' WHERE `ID`=%2;" ).arg ( fields[i] ).arg ( querycheck.value ( 0 ).toString() );
+			qstr = QString ( "UPDATE `maincfg` SET `value`='%1' WHERE `ID`=%2;" ).arg ( fields[i] ).arg ( querycheck.value ( 0 ).toString() );
 		}
 		else
-			qstr = QString ( "INSERT INTO `maincfgtab` (`ID`, `var`, `value`) VALUES ('', '%1', '%2');" ).arg ( rowname[i] ).arg ( fields[i] );
+			qstr = QString ( "INSERT INTO `maincfg` (`ID`, `var`, `value`) VALUES ('', '%1', '%2');" ).arg ( rowname[i] ).arg ( fields[i] );
 		QSqlQuery querysetvar ( qstr );
 	}
 	QMessageBox::information ( 0, tr ( "Own data..." ), tr ( "New settings are saved and now active." ) );
@@ -1308,7 +1308,7 @@ void cfgfrm::loadowndata()
 	QString qstr;
 	for ( i=0;i<rowname.count(); i++ )
 	{
-		qstr = QString ( "SELECT value FROM `maincfgtab` WHERE `var` = '%1';" ).arg ( rowname[i] );
+		qstr = QString ( "SELECT value FROM `maincfg` WHERE `var` = '%1';" ).arg ( rowname[i] );
 		QSqlQuery query ( qstr );
 		query.next();
 		fields.append ( query.value ( 0 ).toString() );
@@ -1360,7 +1360,7 @@ void cfgfrm::load_db_tools()
 	#ifdef Q_OS_MAC
 		os="mac";
 	#endif
-	QString qstr1 = QString("SELECT var, value FROM maincfgtab WHERE `var`='tool_%1_tex2dvi' OR `var`='tool_%1_dviviewer' OR `var`='tool_%1_dvi2ps' OR `var`='tool_%1_print' ORDER BY var;").arg(os);
+	QString qstr1 = QString("SELECT var, value FROM maincfg WHERE `var`='tool_%1_tex2dvi' OR `var`='tool_%1_dviviewer' OR `var`='tool_%1_dvi2ps' OR `var`='tool_%1_print' ORDER BY var;").arg(os);
 	QSqlQuery querytools(qstr1);
 	if ( querytools.isActive())
 	{
@@ -1443,23 +1443,23 @@ void cfgfrm::save_db_tools()
 	#endif
 	
 	//First cleanup
-	QString qstr = QString("DELETE FROM maincfgtab WHERE `var` LIKE '%tool_%1_%';").arg(os);
+	QString qstr = QString("DELETE FROM maincfg WHERE `var` LIKE '%tool_%1_%';").arg(os);
 	QSqlQuery querycleanup(qstr);
 	
 	// SAVE DVI2PS
-	QString qstr1 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dvi2ps").arg(txt_tool_db_dvi2ps->text());
+	QString qstr1 = QString("INSERT INTO maincfg (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dvi2ps").arg(txt_tool_db_dvi2ps->text());
 	QSqlQuery querytools1(qstr1);
 	
 	// SAVE DVIVIEWER
-	QString qstr2 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviviewer").arg(txt_tool_db_dviviewer->text());
+	QString qstr2 = QString("INSERT INTO maincfg (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_dviviewer").arg(txt_tool_db_dviviewer->text());
 	QSqlQuery querytools2(qstr2);
 	
 	// SAVE PRINTCMD
-	QString qstr3 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_print").arg(txt_tool_db_print->text());
+	QString qstr3 = QString("INSERT INTO maincfg (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_print").arg(txt_tool_db_print->text());
 	QSqlQuery querytools3(qstr3);
 	
 	// SAVE TEX2DVI
-	QString qstr4 = QString("INSERT INTO maincfgtab (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
+	QString qstr4 = QString("INSERT INTO maincfg (`var`, `value`) VALUES ('%1', '%2');").arg("tool_"+os+"_tex2dvi").arg(txt_tool_db_tex2dvi->text());
 	QSqlQuery querytools4(qstr4);
 }
 //
@@ -1496,9 +1496,9 @@ void cfgfrm::templates_load()
 	tem_tree->clear();
 	QString qstr;
 	if(chksystemplates->checkState() == Qt::Unchecked)
-		qstr = "SELECT name, description, ID FROM templatestab WHERE name NOT LIKE 'sys_%' ORDER BY name";
+		qstr = "SELECT name, description, ID FROM templates WHERE name NOT LIKE 'sys_%' ORDER BY name";
 	else			
-		qstr = "SELECT name, description, ID FROM templatestab ORDER BY name";
+		qstr = "SELECT name, description, ID FROM templates ORDER BY name";
 	QSqlQuery query(qstr);
 	if ( query.isActive())
 	{
@@ -1547,7 +1547,7 @@ void cfgfrm::templates_delete()
 		int r = QMessageBox::warning ( this, tr ( "Deleting..." ),tr ( "Delete template '%1'?" ).arg ( item->text(0) ), QMessageBox::Yes, QMessageBox::No );
 		if ( r == QMessageBox::Yes )
 		{
-			QString qstr = QString("DELETE FROM templatestab WHERE `ID`='%1';").arg(item->text(2));
+			QString qstr = QString("DELETE FROM templates WHERE `ID`='%1';").arg(item->text(2));
 			QSqlQuery query(qstr);
 			QSqlError qerror = query.lastError();
 			if(qerror.isValid())
@@ -1563,7 +1563,7 @@ void cfgfrm::templates_loaddetails()
 	QTreeWidgetItem *item = tem_tree->currentItem();
 	if(item != 0)
 	{
-		QString qstr = QString("SELECT name, description, created_by, created, modificated_by, modificated FROM templatestab WHERE `ID`='%1';").arg(item->text(2));
+		QString qstr = QString("SELECT name, description, created_by, created, modificated_by, modificated FROM templates WHERE `ID`='%1';").arg(item->text(2));
 		QSqlQuery query(qstr);
 		if ( query.isActive())
 		{
@@ -1587,7 +1587,7 @@ void cfgfrm::templates_loaddetails()
 //
 void cfgfrm::templates_loaddescription()
 {
-	QString qstr = QString("SELECT description FROM templatestab WHERE `ID`='%1';").arg(templateids[cmbtemplatename->currentIndex()]);
+	QString qstr = QString("SELECT description FROM templates WHERE `ID`='%1';").arg(templateids[cmbtemplatename->currentIndex()]);
 	QSqlQuery query(qstr);
 	if ( query.isActive())
 	{
@@ -1606,7 +1606,7 @@ void cfgfrm::locks_loaduserlocks()
 	lock_tree->clear();
 	lock_tree->hideColumn(0);
 	lock_tree->setColumnWidth(2, 80);
-	QSqlQuery query("SELECT `ID`, `table`, `tabid`, `user`, `timestamp` FROM userlocktab ORDER BY `table`, `ID`;");
+	QSqlQuery query("SELECT `ID`, `table`, `tabid`, `user`, `timestamp` FROM userlocks ORDER BY `table`, `ID`;");
 	if(query.isActive())
 	{
 		while(query.next())
@@ -1641,7 +1641,7 @@ void cfgfrm::locks_loaduserlocks()
 				query2.next();
 				item->setText(5, query2.value(0).toString().section(" ", 1, 1)+", "+query2.value(1).toString());
 			}
-			else if(query.value(1).toString().mid(0, 7) == "account" || query.value(1).toString() == "ietab")
+			else if(query.value(1).toString().mid(0, 7) == "account" || query.value(1).toString() == "incexp")
 			{
 				QSqlQuery query2(QString("SELECT refnr, description FROM %1 WHERE `ID`='%2';").arg(query.value(1).toString()).arg(query.value(2).toString()));
 				query2.next();
@@ -1664,7 +1664,7 @@ void cfgfrm::locks_unlockentry()
 		int r = QMessageBox::warning ( this, tr ( "Unlocking..." ),tr("Do you want to unlock the selected entry?" ) , QMessageBox::Yes, QMessageBox::No );
 		if ( r == QMessageBox::Yes )
 		{
-			QSqlQuery query(QString("DELETE FROM userlocktab WHERE `ID`='%1'").arg(item->text(0)));
+			QSqlQuery query(QString("DELETE FROM userlocks WHERE `ID`='%1'").arg(item->text(0)));
 			locks_loaduserlocks();
 		}
 	}

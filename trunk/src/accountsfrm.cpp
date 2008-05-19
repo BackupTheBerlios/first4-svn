@@ -90,26 +90,26 @@ void accountsfrm::initindexlist()
     item = new QTreeWidgetItem(treeindex, item );
     item->setText( 0, tr("Incomes"));
     item->setText( 1, "inc");
-    item->setText( 2, "ietab");
+    item->setText( 2, "incexp");
     
     item = new QTreeWidgetItem( treeindex, item );
     item->setText( 0, tr("Expenditures"));
     item->setText( 1, "exp");
-    item->setText( 2, "ietab");
+    item->setText( 2, "incexp");
     
     item = new QTreeWidgetItem( treeindex, item );
     item->setText( 0, tr("Archiv"));
     item->setText( 1, "archiv");
-    item->setText( 2, "ietabarchiv");    
+    item->setText( 2, "incexparchive");    
     
     QTreeWidgetItem *childitem = new QTreeWidgetItem(item, 0);
     childitem->setText( 0, tr("Incomes"));
     childitem->setText( 1, "inc");
-    childitem->setText( 2, "ietabarchiv");
+    childitem->setText( 2, "incexparchive");
     childitem = new QTreeWidgetItem(item, childitem );
     childitem->setText( 0, tr("Expenditures"));
     childitem->setText( 1, "exp");
-    childitem->setText( 2, "ietabarchiv");
+    childitem->setText( 2, "incexparchive");
 }
 //
 void accountsfrm::inittreemainaccounts()
@@ -198,7 +198,7 @@ void accountsfrm::initmaintreeincexp()
 //
 void accountsfrm::loadaccounts()
 {
-    QString connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounttab WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%' AND `type`='banc';"; 
+    QString connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounts WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%' AND `type`='banc';"; 
     QSqlQuery query1(connstr);
     if ( query1.isActive())
     {
@@ -218,7 +218,7 @@ void accountsfrm::loadaccounts()
 		}
     }
 
-    connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounttab WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%'  AND `type`='local';"; 
+    connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounts WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%'  AND `type`='local';"; 
     QSqlQuery query2(connstr);
     if ( query2.isActive())
     {
@@ -238,7 +238,7 @@ void accountsfrm::loadaccounts()
 		}
     }
 
-    connstr = "SELECT users FROM accounttab WHERE name LIKE '%ietab%';"; 
+    connstr = "SELECT users FROM accounts WHERE name LIKE '%incexp%';"; 
     QSqlQuery query3(connstr);
     if(query3.isActive())
     {
@@ -272,7 +272,7 @@ void accountsfrm::loaddetails()
 		btncomplete->setEnabled(FALSE);
 		if(item->parent() != 0)
 		{
-			if(item->text(2) != "ietabarchiv")
+			if(item->text(2) != "incexparchive")
 			{
 				lblname->setText(item->text(0));
 				lblaccountnr->setText(item->text(3));
@@ -285,7 +285,6 @@ void accountsfrm::loaddetails()
 				accountid = item->text(2); //lblkontoid->setText(item->text(2));
 				if(item->text(7)=="11" || uid == 0)
 				{
-					QMessageBox::information(this, tr("1"), item->text(1));
 					btnnew->setEnabled(TRUE);
 					btnedit->setEnabled(TRUE);
 					btndelete->setEnabled(TRUE);
@@ -506,7 +505,7 @@ void accountsfrm::loadaccountdata(QString ID)
 void accountsfrm::loadincexpdata(QString type)
 {
     treemain->clear();
-    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM ietab WHERE `type`= '"+type+"' ORDER BY date DESC;";
+    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexp WHERE `type`= '"+type+"' ORDER BY date DESC;";
     QSqlQuery query(qstr);
     progbar->setMaximum(query.size());
     if(query.isActive())
@@ -537,7 +536,7 @@ void accountsfrm::loadincexpdata(QString type)
 void accountsfrm::loadarchivdata(QString type)
 {
     treemain->clear();
-    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM ietabarchiv WHERE `type`='"+type+"' ORDER BY date ASC;"; 
+    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexparchive WHERE `type`='"+type+"' ORDER BY date ASC;"; 
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -570,7 +569,7 @@ QString accountsfrm::calctotal(int type)
     float ein = 0;
     float aus = 0;
     bool ok;
-    QString qstr = "SELECT type, amount FROM ietab;";
+    QString qstr = "SELECT type, amount FROM incexp;";
     QString return_value = "0.00";
     QSqlQuery query(qstr);
     if(query.isActive())
@@ -626,7 +625,7 @@ void accountsfrm::newentry()
     efrm->setdbID(accountid);
     efrm->date1->setDate(QDate::currentDate());
     efrm->setWindowTitle(tr("New Entry..."));
-    if(accountid == "ietab")
+    if(accountid == "incexp")
     {
 		QTreeWidgetItem* tmpitem = treeindex->currentItem();
 		if(tmpitem->text(1) == "inc")
@@ -666,7 +665,7 @@ void accountsfrm::deleteentry()
 	if(item != 0 && accountid != "-")
 	{
 		int resp;
-		if(accountid=="ietab")
+		if(accountid=="incexp")
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(3)), QMessageBox::Yes, QMessageBox::No);
 		else
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(2)), QMessageBox::Yes, QMessageBox::No);
@@ -700,7 +699,7 @@ void accountsfrm::completeitems()
 	    //search existing accounts
 	    int i;
 	    
-	    QString qstr1 = "SELECT ID, name, description, accountnr, bank, blz, currency, users FROM accounttab WHERE users LIKE '%"+username+" [%' AND name LIKE '%account%';"; 
+	    QString qstr1 = "SELECT ID, name, description, accountnr, bank, blz, currency, users FROM accounts WHERE users LIKE '%"+username+" [%' AND name LIKE '%account%';"; 
 	    QSqlQuery query1(qstr1);
 	    if ( query1.isActive())
 	    {
@@ -733,9 +732,9 @@ void accountsfrm::completeitems()
 			QTreeWidgetItem *item = treemain->topLevelItem(i);
 			if(item->checkState(1) == Qt::Checked)
 			{
-			    QString qstr = QString("INSERT INTO `ietabarchiv` (`ID`, `refnr`, `type`, `state`, `date`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%1', '%2', '1', '%4', '%5', '%6', '%7', '%8');").arg(item->text(3)).arg(typeitem->text(1)).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(item->text(4)+" "+item->text(8)).arg(item->text(6)).arg(item->text(5)).arg(item->text(7));
+			    QString qstr = QString("INSERT INTO `incexparchive` (`ID`, `refnr`, `type`, `state`, `date`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%1', '%2', '1', '%4', '%5', '%6', '%7', '%8');").arg(item->text(3)).arg(typeitem->text(1)).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(item->text(4)+" "+item->text(8)).arg(item->text(6)).arg(item->text(5)).arg(item->text(7));
 			    QSqlQuery query1(qstr);
-			    qstr = QString("DELETE FROM `ietab` WHERE `ID` = '%2';").arg(item->text(0));
+			    qstr = QString("DELETE FROM `incexp` WHERE `ID` = '%2';").arg(item->text(0));
 			    QSqlQuery query2(qstr);
 			}
 	    }
@@ -839,7 +838,7 @@ void accountsfrm::esrimport()
 		    for(i=0;i<lines.count()-1;i++)
 		    {
 				refnr = lines[i].mid(19, 20);
-				QString qstr = QString("SELECT address FROM ietab WHERE `refnr` = '%1';").arg(lines[i].mid(24, 15));
+				QString qstr = QString("SELECT address FROM incexp WHERE `refnr` = '%1';").arg(lines[i].mid(24, 15));
 				QSqlQuery query(qstr);
 				if(query.size()>0)
 				{
@@ -1046,7 +1045,7 @@ void accountsfrm::writetexfile(int type)
 QString accountsfrm::loadtemplatedata()
 {
 	QString answ;
-	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_ieoverview';");
+	QSqlQuery query("SELECT data FROM templates WHERE `name`='sys_ieoverview';");
 	if ( query.isActive())
 	{
 		query.next();

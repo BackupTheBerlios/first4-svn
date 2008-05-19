@@ -64,7 +64,7 @@ void msgfrm::loadmsgcfg()
 {
     int i;
     progbar->setMaximum(4);
-    QString qstr = "SELECT ID, name, users FROM msgcfgtab ORDER BY ID ASC;";
+    QString qstr = "SELECT ID, name, users FROM messagecfg ORDER BY ID ASC;";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -104,7 +104,7 @@ void msgfrm::loadmsg()
 		    btncomplete->setEnabled(FALSE);
 		}
 
-		QString connstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM msgtab WHERE `typ` = '%1' ORDER BY ID DESC;").arg(indexitem->text(2));
+		QString connstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM messages WHERE `typ` = '%1' ORDER BY ID DESC;").arg(indexitem->text(2));
 		QSqlQuery query(connstr);
 		if(query.isActive())
 		{
@@ -281,7 +281,7 @@ void msgfrm::deletemsg()
 		int r=QMessageBox::information(this, tr("Delete entry..."), tr("Delete entry?"), QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{
-	    	QString connstr = QString("DELETE FROM `msgtab` WHERE `ID` = '%2';").arg(item->text(0));
+	    	QString connstr = QString("DELETE FROM `messages` WHERE `ID` = '%2';").arg(item->text(0));
 		    QSqlQuery query(connstr);
 	    	treemain->takeTopLevelItem(treemain->indexOfTopLevelItem(item));
 		}
@@ -316,7 +316,7 @@ void msgfrm::completeitems()
 		int r=QMessageBox::information(this, tr("Complete entry..."), tr("Complete entry"),QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{	
-	    	QString qstr = "DELETE FROM `msgtab` WHERE ";
+	    	QString qstr = "DELETE FROM `messages` WHERE ";
 		    for(i=0;i<treemain->topLevelItemCount();i++)
 	    	{
 	    		QTreeWidgetItem *item = treemain->topLevelItem(0);

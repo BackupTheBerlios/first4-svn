@@ -41,20 +41,20 @@ void accountseditfrm::loadentry(QString tmpdbID)
     edit = TRUE;
     dbID = tmpdbID;
     vars v;
-    if(dbID.section("_", 0, 0) == "ietab")
+    if(dbID.section("_", 0, 0) == "incexp")
 	{
 		QString qstr;
-		QString userlock = v.checklockstate("ietab", dbID.section("_", 1, 1));
+		QString userlock = v.checklockstate("incexp", dbID.section("_", 1, 1));
 		if(userlock != "")
 		{
 			this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
 			btnaccept->setEnabled(FALSE);
-			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM ietab WHERE `ID` = '%1';").arg(dbID.section("_", 1, 1));
+			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM incexp WHERE `ID` = '%1';").arg(dbID.section("_", 1, 1));
 		}
 		else
 		{
-			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM ietab WHERE `ID` = '%1' FOR UPDATE;").arg(dbID.section("_", 1, 1));
-			v.lockrow("ietab", dbID.section("_", 1, 1));
+			qstr = QString("SELECT ID, refnr, type, state, date, address, description, code, amount FROM incexp WHERE `ID` = '%1' FOR UPDATE;").arg(dbID.section("_", 1, 1));
+			v.lockrow("incexp", dbID.section("_", 1, 1));
 		}
 	
 		QSqlQuery query(qstr);
@@ -130,7 +130,7 @@ void accountseditfrm::updateentry(QString tab)
 {
 	vars v;
     QString qstr = "";
-    if(tab == "ietab")
+    if(tab == "incexp")
     {
 		qstr = QString("UPDATE `%1` SET `date`='%2', `address` = '%3', `description`='%4', `code`='%5', `amount`='%6' WHERE `ID`=%7;").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text()).arg(lblID->text());
     }
@@ -148,7 +148,7 @@ void accountseditfrm::updateentry(QString tab)
 void accountseditfrm::newentry(QString tab)
 {
     QString qstr = "";
-    if(tab == "ietab")
+    if(tab == "incexp")
     {
 		qstr = QString("INSERT INTO `%1` (`ID`, `refnr`, `type`, `state`, `date`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '0', '%5', '%6', '%7', '%8', '%9');").arg(tab).arg(txtRefNr->text()).arg(ietype[cmbincexp->currentIndex()]).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text());
     }
@@ -189,7 +189,7 @@ void accountseditfrm::clearaddr()
 void accountseditfrm::checkcode()
 {
     stockselfrm *selstock = new stockselfrm;
-    QString connstr = "SELECT name,  description FROM datatabs WHERE `users` LIKE '%"+username+" [1%' AND `tabtyp` = 'iecode';";
+    QString connstr = "SELECT name,  description FROM datatables WHERE `users` LIKE '%"+username+" [1%' AND `tabtyp` = 'iecode';";
     QString connstr2;
     QSqlQuery query(connstr);
     if(query.isActive())

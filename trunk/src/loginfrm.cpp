@@ -112,7 +112,11 @@ void loginfrm::checkpwd()
 		{
 		    // Database successfully opened;
 		    cfgfrm cfrm;
-		    QString qstr = QString( "SELECT fullname, id FROM userstab WHERE username='%1' AND userpass = '%2';").arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
+		    QSqlQuery querycheck("SHOW TABLES LIKE 'userstab';");
+		    if(querycheck.size() == 0)	
+		    	querycheck.exec("SHOW TABLES LIKE 'users';");
+		    querycheck.next();
+		    QString qstr = QString( "SELECT fullname, id FROM %1 WHERE username='%2' AND userpass = '%3';").arg(querycheck.value(0).toString()).arg(boxuser->text()).arg(cfrm.cryptpwd(boxpwd->text()));
 		    QSqlQuery query(qstr);
 		    if(query.isActive())
 		    {
@@ -270,7 +274,7 @@ void loginfrm::saveservers()
 //
 void loginfrm::loadsysvars()
 {
-	QString qstr = "SELECT var, value FROM maincfgtab WHERE `var` = 'docfolder' OR `var` = 'templatefolder' ORDER BY var ASC;";
+	QString qstr = "SELECT var, value FROM maincfg WHERE `var` = 'docfolder' OR `var` = 'templatefolder' ORDER BY var ASC;";
 	QSqlQuery vars(qstr);
 	vars.next();
 	docfolder = vars.value(1).toString();

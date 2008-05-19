@@ -72,7 +72,7 @@ void newdatatabfrm::createtable()
 		{
 			int datacount = 1;
 			QString dataname = "";
-			QString conn1 = "SELECT * FROM datatabs ORDER BY name ASC;";	
+			QString conn1 = "SELECT * FROM datatables ORDER BY name ASC;";	
 			QSqlQuery querydatanew1(conn1);
 			if ( querydatanew1.isActive())
 			{
@@ -91,7 +91,7 @@ void newdatatabfrm::createtable()
 		    if(dataname == "")
 				dataname = QString("data%1").arg(datacount++,0,10);
 				
-			QString conn2 = tr("INSERT INTO `datatabs` ( `ID` , `name` , `description` , `users` , `cols` , `tabtyp` ) VALUES ('', '%1', '%2").arg(dataname).arg(txtname->text());
+			QString conn2 = QString("INSERT INTO `datatables` ( `ID` , `name` , `description` , `users` , `cols` , `tabtyp` ) VALUES ('', '%1', '%2").arg(dataname).arg(txtname->text());
 			if(rdbstock->isChecked())
 			    conn2 +=  "', '','Label:75#Description:75#Stock:75#Min. quantity:75#Unit:75#Order quantity:75#Purchase price:75#Selling price:75#Supplier:75#Package:75#Weight:75#Tax:75#Status:75#WebName:75#WebImage:75#WebURL:75#Create date:75#Last modification:75#Sales date:75#Comment:75#Stock position:75', 'stock');";
 			else if(rdbiecode->isChecked())

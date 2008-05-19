@@ -51,7 +51,7 @@ void docopendraftsfrm::readdoctab()
 {   
 	dlabel.clear();
 	dlabel << tr("Offer") << tr("Order confirmation") << tr("Delivery note") << tr("Invoice");
-    QString qstr = "SELECT name FROM doctab ORDER BY ID;";
+    QString qstr = "SELECT name FROM documentcfg ORDER BY ID;";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -70,7 +70,7 @@ void docopendraftsfrm::loaddocs()
     if(indexitem!=0)
     {
 		treemain->clear();
-		QString connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docdrafts WHERE `doctyp` LIKE '%1' ORDER BY ID;").arg(indexitem->text(1));
+		QString connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documentdrafts WHERE `doctyp` LIKE '%1' ORDER BY ID;").arg(indexitem->text(1));
 		QString connstr2;
 		QSqlQuery query(connstr);
 		if(query.isActive())
@@ -126,7 +126,7 @@ void docopendraftsfrm::loaddocsdetails()
     QTreeWidgetItem *item = treemain->currentItem();
     if(item!=0 && item->childCount() == 0)
     {
-		QString connstr = "SELECT DESCRIPTION, QUANTITY FROM docpositions WHERE DOCID = '"+item->text(0)+"' ORDER BY DOC_POSITION;";
+		QString connstr = "SELECT DESCRIPTION, QUANTITY FROM documentpositions WHERE DOCID = '"+item->text(0)+"' ORDER BY DOC_POSITION;";
 		QSqlQuery querypos(connstr);
 		if(querypos.isActive())
 		{
@@ -156,9 +156,9 @@ void docopendraftsfrm::searchdoc()
     {
 		QString connstr;
 		if(cmbsearchrow->currentIndex() > 0)
-		    connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docdrafts WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(srow[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
+		    connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documentdrafts WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(srow[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
 		else
-		    connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM docdrafts WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(srow[cmbsearchrow->currentIndex()]).arg(txtsearch->text().section(" (", 1, 1).section(")", 0, 0));
+		    connstr = QString("SELECT ID, docID, date, client, amount, discount, comments FROM documentdrafts WHERE `doctyp` LIKE '%1' AND `%2` = '%3' ORDER BY ID;").arg(indexitem->text(1)).arg(srow[cmbsearchrow->currentIndex()]).arg(txtsearch->text().section(" (", 1, 1).section(")", 0, 0));
 	
 		QString connstr2;
 		QSqlQuery query(connstr);

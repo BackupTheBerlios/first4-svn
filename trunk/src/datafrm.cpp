@@ -46,7 +46,7 @@ void datafrm::init()
 
     lbluser->setText(username);    	     
        
-    QString connstr = QString("SELECT * FROM datatabs WHERE users LIKE '%%1 [1%';").arg(username);
+    QString connstr = QString("SELECT * FROM datatables WHERE users LIKE '%%1 [1%';").arg(username);
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -347,7 +347,7 @@ void datafrm::loaddata()
 void datafrm::savetable()
 {
     int i;
-    QString colwidth = "UPDATE `datatabs` SET `cols`='";
+    QString colwidth = "UPDATE `datatables` SET `cols`='";
     QTableWidgetItem *item = new QTableWidgetItem;
     for(i=0;i<maintable->columnCount()-2;i++)
     {
@@ -912,7 +912,7 @@ void datafrm::impstock(QString filestr)
 	    impprev->cmbtabname->insertItem(tabnamelist[i], -1);
 	}
     }
-    QString connstr = "SELECT * FROM `datatabs` WHERE `tabart`= 'Lager';";
+    QString connstr = "SELECT * FROM `datatables` WHERE `tabart`= 'Lager';";
     QSqlQuery query(connstr);
     query.next();
     QStringList cols = QStringList::split("", query.value(4).toString());
@@ -1105,7 +1105,7 @@ void datafrm::impdata(QString filestr)
 QString datafrm::loadtemplatedata()
 {
 	QString answ;
-	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_stocklist';");
+	QSqlQuery query("SELECT data FROM templates WHERE `name`='sys_stocklist';");
 	if ( query.isActive())
 	{
 		query.next();

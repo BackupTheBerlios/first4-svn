@@ -65,7 +65,7 @@ void msgeditfrm::reject()
 {
 	QSqlDatabase::database().rollback();
 	vars v;
-	v.unlockrow("msgtab", lblID->text());
+	v.unlockrow("messages", lblID->text());
 	done(0);
 }
 //
@@ -73,7 +73,7 @@ void msgeditfrm::loadusers()
 {
     gen_users->clear();
 
-    QString qstr = "SELECT username, fullname FROM `userstab` ORDER BY fullname ASC;";
+    QString qstr = "SELECT username, fullname FROM `users` ORDER BY fullname ASC;";
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -96,17 +96,17 @@ void msgeditfrm::loadentry(QString dbID)
 
 	vars v;
 	QString qstr;
-	QString userlock = v.checklockstate("msgtab", dbID);
+	QString userlock = v.checklockstate("messages", dbID);
 	if(userlock != "")
 	{
 		this->setWindowTitle(this->windowTitle()+QString(" ( Locked by User: %1 )").arg(userlock));
 		btnaccept->setEnabled(FALSE);
-		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `msgtab` WHERE `ID` = '%1';").arg(dbID);
+		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `messages` WHERE `ID` = '%1';").arg(dbID);
 	}
 	else
 	{
-		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `msgtab` WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
-		v.lockrow("msgtab", dbID);
+		qstr = QString("SELECT ID, typ, user, date, msgtext, data1, data2, data3, data4, data5 FROM `messages` WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
+		v.lockrow("messages", dbID);
 	}
 
     QSqlQuery query(qstr);
@@ -173,7 +173,7 @@ void msgeditfrm::newentry()
     switch(cmbmsgtype->currentIndex())
     {
     	case 0:
-			qstr = QString("INSERT INTO `msgtab` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'per', '(%1)', '%2', '%3', '', '', '', '', '');").arg(username).arg(date->date().toString("yyyy-MM-dd")).arg(per_msg->toPlainText().replace("'", "\\'"));
+			qstr = QString("INSERT INTO `messages` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'per', '(%1)', '%2', '%3', '', '', '', '', '');").arg(username).arg(date->date().toString("yyyy-MM-dd")).arg(per_msg->toPlainText().replace("'", "\\'"));
 			break;
 	    case 1:
 			for(i=0;i<gen_users->topLevelItemCount();i++)
@@ -182,7 +182,7 @@ void msgeditfrm::newentry()
 				if(item->checkState(0) == Qt::Checked)
 					usersstr += ", " + item->text(2);
 			}
-			qstr = QString("INSERT INTO `msgtab` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'gen', '%1', '%2', '%3', '', '', '', '', '');").arg("("+username+")"+usersstr).arg(date->date().toString("yyyy-MM-dd")).arg(gen_msg->toPlainText().replace("'", "\'"));
+			qstr = QString("INSERT INTO `messages` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'gen', '%1', '%2', '%3', '', '', '', '', '');").arg("("+username+")"+usersstr).arg(date->date().toString("yyyy-MM-dd")).arg(gen_msg->toPlainText().replace("'", "\'"));
 			break;
     	case 2:
     		{
@@ -190,14 +190,14 @@ void msgeditfrm::newentry()
     			QString supplier = "";
 	    		if(sup_item != 0)
     				supplier = sup_item->text(0);
-				qstr = QString("INSERT INTO `msgtab` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'sto', '', '%1', '%7', '%2', '%3', '%4', '%5', '%6');").arg(date->date().toString("yyyy-MM-dd")).arg(sto_def->text()).arg(sto_description->toPlainText().replace("'", "\'")).arg(sto_onstock->text()).arg(sto_min->text()).arg(supplier).arg(sto_pprice->text()+"/"+sto_sprice->text());
+				qstr = QString("INSERT INTO `messages` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'sto', '', '%1', '%7', '%2', '%3', '%4', '%5', '%6');").arg(date->date().toString("yyyy-MM-dd")).arg(sto_def->text()).arg(sto_description->toPlainText().replace("'", "\'")).arg(sto_onstock->text()).arg(sto_min->text()).arg(supplier).arg(sto_pprice->text()+"/"+sto_sprice->text());
 				break;
 			}
 	    case 3:
-			qstr = QString("INSERT INTO `msgtab` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'ord', '', '%1', '', '%2', '%3', '%4', '%5', '');").arg(date->date().toString("yyyy-MM-dd")).arg(ord_customer->toPlainText()+" ("+ord_lbladdrid->text()+")").arg(ord_ordernr->text()).arg(ord_date1->date().toString("yyyy-MM-dd")).arg(ord_date2->date().toString("yyyy-MM-dd"));
+			qstr = QString("INSERT INTO `messages` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'ord', '', '%1', '', '%2', '%3', '%4', '%5', '');").arg(date->date().toString("yyyy-MM-dd")).arg(ord_customer->toPlainText()+" ("+ord_lbladdrid->text()+")").arg(ord_ordernr->text()).arg(ord_date1->date().toString("yyyy-MM-dd")).arg(ord_date2->date().toString("yyyy-MM-dd"));
 			break;
     	case 4:
-			qstr = QString("INSERT INTO `msgtab` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'iem', '', '%1', '', '%2', '%3', '%4', '%5', '');").arg(date->date().toString("yyyy-MM-dd")).arg(iem_customer->toPlainText()+" ("+iem_lbladdrid->text()+")").arg(iem_ordernr->text()).arg(iem_date1->date().toString("yyyy-MM-dd")).arg(iem_amount->text() + " " + iem_currency->currentText());
+			qstr = QString("INSERT INTO `messages` (`ID`, `typ`, `user`, `date`, `msgtext`, `data1`, `data2`, `data3`, `data4`, `data5`) VALUES (NULL, 'iem', '', '%1', '', '%2', '%3', '%4', '%5', '');").arg(date->date().toString("yyyy-MM-dd")).arg(iem_customer->toPlainText()+" ("+iem_lbladdrid->text()+")").arg(iem_ordernr->text()).arg(iem_date1->date().toString("yyyy-MM-dd")).arg(iem_amount->text() + " " + iem_currency->currentText());
 			break;
     }
     QSqlQuery query(qstr);
@@ -216,7 +216,7 @@ void msgeditfrm::updateentry(QString dbID)
     switch(cmbmsgtype->currentIndex())
     {
     	case 0:
-			qstr = QString("UPDATE `msgtab` SET `date`='%2', `msgtext`= '%3' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(per_msg->toPlainText());
+			qstr = QString("UPDATE `messages` SET `date`='%2', `msgtext`= '%3' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(per_msg->toPlainText());
 			break;
 	    case 1:
 			for(i=0;i<gen_users->topLevelItemCount();i++)
@@ -225,7 +225,7 @@ void msgeditfrm::updateentry(QString dbID)
 				if(item->checkState(0) == Qt::Checked)
 					usersstr += ", " + item->text(2);
 			}
-			qstr = QString("UPDATE `msgtab` SET `date`='%2', `msgtext`= '%3', `user` = '%4' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(gen_msg->toPlainText()).arg("("+username+")"+usersstr);
+			qstr = QString("UPDATE `messages` SET `date`='%2', `msgtext`= '%3', `user` = '%4' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(gen_msg->toPlainText()).arg("("+username+")"+usersstr);
 			break;
     	case 2:
     	{
@@ -233,20 +233,20 @@ void msgeditfrm::updateentry(QString dbID)
    			QString supplier = "";
     		if(sup_item != 0)
    				supplier = sup_item->text(0);
-			qstr = QString("UPDATE `msgtab` SET `date`='%2', `msgtext`= '%3', `data1` = '%4', `data2` = '%5', `data3` = '%6', `data4` = '%8', `data5` = '%9' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(sto_pprice->text()+"/"+sto_sprice->text()).arg(sto_def->text()).arg(sto_description->toPlainText()).arg(sto_onstock->text()).arg(sto_min->text()).arg(supplier);
+			qstr = QString("UPDATE `messages` SET `date`='%2', `msgtext`= '%3', `data1` = '%4', `data2` = '%5', `data3` = '%6', `data4` = '%8', `data5` = '%9' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(sto_pprice->text()+"/"+sto_sprice->text()).arg(sto_def->text()).arg(sto_description->toPlainText()).arg(sto_onstock->text()).arg(sto_min->text()).arg(supplier);
 			break;
 		}
 	    case 3:
-			qstr = QString("UPDATE `msgtab` SET `date`='%2', `data1` = '%3', `data2` = '%4', `data3` = '%5', `data4` = '%6' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(ord_customer->toPlainText()+" ("+ord_lbladdrid->text()+")").arg(ord_ordernr->text()).arg(ord_date1->date().toString("yyyy-MM-dd")).arg(ord_date2->date().toString("yyyy-MM-dd"));
+			qstr = QString("UPDATE `messages` SET `date`='%2', `data1` = '%3', `data2` = '%4', `data3` = '%5', `data4` = '%6' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(ord_customer->toPlainText()+" ("+ord_lbladdrid->text()+")").arg(ord_ordernr->text()).arg(ord_date1->date().toString("yyyy-MM-dd")).arg(ord_date2->date().toString("yyyy-MM-dd"));
 			break;
     	case 4:
-			qstr = QString("UPDATE `msgtab` SET `date`='%2', `data1` = '%3', `data2` = '%4', `data3` = '%5', `data4` = '%6' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(iem_customer->toPlainText()+" ("+iem_lbladdrid->text()+")").arg(iem_ordernr->text()).arg(iem_date1->date().toString("yyyy-MM-dd")).arg(iem_amount->text()+" "+iem_currency->currentText());
+			qstr = QString("UPDATE `messages` SET `date`='%2', `data1` = '%3', `data2` = '%4', `data3` = '%5', `data4` = '%6' WHERE `ID`=%1;").arg(dbID).arg(date->date().toString("yyyy-MM-dd")).arg(iem_customer->toPlainText()+" ("+iem_lbladdrid->text()+")").arg(iem_ordernr->text()).arg(iem_date1->date().toString("yyyy-MM-dd")).arg(iem_amount->text()+" "+iem_currency->currentText());
 			break;
     }
     QSqlQuery query(qstr);
     QSqlDatabase::database().commit();
     vars v;
-	v.unlockrow("msgtab", dbID);
+	v.unlockrow("messages", dbID);
     this->accept();
 }
 //
@@ -257,7 +257,7 @@ void msgeditfrm::checkstock()
 		initvat();
 		sto_supplier->clear();
 		stockselfrm *sfrm = new stockselfrm;
-	    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
+	    QSqlQuery query("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
 	    if(query.isActive())
 	    {
 			while(query.next())
@@ -377,7 +377,7 @@ void msgeditfrm::initvat()
 {
     msgvatlist.clear();
     QStringList tmplist;
-    QString connstr = "SELECT col1 FROM vattab ORDER BY ID;";
+    QString connstr = "SELECT col1 FROM vattable ORDER BY ID;";
     QSqlQuery query(connstr);
     if(query.isActive())
     {

@@ -1,4 +1,4 @@
- #include <QSqlQuery>
+#include <QSqlQuery>
 #include <QMessageBox>
 #include <QMenu>
 //
@@ -84,7 +84,7 @@ void procedureeditfrm::init()
     
     //auftragsid aus ablcfgtab laden
     
-    QString qstr = "SELECT auftrid FROM procedurecfgtab;";
+    QString qstr = "SELECT auftrid FROM procedurecfg;";
     QSqlQuery query(qstr);
     query.next();
     txtorderid->setText(query.value(0).toString());   
@@ -109,18 +109,18 @@ void procedureeditfrm::loadentry(QString dbID)
 {
 	vars v;
 	QString qstr;
-	QString userlock = v.checklockstate("proceduretab", dbID);
+	QString userlock = v.checklockstate("procedures", dbID);
 	if(userlock != "")
 	{
 		this->setWindowTitle(tr("Edit order...")+QString(" ( Locked by User: %1 )").arg(userlock));
 		btnaccept->setEnabled(FALSE);
-		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1';").arg(dbID);
+		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedures WHERE `ID` = '%1';").arg(dbID);
 	}
 	else
 	{
 		this->setWindowTitle( tr("Edit order..."));
-		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM proceduretab WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
-		v.lockrow("proceduretab", dbID);
+		qstr = QString("SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedures WHERE `ID` = '%1' FOR UPDATE;").arg(dbID);
+		v.lockrow("procedures", dbID);
 	}
 	
     QSqlQuery query(qstr);
@@ -235,7 +235,7 @@ void procedureeditfrm::loadentry(QString dbID)
 //
 void procedureeditfrm::loadarchiveentry(QString dbID)
 {
-    QString qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchiv WHERE `ID` = '"+dbID+"';";
+    QString qstr = "SELECT ID, status, completed, client, description, date, orderid, priority, contactperson, resp_person, complete_until FROM procedurearchive WHERE `ID` = '"+dbID+"';";
 	
     QSqlQuery query(qstr);
     if( query.isActive())
@@ -359,7 +359,7 @@ void procedureeditfrm::searchaddress()
 void procedureeditfrm::initvat()
 {
     ordervatlist.clear();
-    QString connstr = "SELECT col1 FROM vattab ORDER BY ID;";
+    QString connstr = "SELECT col1 FROM vattable ORDER BY ID;";
     QSqlQuery query(connstr);
     if ( query.isActive())
     {
@@ -484,7 +484,7 @@ void procedureeditfrm::checkdb()
 	if(taborders->currentColumn()==2 && testitem1 != 0 && testitem1->text()!="" && testitem2->text().simplified()=="")
     {
 		stockselfrm *sfrm = new stockselfrm;
-	    QSqlQuery query("SELECT name, description FROM datatabs WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
+	    QSqlQuery query("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
 	    if(query.isActive())
 	    {
 			while(query.next())
@@ -596,7 +596,7 @@ void procedureeditfrm::checkdb()
 void procedureeditfrm::newentry()
 {
 	QSqlDatabase::database().transaction();
-	QString qstr = "UPDATE `procedurecfgtab` SET `auftrid`='"+QString("%1").arg((txtorderid->text().toInt()+1), 0, 10)+"';"; 
+	QString qstr = "UPDATE `procedurecfg` SET `auftrid`='"+QString("%1").arg((txtorderid->text().toInt()+1), 0, 10)+"';"; 
 	QSqlQuery query_id(qstr);
 	
 	//datenbank aktualisieren
@@ -607,9 +607,9 @@ void procedureeditfrm::newentry()
 
 	if(chkcompleted->isChecked())
 	    completed = "1";
-	qstr = "INSERT INTO `proceduretab` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"', '"+completed+"', '"+cmbpriority->currentText()+"', '"+dateedit1->date().toString("yyyy-MM-dd")+"', '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")', '"+txtcontact->text()+"', '"+txtorderid->text()+"', '"+txtcomments->toPlainText()+"', '"+txtresponsible->text()+"', '"+dateedit2->date().toString("yyyy-MM-dd")+"');" ;
+	qstr = "INSERT INTO `procedures` (`ID`, `status`, `completed`, `priority`, `date`, `client`, `contactperson`, `orderid`, `description`, `resp_person`, `complete_until`) VALUES (NULL, '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"', '"+completed+"', '"+cmbpriority->currentText()+"', '"+dateedit1->date().toString("yyyy-MM-dd")+"', '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")', '"+txtcontact->text()+"', '"+txtorderid->text()+"', '"+txtcomments->toPlainText()+"', '"+txtresponsible->text()+"', '"+dateedit2->date().toString("yyyy-MM-dd")+"');" ;
 	QSqlQuery query(qstr);
-	qstr = "SELECT ID FROM proceduretab WHERE `status` = '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"' AND `completed` = '"+completed+"' AND `priority` = '"+cmbpriority->currentText()+"' AND `date` = '"+dateedit1->date().toString("yyyy-MM-dd")+"' AND `client` = '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")' AND `contactperson` = '"+txtcontact->text()+"' AND `orderid` = '"+txtorderid->text()+"' AND `description` = '"+txtcomments->toPlainText()+"' AND `resp_person` = '"+txtresponsible->text()+"' AND `complete_until` = '"+dateedit2->date().toString("yyyy-MM-dd")+"';";
+	qstr = "SELECT ID FROM procedures WHERE `status` = '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"' AND `completed` = '"+completed+"' AND `priority` = '"+cmbpriority->currentText()+"' AND `date` = '"+dateedit1->date().toString("yyyy-MM-dd")+"' AND `client` = '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")' AND `contactperson` = '"+txtcontact->text()+"' AND `orderid` = '"+txtorderid->text()+"' AND `description` = '"+txtcomments->toPlainText()+"' AND `resp_person` = '"+txtresponsible->text()+"' AND `complete_until` = '"+dateedit2->date().toString("yyyy-MM-dd")+"';";
 	QSqlQuery query2(qstr);
 	query2.next();
 	
@@ -767,12 +767,12 @@ void procedureeditfrm::updateentry()
 	QString completed = "0";
 	if(chkcompleted->isChecked())
 		completed = "1";
-	QString connstr = "UPDATE `proceduretab` SET `status` = '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"', `completed` = '"+completed+"', `client` = '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")', `description` = '"+txtcomments->toPlainText()+"', `date` = '"+dateedit1->date().toString("yyyy-MM-dd")+"', `orderid` = '"+txtorderid->text()+"', `priority` = '"+cmbpriority->currentText()+"', `contactperson` = '"+txtcontact->text()+"', `resp_person` = '"+txtresponsible->text()+"',  `complete_until` = '"+dateedit2->date().toString("yyyy-MM-dd")+"' WHERE `ID` = '"+lbldbID->text()+"' LIMIT 1;";
+	QString connstr = "UPDATE `procedures` SET `status` = '"+QString("%1").arg(cmbstate->currentIndex(), 0, 10)+"', `completed` = '"+completed+"', `client` = '"+txtcustomer->toPlainText()+" ("+lblcustomerid->text()+")', `description` = '"+txtcomments->toPlainText()+"', `date` = '"+dateedit1->date().toString("yyyy-MM-dd")+"', `orderid` = '"+txtorderid->text()+"', `priority` = '"+cmbpriority->currentText()+"', `contactperson` = '"+txtcontact->text()+"', `resp_person` = '"+txtresponsible->text()+"',  `complete_until` = '"+dateedit2->date().toString("yyyy-MM-dd")+"' WHERE `ID` = '"+lbldbID->text()+"' LIMIT 1;";
 	QSqlQuery query(connstr);		
 		
 	QSqlDatabase::database().commit();
 	vars v;
-	v.unlockrow("proceduretab", lbldbID->text());
+	v.unlockrow("procedures", lbldbID->text());
 	accept();
 }
 //
@@ -908,6 +908,6 @@ void procedureeditfrm::reject()
 {
 	QSqlDatabase::database().rollback();
 	vars v;
-	v.unlockrow("proceduretab", lbldbID->text());
+	v.unlockrow("procedures", lbldbID->text());
 	done(0);
 }

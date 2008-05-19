@@ -71,7 +71,7 @@ void addrfrm::init()
 		}
     }
     
-    QSqlQuery query2("SELECT value FROM `maincfgtab` WHERE `var` = 'def_currency';");
+    QSqlQuery query2("SELECT value FROM `maincfg` WHERE `var` = 'def_currency';");
     if(query2.isActive())
     {
 		query2.next();
@@ -386,7 +386,7 @@ void addrfrm::loaddocs(QString dbID)
     QTreeWidgetItem *itemre = new QTreeWidgetItem(listdocs);
     itemre->setText(0, tr("Invoices"));
 
-    QString connstr = QString("SELECT ID, doctyp, date, client, comments, amount, docID FROM docs WHERE client = '%1_%2';").arg(adrnamelist[cmbdir->currentIndex()].mid(3)).arg(dbID);
+    QString connstr = QString("SELECT ID, doctyp, date, client, comments, amount, docID FROM documents WHERE client = '%1_%2';").arg(adrnamelist[cmbdir->currentIndex()].mid(3)).arg(dbID);
     QSqlQuery query(connstr);
     if(query.isActive())
     {
@@ -415,7 +415,7 @@ void addrfrm::loaddocs(QString dbID)
 		    {
 				QString status = "";
 				//Prfe ob Rechnung bezahlt
-				QString connstr2 = "SELECT status, date FROM ietabarchiv WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
+				QString connstr2 = "SELECT status, date FROM incexparchive WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
 				QSqlQuery query2(connstr2);
 				query2.next();
 				if(query2.size()>0)
@@ -423,7 +423,7 @@ void addrfrm::loaddocs(QString dbID)
 				else
 				{
 				    //Prfe ob Rechnung Pendent
-				    QString connstr3 = "SELECT status, date FROM ietab WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
+				    QString connstr3 = "SELECT status, date FROM incexp WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
 				    QSqlQuery query3(connstr3);
 				    query3.next();
 				    if(query2.size()>0)
@@ -455,7 +455,7 @@ void addrfrm::loaddocsdata()
 		    statusitem->setText(0, tr("Status: %1").arg(itemdoc->text(3)));
 		}
 	
-		QString qstr = QString("SELECT description FROM docpositions WHERE `docid`='%1';").arg(itemdoc->text(1));
+		QString qstr = QString("SELECT description FROM documentpositions WHERE `docid`='%1';").arg(itemdoc->text(1));
 		QSqlQuery docpos(qstr);
 		while(docpos.next())
 		{
@@ -473,7 +473,7 @@ void addrfrm::loadauftr(QString dbID)
     QTreeWidgetItem *tmpitem = mainlistview->currentItem();   
     while(tmpitem->childCount()>0)
 		tmpitem->takeChild(0);
-    QString connstr = "SELECT status, description, date, ID FROM proceduretab WHERE client LIKE '%";
+    QString connstr = "SELECT status, description, date, ID FROM procedures WHERE client LIKE '%";
     connstr += "("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")";
     connstr += "%';";
     QSqlQuery query(connstr);
@@ -838,7 +838,7 @@ void addrfrm::opendoc()
     {
 		doceditfrm *doc = new doceditfrm;
 		doc->init();
-		doc->opendocfromid("docs", item->text(1));
+		doc->opendocfromid("documents", item->text(1));
 		doc->btnnew->setEnabled(FALSE);
 		doc->btnsave->setEnabled(FALSE);
 		doc->btnprint->setEnabled(TRUE);
@@ -853,13 +853,13 @@ void addrfrm::deletedoc()
     QTreeWidgetItem *itemdoc = listdocs->currentItem();
     if(itemdoc->text(1)!="")
     {
-		QString connstr = "SELECT ID, docart, docID FROM docs WHERE ID = '"+itemdoc->text(1)+"';";
+		QString connstr = "SELECT ID, docart, docID FROM documents WHERE ID = '"+itemdoc->text(1)+"';";
 		QSqlQuery query(connstr);
 		query.next();
 		int r = QMessageBox::information(this, tr("Delete Document..."), tr("Delete %1 %2?").arg(query.value(1).toString()).arg(query.value(2).toString()),QMessageBox::Yes, QMessageBox::No);
 		if(r == QMessageBox::Yes)
 		{
-		    connstr = "DELETE FROM docs WHERE `ID` = '"+itemdoc->text(1)+"';";
+		    connstr = "DELETE FROM documents WHERE `ID` = '"+itemdoc->text(1)+"';";
 		    QSqlQuery query2(connstr);
 		    QString filename=docfolder+"/"+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+adr1->text()+"/"+query.value(1).toString().toLower().mid(0,2)+query.value(2).toString()+".kud";
 		    QFile delfile(filename);
@@ -990,7 +990,7 @@ void addrfrm::impexp()
 QString addrfrm::loadtemplatedata()
 {
 	QString answ;
-	QSqlQuery query("SELECT data FROM templatestab WHERE `name`='sys_address';");
+	QSqlQuery query("SELECT data FROM templates WHERE `name`='sys_address';");
 	if ( query.isActive())
 	{
 		query.next();

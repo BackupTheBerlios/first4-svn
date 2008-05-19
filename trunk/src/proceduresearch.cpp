@@ -45,7 +45,7 @@ void proceduresearch::searchentry()
     searchrow << "orderid" << "client" << "description" << "tasks" << "orders";
 	status << tr("Incomming orders") << tr("Offers") << tr("Open orders") << tr("Completed orders") << tr("Deliverynotes") << tr("Invoices") << tr("Archive");
 
-	QString qstr1 = QString("SELECT ID, status, completed, client, description, date FROM proceduretab WHERE `%1` LIKE '%%2%' ORDER BY status;").arg(searchrow[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
+	QString qstr1 = QString("SELECT ID, status, completed, client, description, date FROM procedures WHERE `%1` LIKE '%%2%' ORDER BY status;").arg(searchrow[cmbsearchrow->currentIndex()]).arg(txtsearch->text());
 	QSqlQuery query(qstr1);
 	if(query.isActive())
 	{
