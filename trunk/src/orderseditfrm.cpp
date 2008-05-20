@@ -91,7 +91,8 @@ void orderseditfrm::updentry()
 //
 void orderseditfrm::changeprice()
 {
-    txtprice->setText(supprice[cmbsupplier->currentIndex()]);
+	if(cmbsupplier->currentIndex() >= 0)
+		txtprice->setText(supprice[cmbsupplier->currentIndex()]);
 }
 //
 void orderseditfrm::clearstock()
@@ -111,9 +112,9 @@ void orderseditfrm::checkstock()
 		while(query.next())
 		{
 			QString qstr = QString("SELECT ID, col1, col2, col3, col5, col8, col9, col6 FROM %1 WHERE col1 LIKE '%%2%' AND `col13`='1' ORDER BY col1 ASC;").arg(query.value(0).toString()).arg(txtlabel->text());
-		    QSqlQuery query2(qstr);
-		    if(query2.isActive())
-		    {	
+			QSqlQuery query2(qstr);
+			if(query2.isActive())
+			{
 				while(query2.next())
 				{
 				    QTreeWidgetItem *item = new QTreeWidgetItem(sfrm->treemain);
@@ -133,10 +134,10 @@ void orderseditfrm::checkstock()
     
     if(sfrm->treemain->topLevelItemCount()>1)
     {	
-		sfrm->treemain->setColumnWidth(0, 0);
-		sfrm->treemain->setColumnWidth(6, 0);
-		sfrm->treemain->setColumnWidth(7, 0);
-		sfrm->treemain->setColumnWidth(8, 0);
+		sfrm->treemain->hideColumn(0);
+		sfrm->treemain->hideColumn(6);
+		sfrm->treemain->hideColumn(7);
+		sfrm->treemain->hideColumn(8);
 		
 		if(sfrm->exec())
 		{
@@ -151,32 +152,38 @@ void orderseditfrm::checkstock()
 				int i;
 				for (i=0; i < suplist.count()-1; i++)
 				{
-				    QStringList tmplist = suplist[i].split(":#:");
-				    cmbsupplier->addItem(tmplist[0].replace(";",""));
-				    supprice << tmplist[2];
+					QStringList tmplist = suplist[i].split(":#:");
+					cmbsupplier->addItem(tmplist[0].replace(";",""));
+					supprice << tmplist[2];
 				}
-		    }
+			}
 		}
-    }
-    else
-    {
+	}
+	else
+	{
 		QTreeWidgetItem *item = sfrm->treemain->topLevelItem(0);
 		if(item!=0)
 		{
 			txtlabel->setText(item->text(1));
 			txtdescription->setText(item->text(2));
-			txtquantity->setText(item->text(7));
+			if(item->text(7) != "")
+				txtquantity->setText(item->text(7));
 			supprice.clear();
-			QStringList suplist = item->text(6).split(":##:");
-			int i;
-			for (i=0; i < suplist.count(); i++)
+
+			if(item->text(6) != "")
 			{
-			    QStringList tmplist = suplist[i].split(":#:");
-			    cmbsupplier->addItem(tmplist[0]);
-			    supprice << tmplist[2];
+				cmbsupplier->clear();
+				QStringList suplist = item->text(6).split(":##:");
+				int i;
+				for (i=0; i < suplist.count(); i++)
+				{
+					QStringList tmplist = suplist[i].split(":#:");
+					cmbsupplier->addItem(tmplist[0]);
+					supprice << tmplist[2];
+				}
+				cmbsupplier->removeItem(cmbsupplier->count()-1);
 			}
-			cmbsupplier->removeItem(cmbsupplier->count()-1);
 		}
-    }
-    changeprice();
+	}
+	changeprice();
 }

@@ -25,7 +25,7 @@ void dataeditfrm::init()
     txtsellprice->setText("0.00");
     
     //tabsuppliers->setColumnHidden(1, TRUE);
-    tabsuppliers->setRowCount(tabsuppliers->rowCount()+1);
+    //tabsuppliers->setRowCount(tabsuppliers->rowCount()+1);
     
     connect(tabsuppliers, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
     connect(tabsuppliers, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(acceptsp()));
@@ -265,11 +265,25 @@ void dataeditfrm::contmenu()
 void dataeditfrm::addrow()
 {
     tabsuppliers->setRowCount(tabsuppliers->rowCount()+1);
-/*    tabsuppliers->item(tabsuppliers->rowCount()-1, 0)->setText(" ");
-    tabsuppliers->item(tabsuppliers->rowCount()-1, 1)->setText(" ");
-    tabsuppliers->item(tabsuppliers->rowCount()-1, 2)->setText("0.00");
-    tabsuppliers->item(tabsuppliers->rowCount()-1, 3)->setText("-");
-    tabsuppliers->item(tabsuppliers->rowCount()-1, 4)->setText("-");*/
+    QTableWidgetItem *item = new QTableWidgetItem;
+    item->setText(" ");
+    tabsuppliers->setItem(tabsuppliers->rowCount()-1, 0, item);
+    
+    item = new QTableWidgetItem;
+    item->setText(" ");
+    tabsuppliers->setItem(tabsuppliers->rowCount()-1, 1, item);
+    
+    item = new QTableWidgetItem;
+    item->setText("0.00");
+    tabsuppliers->setItem(tabsuppliers->rowCount()-1, 2, item);
+    
+    item = new QTableWidgetItem;
+    item->setText("-");
+    tabsuppliers->setItem(tabsuppliers->rowCount()-1, 3, item);
+    
+    item = new QTableWidgetItem;
+    item->setText("-");
+    tabsuppliers->setItem(tabsuppliers->rowCount()-1, 4, item);
 }
 //
 void dataeditfrm::removerow()
@@ -279,9 +293,10 @@ void dataeditfrm::removerow()
 //
 void dataeditfrm::acceptsp()
 {
-	if(tabsuppliers->item(tabsuppliers->currentRow(), 2)->text() != "")
+	QTableWidgetItem *item = tabsuppliers->item(tabsuppliers->currentRow(), 2);
+	if(item != 0)
 	{
-		txtpurchaseprice->setText(tabsuppliers->item(tabsuppliers->currentRow(), 2)->text());
+		txtpurchaseprice->setText(item->text());
 		calc_gw();
 	}
 }
