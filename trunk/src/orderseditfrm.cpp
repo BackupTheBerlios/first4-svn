@@ -139,6 +139,7 @@ void orderseditfrm::checkstock()
 		sfrm->treemain->hideColumn(7);
 		sfrm->treemain->hideColumn(8);
 		
+		sfrm->init();
 		if(sfrm->exec())
 		{
 		    QTreeWidgetItem *item = sfrm->treemain->currentItem();
@@ -146,15 +147,22 @@ void orderseditfrm::checkstock()
 		    {
 				txtlabel->setText(item->text(1));
 				txtdescription->setText(item->text(2));
-				txtquantity->setText(item->text(7));
+				if(item->text(7) != "")
+					txtquantity->setText(item->text(7));
 				supprice.clear();
-				QStringList suplist = item->text(6).split(":##:");
-				int i;
-				for (i=0; i < suplist.count()-1; i++)
+	
+				if(item->text(6) != "")
 				{
-					QStringList tmplist = suplist[i].split(":#:");
-					cmbsupplier->addItem(tmplist[0].replace(";",""));
-					supprice << tmplist[2];
+					cmbsupplier->clear();
+					QStringList suplist = item->text(6).split(":##:");
+					int i;
+					for (i=0; i < suplist.count()-1; i++)
+					{
+						QStringList tmplist = suplist[i].split(":#:");
+						cmbsupplier->addItem(tmplist[0]);
+						supprice << tmplist[2];
+					}
+					//cmbsupplier->removeItem(cmbsupplier->count()-1);
 				}
 			}
 		}
@@ -175,13 +183,13 @@ void orderseditfrm::checkstock()
 				cmbsupplier->clear();
 				QStringList suplist = item->text(6).split(":##:");
 				int i;
-				for (i=0; i < suplist.count(); i++)
+				for (i=0; i < suplist.count()-1; i++)
 				{
 					QStringList tmplist = suplist[i].split(":#:");
 					cmbsupplier->addItem(tmplist[0]);
 					supprice << tmplist[2];
 				}
-				cmbsupplier->removeItem(cmbsupplier->count()-1);
+				//cmbsupplier->removeItem(cmbsupplier->count()-1);
 			}
 		}
 	}

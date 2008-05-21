@@ -602,22 +602,22 @@ void doceditfrm::loadmaincfg()
 //
 void doceditfrm::selectaddress()
 {
-    addrselectfrm *safrm = new addrselectfrm;
-    safrm->init();
-    if(safrm->exec())
-    {
-       QString answer = safrm->getaddress();
-       boxdiscount->setText(safrm->getrabatt());
-       QStringList fields = answer.split(":#:");
-       boxaddress->setText(fields[0].replace("<BR>", "\n"));
-       lblID->setText(fields[1]);
-    }
+	addrselectfrm *safrm = new addrselectfrm;
+	safrm->init();
+	if(safrm->exec())
+	{
+		QString answer = safrm->getaddress();
+		boxdiscount->setText(safrm->getrabatt());
+		QStringList fields = answer.split(":#:");
+		boxaddress->setText(fields[0].replace("<BR>", "\n"));
+		lblID->setText(fields[1]);
+	}
 }
 //
 void doceditfrm::completedoc()
 {
 	if(tabmain->rowCount()>1)
-    {
+	{
 		if(lblID->text()!="")
 		{ 
 		    doccompletefrm *complfrm = new doccompletefrm;

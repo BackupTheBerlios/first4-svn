@@ -1,4 +1,4 @@
-#include <QSqlQuery>
+ #include <QSqlQuery>
 //
 #include "addrselectfrm.h"
 //
@@ -34,6 +34,9 @@ void addrselectfrm::init()
 	
 	connect(btnsearch, SIGNAL(released()), this, SLOT(searchaddress()));
 	connect(btncancelsearch, SIGNAL(released()), this, SLOT(clearsearch()));
+	connect(btnaccept, SIGNAL(released()), this, SLOT(accept()));
+	connect(btncancel, SIGNAL(released()), this, SLOT(reject()));
+	connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(accept()));
 	
 	if(txtsearch->text() != "")
 		searchaddress();
@@ -51,7 +54,7 @@ QString addrselectfrm::getaddress()
 QString addrselectfrm::getrabatt()
 {
 	QTreeWidgetItem *item = treemain->currentItem();
-		if(item)
+	if(item)
 		return item->text(4);
 	else
 		return "0";

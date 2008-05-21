@@ -24,11 +24,11 @@ void dataeditfrm::init()
     txtpurchaseprice->setText("0.00");
     txtsellprice->setText("0.00");
     
-    //tabsuppliers->setColumnHidden(1, TRUE);
+    tabsuppliers->setColumnHidden(1, TRUE);
     //tabsuppliers->setRowCount(tabsuppliers->rowCount()+1);
     
-    connect(tabsuppliers, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-    connect(tabsuppliers, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(acceptsp()));
+	connect(tabsuppliers, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
+	//connect(tabsuppliers, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(acceptsp()));
 	connect(btnok, SIGNAL(released()), this, SLOT(acceptdata()));
 	connect(txtpurchaseprice, SIGNAL(editingFinished()), this, SLOT(calc_gw()));
 	connect(txtsellprice, SIGNAL(editingFinished()), this, SLOT(calc_gw()));
@@ -220,27 +220,27 @@ void dataeditfrm::calc_gw()
 //
 void dataeditfrm::seladdress()
 {
-    QString tmpstr = "";
-    addrselectfrm *saddrfrm = new addrselectfrm;
-	if(tabsuppliers->item(tabsuppliers->currentRow(), 0)->text() != "")
-	    saddrfrm->txtsearch->setText(tabsuppliers->item(tabsuppliers->currentRow(), 0)->text().section(";", 0, 0));
-    saddrfrm->init();
-    if(saddrfrm->exec())
-    {
-       QString answer = saddrfrm->getaddress();
-       QStringList fields = answer.split(":#:");
-       
-       if(tabsuppliers->currentRow() != -1)
-       {
-       		QTableWidgetItem *item_1 = new QTableWidgetItem;
-       		item_1->setText(fields[0]);
-       		tabsuppliers->setItem(tabsuppliers->currentRow(), 0, item_1);
-       		
-       		QTableWidgetItem *item_2 = new QTableWidgetItem;
-       		item_2->setText(fields[1]);
-       		tabsuppliers->setItem(tabsuppliers->currentRow(), 1, item_2);
-       }
-    }
+	QString tmpstr = "";
+	addrselectfrm *saddrfrm = new addrselectfrm;
+	QTableWidgetItem * item = tabsuppliers->item(tabsuppliers->currentRow(), 0);
+	if(item->text() != "")
+		saddrfrm->txtsearch->setText(item->text().section(";", 0, 0));
+	saddrfrm->init();
+	if(saddrfrm->exec())
+	{
+		QString answer = saddrfrm->getaddress().replace("<BR>",";");
+		QStringList fields = answer.split(":#:");
+
+		QTableWidgetItem *item_1 = new QTableWidgetItem;
+		item_1->setText(fields[0]);
+		tabsuppliers->setItem(tabsuppliers->currentRow(), 0, item_1);
+
+		QTableWidgetItem *item_2 = new QTableWidgetItem;
+		item_2->setText(fields[1]);
+		tabsuppliers->setItem(tabsuppliers->currentRow(), 1, item_2);
+	}
+	delete saddrfrm;
+//	QMessageBox::information ( 0, tr ( "Error during update..." ), "test" );
 }
 //
 void dataeditfrm::contmenu()
@@ -248,16 +248,21 @@ void dataeditfrm::contmenu()
     QMenu* contextMenu = new QMenu( this );
     Q_CHECK_PTR( contextMenu );
 
-    QAction* checkaddr = new QAction( tr("&Check Address"), this );
-	connect(checkaddr , SIGNAL(triggered()), this, SLOT(seladdress()));
-	contextMenu->addAction(checkaddr);
-    QAction* add_row = new QAction( tr("&Add Supplier"), this );
+    QAction* add_row = new QAction( tr("&Add supplier"), this );
 	connect(add_row , SIGNAL(triggered()), this, SLOT(addrow()));
 	contextMenu->addAction(add_row);
-    QAction* del_row = new QAction( tr("&Delete Supplier"), this );
+    QAction* del_row = new QAction( tr("&Delete supplier"), this );
 	connect(del_row , SIGNAL(triggered()), this, SLOT(removerow()));
 	contextMenu->addAction(del_row);
-		
+	contextMenu->addSeparator();
+    QAction* checkaddr = new QAction( tr("&Check address"), this );
+	connect(checkaddr , SIGNAL(triggered()), this, SLOT(seladdress()));
+	contextMenu->addAction(checkaddr);
+	contextMenu->addSeparator();
+	QAction* sel_sup = new QAction( tr("&Select this supplier"), this );
+	connect(sel_sup , SIGNAL(triggered()), this, SLOT(acceptsp()));
+	contextMenu->addAction(sel_sup);
+
     contextMenu->exec( QCursor::pos() );
     delete contextMenu;
 }
