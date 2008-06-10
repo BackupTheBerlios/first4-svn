@@ -299,9 +299,9 @@ void accountsfrm::loaddetails()
 				}
 				if(item->text(8) == "banc") //deactivating add,edit and delete for banc accounts
 				{
-				    btnnew->setEnabled(FALSE);
-				    btnedit->setEnabled(FALSE);
-				    btndelete->setEnabled(FALSE);
+					btnnew->setEnabled(FALSE);
+					//btnedit->setEnabled(FALSE);
+					btndelete->setEnabled(FALSE);
 				}
 				
 				tot->setText("-");
@@ -599,10 +599,6 @@ QString accountsfrm::calctotal(int type)
 //
 void accountsfrm::contmenu()
 {
-	btnnew->setEnabled(FALSE);
-	btnedit->setEnabled(FALSE);
-	btndelete->setEnabled(FALSE);
-	
     QMenu* contextMenu = new QMenu( this );
     Q_CHECK_PTR( contextMenu );
 
@@ -667,6 +663,8 @@ void accountsfrm::editentry()
 	    editfrm->txtRefNr->setReadOnly(TRUE);
 	    editfrm->lbl_8->setVisible(FALSE);
 	    editfrm->cmbincexp->setVisible(FALSE);
+	    if(!btnnew->isEnabled())
+	    	editfrm->btnaccept->setEnabled(FALSE); //Deactivate Accept Button
 		if(editfrm->exec())
 		    loaddetails();
     }
@@ -1005,7 +1003,7 @@ void accountsfrm::mt940import()
 							t_comments = t_comments.replace(":86:", "").trimmed();
 							i--;
 						}
-						QString qinsstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '', '', '%3', '', '%4');").arg(accountid).arg(t_date).arg(t_comments).arg(t_amount);
+						QString qinsstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '', '', '%3', '', '%4');").arg(accountid).arg(t_date).arg(t_comments.replace("'", "\\'")).arg(t_amount);
 						QSqlQuery qinsert(qinsstr);
 						QSqlError qerror = qinsert.lastError();
 						if(qerror.isValid()) 
