@@ -57,17 +57,17 @@ int accountsfrm::init()
 	connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
 	
 	vars v;
-    QStringList sgeo = v.loadgeo(this->objectName());
-    if(sgeo.size() > 0	)
-    {
-	    if(sgeo[0] == "1")
+	QStringList sgeo = v.loadgeo(this->objectName());
+	if(sgeo.size() > 0	)
+	{
+		if(sgeo[0] == "1")
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
-	    this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
-    }
-    
-    inittreemainoverview();
-    
-    return 2;
+		this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
+	}
+
+	inittreemainoverview();
+
+	return 2;
 }
 //
 void accountsfrm::closeEvent( QCloseEvent* ce )
@@ -499,7 +499,7 @@ void accountsfrm::loadaccountdata(QString ID)
     }
 
     progbar->setValue(progbar->maximum());
-    treemain->sortItems(1, Qt::DescendingOrder);
+    //treemain->sortItems(1, Qt::DescendingOrder);
 }
 //
 void accountsfrm::loadincexpdata(QString type)
@@ -882,7 +882,7 @@ void accountsfrm::mt940import()
 		int i;
 		progfrm *pfrm = new progfrm;
 		pfrm->setFixedSize(pfrm->width(), pfrm->height());
-		pfrm->txtcomments->setText(tr("Data will be imported..."));
+		pfrm->txtcomments->setText(tr("Importing data..."));
 		pfrm->show();
 
 		QFile file(filestr);
@@ -900,7 +900,7 @@ void accountsfrm::mt940import()
 			QString accountnumber = "";
 			QString clearing = "";
 			QString startdc = "";
-			QString startamount = "";
+			float startamount = 0;
 			QString startdate = "";
 			QString startcurrency = "";
 
@@ -916,9 +916,22 @@ void accountsfrm::mt940import()
 					startdc = lines[i].section(":",2,2).mid(0, 1);
 					startdate = lines[i].section(":",2,2).mid(1, 6);
 					startcurrency = lines[i].section(":",2,2).mid(7, 3);
-					startamount = lines[i].section(":",2,2).mid(10, 15);
+					QString tmpstr = lines[i].section(":",2,2).mid(10, 15);
+					float cents = tmpstr.section(",", 1, 1).toInt();
+					startamount = tmpstr.section(",", 0, 0).toInt() + cents/100;
+					if(lines[i].section(":",2,2).mid(0, 1) == "D")
+						startamount = 0 -  startamount;
 				}
+				pfrm->progbar->setValue(i);
 			}
+			
+			//Calc actual amount
+			float actamount = 0.00;
+			QString qactamount = QString("SELECT amount FROM %1 ORDER BY ID;").arg(accountid);
+			QSqlQuery queryactamount(qactamount);
+			while(queryactamount.next())
+				actamount += queryactamount.value(0).toString().toFloat();
+			
 			bool check = TRUE;
 			QString errordescription;
 			if(clearing != lblclearing->text().rightJustified(8, '0')) //Check clearing
@@ -931,20 +944,65 @@ void accountsfrm::mt940import()
 				check = FALSE;
 				errordescription = tr("Account number is not the same.\n\nAccount number in file is: %1").arg(accountnumber);
 			}
-			if(startcurrency.toUpper() != lblcurrency->text().toUpper()) //Check account number
+			if(startcurrency.toUpper() != lblcurrency->text().toUpper()) //Check currency
 			{
 				check = FALSE;
 				errordescription = tr("Currency is not the same.\n\nCurrency in file is: %1").arg(startcurrency);
 			}
+			if(actamount != startamount) //Check start amount
+			{
+				check = FALSE;
+				errordescription = tr("The current amount is not the same.\n\nActual account amount is: %1\nAmount in file is: %2").arg(actamount, 0, 'f',2).arg(startamount, 0, 'f',2);
+			}
 			
-			int r;
 			if(!check)
-				r = QMessageBox::warning(this, tr("MT940 import not possible..."), errordescription);
+				QMessageBox::warning(this, tr("MT940 import not possible..."), errordescription);
 			else
 			{
-				//IMPORT CODE
+				QSqlQuery qlock = QString("LOCK TABLES `%1` WRITE;").arg(accountid);
+				i=0;
+				QStringList t_codes;
+				t_codes << ":61:" << ":62F" << ":62M" << ":64:" << ":65:";
+				for(i=0;i<lines.count();i++)
+				{
+					if(lines[i].section(":",0,1) == ":61" )
+					{
+						QString t_date = lines[i].section(":",2,2).mid(0, 2) + "/" + lines[i].section(":",2,2).mid(6, 2)+ "/" + lines[i].section(":",2,2).mid(8, 2); 
+						QString t_type = lines[i].section(":",2,2).mid(10,1);
+						
+						QString tmpstr = lines[i].section(":",2,2).mid(11,15);
+						float cents = tmpstr.section(",", 1, 1).toInt();
+						QString t_amount = QString("%1").arg(tmpstr.section(",", 0, 0).toInt() + cents/100, 0, 'f',2);
+						if(t_type == "R")
+						{
+							t_type = lines[i].mid(10,2);
+							t_amount = lines[i].mid(12,15);
+						}
+						if(t_type == "D" || t_type == "RD" )
+							t_amount = "-"+t_amount;
+						i++;
+						QString t_comments = "";
+						if(lines[i].section(":",0,1) == ":86")
+						{
+							while(!t_codes.contains(lines[i].mid(0,4)) && i<lines.count())
+							{
+								t_comments = t_comments + "\n" + lines[i];
+								i++;
+							}
+							t_comments = t_comments.replace(":86:", "").trimmed();
+							i--;
+						}
+						QString qinsstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '', '', '%3', '', '%4');").arg(accountid).arg(t_date).arg(t_comments).arg(t_amount);
+						QSqlQuery qinsert(qinsstr);
+						QSqlError qerror = qinsert.lastError();
+						if(qerror.isValid()) 
+							QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+					}
+					pfrm->progbar->setValue(i);
+				}
 			}
 			pfrm->close();
+			QSqlQuery qunlock("UNLOCK TABLES;");
 		}
 	}
 }
