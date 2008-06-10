@@ -599,20 +599,33 @@ QString accountsfrm::calctotal(int type)
 //
 void accountsfrm::contmenu()
 {
+	btnnew->setEnabled(FALSE);
+	btnedit->setEnabled(FALSE);
+	btndelete->setEnabled(FALSE);
+	
     QMenu* contextMenu = new QMenu( this );
     Q_CHECK_PTR( contextMenu );
 
-    QAction* newentry = new QAction( tr("&New Entry"), this );
-	connect(newentry , SIGNAL(triggered()), this, SLOT(newentry()));
-	contextMenu->addAction(newentry);
+	if(btnnew->isEnabled())
+	{
+		QAction* newentry = new QAction( tr("&New Entry"), this );
+		connect(newentry , SIGNAL(triggered()), this, SLOT(newentry()));
+		contextMenu->addAction(newentry);
+	}
 
-    QAction* editentry = new QAction( tr("&Edit Entry"), this );
-	connect(editentry , SIGNAL(triggered()), this, SLOT(editentry()));
-	contextMenu->addAction(editentry);
+	if(btnedit->isEnabled())
+	{
+		QAction* editentry = new QAction( tr("&Edit Entry"), this );
+		connect(editentry , SIGNAL(triggered()), this, SLOT(editentry()));
+		contextMenu->addAction(editentry);
+	}
 	
-    QAction* deleteentry = new QAction( tr("&Delete Entry"), this );
-	connect(deleteentry , SIGNAL(triggered()), this, SLOT(deleteentry()));
-	contextMenu->addAction(deleteentry);
+	if(btndelete->isEnabled())
+	{
+		QAction* deleteentry = new QAction( tr("&Delete Entry"), this );
+		connect(deleteentry , SIGNAL(triggered()), this, SLOT(deleteentry()));
+		contextMenu->addAction(deleteentry);
+	}
 		
     contextMenu->exec( QCursor::pos() );
     delete contextMenu;
