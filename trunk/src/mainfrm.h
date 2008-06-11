@@ -23,6 +23,7 @@ private slots:
 	void browsemsgs();
 	void newmsg();
 	void addrimpexp();
+	void dataimpexp();
 private:
 	void cleanup();
 	void admtasks();

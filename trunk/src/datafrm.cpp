@@ -16,6 +16,7 @@
 #include "vars.h"
 #include "dataeditfrm.h"
 #include "printfrm.h"
+#include "dataimpexpfrm.h"
 //
 QString lastdatatab;
 QStringList stockrightslist, tabnamelist, colslist, tabtyplist;
@@ -95,6 +96,7 @@ void datafrm::init()
     connect(btnsearch, SIGNAL(released()), this, SLOT(searchentries()));
     connect(txtsearch, SIGNAL(returnPressed()), this, SLOT(searchentries()));    
     connect(btnclear, SIGNAL(released()), this, SLOT(clearsearch()));
+    connect(btntransfer, SIGNAL(released()), this, SLOT(impexp()));
 }
 //
 void datafrm::closeEvent(QCloseEvent* ce )
@@ -768,46 +770,14 @@ void datafrm::clearsearch()
 }
 //
 void datafrm::impexp()
-{/*
-    stockimpexpfrm *simpexp = new stockimpexpfrm;
-    simpexp->setFixedSize(simpexp->width(), simpexp->height());  
-    if(tabtyplist[cmbdata->currentItem()]!="stock")
+{
+    dataimpexpfrm *dataimpexp = new dataimpexpfrm;
+    dataimpexp->init();
+    if(dataimpexp->exec())
     {
-	simpexp->rdbtn_3->setEnabled(FALSE);
-	simpexp->rdbtn_4->setEnabled(FALSE);
-    }
-    if(simpexp->exec())
-    {
-	QString filestr;
-	if(simpexp->rdbtn_1->isChecked())
-	{
-	    filestr = QFileDialog::getSaveFileName("", tr("CSV-File (*.csv)"), this, tr("Save File as...") );
-	    if(filestr.mid(filestr.length()-4).lower() != ".csv")
-		filestr += ".csv";
-	    if(filestr!="")
-		stockfrm::expdata(filestr, simpexp->rdbtnsel->isChecked());
+		lastdatatab = "";
+		changecmb();
 	}
-	else if(simpexp->rdbtn_2->isChecked())
-	{
-	    filestr = QFileDialog::getOpenFileName("", tr("CSV-File (*.csv)"), this, tr("Open File...") );
-	    if(filestr!="")
-		stockfrm::impdata(filestr);
-	}
-	else if(simpexp->rdbtn_3->isChecked())
-	{
-	    filestr = QFileDialog::getSaveFileName("", tr("Stock-File (*.fst)"), this, tr("Save File as...") );
-	    if(filestr.mid(filestr.length()-4).lower() != ".fst")
-		filestr += ".fst";
-	    if(filestr!="")	    
-		stockfrm::expstock(filestr, simpexp->rdbtnsel->isChecked());
-	}
-	else if(simpexp->rdbtn_4->isChecked())
-	{
-	    filestr = QFileDialog::getOpenFileName("", tr("Stock-File (*.fst)"), this, tr("Open File...") );
-	    if(filestr!="")
-		stockfrm::impstock(filestr);
-	}
-    }*/
 }
 //
 void datafrm::expstock(QString filestr, bool selection)

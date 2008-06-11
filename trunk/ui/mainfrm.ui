@@ -35,7 +35,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex" >
-     <number>6</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_1" >
      <property name="geometry" >
@@ -192,207 +192,254 @@
      <attribute name="icon" >
       <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
      </attribute>
-     <layout class="QGridLayout" >
-      <property name="leftMargin" >
-       <number>9</number>
+     <widget class="QPushButton" name="btnbrowsedata" >
+      <property name="geometry" >
+       <rect>
+        <x>9</x>
+        <y>9</y>
+        <width>253</width>
+        <height>26</height>
+       </rect>
       </property>
-      <property name="topMargin" >
-       <number>9</number>
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
       </property>
-      <property name="rightMargin" >
-       <number>9</number>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
       </property>
-      <property name="bottomMargin" >
-       <number>9</number>
+      <property name="text" >
+       <string>Browse Tables</string>
       </property>
-      <property name="horizontalSpacing" >
-       <number>6</number>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
       </property>
-      <property name="verticalSpacing" >
-       <number>6</number>
+      <property name="checkable" >
+       <bool>false</bool>
       </property>
-      <item row="0" column="0" >
-       <widget class="QPushButton" name="btnbrowsedata" >
-        <property name="palette" >
-         <palette>
-          <active>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <property name="text" >
-         <string>Browse Tables</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
-        </property>
-        <property name="checkable" >
-         <bool>false</bool>
-        </property>
-        <property name="flat" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QPushButton" name="btnvieworders" >
-        <property name="palette" >
-         <palette>
-          <active>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <property name="text" >
-         <string>View purchase orders</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
-        </property>
-        <property name="checkable" >
-         <bool>false</bool>
-        </property>
-        <property name="flat" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" >
-       <widget class="QPushButton" name="btninventory" >
-        <property name="palette" >
-         <palette>
-          <active>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="Button" >
-            <brush brushstyle="SolidPattern" >
-             <color alpha="255" >
-              <red>206</red>
-              <green>207</green>
-              <blue>209</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="autoFillBackground" >
-         <bool>true</bool>
-        </property>
-        <property name="text" >
-         <string>Make inventory</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
-        </property>
-        <property name="checkable" >
-         <bool>false</bool>
-        </property>
-        <property name="flat" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
+      <property name="flat" >
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnvieworders" >
+      <property name="geometry" >
+       <rect>
+        <x>9</x>
+        <y>41</y>
+        <width>253</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
+      </property>
+      <property name="text" >
+       <string>View purchase orders</string>
+      </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
+      </property>
+      <property name="checkable" >
+       <bool>false</bool>
+      </property>
+      <property name="flat" >
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btninventory" >
+      <property name="geometry" >
+       <rect>
+        <x>9</x>
+        <y>73</y>
+        <width>253</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
+      </property>
+      <property name="text" >
+       <string>Make inventory</string>
+      </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
+      </property>
+      <property name="checkable" >
+       <bool>false</bool>
+      </property>
+      <property name="flat" >
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnimpexpdata" >
+      <property name="geometry" >
+       <rect>
+        <x>10</x>
+        <y>105</y>
+        <width>253</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>206</red>
+            <green>207</green>
+            <blue>209</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
+      </property>
+      <property name="text" >
+       <string>Import / Export data</string>
+      </property>
+      <property name="icon" >
+       <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+      </property>
+      <property name="checkable" >
+       <bool>false</bool>
+      </property>
+      <property name="flat" >
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_3" >
      <property name="geometry" >

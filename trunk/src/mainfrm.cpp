@@ -26,6 +26,7 @@
 #include "msgeditfrm.h"
 #include "dbupdatefrm.h"
 #include "addrimpexpfrm.h"
+#include "dataimpexpfrm.h"
 //
 extern int uid;
 extern QString username, fullname, firstver;
@@ -77,6 +78,7 @@ void mainfrm::loaduserdata()
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
+	connect ( btnimpexpdata, SIGNAL ( released() ), this, SLOT ( dataimpexp() ) );
 }
 //
 int mainfrm::checkdb()
@@ -334,7 +336,14 @@ void mainfrm::newmsg()
 //
 void mainfrm::addrimpexp()
 {
-    addrimpexpfrm *addrimpexp = new addrimpexpfrm;
-    addrimpexp->init();
-    addrimpexp->exec();
+	addrimpexpfrm *addrimpexp = new addrimpexpfrm;
+	addrimpexp->init();
+	addrimpexp->exec();
+}
+//
+void mainfrm::dataimpexp()
+{
+	dataimpexpfrm *dataimpexp = new dataimpexpfrm;
+	dataimpexp->init();
+	dataimpexp->exec();
 }

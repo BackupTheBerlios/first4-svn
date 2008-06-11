@@ -76,6 +76,7 @@ void addrimpexpfrm::loaddirs()
 //
 void addrimpexpfrm::next()
 {
+	disconnect(btnnext, SIGNAL(released()), this, SLOT(next()));
 	if(rbtn1->isChecked())
 	{
 		mainstack->setCurrentIndex(1);
@@ -155,6 +156,7 @@ void addrimpexpfrm::back()
 	
 	connect(btnnext, SIGNAL(released()), this, SLOT(next()));
 }
+//
 void addrimpexpfrm::loaddir_expcsv()
 {
 	int i;
@@ -532,7 +534,7 @@ void addrimpexpfrm::loadfilecsv()
 	QStringList columns;
 	columns << "";
 
-	QSqlQuery query(QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpvcard->currentIndex()]));
+	QSqlQuery query(QString("SHOW COLUMNS FROM %1").arg(dirimplist[cmbimpcsv->currentIndex()]));
 	if(query.isActive())
 	{
 		while(query.next())
@@ -561,12 +563,30 @@ void addrimpexpfrm::loadfilecsv()
 	int i, ii;
 	if(filestream.count() > 0)
 	{
+		progbar->setMaximum(filestream.count());
 		tableimpcsv->setColumnCount(filestream[0].count(txtimpcsvseparator->text())+1);
 		tableimpcsv->setRowCount(filestream.count()+1);
 		for(i=0;i<filestream.count();i++)
 		{
-			//QStringList fields = filestream[i].split("\""+txtimpcsvseparator->text()+"\"");
-			QStringList fields = filestream[i].split(txtimpcsvseparator->text());
+			progbar->setValue(i);
+			QStringList fields; 
+			QStringList tmpfields = filestream[i].split(txtimpcsvseparator->text());
+			
+			for(ii=0;ii<tmpfields.count();ii++)
+			{
+				if((tmpfields[ii].mid(0,1) == "\"" && tmpfields[ii].mid(tmpfields[ii].length()-1,1) == "\"") || tmpfields[ii].length() == 0)
+					fields << tmpfields[ii];
+				else
+				{
+					QString tmpstr = tmpfields[ii];
+					do {
+						ii++;
+						tmpstr += ","+tmpfields[ii];
+					}while(!(tmpstr.trimmed().mid(0,1) == "\"" && tmpstr.trimmed().mid(tmpstr.trimmed().length()-1,1) == "\""));
+					fields << tmpstr;
+				}
+			}
+			
 			for(ii=0;ii<fields.count();ii++)
 			{
 				QTableWidgetItem *item = new QTableWidgetItem;
@@ -574,6 +594,7 @@ void addrimpexpfrm::loadfilecsv()
 				tableimpcsv->setItem(i+1, ii, item);
 			}
 		}
+		progbar->setValue(progbar->maximum());
 	}
 	for(i=0;i<tableimpcsv->columnCount();i++)
 	{
@@ -605,7 +626,7 @@ void addrimpexpfrm::impcsv()
 	QTableWidgetItem *item = new QTableWidgetItem;
 	progbar->setValue(0);
 	progbar->setMaximum(tableimpcsv->rowCount());
-	for(i=spbimpcsv->value();i<tableimpcsv->rowCount();i++)
+	for(i=spbimpcsv->value()-1;i<tableimpcsv->rowCount();i++)
 	{
 		item = new QTableWidgetItem();
 		item = tableimpcsv->item(i, 0);
