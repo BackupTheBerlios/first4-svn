@@ -12,10 +12,6 @@ public:
 	void checkrights();
 	void searchdata();
 	void searchstock();
-	void expstock(QString, bool);
-	void impstock(QString);
-	void expdata(QString, bool);
-	void impdata(QString);
 private slots:
 	void changecmb();
 	void loadstock();
