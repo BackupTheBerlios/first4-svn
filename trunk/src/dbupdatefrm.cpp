@@ -4,7 +4,7 @@
 #include "dbupdatefrm.h"
 #include "vars.h"
 //
-QString newdbver;
+QString newdbver,actdbver;
 //
 dbupdatefrm::dbupdatefrm( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
@@ -18,21 +18,20 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	QString cfgdbver;
-	newdbver = "1.3.95.4";
+	newdbver = "1.3.96.1";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
 	if(query.isActive())
 	{
 		query.next();
-		cfgdbver = query.value ( 0 ).toString();
-		lblcurrentversion->setText(cfgdbver);
+		actdbver = query.value ( 0 ).toString();
+		lblcurrentversion->setText(actdbver);
 		lblnewversion->setText(newdbver);
 	}
 
 	int retrcode = 0;
-	int dbversion = cfgdbver.replace(".","").toInt();
+	int dbversion = actdbver.replace(".","").toInt();
 	if(dbversion < 13954)
 	{
 		QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
@@ -81,14 +80,23 @@ int dbupdatefrm::init()
 		if(query10.size() != 1)
 			retrcode = 1;
 	}
+	else if(dbversion < 13961)
+	{
+		QSqlQuery query1("SELECT name FROM templates WHERE name = 'sys_inventory';");
+		if(query1.size() !=1 )
+			retrcode = 1;
+	}
 	return retrcode;
 	
 }
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(11);
+	    progbar->setMaximum(13);
 
+	int dbversion = actdbver.replace(".","").toInt();
+	if(dbversion < 13954)
+	{
 	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
 	    if(query1.size() !=1 )
 		update_db_structure("templates");
@@ -145,8 +153,21 @@ void dbupdatefrm::check_db_structure()
 			update_db_structure("rename_tabs");
 		progbar->setValue(10);
 
-	QSqlQuery query11(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
-	progbar->setValue(11);
+		QSqlQuery query11(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(11);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+	else if(dbversion < 13961)
+	{
+		QSqlQuery query1("SELECT name FROM templates WHERE name = 'sys_inventory';");
+		if(query1.size() !=1 )
+			update_db_structure("def_templates");
+		progbar->setValue(12);
+		
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(13);
+		dbversion = newdbver.replace(".","").toInt();
+	}
 	QMessageBox::information( 0, "DB update..." , tr("Update completed.") );
 	this->accept();
 }
@@ -258,5 +279,10 @@ void dbupdatefrm::update_db_structure(QString section)
 				QSqlQuery query23("UPDATE documentpositions SET type = 'documents' WHERE type = 'docs';");
 				QSqlQuery query24("UPDATE datatables SET `name` = 'vattable' WHERE `name` = 'vattab';");
 				QSqlQuery query25("ALTER TABLE `documentpositions` MODIFY COLUMN `TYPE` CHAR(20);");
+			}
+			else if(section == "def_templates")
+			{
+				QString qstr = QString("INSERT INTO `templates` VALUES ('','sys_inventory','Default Inventory template','\\documentclass[landscape,a4paper,10pt]{report}\n\\special{landscape}\n\n\\usepackage{multirow}\n\\usepackage{helvet}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includeheadfoot]{geometry}\n\n\\usepackage{tabularx}\n\\newcolumntype{R}[1]{>{\\raggedleft\\arraybackslash}p{#1}}\n\\newcolumntype{L}[1]{>{\\raggedright\\arraybackslash}p{#1}}\n\n\\usepackage{longtable}\n\n\\usepackage{fancyhdr}\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0.5pt}\n\\renewcommand{\\footrulewidth}{0.5pt}\n\\lhead{\\sffamily \\begin{large}+++TITLE+++\\end{large}}\n\\lfoot{\\sffamily \\begin{tiny}Seite: \\thepage\\end{tiny}}\n\\rfoot{\\sffamily \\begin{tiny}12.02.2006\\end{tiny}}\n\n\\begin{document}\n\\sffamily\n\\begin{flushleft}\n\n\\begin{scriptsize}\n\\setlength{\\extrarowheight}{1mm}\n\\begin{longtable}{@{}p{4cm} @{}p{9.2cm} p{1.5cm} @{}p{1.5cm} @{}p{1.5cm} |p{1.5cm} |p{1.5cm} |p{3.8cm}}\n+++TABHEAD+++ \\\\ \\hline\\endhead\n+++TABCONTENT+++\n\\end{longtable}\n\\end{scriptsize}\n\n\\end{flushleft}\n\\end{document}','Administrator','2008-01-27','','0000-00-00'),('','sys_address','Default Address template with details','\\documentclass[a4paper,10pt]{report}\n\n\\usepackage{multirow}\n\\usepackage{helvet}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm,includeheadfoot]{geometry}\n\n\\usepackage{tabularx}\n\\newcolumntype{R}[1]{>{\\raggedleft\\arraybackslash}p{#1}}\n\\newcolumntype{L}[1]{>{\\raggedright\\arraybackslash}p{#1}}\n\n\\usepackage{longtable}\n\n\\usepackage{fancyhdr}\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0.5pt}\n\n\\lfoot{\\sffamily \\begin{tiny}Seite: \\thepage\\end{tiny}}\n\\rfoot{\\sffamily \\begin{tiny}12.02.2006\\end{tiny}}\n\n\\begin{document}\n\\sffamily\n\\begin{flushleft}\n\n\\begin{small}\n\\setlength{\\extrarowheight}{1mm}\n\\begin{tabular*}{17cm}{p{3.5cm} p{5cm} p{3.5cm} p{5cm}}\n\\multicolumn{4}{@{}l}{\\begin{large}\\textbf{+++TITLE+++}\\end{large}} \\\\ \\hline \\\\\n+++DATA+++\n\\end{tabular*}\n\\end{small}\n\n\\end{flushleft}\n\\end{document}','Administrator','2008-01-27','','0000-00-00'),('','sys_stocklist','Default Stocklist template','\\documentclass[landscape,a4paper,10pt]{report}\n\\special{landscape}\n\n\\usepackage{multirow}\n\\usepackage{helvet}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}\n\n\\usepackage{tabularx}\n\\newcolumntype{R}[1]{>{\\raggedleft\\arraybackslash}p{#1}}\n\\newcolumntype{L}[1]{>{\\raggedright\\arraybackslash}p{#1}}\n\n\\usepackage{longtable}\n\n\\usepackage{fancyhdr}\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0.5pt}\n\\renewcommand{\\footrulewidth}{0.5pt}\n\\lhead{\\sffamily \\begin{large}###STOCKNAME###\\end{large}}\n\\lfoot{\\sffamily \\begin{tiny}+++PAGE+++ \\thepage\\end{tiny}}\n\\rfoot{\\sffamily \\begin{tiny}+++DATE+++\\end{tiny}}\n\n\\begin{document}\n\\sffamily\n\\begin{flushleft}\n\n\n\\begin{scriptsize}\n\\setlength{\\extrarowheight}{1mm}\n\\begin{longtable}{p{4cm}|p{7cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|p{1.5cm}|p{5cm}}\n###TABHEAD### \\\\ \\hline\\endhead\n###TABCONTENT###\n\\end{longtable}\n\\end{scriptsize}\n\n\n\\end{flushleft}\n\\end{document}','Administrator','2008-01-29','','0000-00-00'),('','sys_ieoverview','Default Inc/Exp Template','\\documentclass[a4paper,10pt]{report}\n\n\\usepackage{multirow}\n\\usepackage{helvet}\n\\usepackage[utf8]{inputenc}\n\\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includeheadfoot]{geometry}\n\n\\usepackage{tabularx}\n\\newcolumntype{R}[1]{>{\\raggedleft\\arraybackslash}p{#1}}\n\\newcolumntype{L}[1]{>{\\raggedright\\arraybackslash}p{#1}}\n\n\\usepackage{longtable}\n\n\\usepackage{fancyhdr}\n\\pagestyle{fancy}\n\\fancyhf{}\n\\renewcommand{\\headrulewidth}{0.5pt}\n\\renewcommand{\\footrulewidth}{0.5pt}\n\\lhead{\\sffamily \\begin{large}+++TITLE+++\\end{large}}\n\\lfoot{\\sffamily \\begin{tiny}+++PAGE+++ \\thepage\\end{tiny}}\n\\rfoot{\\sffamily \\begin{tiny}+++DATE+++\\end{tiny}}\n\n\\begin{document}\n\\sffamily\n\\begin{flushleft}\n\\vspace{2mm}\n\\begin{small}\n\\textbf{Konto-Nr.: }+++ACCOUNTNR+++ \\\\\n\\textbf{Bank: }+++BANK+++ \\\\\n\\textbf{BLZ: }+++CLEARING+++ \\\\\n\\textbf{Währung: }+++CURRENCY+++ \\\\\n\\textbf{Saldo: }+++AMOUNT+++ +++CURRENCY+++ \\\\\n\\textbf{Einnahmen: }+++IN+++ +++CURRENCY+++ \\\\\n\\textbf{Ausgabe: }+++OUT+++ +++CURRENCY+++ \\\\\n\\end{small}\n\\vspace{2mm}\n\\begin{scriptsize}\n\\setlength{\\extrarowheight}{1mm}\n\\begin{longtable}{@{}p{2cm} @{}p{3cm} @{}p{2cm} p{5cm} @{}p{2cm} @{}p{2cm}\n+++TABHEAD+++ \\\\ \\hline\\endhead\n+++TABCONTENT+++\n\\end{longtable}\n\\end{scriptsize}\n\n\\end{flushleft}\n\\end{document}','Administrator','2008-01-29','','0000-00-00');").replace("\\", "\\\\");	
+				QSqlQuery query1(qstr);
 			}
 }

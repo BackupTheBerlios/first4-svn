@@ -749,15 +749,21 @@ void addrfrm::printaddr()
 	vars v;
 	QString tool = v.get_tool("DVIVIEWER");
 	
-    //Show Report
-    QStringList args;
-    args << document;
-    QProcess *procshow = new QProcess( this );
-    procshow->start(tool, args);
-	if(procshow->exitStatus() != QProcess::NormalExit ) 
+	if(tool != "")
+	{
+		//Show Report
+		QStringList args;
+		args << document;
+		QProcess *procshow = new QProcess( this );
+		procshow->start(tool, args);
+		if(procshow->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Can't show DVI file."));
-    QFile file(document);
-    file.remove();
+		QFile file(document);
+		file.remove();
+	}
+	else
+		QMessageBox::critical(0,"Error...",tr("You must define a DVI-Viewer."));
+
 }
 //
 QString addrfrm::writetexfile()
@@ -821,12 +827,20 @@ QString addrfrm::writetexfile()
 	}
 
     //converting text to dvi
-    QStringList args;
-    args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
-    QProcess *procdvi = new QProcess( this );
-    procdvi->start("latex", args);
-    if(procdvi->exitCode()!=0)
-		QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+	vars v;
+        QString tool = v.get_tool("TEX2DVI");
+	
+	if(tool != "")
+	{
+		QStringList args;
+		args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
+		QProcess *procdvi = new QProcess( this );
+		procdvi->start(tool, args);
+		if(procdvi->exitCode()!=0)
+			QMessageBox::critical(0,"Error...", tr("Error during convertion from TEXT to DVI!"));
+	}
+	else
+		QMessageBox::critical(0,"Error...",tr("You must define a TEX to DVI converter."));
 		
 	return output.fileName().replace(".tex", ".dvi");
 }

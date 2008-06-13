@@ -10,8 +10,8 @@
 #include "dbupdatefrm.h"
 //
 int uid;
-QString firstver = "1.3.95-beta3";
-QString dbrequire = "1.3.95.4";
+QString firstver = "1.3.96-pre-RC1";
+QString dbrequire = "1.3.96.1";
 QString build = "301";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
