@@ -221,10 +221,12 @@ void invfrm::print()
 		QMessageBox::critical(0,"Error...", tr("Can't convert to Postscript file."));
 	else
 	{
+		vars v;
+		QString tool = v.get_tool("PRINT");
 	    QProcess *procprint = new QProcess( this );
     	args.clear();
 	    args << psfile;
-	    procprint->start("kprinter", args);
+	    procprint->start(tool, args);
 	    if(procprint->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Error during printing process."));
 	}
@@ -287,10 +289,13 @@ QString invfrm::writetexfile()
 	}
     
     //converting text to dvi
+    vars v;
+    QString tool = v.get_tool("TEX2DVI");
+
     QProcess *procdvi = new QProcess( this );
     QStringList args;
     args << "-output-directory="+QDir::homePath()+"/.first4/tmp/" << output.fileName();
-    procdvi->start("latex", args);
+    procdvi->start(tool, args);
 	if(procdvi->exitStatus() != QProcess::NormalExit ) 
 			QMessageBox::critical(0,"Error...", tr("Error during conversion to DVI file."));
 			
