@@ -175,7 +175,7 @@ void mainfrm::admtasks()
 	    }
 	}
 		//Ein/Aus ueberpruefen
-	QString qstr3 = QString("SELECT status, ID, date, refnr, address, code, description, amount FROM incexp WHERE `typ`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
+	QString qstr3 = QString("SELECT state, ID, date, refnr, address, code, description, amount FROM incexp WHERE `type`='inc' AND `date` < '%1';").arg(QDate::currentDate().toString("yyyy-MM-dd"));
 	QSqlQuery query3(qstr3);
 	if(query3.isActive())
 	{
