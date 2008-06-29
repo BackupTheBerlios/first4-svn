@@ -252,6 +252,10 @@
 				>
 			</File>
 			<File
+				RelativePath="src\dataimpexpfrm.cpp"
+				>
+			</File>
+			<File
 				RelativePath="src\dbupdatefrm.cpp"
 				>
 			</File>
@@ -678,6 +682,32 @@
 						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\win\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 src\datafrm.h -o build\first4\win\moc\moc_datafrm.cpp&#x0D;&#x0A;"
 						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\datafrm.h"
 						Outputs="build\first4\win\moc\moc_datafrm.cpp"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\dataimpexpfrm.h"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\dataimpexpfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\win\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 src\dataimpexpfrm.h -o build\first4\win\moc\moc_dataimpexpfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\dataimpexpfrm.h"
+						Outputs="build\first4\win\moc\moc_dataimpexpfrm.cpp"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="MOC src\dataimpexpfrm.h"
+						CommandLine="$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_THREAD_SUPPORT -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_SQL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtCore&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtGui&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include\QtSql&quot; -I&quot;$(QTDIR)\include&quot; -I&quot;src&quot; -I&quot;ui&quot; -I&quot;$(QTDIR)\include\ActiveQt&quot; -I&quot;build\first4\win\moc&quot; -I&quot;build\first4\ui&quot; -I$(QTDIR)\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 src\dataimpexpfrm.h -o build\first4\win\moc\moc_dataimpexpfrm.cpp&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\moc.exe;src\dataimpexpfrm.h"
+						Outputs="build\first4\win\moc\moc_dataimpexpfrm.cpp"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1420,6 +1450,10 @@
 				>
 			</File>
 			<File
+				RelativePath="build\first4\win\moc\moc_dataimpexpfrm.cpp"
+				>
+			</File>
+			<File
 				RelativePath="build\first4\win\moc\moc_dbupdatefrm.cpp"
 				>
 			</File>
@@ -1593,6 +1627,10 @@
 			</File>
 			<File
 				RelativePath="build\first4\ui\ui_datafrm.h"
+				>
+			</File>
+			<File
+				RelativePath="build\first4\ui\ui_dataimpexpfrm.h"
 				>
 			</File>
 			<File
@@ -2030,6 +2068,32 @@
 						CommandLine="$(QTDIR)\bin\uic.exe ui\datafrm.ui -o build\first4\ui\ui_datafrm.h&#x0D;&#x0A;"
 						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\datafrm.ui"
 						Outputs="build\first4\ui\ui_datafrm.h"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ui\dataimpexpfrm.ui"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\dataimpexpfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\dataimpexpfrm.ui -o build\first4\ui\ui_dataimpexpfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\dataimpexpfrm.ui"
+						Outputs="build\first4\ui\ui_dataimpexpfrm.h"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="UIC ui\dataimpexpfrm.ui"
+						CommandLine="$(QTDIR)\bin\uic.exe ui\dataimpexpfrm.ui -o build\first4\ui\ui_dataimpexpfrm.h&#x0D;&#x0A;"
+						AdditionalDependencies="$(QTDIR)\bin\uic.exe;ui\dataimpexpfrm.ui"
+						Outputs="build\first4\ui\ui_dataimpexpfrm.h"
 					/>
 				</FileConfiguration>
 			</File>
