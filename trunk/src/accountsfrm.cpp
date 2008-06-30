@@ -55,6 +55,7 @@ int accountsfrm::init()
 	connect(btnclose, SIGNAL(released()), this, SLOT(close()));
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem* , int)), this, SLOT(loaddetails()));
 	connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
+	connect(btnrefresh, SIGNAL(released()), this, SLOT(loaddetails()));
 	
 	vars v;
 	QStringList sgeo = v.loadgeo(this->objectName());
@@ -474,12 +475,15 @@ void accountsfrm::loaddetails()
 //
 void accountsfrm::loadaccountdata(QString ID)
 {
-    treemain->clear();
-    QString qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date ASC;").arg(ID);
-    QSqlQuery query(qstr);
-    progbar->setMaximum(query.size());
-    if(query.isActive())
-    {
+	treemain->clear();
+	QString qstr = QString("SELECT ID FROM %1;").arg(ID);
+	QSqlQuery querycount(qstr);
+	lblsqltot->setText(QString("%1").arg(querycount.size()));
+	qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date DESC LIMIT %2,%3;").arg(ID).arg(txtsqlfrom->text()).arg(txtsqlto->text());
+	QSqlQuery query(qstr);
+	progbar->setMaximum(query.size());
+	if(query.isActive())
+	{
 		bool ok;
 		float saldo = 0;
 		while(query.next())

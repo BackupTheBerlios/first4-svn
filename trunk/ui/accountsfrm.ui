@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>870</width>
+    <width>933</width>
     <height>563</height>
    </rect>
   </property>
@@ -13,10 +13,11 @@
    <string>Browse accounts...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/kcalc.png</normaloff>:/kcalc.png</iconset>
   </property>
-  <layout class="QGridLayout" >
-   <item row="0" column="0" >
+  <layout class="QGridLayout" name="gridLayout" >
+   <item rowspan="3" row="0" column="0" >
     <layout class="QVBoxLayout" >
      <item>
       <layout class="QHBoxLayout" />
@@ -45,6 +46,14 @@
         <number>2</number>
        </property>
        <widget class="QWidget" name="page" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>30</height>
+         </rect>
+        </property>
         <widget class="QGroupBox" name="groupBox" >
          <property name="geometry" >
           <rect>
@@ -60,6 +69,14 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_2" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>30</height>
+         </rect>
+        </property>
         <widget class="QGroupBox" name="groupBox_2" >
          <property name="geometry" >
           <rect>
@@ -286,6 +303,14 @@
         </widget>
        </widget>
        <widget class="QWidget" name="Seite" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>301</width>
+          <height>161</height>
+         </rect>
+        </property>
         <widget class="QGroupBox" name="groupBox_3" >
          <property name="geometry" >
           <rect>
@@ -616,21 +641,21 @@
     </layout>
    </item>
    <item row="0" column="1" >
-    <layout class="QGridLayout" >
-     <item row="0" column="0" >
-      <spacer>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" >
+     <item>
+      <spacer name="horizontalSpacer" >
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>188</width>
+         <height>17</height>
         </size>
        </property>
       </spacer>
      </item>
-     <item row="0" column="1" >
+     <item>
       <layout class="QGridLayout" >
        <item row="0" column="0" >
         <widget class="QPushButton" name="btnnew" >
@@ -640,11 +665,24 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/filenew.png</normaloff>:/filenew.png</iconset>
          </property>
         </widget>
        </item>
@@ -656,11 +694,24 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/kfind.png</normaloff>:/kfind.png</iconset>
          </property>
         </widget>
        </item>
@@ -672,11 +723,24 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/trashcan_empty.png</normaloff>:/trashcan_empty.png</iconset>
          </property>
         </widget>
        </item>
@@ -688,7 +752,7 @@
          <property name="sizeType" >
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>21</width>
            <height>20</height>
@@ -704,11 +768,24 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/fileprint.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/fileprint.png</normaloff>:/fileprint.png</iconset>
          </property>
         </widget>
        </item>
@@ -720,7 +797,7 @@
          <property name="sizeType" >
           <enum>QSizePolicy::Fixed</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>21</width>
            <height>20</height>
@@ -736,11 +813,24 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
          </property>
         </widget>
        </item>
@@ -752,34 +842,194 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="text" >
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+          <iconset resource="../resources/images/first4.qrc" >
+           <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
          </property>
         </widget>
        </item>
       </layout>
      </item>
-     <item row="1" column="0" colspan="2" >
-      <widget class="QTreeWidget" name="treemain" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::CustomContextMenu</enum>
+    </layout>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QTreeWidget" name="treemain" >
+     <property name="contextMenuPolicy" >
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="selectionMode" >
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <column>
+      <property name="text" >
+       <string>1</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QLineEdit" name="txtsqlfrom" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>51</horstretch>
+         <verstretch>29</verstretch>
+        </sizepolicy>
        </property>
-       <property name="selectionMode" >
-        <enum>QAbstractItemView::ExtendedSelection</enum>
+       <property name="minimumSize" >
+        <size>
+         <width>51</width>
+         <height>29</height>
+        </size>
        </property>
-       <column>
-        <property name="text" >
-         <string>1</string>
-        </property>
-       </column>
+       <property name="maximumSize" >
+        <size>
+         <width>51</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>1</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2" >
+       <property name="minimumSize" >
+        <size>
+         <width>10</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>10</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font" >
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>/</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtsqlto" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>51</horstretch>
+         <verstretch>29</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>51</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>51</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>50</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnrefresh" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>12</width>
+         <height>12</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string>Datasets:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblsqltot" >
+       <property name="text" >
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="2" >
+   <item row="3" column="0" colspan="2" >
     <layout class="QHBoxLayout" >
      <item>
       <widget class="QPushButton" name="btnclose" >
@@ -787,7 +1037,8 @@
         <string>&amp;Close</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
        </property>
       </widget>
      </item>
@@ -810,7 +1061,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>40</width>
          <height>20</height>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_CH">
+<defaultcodec></defaultcodec>
 <context>
     <name>QObject</name>
     <message>
@@ -4516,7 +4517,7 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
     <message>
         <location filename="../../ui/mainfrm.ui" line="167"/>
         <source>Import / Export directories</source>
-        <translation>Importiere / Exportiere in Adressbücher</translation>
+        <translation>Import. / Export. in Adressbücher</translation>
     </message>
     <message>
         <location filename="../../src/mainfrm.cpp" line="109"/>
