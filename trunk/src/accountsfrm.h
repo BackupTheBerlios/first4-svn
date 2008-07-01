@@ -18,6 +18,7 @@ private slots:
 	void print();
 	void datatransfer();
 	void completeitems();
+	void refreshdata();
 private:
 	void closeEvent( QCloseEvent* ce );
 	void initindexlist();

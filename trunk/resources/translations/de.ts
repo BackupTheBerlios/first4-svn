@@ -586,7 +586,7 @@ Betrag in Datei ist: %2</translation>
     <message>
         <location filename="../../ui/accountsimpexpfrm.ui" line="53"/>
         <source>Export to CSV-File</source>
-        <translation>Exportiere CSV-Fatei</translation>
+        <translation>Exportiere CSV-Datei</translation>
     </message>
     <message>
         <location filename="../../ui/accountsimpexpfrm.ui" line="93"/>

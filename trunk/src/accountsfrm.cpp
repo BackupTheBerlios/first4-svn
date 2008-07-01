@@ -55,7 +55,9 @@ int accountsfrm::init()
 	connect(btnclose, SIGNAL(released()), this, SLOT(close()));
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem* , int)), this, SLOT(loaddetails()));
 	connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-	connect(btnrefresh, SIGNAL(released()), this, SLOT(loaddetails()));
+	connect(btnrefresh, SIGNAL(released()), this, SLOT(refreshdata()));
+	connect(txtsqlfrom, SIGNAL(returnPressed()), this, SLOT(refreshdata()));
+	connect(txtsqlto, SIGNAL(returnPressed()), this, SLOT(refreshdata()));
 	
 	vars v;
 	QStringList sgeo = v.loadgeo(this->objectName());
@@ -267,6 +269,8 @@ void accountsfrm::loadaccounts()
 //
 void accountsfrm::loaddetails()
 {
+	txtsqlfrom->setText("1");
+	txtsqlto->setText("50");
 	QTreeWidgetItem* item = treeindex->currentItem();
 	if(item!=0)
 	{
@@ -473,19 +477,56 @@ void accountsfrm::loaddetails()
     }
 }
 //
+void accountsfrm::refreshdata()
+{
+	QTreeWidgetItem* item = treeindex->currentItem();
+	if(item!=0)
+	{
+		btncomplete->setEnabled(FALSE);
+		if(item->parent() != 0)
+		{
+			if(item->text(2) != "incexparchive")
+			{
+				inittreemainaccounts();
+				loadaccountdata(item->text(2));
+			}
+			else
+			{
+				initmaintreeincexp();
+			}
+		}
+		else
+		{
+			if(item->text(1) == "account")
+			{
+				inittreemainoverview();
+		    }
+		    else if(item->text(1) == "localaccount")
+		    {
+				inittreemainoverview();
+		    }
+		    else
+		    {
+				initmaintreeincexp();
+				loadincexpdata(item->text(1));
+		    }
+		}
+    }
+}
+//
 void accountsfrm::loadaccountdata(QString ID)
 {
 	treemain->clear();
 	QString qstr = QString("SELECT ID FROM %1;").arg(ID);
 	QSqlQuery querycount(qstr);
 	lblsqltot->setText(QString("%1").arg(querycount.size()));
-	qstr = QString("SELECT ID, date, refnr, address, code, description, amount FROM %1 ORDER BY date DESC LIMIT %2,%3;").arg(ID).arg(txtsqlfrom->text()).arg(txtsqlto->text());
+	int sqlfrom = txtsqlfrom->text().toInt() - 1;
+	int sqlto = txtsqlto->text().toInt() - sqlfrom;
+	qstr = QString("SELECT ID, date, refnr, address, code, description, amount, account_balance FROM %1 ORDER BY date DESC, ID DESC LIMIT %2,%3;").arg(ID).arg(sqlfrom, 0, 10).arg(sqlto, 0, 10);
 	QSqlQuery query(qstr);
 	progbar->setMaximum(query.size());
 	if(query.isActive())
 	{
-		bool ok;
-		float saldo = 0;
 		while(query.next())
 		{
 		    QTreeWidgetItem* item = new QTreeWidgetItem(treemain);
@@ -496,20 +537,17 @@ void accountsfrm::loadaccountdata(QString ID)
 		    item->setText(4, query.value(4).toString());
 		    item->setText(5, query.value(5).toString());
 		    item->setText(6, query.value(6).toString());
-		    saldo += query.value(6).toString().toFloat(&ok);
-		    item->setText(7, QString("%1").arg(saldo, 0, 'f',2));
+		    item->setText(7, query.value(7).toString());
 		    progbar->setValue(query.at()+1);
 		}
     }
-
     progbar->setValue(progbar->maximum());
-    //treemain->sortItems(1, Qt::DescendingOrder);
 }
 //
 void accountsfrm::loadincexpdata(QString type)
 {
     treemain->clear();
-    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexp WHERE `type`= '"+type+"' ORDER BY date DESC;";
+    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexp WHERE `type`= '"+type+"' ORDER BY date DESC, ID DESC;";
     QSqlQuery query(qstr);
     progbar->setMaximum(query.size());
     if(query.isActive())
@@ -540,7 +578,7 @@ void accountsfrm::loadincexpdata(QString type)
 void accountsfrm::loadarchivdata(QString type)
 {
     treemain->clear();
-    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexparchive WHERE `type`='"+type+"' ORDER BY date ASC;"; 
+    QString qstr = "SELECT state, ID, date, refnr, address, code, description, amount FROM incexparchive WHERE `type`='"+type+"' ORDER BY date DESC, ID DESC;"; 
     QSqlQuery query(qstr);
     if(query.isActive())
     {
@@ -941,11 +979,11 @@ void accountsfrm::mt940import()
 			}
 			
 			//Calc actual amount
-			float actamount = 0.00;
-			QString qactamount = QString("SELECT amount FROM %1 ORDER BY ID;").arg(accountid);
+			double actamount = 0.00;
+			QString qactamount = QString("SELECT account_balance FROM %1 ORDER BY ID DESC LIMIT 1;").arg(accountid);
 			QSqlQuery queryactamount(qactamount);
-			while(queryactamount.next())
-				actamount += queryactamount.value(0).toString().toFloat();
+			queryactamount.next();
+			actamount = queryactamount.value(0).toString().toFloat();
 			
 			bool check = TRUE;
 			QString errordescription;
@@ -982,7 +1020,12 @@ void accountsfrm::mt940import()
 				{
 					if(lines[i].section(":",0,1) == ":61" )
 					{
-						QString t_date = lines[i].section(":",2,2).mid(0, 2) + "/" + lines[i].section(":",2,2).mid(6, 2)+ "/" + lines[i].section(":",2,2).mid(8, 2); 
+						QString t_date = lines[i].section(":",2,2).mid(0, 2) + "/" + lines[i].section(":",2,2).mid(6, 2)+ "/" + lines[i].section(":",2,2).mid(8, 2);
+						if(lines[i].section(":",2,2).mid(6, 2) == "01" && lines[i].section(":",2,2).mid(2, 2) == "12") 
+						{
+							QString str_year = QString("%1").arg(lines[i].section(":",2,2).mid(0, 2).toInt()+1, 0, 10);
+							t_date = str_year.rightJustified(2, '0') + "/" + lines[i].section(":",2,2).mid(6, 2)+ "/" + lines[i].section(":",2,2).mid(8, 2);
+						}
 						QString t_type = lines[i].section(":",2,2).mid(10,1);
 						
 						QString tmpstr = lines[i].section(":",2,2).mid(11,15);
@@ -1007,7 +1050,8 @@ void accountsfrm::mt940import()
 							t_comments = t_comments.replace(":86:", "").trimmed();
 							i--;
 						}
-						QString qinsstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '', '', '%3', '', '%4');").arg(accountid).arg(t_date).arg(t_comments.replace("'", "\\'")).arg(t_amount);
+						actamount += t_amount.toDouble();
+						QString qinsstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`, `account_balance`) VALUES (NULL, '%2', '', '', '%3', '', '%4', '%5');").arg(accountid).arg(t_date).arg(t_comments.replace("'", "\\'")).arg(t_amount).arg(actamount, 0, 'f',2);
 						QSqlQuery qinsert(qinsstr);
 						QSqlError qerror = qinsert.lastError();
 						if(qerror.isValid()) 
