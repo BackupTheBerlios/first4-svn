@@ -128,7 +128,7 @@ void accountsfrm::inittreemainaccounts()
     treemain->headerItem()->setText(4, tr("Code"));
     treemain->headerItem()->setText(5, tr("Description"));
     treemain->headerItem()->setText(6, tr("Amount"));
-    treemain->headerItem()->setText(7, tr("Account"));
+    treemain->headerItem()->setText(7, tr("Balance"));
     treemain->headerItem()->setText(8, "type");
 
     treemain->hideColumn(8);
@@ -864,59 +864,59 @@ void accountsfrm::csvexport()
 //
 void accountsfrm::esrimport()
 {
-    QString filestr = QFileDialog::getOpenFileName ( this, tr("Open File..."),
-	                   QDir::homePath(),
-	                   tr("ESR-File (*.*)") );
-    if(filestr!="")
-    {   
+	QString filestr = QFileDialog::getOpenFileName ( this, tr("Open File..."),
+						QDir::homePath(),
+						tr("ESR-File (*.*)") );
+	if(filestr!="")
+	{
 		int i;
 		progfrm *pfrm = new progfrm;
 		pfrm->setFixedSize(pfrm->width(), pfrm->height());
 		pfrm->txtcomments->setText(tr("Data will be imported..."));
 		pfrm->show();
-    
+
 		QFile file(filestr);
 		if(file.open( QIODevice::ReadOnly ) )
 		{
-		    QTextStream stream( &file );
-		    QStringList lines;
-	    
-		    while(!stream.atEnd())
+			QTextStream stream( &file );
+			QStringList lines;
+
+			while(!stream.atEnd())
 				lines << stream.readLine();
-		    file.close();
-	    
-		    pfrm->progbar->setMaximum(lines.count());
-		    QString negamount;
-		    QString refnr, address, adrID, comments, amount, date;
-		    for(i=0;i<lines.count()-1;i++)
-		    {
+			file.close();
+
+			pfrm->progbar->setMaximum(lines.count());
+			QString negamount;
+			QString refnr, address, adrID, comments, amount, date;
+			for(i=0;i<lines.count()-1;i++)
+			{
 				refnr = lines[i].mid(19, 20);
 				QString qstr = QString("SELECT address FROM incexp WHERE `refnr` = '%1';").arg(lines[i].mid(24, 15));
 				QSqlQuery query(qstr);
 				if(query.size()>0)
 				{
-				    query.next();
-				    address = query.value(0).toString().section(" (", 0, 0);
-				    adrID = query.value(0).toString().section(" (", 1, 1).section(")", 0, 0);
-				    refnr  = lines[i].mid(24, 15);
-				    comments = tr("Payment for Invoice: ")+lines[i].mid(19, 20);
+					query.next();
+					address = query.value(0).toString().section(" (", 0, 0);
+					adrID = query.value(0).toString().section(" (", 1, 1).section(")", 0, 0);
+					refnr  = lines[i].mid(24, 15);
+					comments = tr("Payment for Invoice: ")+lines[i].mid(19, 20);
 				}
 				else
 				{
-				    address = tr("Unknow");
-				    adrID = "";
-				    comments  = tr("Unknow");
-				}	
+					address = tr("Unknow");
+					adrID = "";
+					comments  = tr("Unknow");
+				}
 				if(lines[i].mid(1, 2) == "05" || lines[i].mid(1, 2) == "15")
-				    negamount = "-";
+					negamount = "-";
 				else
-				    negamount = "";		
+					negamount = "";		
 				amount = negamount + QString("%1").arg(lines[i].mid(40, 9).toDouble()/100, 0, 'f', 2);
 				date = "20" + lines[i].mid(71, 6);
 				date = date.left(4)+"-"+date.mid(4,2)+"-"+date.right(2);
 				if(lines[i].mid(97, 3) != "000")
-				    comments = comments+"\n"+tr("Post office taxes: %1").arg(lines[i].mid(97, 3).toDouble()/100, 0, 'f', 2);
-			
+					comments = comments+"\n"+tr("Post office taxes: %1").arg(lines[i].mid(97, 3).toDouble()/100, 0, 'f', 2);
+
 				qstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '%4', '%5', '', '%7');").arg(accountid).arg(date).arg(refnr).arg(address+" ("+adrID+")").arg(comments).arg(amount);
 				QSqlQuery queryadd(qstr);
 				pfrm->progbar->setValue(i);

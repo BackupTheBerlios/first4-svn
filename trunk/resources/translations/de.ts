@@ -192,22 +192,22 @@ p, li { white-space: pre-wrap; }
         <translation>Ü&amp;bernehmen</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="206"/>
+        <location filename="../../src/accountseditfrm.cpp" line="208"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="207"/>
+        <location filename="../../src/accountseditfrm.cpp" line="209"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="208"/>
+        <location filename="../../src/accountseditfrm.cpp" line="210"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location filename="../../src/accountseditfrm.cpp" line="209"/>
+        <location filename="../../src/accountseditfrm.cpp" line="211"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
@@ -225,302 +225,302 @@ p, li { white-space: pre-wrap; }
         <translation>Durchsuche Konten...</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="58"/>
+        <location filename="../../ui/accountsfrm.ui" line="67"/>
         <source>No details</source>
         <translation>Keine Details</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="576"/>
+        <location filename="../../ui/accountsfrm.ui" line="601"/>
         <source>Overview</source>
         <translation>Übersicht</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="804"/>
+        <location filename="../../ui/accountsfrm.ui" line="1055"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="150"/>
+        <location filename="../../ui/accountsfrm.ui" line="167"/>
         <source>Saldo:</source>
         <translation>Saldo:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="238"/>
+        <location filename="../../ui/accountsfrm.ui" line="255"/>
         <source>Incomes:</source>
         <translation>Einnahmen:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="280"/>
+        <location filename="../../ui/accountsfrm.ui" line="297"/>
         <source>Expenditures:</source>
         <translation>Ausgaben:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="299"/>
+        <location filename="../../ui/accountsfrm.ui" line="324"/>
         <source>Account overview</source>
         <translation>Konto übersicht</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="462"/>
+        <location filename="../../ui/accountsfrm.ui" line="487"/>
         <source>Account-Nr.:</source>
         <translation>Konto-Nr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="606"/>
+        <location filename="../../ui/accountsfrm.ui" line="631"/>
         <source>Currency</source>
         <translation>Währung</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="534"/>
+        <location filename="../../ui/accountsfrm.ui" line="559"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="556"/>
+        <location filename="../../ui/accountsfrm.ui" line="581"/>
         <source>Bank:</source>
         <translation>Bank:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="581"/>
+        <location filename="../../ui/accountsfrm.ui" line="606"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="586"/>
+        <location filename="../../ui/accountsfrm.ui" line="611"/>
         <source>name</source>
         <translation>name</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="591"/>
+        <location filename="../../ui/accountsfrm.ui" line="616"/>
         <source>AccountNr</source>
         <translation>KontoNr</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="596"/>
+        <location filename="../../ui/accountsfrm.ui" line="621"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="601"/>
+        <location filename="../../ui/accountsfrm.ui" line="626"/>
         <source>Clearing</source>
         <translation>BLZ</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="611"/>
+        <location filename="../../ui/accountsfrm.ui" line="636"/>
         <source>Permissions</source>
         <translation>Berechtigungen</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="775"/>
+        <location filename="../../ui/accountsfrm.ui" line="908"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="787"/>
+        <location filename="../../ui/accountsfrm.ui" line="1037"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="106"/>
+        <location filename="../../src/accountsfrm.cpp" line="109"/>
         <source>Incomes</source>
         <translation>Einnahmen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="110"/>
+        <location filename="../../src/accountsfrm.cpp" line="113"/>
         <source>Expenditures</source>
         <translation>Ausgaben</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="101"/>
+        <location filename="../../src/accountsfrm.cpp" line="104"/>
         <source>Archiv</source>
         <translation>Archiv</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="178"/>
+        <location filename="../../src/accountsfrm.cpp" line="181"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="179"/>
+        <location filename="../../src/accountsfrm.cpp" line="182"/>
         <source>RefNr.</source>
         <translation>RefNr.</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="180"/>
+        <location filename="../../src/accountsfrm.cpp" line="183"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="181"/>
+        <location filename="../../src/accountsfrm.cpp" line="184"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="182"/>
+        <location filename="../../src/accountsfrm.cpp" line="185"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="183"/>
+        <location filename="../../src/accountsfrm.cpp" line="186"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="151"/>
+        <location filename="../../src/accountsfrm.cpp" line="154"/>
         <source>Account</source>
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="152"/>
+        <location filename="../../src/accountsfrm.cpp" line="155"/>
         <source>Account-Nr.</source>
         <translation>Konto-Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="184"/>
+        <location filename="../../src/accountsfrm.cpp" line="187"/>
         <source>ClientID</source>
         <translation>KundenID</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="607"/>
+        <location filename="../../src/accountsfrm.cpp" line="649"/>
         <source>&amp;New Entry</source>
         <translation>&amp;Neuer Eintrag</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="614"/>
+        <location filename="../../src/accountsfrm.cpp" line="656"/>
         <source>&amp;Edit Entry</source>
         <translation>Eintrag &amp;bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="621"/>
+        <location filename="../../src/accountsfrm.cpp" line="663"/>
         <source>&amp;Delete Entry</source>
         <translation>Eintrag &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="636"/>
+        <location filename="../../src/accountsfrm.cpp" line="678"/>
         <source>New Entry...</source>
         <translation>Neuer Eintrag...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="661"/>
+        <location filename="../../src/accountsfrm.cpp" line="703"/>
         <source>Edit Entry...</source>
         <translation>Eintrag bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="682"/>
+        <location filename="../../src/accountsfrm.cpp" line="724"/>
         <source>Delete Entry...</source>
         <translation>Eintrag löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="682"/>
+        <location filename="../../src/accountsfrm.cpp" line="724"/>
         <source>Delete entry %1 ?</source>
         <translation>Lösche Eintrag %1 ?</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="719"/>
+        <location filename="../../src/accountsfrm.cpp" line="761"/>
         <source>Search entries, who can be completed in account &apos;%1&apos;...</source>
         <translation>Suche Einträge die in Konto &apos;%1&apos; abgeschlossen werden können...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="737"/>
+        <location filename="../../src/accountsfrm.cpp" line="779"/>
         <source>Eintries will be completed...</source>
         <translation>Einträge werden abgeschlossen...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="791"/>
+        <location filename="../../src/accountsfrm.cpp" line="833"/>
         <source>Save file as...</source>
         <translation>Speichere Datei unter...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="793"/>
+        <location filename="../../src/accountsfrm.cpp" line="835"/>
         <source>CSV-File (*.csv)</source>
         <translation>CSV-Datei (*.csv)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="801"/>
+        <location filename="../../src/accountsfrm.cpp" line="843"/>
         <source>Data will be exported...</source>
         <translation>Daten werden exportiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="888"/>
+        <location filename="../../src/accountsfrm.cpp" line="930"/>
         <source>Open File...</source>
         <translation>Öffne Datei...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="827"/>
+        <location filename="../../src/accountsfrm.cpp" line="869"/>
         <source>ESR-File (*.*)</source>
         <translation>ESR-Datei (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="833"/>
+        <location filename="../../src/accountsfrm.cpp" line="875"/>
         <source>Data will be imported...</source>
         <translation>Daten werden importiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="866"/>
+        <location filename="../../src/accountsfrm.cpp" line="908"/>
         <source>Unknow</source>
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="876"/>
+        <location filename="../../src/accountsfrm.cpp" line="918"/>
         <source>Post office taxes: %1</source>
         <translation>Postgebühren: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1092"/>
+        <location filename="../../src/accountsfrm.cpp" line="1140"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1103"/>
+        <location filename="../../src/accountsfrm.cpp" line="1151"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1111"/>
+        <location filename="../../src/accountsfrm.cpp" line="1159"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation>Kann DVI-Datei nicht finden.</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="512"/>
+        <location filename="../../ui/accountsfrm.ui" line="537"/>
         <source>Clearing:</source>
         <translation>BLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/accountsfrm.ui" line="797"/>
+        <location filename="../../ui/accountsfrm.ui" line="1048"/>
         <source>User:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="860"/>
+        <location filename="../../src/accountsfrm.cpp" line="902"/>
         <source>Payment for Invoice: </source>
         <translation>Bezahlung für Rechnung: </translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1078"/>
+        <location filename="../../src/accountsfrm.cpp" line="1126"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1126"/>
+        <location filename="../../src/accountsfrm.cpp" line="1174"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="83"/>
+        <location filename="../../src/accountsfrm.cpp" line="86"/>
         <source>Banc accounts</source>
         <translation>Bankkonto</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="87"/>
+        <location filename="../../src/accountsfrm.cpp" line="90"/>
         <source>Local accounts</source>
         <translation>Lokales Konto</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="890"/>
+        <location filename="../../src/accountsfrm.cpp" line="932"/>
         <source>MT940-File (*.*)</source>
         <translation>MT940-Datei (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="951"/>
+        <location filename="../../src/accountsfrm.cpp" line="993"/>
         <source>Clearing number is not the same.
 
 Clearing in file is: %1</source>
@@ -529,7 +529,7 @@ Clearing in file is: %1</source>
 Bankleitzahl in Datei ist: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="956"/>
+        <location filename="../../src/accountsfrm.cpp" line="998"/>
         <source>Account number is not the same.
 
 Account number in file is: %1</source>
@@ -538,7 +538,7 @@ Account number in file is: %1</source>
 Kontonummer in Datei ist: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="961"/>
+        <location filename="../../src/accountsfrm.cpp" line="1003"/>
         <source>Currency is not the same.
 
 Currency in file is: %1</source>
@@ -547,17 +547,17 @@ Currency in file is: %1</source>
 Währung in Datei ist: %1</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="970"/>
+        <location filename="../../src/accountsfrm.cpp" line="1012"/>
         <source>MT940 import not possible...</source>
         <translation>MT940 import nicht möglich...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="896"/>
+        <location filename="../../src/accountsfrm.cpp" line="938"/>
         <source>Importing data...</source>
         <translation>Daten werden importiert...</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="966"/>
+        <location filename="../../src/accountsfrm.cpp" line="1008"/>
         <source>The current amount is not the same.
 
 Actual account amount is: %1
@@ -566,9 +566,29 @@ Amount in file is: %2</source>
 Betrag in Datei ist: %2</translation>
     </message>
     <message>
-        <location filename="../../src/accountsfrm.cpp" line="1010"/>
+        <location filename="../../src/accountsfrm.cpp" line="1058"/>
         <source>Importing error...</source>
         <translation>Fehler beim Importieren...</translation>
+    </message>
+    <message>
+        <location filename="../../src/accountsfrm.cpp" line="131"/>
+        <source>Balance</source>
+        <translation>Saldo</translation>
+    </message>
+    <message>
+        <location filename="../../ui/accountsfrm.ui" line="936"/>
+        <source>/</source>
+        <translation>/</translation>
+    </message>
+    <message>
+        <location filename="../../ui/accountsfrm.ui" line="961"/>
+        <source>50</source>
+        <translation>50</translation>
+    </message>
+    <message>
+        <location filename="../../ui/accountsfrm.ui" line="1006"/>
+        <source>Datasets:</source>
+        <translation>Datensätze:</translation>
     </message>
 </context>
 <context>
@@ -702,37 +722,37 @@ Betrag in Datei ist: %2</translation>
         <translation>%1 %2 %3 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="820"/>
+        <location filename="../../src/addrfrm.cpp" line="826"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="859"/>
+        <location filename="../../src/addrfrm.cpp" line="873"/>
         <source>Delete Document...</source>
         <translation>Dokument löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="859"/>
+        <location filename="../../src/addrfrm.cpp" line="873"/>
         <source>Delete %1 %2?</source>
         <translation>%1 %2 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="879"/>
+        <location filename="../../src/addrfrm.cpp" line="893"/>
         <source>&amp;Open Document</source>
         <translation>Dokument ö&amp;ffnen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="882"/>
+        <location filename="../../src/addrfrm.cpp" line="896"/>
         <source>&amp;Delete Document</source>
         <translation>Dokument &amp;löschen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="922"/>
+        <location filename="../../src/addrfrm.cpp" line="936"/>
         <source>Copy to</source>
         <translation>Kopiere nach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="925"/>
+        <location filename="../../src/addrfrm.cpp" line="939"/>
         <source>Move to</source>
         <translation>Verschiebe nach</translation>
     </message>
@@ -927,12 +947,12 @@ Betrag in Datei ist: %2</translation>
         <translation>Suche:</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="829"/>
+        <location filename="../../src/addrfrm.cpp" line="840"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation>Fehler beim konvertieren zu DVI!</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="758"/>
+        <location filename="../../src/addrfrm.cpp" line="760"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
@@ -947,7 +967,7 @@ Betrag in Datei ist: %2</translation>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="782"/>
+        <location filename="../../src/addrfrm.cpp" line="788"/>
         <source>Company</source>
         <translation>Firma</translation>
     </message>
@@ -957,102 +977,102 @@ Betrag in Datei ist: %2</translation>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="783"/>
+        <location filename="../../src/addrfrm.cpp" line="789"/>
         <source>Salutation</source>
         <translation>Anrede</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="784"/>
+        <location filename="../../src/addrfrm.cpp" line="790"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="785"/>
+        <location filename="../../src/addrfrm.cpp" line="791"/>
         <source>P.O. Box</source>
         <translation>Postfach</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="786"/>
+        <location filename="../../src/addrfrm.cpp" line="792"/>
         <source>Street \&amp; Nr.</source>
         <translation>Strasse Nr.</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="787"/>
+        <location filename="../../src/addrfrm.cpp" line="793"/>
         <source>ZIP, Location</source>
         <translation>PLZ, Ort</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="788"/>
+        <location filename="../../src/addrfrm.cpp" line="794"/>
         <source>Business phone</source>
         <translation>Telefon Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="789"/>
+        <location filename="../../src/addrfrm.cpp" line="795"/>
         <source>Direct phone</source>
         <translation>Telefon direkt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="790"/>
+        <location filename="../../src/addrfrm.cpp" line="796"/>
         <source>Business fax</source>
         <translation>Fax Geschäft</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="791"/>
+        <location filename="../../src/addrfrm.cpp" line="797"/>
         <source>Private phone</source>
         <translation>Telefon Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="792"/>
+        <location filename="../../src/addrfrm.cpp" line="798"/>
         <source>Private fax</source>
         <translation>Fax Privat</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="793"/>
+        <location filename="../../src/addrfrm.cpp" line="799"/>
         <source>Mobile</source>
         <translation>Mobile</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="794"/>
+        <location filename="../../src/addrfrm.cpp" line="800"/>
         <source>E-Mail 1</source>
         <translation>E-Mail 1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="795"/>
+        <location filename="../../src/addrfrm.cpp" line="801"/>
         <source>E-Mail 2</source>
         <translation>E-Mail 2</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="796"/>
+        <location filename="../../src/addrfrm.cpp" line="802"/>
         <source>E-Mail 3</source>
         <translation>E-Mail 3</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="797"/>
+        <location filename="../../src/addrfrm.cpp" line="803"/>
         <source>Website</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="809"/>
+        <location filename="../../src/addrfrm.cpp" line="815"/>
         <source>Discount</source>
         <translation>Rabatt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="810"/>
+        <location filename="../../src/addrfrm.cpp" line="816"/>
         <source>Comments</source>
         <translation>Bemerkungen</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="816"/>
+        <location filename="../../src/addrfrm.cpp" line="822"/>
         <source>Created</source>
         <translation>Erstellt</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="816"/>
+        <location filename="../../src/addrfrm.cpp" line="822"/>
         <source>Modified</source>
         <translation>Bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="1002"/>
+        <location filename="../../src/addrfrm.cpp" line="1016"/>
         <source>Can&apos;t load template data...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -1110,6 +1130,16 @@ Betrag in Datei ist: %2</translation>
         <location filename="../../ui/addrfrm.ui" line="582"/>
         <source>Country:</source>
         <translation>Land:</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrfrm.cpp" line="765"/>
+        <source>You must define a DVI-Viewer.</source>
+        <translation>Ein DVI-Viewer muss zuerst definiert werden.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addrfrm.cpp" line="843"/>
+        <source>You must define a TEX to DVI converter.</source>
+        <translation>Ein Konverter TEX zu DVI muss zuerst definiert werden.</translation>
     </message>
 </context>
 <context>
@@ -2744,7 +2774,7 @@ p, li { white-space: pre-wrap; }
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="1087"/>
+        <location filename="../../src/datafrm.cpp" line="795"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>
@@ -2923,37 +2953,37 @@ p, li { white-space: pre-wrap; }
         <translation>Datenbank update...</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="28"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="29"/>
         <source>&amp;Proceed</source>
         <translation>&amp;Weiter</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="41"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="42"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="60"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="61"/>
         <source>The database must be updated.</source>
         <translation>Ein Datenbankupdate wird benötigt.</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="73"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="74"/>
         <source>Current version:</source>
         <translation>Aktuelle Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="86"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="87"/>
         <source>New Version:</source>
         <translation>Neue Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/dbupdatefrm.ui" line="112"/>
+        <location filename="../../ui/dbupdatefrm.ui" line="113"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/dbupdatefrm.cpp" line="150"/>
+        <location filename="../../src/dbupdatefrm.cpp" line="189"/>
         <source>Update completed.</source>
         <translation>Update abgeschlossen.</translation>
     </message>
@@ -4113,17 +4143,17 @@ Bitte kontaktieren Sie ihre Administrator.</translation>
         <translation>&amp;Drucken</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="286"/>
+        <location filename="../../src/invfrm.cpp" line="288"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation>Kann Ausgabedatei nicht schreiben!</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="302"/>
+        <location filename="../../src/invfrm.cpp" line="307"/>
         <source>Complete Inventory...</source>
         <translation>Inventar abschliessen...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="302"/>
+        <location filename="../../src/invfrm.cpp" line="307"/>
         <source>Completed Inventories can&apos;t be edited!
 
 Complete nevertheless?</source>
@@ -4132,12 +4162,12 @@ Complete nevertheless?</source>
 Trotzdem abschliessen?</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="395"/>
+        <location filename="../../src/invfrm.cpp" line="400"/>
         <source>Save Data...</source>
         <translation>Speichern...</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="395"/>
+        <location filename="../../src/invfrm.cpp" line="400"/>
         <source>Save Inventory?</source>
         <translation>Inventar speichern?</translation>
     </message>
@@ -4222,32 +4252,32 @@ Trotzdem abschliessen?</translation>
         <translation>Fehler beim konvertieren zu Postscript-Datei.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="229"/>
+        <location filename="../../src/invfrm.cpp" line="231"/>
         <source>Error during printing process.</source>
         <translation>Fehler beim Druckprozess.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="245"/>
+        <location filename="../../src/invfrm.cpp" line="247"/>
         <source>Can&apos;t show DVI file.</source>
         <translation>Kann DVI-Datei nicht anzeigen.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="295"/>
+        <location filename="../../src/invfrm.cpp" line="300"/>
         <source>Error during conversion to DVI file.</source>
         <translation>Fehler beim konvertieren zu DVI.</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="248"/>
+        <location filename="../../src/invfrm.cpp" line="250"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation>Sie müssen zuerst einen DVI-Viewer definieren. z.B. KDVI oder Okular</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="279"/>
+        <location filename="../../src/invfrm.cpp" line="281"/>
         <source>Page:</source>
         <translation>Seite:</translation>
     </message>
     <message>
-        <location filename="../../src/invfrm.cpp" line="430"/>
+        <location filename="../../src/invfrm.cpp" line="435"/>
         <source>Can&apos;t load template...</source>
         <translation>Kann Vorlage nicht laden...</translation>
     </message>

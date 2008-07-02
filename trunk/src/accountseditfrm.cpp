@@ -147,19 +147,22 @@ void accountseditfrm::updateentry(QString tab)
 //
 void accountseditfrm::newentry(QString tab)
 {
-    QString qstr = "";
-    if(tab == "incexp")
-    {
+	QString qstr = "";
+	if(tab == "incexp")
+	{
 		qstr = QString("INSERT INTO `%1` (`ID`, `refnr`, `type`, `state`, `date`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '0', '%5', '%6', '%7', '%8', '%9');").arg(tab).arg(txtRefNr->text()).arg(ietype[cmbincexp->currentIndex()]).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text());
-    }
-    else
-    {
-		qstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`) VALUES (NULL, '%2', '%3', '%4', '%5', '%6', '%7');").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtRefNr->text()).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text());
-    }
-    QSqlDatabase::database().transaction();
-    QSqlQuery query(qstr);
-    QSqlDatabase::database().commit();
-    this->accept();
+	}
+	else
+	{
+		QSqlQuery query_balance("SELECT account_balance FROM "+tab+" ORDER BY ID DESC LIMIT 1;");
+		query_balance.next();
+		double balance = query_balance.value(0).toDouble()+txtamount->text().toDouble();
+		qstr = QString("INSERT INTO `%1` (`ID`, `date`, `refnr`, `address`, `description`, `code`, `amount`, `account_balance`) VALUES (NULL, '%2', '%3', '%4', '%5', '%6', '%7', '%8');").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtRefNr->text()).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text()).arg(QString("%1").arg(balance, 0, 'f',2));
+	}
+	QSqlDatabase::database().transaction();
+	QSqlQuery query(qstr);
+	QSqlDatabase::database().commit();
+	this->accept();
 }
 //
 void accountseditfrm::selectaddr()
