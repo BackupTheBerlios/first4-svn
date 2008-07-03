@@ -54,6 +54,7 @@ int accountsfrm::init()
 	connect(btncomplete, SIGNAL(released()), this, SLOT(completeitems()));
 	connect(btnclose, SIGNAL(released()), this, SLOT(close()));
 	connect(treeindex, SIGNAL(itemClicked(QTreeWidgetItem* , int)), this, SLOT(loaddetails()));
+	connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem* , int)), this, SLOT(editentry()));
 	connect(treemain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
 	connect(btnrefresh, SIGNAL(released()), this, SLOT(refreshdata()));
 	connect(txtsqlfrom, SIGNAL(returnPressed()), this, SLOT(refreshdata()));
@@ -724,8 +725,29 @@ void accountsfrm::deleteentry()
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(2)), QMessageBox::Yes, QMessageBox::No);
 		if(resp == QMessageBox::Yes)
 		{
-			QString qstr = QString("DELETE FROM `%1` WHERE `ID` = '%2';").arg(accountid).arg(item->text(0));
+			QString qstr = QString("SELECT amount FROM %1 WHERE `ID` = '%2' LIMIT 1;").arg(accountid).arg(item->text(0));
+			QSqlQuery query_lastid(qstr);
+			query_lastid.next();
+			
+			qstr = QString("DELETE FROM `%1` WHERE `ID` = '%2';").arg(accountid).arg(item->text(0));
 			QSqlQuery query(qstr);
+			
+			if(accountid!="incexp") {
+				qstr = QString("SELECT ID, account_balance FROM %1 WHERE `ID` > '%2' ORDER BY DATE, ID;").arg(accountid).arg(item->text(0));
+				QSqlQuery query_calc(qstr);
+				progfrm *pfrm = new progfrm;
+				pfrm->setFixedSize(pfrm->width(), pfrm->height());
+				pfrm->txtcomments->setText(tr("Re-calculating account balance."));
+				pfrm->progbar->setMaximum(query_calc.size());
+				pfrm->show();
+				double amount = query_lastid.value(0).toDouble();
+				while(query_calc.next()) {
+					qstr = QString("UPDATE %1 SET `account_balance` = '%2' WHERE `ID`='%3';").arg(accountid).arg(query_calc.value(1).toDouble()-amount, 0, 'f',2).arg(query_calc.value(0).toString());
+					QSqlQuery query_balance(qstr);
+					pfrm->progbar->setValue(query_calc.at());
+				}
+				pfrm->close();
+			}
 			loaddetails();
 		}
 	}

@@ -5,6 +5,7 @@
 #include "addrselectfrm.h"
 #include "stockselfrm.h"
 #include "vars.h"
+#include "progfrm.h"
 //
 extern QString username;
 //
@@ -128,18 +129,34 @@ void accountseditfrm::acceptdata()
 //
 void accountseditfrm::updateentry(QString tab)
 {
+	QSqlDatabase::database().transaction();
 	vars v;
-    QString qstr = "";
-    if(tab == "incexp")
-    {
+	QString qstr = "";
+	if(tab == "incexp")
+	{
 		qstr = QString("UPDATE `%1` SET `date`='%2', `address` = '%3', `description`='%4', `code`='%5', `amount`='%6' WHERE `ID`=%7;").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text()).arg(lblID->text());
-    }
-    else
-    {
+	}
+	else
+	{
+		qstr = QString("SELECT ID, amount, account_balance FROM %1 WHERE `ID` >= '%2' ORDER BY DATE, ID;").arg(tab).arg(lblID->text());
+		QSqlQuery query_calc(qstr);
+		progfrm *pfrm = new progfrm;
+		pfrm->setFixedSize(pfrm->width(), pfrm->height());
+		pfrm->txtcomments->setText(tr("Re-calculating account balance."));
+		pfrm->progbar->setMaximum(query_calc.size());
+		pfrm->show();
+		double balance_diff;
+		while(query_calc.next()) {
+			if(query_calc.value(0).toString() == lblID->text())
+				balance_diff = query_calc.value(1).toDouble() - txtamount->text().toDouble();
+			qstr = QString("UPDATE %1 SET `account_balance` = '%2' WHERE `ID`='%3';").arg(tab).arg(query_calc.value(2).toDouble()-balance_diff, 0, 'f',2).arg(query_calc.value(0).toString());
+			QSqlQuery query_balance(qstr);
+			pfrm->progbar->setValue(query_calc.at());
+		}
 		qstr = QString("UPDATE `%1` SET `date`='%2', `address`='%3', `description`='%4', `code`='%5', `amount`='%6' WHERE `ID`=%7;").arg(tab).arg(date1->date().toString("yyyy/MM/dd")).arg(txtaddress->toPlainText()+" ("+lbladdrID->text()+")").arg(txtdescription->toPlainText()).arg(txtCode->text()).arg(txtamount->text()).arg(lblID->text());
-    }
-    QSqlDatabase::database().transaction();
-    QSqlQuery query(qstr);
+		QSqlQuery query(qstr);
+		pfrm->close();
+	}
     QSqlDatabase::database().commit();
     v.unlockrow(tab, lblID->text());
     this->accept();    
