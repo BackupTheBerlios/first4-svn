@@ -133,9 +133,13 @@ void mainfrm::initplugins() {
 					if( maintoolbox->count() > fpi->toolBoxIndex() || fpi->toolBoxIndex() == -1 )
 					{
 						if( !fpi->pluginName().isEmpty() || !fpi->pluginName().isNull() )
+						{
 							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
+						}
 						else
+						{
 							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fileName.split ( "." ).value ( 0 ) );
+						}
 					}
 				}
 			}
