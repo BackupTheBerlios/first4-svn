@@ -1,5 +1,4 @@
 #include <QSqlQuery>
-#include <QMessageBox>
 //
 #include "accountseditfrm.h"
 #include "addrselectfrm.h"

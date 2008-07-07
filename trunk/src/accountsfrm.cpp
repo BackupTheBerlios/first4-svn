@@ -68,7 +68,6 @@ int accountsfrm::init()
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
 		this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
 	}
-
 	inittreemainoverview();
 
 	return 2;
@@ -220,7 +219,10 @@ void accountsfrm::loadaccounts()
 		    childitem->setText(7, query1.value(7).toString().section(username+" [", 1, 1).section("]", 0, 0));
 		    childitem->setText(8, query1.value(8).toString());
 		}
-    }
+	} else {
+		QSqlError qerror = query1.lastError(); 
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+	}
 
     connstr = "SELECT ID, name, description, accountnr, bank, blz, currency, users, type FROM accounts WHERE users LIKE '%"+username+" [1%' AND name LIKE '%account%'  AND `type`='local';"; 
     QSqlQuery query2(connstr);
@@ -240,7 +242,10 @@ void accountsfrm::loadaccounts()
 		    childitem->setText(7, query2.value(7).toString().section(username+" [", 1, 1).section("]", 0, 0));
 		    childitem->setText(8, query2.value(8).toString());
 		}
-    }
+    } else {
+		QSqlError qerror = query2.lastError();
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+   	}
 
     connstr = "SELECT users FROM accounts WHERE name LIKE '%incexp%';"; 
     QSqlQuery query3(connstr);
@@ -265,6 +270,9 @@ void accountsfrm::loadaccounts()
 		childitem->setText(7, query3.value(0).toString().section(username+" [", 1, 1).section("]", 0, 0));
 		
 		item->setExpanded(FALSE);
+	} else {
+		QSqlError qerror = query3.lastError();
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
 	}
 }
 //
@@ -394,11 +402,17 @@ void accountsfrm::loaddetails()
 				    float saldo = 0;
 				    QString qstr = "SELECT amount FROM "+tmpitem->text(2)+" ORDER BY ID DESC;"; 
 				    QSqlQuery query(qstr);
-				    while(query.next())
-				    {
-						saldo += query.value(0).toString().toFloat(&ok);
-				    }
-				    mainlistitem->setText(5, QString("%1").arg(saldo, 0, 'f',2));
+					if(query.isActive())
+					{
+						while(query.next())
+						{
+							saldo += query.value(0).toString().toFloat(&ok);
+						}
+						mainlistitem->setText(5, QString("%1").arg(saldo, 0, 'f',2));
+					} else {
+						QSqlError qerror = query.lastError(); 
+						QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+					}
 				}
 		    }
 		    else if(item->text(1) == "localaccount")
@@ -408,7 +422,6 @@ void accountsfrm::loaddetails()
 				for(i=0;i<item->childCount();i++)
 				{
 					QTreeWidgetItem* tmpitem = item->child(i);
-
 				    QTreeWidgetItem* mainlistitem = new QTreeWidgetItem(treemain);
 				    mainlistitem->setText(0, tmpitem->text(1));
 				    mainlistitem->setText(1, tmpitem->text(0));
@@ -416,17 +429,23 @@ void accountsfrm::loaddetails()
 				    mainlistitem->setText(3, tmpitem->text(4));
 				    mainlistitem->setText(4, tmpitem->text(5));
 				    mainlistitem->setText(6, tmpitem->text(6));
-				    
+
 				    //Saldo berechnen
 				    bool ok;
 				    float saldo = 0;
 				    QString qstr = "SELECT amount FROM "+tmpitem->text(2)+" ORDER BY ID DESC;"; 
 				    QSqlQuery query(qstr);
-				    while(query.next())
+				    if(query.isActive())
 				    {
-						saldo += query.value(0).toString().toFloat(&ok);
-				    }
-				    mainlistitem->setText(5, QString("%1").arg(saldo, 0, 'f',2));
+				    	while(query.next())
+						{
+							saldo += query.value(0).toString().toFloat(&ok);
+						}
+						mainlistitem->setText(5, QString("%1").arg(saldo, 0, 'f',2));
+					} else {
+						QSqlError qerror = query.lastError(); 
+						QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+		    		}
 				}
 		    }
 		    else
@@ -520,6 +539,11 @@ void accountsfrm::loadaccountdata(QString ID)
 	treemain->clear();
 	QString qstr = QString("SELECT ID FROM %1;").arg(ID);
 	QSqlQuery querycount(qstr);
+	
+	QSqlError qerror = querycount.lastError();
+	if(qerror.isValid()) 
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+	
 	lblsqltot->setText(QString("%1").arg(querycount.size()));
 	int sqlfrom = txtsqlfrom->text().toInt() - 1;
 	int sqlto = txtsqlto->text().toInt() - sqlfrom;
@@ -541,7 +565,10 @@ void accountsfrm::loadaccountdata(QString ID)
 		    item->setText(7, query.value(7).toString());
 		    progbar->setValue(query.at()+1);
 		}
-    }
+    } else {
+		qerror = query.lastError(); 
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+   	}
     progbar->setValue(progbar->maximum());
 }
 //
@@ -558,7 +585,7 @@ void accountsfrm::loadincexpdata(QString type)
 		    QTreeWidgetItem* item = new QTreeWidgetItem(treemain);
 
 		    if(query.value(0).toString()=="1")
-		    	item->setCheckState(1, Qt::Checked);
+				item->setCheckState(1, Qt::Checked);
 		    else
 		    	item->setCheckState(1, Qt::Unchecked);
 		    	
@@ -572,7 +599,10 @@ void accountsfrm::loadincexpdata(QString type)
 		    item->setText(8, "("+query.value(4).toString().section(" (", 1, 1));
 		    progbar->setValue(query.at()+1);
 		}
-    }
+    } else {
+		QSqlError qerror = query.lastError(); 
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+	}
     progbar->setValue(progbar->maximum());
 }
 //
@@ -604,113 +634,115 @@ void accountsfrm::loadarchivdata(QString type)
 	    lblcurr1->setText("CHF");
 	    lblcurr2->setText("CHF");
 	    lblcurr3->setText("CHF");
-    }
+	} else {
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+	}
 }
 //
 QString accountsfrm::calctotal(int type)
 {
-    float ein = 0;
-    float aus = 0;
-    bool ok;
-    QString qstr = "SELECT type, amount FROM incexp;";
-    QString return_value = "0.00";
-    QSqlQuery query(qstr);
-    if(query.isActive())
-    {
+	float ein = 0;
+	float aus = 0;
+	bool ok;
+	QString qstr = "SELECT type, amount FROM incexp;";
+	QString return_value = "0.00";
+	QSqlQuery query(qstr);
+	if(query.isActive())
+	{
 		while(query.next())
 		{
-		    if(query.value(0) == "inc")
+			if(query.value(0) == "inc")
 				ein += query.value(1).toString().toFloat(&ok);
-		    else
+			else
 				aus += query.value(1).toString().toFloat(&ok);
 		}
-    }
+	} else {
+		QSqlError qerror = query.lastError(); 
+		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+	}
 	switch(type) 
-    {
-	    case 0:
+	{
+		case 0:
 			return_value = QString("%1").arg(ein - aus, 0, 'f',2);
 			break;
-	    case 1:
+		case 1:
 			return_value =  QString("%1").arg(ein, 0, 'f',2);
 			break;	    
-	    case 2:
+		case 2:
 			return_value = QString("%1").arg(aus, 0, 'f',2);
-		    break;
-   }
-   return return_value;
+			break;
+	}
+	return return_value;
 }
 //
 void accountsfrm::contmenu()
 {
-    QMenu* contextMenu = new QMenu( this );
-    Q_CHECK_PTR( contextMenu );
-
+	QMenu* contextMenu = new QMenu( this );
+	Q_CHECK_PTR( contextMenu );
 	if(btnnew->isEnabled())
 	{
 		QAction* newentry = new QAction( tr("&New Entry"), this );
 		connect(newentry , SIGNAL(triggered()), this, SLOT(newentry()));
 		contextMenu->addAction(newentry);
 	}
-
 	if(btnedit->isEnabled())
 	{
 		QAction* editentry = new QAction( tr("&Edit Entry"), this );
 		connect(editentry , SIGNAL(triggered()), this, SLOT(editentry()));
 		contextMenu->addAction(editentry);
 	}
-	
 	if(btndelete->isEnabled())
 	{
 		QAction* deleteentry = new QAction( tr("&Delete Entry"), this );
 		connect(deleteentry , SIGNAL(triggered()), this, SLOT(deleteentry()));
 		contextMenu->addAction(deleteentry);
 	}
-		
-    contextMenu->exec( QCursor::pos() );
-    delete contextMenu;
+	contextMenu->exec( QCursor::pos() );
+	delete contextMenu;
 }
 //
 void accountsfrm::newentry()
 {
-    accountseditfrm *efrm = new accountseditfrm;
-    efrm->init();
-    efrm->setdbID(accountid);
-    efrm->date1->setDate(QDate::currentDate());
-    efrm->setWindowTitle(tr("New Entry..."));
-    if(accountid == "incexp")
-    {
+	accountseditfrm *efrm = new accountseditfrm;
+	efrm->init();
+	efrm->setdbID(accountid);
+	efrm->date1->setDate(QDate::currentDate());
+	efrm->setWindowTitle(tr("New Entry..."));
+	if(accountid == "incexp")
+	{
 		QTreeWidgetItem* tmpitem = treeindex->currentItem();
 		if(tmpitem->text(1) == "inc")
-		    efrm->cmbincexp->setCurrentIndex(0);
+			efrm->cmbincexp->setCurrentIndex(0);
 		else
-		    efrm->cmbincexp->setCurrentIndex(1);
-	    }    
-    else
-    {
+			efrm->cmbincexp->setCurrentIndex(1);
+	}
+	else
+	{
 		efrm->lbl_8->setVisible(FALSE);
 		efrm->cmbincexp->setVisible(FALSE);
-    }
-    if(efrm->exec())
-	    loaddetails();
+	}
+	if(efrm->exec())
+		loaddetails();
 }
 //
 void accountsfrm::editentry()
 {
-    QTreeWidgetItem* item = treemain->currentItem();
-    if(item!=0 && accountid != "-")
-    {
+	QTreeWidgetItem* item = treemain->currentItem();
+	if(item!=0 && accountid != "-")
+	{
 		accountseditfrm *editfrm = new accountseditfrm;
 		editfrm->init();	
 		editfrm->setWindowTitle(tr("Edit Entry..."));
-	    editfrm->loadentry(accountid+"_"+item->text(0));
-	    editfrm->txtRefNr->setReadOnly(TRUE);
-	    editfrm->lbl_8->setVisible(FALSE);
-	    editfrm->cmbincexp->setVisible(FALSE);
-	    if(!btnnew->isEnabled())
-	    	editfrm->btnaccept->setEnabled(FALSE); //Deactivate Accept Button
+		editfrm->loadentry(accountid+"_"+item->text(0));
+		editfrm->txtRefNr->setReadOnly(TRUE);
+		editfrm->lbl_8->setVisible(FALSE);
+		editfrm->cmbincexp->setVisible(FALSE);
+		if(!btnnew->isEnabled())
+			editfrm->btnaccept->setEnabled(FALSE); //Deactivate Accept Button
 		if(editfrm->exec())
-		    loaddetails();
-    }
+			loaddetails();
+	}
 }
 //
 void accountsfrm::deleteentry()
@@ -728,25 +760,43 @@ void accountsfrm::deleteentry()
 			QString qstr = QString("SELECT amount FROM %1 WHERE `ID` = '%2' LIMIT 1;").arg(accountid).arg(item->text(0));
 			QSqlQuery query_lastid(qstr);
 			query_lastid.next();
+			QSqlError qerror = query_lastid.lastError();
+			if(qerror.isValid()) 
+				QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
 			
 			qstr = QString("DELETE FROM `%1` WHERE `ID` = '%2';").arg(accountid).arg(item->text(0));
 			QSqlQuery query(qstr);
+			qerror = query.lastError();
+			if(qerror.isValid()) 
+				QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
 			
 			if(accountid!="incexp") {
 				qstr = QString("SELECT ID, account_balance FROM %1 WHERE `ID` > '%2' ORDER BY DATE, ID;").arg(accountid).arg(item->text(0));
 				QSqlQuery query_calc(qstr);
-				progfrm *pfrm = new progfrm;
-				pfrm->setFixedSize(pfrm->width(), pfrm->height());
-				pfrm->txtcomments->setText(tr("Re-calculating account balance."));
-				pfrm->progbar->setMaximum(query_calc.size());
-				pfrm->show();
-				double amount = query_lastid.value(0).toDouble();
-				while(query_calc.next()) {
-					qstr = QString("UPDATE %1 SET `account_balance` = '%2' WHERE `ID`='%3';").arg(accountid).arg(query_calc.value(1).toDouble()-amount, 0, 'f',2).arg(query_calc.value(0).toString());
-					QSqlQuery query_balance(qstr);
-					pfrm->progbar->setValue(query_calc.at());
+				if(query_calc.isActive())
+				{
+					progfrm *pfrm = new progfrm;
+					pfrm->setFixedSize(pfrm->width(), pfrm->height());
+					pfrm->txtcomments->setText(tr("Re-calculating account balance."));
+					pfrm->progbar->setMaximum(query_calc.size());
+					pfrm->show();
+					double amount = query_lastid.value(0).toDouble();
+					while(query_calc.next()) {
+						qstr = QString("UPDATE %1 SET `account_balance` = '%2' WHERE `ID`='%3';").arg(accountid).arg(query_calc.value(1).toDouble()-amount, 0, 'f',2).arg(query_calc.value(0).toString());
+						QSqlQuery query_balance(qstr);
+
+						qerror = query_balance.lastError();
+						if(qerror.isValid()) 
+						QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+
+						pfrm->progbar->setValue(query_calc.at());
+					}
+					pfrm->close();
+				} else {
+					qerror = query_calc.lastError();
+					if(qerror.isValid()) 
+						QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
 				}
-				pfrm->close();
 			}
 			loaddetails();
 		}
@@ -792,9 +842,13 @@ void accountsfrm::completeitems()
 						item->setCheckState(1, Qt::Checked);	
 				}
 			}
-	    }
-	}    
-	
+	    } else {
+			QSqlError qerror = query1.lastError();
+			if(qerror.isValid()) 
+				QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
+		}
+	}
+
 	if(cfrm->chkbox_1->isChecked()) //completed
 	{
 	    int i;
