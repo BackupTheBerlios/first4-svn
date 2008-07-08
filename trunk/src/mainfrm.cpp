@@ -79,6 +79,7 @@ void mainfrm::loaduserdata()
 	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
 	connect ( btnimpexpdata, SIGNAL ( released() ), this, SLOT ( dataimpexp() ) );
+	connect ( btnexit, SIGNAL ( released() ), this, SLOT ( quitapplication() ) );
 }
 //
 int mainfrm::checkdb()
@@ -171,8 +172,20 @@ void mainfrm::checkmsg()
 	query.exec();
 	query.next();
 	lblmsgcount->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
+	
 	if(lbluser->text() == "Administrator" )
 		admtasks();
+	else
+	{
+		QSqlQuery querydblock("SELECT ID FROM maincfg WHERE var='dblocked' AND value='1';");
+		if(querydblock.size() > 0)
+		{
+			querydblock.exec("SELECT value FROM maincfg WHERE var='dblockedmsg';");
+			querydblock.next();
+			QMessageBox::critical( 0, tr("DB update..."), tr("The current database was locked by the Administrator:\n\n")+querydblock.value(0).toString()+tr("\n\nYou will be logged out now!"));
+			QApplication::quit();
+		}
+	}
 }
 //
 void mainfrm::admtasks()
@@ -245,19 +258,20 @@ void mainfrm::about()
 	about->show();
 }
 //
+void mainfrm::quitapplication()
+{
+	int r = QMessageBox::question ( this, tr ( "Exit..." ),tr ( "Exit First4?" ), QMessageBox::Yes, QMessageBox::No );
+	if ( r == QMessageBox::Yes )
+		this->close();
+}
+//
 void mainfrm::closeEvent ( QCloseEvent* ce )
 {
-	int r = QMessageBox::question ( this, tr ( "Exit..." ),tr ( "Exit First?" ), QMessageBox::Yes, QMessageBox::No );
-	if ( r == QMessageBox::Yes )
-	{
-		cleanup();
-		vars v;
-		v.savegeo ( this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height() );
-		ce->accept();
-		qApp->quit();
-	} else {
-		ce->ignore();
-	}
+	cleanup();
+	vars v;
+	v.savegeo ( this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height() );
+	ce->accept();
+	qApp->quit();
 }
 //
 void mainfrm::browseaddr()

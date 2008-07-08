@@ -42,8 +42,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>96</width>
+       <height>26</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -959,8 +959,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>141</height>
+       <width>96</width>
+       <height>26</height>
       </rect>
      </property>
      <attribute name="label" >
@@ -1218,22 +1218,5 @@
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>
- <connections>
-  <connection>
-   <sender>btnexit</sender>
-   <signal>released()</signal>
-   <receiver>mainfrm</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>240</x>
-     <y>514</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>165</x>
-     <y>276</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

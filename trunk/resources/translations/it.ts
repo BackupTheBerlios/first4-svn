@@ -2204,11 +2204,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1122"/>
-        <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/cfgfrm.ui" line="4539"/>
         <source>ID</source>
         <translation type="unfinished">ID</translation>
@@ -2431,11 +2426,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/cfgfrm.cpp" line="1097"/>
         <source>Local accountname:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="1087"/>
-        <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , `account_balance` TEXT NOT NULL  , PRIMARY KEY (`ID`))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4405,13 +4395,8 @@ Complete nevertheless?</source>
 <context>
     <name>mainfrm</name>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="250"/>
+        <location filename="../../src/mainfrm.cpp" line="263"/>
         <source>Exit...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mainfrm.cpp" line="250"/>
-        <source>Exit First?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4530,7 +4515,7 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="173"/>
+        <location filename="../../src/mainfrm.cpp" line="174"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4545,12 +4530,12 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="107"/>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
         <source>DB update...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="107"/>
+        <location filename="../../src/mainfrm.cpp" line="108"/>
         <source>Database update is needed.
 Please login as Administrator to perform the update.</source>
         <translation type="unfinished"></translation>
@@ -4566,12 +4551,12 @@ Please login as Administrator to perform the update.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="122"/>
+        <location filename="../../src/mainfrm.cpp" line="123"/>
         <source>Wrong DB version...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="122"/>
+        <location filename="../../src/mainfrm.cpp" line="123"/>
         <source>This version of first4 needs at least a database with the version: %1 .
 The selected database has version: %2</source>
         <translation type="unfinished"></translation>
@@ -4582,10 +4567,29 @@ The selected database has version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="93"/>
+        <location filename="../../src/mainfrm.cpp" line="94"/>
         <source>The selected database is locked by the Administrator:
 
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
+        <source>The current database was locked by the Administrator:
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
+        <source>
+
+You will be logged out now!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="263"/>
+        <source>Exit First4?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

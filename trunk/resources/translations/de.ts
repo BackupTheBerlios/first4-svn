@@ -2215,11 +2215,6 @@ p, li { white-space: pre-wrap; }
         <translation>Build:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1122"/>
-        <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</source>
-        <translation>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))</translation>
-    </message>
-    <message>
         <location filename="../../ui/cfgfrm.ui" line="4539"/>
         <source>ID</source>
         <translation>ID</translation>
@@ -2443,11 +2438,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/cfgfrm.cpp" line="1097"/>
         <source>Local accountname:</source>
         <translation>Lokales Konto:</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="1087"/>
-        <source>CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default &apos;0000-00-00&apos; , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , `account_balance` TEXT NOT NULL  , PRIMARY KEY (`ID`))</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/cfgfrm.cpp" line="1709"/>
@@ -4498,14 +4488,9 @@ Trotzdem abschliessen?</translation>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="250"/>
+        <location filename="../../src/mainfrm.cpp" line="263"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainfrm.cpp" line="250"/>
-        <source>Exit First?</source>
-        <translation>First beenden?</translation>
     </message>
     <message>
         <location filename="../../ui/mainfrm.ui" line="307"/>
@@ -4553,7 +4538,7 @@ Trotzdem abschliessen?</translation>
         <translation>Konten durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="173"/>
+        <location filename="../../src/mainfrm.cpp" line="174"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
@@ -4568,12 +4553,12 @@ Trotzdem abschliessen?</translation>
         <translation>Neue nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="107"/>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
         <source>DB update...</source>
         <translation>DB update...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="107"/>
+        <location filename="../../src/mainfrm.cpp" line="108"/>
         <source>Database update is needed.
 Please login as Administrator to perform the update.</source>
         <translation>Datenbankupdate wird benötigt.
@@ -4590,12 +4575,12 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
         <translation>Import. / Export. in Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="122"/>
+        <location filename="../../src/mainfrm.cpp" line="123"/>
         <source>Wrong DB version...</source>
         <translation>Falsche DB-Version...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="122"/>
+        <location filename="../../src/mainfrm.cpp" line="123"/>
         <source>This version of first4 needs at least a database with the version: %1 .
 The selected database has version: %2</source>
         <translation>Diese Version von first4 benötigt eine Datenbank mit der Version: %1
@@ -4607,13 +4592,34 @@ Die ausgewählte Datenbank hat die Version: %2</translation>
         <translation>Daten import und export</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="93"/>
+        <location filename="../../src/mainfrm.cpp" line="94"/>
         <source>The selected database is locked by the Administrator:
 
 </source>
         <translation>Die gewünschte Datenbank ist durch den Administrator gesperrt:
 
 </translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
+        <source>The current database was locked by the Administrator:
+
+</source>
+        <translation>Die aktuelle Datenbank wurde duch den Administrator gesperrt:
+
+</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
+        <source>
+
+You will be logged out now!</source>
+        <translation>Sie werden jetzt ausgelogt!</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainfrm.cpp" line="263"/>
+        <source>Exit First4?</source>
+        <translation>First4 beenden?</translation>
     </message>
 </context>
 <context>

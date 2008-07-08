@@ -24,6 +24,7 @@ private slots:
 	void newmsg();
 	void addrimpexp();
 	void dataimpexp();
+	void quitapplication();
 private:
 	void cleanup();
 	void admtasks();
