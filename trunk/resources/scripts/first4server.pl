@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl  
 
 #
 # first4server Script
@@ -90,5 +90,5 @@ my $logfile = "/var/log/first4server.log";
 
       printf("Closing DB connection for database '%s' on host '%s'.\n", $database, $hostname);
   }
-  my $now_string = localtime;
+  $now_string = localtime;
   printf("Finished check-process at '%s'.\n", $now_string);
