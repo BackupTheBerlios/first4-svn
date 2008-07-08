@@ -20,6 +20,7 @@ public:
 	void loadresources();
 	void loadsettings();
 	void loadowndata();
+	void loaddblock();
 public slots:
 	void changepwd();
 	void selectlangfile();
@@ -57,6 +58,7 @@ private slots:
 	void templates_loaddetails();
 	void locks_loaduserlocks();
 	void locks_unlockentry();
+	void setdblock();
 private:
 	void templates_loaddescription();
 };

@@ -102,6 +102,8 @@ void cfgfrm::init()
 		locks_loaduserlocks();
 		progbar->setValue ( 85 );
 		templates_load();
+		progbar->setValue ( 90 );
+		loaddblock();
 	}
 	
 	progbar->setValue ( 85 );
@@ -157,6 +159,8 @@ void cfgfrm::init()
 
 	connect ( lock_btnunlock, SIGNAL ( released()), this, SLOT ( locks_unlockentry() ) );
 	connect ( lock_btnrefresh, SIGNAL ( released()), this, SLOT ( locks_loaduserlocks() ) );
+	
+	connect ( btndblocked, SIGNAL ( released()), this, SLOT ( setdblock()));
 
 	progbar->setValue ( 100 );
 }
@@ -1668,4 +1672,39 @@ void cfgfrm::locks_unlockentry()
 			locks_loaduserlocks();
 		}
 	}
+}
+//
+void cfgfrm::loaddblock()
+{
+	QSqlQuery querydblock("SELECT ID FROM maincfg WHERE var='dblocked' AND value='1';");
+	if(querydblock.size() > 0)
+	{
+		rdbdblockedTRUE->setChecked(TRUE);
+		querydblock.exec("SELECT value FROM maincfg WHERE var='dblockedmsg';");
+		querydblock.next();
+		txtdblockedMSG->setText(querydblock.value(0).toString());
+	}
+}
+//
+void cfgfrm::setdblock()
+{
+	if(rdbdblockedTRUE->isChecked())
+	{
+		QSqlQuery query1("UPDATE maincfg SET value='1' WHERE `var`='dblocked';");
+		if(query1.numRowsAffected() == 0)
+			QSqlQuery query1b("INSERT INTO maincfg (`var`,`value`)VALUES('dblocked','1');");
+		QSqlQuery query2("UPDATE maincfg SET value='"+txtdblockedMSG->toPlainText()+"' WHERE `var`='dblockedmsg';");
+		if(query2.numRowsAffected() == 0)
+			QSqlQuery query2b("INSERT INTO maincfg (`var`,`value`)VALUES('dblockedmsg','"+txtdblockedMSG->toPlainText()+"');");
+	}
+	else
+	{
+		QSqlQuery query1("UPDATE maincfg SET value='0' WHERE `var`='dblocked';");
+		if(query1.numRowsAffected() == 0)
+			QSqlQuery query1b("INSERT INTO maincfg (`var`,`value`)VALUES('dblocked','0');");
+		QSqlQuery query2("UPDATE maincfg SET value='' WHERE `var`='dblockedmsg';");
+		if(query2.numRowsAffected() == 0)
+			QSqlQuery query2b("INSERT INTO maincfg (`var`, `value`)VALUES('dblockedmsg','');");
+	}
+	QMessageBox::information(0,"DB lock...", tr("Settings saved."));
 }

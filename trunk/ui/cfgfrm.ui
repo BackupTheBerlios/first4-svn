@@ -1089,7 +1089,7 @@
          </size>
         </property>
         <property name="text" >
-         <string>First-Version:</string>
+         <string>First4-Version:</string>
         </property>
        </widget>
        <widget class="QLabel" name="lblfirstversion_2" >
@@ -1141,6 +1141,80 @@
         </property>
         <property name="text" >
          <string>Build:</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_7" >
+       <property name="geometry" >
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>741</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="title" >
+        <string>Database state</string>
+       </property>
+       <widget class="QRadioButton" name="rdbdblockedFALSE" >
+        <property name="geometry" >
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>111</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text" >
+         <string>UnLocked</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="rdbdblockedTRUE" >
+        <property name="geometry" >
+         <rect>
+          <x>140</x>
+          <y>20</y>
+          <width>111</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="text" >
+         <string>Locked</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="txtdblockedMSG" >
+        <property name="geometry" >
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>341</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btndblocked" >
+        <property name="geometry" >
+         <rect>
+          <x>620</x>
+          <y>150</y>
+          <width>111</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text" >
+         <string>&amp;Save</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
         </property>
        </widget>
       </widget>
