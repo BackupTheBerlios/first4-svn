@@ -63,6 +63,7 @@ int main ( int argc, char ** argv )
 	
 	if ( logfrm.exec() )
 	{
+		QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 		logfrm.saveservers();
 		QSplashScreen splash ( QPixmap ( ":/newsplash.png" ) );
 		splash.show();
@@ -73,6 +74,7 @@ int main ( int argc, char ** argv )
 		splash.showMessage ( QObject::tr ( "Checking database ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
 		if(mfrm->checkdb() != 0)
 		{
+			QApplication::restoreOverrideCursor();
 			qApp->closeAllWindows();
 		}
 		else
@@ -91,6 +93,7 @@ int main ( int argc, char ** argv )
 			app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 			QTime now = QTime::currentTime();
 			while(now.addSecs(1) >= QTime::currentTime()) ; //wait 1 secs
+			QApplication::restoreOverrideCursor();
 			mfrm->show();
 			splash.finish( mfrm );
 			return app.exec();

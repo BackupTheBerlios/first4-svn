@@ -2,6 +2,7 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QDate>
 #include <QDir>
 #include <QPluginLoader>
@@ -94,6 +95,9 @@ int mainfrm::checkdb()
 		QMessageBox::critical( 0, tr("DB update..."), tr("The selected database is locked by the Administrator:\n\n")+querydblock.value(0).toString());
 		retr = 1;
 	}
+	QSqlError qerror = querydblock.lastError();
+	if(qerror.isValid())
+		QMessageBox::warning ( 0, tr ( "Check DB-Lock..." ), qerror.text());
 	
 	if(retr == 0 || uid == 0)
 	{
@@ -166,6 +170,7 @@ void mainfrm::initplugins() {
 //
 void mainfrm::checkmsg()
 {
+	QApplication::setOverrideCursor(QCursor(Qt::BusyCursor));
 	QSqlQuery query;
 	query.prepare ( "SELECT * FROM messages WHERE `user` LIKE :user;" );
 	query.bindValue ( ":user", "%"+username+"%" );
@@ -186,6 +191,7 @@ void mainfrm::checkmsg()
 			QApplication::quit();
 		}
 	}
+	QApplication::restoreOverrideCursor();
 }
 //
 void mainfrm::admtasks()
@@ -248,7 +254,9 @@ void mainfrm::admtasks()
 void mainfrm::config()
 {
 	cfgfrm *cfg = new cfgfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	cfg->init();
+	QApplication::restoreOverrideCursor();
 	cfg->show();
 }
 //
@@ -267,24 +275,30 @@ void mainfrm::quitapplication()
 //
 void mainfrm::closeEvent ( QCloseEvent* ce )
 {
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	cleanup();
 	vars v;
 	v.savegeo ( this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height() );
 	ce->accept();
+	QApplication::restoreOverrideCursor();
 	qApp->quit();
 }
 //
 void mainfrm::browseaddr()
 {
 	addrfrm *afrm =  new addrfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	afrm->init();
+	QApplication::restoreOverrideCursor();
 	afrm->show();
 }
 //
 void mainfrm::browsedata()
 {
 	datafrm *dfrm = new datafrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	dfrm->init();
+	QApplication::restoreOverrideCursor();
 	dfrm->show();
 }
 //
@@ -305,16 +319,20 @@ void mainfrm::inventory()
 void mainfrm::opendoc()
 {
 	docopenfrm *dofrm = new docopenfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	dofrm->init();
+	QApplication::restoreOverrideCursor();
 	dofrm->show();
 }
 //
 void mainfrm::newdoc()
 {
 	doceditfrm *docfrm = new doceditfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	docfrm->init();
-    docfrm->cmbdoc->setCurrentIndex(0);
+	docfrm->cmbdoc->setCurrentIndex(0);
 	docfrm->selecteddocument();
+	QApplication::restoreOverrideCursor();
 	docfrm->show();
 }
 //
@@ -354,28 +372,36 @@ void mainfrm::cleanup()
 void mainfrm::browsemsgs()
 {
 	msgfrm *mfrm = new msgfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	mfrm->init();
+	QApplication::restoreOverrideCursor();
 	mfrm->show();
 }
 //
 void mainfrm::newmsg()
 {
 	msgeditfrm *emsg = new msgeditfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	emsg->init("per");
 	emsg->date->setDate(QDate::currentDate());
+	QApplication::restoreOverrideCursor();
 	emsg->exec();
 }
 //
 void mainfrm::addrimpexp()
 {
 	addrimpexpfrm *addrimpexp = new addrimpexpfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	addrimpexp->init();
+	QApplication::restoreOverrideCursor();
 	addrimpexp->exec();
 }
 //
 void mainfrm::dataimpexp()
 {
 	dataimpexpfrm *dataimpexp = new dataimpexpfrm;
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	dataimpexp->init();
+	QApplication::restoreOverrideCursor();
 	dataimpexp->exec();
 }

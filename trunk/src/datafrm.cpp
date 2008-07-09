@@ -142,46 +142,48 @@ void datafrm::checkrights()
 
 void datafrm::changecmb()
 {
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	disconnect(cmbdata, SIGNAL(activated(int)), this, SLOT(changecmb()));
-    btnprint->setEnabled(FALSE);
-    if(cmbdata->currentText() != lastdatatab)
-    {
-    	QSqlDatabase::database().rollback();
-    	
-	    int updatecount = 0;
-	    QString updatestr = "";
-	    QTableWidgetItem *item = new QTableWidgetItem;
-	    do{
-	    	item = maintable->item(updatecount, maintable->columnCount()-1);
-	    	if(item!=0)
-		    	updatestr = item->text();
+	btnprint->setEnabled(FALSE);
+	if(cmbdata->currentText() != lastdatatab)
+	{
+		QSqlDatabase::database().rollback();
+		
+		int updatecount = 0;
+		QString updatestr = "";
+		QTableWidgetItem *item = new QTableWidgetItem;
+		do{
+			item = maintable->item(updatecount, maintable->columnCount()-1);
+			if(item!=0)
+				updatestr = item->text();
 			updatecount++;
-	    }while(updatestr == "" && updatecount < maintable->rowCount()-1);
-	    if(updatestr != "")
-	    {
+		}while(updatestr == "" && updatecount < maintable->rowCount()-1);
+		if(updatestr != "")
+		{
 			int answ=QMessageBox::warning(this, tr("Save changes..."), tr("Save changes?"), QMessageBox::Yes, QMessageBox::No);
 			if(answ == QMessageBox::Yes)
 			{
-			    int newselection = cmbdata->currentIndex();
-			    cmbdata->setCurrentIndex(tabnamelist.lastIndexOf(lastdatatab));
-			    savetable();
-			    cmbdata->setCurrentIndex(newselection);
+			int newselection = cmbdata->currentIndex();
+				cmbdata->setCurrentIndex(tabnamelist.lastIndexOf(lastdatatab));
+				savetable();
+				cmbdata->setCurrentIndex(newselection);
 			}
-	    }
-    	vars v;
-    	v.unlocktable(lastdatatab);
+		}
+		vars v;
+		v.unlocktable(lastdatatab);
 		if(tabtyplist[cmbdata->currentIndex()]=="stock")
 		{
-		    checkrights();
-		    loadstock();
+			checkrights();
+			loadstock();
 		}
 		else
 		{
-		    checkrights();	    
-		    loaddata();
+			checkrights();	    
+			loaddata();
 		}
-    }
+	}
 	connect(cmbdata, SIGNAL(activated(int)), this, SLOT(changecmb()));
+	QApplication::restoreOverrideCursor();
 }
 //
 void datafrm::loadstock()

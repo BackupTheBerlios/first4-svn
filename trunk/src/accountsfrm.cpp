@@ -278,6 +278,7 @@ void accountsfrm::loadaccounts()
 //
 void accountsfrm::loaddetails()
 {
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 	txtsqlfrom->setText("1");
 	txtsqlto->setText("50");
 	QTreeWidgetItem* item = treeindex->currentItem();
@@ -495,6 +496,7 @@ void accountsfrm::loaddetails()
 		    }
 		}
     }
+    QApplication::restoreOverrideCursor();
 }
 //
 void accountsfrm::refreshdata()
@@ -757,6 +759,7 @@ void accountsfrm::deleteentry()
 			resp = QMessageBox::information(this, tr("Delete Entry..."), tr("Delete entry %1 ?").arg(item->text(2)), QMessageBox::Yes, QMessageBox::No);
 		if(resp == QMessageBox::Yes)
 		{
+			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 			QString qstr = QString("SELECT amount FROM %1 WHERE `ID` = '%2' LIMIT 1;").arg(accountid).arg(item->text(0));
 			QSqlQuery query_lastid(qstr);
 			query_lastid.next();
@@ -798,6 +801,7 @@ void accountsfrm::deleteentry()
 						QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
 				}
 			}
+			QApplication::restoreOverrideCursor();
 			loaddetails();
 		}
 	}
