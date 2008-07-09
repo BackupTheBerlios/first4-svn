@@ -124,7 +124,7 @@ int mainfrm::checkdb()
 		}
 		if(dbrequire != dbver)
 		{
-			QMessageBox::critical( 0, tr("Wrong DB version..."), tr("This version of first4 needs at least a database with the version: %1 .\nThe selected database has version: %2").arg(dbrequire).arg(dbver) );
+			QMessageBox::critical( 0, tr("Wrong DB version..."), tr("This version of first4 needs a database with the version: %1 .\nThe selected database has version: %2").arg(dbrequire).arg(dbver) );
 			retr = 1;
 		}
 	}
