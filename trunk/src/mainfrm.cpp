@@ -1,6 +1,5 @@
 #include <QTimer>
 #include <QMessageBox>
-#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDate>
@@ -172,7 +171,7 @@ void mainfrm::checkmsg()
 {
 	QApplication::setOverrideCursor(QCursor(Qt::BusyCursor));
 	QSqlQuery query;
-	query.prepare ( "SELECT * FROM messages WHERE `user` LIKE :user;" );
+	query.prepare ( "SELECT ID FROM messages WHERE `user` LIKE :user;" );
 	query.bindValue ( ":user", "%"+username+"%" );
 	query.exec();
 	query.next();

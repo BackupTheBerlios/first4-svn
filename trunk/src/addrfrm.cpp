@@ -413,24 +413,27 @@ void addrfrm::loaddocs(QString dbID)
 		    }
 		    else if(query.value(1).toString()=="4 invoice")
 		    {
+				QSqlQuery query1("SELECT value FROM `maincfg` WHERE `var` = 'docpref';");
+				query1.next();
+
 				QString status = "";
-				//Prfe ob Rechnung bezahlt
-				QString connstr2 = "SELECT status, date FROM incexparchive WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
+				QString refnumber = query.value(6).toString().replace(query1.value(0).toString(), "");
+				//Pruefe ob Rechnung bezahlt
+				QString connstr2 = "SELECT state, date FROM incexparchive WHERE `refnr`LIKE '%"+refnumber+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
 				QSqlQuery query2(connstr2);
 				query2.next();
 				if(query2.size()>0)
-				    status = tr("Paid ")+query2.value(1).toString().section("-", 2, 2)+"."+query2.value(1).toString().section("-", 1, 1)+"."+query2.value(1).toString().section("-", 0, 0);
+					status = tr("Paid ")+query2.value(1).toString().section("-", 2, 2)+"."+query2.value(1).toString().section("-", 1, 1)+"."+query2.value(1).toString().section("-", 0, 0);
 				else
 				{
-				    //Prfe ob Rechnung Pendent
-				    QString connstr3 = "SELECT status, date FROM incexp WHERE `refnr`='"+query.value(6).toString()+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
+				    //Pruefe ob Rechnung Pendent
+				    QString connstr3 = "SELECT state, date FROM incexp WHERE `refnr` LIKE '%"+refnumber+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
 				    QSqlQuery query3(connstr3);
 				    query3.next();
-				    if(query2.size()>0)
+				    if(query3.size()>0)
 						status = tr("Pendent");
 				    else
 						status = tr("Completed");
-				    ///
 				}
 			    
 				itemdoc->setText(0, tr("Invoice %1 - %2").arg(query.value(6).toString()).arg(query.value(2).toString()));

@@ -1,6 +1,5 @@
 #include <QByteArray>
 #include <QMessageBox>
-#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QFile>

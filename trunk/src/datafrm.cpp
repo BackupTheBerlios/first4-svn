@@ -2,7 +2,6 @@
 #include <QSqlQuery>
 #include <QHeaderView>
 #include <QMessageBox>
-#include <QComboBox>
 #include <QTableWidget>
 #include <QCloseEvent>
 #include <QDir>

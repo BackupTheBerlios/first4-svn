@@ -101,7 +101,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/accountscomplfrm.ui" line="66"/>
         <source>Check all entries</source>
-        <translation>Schliesse alle Einträge</translation>
+        <translation>Überprüfe alle Einträge</translation>
     </message>
     <message>
         <location filename="../../ui/accountscomplfrm.ui" line="79"/>
@@ -679,7 +679,7 @@ Betrag in Datei ist: %2</translation>
     <message>
         <location filename="../../src/addrfrm.cpp" line="422"/>
         <source>Paid </source>
-        <translation>Bezahlt</translation>
+        <translation>Bezahlt </translation>
     </message>
     <message>
         <location filename="../../src/addrfrm.cpp" line="430"/>

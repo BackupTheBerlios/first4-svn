@@ -1,4 +1,3 @@
-#include <QPushButton>
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QMessageBox>

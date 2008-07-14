@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_CH">
+<defaultcodec></defaultcodec>
 <context>
     <name>QObject</name>
     <message>
@@ -25,7 +26,7 @@
     <message>
         <location filename="../../src/main.cpp" line="74"/>
         <source>Checking database ...</source>
-        <translation>Verifica databse...</translation>
+        <translation>Verifica database...</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="91"/>
@@ -218,7 +219,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/accountseditfrm.cpp" line="144"/>
         <source>Re-calculating account balance.</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcolazione del saldo.</translation>
     </message>
 </context>
 <context>
@@ -316,117 +317,117 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/accountsfrm.ui" line="908"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../ui/accountsfrm.ui" line="1037"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Chiudi</translation>
+        <translation>&amp;Chiudi</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="109"/>
         <source>Incomes</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrate</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="113"/>
         <source>Expenditures</source>
-        <translation type="unfinished"></translation>
+        <translation>Spese</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="104"/>
         <source>Archiv</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivio</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="181"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="182"/>
         <source>RefNr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr.ref.</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="183"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Indirizzo</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="184"/>
         <source>Code</source>
-        <translation type="unfinished">Codice</translation>
+        <translation>Codice</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="185"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="186"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation>Ammontare</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="154"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Conto</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="155"/>
         <source>Account-Nr.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conto #.</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="187"/>
         <source>ClientID</source>
-        <translation type="unfinished"></translation>
+        <translation>IDCliente</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="687"/>
         <source>&amp;New Entry</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nuova registrazione</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="693"/>
         <source>&amp;Edit Entry</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Modifica registrazione</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="699"/>
         <source>&amp;Delete Entry</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cancella registrazione</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="713"/>
         <source>New Entry...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova registrazione...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="738"/>
         <source>Edit Entry...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica registrazione...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="759"/>
         <source>Delete Entry...</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella registrazione...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="759"/>
         <source>Delete entry %1 ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella registrazione %1 ?</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="837"/>
         <source>Search entries, who can be completed in account &apos;%1&apos;...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricerca registrazione che possono essere completate in conto &apos;%1&apos;...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="859"/>
         <source>Eintries will be completed...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registrazioni vengono completate...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="913"/>

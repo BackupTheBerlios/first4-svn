@@ -1,4 +1,3 @@
-#include <QtCore>
 #include <QCloseEvent>
 #include <QHeaderView>
 #include <QSqlQuery>

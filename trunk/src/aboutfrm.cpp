@@ -1,5 +1,6 @@
-#include <QtCore>
-
+#include <QFile>
+#include <QTextStream>
+//
 #include "aboutfrm.h"
 //
 aboutfrm::aboutfrm( QWidget * parent, Qt::WFlags f) 
