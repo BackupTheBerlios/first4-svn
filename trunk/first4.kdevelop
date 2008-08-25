@@ -1,9 +1,9 @@
 <?xml version = '1.0'?>
 <kdevelop>
   <general>
-    <author>Alexander Saal</author>
-    <email>alex.saal@gmx.de</email>
-    <version>$VERSION$</version>
+    <author>Orlando Procopio</author>
+    <email>orlando@procopio.ch</email>
+    <version>1.3.93</version>
     <projectmanagement>KDevTrollProject</projectmanagement>
     <primarylanguage>C++</primarylanguage>
     <keywords>
@@ -13,8 +13,8 @@
     <ignoreparts/>
     <projectdirectory>.</projectdirectory>
     <absoluteprojectpath>false</absoluteprojectpath>
-    <description/>
-    <defaultencoding/>
+    <description></description>
+    <defaultencoding></defaultencoding>
     <versioncontrol>kdevsubversion</versioncontrol>
   </general>
   <kdevfileview>
@@ -29,7 +29,6 @@
     <tree>
       <hidepatterns>*.o,*.lo,CVS</hidepatterns>
       <hidenonprojectfiles>false</hidenonprojectfiles>
-      <showvcsfields>false</showvcsfields>
     </tree>
   </kdevfileview>
   <kdevdoctreeview>
@@ -72,14 +71,15 @@
   </kdevdoctreeview>
   <kdevdebugger>
     <general>
-      <dbgshell/>
-      <gdbpath/>
-      <configGdbScript/>
-      <runShellScript/>
-      <runGdbScript/>
+      <dbgshell></dbgshell>
+      <gdbpath></gdbpath>
+      <configGdbScript></configGdbScript>
+      <runShellScript></runShellScript>
+      <runGdbScript></runGdbScript>
       <breakonloadinglibs>true</breakonloadinglibs>
       <separatetty>false</separatetty>
       <floatingtoolbar>false</floatingtoolbar>
+      <raiseGDBOnStart>false</raiseGDBOnStart>
     </general>
     <display>
       <staticmembers>false</staticmembers>
@@ -98,9 +98,8 @@
       <designer>/usr/bin/designer</designer>
       <designerpluginpaths/>
     </qt>
-    <references/>
     <codecompletion>
-      <automaticCodeCompletion>true</automaticCodeCompletion>
+      <automaticCodeCompletion>false</automaticCodeCompletion>
       <automaticArgumentsHint>true</automaticArgumentsHint>
       <automaticHeaderCompletion>true</automaticHeaderCompletion>
       <codeCompletionDelay>250</codeCompletionDelay>
@@ -113,22 +112,20 @@
       <statusBarTypeEvaluation>false</statusBarTypeEvaluation>
       <namespaceAliases>std=_GLIBCXX_STD;__gnu_cxx=std</namespaceAliases>
       <processPrimaryTypes>true</processPrimaryTypes>
-      <processFunctionArguments>true</processFunctionArguments>
+      <processFunctionArguments>false</processFunctionArguments>
       <preProcessAllHeaders>false</preProcessAllHeaders>
-      <parseMissingHeaders>false</parseMissingHeaders>
-      <resolveIncludePaths>true</resolveIncludePaths>
-      <alwaysParseInBackground>true</alwaysParseInBackground>
-      <usePermanentCaching>true</usePermanentCaching>
-      <alwaysIncludeNamespaces>true</alwaysIncludeNamespaces>
-      <includePaths>.;</includePaths>
       <parseMissingHeadersExperimental>false</parseMissingHeadersExperimental>
       <resolveIncludePathsUsingMakeExperimental>false</resolveIncludePathsUsingMakeExperimental>
+      <alwaysParseInBackground>true</alwaysParseInBackground>
+      <usePermanentCaching>true</usePermanentCaching>
+      <alwaysIncludeNamespaces>false</alwaysIncludeNamespaces>
+      <includePaths>.;</includePaths>
     </codecompletion>
     <creategettersetter>
-      <prefixGet/>
+      <prefixGet>get</prefixGet>
       <prefixSet>set</prefixSet>
       <prefixVariable>m_,_</prefixVariable>
-      <parameterName>theValue</parameterName>
+      <parameterName>value</parameterName>
       <inlineGet>true</inlineGet>
       <inlineSet>true</inlineSet>
     </creategettersetter>
@@ -137,11 +134,7 @@
       <synchronize>true</synchronize>
       <orientation>Vertical</orientation>
     </splitheadersource>
-    <designerintegration>
-      <qtdesigner>
-        <implementation class="accountsfrm" path="ui/accountsfrm.ui" implementationpath="accountsfrm.h" />
-      </qtdesigner>
-    </designerintegration>
+    <references/>
   </kdevcppsupport>
   <kdevfilecreate>
     <filetypes/>
@@ -158,11 +151,11 @@
     </general>
     <run>
       <directoryradio>executable</directoryradio>
-      <mainprogram>/home/alex/projekte/cpp/first4/bin/first4</mainprogram>
-      <programargs/>
-      <globaldebugarguments/>
-      <globalcwd>/home/alex/projekte/cpp/first4/bin/</globalcwd>
-      <useglobalprogram>true</useglobalprogram>
+      <mainprogram>/home/projekte/cpp/private/first4</mainprogram>
+      <programargs></programargs>
+      <globaldebugarguments></globaldebugarguments>
+      <globalcwd>/home/projekte/cpp/private/first4</globalcwd>
+      <useglobalprogram>false</useglobalprogram>
       <terminal>false</terminal>
       <autocompile>true</autocompile>
       <autoinstall>false</autoinstall>
@@ -174,7 +167,7 @@
       <runmultiplejobs>false</runmultiplejobs>
       <numberofjobs>1</numberofjobs>
       <dontact>false</dontact>
-      <makebin/>
+      <makebin></makebin>
       <prio>0</prio>
       <envvars/>
     </make>
@@ -182,6 +175,9 @@
       <savebehaviour>2</savebehaviour>
       <replacePaths>false</replacePaths>
       <disableDefaultOpts>true</disableDefaultOpts>
+      <enableFilenamesOnly>true</enableFilenamesOnly>
+      <showVariablesInTree>true</showVariablesInTree>
+      <showParseErrors>true</showParseErrors>
     </qmake>
   </kdevtrollproject>
   <cppsupportpart>
@@ -192,48 +188,14 @@
   </cppsupportpart>
   <kdevdocumentation>
     <projectdoc>
-      <docsystem/>
-      <docurl/>
-      <usermanualurl/>
+      <docsystem></docsystem>
+      <docurl></docurl>
+      <usermanualurl></usermanualurl>
     </projectdoc>
   </kdevdocumentation>
   <ctagspart>
-    <customArguments/>
-    <customTagfilePath>/home/chmaster/projekte/first4/tags</customTagfilePath>
+    <customArguments></customArguments>
+    <customTagfilePath>/home/projekte/cpp/private/first4/tags</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>
-  <dist>
-    <custom>false</custom>
-    <bzip>false</bzip>
-    <archname/>
-    <appname>first4</appname>
-    <version>1.3.93</version>
-    <release>1</release>
-    <vendor>procopio.ch</vendor>
-    <licence>GPL</licence>
-    <summary>first4 QT-Based ERP Solution</summary>
-    <group>Productivity/Office</group>
-    <packager>O. Procopio</packager>
-    <description>first4 is a QT4-based free ERP-Solution using MySQL.
-
-
-
-
-
-</description>
-    <changelog>* Fri Mar 7 2008 Orlando Procopio &lt;orlando@procopio.ch>
-- First draft of the spec file
-
-
-</changelog>
-    <devpackage>false</devpackage>
-    <docspackage>false</docspackage>
-    <appicon>false</appicon>
-    <arch>1</arch>
-    <genHTML>false</genHTML>
-    <useRPM>false</useRPM>
-    <ftpkde>false</ftpkde>
-    <appskde>false</appskde>
-    <url/>
-  </dist>
 </kdevelop>
