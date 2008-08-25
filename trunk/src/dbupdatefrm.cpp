@@ -80,13 +80,13 @@ int dbupdatefrm::init()
 		if(query10.size() != 1)
 			retrcode = 1;
 	}
-	else if(dbversion < 13961)
+	if(dbversion < 13961)
 	{
 		QSqlQuery query1("SELECT name FROM templates WHERE name = 'sys_inventory';");
 		if(query1.size() !=1 )
 			retrcode = 1;
 	}
-	else if(dbversion < 139602)
+	if(dbversion < 139602)
 	{
 		QSqlQuery query1("SELECT name FROM accounts WHERE name='incexp';");
 		if(query1.size() !=1 )
