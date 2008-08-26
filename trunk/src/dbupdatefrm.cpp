@@ -18,7 +18,7 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	newdbver = "1.3.96.02";
+	newdbver = "1.3.97.01";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
@@ -92,13 +92,19 @@ int dbupdatefrm::init()
 		if(query1.size() !=1 )
 			retrcode = 1;
 	}
+	if(dbversion < 139701)
+	{
+		QSqlQuery query1("SHOW TABLE STATUS WHERE Engine='MyISAM';");
+		if(query1.size() > 0 )
+			retrcode = 1;
+	}
 	return retrcode;
 	
 }
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(14);
+	    progbar->setMaximum(15);
 
 	int dbversion = actdbver.replace(".","").toInt();
 	if(dbversion < 13954)
@@ -163,7 +169,7 @@ void dbupdatefrm::check_db_structure()
 		progbar->setValue(11);
 		dbversion = newdbver.replace(".","").toInt();
 	}
-	else if(dbversion < 13961)
+	if(dbversion < 13961)
 	{
 		QSqlQuery query1("SELECT name FROM templates WHERE name = 'sys_inventory';");
 		if(query1.size() !=1 )
@@ -174,7 +180,7 @@ void dbupdatefrm::check_db_structure()
 		progbar->setValue(13);
 		dbversion = newdbver.replace(".","").toInt();
 	}
-	else if(dbversion < 139602)
+	if(dbversion < 139602)
 	{
 		progbar->setValue(12);
 		QSqlQuery query1("SELECT name FROM accounts WHERE name='incexp';");
@@ -186,6 +192,19 @@ void dbupdatefrm::check_db_structure()
 		progbar->setValue(14);
 		dbversion = newdbver.replace(".","").toInt();
 	}
+	if(dbversion < 139701)
+	{
+		progbar->setValue(13);
+		QSqlQuery query1("SHOW TABLE STATUS WHERE Engine='MyISAM';");
+		if(query1.size() > 0 )
+			update_db_structure("myisam2innodb");
+		progbar->setValue(14);
+		
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(15);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+	progbar->setValue(progbar->maximum());
 	QMessageBox::information( 0, "DB update..." , tr("Update completed.") );
 	this->accept();
 }
@@ -325,6 +344,15 @@ void dbupdatefrm::update_db_structure(QString section)
 							QSqlQuery query7(qstr3);
 						}
 					}
+				}
+			}
+			else if(section == "myisam2innodb")
+			{
+				QSqlQuery query1("SHOW TABLE STATUS WHERE Engine='MyISAM';");
+				while(query1.next())
+				{
+					QString qstr = QString("ALTER TABLE %1 ENGINE = InnoDB;").arg(query1.value(0).toString());
+					QSqlQuery query2(qstr);
 				}
 			}
 }

@@ -1063,7 +1063,7 @@
        <item row="3" column="3" colspan="3" >
         <widget class="QLineEdit" name="adr24" >
          <property name="alignment" >
-          <set>Qt::AlignRight</set>
+          <set>Qt::AlignLeading</set>
          </property>
         </widget>
        </item>
@@ -1167,28 +1167,28 @@
        <item row="4" column="3" colspan="3" >
         <widget class="QLineEdit" name="adr25" >
          <property name="alignment" >
-          <set>Qt::AlignRight</set>
+          <set>Qt::AlignLeading</set>
          </property>
         </widget>
        </item>
        <item row="5" column="3" colspan="3" >
         <widget class="QLineEdit" name="adr26" >
          <property name="alignment" >
-          <set>Qt::AlignRight</set>
+          <set>Qt::AlignLeading</set>
          </property>
         </widget>
        </item>
        <item row="6" column="3" colspan="3" >
         <widget class="QLineEdit" name="adr27" >
          <property name="alignment" >
-          <set>Qt::AlignRight</set>
+          <set>Qt::AlignLeading</set>
          </property>
         </widget>
        </item>
        <item row="7" column="3" colspan="3" >
         <widget class="QLineEdit" name="adr28" >
          <property name="alignment" >
-          <set>Qt::AlignRight</set>
+          <set>Qt::AlignLeading</set>
          </property>
         </widget>
        </item>

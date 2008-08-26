@@ -57,7 +57,7 @@ void doceditfrm::init()
     tabmain->setColumnWidth(6,100);
     tabmain->setColumnWidth(7,100);
     tabmain->setColumnWidth(8,50);
-    tabmain->setColumnWidth(9,0);
+    tabmain->setColumnWidth(9,40);
     tabmain->setColumnWidth(10,0);
     tabmain->setColumnWidth(11,0);
     tabmain->setRowCount(1);
@@ -300,7 +300,15 @@ void doceditfrm::navtable()
     if (tmpstr.simplified() != "" && tmpstr != "-")
     {
 		if(quantity > actquantity)
-		    QMessageBox::information(0,tr("Stock..."),tr("The entered quantity exceeds the stock!")); 
+		{
+			QTableWidgetItem *exceedquantity = tabmain->item(row, 4);
+			exceedquantity->setBackground(QBrush(Qt::red));
+		} 
+		else
+		{
+			QTableWidgetItem *exceedquantity = tabmain->item(row, 4);
+			exceedquantity->setBackground(QBrush(Qt::white));
+		}
 	}
 	tmpitem = tabmain->item(row, 6);
     tmpstr = tmpitem->text();
@@ -370,7 +378,7 @@ void doceditfrm::checkdb()
 	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
 	QTableWidgetItem *testitem1 = tabmain->item(tabmain->currentRow(),1);
 	QTableWidgetItem *testitem2 = tabmain->item(tabmain->currentRow(),3);
-	if(tabmain->currentColumn()==2 && testitem1->text()!="" && testitem2->text()=="")
+	if(tabmain->currentColumn()==2 && testitem1->text()!="")
     {
 		stockselfrm *sfrm = new stockselfrm;
 	    QSqlQuery query("SELECT name, description FROM datatables WHERE `tabtyp` = 'stock' AND `users` LIKE '%"+username+"%';");
@@ -401,8 +409,8 @@ void doceditfrm::checkdb()
 	    }
 	    
 	    if(sfrm->treemain->topLevelItemCount()>1)
-	    {		
-   			sfrm->init();	
+	    {
+   			sfrm->init();
 			if(sfrm->exec())
 			{
 			    QTreeWidgetItem *item = sfrm->treemain->currentItem();
@@ -412,9 +420,12 @@ void doceditfrm::checkdb()
 					tabmainitem->setText(item->text(1));
 					tabmain->setItem(tabmain->currentRow(), 1, tabmainitem);
 
-					tabmainitem = new QTableWidgetItem;
-					tabmainitem->setText(item->text(2));
-					tabmain->setItem(tabmain->currentRow(), 3, tabmainitem);
+					if(testitem2->text() == "")
+					{
+						tabmainitem = new QTableWidgetItem;
+						tabmainitem->setText(item->text(2));
+						tabmain->setItem(tabmain->currentRow(), 3, tabmainitem);
+					}
 
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(4));
@@ -426,10 +437,17 @@ void doceditfrm::checkdb()
 	
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(6));
+					tabmainitem->setFlags(Qt::ItemIsEditable);
 					tabmain->setItem(tabmain->currentRow(), 8, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
-					tabmainitem->setText(item->text(3));					
+					tabmainitem->setText(item->text(3));
+					tabmainitem->setFlags(Qt::ItemIsEditable);
+					QTableWidgetItem *exceedquantity = tabmain->item(tabmain->currentRow(), 4);
+					if(exceedquantity->text().toFloat() > item->text(3).toInt())
+						exceedquantity->setBackground(QBrush(Qt::red));
+					else
+						exceedquantity->setBackground(QBrush(Qt::white));
 					tabmain->setItem(tabmain->currentRow(), 9, tabmainitem);
 
 					tabmainitem = new QTableWidgetItem;
@@ -451,9 +469,12 @@ void doceditfrm::checkdb()
 				tabmainitem->setText(item->text(1));
 				tabmain->setItem(tabmain->currentRow(), 1, tabmainitem);
 
-				tabmainitem = new QTableWidgetItem;
-				tabmainitem->setText(item->text(2));
-				tabmain->setItem(tabmain->currentRow(), 3, tabmainitem);
+				if(testitem2->text() == "")
+				{
+					tabmainitem = new QTableWidgetItem;
+					tabmainitem->setText(item->text(2));
+					tabmain->setItem(tabmain->currentRow(), 3, tabmainitem);
+				}
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(4));
@@ -465,10 +486,17 @@ void doceditfrm::checkdb()
 
 				tabmainitem = new QTableWidgetItem;
 				tabmainitem->setText(item->text(6));
+				tabmainitem->setFlags(Qt::ItemIsEditable);
 				tabmain->setItem(tabmain->currentRow(), 8, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
-				tabmainitem->setText(item->text(3));					
+				tabmainitem->setText(item->text(3));
+				tabmainitem->setFlags(Qt::ItemIsEditable);
+				QTableWidgetItem *exceedquantity = tabmain->item(tabmain->currentRow(), 4);
+				if(exceedquantity->text().toFloat() > item->text(3).toInt())
+					exceedquantity->setBackground(QBrush(Qt::red));
+				else
+					exceedquantity->setBackground(QBrush(Qt::white));
 				tabmain->setItem(tabmain->currentRow(), 9, tabmainitem);
 
 				tabmainitem = new QTableWidgetItem;
@@ -974,6 +1002,11 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 
 		    	item = new QTableWidgetItem;
 		    	item->setText(querycheckdb.value(0).toString());
+				QTableWidgetItem *exceedquantity = tabmain->item(querypos.at(), 4);
+				if(exceedquantity->text().toFloat() > querycheckdb.value(0).toString().toInt())
+					exceedquantity->setBackground(QBrush(Qt::red));
+				else
+					exceedquantity->setBackground(QBrush(Qt::white));
 		    	tabmain->setItem(querypos.at(), 9, item);
 		    	
 		    	item = new QTableWidgetItem;

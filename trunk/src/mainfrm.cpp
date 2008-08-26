@@ -104,6 +104,7 @@ int mainfrm::checkdb()
 		dbupdatefrm *updfrm = new dbupdatefrm;
 		if(updfrm->init() != 0)
 		{
+			QApplication::restoreOverrideCursor();
 			if(uid == 0)
 				updfrm->exec();
 			else
@@ -123,6 +124,7 @@ int mainfrm::checkdb()
 		}
 		if(dbrequire != dbver)
 		{
+			QApplication::restoreOverrideCursor();
 			QMessageBox::critical( 0, tr("Wrong DB version..."), tr("This version of first4 needs a database with the version: %1 .\nThe selected database has version: %2").arg(dbrequire).arg(dbver) );
 			retr = 1;
 		}

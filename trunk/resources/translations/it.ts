@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_CH">
-<defaultcodec></defaultcodec>
 <context>
     <name>QObject</name>
     <message>
@@ -581,7 +580,7 @@ Amount in file is: %2</source>
     <message>
         <location filename="../../ui/accountsfrm.ui" line="961"/>
         <source>50</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">50</translation>
     </message>
     <message>
         <location filename="../../ui/accountsfrm.ui" line="1006"/>
@@ -591,7 +590,7 @@ Amount in file is: %2</source>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="783"/>
         <source>Re-calculating account balance.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Calcolazione del saldo.</translation>
     </message>
 </context>
 <context>
@@ -635,7 +634,7 @@ Amount in file is: %2</source>
 <context>
     <name>addrfrm</name>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Offers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -645,12 +644,12 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Deliverynotes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Invoices</source>
         <translation type="unfinished"></translation>
     </message>
@@ -670,92 +669,92 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="422"/>
+        <location filename="../../src/addrfrm.cpp" line="426"/>
         <source>Paid </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="430"/>
+        <location filename="../../src/addrfrm.cpp" line="434"/>
         <source>Pendent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="432"/>
+        <location filename="../../src/addrfrm.cpp" line="436"/>
         <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="436"/>
+        <location filename="../../src/addrfrm.cpp" line="439"/>
         <source>Invoice %1 - %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="455"/>
+        <location filename="../../src/addrfrm.cpp" line="458"/>
         <source>Status: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Incoming orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Open orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="472"/>
+        <location filename="../../src/addrfrm.cpp" line="475"/>
         <source>Completed orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="551"/>
+        <location filename="../../src/addrfrm.cpp" line="554"/>
         <source>QInputDialog::getText()</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="552"/>
+        <location filename="../../src/addrfrm.cpp" line="555"/>
         <source>New Label:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="663"/>
+        <location filename="../../src/addrfrm.cpp" line="666"/>
         <source>Delete %1 %2 %3?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="826"/>
+        <location filename="../../src/addrfrm.cpp" line="829"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="873"/>
+        <location filename="../../src/addrfrm.cpp" line="876"/>
         <source>Delete Document...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="873"/>
+        <location filename="../../src/addrfrm.cpp" line="876"/>
         <source>Delete %1 %2?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="893"/>
+        <location filename="../../src/addrfrm.cpp" line="896"/>
         <source>&amp;Open Document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="896"/>
+        <location filename="../../src/addrfrm.cpp" line="899"/>
         <source>&amp;Delete Document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="936"/>
+        <location filename="../../src/addrfrm.cpp" line="939"/>
         <source>Copy to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="939"/>
+        <location filename="../../src/addrfrm.cpp" line="942"/>
         <source>Move to</source>
         <translation type="unfinished"></translation>
     </message>
@@ -782,7 +781,7 @@ Amount in file is: %2</source>
     <message>
         <location filename="../../ui/addrfrm.ui" line="374"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Indirizzo</translation>
     </message>
     <message>
         <location filename="../../ui/addrfrm.ui" line="407"/>
@@ -950,27 +949,27 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="840"/>
+        <location filename="../../src/addrfrm.cpp" line="843"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="760"/>
+        <location filename="../../src/addrfrm.cpp" line="763"/>
         <source>Can&apos;t show DVI file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="650"/>
+        <location filename="../../src/addrfrm.cpp" line="653"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/addrfrm.ui" line="1294"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="788"/>
+        <location filename="../../src/addrfrm.cpp" line="791"/>
         <source>Company</source>
         <translation type="unfinished"></translation>
     </message>
@@ -980,102 +979,102 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="789"/>
+        <location filename="../../src/addrfrm.cpp" line="792"/>
         <source>Salutation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="790"/>
+        <location filename="../../src/addrfrm.cpp" line="793"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="791"/>
+        <location filename="../../src/addrfrm.cpp" line="794"/>
         <source>P.O. Box</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="792"/>
+        <location filename="../../src/addrfrm.cpp" line="795"/>
         <source>Street \&amp; Nr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="793"/>
+        <location filename="../../src/addrfrm.cpp" line="796"/>
         <source>ZIP, Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="794"/>
+        <location filename="../../src/addrfrm.cpp" line="797"/>
         <source>Business phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="795"/>
+        <location filename="../../src/addrfrm.cpp" line="798"/>
         <source>Direct phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="796"/>
+        <location filename="../../src/addrfrm.cpp" line="799"/>
         <source>Business fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="797"/>
+        <location filename="../../src/addrfrm.cpp" line="800"/>
         <source>Private phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="798"/>
+        <location filename="../../src/addrfrm.cpp" line="801"/>
         <source>Private fax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="799"/>
+        <location filename="../../src/addrfrm.cpp" line="802"/>
         <source>Mobile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="800"/>
+        <location filename="../../src/addrfrm.cpp" line="803"/>
         <source>E-Mail 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="801"/>
+        <location filename="../../src/addrfrm.cpp" line="804"/>
         <source>E-Mail 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="802"/>
+        <location filename="../../src/addrfrm.cpp" line="805"/>
         <source>E-Mail 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="803"/>
+        <location filename="../../src/addrfrm.cpp" line="806"/>
         <source>Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="815"/>
+        <location filename="../../src/addrfrm.cpp" line="818"/>
         <source>Discount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="816"/>
+        <location filename="../../src/addrfrm.cpp" line="819"/>
         <source>Comments</source>
         <translation type="unfinished">Commenti</translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="822"/>
+        <location filename="../../src/addrfrm.cpp" line="825"/>
         <source>Created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="822"/>
+        <location filename="../../src/addrfrm.cpp" line="825"/>
         <source>Modified</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="1016"/>
+        <location filename="../../src/addrfrm.cpp" line="1019"/>
         <source>Can&apos;t load template data...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1122,12 +1121,12 @@ Amount in file is: %2</source>
     <message>
         <location filename="../../src/addrfrm.cpp" line="90"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../src/addrfrm.cpp" line="91"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../ui/addrfrm.ui" line="582"/>
@@ -1135,12 +1134,12 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="765"/>
+        <location filename="../../src/addrfrm.cpp" line="768"/>
         <source>You must define a DVI-Viewer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrfrm.cpp" line="843"/>
+        <location filename="../../src/addrfrm.cpp" line="846"/>
         <source>You must define a TEX to DVI converter.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1148,94 +1147,94 @@ Amount in file is: %2</source>
 <context>
     <name>addrimpexpfrm</name>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="98"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="97"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="105"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="104"/>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="546"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="545"/>
         <source>Error during database access
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="149"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="148"/>
         <source>Next &gt;&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="188"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="187"/>
         <source>Save CSV File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="528"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="527"/>
         <source>CSV-File (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="224"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="223"/>
         <source>Export finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="228"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="227"/>
         <source>Can&apos;t export CVS-file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="261"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="260"/>
         <source>Save as vCard...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="303"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="302"/>
         <source>Export in file &apos;%1&apos; finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="345"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="344"/>
         <source>Can&apos;t export vCard.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="350"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="349"/>
         <source>Export of &apos;%1&apos; finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="357"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="356"/>
         <source>Open vCard...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="359"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="358"/>
         <source>vCard (*.vcf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="561"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="560"/>
         <source>Error during reading of the File!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="520"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="519"/>
         <source>vCard import finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="526"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="525"/>
         <source>Open CSV-File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/addrimpexpfrm.cpp" line="658"/>
+        <location filename="../../src/addrimpexpfrm.cpp" line="657"/>
         <source>CSV import finished.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1307,7 +1306,7 @@ Amount in file is: %2</source>
     <message>
         <location filename="../../ui/addrimpexpfrm.ui" line="668"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/addrimpexpfrm.ui" line="622"/>
@@ -1431,122 +1430,122 @@ Amount in file is: %2</source>
 <context>
     <name>cfgfrm</name>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="183"/>
+        <location filename="../../src/cfgfrm.cpp" line="182"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="550"/>
+        <location filename="../../src/cfgfrm.cpp" line="549"/>
         <source>Change password...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="206"/>
+        <location filename="../../src/cfgfrm.cpp" line="205"/>
         <source>Password was changed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="214"/>
+        <location filename="../../src/cfgfrm.cpp" line="213"/>
         <source>Changing password...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="214"/>
+        <location filename="../../src/cfgfrm.cpp" line="213"/>
         <source>Actual password wrong.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="550"/>
+        <location filename="../../src/cfgfrm.cpp" line="549"/>
         <source>New password does not agree with password confirmation!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="245"/>
+        <location filename="../../src/cfgfrm.cpp" line="244"/>
         <source>Open Lang-File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="247"/>
+        <location filename="../../src/cfgfrm.cpp" line="246"/>
         <source>Lang-File (*.qm)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="276"/>
+        <location filename="../../src/cfgfrm.cpp" line="275"/>
         <source>Please restart the application.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="280"/>
+        <location filename="../../src/cfgfrm.cpp" line="279"/>
         <source>Language-File cannot be written!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1134"/>
+        <location filename="../../src/cfgfrm.cpp" line="1133"/>
         <source>QInputDialog::getText()</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="471"/>
+        <location filename="../../src/cfgfrm.cpp" line="470"/>
         <source>User name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="482"/>
+        <location filename="../../src/cfgfrm.cpp" line="481"/>
         <source>New User...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="482"/>
+        <location filename="../../src/cfgfrm.cpp" line="481"/>
         <source>User already exists!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="545"/>
+        <location filename="../../src/cfgfrm.cpp" line="544"/>
         <source>Change personal data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="545"/>
+        <location filename="../../src/cfgfrm.cpp" line="544"/>
         <source>Personal data successfully changed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="584"/>
+        <location filename="../../src/cfgfrm.cpp" line="583"/>
         <source>Directories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="586"/>
+        <location filename="../../src/cfgfrm.cpp" line="585"/>
         <source>Data &amp; Stock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="588"/>
+        <location filename="../../src/cfgfrm.cpp" line="587"/>
         <source>Inventory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="590"/>
+        <location filename="../../src/cfgfrm.cpp" line="589"/>
         <source>Purchase orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="592"/>
+        <location filename="../../src/cfgfrm.cpp" line="591"/>
         <source>Orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="594"/>
+        <location filename="../../src/cfgfrm.cpp" line="593"/>
         <source>Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="596"/>
+        <location filename="../../src/cfgfrm.cpp" line="595"/>
         <source>Accounts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="598"/>
+        <location filename="../../src/cfgfrm.cpp" line="597"/>
         <source>Messages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1556,87 +1555,87 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="700"/>
+        <location filename="../../src/cfgfrm.cpp" line="699"/>
         <source>Offer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="700"/>
+        <location filename="../../src/cfgfrm.cpp" line="699"/>
         <source>Order confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="700"/>
+        <location filename="../../src/cfgfrm.cpp" line="699"/>
         <source>Delivery note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="752"/>
+        <location filename="../../src/cfgfrm.cpp" line="751"/>
         <source>General message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="752"/>
+        <location filename="../../src/cfgfrm.cpp" line="751"/>
         <source>Stockmessage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="752"/>
+        <location filename="../../src/cfgfrm.cpp" line="751"/>
         <source>Ordermessage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="752"/>
+        <location filename="../../src/cfgfrm.cpp" line="751"/>
         <source>Inc/Exp-Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="970"/>
+        <location filename="../../src/cfgfrm.cpp" line="969"/>
         <source>Permissions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1303"/>
+        <location filename="../../src/cfgfrm.cpp" line="1302"/>
         <source>New settings are saved and now active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="998"/>
+        <location filename="../../src/cfgfrm.cpp" line="997"/>
         <source>Rename &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1000"/>
+        <location filename="../../src/cfgfrm.cpp" line="999"/>
         <source>Delete &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1014"/>
+        <location filename="../../src/cfgfrm.cpp" line="1013"/>
         <source>Directory:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1062"/>
+        <location filename="../../src/cfgfrm.cpp" line="1061"/>
         <source>Accountname:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1135"/>
+        <location filename="../../src/cfgfrm.cpp" line="1134"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1551"/>
+        <location filename="../../src/cfgfrm.cpp" line="1550"/>
         <source>Deleting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1165"/>
+        <location filename="../../src/cfgfrm.cpp" line="1164"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1210"/>
+        <location filename="../../src/cfgfrm.cpp" line="1209"/>
         <source>Docfolder...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1646,7 +1645,7 @@ Amount in file is: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1303"/>
+        <location filename="../../src/cfgfrm.cpp" line="1302"/>
         <source>Own data...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2110,37 +2109,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="566"/>
+        <location filename="../../src/cfgfrm.cpp" line="565"/>
         <source>Delete User...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="566"/>
+        <location filename="../../src/cfgfrm.cpp" line="565"/>
         <source>Delete User &apos;%1&apos; ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="577"/>
+        <location filename="../../src/cfgfrm.cpp" line="576"/>
         <source>Administrator cannot be deleted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1383"/>
+        <location filename="../../src/cfgfrm.cpp" line="1382"/>
         <source>Unable to read settings from database!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1433"/>
+        <location filename="../../src/cfgfrm.cpp" line="1432"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1474"/>
+        <location filename="../../src/cfgfrm.cpp" line="1473"/>
         <source>Application...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1476"/>
+        <location filename="../../src/cfgfrm.cpp" line="1475"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2192,7 +2191,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/cfgfrm.ui" line="3181"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/cfgfrm.ui" line="3959"/>
@@ -2210,32 +2209,32 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">ID</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="700"/>
+        <location filename="../../src/cfgfrm.cpp" line="699"/>
         <source>Invoice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1235"/>
+        <location filename="../../src/cfgfrm.cpp" line="1234"/>
         <source>Documents settings...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1587"/>
+        <location filename="../../src/cfgfrm.cpp" line="1586"/>
         <source>Can&apos;t load templates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1551"/>
+        <location filename="../../src/cfgfrm.cpp" line="1550"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1558"/>
+        <location filename="../../src/cfgfrm.cpp" line="1557"/>
         <source>Template not deleted...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1604"/>
+        <location filename="../../src/cfgfrm.cpp" line="1603"/>
         <source>Can&apos;t load template description...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2302,7 +2301,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/cfgfrm.ui" line="4564"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/cfgfrm.ui" line="4209"/>
@@ -2370,67 +2369,67 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1659"/>
+        <location filename="../../src/cfgfrm.cpp" line="1658"/>
         <source>Can&apos;t load userlocks...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1668"/>
+        <location filename="../../src/cfgfrm.cpp" line="1667"/>
         <source>Unlocking...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1668"/>
+        <location filename="../../src/cfgfrm.cpp" line="1667"/>
         <source>Do you want to unlock the selected entry?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="62"/>
+        <location filename="../../src/cfgfrm.cpp" line="61"/>
         <source>Resources</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="64"/>
+        <location filename="../../src/cfgfrm.cpp" line="63"/>
         <source>name</source>
         <translation type="unfinished">name</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="65"/>
+        <location filename="../../src/cfgfrm.cpp" line="64"/>
         <source>users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="66"/>
+        <location filename="../../src/cfgfrm.cpp" line="65"/>
         <source>details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="980"/>
+        <location filename="../../src/cfgfrm.cpp" line="979"/>
         <source>New directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="982"/>
+        <location filename="../../src/cfgfrm.cpp" line="981"/>
         <source>New datatable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="984"/>
+        <location filename="../../src/cfgfrm.cpp" line="983"/>
         <source>New banc account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="986"/>
+        <location filename="../../src/cfgfrm.cpp" line="985"/>
         <source>New local account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1097"/>
+        <location filename="../../src/cfgfrm.cpp" line="1096"/>
         <source>Local accountname:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1709"/>
+        <location filename="../../src/cfgfrm.cpp" line="1708"/>
         <source>Settings saved.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2699,12 +2698,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>datafrm</name>
     <message>
-        <location filename="../../src/datafrm.cpp" line="163"/>
+        <location filename="../../src/datafrm.cpp" line="162"/>
         <source>Save changes...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="163"/>
+        <location filename="../../src/datafrm.cpp" line="162"/>
         <source>Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2739,37 +2738,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="491"/>
+        <location filename="../../src/datafrm.cpp" line="490"/>
         <source>Delete entry...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="491"/>
+        <location filename="../../src/datafrm.cpp" line="490"/>
         <source>Delete entry %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="576"/>
+        <location filename="../../src/datafrm.cpp" line="575"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="588"/>
+        <location filename="../../src/datafrm.cpp" line="587"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="604"/>
+        <location filename="../../src/datafrm.cpp" line="603"/>
         <source>Delete &amp;Row</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="617"/>
+        <location filename="../../src/datafrm.cpp" line="616"/>
         <source>&amp;Edit entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="623"/>
+        <location filename="../../src/datafrm.cpp" line="622"/>
         <source>&amp;Delete entry</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2781,20 +2780,20 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/datafrm.ui" line="69"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="569"/>
+        <location filename="../../src/datafrm.cpp" line="568"/>
         <source>Page:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="596"/>
+        <location filename="../../src/datafrm.cpp" line="595"/>
         <source>Can&apos;t show DVI file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/datafrm.cpp" line="797"/>
+        <location filename="../../src/datafrm.cpp" line="796"/>
         <source>Can&apos;t load template...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2943,7 +2942,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/dataimpexpfrm.ui" line="365"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/dataimpexpfrm.ui" line="410"/>
@@ -3012,17 +3011,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="364"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="363"/>
         <source>Unable to connect to server!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="216"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="215"/>
         <source>Error when storing the server list!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="481"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="480"/>
         <source>Database successfully created.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3108,7 +3107,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/dbwizzardfrm.ui" line="648"/>
         <source>3306</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3306</translation>
     </message>
     <message>
         <location filename="../../ui/dbwizzardfrm.ui" line="1185"/>
@@ -3313,27 +3312,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="461"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="460"/>
         <source>Initializing database...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="487"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="486"/>
         <source>Unable to connect to database!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="499"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="498"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="506"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="505"/>
         <source>Open SQLite DB-File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="508"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="507"/>
         <source>SQLite3 File (*.db)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3348,7 +3347,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/dbwizzardfrm.cpp" line="91"/>
+        <location filename="../../src/dbwizzardfrm.cpp" line="90"/>
         <source>&amp;Finish</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3429,22 +3428,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="106"/>
+        <location filename="../../src/doceditfrm.cpp" line="107"/>
         <source>&amp;Print pre&amp;view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="109"/>
+        <location filename="../../src/doceditfrm.cpp" line="110"/>
         <source>&amp;Print document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="112"/>
+        <location filename="../../src/doceditfrm.cpp" line="113"/>
         <source>Paying-in &amp;slip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="224"/>
+        <location filename="../../src/doceditfrm.cpp" line="225"/>
         <source>You are not authorized to provide the selected document</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3566,7 +3565,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/doceditfrm.ui" line="744"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/doceditfrm.ui" line="749"/>
@@ -3594,11 +3593,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/doceditfrm.ui" line="774"/>
-        <source>actquantity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/doceditfrm.ui" line="779"/>
         <source>minquantity</source>
         <translation type="unfinished"></translation>
@@ -3614,114 +3608,114 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Commenti</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="363"/>
+        <location filename="../../src/doceditfrm.cpp" line="367"/>
         <source>Stock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="363"/>
+        <location filename="../../src/doceditfrm.cpp" line="367"/>
         <source>Please define VAT first!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="252"/>
+        <location filename="../../src/doceditfrm.cpp" line="253"/>
         <source>&amp;Edit Entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Modifica registrazione</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="255"/>
+        <location filename="../../src/doceditfrm.cpp" line="256"/>
         <source>&amp;Delete Row</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="303"/>
+        <location filename="../../src/doceditfrm.cpp" line="306"/>
         <source>The entered quantity exceeds the stock!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="687"/>
+        <location filename="../../src/doceditfrm.cpp" line="691"/>
         <source>Save...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="687"/>
+        <location filename="../../src/doceditfrm.cpp" line="691"/>
         <source>Document completed and saved in Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="775"/>
+        <location filename="../../src/doceditfrm.cpp" line="779"/>
         <source>New Document...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="775"/>
+        <location filename="../../src/doceditfrm.cpp" line="779"/>
         <source>Take over existing data?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1342"/>
+        <location filename="../../src/doceditfrm.cpp" line="1346"/>
         <source>Discount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1366"/>
+        <location filename="../../src/doceditfrm.cpp" line="1370"/>
         <source>Net amount:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1390"/>
+        <location filename="../../src/doceditfrm.cpp" line="1394"/>
         <source>Comments:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1480"/>
+        <location filename="../../src/doceditfrm.cpp" line="1484"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1579"/>
+        <location filename="../../src/doceditfrm.cpp" line="1583"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1449"/>
+        <location filename="../../src/doceditfrm.cpp" line="1453"/>
         <source>Please select a receiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1588"/>
+        <location filename="../../src/doceditfrm.cpp" line="1592"/>
         <source>Can&apos;t print File.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1607"/>
+        <location filename="../../src/doceditfrm.cpp" line="1611"/>
         <source>Document not saved...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1607"/>
+        <location filename="../../src/doceditfrm.cpp" line="1611"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1449"/>
+        <location filename="../../src/doceditfrm.cpp" line="1453"/>
         <source>Address...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1348"/>
+        <location filename="../../src/doceditfrm.cpp" line="1352"/>
         <source>Amount excl. VAT:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1353"/>
+        <location filename="../../src/doceditfrm.cpp" line="1357"/>
         <source>VAT rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1353"/>
+        <location filename="../../src/doceditfrm.cpp" line="1357"/>
         <source>VAT amount</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3731,7 +3725,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1413"/>
+        <location filename="../../src/doceditfrm.cpp" line="1417"/>
         <source>Can&apos;t convert TEX-File.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3741,73 +3735,78 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="763"/>
+        <location filename="../../src/doceditfrm.cpp" line="767"/>
         <source>Invoice %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1596"/>
+        <location filename="../../src/doceditfrm.cpp" line="1600"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1368"/>
+        <location filename="../../src/doceditfrm.cpp" line="1372"/>
         <source>Kind regards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1370"/>
+        <location filename="../../src/doceditfrm.cpp" line="1374"/>
         <source>General informations:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1711"/>
+        <location filename="../../src/doceditfrm.cpp" line="1715"/>
         <source>Can&apos;t load template description...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1441"/>
+        <location filename="../../src/doceditfrm.cpp" line="1445"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1491"/>
+        <location filename="../../src/doceditfrm.cpp" line="1495"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1506"/>
+        <location filename="../../src/doceditfrm.cpp" line="1510"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1515"/>
+        <location filename="../../src/doceditfrm.cpp" line="1519"/>
         <source>Error during printing process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1735"/>
+        <location filename="../../src/doceditfrm.cpp" line="1739"/>
         <source>Can&apos;t load template data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="873"/>
+        <location filename="../../src/doceditfrm.cpp" line="877"/>
         <source>Document: ###docid### ( Locked by User: %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="875"/>
+        <location filename="../../src/doceditfrm.cpp" line="879"/>
         <source>Document: ###docid###</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1369"/>
+        <location filename="../../src/doceditfrm.cpp" line="1373"/>
         <source>Recieved:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/doceditfrm.ui" line="584"/>
         <source>Order ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/doceditfrm.ui" line="774"/>
+        <source>Stock</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3914,7 +3913,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="263"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="123"/>
@@ -3954,7 +3953,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="273"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ammontare</translation>
     </message>
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="278"/>
@@ -3964,7 +3963,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="288"/>
         <source>ClientID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IDCliente</translation>
     </message>
     <message>
         <location filename="../../ui/docopendraftfrm.ui" line="293"/>
@@ -4042,7 +4041,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopenfrm.ui" line="338"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../ui/docopenfrm.ui" line="343"/>
@@ -4107,7 +4106,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopenfrm.ui" line="165"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ammontare</translation>
     </message>
     <message>
         <location filename="../../ui/docopenfrm.ui" line="170"/>
@@ -4117,7 +4116,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/docopenfrm.ui" line="180"/>
         <source>ClientID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IDCliente</translation>
     </message>
     <message>
         <location filename="../../ui/docopenfrm.ui" line="185"/>
@@ -4204,7 +4203,7 @@ Complete nevertheless?</source>
     <message>
         <location filename="../../ui/invfrm.ui" line="62"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/invfrm.ui" line="67"/>
@@ -4396,7 +4395,7 @@ Complete nevertheless?</source>
 <context>
     <name>mainfrm</name>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="271"/>
+        <location filename="../../src/mainfrm.cpp" line="270"/>
         <source>Exit...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4516,7 +4515,7 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="179"/>
+        <location filename="../../src/mainfrm.cpp" line="178"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4531,12 +4530,12 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="190"/>
+        <location filename="../../src/mainfrm.cpp" line="189"/>
         <source>DB update...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="112"/>
+        <location filename="../../src/mainfrm.cpp" line="111"/>
         <source>Database update is needed.
 Please login as Administrator to perform the update.</source>
         <translation type="unfinished"></translation>
@@ -4552,7 +4551,7 @@ Please login as Administrator to perform the update.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="127"/>
+        <location filename="../../src/mainfrm.cpp" line="126"/>
         <source>Wrong DB version...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4562,38 +4561,38 @@ Please login as Administrator to perform the update.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="95"/>
+        <location filename="../../src/mainfrm.cpp" line="94"/>
         <source>The selected database is locked by the Administrator:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="190"/>
+        <location filename="../../src/mainfrm.cpp" line="189"/>
         <source>The current database was locked by the Administrator:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="190"/>
+        <location filename="../../src/mainfrm.cpp" line="189"/>
         <source>
 
 You will be logged out now!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="271"/>
+        <location filename="../../src/mainfrm.cpp" line="270"/>
         <source>Exit First4?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="100"/>
+        <location filename="../../src/mainfrm.cpp" line="99"/>
         <source>Check DB-Lock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="127"/>
+        <location filename="../../src/mainfrm.cpp" line="126"/>
         <source>This version of first4 needs a database with the version: %1 .
 The selected database has version: %2</source>
         <translation type="unfinished"></translation>
@@ -4765,7 +4764,7 @@ The selected database has version: %2</source>
 <context>
     <name>msgfrm</name>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="158"/>
+        <location filename="../../src/msgfrm.cpp" line="157"/>
         <source>ID</source>
         <translation type="unfinished">ID</translation>
     </message>
@@ -4775,34 +4774,34 @@ The selected database has version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="162"/>
+        <location filename="../../src/msgfrm.cpp" line="161"/>
         <source>user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="163"/>
+        <location filename="../../src/msgfrm.cpp" line="162"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="183"/>
+        <location filename="../../src/msgfrm.cpp" line="182"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="225"/>
+        <location filename="../../src/msgfrm.cpp" line="224"/>
         <source>info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="194"/>
+        <location filename="../../src/msgfrm.cpp" line="193"/>
         <source>Label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="195"/>
+        <location filename="../../src/msgfrm.cpp" line="194"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="95"/>
@@ -4810,92 +4809,92 @@ The selected database has version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="197"/>
+        <location filename="../../src/msgfrm.cpp" line="196"/>
         <source>Min. quantity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="198"/>
+        <location filename="../../src/msgfrm.cpp" line="197"/>
         <source>Supplier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="226"/>
+        <location filename="../../src/msgfrm.cpp" line="225"/>
         <source>Client</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="211"/>
+        <location filename="../../src/msgfrm.cpp" line="210"/>
         <source>Order.-Nr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="212"/>
+        <location filename="../../src/msgfrm.cpp" line="211"/>
         <source>Date of entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="213"/>
+        <location filename="../../src/msgfrm.cpp" line="212"/>
         <source>Complete until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="230"/>
+        <location filename="../../src/msgfrm.cpp" line="229"/>
         <source>data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="227"/>
+        <location filename="../../src/msgfrm.cpp" line="226"/>
         <source>Ref-Nr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="228"/>
+        <location filename="../../src/msgfrm.cpp" line="227"/>
         <source>Last payment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="229"/>
+        <location filename="../../src/msgfrm.cpp" line="228"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ammontare</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="250"/>
+        <location filename="../../src/msgfrm.cpp" line="249"/>
         <source>New Entry...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nuova registrazione...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="266"/>
+        <location filename="../../src/msgfrm.cpp" line="265"/>
         <source>Edit entry...</source>
         <translation type="unfinished">Modifica...</translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="281"/>
+        <location filename="../../src/msgfrm.cpp" line="280"/>
         <source>Delete entry...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="281"/>
+        <location filename="../../src/msgfrm.cpp" line="280"/>
         <source>Delete entry?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="297"/>
+        <location filename="../../src/msgfrm.cpp" line="296"/>
         <source>&amp;Edit Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="300"/>
+        <location filename="../../src/msgfrm.cpp" line="299"/>
         <source>&amp;Delete Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="316"/>
+        <location filename="../../src/msgfrm.cpp" line="315"/>
         <source>Complete entry...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/msgfrm.cpp" line="316"/>
+        <location filename="../../src/msgfrm.cpp" line="315"/>
         <source>Complete entry</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4927,7 +4926,7 @@ The selected database has version: %2</source>
     <message>
         <location filename="../../ui/msgfrm.ui" line="67"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">0</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="78"/>
@@ -4937,12 +4936,12 @@ The selected database has version: %2</source>
     <message>
         <location filename="../../ui/msgfrm.ui" line="285"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="101"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="112"/>
@@ -4952,7 +4951,7 @@ The selected database has version: %2</source>
     <message>
         <location filename="../../ui/msgfrm.ui" line="118"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="129"/>
@@ -4962,7 +4961,7 @@ The selected database has version: %2</source>
     <message>
         <location filename="../../ui/msgfrm.ui" line="135"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4</translation>
     </message>
     <message>
         <location filename="../../ui/msgfrm.ui" line="295"/>
@@ -5193,12 +5192,12 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="244"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="234"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="170"/>
@@ -5273,12 +5272,12 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="338"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="327"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">0</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="332"/>
@@ -5288,7 +5287,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="349"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="343"/>
@@ -5298,7 +5297,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="360"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="354"/>
@@ -5308,7 +5307,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/ordersfrm.ui" line="357"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4</translation>
     </message>
 </context>
 <context>
@@ -5489,27 +5488,27 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="324"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="329"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="334"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="339"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="344"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">5</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="405"/>
@@ -5519,7 +5518,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="481"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/procedureeditfrm.ui" line="434"/>
@@ -5622,7 +5621,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="254"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">0</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="259"/>
@@ -5632,7 +5631,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="265"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="270"/>
@@ -5642,7 +5641,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="276"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="281"/>
@@ -5652,7 +5651,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="287"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="292"/>
@@ -5662,7 +5661,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="298"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="303"/>
@@ -5672,7 +5671,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="309"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">5</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="314"/>
@@ -5682,7 +5681,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="320"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">6</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="382"/>
@@ -5774,12 +5773,12 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="350"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/procedurefrm.ui" line="355"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../src/procedurefrm.cpp" line="524"/>
@@ -5902,12 +5901,12 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/proceduresearch.ui" line="196"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/proceduresearch.ui" line="72"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Data</translation>
     </message>
     <message>
         <location filename="../../ui/proceduresearch.ui" line="97"/>
@@ -6016,7 +6015,7 @@ Please contact your Administrator</source>
     <message>
         <location filename="../../ui/stockselfrm.ui" line="71"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Descrizione</translation>
     </message>
     <message>
         <location filename="../../ui/stockselfrm.ui" line="76"/>
@@ -6140,7 +6139,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/vatshowfrm.ui" line="34"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ammontare</translation>
     </message>
     <message>
         <location filename="../../ui/vatshowfrm.ui" line="39"/>
