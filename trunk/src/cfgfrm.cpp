@@ -1083,7 +1083,7 @@ void cfgfrm::newaccount()
 		QString qstr2 = QString ( "INSERT INTO `accounts` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '', '', '', '', 'banc')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
-		QString qstr3 = QString ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , `account_balance` TEXT NOT NULL  , PRIMARY KEY (`ID`))" ).arg ( accountname );
+		QString qstr3 = QString ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , `account_balance` TEXT NOT NULL  , PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;" ).arg ( accountname );
 		QSqlQuery querykontonew5 ( qstr3 );
 		loadresources();
 	}
@@ -1118,7 +1118,7 @@ void cfgfrm::newlocalaccount()
 		QString qstr2 = QString ( "INSERT INTO `accounts` (`ID`, `name`, `description`, `accountnr`, `bank`, `currency`, `users`, `type`) VALUES (NULL, '%1', '%2', '-', '-', '', '', 'local')" ).arg ( accountname ).arg ( accountdesc );
 		QSqlQuery querykontonew2 ( qstr2 );
 
-		QString qstr3 = QString ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`))" ).arg ( accountname );
+		QString qstr3 = QString ( "CREATE TABLE `%1` (`ID` int NOT NULL AUTO_INCREMENT , `refnr` text NOT NULL, `date` date NOT NULL default '0000-00-00' , `address` text NOT NULL, `description` text NOT NULL , `code` text NOT NULL , `amount` text NOT NULL , PRIMARY KEY (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;" ).arg ( accountname );
 		QSqlQuery querykontonew5 ( qstr3 );
 		loadresources();
 	}
