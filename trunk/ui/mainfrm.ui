@@ -972,7 +972,7 @@
          <x>0</x>
          <y>0</y>
          <width>272</width>
-         <height>144</height>
+         <height>211</height>
         </rect>
        </property>
        <attribute name="label" >
@@ -1125,143 +1125,33 @@
       </widget>
      </widget>
     </item>
-    <item row="1" column="0" >
-     <widget class="QGroupBox" name="groupBox" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize" >
-       <size>
-        <width>271</width>
-        <height>81</height>
-       </size>
-      </property>
-      <property name="maximumSize" >
-       <size>
-        <width>271</width>
-        <height>81</height>
-       </size>
-      </property>
-      <property name="title" >
-       <string/>
-      </property>
-      <widget class="QLabel" name="lblmsgcount" >
-       <property name="geometry" >
-        <rect>
-         <x>51</x>
-         <y>12</y>
-         <width>51</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>84</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap/>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnabout" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>121</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="text" >
-        <string>&amp;About</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/help_index.png</iconset>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnmsgicon" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>30</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="cursor" >
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/message2.png</iconset>
-       </property>
-       <property name="iconSize" >
-        <size>
-         <width>22</width>
-         <height>22</height>
-        </size>
-       </property>
-       <property name="flat" >
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnsettings" >
-       <property name="geometry" >
-        <rect>
-         <x>140</x>
-         <y>10</y>
-         <width>121</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>&amp;Settings</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnexit" >
-       <property name="geometry" >
-        <rect>
-         <x>140</x>
-         <y>40</y>
-         <width>121</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>&amp;Exit</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/exit.png</iconset>
-       </property>
-      </widget>
-     </widget>
-    </item>
    </layout>
   </widget>
+  <action name="action_About_first4" >
+   <property name="text" >
+    <string>&amp;About first4</string>
+   </property>
+  </action>
+  <action name="action_first4_Website" >
+   <property name="text" >
+    <string>&amp;first4 Website</string>
+   </property>
+  </action>
+  <action name="action_Change_DB_Connection" >
+   <property name="text" >
+    <string>&amp;Change DB-Connection</string>
+   </property>
+  </action>
+  <action name="action_Settings" >
+   <property name="text" >
+    <string>&amp;Settings</string>
+   </property>
+  </action>
+  <action name="action_Exit" >
+   <property name="text" >
+    <string>&amp;Exit</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="4" margin="4" />
  <tabstops>
@@ -1276,12 +1166,7 @@
   <tabstop>btnbrowseaccounts</tabstop>
   <tabstop>btnbrowsemsgs</tabstop>
   <tabstop>btnnewmsg</tabstop>
-  <tabstop>btnmsgicon</tabstop>
-  <tabstop>btnsettings</tabstop>
-  <tabstop>btnabout</tabstop>
-  <tabstop>btnexit</tabstop>
  </tabstops>
- <includes/>
  <resources>
   <include location="../resources/images/first4.qrc" />
  </resources>

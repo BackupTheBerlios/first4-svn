@@ -7,6 +7,10 @@
 #include <QPluginLoader>
 #include <QStatusBar>
 #include <QCloseEvent>
+#include <QMenu>
+#include <QMenuBar>
+#include <QDesktopServices>
+#include <QUrl>
 //
 #include "mainfrm.h"
 #include "vars.h"
@@ -51,7 +55,7 @@ void mainfrm::loaduserdata()
 
 	QTimer *timer = new QTimer();
 	connect ( timer, SIGNAL ( timeout() ), this, SLOT ( checkmsg() ) );
-	timer->start ( 30000 );
+	timer->start ( 15000 );
 
 	vars v;
 	QStringList sgeo = v.loadgeo ( this->objectName() );
@@ -63,8 +67,8 @@ void mainfrm::loaduserdata()
 	}
 
 	//Slot Connections
-	connect ( btnsettings, SIGNAL ( released() ), this, SLOT ( config() ) );
-	connect ( btnabout, SIGNAL ( released() ), this, SLOT ( about() ) );
+	//connect ( btnsettings, SIGNAL ( released() ), this, SLOT ( config() ) );
+	//connect ( btnabout, SIGNAL ( released() ), this, SLOT ( about() ) );
 	connect ( btnbrowsedir, SIGNAL ( released() ), this, SLOT ( browseaddr() ) );
 	connect ( btnbrowsedata, SIGNAL ( released() ), this, SLOT ( browsedata() ) );
 	connect ( btnvieworders, SIGNAL ( released() ), this, SLOT ( vieworders() ) );
@@ -76,10 +80,12 @@ void mainfrm::loaduserdata()
 	connect ( btnbrowseaccounts, SIGNAL ( released() ), this, SLOT ( browseaccounts() ) );
 	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
-	connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
+	//connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
 	connect ( btnimpexpdata, SIGNAL ( released() ), this, SLOT ( dataimpexp() ) );
-	connect ( btnexit, SIGNAL ( released() ), this, SLOT ( quitapplication() ) );
+	//connect ( btnexit, SIGNAL ( released() ), this, SLOT ( quitapplication() ) );
+	
+	this->createMenu();
 }
 //
 int mainfrm::checkdb()
@@ -176,7 +182,9 @@ void mainfrm::checkmsg()
 	query.bindValue ( ":user", "%"+username+"%" );
 	query.exec();
 	query.next();
-	lblmsgcount->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
+	
+	statusBar()->setStyleSheet("font : bold 11px;"); 
+	statusBar()->showMessage(tr ( "Messages: %1" ).arg ( query.size(), 0, 10 ));
 	
 	if(uid == 0 )
 		admtasks();
@@ -404,4 +412,48 @@ void mainfrm::dataimpexp()
 	dataimpexp->init();
 	QApplication::restoreOverrideCursor();
 	dataimpexp->exec();
+}
+//
+void mainfrm::createMenu()
+{
+	QAction* changeDBAct = new QAction(tr("&Change DB-Connection"), this);
+	changeDBAct->setStatusTip(tr("Change Database"));
+	connect(changeDBAct, SIGNAL(triggered()), this, SLOT(changeDB()));
+	
+	QAction* settingsAct = new QAction(tr("&Settings"), this);
+	settingsAct->setStatusTip(tr("first4 Settings"));
+	connect(settingsAct, SIGNAL(triggered()), this, SLOT(config()));
+
+	QAction* exitAct = new QAction(tr("&Exit first4"), this);
+	exitAct->setStatusTip(tr("Exit first4"));
+	connect(exitAct, SIGNAL(triggered()), this, SLOT(quitapplication()));
+
+	QAction* aboutAct = new QAction(tr("&About first4"), this);
+	aboutAct->setStatusTip(tr("About first4"));
+	connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+	QAction* websiteAct = new QAction(tr("&first4 Website"), this);
+	websiteAct->setStatusTip(tr("Visit first4 Website"));
+	connect(websiteAct, SIGNAL(triggered()), this, SLOT(visitwebsite()));
+
+	QMenu* fileMenu; 
+	fileMenu = menuBar()->addMenu(tr("&File"));
+	fileMenu->addAction(changeDBAct);
+	fileMenu->addSeparator();
+	fileMenu->addAction(settingsAct);
+	fileMenu->addSeparator();
+	fileMenu->addAction(exitAct);
+	
+	QMenu* infoMenu; 
+	infoMenu = menuBar()->addMenu(tr("&?"));
+	infoMenu->addAction(aboutAct);
+	infoMenu->addSeparator();
+	infoMenu->addAction(websiteAct);
+}
+//
+void mainfrm::visitwebsite()
+{
+	QUrl first4website;
+	first4website.setUrl ( "http://www.procopio.ch" );
+	QDesktopServices::openUrl ( first4website );
 }

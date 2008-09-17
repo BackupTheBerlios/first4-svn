@@ -25,9 +25,11 @@ private slots:
 	void addrimpexp();
 	void dataimpexp();
 	void quitapplication();
+	void visitwebsite();
 private:
 	void cleanup();
 	void admtasks();
+	void createMenu();
 public:
 	void loaduserdata();
 	void initplugins();
