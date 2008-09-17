@@ -1,0 +1,23 @@
+<ui version="4.0" >
+ <class>cashpoint_main</class>
+ <widget class="QWidget" name="cashpoint_main" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>first4 - Cashpoint</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4_cashpoint.qrc" >:/kcalc.png</iconset>
+  </property>
+ </widget>
+ <resources>
+  <include location="../resources/images/first4_cashpoint.qrc" />
+ </resources>
+ <connections/>
+</ui>
