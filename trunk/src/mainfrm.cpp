@@ -41,7 +41,7 @@ mainfrm::mainfrm ( QWidget * parent, Qt::WFlags f )
 //
 void mainfrm::loaduserdata()
 {
-	this->setFixedSize ( this->width(), this->height() );
+	//this->setFixedSize ( this->width(), this->height() );
 	lbluser->setText ( username );
 	lbldb->setText ( dbname );
 	lblserver->setText ( dbhost );
@@ -165,7 +165,6 @@ void mainfrm::initplugins() {
 			}
 		}
 	}
-
 }
 
 //
@@ -179,7 +178,7 @@ void mainfrm::checkmsg()
 	query.next();
 	lblmsgcount->setText ( tr ( "%1" ).arg ( query.size(), 0, 10 ) );
 	
-	if(lbluser->text() == "Administrator" )
+	if(uid == 0 )
 		admtasks();
 	else
 	{

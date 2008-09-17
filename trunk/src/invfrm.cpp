@@ -17,7 +17,9 @@
 #include "invnewfrm.h"
 #include "cmntfrm.h"
 //
+extern int uid;
 extern QString username, fullname, docfolder, templatefolder;
+//
 QStringList comments, inv, rights, finished;
 bool changes;
 //
@@ -95,7 +97,7 @@ int invfrm::init()
 int invfrm::checkrights()
 {
     int permission = 0;
-    if(username != "Administrator")
+    if(uid != 0)
     {
     	QString qstr = "SELECT users FROM inventorycfg WHERE `users` LIKE '%"+username+" [1%';";
 	    QSqlQuery query(qstr);

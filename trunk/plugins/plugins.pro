@@ -23,9 +23,11 @@ TEMPLATE = subdirs
 unix{
 	SUBDIRS  += chipcard
 	SUBDIRS  += docscanner
+	SUBDIRS  += first4_cashpoint
 }
 
 # Windows settings
 win32{
 	SUBDIRS  += docscanner
+	SUBDIRS  += first4_cashpoint
 }

@@ -88,7 +88,7 @@ void cfgfrm::init()
 	progbar->setValue ( 50 );
 	load_local_tools();
 	progbar->setValue ( 60 );
-	if ( username != "Administrator" )
+	if ( uid != 0 )
 		cfgtab->setEnabled ( false );
 	else
 	{

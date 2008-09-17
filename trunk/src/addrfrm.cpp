@@ -20,6 +20,7 @@
 QString lastadrtab, rev_currency, lastaddr, wintitle;
 QStringList adrnamelist, rightslist;
 //
+extern int uid;
 extern QString username, templatefolder, docfolder, dbname;
 //
 addrfrm::addrfrm( QWidget * parent, Qt::WFlags f) 
@@ -141,7 +142,7 @@ void addrfrm::closeEvent(QCloseEvent* ce )
 //
 void addrfrm::checkrights()
 {
-    if(lbluser->text() == "Administrator" || rightslist[cmbdir->currentIndex()]=="[11]")
+    if(uid == 0 || rightslist[cmbdir->currentIndex()]=="[11]")
     {
 		adr3->setReadOnly(FALSE);
 		adr4->setReadOnly(FALSE);

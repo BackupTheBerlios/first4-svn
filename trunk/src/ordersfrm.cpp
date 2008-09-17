@@ -9,6 +9,7 @@
 #include "orderseditfrm.h"
 #include "vars.h"
 //
+extern int uid;
 extern QString username;
 //
 ordersfrm::ordersfrm( QWidget * parent, Qt::WFlags f) 
@@ -87,7 +88,7 @@ void ordersfrm::countentries()
 int ordersfrm::checkrights()
 {
     int permission = 0;
-    if(username != "Administrator" )
+    if(uid != 0 )
     {
 	    QString conn = "SELECT users FROM ordercfg WHERE `users` LIKE '%"+username+" [1%';";
     	QSqlQuery query(conn);

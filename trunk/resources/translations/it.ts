@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_CH">
+<defaultcodec></defaultcodec>
 <context>
     <name>QObject</name>
     <message>
@@ -311,7 +312,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/accountsfrm.ui" line="636"/>
         <source>Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorizzazioni</translation>
     </message>
     <message>
         <location filename="../../ui/accountsfrm.ui" line="908"/>
@@ -426,27 +427,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/accountsfrm.cpp" line="859"/>
         <source>Eintries will be completed...</source>
-        <translation type="unfinished">Registrazioni vengono completate...</translation>
+        <translation>Registrazioni vengono completate...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="913"/>
         <source>Save file as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva file sotto...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="915"/>
         <source>CSV-File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>File CSV (*.csv)</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="923"/>
         <source>Data will be exported...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati vengono esportati...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="1010"/>
         <source>Open File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri file...</translation>
     </message>
     <message>
         <location filename="../../src/accountsfrm.cpp" line="949"/>
