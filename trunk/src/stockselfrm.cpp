@@ -28,9 +28,10 @@ void stockselfrm::init()
 		for(i=0; i<colwidth.size(); i++)
 			treemain->setColumnWidth(i, colwidth[i].toInt());
 	}
-    
-    connect(btnaccept, SIGNAL(released()), this, SLOT(acceptentry()));
-    connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(acceptentry()));
+
+	connect(btnaccept, SIGNAL(released()), this, SLOT(acceptentry()));
+	connect(treemain, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(acceptentry()));
+	connect(treemain, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(acceptentry()));
 }
 //
 void stockselfrm::acceptentry()

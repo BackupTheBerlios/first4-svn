@@ -438,8 +438,8 @@ void mainfrm::createMenu()
 
 	QMenu* fileMenu; 
 	fileMenu = menuBar()->addMenu(tr("&File"));
-	fileMenu->addAction(changeDBAct);
-	fileMenu->addSeparator();
+	//fileMenu->addAction(changeDBAct);
+	//fileMenu->addSeparator();
 	fileMenu->addAction(settingsAct);
 	fileMenu->addSeparator();
 	fileMenu->addAction(exitAct);

@@ -48,7 +48,7 @@ public slots:
 	void calc_tot();
 	void calc_vat();
 	void print();
-	void navtable();
+	void navtable(int row, int col);
 };
 #endif
 

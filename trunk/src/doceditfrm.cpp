@@ -127,7 +127,8 @@ void doceditfrm::init()
     connect(btnsearchaddr, SIGNAL(released()), this, SLOT(selectaddress()));
     connect(cmbdoc, SIGNAL(activated(int)), this, SLOT(selecteddocument()));
     connect(tabmain, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-	connect(tabmain, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
+	connect(tabmain, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(checkdb()));
+	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 	connect(btnclearsearch, SIGNAL(released()), this, SLOT(clearlblid()));
 	connect(btncomplete, SIGNAL(released()), this, SLOT(completedoc()));
 	connect(btnopen, SIGNAL(released()), this, SLOT(opendoc()));
@@ -262,7 +263,7 @@ void doceditfrm::contmenu()
 //
 void doceditfrm::removerow()
 {
-	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 	tabmain->removeRow(tabmain->currentRow());
     int i;
     if(tabmain->rowCount() == 0)
@@ -278,13 +279,19 @@ void doceditfrm::removerow()
     	item->setText(QString("%1").arg(i+1,0,10));
     	tabmain->setItem(i, 0, item);
     }
-    connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+    connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 }
 //
-void doceditfrm::navtable()
-{  
-	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
-	int row = tabmain->currentRow();
+void doceditfrm::navtable(int row, int col)
+{
+	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable(int, int) ) );
+	
+	if(col == 1)
+	{
+		tabmain->setCurrentCell(row, 2 );
+		checkdb();
+	}
+	
 	QTableWidgetItem *item;
     if(row == tabmain->rowCount() - 1)
 		addrow();
@@ -323,12 +330,12 @@ void doceditfrm::navtable()
 	item->setText(QString("%1").arg(quantity*p_single, 0, 'f',2));
 	tabmain->setItem(row,7, item);
 	
-	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 }
 //
 void doceditfrm::addrow()
 {
-	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
+	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable(int, int) ) );
 	
 	tabmain->setRowCount(tabmain->rowCount()+1);
 	 
@@ -370,12 +377,13 @@ void doceditfrm::addrow()
 	} else {
 		QMessageBox::information(0,tr("Stock..."), tr("Please define VAT first!"));			
 	}
-	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 }
 //
 void doceditfrm::checkdb()
 {
-	disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+	//disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 	QTableWidgetItem *testitem1 = tabmain->item(tabmain->currentRow(),1);
 	QTableWidgetItem *testitem2 = tabmain->item(tabmain->currentRow(),3);
 	if(tabmain->currentColumn()==2 && testitem1->text()!="")
@@ -411,8 +419,10 @@ void doceditfrm::checkdb()
 	    if(sfrm->treemain->topLevelItemCount()>1)
 	    {
    			sfrm->init();
+   			QApplication::restoreOverrideCursor();
 			if(sfrm->exec())
 			{
+				QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 			    QTreeWidgetItem *item = sfrm->treemain->currentItem();
 			    if(item!=0)
 			    {
@@ -509,7 +519,8 @@ void doceditfrm::checkdb()
 			}
 	    }
     }
-	connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+	//connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
+	QApplication::restoreOverrideCursor();
 }
 //
 void doceditfrm::clearlblid()
@@ -853,7 +864,7 @@ void doceditfrm::opendoc()
 //
 void doceditfrm::opendocfromid(QString source, QString dbID)
 {
-	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable() ) );
+	disconnect( tabmain, SIGNAL( cellChanged(int, int) ), this, SLOT( navtable(int, int) ) );
     btncomplete->setEnabled(TRUE);
     this->newdocument();
     
@@ -1716,16 +1727,16 @@ void doceditfrm::editposition()
     	item = new QTableWidgetItem;
     	item->setText(epos->cmbvat->currentText());
     	tabmain->setItem(tabmain->currentRow(), 8, item);
-    	navtable();
+    	navtable(tabmain->currentRow(), 2);
     }
 }
 //
 void doceditfrm::navtabonoff(bool state)
 {
 	if(state)
-		connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+		connect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 	else
-		disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable()));
+		disconnect(tabmain, SIGNAL(cellChanged(int, int)), this, SLOT(navtable(int, int)));
 }
 //
 QString doceditfrm::loadtemplatedata(int dbid)
