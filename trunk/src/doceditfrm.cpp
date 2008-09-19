@@ -414,12 +414,13 @@ void doceditfrm::checkdb()
 					}
 			    }
 			}
-	    }
-	    
-	    if(sfrm->treemain->topLevelItemCount()>1)
-	    {
-   			sfrm->init();
-   			QApplication::restoreOverrideCursor();
+		}
+
+		if(sfrm->treemain->topLevelItemCount()>1)
+		{
+			sfrm->init();
+			sfrm->treemain->setCurrentItem(sfrm->treemain->topLevelItem(0));
+			QApplication::restoreOverrideCursor();
 			if(sfrm->exec())
 			{
 				QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));

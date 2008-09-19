@@ -11,6 +11,7 @@ public:
 	void init();
 private slots:
 	void acceptentry();
+	void keyReleaseEvent(QKeyEvent* e);
 };
 #endif
 

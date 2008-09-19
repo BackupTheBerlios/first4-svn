@@ -3443,7 +3443,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="224"/>
+        <location filename="../../src/doceditfrm.cpp" line="225"/>
         <source>You are not authorized to provide the selected document</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3608,109 +3608,109 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Commenti</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="371"/>
+        <location filename="../../src/doceditfrm.cpp" line="378"/>
         <source>Stock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="371"/>
+        <location filename="../../src/doceditfrm.cpp" line="378"/>
         <source>Please define VAT first!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="252"/>
+        <location filename="../../src/doceditfrm.cpp" line="253"/>
         <source>&amp;Edit Entry</source>
         <translation type="unfinished">&amp;Modifica registrazione</translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="255"/>
+        <location filename="../../src/doceditfrm.cpp" line="256"/>
         <source>&amp;Delete Row</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="715"/>
+        <location filename="../../src/doceditfrm.cpp" line="727"/>
         <source>Save...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="715"/>
+        <location filename="../../src/doceditfrm.cpp" line="727"/>
         <source>Document completed and saved in Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="803"/>
+        <location filename="../../src/doceditfrm.cpp" line="815"/>
         <source>New Document...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="803"/>
+        <location filename="../../src/doceditfrm.cpp" line="815"/>
         <source>Take over existing data?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1375"/>
+        <location filename="../../src/doceditfrm.cpp" line="1387"/>
         <source>Discount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1399"/>
+        <location filename="../../src/doceditfrm.cpp" line="1411"/>
         <source>Net amount:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1423"/>
+        <location filename="../../src/doceditfrm.cpp" line="1435"/>
         <source>Comments:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1513"/>
+        <location filename="../../src/doceditfrm.cpp" line="1525"/>
         <source>Can&apos;t write ouputfile!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1612"/>
+        <location filename="../../src/doceditfrm.cpp" line="1624"/>
         <source>Can&apos;t find DVI-File.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1482"/>
+        <location filename="../../src/doceditfrm.cpp" line="1494"/>
         <source>Please select a receiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1621"/>
+        <location filename="../../src/doceditfrm.cpp" line="1633"/>
         <source>Can&apos;t print File.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1640"/>
+        <location filename="../../src/doceditfrm.cpp" line="1652"/>
         <source>Document not saved...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1640"/>
+        <location filename="../../src/doceditfrm.cpp" line="1652"/>
         <source>Document %1 is not completed!
 
  Save as draft?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1482"/>
+        <location filename="../../src/doceditfrm.cpp" line="1494"/>
         <source>Address...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1381"/>
+        <location filename="../../src/doceditfrm.cpp" line="1393"/>
         <source>Amount excl. VAT:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1386"/>
+        <location filename="../../src/doceditfrm.cpp" line="1398"/>
         <source>VAT rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1386"/>
+        <location filename="../../src/doceditfrm.cpp" line="1398"/>
         <source>VAT amount</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3720,7 +3720,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1446"/>
+        <location filename="../../src/doceditfrm.cpp" line="1458"/>
         <source>Can&apos;t convert TEX-File.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3730,67 +3730,67 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="791"/>
+        <location filename="../../src/doceditfrm.cpp" line="803"/>
         <source>Invoice %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1629"/>
+        <location filename="../../src/doceditfrm.cpp" line="1641"/>
         <source>Can&apos;t move file to customer folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1401"/>
+        <location filename="../../src/doceditfrm.cpp" line="1413"/>
         <source>Kind regards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1403"/>
+        <location filename="../../src/doceditfrm.cpp" line="1415"/>
         <source>General informations:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1744"/>
+        <location filename="../../src/doceditfrm.cpp" line="1756"/>
         <source>Can&apos;t load template description...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1474"/>
+        <location filename="../../src/doceditfrm.cpp" line="1486"/>
         <source>You must first define a DVI-Viewer like KDVI or Okular in the settings module</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1524"/>
+        <location filename="../../src/doceditfrm.cpp" line="1536"/>
         <source>Error during convertion from TEXT to DVI!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1539"/>
+        <location filename="../../src/doceditfrm.cpp" line="1551"/>
         <source>Can&apos;t convert to Postscript file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1548"/>
+        <location filename="../../src/doceditfrm.cpp" line="1560"/>
         <source>Error during printing process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1768"/>
+        <location filename="../../src/doceditfrm.cpp" line="1780"/>
         <source>Can&apos;t load template data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="901"/>
+        <location filename="../../src/doceditfrm.cpp" line="913"/>
         <source>Document: ###docid### ( Locked by User: %1 )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="903"/>
+        <location filename="../../src/doceditfrm.cpp" line="915"/>
         <source>Document: ###docid###</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/doceditfrm.cpp" line="1402"/>
+        <location filename="../../src/doceditfrm.cpp" line="1414"/>
         <source>Recieved:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4410,16 +4410,6 @@ Complete nevertheless?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/mainfrm.ui" line="56"/>
-        <source>Directories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="199"/>
-        <source>Datatables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../ui/mainfrm.ui" line="316"/>
         <source>View purchase orders</source>
         <translation type="unfinished"></translation>
@@ -4432,26 +4422,6 @@ Complete nevertheless?</source>
     <message>
         <location filename="../../ui/mainfrm.ui" line="254"/>
         <source>Browse Tables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="606"/>
-        <source>Documents</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="749"/>
-        <source>Finances</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="836"/>
-        <source>Messages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="979"/>
-        <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4477,11 +4447,6 @@ Complete nevertheless?</source>
     <message>
         <location filename="../../ui/mainfrm.ui" line="711"/>
         <source>New document</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/mainfrm.ui" line="463"/>
-        <source>Orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4641,6 +4606,41 @@ The selected database has version: %2</source>
         <location filename="../../ui/mainfrm.ui" line="19"/>
         <source>first4</source>
         <translation type="unfinished">first4</translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="56"/>
+        <source>&amp;Directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="199"/>
+        <source>D&amp;atatables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="463"/>
+        <source>&amp;Orders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="606"/>
+        <source>Do&amp;cuments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="749"/>
+        <source>&amp;Finances</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="836"/>
+        <source>&amp;Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/mainfrm.ui" line="979"/>
+        <source>&amp;Information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -48,12 +48,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>175</width>
-         <height>82</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Directories</string>
+        <string>&amp;Directories</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/kdmconfig.png</iconset>
@@ -191,12 +191,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>96</width>
-         <height>26</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Datatables</string>
+        <string>D&amp;atatables</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
@@ -455,12 +455,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>119</width>
-         <height>82</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Orders</string>
+        <string>&amp;Orders</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
@@ -598,12 +598,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>138</width>
-         <height>82</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Documents</string>
+        <string>Do&amp;cuments</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
@@ -741,12 +741,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>129</width>
-         <height>70</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Finances</string>
+        <string>&amp;Finances</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
@@ -828,12 +828,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>133</width>
-         <height>82</height>
+         <width>272</width>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Messages</string>
+        <string>&amp;Messages</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/kontact_mail.png</iconset>
@@ -972,11 +972,11 @@
          <x>0</x>
          <y>0</y>
          <width>272</width>
-         <height>211</height>
+         <height>231</height>
         </rect>
        </property>
        <attribute name="label" >
-        <string>Information</string>
+        <string>&amp;Information</string>
        </attribute>
        <attribute name="icon" >
         <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
