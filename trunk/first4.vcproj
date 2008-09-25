@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9,00"
 	Name="first4"
-	ProjectGUID="{31B6FD69-896E-3265-8015-87FEA4E5FF69}"
+	ProjectGUID="{F3B73C7C-8724-3274-B024-DABF37717C9E}"
 	Keyword="Qt4VSv1.0"
 	TargetFrameworkVersion="0"
 	>
@@ -44,11 +44,12 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="-Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189"
-				Optimization="2"
+				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtCore&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtGui&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include\QtSql&quot;,&quot;$(QTDIR)\include&quot;,&quot;src&quot;,&quot;ui&quot;,&quot;$(QTDIR)\include\ActiveQt&quot;,&quot;build\first4\win\moc&quot;,&quot;build\first4\ui&quot;,$(QTDIR)\mkspecs\win32-msvc2008"
 				PreprocessorDefinitions="_WINDOWS,UNICODE,WIN32,QT_LARGEFILE_SUPPORT,QT_THREAD_SUPPORT,QT_DLL,QT_PLUGIN,QT_SQL_LIB,QT_GUI_LIB,QT_CORE_LIB"
 				GeneratePreprocessedFile="0"
 				ExceptionHandling="1"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				BufferSecurityCheck="false"
 				TreatWChar_tAsBuiltInType="false"
@@ -1154,6 +1155,10 @@
 						Outputs="build\first4\win\moc\moc_ordersfrm.cpp"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="src\plugininterface.h"
+				>
 			</File>
 			<File
 				RelativePath="src\printfrm.h"
@@ -2807,6 +2812,10 @@
 				>
 			</File>
 			<File
+				RelativePath="resources\images\exec.png"
+				>
+			</File>
+			<File
 				RelativePath="resources\images\exit.png"
 				>
 			</File>
@@ -2840,7 +2849,7 @@
 						Name="VCCustomBuildTool"
 						Description="RCC resources\images\first4.qrc"
 						CommandLine="$(QTDIR)\bin\rcc.exe -name first4 resources\images\first4.qrc -o debug\qrc_first4.cpp&#x0D;&#x0A;"
-						AdditionalDependencies="COPYING;$(QTDIR)\bin\rcc.exe;resources\images\button_cancel.png;resources\images\button_ok.png;resources\images\button_ok_small.png;resources\images\contents.png;resources\images\down.png;resources\images\exit.png;resources\images\fileclose.png;resources\images\filenew.png;resources\images\fileopen.png;resources\images\fileprint.png;resources\images\filesave.png;resources\images\first4.qrc;resources\images\help_index.png;resources\images\hotlistadd.png;resources\images\hotlistdel.png;resources\images\impexp.png;resources\images\kcalc.png;resources\images\kdmconfig.png;resources\images\kfind.png;resources\images\kfm.png;resources\images\kontact_mail.png;resources\images\kontact_todo.png;resources\images\logo.png;resources\images\mail_new.png;resources\images\message2.png;resources\images\messagebox_critical.png;resources\images\newsplash.png;resources\images\package_utilities.png;resources\images\trashcan_empty.png;resources\images\undo.png;resources\images\unlock.png;resources\images\up.png;resources\images\useradd.png;resources\images\viewmag2.png;resources\images\wordprocessing32x32.png;resources\images\xclipboard.png;resources\images\xmag.png"
+						AdditionalDependencies="COPYING;$(QTDIR)\bin\rcc.exe;resources\images\button_cancel.png;resources\images\button_ok.png;resources\images\button_ok_small.png;resources\images\contents.png;resources\images\down.png;resources\images\exec.png;resources\images\exit.png;resources\images\fileclose.png;resources\images\filenew.png;resources\images\fileopen.png;resources\images\fileprint.png;resources\images\filesave.png;resources\images\first4.qrc;resources\images\help_index.png;resources\images\hotlistadd.png;resources\images\hotlistdel.png;resources\images\impexp.png;resources\images\kcalc.png;resources\images\kdmconfig.png;resources\images\kfind.png;resources\images\kfm.png;resources\images\kontact_mail.png;resources\images\kontact_todo.png;resources\images\logo.png;resources\images\mail_new.png;resources\images\message2.png;resources\images\messagebox_critical.png;resources\images\newsplash.png;resources\images\package_utilities.png;resources\images\trashcan_empty.png;resources\images\undo.png;resources\images\unlock.png;resources\images\up.png;resources\images\useradd.png;resources\images\viewmag2.png;resources\images\wordprocessing32x32.png;resources\images\xclipboard.png;resources\images\xmag.png"
 						Outputs="debug\qrc_first4.cpp"
 					/>
 				</FileConfiguration>
@@ -2851,7 +2860,7 @@
 						Name="VCCustomBuildTool"
 						Description="RCC resources\images\first4.qrc"
 						CommandLine="$(QTDIR)\bin\rcc.exe -name first4 resources\images\first4.qrc -o release\qrc_first4.cpp&#x0D;&#x0A;"
-						AdditionalDependencies="COPYING;$(QTDIR)\bin\rcc.exe;resources\images\button_cancel.png;resources\images\button_ok.png;resources\images\button_ok_small.png;resources\images\contents.png;resources\images\down.png;resources\images\exit.png;resources\images\fileclose.png;resources\images\filenew.png;resources\images\fileopen.png;resources\images\fileprint.png;resources\images\filesave.png;resources\images\first4.qrc;resources\images\help_index.png;resources\images\hotlistadd.png;resources\images\hotlistdel.png;resources\images\impexp.png;resources\images\kcalc.png;resources\images\kdmconfig.png;resources\images\kfind.png;resources\images\kfm.png;resources\images\kontact_mail.png;resources\images\kontact_todo.png;resources\images\logo.png;resources\images\mail_new.png;resources\images\message2.png;resources\images\messagebox_critical.png;resources\images\newsplash.png;resources\images\package_utilities.png;resources\images\trashcan_empty.png;resources\images\undo.png;resources\images\unlock.png;resources\images\up.png;resources\images\useradd.png;resources\images\viewmag2.png;resources\images\wordprocessing32x32.png;resources\images\xclipboard.png;resources\images\xmag.png"
+						AdditionalDependencies="COPYING;$(QTDIR)\bin\rcc.exe;resources\images\button_cancel.png;resources\images\button_ok.png;resources\images\button_ok_small.png;resources\images\contents.png;resources\images\down.png;resources\images\exec.png;resources\images\exit.png;resources\images\fileclose.png;resources\images\filenew.png;resources\images\fileopen.png;resources\images\fileprint.png;resources\images\filesave.png;resources\images\first4.qrc;resources\images\help_index.png;resources\images\hotlistadd.png;resources\images\hotlistdel.png;resources\images\impexp.png;resources\images\kcalc.png;resources\images\kdmconfig.png;resources\images\kfind.png;resources\images\kfm.png;resources\images\kontact_mail.png;resources\images\kontact_todo.png;resources\images\logo.png;resources\images\mail_new.png;resources\images\message2.png;resources\images\messagebox_critical.png;resources\images\newsplash.png;resources\images\package_utilities.png;resources\images\trashcan_empty.png;resources\images\undo.png;resources\images\unlock.png;resources\images\up.png;resources\images\useradd.png;resources\images\viewmag2.png;resources\images\wordprocessing32x32.png;resources\images\xclipboard.png;resources\images\xmag.png"
 						Outputs="release\qrc_first4.cpp"
 					/>
 				</FileConfiguration>
