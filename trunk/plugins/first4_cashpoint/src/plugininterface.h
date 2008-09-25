@@ -164,6 +164,11 @@ class First4PluginInterface {
 		 * @endcode
 		 */
 		virtual bool showWindow( QWidget *widget ) const = 0;
+		
+		/**
+		Setzen von Variabeln wie username oder fullnamne
+		*/
+		virtual void setenv(QStringList parameters) const = 0;
 };
 
 Q_DECLARE_INTERFACE( First4PluginInterface, "first4.First4PluginInterface/1.4.0" )

@@ -37,6 +37,7 @@ class CashpointPlugin : public QObject, public First4PluginInterface {
 		int toolBoxIndex() const;
 		bool showWindow( QDialog *dialog ) const;
 		bool showWindow( QWidget *widget ) const;
+		void setenv(QStringList parameters) const;
 
 	private:
 		QWidget *widget() const;

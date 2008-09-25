@@ -67,8 +67,6 @@ void mainfrm::loaduserdata()
 	}
 
 	//Slot Connections
-	//connect ( btnsettings, SIGNAL ( released() ), this, SLOT ( config() ) );
-	//connect ( btnabout, SIGNAL ( released() ), this, SLOT ( about() ) );
 	connect ( btnbrowsedir, SIGNAL ( released() ), this, SLOT ( browseaddr() ) );
 	connect ( btnbrowsedata, SIGNAL ( released() ), this, SLOT ( browsedata() ) );
 	connect ( btnvieworders, SIGNAL ( released() ), this, SLOT ( vieworders() ) );
@@ -80,10 +78,8 @@ void mainfrm::loaduserdata()
 	connect ( btnbrowseaccounts, SIGNAL ( released() ), this, SLOT ( browseaccounts() ) );
 	connect ( btnbrowsemsgs, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnnewmsg, SIGNAL ( released() ), this, SLOT ( newmsg() ) );
-	//connect ( btnmsgicon, SIGNAL ( released() ), this, SLOT ( browsemsgs() ) );
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
 	connect ( btnimpexpdata, SIGNAL ( released() ), this, SLOT ( dataimpexp() ) );
-	//connect ( btnexit, SIGNAL ( released() ), this, SLOT ( quitapplication() ) );
 	
 	this->createMenu();
 }
@@ -161,6 +157,8 @@ void mainfrm::initplugins() {
 						if( !fpi->pluginName().isEmpty() || !fpi->pluginName().isNull() )
 						{
 							maintoolbox->insertItem( maintoolbox->count() - 1, fpi->newToolBoxWidget(), fpi->img(), fpi->pluginName() );
+							QStringList parameters = (QStringList() << username << fullname << firstver << dbhost << dbname);
+							fpi->setenv(parameters);
 						}
 						else
 						{

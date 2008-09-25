@@ -17,5 +17,7 @@ void CashPoint::init(QStringList parameters)
 	username=parameters[0];
 	fullname=parameters[1];
 	firstver=parameters[2];
-	QMessageBox::warning ( 0, tr ( "Check DB-Lock..." ), username);
+	QString dbhost = parameters[3];
+	QString dbname = parameters[4];
+	this->setWindowTitle(QString("first4 Cashpoint-Plugin / User: %1 (%2) connected to %3@%4").arg(fullname).arg(username).arg(dbname).arg(dbhost));
 }

@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>950</width>
+    <height>693</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -15,6 +15,233 @@
   <property name="windowIcon" >
    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/kcalc.png</iconset>
   </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>491</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>26</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Total amount:</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>10</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="smallDecimalPoint" >
+    <bool>true</bool>
+   </property>
+   <property name="numDigits" >
+    <number>12</number>
+   </property>
+   <property name="segmentStyle" >
+    <enum>QLCDNumber::Flat</enum>
+   </property>
+   <property name="value" stdset="0" >
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Item:</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line" >
+   <property name="geometry" >
+    <rect>
+     <x>7</x>
+     <y>90</y>
+     <width>931</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>130</y>
+     <width>531</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton" >
+   <property name="geometry" >
+    <rect>
+     <x>620</x>
+     <y>130</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/xmag.png</iconset>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QTreeWidget" name="treeWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>921</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text" >
+     <string>1</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>570</y>
+     <width>61</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>600</y>
+     <width>931</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>650</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/fileclose.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4" >
+   <property name="geometry" >
+    <rect>
+     <x>800</x>
+     <y>620</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Pay</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_ok.png</iconset>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5" >
+   <property name="geometry" >
+    <rect>
+     <x>650</x>
+     <y>620</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="../resources/images/first4_cashpoint.qrc" />

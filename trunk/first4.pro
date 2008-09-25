@@ -82,7 +82,8 @@ HEADERS = src/aboutfrm.h \
  src/dbupdatefrm.h \
  src/loginconfserversfrm.h \
  src/addrimpexpfrm.h \
- src/dataimpexpfrm.h
+ src/dataimpexpfrm.h \
+ src/plugininterface.h
 INCLUDEPATH = src ui
 QT += core gui sql
 SOURCES = src/aboutfrm.cpp \

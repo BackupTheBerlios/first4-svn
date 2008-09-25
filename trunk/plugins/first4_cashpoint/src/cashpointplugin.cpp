@@ -19,11 +19,13 @@
 #include <QtGui>
 #include <QtCore>
 #include <QtSql>
+#include <QMessageBox>
 //
 #include "cashpoint_main.h"
 #include "cashpointplugin.h"
 //
 QString username, fullname, firstver;
+QStringList parameters;
 //
 QIcon CashpointPlugin::img() const {
 	return QIcon( ":/kcalc.png" );
@@ -57,8 +59,6 @@ QWidget *CashpointPlugin::widget() const {
 }
 
 void CashpointPlugin::showWidget() {
-	QStringList parameters = (QStringList() << "username" << "fullname" << "firstver");
-	cashpoint_instance->init(parameters);
 	showWindow( widget() );
 } 
 
@@ -99,8 +99,13 @@ bool CashpointPlugin::showWindow( QDialog *dialog ) const {
 
 bool CashpointPlugin::showWindow( QWidget *widget ) const {
 
+	cashpoint_instance->init(parameters);
 	widget->show();
 	return true;
+}
+
+void CashpointPlugin::setenv(QStringList para) const {
+	parameters = para;
 }
 
 Q_EXPORT_PLUGIN2(first4_cashpoint, CashpointPlugin )
