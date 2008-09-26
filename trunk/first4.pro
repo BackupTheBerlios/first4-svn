@@ -2,7 +2,8 @@ CONFIG += plugin \
  qt \
  thread \
  warn_on \
- debug
+ debug \
+ console
 DESTDIR = bin
 FORMS = ui/aboutfrm.ui \
  ui/accountsfrm.ui \

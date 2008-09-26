@@ -10,12 +10,26 @@
 #include "mainfrm.h"
 #include "loginfrm.h"
 #include "dbwizzardfrm.h"
+#include "vars.h"
 
-extern QString dbhost, dbname, dbuid, dbpwd, dbport;
+extern QString firstver, dbhost, dbname, dbuid, dbpwd, dbport;
 
 int main ( int argc, char ** argv )
 {
 	QApplication app ( argc, argv );
+	
+	QStringList arguments = app.arguments();
+	if(arguments.count() > 1)
+	{
+		QTextStream cout(stdout,QIODevice::WriteOnly);
+		for(int i=0; i<arguments.count(); i++)
+		{
+			cout << "\n";
+			if(arguments[i] == "-v")
+				cout << QString("first4 Version: %1\n").arg(firstver);
+			app.quit();
+		}
+	}
 	
 	QString langfile;
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );

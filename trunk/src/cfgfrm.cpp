@@ -16,7 +16,7 @@
 #include <QMenu>
 #include <QContextMenuEvent>
 #include <QAction>
-
+//
 #include "cfgfrm.h"
 #include "vars.h"
 #include "newdatatabfrm.h"
@@ -113,6 +113,7 @@ void cfgfrm::init()
 	//slot connections
 	connect ( btnchangepwd, SIGNAL ( released() ), this, SLOT ( changepwd() ) );
 	connect ( btnsellangfile, SIGNAL ( released() ), this, SLOT ( selectlangfile() ) );
+	connect ( btnsavelangfile, SIGNAL ( released() ), this, SLOT ( savelangfile() ) );
 	connect ( btnadddb, SIGNAL ( released() ), this, SLOT ( addservers() ) );
 	connect ( btndeldb, SIGNAL ( released() ), this, SLOT ( delservers() ) );
 	connect ( listusers, SIGNAL ( itemClicked ( QListWidgetItem* ) ), this, SLOT ( selectuser() ) );
@@ -240,11 +241,16 @@ void cfgfrm::loadlangfile()
 //
 void cfgfrm::selectlangfile()
 {
-	bool found = FALSE;
 	QString filename = QFileDialog::getOpenFileName ( this, tr ( "Open Lang-File" ),
 	                   QDir::homePath(),
 	                   tr ( "Lang-File (*.qm)" ) );
-	
+	                   
+	txtlang->setText(filename);
+}
+//
+void cfgfrm::savelangfile()
+{
+	bool found = FALSE;
 	QStringList lines;
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
@@ -263,17 +269,16 @@ void cfgfrm::selectlangfile()
 		{
 			if(lines[i].section("=",0,0) == "TRANSLATION")
 			{
-				stream << "TRANSLATION=" << filename << "\n";
+				stream << "TRANSLATION=" << txtlang->text() << "\n";
 				found = TRUE;
 			}
 			else
 				stream << lines[i] << "\n";
 		}
 		if(!found)
-			stream << "TRANSLATION=" << filename << "\n";
-		txtlang->setText ( filename );
-		QMessageBox::information ( 0,"Info...", tr ( "Please restart the application." ) );
+			stream << "TRANSLATION=" << txtlang->text() << "\n";
 		file.close();
+		QMessageBox::information ( 0,"Info...", tr ( "New configuration saved\n\nPlease restart the application." ) );
 	}
 	else
 		QMessageBox::critical ( 0,"Error...", tr ( "Language-File cannot be written!" ) );

@@ -1445,57 +1445,57 @@ Betrag in Datei ist: %2</translation>
         <translation>Einstellungen...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4629"/>
+        <location filename="../../ui/cfgfrm.ui" line="4685"/>
         <source>&amp;Close</source>
         <translation>&amp;Schliessen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4554"/>
+        <location filename="../../ui/cfgfrm.ui" line="4610"/>
         <source>User</source>
         <translation>Benutzer</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="901"/>
+        <location filename="../../ui/cfgfrm.ui" line="957"/>
         <source>Administrator</source>
         <translation>Administrator</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4651"/>
+        <location filename="../../ui/cfgfrm.ui" line="4707"/>
         <source>Username:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4664"/>
+        <location filename="../../ui/cfgfrm.ui" line="4720"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="182"/>
+        <location filename="../../src/cfgfrm.cpp" line="183"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="549"/>
+        <location filename="../../src/cfgfrm.cpp" line="554"/>
         <source>Change password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="205"/>
+        <location filename="../../src/cfgfrm.cpp" line="206"/>
         <source>Password was changed!</source>
         <translation>Passwort wurde geändert!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="213"/>
+        <location filename="../../src/cfgfrm.cpp" line="214"/>
         <source>Changing password...</source>
         <translation>Passwort wechseln...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="213"/>
+        <location filename="../../src/cfgfrm.cpp" line="214"/>
         <source>Actual password wrong.</source>
         <translation>Aktuelles Passwort falsch.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="549"/>
+        <location filename="../../src/cfgfrm.cpp" line="554"/>
         <source>New password does not agree with password confirmation!</source>
         <translation>Neues Passwort und Passwortbestätigung stimmen nicht überein!</translation>
     </message>
@@ -1510,82 +1510,77 @@ Betrag in Datei ist: %2</translation>
         <translation>Sprach-Datei (*.qm)</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="275"/>
-        <source>Please restart the application.</source>
-        <translation>Bitte Applikation neu starten.</translation>
-    </message>
-    <message>
-        <location filename="../../src/cfgfrm.cpp" line="279"/>
+        <location filename="../../src/cfgfrm.cpp" line="284"/>
         <source>Language-File cannot be written!</source>
         <translation>Sprachdatei kann nicht geändert werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1133"/>
+        <location filename="../../src/cfgfrm.cpp" line="1138"/>
         <source>QInputDialog::getText()</source>
         <translation>QInputDialog::getText()</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="470"/>
+        <location filename="../../src/cfgfrm.cpp" line="475"/>
         <source>User name:</source>
         <translation>Benutzername:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="481"/>
+        <location filename="../../src/cfgfrm.cpp" line="486"/>
         <source>New User...</source>
         <translation>Neuer Benutzer...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="481"/>
+        <location filename="../../src/cfgfrm.cpp" line="486"/>
         <source>User already exists!</source>
         <translation>Benutzer existiert bereits!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="544"/>
+        <location filename="../../src/cfgfrm.cpp" line="549"/>
         <source>Change personal data...</source>
         <translation>Persönlich Daten anpassen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="544"/>
+        <location filename="../../src/cfgfrm.cpp" line="549"/>
         <source>Personal data successfully changed.</source>
         <translation>Persönliche Daten erfolgreich gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="583"/>
+        <location filename="../../src/cfgfrm.cpp" line="588"/>
         <source>Directories</source>
         <translation>Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="585"/>
+        <location filename="../../src/cfgfrm.cpp" line="590"/>
         <source>Data &amp; Stock</source>
         <translation>Daten &amp; Lager</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="587"/>
+        <location filename="../../src/cfgfrm.cpp" line="592"/>
         <source>Inventory</source>
         <translation>Inventar</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="589"/>
+        <location filename="../../src/cfgfrm.cpp" line="594"/>
         <source>Purchase orders</source>
         <translation>Bestellungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="591"/>
+        <location filename="../../src/cfgfrm.cpp" line="596"/>
         <source>Orders</source>
         <translation>Aufträge</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="593"/>
+        <location filename="../../src/cfgfrm.cpp" line="598"/>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="595"/>
+        <location filename="../../src/cfgfrm.cpp" line="600"/>
         <source>Accounts</source>
         <translation>Konti</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="597"/>
+        <location filename="../../src/cfgfrm.cpp" line="602"/>
         <source>Messages</source>
         <translation>Nachrichten</translation>
     </message>
@@ -1595,107 +1590,107 @@ Betrag in Datei ist: %2</translation>
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="699"/>
+        <location filename="../../src/cfgfrm.cpp" line="704"/>
         <source>Offer</source>
         <translation>Offerte</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="699"/>
+        <location filename="../../src/cfgfrm.cpp" line="704"/>
         <source>Order confirmation</source>
         <translation>Auftragsbestätigung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="699"/>
+        <location filename="../../src/cfgfrm.cpp" line="704"/>
         <source>Delivery note</source>
         <translation>Lieferschein</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="751"/>
+        <location filename="../../src/cfgfrm.cpp" line="756"/>
         <source>General message</source>
         <translation>Allgemeine Nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="751"/>
+        <location filename="../../src/cfgfrm.cpp" line="756"/>
         <source>Stockmessage</source>
         <translation>Lagermeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="751"/>
+        <location filename="../../src/cfgfrm.cpp" line="756"/>
         <source>Ordermessage</source>
         <translation>Auftragsmeldung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="751"/>
+        <location filename="../../src/cfgfrm.cpp" line="756"/>
         <source>Inc/Exp-Message</source>
         <translation>Ein/Aus-Meldungen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="969"/>
+        <location filename="../../src/cfgfrm.cpp" line="974"/>
         <source>Permissions...</source>
         <translation>Berechtigungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1302"/>
+        <location filename="../../src/cfgfrm.cpp" line="1307"/>
         <source>New settings are saved and now active.</source>
         <translation>Neue Einstellungen wurden gespeichert und sind nun aktiv.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="997"/>
+        <location filename="../../src/cfgfrm.cpp" line="1002"/>
         <source>Rename &apos;%1&apos;</source>
         <translation>&apos;%1&apos; umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="999"/>
+        <location filename="../../src/cfgfrm.cpp" line="1004"/>
         <source>Delete &apos;%1&apos;</source>
         <translation>&apos;%1&apos; löschen</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1013"/>
+        <location filename="../../src/cfgfrm.cpp" line="1018"/>
         <source>Directory:</source>
         <translation>Adressbuch:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1061"/>
+        <location filename="../../src/cfgfrm.cpp" line="1066"/>
         <source>Accountname:</source>
         <translation>Kontoname:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1134"/>
+        <location filename="../../src/cfgfrm.cpp" line="1139"/>
         <source>Rename &apos;%1&apos; to:</source>
         <translation>&apos;%1&apos; umbenennen zu:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1550"/>
+        <location filename="../../src/cfgfrm.cpp" line="1555"/>
         <source>Deleting...</source>
         <translation>Löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1164"/>
+        <location filename="../../src/cfgfrm.cpp" line="1169"/>
         <source>Delete &apos;%1&apos;?</source>
         <translation>&apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1209"/>
+        <location filename="../../src/cfgfrm.cpp" line="1214"/>
         <source>Docfolder...</source>
         <translation>Dokumentordner...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1302"/>
+        <location filename="../../src/cfgfrm.cpp" line="1307"/>
         <source>Own data...</source>
         <translation>Eingene Daten...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="402"/>
+        <location filename="../../ui/cfgfrm.ui" line="430"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="426"/>
+        <location filename="../../ui/cfgfrm.ui" line="454"/>
         <source>Language-File:</source>
         <translation>Sprach-Datei:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3946"/>
+        <location filename="../../ui/cfgfrm.ui" line="4002"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -1705,7 +1700,7 @@ Betrag in Datei ist: %2</translation>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1035"/>
+        <location filename="../../ui/cfgfrm.ui" line="1091"/>
         <source>DB-Version:</source>
         <translation>DB-Version:</translation>
     </message>
@@ -1715,7 +1710,7 @@ Betrag in Datei ist: %2</translation>
         <translation>DB-Server:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="959"/>
+        <location filename="../../ui/cfgfrm.ui" line="1015"/>
         <source>DB-Name:</source>
         <translation>DB-Name:</translation>
     </message>
@@ -1730,154 +1725,154 @@ Betrag in Datei ist: %2</translation>
         <translation>Datenbanken</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2734"/>
+        <location filename="../../ui/cfgfrm.ui" line="2790"/>
         <source>Confirmation:</source>
         <translation>Bestätigung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="611"/>
+        <location filename="../../ui/cfgfrm.ui" line="667"/>
         <source>Old Password:</source>
         <translation>Altes Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="586"/>
+        <location filename="../../ui/cfgfrm.ui" line="642"/>
         <source>New Password:</source>
         <translation>Neues Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="504"/>
+        <location filename="../../ui/cfgfrm.ui" line="560"/>
         <source>&amp;Change</source>
         <translation>Ä&amp;ndern</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="917"/>
+        <location filename="../../ui/cfgfrm.ui" line="973"/>
         <source>&amp;Database</source>
         <translation>&amp;Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1068"/>
+        <location filename="../../ui/cfgfrm.ui" line="1124"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="935"/>
+        <location filename="../../ui/cfgfrm.ui" line="991"/>
         <source>Current database</source>
         <translation>Aktuelle Datenbank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="997"/>
+        <location filename="../../ui/cfgfrm.ui" line="1053"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1224"/>
+        <location filename="../../ui/cfgfrm.ui" line="1280"/>
         <source>&amp;Users</source>
         <translation>&amp;Benutzer</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2684"/>
+        <location filename="../../ui/cfgfrm.ui" line="2740"/>
         <source>ID:</source>
         <translation>ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1241"/>
+        <location filename="../../ui/cfgfrm.ui" line="1297"/>
         <source>(Leave fields empty to
 take current password!)</source>
         <translation>(Felder leer lassen um
 aktuelles Passwort zu behalten!)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2646"/>
+        <location filename="../../ui/cfgfrm.ui" line="2702"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2919"/>
+        <location filename="../../ui/cfgfrm.ui" line="2975"/>
         <source>Users:</source>
         <translation>Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1267"/>
+        <location filename="../../ui/cfgfrm.ui" line="1323"/>
         <source>&amp;Contact</source>
         <translation>&amp;Kontakt</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1291"/>
+        <location filename="../../ui/cfgfrm.ui" line="1347"/>
         <source>Firstname:</source>
         <translation>Vorname:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1351"/>
+        <location filename="../../ui/cfgfrm.ui" line="1407"/>
         <source>Lastname:</source>
         <translation>Nachname:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1386"/>
+        <location filename="../../ui/cfgfrm.ui" line="1442"/>
         <source>Fullname:</source>
         <translation>Kompl.Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1326"/>
+        <location filename="../../ui/cfgfrm.ui" line="1382"/>
         <source>Date of birth:</source>
         <translation>Geburtsdatum:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1418"/>
+        <location filename="../../ui/cfgfrm.ui" line="1474"/>
         <source>&amp;Privat</source>
         <translation>&amp;Privat</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1665"/>
+        <location filename="../../ui/cfgfrm.ui" line="1721"/>
         <source>Street:</source>
         <translation>Strasse:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3598"/>
+        <location filename="../../ui/cfgfrm.ui" line="3654"/>
         <source>ZIP:</source>
         <translation>PLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3573"/>
+        <location filename="../../ui/cfgfrm.ui" line="3629"/>
         <source>Location:</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3623"/>
+        <location filename="../../ui/cfgfrm.ui" line="3679"/>
         <source>Country:</source>
         <translation>Land:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1563"/>
+        <location filename="../../ui/cfgfrm.ui" line="1619"/>
         <source>&amp;Business</source>
         <translation>&amp;Geschäft</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1770"/>
+        <location filename="../../ui/cfgfrm.ui" line="1826"/>
         <source>Empl. grade:</source>
         <translation>Einstel.Grad:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1795"/>
+        <location filename="../../ui/cfgfrm.ui" line="1851"/>
         <source>Empl. type:</source>
         <translation>Einstel.art:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1820"/>
+        <location filename="../../ui/cfgfrm.ui" line="1876"/>
         <source>Position:</source>
         <translation>Position:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1845"/>
+        <location filename="../../ui/cfgfrm.ui" line="1901"/>
         <source>Org. Unit:</source>
         <translation>Abteilung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1870"/>
+        <location filename="../../ui/cfgfrm.ui" line="1926"/>
         <source>Profession:</source>
         <translation>Beruf:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1637"/>
+        <location filename="../../ui/cfgfrm.ui" line="1693"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -1885,227 +1880,227 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PLZ:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1884"/>
+        <location filename="../../ui/cfgfrm.ui" line="1940"/>
         <source>10%</source>
         <translation>10%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1889"/>
+        <location filename="../../ui/cfgfrm.ui" line="1945"/>
         <source>20%</source>
         <translation>20%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1894"/>
+        <location filename="../../ui/cfgfrm.ui" line="1950"/>
         <source>30%</source>
         <translation>30%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1899"/>
+        <location filename="../../ui/cfgfrm.ui" line="1955"/>
         <source>40%</source>
         <translation>40%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1904"/>
+        <location filename="../../ui/cfgfrm.ui" line="1960"/>
         <source>50%</source>
         <translation>50%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1909"/>
+        <location filename="../../ui/cfgfrm.ui" line="1965"/>
         <source>60%</source>
         <translation>60%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1914"/>
+        <location filename="../../ui/cfgfrm.ui" line="1970"/>
         <source>70%</source>
         <translation>70%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1919"/>
+        <location filename="../../ui/cfgfrm.ui" line="1975"/>
         <source>80%</source>
         <translation>80%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1924"/>
+        <location filename="../../ui/cfgfrm.ui" line="1980"/>
         <source>90%</source>
         <translation>90%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1929"/>
+        <location filename="../../ui/cfgfrm.ui" line="1985"/>
         <source>100%</source>
         <translation>100%</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1936"/>
+        <location filename="../../ui/cfgfrm.ui" line="1992"/>
         <source>C&amp;ommunication</source>
         <translation>&amp;Kommunikation</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1948"/>
+        <location filename="../../ui/cfgfrm.ui" line="2004"/>
         <source>Business</source>
         <translation>Geschäft</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2475"/>
+        <location filename="../../ui/cfgfrm.ui" line="2531"/>
         <source>E-Mail 1:</source>
         <translation>E-Mail 1:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2400"/>
+        <location filename="../../ui/cfgfrm.ui" line="2456"/>
         <source>E-Mail 2:</source>
         <translation>E-Mail 2:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2425"/>
+        <location filename="../../ui/cfgfrm.ui" line="2481"/>
         <source>E-Mail 3:</source>
         <translation>E-Mail 3:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2500"/>
+        <location filename="../../ui/cfgfrm.ui" line="2556"/>
         <source>VoIP:</source>
         <translation>VoIP:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2375"/>
+        <location filename="../../ui/cfgfrm.ui" line="2431"/>
         <source>Pager:</source>
         <translation>Pager:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2350"/>
+        <location filename="../../ui/cfgfrm.ui" line="2406"/>
         <source>Mobile:</source>
         <translation>Mobile:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2325"/>
+        <location filename="../../ui/cfgfrm.ui" line="2381"/>
         <source>Fax:</source>
         <translation>Fax:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2300"/>
+        <location filename="../../ui/cfgfrm.ui" line="2356"/>
         <source>Telefon:</source>
         <translation>Telefon:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2147"/>
+        <location filename="../../ui/cfgfrm.ui" line="2203"/>
         <source>Tel. direct:</source>
         <translation>Tel. direkt:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2276"/>
+        <location filename="../../ui/cfgfrm.ui" line="2332"/>
         <source>Privat</source>
         <translation>Privat</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2450"/>
+        <location filename="../../ui/cfgfrm.ui" line="2506"/>
         <source>Website:</source>
         <translation>Webseite:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2597"/>
+        <location filename="../../ui/cfgfrm.ui" line="2653"/>
         <source>&amp;Notes</source>
         <translation>&amp;Notizen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4320"/>
+        <location filename="../../ui/cfgfrm.ui" line="4376"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2996"/>
+        <location filename="../../ui/cfgfrm.ui" line="3052"/>
         <source>Template:</source>
         <translation>Vorlage:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3037"/>
+        <location filename="../../ui/cfgfrm.ui" line="3093"/>
         <source>Acc.Nr.</source>
         <translation>Konto-Nr.</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3426"/>
+        <location filename="../../ui/cfgfrm.ui" line="3482"/>
         <source>Bank:</source>
         <translation>Bank:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3356"/>
+        <location filename="../../ui/cfgfrm.ui" line="3412"/>
         <source>Clearing:</source>
         <translation>BLZ:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3076"/>
+        <location filename="../../ui/cfgfrm.ui" line="3132"/>
         <source>Curr.:</source>
         <translation>Währ.:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3134"/>
+        <location filename="../../ui/cfgfrm.ui" line="3190"/>
         <source>Start ID:</source>
         <translation>Start ID:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3201"/>
+        <location filename="../../ui/cfgfrm.ui" line="3257"/>
         <source>Read</source>
         <translation>Lesen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3206"/>
+        <location filename="../../ui/cfgfrm.ui" line="3262"/>
         <source>Write</source>
         <translation>Schreiben</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4141"/>
+        <location filename="../../ui/cfgfrm.ui" line="4197"/>
         <source>&amp;Save</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4307"/>
+        <location filename="../../ui/cfgfrm.ui" line="4363"/>
         <source>Templates:</source>
         <translation>Vorlagen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3723"/>
+        <location filename="../../ui/cfgfrm.ui" line="3779"/>
         <source>Documents:</source>
         <translation>Dokumente:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3260"/>
+        <location filename="../../ui/cfgfrm.ui" line="3316"/>
         <source>&amp;Own data</source>
         <translation>&amp;Eigene Angaben</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3475"/>
+        <location filename="../../ui/cfgfrm.ui" line="3531"/>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3528"/>
+        <location filename="../../ui/cfgfrm.ui" line="3584"/>
         <source>Company:</source>
         <translation>Firma:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3272"/>
+        <location filename="../../ui/cfgfrm.ui" line="3328"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3321"/>
+        <location filename="../../ui/cfgfrm.ui" line="3377"/>
         <source>Account:</source>
         <translation>Konto:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3296"/>
+        <location filename="../../ui/cfgfrm.ui" line="3352"/>
         <source>Usernumber:</source>
         <translation>Teilnehmernr.:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3449"/>
+        <location filename="../../ui/cfgfrm.ui" line="3505"/>
         <source>00-000000-0; </source>
         <translation>00-000000-0;</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4106"/>
+        <location filename="../../ui/cfgfrm.ui" line="4162"/>
         <source>Days of grace:</source>
         <translation>Zahlungsfrist:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3793"/>
+        <location filename="../../ui/cfgfrm.ui" line="3849"/>
         <source>Doc. Prefix:</source>
         <translation>Dok.Vorlage:</translation>
     </message>
@@ -2120,277 +2115,277 @@ p, li { white-space: pre-wrap; }
         <translation>Pluginverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="565"/>
+        <location filename="../../src/cfgfrm.cpp" line="570"/>
         <source>Delete User...</source>
         <translation>User löschen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="565"/>
+        <location filename="../../src/cfgfrm.cpp" line="570"/>
         <source>Delete User &apos;%1&apos; ?</source>
         <translation>Lösche User &apos;%1&apos; ?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="576"/>
+        <location filename="../../src/cfgfrm.cpp" line="581"/>
         <source>Administrator cannot be deleted!</source>
         <translation>Administrator kann nicht gelöscht werden!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1382"/>
+        <location filename="../../src/cfgfrm.cpp" line="1387"/>
         <source>Unable to read settings from database!</source>
         <translation>Fehler beim lesen der Einstellungen von der Datenbank!</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1432"/>
+        <location filename="../../src/cfgfrm.cpp" line="1437"/>
         <source>Can&apos;t write to configuration file.</source>
         <translation>Kann Konfigurationsdatei nicht schreiben.</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1473"/>
+        <location filename="../../src/cfgfrm.cpp" line="1478"/>
         <source>Application...</source>
         <translation>Programm...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1475"/>
+        <location filename="../../src/cfgfrm.cpp" line="1480"/>
         <source>All files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4024"/>
+        <location filename="../../ui/cfgfrm.ui" line="4080"/>
         <source>TEX -&gt; DVI:</source>
         <translation>TEX -&gt; DVI:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4011"/>
+        <location filename="../../ui/cfgfrm.ui" line="4067"/>
         <source>DVI Viewer:</source>
         <translation>DVI Viewer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3998"/>
+        <location filename="../../ui/cfgfrm.ui" line="4054"/>
         <source>DVI -&gt; PS:</source>
         <translation>DVI -&gt; PS:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3875"/>
+        <location filename="../../ui/cfgfrm.ui" line="3931"/>
         <source>Print:</source>
         <translation>Drucken:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3920"/>
+        <location filename="../../ui/cfgfrm.ui" line="3976"/>
         <source>Document creating and printing</source>
         <translation>Dokument erstellen und ausdrucken</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3985"/>
+        <location filename="../../ui/cfgfrm.ui" line="4041"/>
         <source>%1 = Input file, %2 = Output file</source>
         <translation>%1 = Eingabedatei, %2 = Ausgabedatei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="772"/>
+        <location filename="../../ui/cfgfrm.ui" line="828"/>
         <source>%1 DVI-File</source>
         <translation>%1 DVI-Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3972"/>
+        <location filename="../../ui/cfgfrm.ui" line="4028"/>
         <source>%1 = PS-File, %2 = Printer</source>
         <translation>%1 = PS-Datei, %2 = Drucker</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1409"/>
+        <location filename="../../ui/cfgfrm.ui" line="1465"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3181"/>
+        <location filename="../../ui/cfgfrm.ui" line="3237"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3959"/>
+        <location filename="../../ui/cfgfrm.ui" line="4015"/>
         <source>%1 = DVI-File</source>
         <translation>%1 = DVI-Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1143"/>
+        <location filename="../../ui/cfgfrm.ui" line="1199"/>
         <source>Build:</source>
         <translation>Build:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4539"/>
+        <location filename="../../ui/cfgfrm.ui" line="4595"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="699"/>
+        <location filename="../../src/cfgfrm.cpp" line="704"/>
         <source>Invoice</source>
         <translation>Rechnung</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1234"/>
+        <location filename="../../src/cfgfrm.cpp" line="1239"/>
         <source>Documents settings...</source>
         <translation>Dokumenteneinstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1586"/>
+        <location filename="../../src/cfgfrm.cpp" line="1591"/>
         <source>Can&apos;t load templates...</source>
         <translation>Kann Template nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1550"/>
+        <location filename="../../src/cfgfrm.cpp" line="1555"/>
         <source>Delete template &apos;%1&apos;?</source>
         <translation>Template &apos;%1&apos; löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1557"/>
+        <location filename="../../src/cfgfrm.cpp" line="1562"/>
         <source>Template not deleted...</source>
         <translation>Template nicht gelöscht...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1603"/>
+        <location filename="../../src/cfgfrm.cpp" line="1608"/>
         <source>Can&apos;t load template description...</source>
         <translation>Kann Template-Beschreibung nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="676"/>
+        <location filename="../../ui/cfgfrm.ui" line="732"/>
         <source>Tools (Local)</source>
         <translation>Tools (Lokal)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="2947"/>
+        <location filename="../../ui/cfgfrm.ui" line="3003"/>
         <source>&amp;Resources</source>
         <translation>&amp;Ressourcen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3220"/>
+        <location filename="../../ui/cfgfrm.ui" line="3276"/>
         <source>Resources:</source>
         <translation>Ressourcen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3659"/>
+        <location filename="../../ui/cfgfrm.ui" line="3715"/>
         <source>&amp;Document settings</source>
         <translation>&amp;Dokumenten Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3671"/>
+        <location filename="../../ui/cfgfrm.ui" line="3727"/>
         <source>Path</source>
         <translation>Pfad</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3828"/>
+        <location filename="../../ui/cfgfrm.ui" line="3884"/>
         <source>General informations:</source>
         <translation>Allgemeine Informationen:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3838"/>
+        <location filename="../../ui/cfgfrm.ui" line="3894"/>
         <source>&amp;Settings &amp;&amp; Tools</source>
         <translation>&amp;Einstellungen &amp;&amp; Tools</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="3850"/>
+        <location filename="../../ui/cfgfrm.ui" line="3906"/>
         <source>Tools (Global)</source>
         <translation>Tools (Global)</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4082"/>
+        <location filename="../../ui/cfgfrm.ui" line="4138"/>
         <source>General Settings</source>
         <translation>Allgemeine Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4179"/>
+        <location filename="../../ui/cfgfrm.ui" line="4235"/>
         <source>Default Currency:</source>
         <translation>Standard Währung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4186"/>
+        <location filename="../../ui/cfgfrm.ui" line="4242"/>
         <source>&amp;Templates</source>
         <translation>&amp;Vorlagen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4199"/>
+        <location filename="../../ui/cfgfrm.ui" line="4255"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4564"/>
+        <location filename="../../ui/cfgfrm.ui" line="4620"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4209"/>
+        <location filename="../../ui/cfgfrm.ui" line="4265"/>
         <source>template_id</source>
         <translation>template_id</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4332"/>
+        <location filename="../../ui/cfgfrm.ui" line="4388"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4345"/>
+        <location filename="../../ui/cfgfrm.ui" line="4401"/>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4371"/>
+        <location filename="../../ui/cfgfrm.ui" line="4427"/>
         <source>Created:</source>
         <translation>Erstellt:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4384"/>
+        <location filename="../../ui/cfgfrm.ui" line="4440"/>
         <source>Last modification:</source>
         <translation>Letzte Bearbeitung:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4507"/>
+        <location filename="../../ui/cfgfrm.ui" line="4563"/>
         <source>Show system-templates</source>
         <translation>Systemvorlagen anzeigen</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4513"/>
+        <location filename="../../ui/cfgfrm.ui" line="4569"/>
         <source>Unlock</source>
         <translation>Entsperren</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4525"/>
+        <location filename="../../ui/cfgfrm.ui" line="4581"/>
         <source>Locked entries by users:</source>
         <translation>Gesperrt durch Benutzer:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4544"/>
+        <location filename="../../ui/cfgfrm.ui" line="4600"/>
         <source>Table</source>
         <translation>Tabelle</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4549"/>
+        <location filename="../../ui/cfgfrm.ui" line="4605"/>
         <source>Entry</source>
         <translation>Eintrag</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4559"/>
+        <location filename="../../ui/cfgfrm.ui" line="4615"/>
         <source>Timestamp</source>
         <translation>Zeitstempel</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4578"/>
+        <location filename="../../ui/cfgfrm.ui" line="4634"/>
         <source>&amp;Unlock</source>
         <translation>&amp;Entsperren</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="4594"/>
+        <location filename="../../ui/cfgfrm.ui" line="4650"/>
         <source>&amp;Refresh</source>
         <translation>&amp;Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1658"/>
+        <location filename="../../src/cfgfrm.cpp" line="1663"/>
         <source>Can&apos;t load userlocks...</source>
         <translation>Kann Benutzersperrungen nicht laden...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1667"/>
+        <location filename="../../src/cfgfrm.cpp" line="1672"/>
         <source>Unlocking...</source>
         <translation>Entsperren...</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1667"/>
+        <location filename="../../src/cfgfrm.cpp" line="1672"/>
         <source>Do you want to unlock the selected entry?</source>
         <translation>Möchten Sie den markierten Eintrag entsperren?</translation>
     </message>
@@ -2415,54 +2410,63 @@ p, li { white-space: pre-wrap; }
         <translation>details</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="979"/>
+        <location filename="../../src/cfgfrm.cpp" line="984"/>
         <source>New directory</source>
         <translation>Neues Adressbuch</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="981"/>
+        <location filename="../../src/cfgfrm.cpp" line="986"/>
         <source>New datatable</source>
         <translation>Neue Datentabelle</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="983"/>
+        <location filename="../../src/cfgfrm.cpp" line="988"/>
         <source>New banc account</source>
         <translation>Neues Bankkonto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="985"/>
+        <location filename="../../src/cfgfrm.cpp" line="990"/>
         <source>New local account</source>
         <translation>Neues Lokalkonto</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1096"/>
+        <location filename="../../src/cfgfrm.cpp" line="1101"/>
         <source>Local accountname:</source>
         <translation>Lokales Konto:</translation>
     </message>
     <message>
-        <location filename="../../src/cfgfrm.cpp" line="1708"/>
+        <location filename="../../src/cfgfrm.cpp" line="1713"/>
         <source>Settings saved.</source>
         <translation>Einstellungen gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1092"/>
+        <location filename="../../ui/cfgfrm.ui" line="1148"/>
         <source>First4-Version:</source>
         <translation>First4-Version:</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1157"/>
+        <location filename="../../ui/cfgfrm.ui" line="1213"/>
         <source>Database state</source>
         <translation>Datenbank status</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1169"/>
+        <location filename="../../ui/cfgfrm.ui" line="1225"/>
         <source>UnLocked</source>
         <translation>Nicht gesperrt</translation>
     </message>
     <message>
-        <location filename="../../ui/cfgfrm.ui" line="1188"/>
+        <location filename="../../ui/cfgfrm.ui" line="1244"/>
         <source>Locked</source>
         <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <location filename="../../src/cfgfrm.cpp" line="281"/>
+        <source>New configuration saved
+
+Please restart the application.</source>
+        <translation>Neue Konfiguration wurde gesichert.
+
+Bitte starten sie die Applikation neu.</translation>
     </message>
 </context>
 <context>
@@ -4443,7 +4447,7 @@ Trotzdem abschliessen?</translation>
         <translation>Datenbank:</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="279"/>
+        <location filename="../../src/mainfrm.cpp" line="277"/>
         <source>Exit...</source>
         <translation>Beenden...</translation>
     </message>
@@ -4498,12 +4502,12 @@ Trotzdem abschliessen?</translation>
         <translation>Neue nachricht</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="198"/>
+        <location filename="../../src/mainfrm.cpp" line="196"/>
         <source>DB update...</source>
         <translation>DB update...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="118"/>
+        <location filename="../../src/mainfrm.cpp" line="114"/>
         <source>Database update is needed.
 Please login as Administrator to perform the update.</source>
         <translation>Datenbankupdate wird benötigt.
@@ -4520,7 +4524,7 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
         <translation>Import. / Export. in Adressbücher</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="134"/>
+        <location filename="../../src/mainfrm.cpp" line="130"/>
         <source>Wrong DB version...</source>
         <translation>Falsche DB-Version...</translation>
     </message>
@@ -4530,7 +4534,7 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
         <translation>Daten import und export</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="100"/>
+        <location filename="../../src/mainfrm.cpp" line="96"/>
         <source>The selected database is locked by the Administrator:
 
 </source>
@@ -4539,7 +4543,7 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 </translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="198"/>
+        <location filename="../../src/mainfrm.cpp" line="196"/>
         <source>The current database was locked by the Administrator:
 
 </source>
@@ -4548,31 +4552,31 @@ Bitte melden Sie sich als Administrator an und führen Sie das Update durch.</tr
 </translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="198"/>
+        <location filename="../../src/mainfrm.cpp" line="196"/>
         <source>
 
 You will be logged out now!</source>
         <translation>Sie werden jetzt ausgelogt!</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="279"/>
+        <location filename="../../src/mainfrm.cpp" line="277"/>
         <source>Exit First4?</source>
         <translation>First4 beenden?</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="105"/>
+        <location filename="../../src/mainfrm.cpp" line="101"/>
         <source>Check DB-Lock...</source>
         <translation>Überprüfe DB-Lock...</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="134"/>
+        <location filename="../../src/mainfrm.cpp" line="130"/>
         <source>This version of first4 needs a database with the version: %1 .
 The selected database has version: %2</source>
         <translation>Diese first4 Version benötigt eine Datenbank mit der Version: %1.
 Die geöffnete Datenbank hat die Version: %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="187"/>
+        <location filename="../../src/mainfrm.cpp" line="185"/>
         <source>Messages: %1</source>
         <translation>Nachrichten: %1</translation>
     </message>
@@ -4582,22 +4586,22 @@ Die geöffnete Datenbank hat die Version: %2</translation>
         <translation>&amp;Wechsle DB-Verbindung</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="420"/>
+        <location filename="../../src/mainfrm.cpp" line="418"/>
         <source>Change Database</source>
         <translation>Wechsle Datenbank</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="424"/>
+        <location filename="../../src/mainfrm.cpp" line="422"/>
         <source>first4 Settings</source>
         <translation>first4 Einstellungen</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="427"/>
+        <location filename="../../src/mainfrm.cpp" line="425"/>
         <source>&amp;Exit first4</source>
         <translation>first4 &amp;beenden</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="428"/>
+        <location filename="../../src/mainfrm.cpp" line="426"/>
         <source>Exit first4</source>
         <translation>first4 beenden</translation>
     </message>
@@ -4607,7 +4611,7 @@ Die geöffnete Datenbank hat die Version: %2</translation>
         <translation>Ü&amp;ber first4</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="432"/>
+        <location filename="../../src/mainfrm.cpp" line="430"/>
         <source>About first4</source>
         <translation>Über first4</translation>
     </message>
@@ -4617,17 +4621,17 @@ Die geöffnete Datenbank hat die Version: %2</translation>
         <translation>&amp;first4 Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="436"/>
+        <location filename="../../src/mainfrm.cpp" line="434"/>
         <source>Visit first4 Website</source>
         <translation>Öffne first4 Webseite</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="440"/>
+        <location filename="../../src/mainfrm.cpp" line="438"/>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="../../src/mainfrm.cpp" line="448"/>
+        <location filename="../../src/mainfrm.cpp" line="446"/>
         <source>&amp;?</source>
         <translation>&amp;?</translation>
     </message>

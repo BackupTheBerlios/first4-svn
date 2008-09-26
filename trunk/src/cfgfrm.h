@@ -59,6 +59,7 @@ private slots:
 	void locks_loaduserlocks();
 	void locks_unlockentry();
 	void setdblock();
+	void savelangfile();
 private:
 	void templates_loaddescription();
 };
