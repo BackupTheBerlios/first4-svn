@@ -11,8 +11,8 @@
 //
 int uid;
 QString firstver = "1.3.98-preRC3";
-QString dbrequire = "1.3.97.01";
-QString build = "340";
+QString dbrequire = "1.3.98.01";
+QString build = "346";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
@@ -90,7 +90,7 @@ QStringList vars::loadgeo(QString frmname)
 	{
 		QString line;
 		QTextStream stream ( &file );
-		while(stream.readLine() != "[WINDOW_POSITIONS]" && !stream.atEnd());
+		while(stream.readLine() != "[WINDOW_POSITIONS]" && !stream.atEnd()) ;
 		do {
 			line = stream.readLine();
 			if(line.section("=",0,0) == frmname)
@@ -170,7 +170,7 @@ QStringList vars::loadcolwidth(QString frmname, QString obj)
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
 		QTextStream stream ( &file );
-		while(stream.readLine() != "[COLUMNS]" && !stream.atEnd());
+		while(stream.readLine() != "[COLUMNS]" && !stream.atEnd()) ;
 		do {
 			line = stream.readLine();
 			if(line.section("-", 0, 0) == frmname && line.section("-", 1, 1).section("-", 0, 0) == obj)

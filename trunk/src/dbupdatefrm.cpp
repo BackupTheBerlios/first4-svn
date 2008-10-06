@@ -18,7 +18,7 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	newdbver = "1.3.97.01";
+	newdbver = "1.3.98.01";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
@@ -93,19 +93,16 @@ int dbupdatefrm::init()
 			retrcode = 1;
 	}
 	if(dbversion < 139701)
-	{
-		QSqlQuery query1("SHOW TABLE STATUS WHERE Engine='MyISAM';");
-		if(query1.size() > 0 )
-			retrcode = 1;
-	}
+		retrcode = 1;
+	if(dbversion < 139801)
+		retrcode = 1;
 	return retrcode;
 	
 }
 //
 void dbupdatefrm::check_db_structure()
 {
-	    progbar->setMaximum(15);
-
+	progbar->setMaximum(17);
 	int dbversion = actdbver.replace(".","").toInt();
 	if(dbversion < 13954)
 	{
@@ -204,6 +201,19 @@ void dbupdatefrm::check_db_structure()
 		progbar->setValue(15);
 		dbversion = newdbver.replace(".","").toInt();
 	}
+	if(dbversion < 139801)
+	{
+		progbar->setValue(14);
+		QSqlQuery query1("SHOW TABLES LIKE '%proceduretab%';");
+		if(query1.size() > 0 )
+			update_db_structure("rename_procedures");
+		progbar->setValue(15);
+
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(17);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+
 	progbar->setValue(progbar->maximum());
 	QMessageBox::information( 0, "DB update..." , tr("Update completed.") );
 	this->accept();
@@ -354,5 +364,11 @@ void dbupdatefrm::update_db_structure(QString section)
 					QString qstr = QString("ALTER TABLE %1 ENGINE = InnoDB;").arg(query1.value(0).toString());
 					QSqlQuery query2(qstr);
 				}
+			}
+			else if(section == "rename_procedures")
+			{
+				QSqlQuery query1("ALTER TABLE `procedurearchiv` RENAME TO `procedurearchive`;");
+				QSqlQuery query2("ALTER TABLE `procedurecfgtab` RENAME TO `procedurecfg`;");
+				QSqlQuery query3("ALTER TABLE `proceduretab` RENAME TO `procedures`;");
 			}
 }

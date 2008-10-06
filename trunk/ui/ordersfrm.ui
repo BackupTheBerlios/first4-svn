@@ -13,25 +13,14 @@
    <string>Purchase orders...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4.qrc" >:/kontact_todo.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/kontact_todo.png</normaloff>:/kontact_todo.png</iconset>
   </property>
   <layout class="QGridLayout" >
-   <property name="leftMargin" >
+   <property name="margin" >
     <number>9</number>
    </property>
-   <property name="topMargin" >
-    <number>9</number>
-   </property>
-   <property name="rightMargin" >
-    <number>9</number>
-   </property>
-   <property name="bottomMargin" >
-    <number>9</number>
-   </property>
-   <property name="horizontalSpacing" >
-    <number>6</number>
-   </property>
-   <property name="verticalSpacing" >
+   <property name="spacing" >
     <number>6</number>
    </property>
    <item row="0" column="0" colspan="2" >
@@ -39,16 +28,7 @@
      <property name="spacing" >
       <number>6</number>
      </property>
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
+     <property name="margin" >
       <number>0</number>
      </property>
      <item>
@@ -97,7 +77,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>241</width>
          <height>26</height>
@@ -111,7 +91,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/filenew.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/filenew.png</normaloff>:/filenew.png</iconset>
        </property>
       </widget>
      </item>
@@ -121,7 +102,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/kfind.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/kfind.png</normaloff>:/kfind.png</iconset>
        </property>
       </widget>
      </item>
@@ -131,7 +113,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/trashcan_empty.png</normaloff>:/trashcan_empty.png</iconset>
        </property>
       </widget>
      </item>
@@ -141,7 +124,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
        </property>
       </widget>
      </item>
@@ -152,16 +136,7 @@
      <property name="spacing" >
       <number>6</number>
      </property>
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
+     <property name="margin" >
       <number>0</number>
      </property>
      <item>
@@ -170,7 +145,8 @@
         <string>&amp;Close</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
        </property>
       </widget>
      </item>
@@ -193,7 +169,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>271</width>
          <height>20</height>
@@ -205,7 +181,7 @@
       <widget class="QProgressBar" name="progbar" >
        <property name="maximumSize" >
         <size>
-         <width>16777215</width>
+         <width>171</width>
          <height>20</height>
         </size>
        </property>

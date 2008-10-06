@@ -46,13 +46,18 @@ void loginfrm::init()
 bool loginfrm::loadservers()
 {
 	cmbdb->clear();
+	dbserver.clear();
+	dbname_local.clear();
+	uids.clear();
+	pwd.clear();
+	port.clear();
 	QStringList tmp;
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
 		QString streamline;
 		QTextStream stream ( &file );
-		while(stream.readLine() != "[SERVERS]" && !stream.atEnd());
+		while(stream.readLine() != "[SERVERS]" && !stream.atEnd()) ;
 		do {
 			streamline = stream.readLine();
 			if(streamline != "")

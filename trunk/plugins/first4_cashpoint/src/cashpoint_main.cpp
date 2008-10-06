@@ -20,4 +20,6 @@ void CashPoint::init(QStringList parameters)
 	QString dbhost = parameters[3];
 	QString dbname = parameters[4];
 	this->setWindowTitle(QString("first4 Cashpoint-Plugin / User: %1 (%2) connected to %3@%4").arg(fullname).arg(username).arg(dbname).arg(dbhost));
+	
+	//lblTotAmount->setText(QString("%1").arg(tot, 0, 'f',2));
 }

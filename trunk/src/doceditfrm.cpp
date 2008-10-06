@@ -139,18 +139,14 @@ void doceditfrm::init()
 	connect(boxvat, SIGNAL(lostFocus()), this, SLOT(excl_vat()));
 	connect(btnnew, SIGNAL(released()), this, SLOT(newdocument()));
 	navtabonoff(true);
-	
 }
 //
 void doceditfrm::closeEvent( QCloseEvent* ce )
 {
 	vars v;
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
-	
 	QSqlDatabase::database().rollback();
-
 	v.unlockrow(opendocSource, opendocID);
-	
 	ce->accept();
 }
 //
@@ -160,7 +156,6 @@ void doceditfrm::readdoctab()
     temp_id.clear();
     doccount.clear();
     docdef.clear();
-    
     QString qstr = "SELECT name, templateid, count, users FROM documentcfg ORDER BY ID;";
     QSqlQuery query(qstr);
     if(query.isActive())

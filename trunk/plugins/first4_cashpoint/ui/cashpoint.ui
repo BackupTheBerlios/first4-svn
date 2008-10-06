@@ -13,15 +13,16 @@
    <string>first4 - Cashpoint</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4_cashpoint.qrc" >:/kcalc.png</iconset>
+   <iconset resource="../resources/images/first4_cashpoint.qrc" >
+    <normaloff>:/kcalc.png</normaloff>:/kcalc.png</iconset>
   </property>
   <widget class="QLabel" name="label" >
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>491</width>
-     <height>71</height>
+     <y>20</y>
+     <width>391</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font" >
@@ -33,28 +34,6 @@
    </property>
    <property name="text" >
     <string>Total amount:</string>
-   </property>
-  </widget>
-  <widget class="QLCDNumber" name="lcdNumber" >
-   <property name="geometry" >
-    <rect>
-     <x>530</x>
-     <y>10</y>
-     <width>411</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="smallDecimalPoint" >
-    <bool>true</bool>
-   </property>
-   <property name="numDigits" >
-    <number>12</number>
-   </property>
-   <property name="segmentStyle" >
-    <enum>QLCDNumber::Flat</enum>
-   </property>
-   <property name="value" stdset="0" >
-    <double>0.000000000000000</double>
    </property>
   </widget>
   <widget class="QLabel" name="label_2" >
@@ -123,7 +102,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/xmag.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >
+     <normaloff>:/xmag.png</normaloff>:/xmag.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -143,7 +123,37 @@
    </property>
    <column>
     <property name="text" >
-     <string>1</string>
+     <string>Pos</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Qty</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Label</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Descritpion</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Price/Unit</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Price</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>VAT</string>
     </property>
    </column>
   </widget>
@@ -160,7 +170,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -195,7 +206,8 @@
     <string>&amp;Close</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/fileclose.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >
+     <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4" >
@@ -211,7 +223,8 @@
     <string>Pay</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_ok.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >
+     <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -233,13 +246,41 @@
     <string>&amp;Cancel</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
      <width>32</width>
      <height>32</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTotAmount" >
+   <property name="geometry" >
+    <rect>
+     <x>395</x>
+     <y>20</y>
+     <width>541</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>36</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="text" >
+    <string>1234567890.00</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
  </widget>

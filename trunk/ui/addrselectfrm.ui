@@ -13,7 +13,8 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4.qrc" >:/kdmconfig.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/kdmconfig.png</normaloff>:/kdmconfig.png</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget" >
    <property name="geometry" >
@@ -25,22 +26,10 @@
     </rect>
    </property>
    <layout class="QGridLayout" >
-    <property name="leftMargin" >
+    <property name="margin" >
      <number>0</number>
     </property>
-    <property name="topMargin" >
-     <number>0</number>
-    </property>
-    <property name="rightMargin" >
-     <number>0</number>
-    </property>
-    <property name="bottomMargin" >
-     <number>0</number>
-    </property>
-    <property name="horizontalSpacing" >
-     <number>6</number>
-    </property>
-    <property name="verticalSpacing" >
+    <property name="spacing" >
      <number>6</number>
     </property>
     <item row="0" column="2" >
@@ -48,7 +37,7 @@
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
-      <property name="sizeHint" >
+      <property name="sizeHint" stdset="0" >
        <size>
         <width>91</width>
         <height>20</height>
@@ -102,7 +91,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/xmag.png</normaloff>:/xmag.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -124,7 +114,8 @@
     <string>&amp;Cancel</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnaccept" >
@@ -140,16 +131,17 @@
     <string>&amp;Accept</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QTreeWidget" name="treemain" >
    <property name="geometry" >
     <rect>
      <x>10</x>
-     <y>70</y>
+     <y>80</y>
      <width>531</width>
-     <height>251</height>
+     <height>241</height>
     </rect>
    </property>
    <column>
@@ -207,7 +199,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
