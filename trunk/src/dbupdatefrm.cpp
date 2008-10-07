@@ -18,7 +18,7 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	newdbver = "1.3.98.01";
+	newdbver = "1.3.98.02";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
@@ -95,6 +95,8 @@ int dbupdatefrm::init()
 	if(dbversion < 139701)
 		retrcode = 1;
 	if(dbversion < 139801)
+		retrcode = 1;
+	if(dbversion < 139802)
 		retrcode = 1;
 	return retrcode;
 	
@@ -207,6 +209,16 @@ void dbupdatefrm::check_db_structure()
 		QSqlQuery query1("SHOW TABLES LIKE '%proceduretab%';");
 		if(query1.size() > 0 )
 			update_db_structure("rename_procedures");
+		progbar->setValue(15);
+
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(17);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+	if(dbversion < 139802)
+	{
+		progbar->setValue(14);
+		update_db_structure("accounts");
 		progbar->setValue(15);
 
 		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
