@@ -43,6 +43,7 @@ void dbwizzardfrm::next()
 	{
 		minindex = 1;
 		maxindex = 2;
+		btnnext->setEnabled(FALSE);
 	}
 	else if(rbtnmysqlnew->isChecked())
 	{
@@ -90,6 +91,7 @@ void dbwizzardfrm::next()
 			btnnext->setText(QApplication::translate("dbwizzardfrm", "&Finish", 0, QApplication::UnicodeUTF8));	
 			if(rbtnmysqlex->isChecked())
 			{
+				btnnext->setEnabled(TRUE);
 				lblexhost->setText(txtexhost->text());
 				lblexport->setText(txtexport->text());
 				lblexuser->setText(txtexuser->text());
@@ -163,6 +165,8 @@ void dbwizzardfrm::enable_next()
 void dbwizzardfrm::checkdbs()
 {
 	{
+		cmbexdb->clear();
+		btnnext->setEnabled(FALSE);
 		QSqlDatabase checkDB = QSqlDatabase::addDatabase("QMYSQL", "checkdb");
 		checkDB.setUserName(txtexuser->text());
 		checkDB.setPassword(txtexpwd->text());
@@ -177,7 +181,7 @@ void dbwizzardfrm::checkdbs()
 			if(query.isActive())
 			{
 				while(query.next())
-					cmbexdb->insertItem(-1, query.value(0).toString());	
+					cmbexdb->insertItem(-1, query.value(0).toString());
 			}
 		}
 		else
@@ -186,6 +190,8 @@ void dbwizzardfrm::checkdbs()
 			QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
 		}
 		checkDB.close();
+		if(cmbexdb->count() > 0)
+			btnnext->setEnabled(TRUE);
 	}
 	QSqlDatabase::removeDatabase("checkdb");
 }
@@ -327,7 +333,7 @@ mysqsqlcreatelist << "UNLOCK TABLES;";
 mysqsqlcreatelist << "CREATE TABLE `vattable` (`ID` int(11) NOT NULL auto_increment,`col1` text NOT NULL,`col2` text NOT NULL,PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 mysqsqlcreatelist << "INSERT INTO datatables (name, description, users, cols, tabtyp) VALUES ('vattable', 'VAT-Table', '"+txtnewadminuser->text()+" [11] , ', 'Tax:70#Comments:200', 'vattable');";
 mysqsqlcreatelist << "CREATE TABLE `userlocks` (`ID` int(11) NOT NULL auto_increment, `table` text NOT NULL, `tabid` text NOT NULL,  `user` text NOT NULL, `timestamp` TIMESTAMP NOT NULL , PRIMARY KEY  (`ID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg("1.3.96.02");
+mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg("1.3.98.02");
 
 //	
 	progfrm pfrm;
