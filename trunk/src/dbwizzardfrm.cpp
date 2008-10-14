@@ -33,6 +33,7 @@ void dbwizzardfrm::init()
 	connect(btnliteopendb, SIGNAL(released()), this, SLOT(openfd()));
 	
 	mainstackwidget->setCurrentIndex(0);
+	this->setFixedSize ( this->width(), this->height() );
 }
 //
 void dbwizzardfrm::next()

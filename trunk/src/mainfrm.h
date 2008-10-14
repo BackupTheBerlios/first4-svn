@@ -26,6 +26,7 @@ private slots:
 	void dataimpexp();
 	void quitapplication();
 	void visitwebsite();
+	void changeDB();
 private:
 	void cleanup();
 	void admtasks();

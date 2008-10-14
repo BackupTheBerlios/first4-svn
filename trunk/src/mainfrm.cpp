@@ -11,6 +11,7 @@
 #include <QMenuBar>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QSplashScreen>
 //
 #include "mainfrm.h"
 #include "vars.h"
@@ -31,6 +32,7 @@
 #include "dbupdatefrm.h"
 #include "addrimpexpfrm.h"
 #include "dataimpexpfrm.h"
+#include "loginfrm.h"
 //
 extern int uid;
 extern QString username, fullname, firstver;
@@ -45,7 +47,6 @@ mainfrm::mainfrm ( QWidget * parent, Qt::WFlags f )
 //
 void mainfrm::loaduserdata()
 {
-	//this->setFixedSize ( this->width(), this->height() );
 	lbluser->setText ( username );
 	lbldb->setText ( dbname );
 	lblserver->setText ( dbhost );
@@ -81,6 +82,7 @@ void mainfrm::loaduserdata()
 	connect ( btnimpexpdir, SIGNAL ( released() ), this, SLOT ( addrimpexp() ) );
 	connect ( btnimpexpdata, SIGNAL ( released() ), this, SLOT ( dataimpexp() ) );
 
+	this->menuBar()->clear();
 	this->createMenu();
 }
 //
@@ -434,7 +436,7 @@ void mainfrm::createMenu()
 {
 	QAction* changeDBAct = new QAction(tr("&Change DB-Connection"), this);
 	changeDBAct->setStatusTip(tr("Change Database"));
-	//connect(changeDBAct, SIGNAL(triggered()), this, SLOT(changeDB()));
+	connect(changeDBAct, SIGNAL(triggered()), this, SLOT(changeDB()));
 
 	QAction* settingsAct = new QAction(tr("&Settings"), this);
 	settingsAct->setStatusTip(tr("first4 Settings"));
@@ -454,8 +456,8 @@ void mainfrm::createMenu()
 
 	QMenu* fileMenu; 
 	fileMenu = menuBar()->addMenu(tr("&File"));
-	//fileMenu->addAction(changeDBAct);
-	//fileMenu->addSeparator();
+	fileMenu->addAction(changeDBAct);
+	fileMenu->addSeparator();
 	fileMenu->addAction(settingsAct);
 	fileMenu->addSeparator();
 	fileMenu->addAction(exitAct);
@@ -472,4 +474,47 @@ void mainfrm::visitwebsite()
 	QUrl first4website;
 	first4website.setUrl ( "http://www.procopio.ch" );
 	QDesktopServices::openUrl ( first4website );
+}
+//
+void mainfrm::changeDB()
+{
+	loginfrm logfrm;
+	logfrm.init();
+	if(logfrm.loadservers())
+	{
+		this->hide();
+		if(logfrm.exec())
+		{
+			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+			logfrm.saveservers();
+			QSplashScreen splash ( QPixmap ( ":/newsplash.png" ) );
+			splash.show();
+			splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignBottom, Qt::black );
+			
+			splash.showMessage ( QObject::tr ( "Checking database ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+			if(this->checkdb() != 0)
+			{
+				QApplication::restoreOverrideCursor();
+				qApp->closeAllWindows();
+			}	
+			else
+			{
+				splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+				lbluser->setText ( username );
+				lbldb->setText ( dbname );
+				lblserver->setText ( dbhost );
+
+				splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+				this->checkmsg();
+	
+				splash.showMessage ( QObject::tr ( "Startup completed ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
+
+				QApplication::restoreOverrideCursor();
+				this->show();
+				splash.finish( this );
+			}
+		}
+	}
+	else
+		QMessageBox::information ( 0,"No Server defined...", "You must define at least one Server." );
 }
