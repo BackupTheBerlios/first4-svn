@@ -68,7 +68,14 @@
         <number>6</number>
        </property>
        <item row="0" column="1" >
-        <widget class="QComboBox" name="cmbdoc" />
+        <widget class="QComboBox" name="cmbdoc" >
+         <property name="minimumSize" >
+          <size>
+           <width>295</width>
+           <height>25</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="3" column="2" colspan="2" >
         <layout class="QHBoxLayout" >
@@ -254,13 +261,13 @@
         <widget class="QTextEdit" name="boxaddress" >
          <property name="minimumSize" >
           <size>
-           <width>256</width>
+           <width>295</width>
            <height>113</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
-           <width>256</width>
+           <width>295</width>
            <height>113</height>
           </size>
          </property>

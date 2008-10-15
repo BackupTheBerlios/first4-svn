@@ -268,3 +268,13 @@ QString vars::checklockstate(QString table, QString rowID)
 	query.next();
 	return query.value(0).toString();
 }
+//
+QString vars::getAttr(QString attr)
+{
+	return "";
+}
+//
+void vars::setAttr(QString attr, QString value)
+{
+	
+}

@@ -35,6 +35,7 @@ int main ( int argc, char ** argv )
 	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
 	QTextStream stream ( &file );
 	
+	//Create basic config file if not exist
 	if(!file.exists())
 	{
 		if ( file.open ( QIODevice::WriteOnly ) )
@@ -46,6 +47,7 @@ int main ( int argc, char ** argv )
 	
 	if ( file.open ( QIODevice::ReadOnly ) )
 	{
+		//Load Language settings
 		QString line;
 		while(!stream.atEnd())
 		{
@@ -56,6 +58,7 @@ int main ( int argc, char ** argv )
 		file.close();
 	}
 	
+	//Load translation
 	QTranslator translator;
 	translator.load ( langfile );
 	app.installTranslator ( &translator );
@@ -71,11 +74,10 @@ int main ( int argc, char ** argv )
 		else
 		{
 			QMessageBox::information ( 0,"No Server defined...", "You must define at least one Server." );
-			app.quit();
+			app.quit(); //Quit if no DB's are defined
 		}	
 	}
-	
-	if ( logfrm.exec() )
+	if(logfrm.exec()) //Login will be accepted if username and passwort are correct
 	{
 		QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 		logfrm.saveservers();
@@ -84,9 +86,8 @@ int main ( int argc, char ** argv )
 		app.processEvents();
 		mainfrm *mfrm = new mainfrm();
 		splash.showMessage ( QObject::tr ( "Initializing ..." ), Qt::AlignHCenter|Qt::AlignBottom, Qt::black );
-		
 		splash.showMessage ( QObject::tr ( "Checking database ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-		if(mfrm->checkdb() != 0)
+		if(mfrm->checkdb() != 0) //check if the db is locked or old version
 		{
 			QApplication::restoreOverrideCursor();
 			qApp->closeAllWindows();
@@ -94,16 +95,12 @@ int main ( int argc, char ** argv )
 		else
 		{
 			splash.showMessage ( QObject::tr ( "Initializing userdata ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-			mfrm->loaduserdata();
-		
+			mfrm->loaduserdata(); //Load and set usersettings
 			splash.showMessage ( QObject::tr ( "Initializing plugins ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-			mfrm->initplugins();
-		
+			mfrm->initplugins(); //Load plugins
 			splash.showMessage ( QObject::tr ( "Initializing messages ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-			mfrm->checkmsg();
-
+			mfrm->checkmsg(); //Check if there are new messages
 			splash.showMessage ( QObject::tr ( "Startup completed ..." ), Qt::AlignLeft|Qt::AlignBottom, Qt::black );
-
 			app.connect ( &app, SIGNAL ( lastWindowClosed() ), &app, SLOT ( quit() ) );
 			QTime now = QTime::currentTime();
 			while(now.addSecs(1) >= QTime::currentTime()) ; //wait 1 secs

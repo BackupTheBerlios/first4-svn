@@ -13,8 +13,11 @@ Q_OBJECT
 public:
 	CashPoint( QWidget * parent = 0, Qt::WFlags f = 0 );
 	void init(QStringList parameters);
-	
 private slots:
+	void checkdb();
+private:
+	void initvat();
+	void closeEvent( QCloseEvent* ce );
 };
 #endif
 

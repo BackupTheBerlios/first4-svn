@@ -13,8 +13,7 @@
    <string>first4 - Cashpoint</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4_cashpoint.qrc" >
-    <normaloff>:/kcalc.png</normaloff>:/kcalc.png</iconset>
+   <iconset resource="../resources/images/first4_cashpoint.qrc" >:/kcalc.png</iconset>
   </property>
   <widget class="QLabel" name="label" >
    <property name="geometry" >
@@ -69,7 +68,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit" >
+  <widget class="QLineEdit" name="txtsearch" >
    <property name="geometry" >
     <rect>
      <x>80</x>
@@ -89,7 +88,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton" >
+  <widget class="QPushButton" name="btnsearch" >
    <property name="geometry" >
     <rect>
      <x>620</x>
@@ -102,8 +101,7 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >
-     <normaloff>:/xmag.png</normaloff>:/xmag.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/xmag.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -170,8 +168,7 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >
-     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -193,7 +190,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3" >
+  <widget class="QPushButton" name="btnclose" >
    <property name="geometry" >
     <rect>
      <x>10</x>
@@ -206,8 +203,7 @@
     <string>&amp;Close</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >
-     <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/fileclose.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4" >
@@ -223,8 +219,7 @@
     <string>Pay</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >
-     <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_ok.png</iconset>
    </property>
    <property name="iconSize" >
     <size>
@@ -246,8 +241,7 @@
     <string>&amp;Cancel</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4_cashpoint.qrc" >
-     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4_cashpoint.qrc" >:/button_cancel.png</iconset>
    </property>
    <property name="iconSize" >
     <size>

@@ -31,24 +31,24 @@ addrfrm::addrfrm( QWidget * parent, Qt::WFlags f)
 //
 void addrfrm::init()
 {
-    vars v;
-    QStringList sgeo = v.loadgeo(this->objectName());
-    if(sgeo.size() > 0	)
-    {
-        if(sgeo[0] == "1")
+	vars v;
+	QStringList sgeo = v.loadgeo(this->objectName());
+	if(sgeo.size() > 0	)
+	{
+		if(sgeo[0] == "1")
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
-	    this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
-   	}
-   	
-    adrnamelist.clear();
-    rightslist.clear();
-    
-    mainlistview->header()->setResizeMode(QHeaderView::Interactive);
-    mainlistview->headerItem()->setText(0, QApplication::translate("addrfrm", "Company", 0, QApplication::UnicodeUTF8));
-    mainlistview->headerItem()->setText(1, QApplication::translate("addrfrm", "Lastname", 0, QApplication::UnicodeUTF8));
-    mainlistview->headerItem()->setText(2, QApplication::translate("addrfrm", "Firstname", 0, QApplication::UnicodeUTF8));
-    mainlistview->headerItem()->setText(3, QApplication::translate("addrfrm", "ID", 0, QApplication::UnicodeUTF8));
-    mainlistview->hideColumn(3);
+		this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
+	}
+
+	adrnamelist.clear();
+	rightslist.clear();
+
+	mainlistview->header()->setResizeMode(QHeaderView::Interactive);
+	mainlistview->headerItem()->setText(0, QApplication::translate("addrfrm", "Company", 0, QApplication::UnicodeUTF8));
+	mainlistview->headerItem()->setText(1, QApplication::translate("addrfrm", "Lastname", 0, QApplication::UnicodeUTF8));
+	mainlistview->headerItem()->setText(2, QApplication::translate("addrfrm", "Firstname", 0, QApplication::UnicodeUTF8));
+	mainlistview->headerItem()->setText(3, QApplication::translate("addrfrm", "ID", 0, QApplication::UnicodeUTF8));
+	mainlistview->hideColumn(3);
 
 	int i;
 	QStringList colwidth = v.loadcolwidth(this->objectName(), "mainlistview" );
@@ -57,72 +57,82 @@ void addrfrm::init()
 		for(i=0; i<colwidth.size(); i++)
 			mainlistview->setColumnWidth(i, colwidth[i].toInt());
 	}
-    
-    lbluser->setText(username);
-    QString permissions;
-    QString qstr = QString("SELECT * FROM directories WHERE users LIKE '%%1 [1%';").arg(username);
-    QSqlQuery query1(qstr);
-    if ( query1.isActive())
-    {
+
+	lbluser->setText(username);
+	QString permissions;
+	QString qstr = QString("SELECT * FROM directories WHERE users LIKE '%%1 [1%';").arg(username);
+	QSqlQuery query1(qstr);
+	if ( query1.isActive())
+	{
 		while ( query1.next())
 		{
-		    cmbdir->addItem(query1.value(2).toString());
-		    adrnamelist.append(query1.value(1).toString());
-		    rightslist.append(query1.value(3).toString().section(username, 1, 1).section(" ", 1, 1));
+			cmbdir->addItem(query1.value(2).toString());
+			adrnamelist.append(query1.value(1).toString());
+			rightslist.append(query1.value(3).toString().section(username, 1, 1).section(" ", 1, 1));
 		}
-    }
-    
-    QSqlQuery query2("SELECT value FROM `maincfg` WHERE `var` = 'def_currency';");
-    if(query2.isActive())
-    {
+	}
+	else
+	{
+		QSqlError qerror = query1.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
+	}
+
+	QSqlQuery query2("SELECT value FROM `maincfg` WHERE `var` = 'def_currency';");
+	if(query2.isActive())
+	{
 		query2.next();
 		rev_currency = query2.value(0).toString();
-    }
-    
-    listdocs->headerItem()->setText(0, QApplication::translate("addrfrm", "Clientdata", 0, QApplication::UnicodeUTF8));
-    listdocs->headerItem()->setText(1, QApplication::translate("addrfrm", "docID", 0, QApplication::UnicodeUTF8));
-    listdocs->headerItem()->setText(2, QApplication::translate("addrfrm", "data", 0, QApplication::UnicodeUTF8));
-    listdocs->headerItem()->setText(3, QApplication::translate("addrfrm", "status", 0, QApplication::UnicodeUTF8));
+	}
+	else
+	{
+		QSqlError qerror = query2.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
+	}
+
+	listdocs->headerItem()->setText(0, QApplication::translate("addrfrm", "Clientdata", 0, QApplication::UnicodeUTF8));
+	listdocs->headerItem()->setText(1, QApplication::translate("addrfrm", "docID", 0, QApplication::UnicodeUTF8));
+	listdocs->headerItem()->setText(2, QApplication::translate("addrfrm", "data", 0, QApplication::UnicodeUTF8));
+	listdocs->headerItem()->setText(3, QApplication::translate("addrfrm", "status", 0, QApplication::UnicodeUTF8));
 	listdocs->hideColumn(1);
 	listdocs->hideColumn(2);
 	listdocs->hideColumn(3);
 
-    listproc->headerItem()->setText(0, QApplication::translate("addrfrm", "State", 0, QApplication::UnicodeUTF8));
-    listproc->headerItem()->setText(1, QApplication::translate("addrfrm", "Description", 0, QApplication::UnicodeUTF8));
-    listproc->headerItem()->setText(2, QApplication::translate("addrfrm", "Date", 0, QApplication::UnicodeUTF8));
-    listproc->setColumnWidth(0, 100);
-    listproc->setColumnWidth(2, 100);
-    listproc->header()->setStretchLastSection(FALSE);
-    listproc->header()->setResizeMode (1, QHeaderView::Stretch);
-    
-    connect(cmbdir, SIGNAL(activated(int)), this, SLOT(loadaddrs()));
-    connect(mainlistview, SIGNAL(itemClicked ( QTreeWidgetItem*, int)), this, SLOT(loadaddrdetail()));
-    connect(listdocs, SIGNAL(itemClicked ( QTreeWidgetItem*, int)), this, SLOT(loaddocsdata()));
-    connect(listproc, SIGNAL(itemDoubleClicked ( QTreeWidgetItem*, int)), this, SLOT(openauftrag()));
-    connect(btnadrcust1, SIGNAL(released()), this, SLOT(changecust1()));
-    connect(btnadrcust2, SIGNAL(released()), this, SLOT(changecust2()));
-    connect(btnadrcust3, SIGNAL(released()), this, SLOT(changecust3()));
-    connect(btnadrcust4, SIGNAL(released()), this, SLOT(changecust4()));
-    connect(btnadrcust5, SIGNAL(released()), this, SLOT(changecust5()));
-    connect(btnnew, SIGNAL(released()), this, SLOT(newaddr()));
-    connect(btnsave, SIGNAL(released()), this, SLOT(saveaddr()));
-    connect(btndelete, SIGNAL(released()), this, SLOT(deladdr()));
-    connect(btnclear, SIGNAL(released()), this, SLOT(clearsearch()));
-    connect(btnsearch, SIGNAL(released()), this, SLOT(search()));
-    connect(txtsearch, SIGNAL(returnPressed()), this, SLOT(search()));
-    connect(btnprint, SIGNAL(released()), this, SLOT(printaddr()));
-    connect(btnimpexp, SIGNAL(released()), this, SLOT(impexp()));
-    connect(listdocs, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
-    connect(mainlistview, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenuaddr()));
-    
-    wintitle = this->windowTitle();
-    
-    if(cmbdir->count() > 0)
-    {
+	listproc->headerItem()->setText(0, QApplication::translate("addrfrm", "State", 0, QApplication::UnicodeUTF8));
+	listproc->headerItem()->setText(1, QApplication::translate("addrfrm", "Description", 0, QApplication::UnicodeUTF8));
+	listproc->headerItem()->setText(2, QApplication::translate("addrfrm", "Date", 0, QApplication::UnicodeUTF8));
+	listproc->setColumnWidth(0, 100);
+	listproc->setColumnWidth(2, 100);
+	listproc->header()->setStretchLastSection(FALSE);
+	listproc->header()->setResizeMode (1, QHeaderView::Stretch);
+
+	connect(cmbdir, SIGNAL(activated(int)), this, SLOT(loadaddrs()));
+	connect(mainlistview, SIGNAL(itemClicked ( QTreeWidgetItem*, int)), this, SLOT(loadaddrdetail()));
+	connect(listdocs, SIGNAL(itemClicked ( QTreeWidgetItem*, int)), this, SLOT(loaddocsdata()));
+	connect(listproc, SIGNAL(itemDoubleClicked ( QTreeWidgetItem*, int)), this, SLOT(openauftrag()));
+	connect(btnadrcust1, SIGNAL(released()), this, SLOT(changecust1()));
+	connect(btnadrcust2, SIGNAL(released()), this, SLOT(changecust2()));
+	connect(btnadrcust3, SIGNAL(released()), this, SLOT(changecust3()));
+	connect(btnadrcust4, SIGNAL(released()), this, SLOT(changecust4()));
+	connect(btnadrcust5, SIGNAL(released()), this, SLOT(changecust5()));
+	connect(btnnew, SIGNAL(released()), this, SLOT(newaddr()));
+	connect(btnsave, SIGNAL(released()), this, SLOT(saveaddr()));
+	connect(btndelete, SIGNAL(released()), this, SLOT(deladdr()));
+	connect(btnclear, SIGNAL(released()), this, SLOT(clearsearch()));
+	connect(btnsearch, SIGNAL(released()), this, SLOT(search()));
+	connect(txtsearch, SIGNAL(returnPressed()), this, SLOT(search()));
+	connect(btnprint, SIGNAL(released()), this, SLOT(printaddr()));
+	connect(btnimpexp, SIGNAL(released()), this, SLOT(impexp()));
+	connect(listdocs, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenu()));
+	connect(mainlistview, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contmenuaddr()));
+
+	wintitle = this->windowTitle();
+
+	if(cmbdir->count() > 0)
+	{
 		lastadrtab = "";
 		lastaddr = "";
 		loadaddrs();
-    }
+	}
 }
 //
 void addrfrm::closeEvent(QCloseEvent* ce )
@@ -135,15 +145,14 @@ void addrfrm::closeEvent(QCloseEvent* ce )
 	vars v;
 	v.savecolwidth(this->objectName(), "mainlistview", colwidth);
 	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
-	
 	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
 	ce->accept();
 }
 //
 void addrfrm::checkrights()
 {
-    if(uid == 0 || rightslist[cmbdir->currentIndex()]=="[11]")
-    {
+	if(uid == 0 || rightslist[cmbdir->currentIndex()]=="[11]")
+	{
 		adr3->setReadOnly(FALSE);
 		adr4->setReadOnly(FALSE);
 		adr5->setReadOnly(FALSE);
@@ -182,7 +191,7 @@ void addrfrm::checkrights()
 		btnadrcust3->setEnabled(TRUE);
 		btnadrcust4->setEnabled(TRUE);
 		btnadrcust5->setEnabled(TRUE);	
-    } else {
+	} else {
 		adr3->setReadOnly(TRUE);
 		adr4->setReadOnly(TRUE);
 		adr5->setReadOnly(TRUE);
@@ -229,8 +238,8 @@ void addrfrm::loadaddrs()
 	this->setWindowTitle(wintitle);
 	vars v;
 	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
-    if(cmbdir->currentText() != lastadrtab)
-    { 
+	if(cmbdir->currentText() != lastadrtab)
+	{
 		checkrights();
 		QString connstr = "SELECT ID, company, lastname, firstname FROM ";
 		connstr += adrnamelist[cmbdir->currentIndex()];
@@ -239,30 +248,30 @@ void addrfrm::loadaddrs()
 		QSqlQuery query(connstr);
 		if ( query.isActive())
 		{
-		    progbar->setValue(0);
-		    progbar->setMaximum(query.size());
-		    int count = 0;
-		    while ( query.next())
-		    {
+			progbar->setValue(0);
+			progbar->setMaximum(query.size());
+			int count = 0;
+			while ( query.next())
+			{
 				progbar->setValue(++count);
 				QTreeWidgetItem *item = new QTreeWidgetItem(mainlistview);
 				item->setText(0, query.value(1).toString());
 				item->setText(1, query.value(2).toString());
 				item->setText(2, query.value(3).toString());
 				item->setText(3, query.value(0).toString());
-		    }
+			}
 		}
 	lastadrtab = cmbdir->currentText();
-    }
+	}
 }
 //
 void addrfrm::loadaddrdetail()
 {
 	vars v;
 	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
-    QTreeWidgetItem *tmpitem = mainlistview->currentItem();
-    if(tmpitem!=0 && tmpitem->text(3) != "")
-    {
+	QTreeWidgetItem *tmpitem = mainlistview->currentItem();
+	if(tmpitem!=0 && tmpitem->text(3) != "")
+	{
 		QString qstr;
 		QString userlock = v.checklockstate(adrnamelist[cmbdir->currentIndex()], tmpitem->text(3));
 		if(userlock != "")
@@ -365,12 +374,9 @@ void addrfrm::loadaddrdetail()
 		    adr30->setText(query.value(31).toString());
 		    progbar->setValue(100);
 		}
-		
 		loaddocs(adr1->text());
-	
 		if(tmpitem->text(3).mid(0,1)!="*")
 		    loadauftr(tmpitem->text(3));
-		    
 		lastaddr = adrnamelist[cmbdir->currentIndex()] + "_" +tmpitem->text(3);
 	}
 }

@@ -463,11 +463,11 @@ void doceditfrm::checkdb()
 					tabmainitem = new QTableWidgetItem;
 					tabmainitem->setText(item->text(8));
 					tabmain->setItem(tabmain->currentRow(), 11, tabmainitem);
-			    }
+				}
 			}
-	    }
-	    else
-	    {
+		}
+		else
+		{
 			QTreeWidgetItem *item = sfrm->treemain->topLevelItem(0);
 			if(item!=0)
 			{
@@ -521,118 +521,129 @@ void doceditfrm::checkdb()
 //
 void doceditfrm::clearlblid()
 {
-    lblID->setText("");
+	boxaddress->setText("");
+	lblID->setText("");
 }
 //
 void doceditfrm::calc_tot()
 {
-   int i;
-   double amount =0;
-   double discount = boxdiscount->text().toDouble();
-   for(i=0;i<tabmain->rowCount()-1;i++)
-   {
-   		QTableWidgetItem *item = tabmain->item(i, 7);
+	int i;
+	double amount =0;
+	double discount = boxdiscount->text().toDouble();
+	for(i=0;i<tabmain->rowCount()-1;i++)
+	{
+		QTableWidgetItem *item = tabmain->item(i, 7);
 		amount += item->text().toDouble(); 
-   }
-   double tot = amount;
-   double tot_excl = tot - (tot/100*discount);
-   boxtot->setText(QString("%1").arg(tot, 0, 'f',2));
-   boxtot_excl->setText(QString("%1").arg(tot_excl, 0, 'f',2));
-   calc_vat();
-   double tot_incl = tot_excl;
-   for(i=0;i<vatlist.count();i++)
-   {
-       tot_incl += vatamount[i].toDouble() * (vatlist[i].toDouble()/100);
-   }
-   boxvat->setText(QString("%1").arg(tot_incl - tot_excl, 0, 'f',2));
-   boxtot_incl->setText(QString("%1").arg(tot_incl, 0, 'f',2));
+	}
+	double tot = amount;
+	double tot_excl = tot - (tot/100*discount);
+	boxtot->setText(QString("%1").arg(tot, 0, 'f',2));
+	boxtot_excl->setText(QString("%1").arg(tot_excl, 0, 'f',2));
+	calc_vat();
+	double tot_incl = tot_excl;
+	for(i=0;i<vatlist.count();i++)
+	{
+		tot_incl += vatamount[i].toDouble() * (vatlist[i].toDouble()/100);
+	}
+	boxvat->setText(QString("%1").arg(tot_incl - tot_excl, 0, 'f',2));
+	boxtot_incl->setText(QString("%1").arg(tot_incl, 0, 'f',2));
 }
 //
 void doceditfrm::calc_vat()
 {
-    int i, rows;
-    
-    for(i=0;i<vatlist.count();i++)
+	int i, rows;
+
+	for(i=0;i<vatlist.count();i++)
 		vatamount[i] = "0.00";       
-    
-    for(rows=0;rows<tabmain->rowCount()-1;rows++)
-    {
+
+	for(rows=0;rows<tabmain->rowCount()-1;rows++)
+	{
 		for(i=0;i<vatlist.count();i++)
 		{
 			QTableWidgetItem *item = tabmain->item(rows, 8);
-		    if(item->text() == vatlist[i])
-		    {
-		    	item = tabmain->item(rows, 7);
+			if(item->text() == vatlist[i])
+			{
+				item = tabmain->item(rows, 7);
 				vatamount[i] = QString("%1").arg(vatamount[i].toDouble() + item->text().toDouble(), 0, 'f',2);
-	    	}
+			}
 		}
-    }
+	}
 }
 //
 void doceditfrm::show_vat()
 {
-    vatshowfrm *svat = new vatshowfrm;
-    int i;
-    for(i=0;i<vatlist.count();i++)
-    {
+	vatshowfrm *svat = new vatshowfrm;
+	int i;
+	for(i=0;i<vatlist.count();i++)
+	{
 		if(vatamount[i].toDouble() > 0)
 		{
-		    QTreeWidgetItem *item = new QTreeWidgetItem(svat->treemain);
-		    item->setText(0, vatlist[i]);
-		    item->setText(1, vatamount[i]);
-		    item->setText(2, QString("%1").arg(vatamount[i].toDouble()/100*vatlist[i].toDouble(), 0, 'f',2));
+			QTreeWidgetItem *item = new QTreeWidgetItem(svat->treemain);
+			item->setText(0, vatlist[i]);
+			item->setText(1, vatamount[i]);
+			item->setText(2, QString("%1").arg(vatamount[i].toDouble()/100*vatlist[i].toDouble(), 0, 'f',2));
 		}
-    }
-    svat->exec();
+	}
+	svat->exec();
 }
 //
 void doceditfrm::initvat()
 {
-    vatlist.clear();
-    vatamount.clear();
-    QStringList tmplist;
-    QString connstr = "SELECT col1 FROM vattable ORDER BY ID;";
-    QSqlQuery query(connstr);
-    if(query.isActive())
-    {
+	vatlist.clear();
+	vatamount.clear();
+	QStringList tmplist;
+	QString connstr = "SELECT col1 FROM vattable ORDER BY ID;";
+	QSqlQuery query(connstr);
+	if(query.isActive())
+	{
 		while(query.next())
 		{
-		    vatlist << query.value(0).toString();
-		    vatamount << "0.00";
+			vatlist << query.value(0).toString();
+			vatamount << "0.00";
 		}
-    }
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
 }
 //
 void doceditfrm::loadmaincfg()
 {
-    QString connstr = QString("SELECT value FROM `maincfg` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'def_currency' ORDER BY var;");
-    QSqlQuery query(connstr);
-    if(query.isActive())
-    {
+	QString connstr = QString("SELECT value FROM `maincfg` WHERE `var` = 'docpref' OR `var` = 'banktnr' OR `var` = 'def_currency' ORDER BY var;");
+	QSqlQuery query(connstr);
+	if(query.isActive())
+	{
 		query.next();
 		tnr = query.value(0).toString();
 		query.next();
 		currency = query.value(0).toString();
 		query.next();
 		docprefix = query.value(0).toString();
-    }
-    
-    QStringList address;
-    QStringList fields;
-    fields << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry"; 
-    int i;
-    companyaddress = "";
-    vesrcompanyaddress = "";
-    for(i=0;i<fields.count();i++)
-    {
-    	QString qstr = QString("SELECT value FROM `maincfg` WHERE `var` = '%1';").arg(fields[i]);
-    	QSqlQuery queryaddr(qstr);
-    	queryaddr.next();
-    	address << queryaddr.value(0).toString();
-    }
-    companyaddress = address[0]+"\n"+address[1]+"\n"+address[3]+"\n"+address[2]+"\n"+address[4]+"\n";
-    vesrcompanyaddress = address[0]+"\\newline "+address[1]+"\\newline "+address[3]+" "+address[2]+"\\newline";
-    location = address[2];
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
+	}
+
+	QStringList address;
+	QStringList fields;
+	fields << "company" << "companyaddress" << "companylocation" << "companyzip" << "companycountry"; 
+	int i;
+	companyaddress = "";
+	vesrcompanyaddress = "";
+	for(i=0;i<fields.count();i++)
+	{
+		QString qstr = QString("SELECT value FROM `maincfg` WHERE `var` = '%1';").arg(fields[i]);
+		QSqlQuery queryaddr(qstr);
+		queryaddr.next();
+		address << queryaddr.value(0).toString();
+	}
+	companyaddress = address[0]+"\n"+address[1]+"\n"+address[3]+"\n"+address[2]+"\n"+address[4]+"\n";
+	vesrcompanyaddress = address[0]+"\\newline "+address[1]+"\\newline "+address[3]+" "+address[2]+"\\newline";
+	location = address[2];
 }
 //
 void doceditfrm::selectaddress()
@@ -714,11 +725,11 @@ void doceditfrm::completedoc()
 				if(lblOrderID->text() != "" && lblOrderID->text() != "-")
 				{
 					QString p_orders = QString("UPDATE procedureorders SET state = '2' WHERE `PROC_ID`='%1' AND `state`= '1';").arg(lblOrderID->text());
-				    QSqlQuery updorders(p_orders);
+					QSqlQuery updorders(p_orders);
 				}
-		
+
 				savecompletedoc();
-		
+
 				QMessageBox::information(0, tr("Save..."), tr("Document completed and saved in Database"));
 				newdocument();
 			}
@@ -729,8 +740,8 @@ void doceditfrm::completedoc()
 void doceditfrm::refreshstockdb()
 {
 	int i;
-    for(i=0;i<tabmain->rowCount()-1;i++)
-    {
+	for(i=0;i<tabmain->rowCount()-1;i++)
+	{
     	QTableWidgetItem *item = tabmain->item(i, 11);
 		if(item->text()!="")
 		{
@@ -1035,6 +1046,11 @@ void doceditfrm::opendocfromid(QString source, QString dbID)
 		boxtot_excl->setText(QString("%1").arg(tot_excl, 0, 'f',2));
 		boxvat->setText(QString("%1").arg(vat, 0, 'f',2));
 		boxtot_incl->setText(QString("%1").arg(tot_incl, 0, 'f',2));
+	}
+	else
+	{
+		QSqlError qerror = query.lastError();
+		QMessageBox::warning ( 0, tr ( "Can't load template description..." ), qerror.text() );
 	}
 	if(source == "documents")
 	{

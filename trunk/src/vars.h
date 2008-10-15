@@ -18,6 +18,8 @@ public:
 	void locktable(QString table);
 	void unlocktable(QString table);
 	QString checklockstate(QString table, QString rowID);
+	QString getAttr(QString attr);
+	void setAttr(QString attr, QString value);
 private slots:
 };
 #endif

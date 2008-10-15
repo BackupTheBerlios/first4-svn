@@ -8,8 +8,8 @@ CONFIG += debug \
  plugin
 QT += gui sql core
 TARGET = ../../bin/plugins/first4_cashpoint
-INCLUDEPATH +=  src ui
-DEPENDPATH +=  resources  src  ui
+INCLUDEPATH += src ui
+DEPENDPATH += resources src ui
 UI_DIR = build/first4_cashpoint/ui
 unix {
  MOC_DIR =  build/first4_cashpoint/unix/moc
@@ -23,6 +23,6 @@ mac {
  MOC_DIR =  build/first4_cashpoint/mac/moc
  OBJECTS_DIR =  build/first4_cashpoint/mac/obj
 }
-HEADERS += src/cashpointplugin.h src/plugininterface.h src/cashpoint_main.h
-SOURCES += src/cashpointplugin.cpp src/cashpoint_main.cpp
-FORMS +=  ui/cashpoint.ui
+HEADERS += src/cashpointplugin.h src/plugininterface.h src/cashpoint_main.h src/stockselfrm.h
+SOURCES += src/cashpointplugin.cpp src/cashpoint_main.cpp src/stockselfrm.cpp
+FORMS += ui/cashpoint.ui ui/stockselfrm.ui
