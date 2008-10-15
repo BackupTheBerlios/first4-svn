@@ -86,7 +86,34 @@ void dbwizzardfrm::next()
 	{
 		if(mainstackwidget->currentIndex() < minindex)
 			mainstackwidget->setCurrentIndex(minindex-1);
-		mainstackwidget->setCurrentIndex(mainstackwidget->currentIndex()+1);
+		
+		// Check if DB-Name, DB-firts4-User and DB-first4-password is defined	
+		if(rbtnmysqlnew->isChecked() && mainstackwidget->currentIndex() == minindex+1)
+		{
+			if(txtnewdbname->text() != "" && txtnewfirstuser->text() != "")
+			{
+				if(txtnewfirstpwd->text() == "")
+				{
+					int answ = QMessageBox::information(0, tr("No password defined..."), tr("For security it is better to define a passwort for the connection.\n\nDo you like to define one?"), QMessageBox::Yes, QMessageBox::No);
+					if(answ == QMessageBox::No)
+						mainstackwidget->setCurrentIndex(mainstackwidget->currentIndex()+1); 
+				}
+				else
+					mainstackwidget->setCurrentIndex(mainstackwidget->currentIndex()+1);	
+			}
+			else
+				QMessageBox::critical(0,"Error...", tr("Please define the following settings:\nDB-Name, first4-User."));
+		}
+		else if(rbtnmysqlnew->isChecked() && mainstackwidget->currentIndex() == minindex) // Check if DB-Host, DB-Port, DB-User and DB-Password is defined
+		{
+			if(txtnewhost->text() != "" && txtnewport->text() != "" && txtnewuser->text() != "")
+				mainstackwidget->setCurrentIndex(mainstackwidget->currentIndex()+1);
+			else
+				QMessageBox::critical(0,"Error...", tr("Please define the following settings:\nDB-Host, DB-Port and DB-User (normally root)\nIn some case you must also define a password."));
+		}
+		else
+			mainstackwidget->setCurrentIndex(mainstackwidget->currentIndex()+1);
+			
 		if(mainstackwidget->currentIndex() == maxindex)
 		{
 			btnnext->setText(QApplication::translate("dbwizzardfrm", "&Finish", 0, QApplication::UnicodeUTF8));	
@@ -343,45 +370,47 @@ mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbver
 	pfrm.show();
 
 	QSqlError sqlerror;
-    QSqlDatabase createDB = QSqlDatabase::addDatabase("QMYSQL", "createDB");
-    createDB.setDatabaseName("mysql");
-    createDB.setHostName(txtnewhost->text());
-    createDB.setUserName(txtnewuser->text());
-    createDB.setPassword(txtnewpwd->text());
-    createDB.setPort(txtnewport->text().toInt());
-    if(createDB.open())
-    {
-    	QString qstr_newdb = QString("CREATE DATABASE %1").arg(txtnewdbname->text()); //creating database
+	QSqlDatabase createDB = QSqlDatabase::addDatabase("QMYSQL", "createDB");
+	createDB.setDatabaseName("mysql");
+	createDB.setHostName(txtnewhost->text());
+	createDB.setUserName(txtnewuser->text());
+	createDB.setPassword(txtnewpwd->text());
+	createDB.setPort(txtnewport->text().toInt());
+	if(createDB.open())
+	{
+	    	QString qstr_newdb = QString("CREATE DATABASE %1").arg(txtnewdbname->text()); //creating database
 		QSqlQuery query_newdb(qstr_newdb, createDB);
 		sqlerror = query_newdb.lastError();
 		if(sqlerror.isValid())
 			QMessageBox::critical(0,"Error...",sqlerror.text());
-			
-    	QString qstr_privileges = QString("GRANT ALL PRIVILEGES ON %1.* TO '%2'@'%' IDENTIFIED BY '%3'").arg(txtnewdbname->text()).arg(txtnewfirstuser->text()).arg(txtnewfirstpwd->text()); //grant privileges
-		QSqlQuery query_privileges(qstr_privileges, createDB);
-		sqlerror = query_privileges.lastError();
-		if(sqlerror.isValid())
-			QMessageBox::critical(0,"Error...",sqlerror.text());
-		createDB.close();
+		else
+		{
+			QString qstr_privileges = QString("GRANT ALL PRIVILEGES ON %1.* TO '%2'@'%' IDENTIFIED BY '%3'").arg(txtnewdbname->text()).arg(txtnewfirstuser->text()).arg(txtnewfirstpwd->text()); //grant privileges
+			QSqlQuery query_privileges(qstr_privileges, createDB);
+			sqlerror = query_privileges.lastError();
+			if(sqlerror.isValid())
+				QMessageBox::critical(0,"Error...",sqlerror.text());
+		}
 	}
-    else
-    {
-    	QSqlError sqlerror = createDB.lastError();
+	else
+	{
+		sqlerror = createDB.lastError();
 		QMessageBox::critical(0,"Error...",tr("Unable to connect to server!")+"\n\n"+sqlerror.text());
-    }
-    QSqlDatabase::removeDatabase("createDB"); 
+	}
+	createDB.close();
+	QSqlDatabase::removeDatabase("createDB"); 
     
-    QSqlDatabase initDB = QSqlDatabase::addDatabase("QMYSQL", "initDB");
-    initDB.setDatabaseName("mysql");
-    initDB.setHostName(txtnewhost->text());
-    initDB.setUserName(txtnewuser->text());
-    initDB.setPassword(txtnewpwd->text());
-    initDB.setPort(txtnewport->text().toInt());
+	QSqlDatabase initDB = QSqlDatabase::addDatabase("QMYSQL", "initDB");
+	//initDB.setDatabaseName("mysql");
+	initDB.setHostName(txtnewhost->text());
+	initDB.setUserName(txtnewuser->text());
+	initDB.setPassword(txtnewpwd->text());
+	initDB.setPort(txtnewport->text().toInt());
 	initDB.setDatabaseName(txtnewdbname->text());
 	if(!sqlerror.isValid())
 	{
-    	if(initDB.open() && !sqlerror.isValid())
-	    {
+	    	if(initDB.open() && !sqlerror.isValid())
+		{
 			//Creating tables;
 			int i;
 			for(i=0;i<mysqsqlcreatelist.size();i++)
@@ -393,13 +422,17 @@ mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbver
 				pfrm.progbar->setValue(i);
 			}
 			pfrm.close();
-			QMessageBox::information(0,"Database created...",tr("Database successfully created."));
 			initDB.close();
 		}
+		writeconffile(); //schreibe conffile
+		QMessageBox::information(0,"Database created...",tr("Database successfully created."));
+		QSqlDatabase::removeDatabase("initDB");
+		this->accept();
 	}
-	QSqlDatabase::removeDatabase("initDB");
-	writeconffile(); //schreibe conffile
-	this->accept();
+	else
+	{
+		QMessageBox::critical(0,"Database not created...",tr("Database can't be created.\n\nPlease check your settings."));
+	}
 }
 //
 void dbwizzardfrm::createnewsqlite()
