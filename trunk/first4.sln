@@ -1,24 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "first4", "first4.vcproj", "{F3B73C7C-8724-3274-B024-DABF37717C9E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "first4", "first4.vcproj", "{7BEEAADA-D920-3031-B17C-996E31A63E5B}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3B73C7C-8724-3274-B024-DABF37717C9E}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F3B73C7C-8724-3274-B024-DABF37717C9E}.Debug|Win32.Build.0 = Debug|Win32
-		{F3B73C7C-8724-3274-B024-DABF37717C9E}.Release|Win32.ActiveCfg = Release|Win32
-		{F3B73C7C-8724-3274-B024-DABF37717C9E}.Release|Win32.Build.0 = Release|Win32
+		{7BEEAADA-D920-3031-B17C-996E31A63E5B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7BEEAADA-D920-3031-B17C-996E31A63E5B}.Debug|Win32.Build.0 = Debug|Win32
+		{7BEEAADA-D920-3031-B17C-996E31A63E5B}.Release|Win32.ActiveCfg = Release|Win32
+		{7BEEAADA-D920-3031-B17C-996E31A63E5B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

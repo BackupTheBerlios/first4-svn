@@ -13,8 +13,8 @@ IDI_ICON1               ICON    DISCARDABLE     "resources/images/logo.ico"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,1,3,98
- PRODUCTVERSION 0,1,3,98
+ FILEVERSION 0,1,3,99
+ PRODUCTVERSION 0,1,3,99
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -32,12 +32,12 @@ BEGIN
             VALUE "Comments", "First4 - The free ERP-Solution\0"
             VALUE "CompanyName", "Privat\0"
             VALUE "FileDescription", "First4 - The free ERP-Solution\0"
-            VALUE "FileVersion", "0.1.3.98\0"
+            VALUE "FileVersion", "0.1.3.99\0"
             VALUE "InternalName", "first4\0"
             VALUE "LegalCopyright", "Copyright © 2007 - 2008 by Orlando Procopio\0"
             VALUE "OriginalFilename", "first4.exe\0"
             VALUE "ProductName", "First4\0"
-            VALUE "ProductVersion", "0.1.3.98\0"
+            VALUE "ProductVersion", "0.1.3.99\0"
         END
     END
     BLOCK "VarFileInfo"
