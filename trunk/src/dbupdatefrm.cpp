@@ -18,7 +18,7 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	newdbver = "1.3.98.02";
+	newdbver = "1.4.00.01";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
@@ -98,6 +98,8 @@ int dbupdatefrm::init()
 		retrcode = 1;
 	if(dbversion < 139802)
 		retrcode = 1;
+	if(dbversion < 140001)
+		retrcode = 1;
 	return retrcode;
 	
 }
@@ -108,26 +110,26 @@ void dbupdatefrm::check_db_structure()
 	int dbversion = actdbver.replace(".","").toInt();
 	if(dbversion < 13954)
 	{
-	    QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
-	    if(query1.size() !=1 )
-		update_db_structure("templates");
-	    progbar->setValue(1);
-	    
-	    QSqlQuery query2("SHOW TABLES LIKE '%msgtab%';");
-	    if(query2.size() !=1 )
-	      update_db_structure("msg");
-	    progbar->setValue(2);
-	    
-	    QSqlQuery query3("SHOW COLUMNS FROM doctab WHERE field='filename';");
-	    if(query3.size() !=0 )
-	      update_db_structure("filename2templateid");
-	    progbar->setValue(3);
+		QSqlQuery query1("SHOW TABLES LIKE '%templatestab%';");
+		if(query1.size() !=1 )
+			update_db_structure("templates");
+		progbar->setValue(1);
 
-	    QSqlQuery query4("SHOW TABLES LIKE '%userlocktab%';");
-	    if(query4.size() !=1 )
-	      update_db_structure("userlocks");
-	    progbar->setValue(4);
-	    
+		QSqlQuery query2("SHOW TABLES LIKE '%msgtab%';");
+		if(query2.size() !=1 )
+			update_db_structure("msg");
+		progbar->setValue(2);
+
+		QSqlQuery query3("SHOW COLUMNS FROM doctab WHERE field='filename';");
+		if(query3.size() !=0 )
+			update_db_structure("filename2templateid");
+		progbar->setValue(3);
+
+		QSqlQuery query4("SHOW TABLES LIKE '%userlocktab%';");
+		if(query4.size() !=1 )
+			update_db_structure("userlocks");
+		progbar->setValue(4);
+
 		QSqlQuery query5("SHOW COLUMNS FROM docpositions WHERE field='STOCK';");
 		query5.next();
 		if(query5.value(2).toString() == "NO")
@@ -221,6 +223,12 @@ void dbupdatefrm::check_db_structure()
 		update_db_structure("accounts");
 		progbar->setValue(15);
 
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(17);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+	if(dbversion < 140001)
+	{
 		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
 		progbar->setValue(17);
 		dbversion = newdbver.replace(".","").toInt();

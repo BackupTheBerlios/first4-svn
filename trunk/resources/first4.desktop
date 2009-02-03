@@ -1,11 +1,14 @@
 [Desktop Entry]
 Comment=first4 ERP-Suite
+Comment[de]=first4 ERP-Suite
 Encoding=UTF-8
-Exec='/opt/first4/bin/first4'
+Exec='/usr/local/bin/first4'
 GenericName=first4
-Icon=/opt/first4/bin/logo.png
+GenericName[de]=first4
+Icon=/usr/local/lib/first4/bin/logo.png
 Name=first4
 StartupNotify=true
 Terminal=false
 TerminalOptions=
 Type=Application
+Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-MoreApplications-Databases;

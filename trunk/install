@@ -11,7 +11,7 @@
 
 function checkenv {
 	QMAKE=`which qmake-qt4`
-	INSTDIR=/opt/first4
+	INSTDIR=/usr/local/lib/first4
 }
 
 function setenv {
