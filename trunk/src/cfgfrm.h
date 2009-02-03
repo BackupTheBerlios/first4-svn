@@ -62,6 +62,7 @@ private slots:
 	void savelangfile();
 private:
 	void templates_loaddescription();
+	void loadUserDetails(QString dbid);
 };
 #endif
 

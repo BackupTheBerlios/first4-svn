@@ -50,7 +50,7 @@ void mainfrm::loaduserdata()
 	lbluser->setText ( username );
 	lbldb->setText ( dbname );
 	lblserver->setText ( dbhost );
-	this->setWindowTitle ( QString ( "first %1" ).arg ( firstver ) );
+	this->setWindowTitle ( QString ( "first4 %1" ).arg ( firstver ) );
 
 	maintoolbox->setCurrentIndex ( maintoolbox->count()-1 );
 

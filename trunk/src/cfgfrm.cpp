@@ -414,9 +414,13 @@ void cfgfrm::loadusers()
 void cfgfrm::selectuser()
 {
 	QListWidgetItem *item = listusers->currentItem();
-	QString seluser = item->text().section ( " (", 1, 1 ).section ( ")", 0, 0 );
-	txt_users_user->setText ( seluser.simplified() );
-	QString qstr = QString ( "SELECT ID,  userpass,  fullname,  firstname,  lastname,  dob,  p_street,  p_zip,  p_location,  p_country,  b_street,  b_zip,  b_location,  b_country,  profession,  org_unit,  position,  emp_type, p_tel,  p_fax,  p_mobile,  p_pager,  p_ip,  email1,  email2,  email3,  p_web,  b_tel,  b_teldir,  b_fax,  b_mobile,  b_pager,  b_ip,  email4,  email5,  email6,  notes,  emp_grade FROM users WHERE username='%1'" ).arg ( seluser );
+	loadUserDetails(item->text().section ( " (", 1, 1 ).section ( ")", 0, 0 ).simplified());
+}
+//
+void cfgfrm::loadUserDetails(QString usrname)
+{
+	txt_users_user->setText ( usrname );
+	QString qstr = QString ( "SELECT ID,  userpass,  fullname,  firstname,  lastname,  dob,  p_street,  p_zip,  p_location,  p_country,  b_street,  b_zip,  b_location,  b_country,  profession,  org_unit,  position,  emp_type, p_tel,  p_fax,  p_mobile,  p_pager,  p_ip,  email1,  email2,  email3,  p_web,  b_tel,  b_teldir,  b_fax,  b_mobile,  b_pager,  b_ip,  email4,  email5,  email6,  notes,  emp_grade FROM users WHERE username='%1'" ).arg ( usrname );
 	QSqlQuery query ( qstr );
 	if ( query.isActive() )
 	{
@@ -492,6 +496,7 @@ void cfgfrm::newuser()
 	{
 		QString conn = "INSERT INTO `users` ( `ID` , `username` , `userpass` ) VALUES ('', '"+txt_users_user->text() +"', '');";
 		QSqlQuery query ( conn );
+		loadUserDetails(txt_users_user->text());
 		loadusers();
 	}
 }

@@ -368,6 +368,7 @@ mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbver
 	pfrm.progbar->setMaximum(mysqsqlcreatelist.count());
 	pfrm.txtcomments->setText(tr("Initializing database..."));
 	pfrm.show();
+	QApplication::processEvents();
 
 	QSqlError sqlerror;
 	QSqlDatabase createDB = QSqlDatabase::addDatabase("QMYSQL", "createDB");
@@ -415,6 +416,7 @@ mysqsqlcreatelist << QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbver
 			int i;
 			for(i=0;i<mysqsqlcreatelist.size();i++)
 			{
+				QApplication::processEvents();
 				QSqlQuery query_newtables(mysqsqlcreatelist[i], initDB);
 				sqlerror = query_newtables.lastError();
 				if(sqlerror.isValid())

@@ -16,7 +16,8 @@
    <string>Settings...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/package_utilities.png</normaloff>:/package_utilities.png</iconset>
   </property>
   <widget class="QTabWidget" name="maintab" >
    <property name="geometry" >
@@ -81,7 +82,8 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/hotlistadd.png</normaloff>:/hotlistadd.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="btndeldb" >
@@ -109,7 +111,8 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/hotlistdel.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/hotlistdel.png</normaloff>:/hotlistdel.png</iconset>
       </property>
      </widget>
     </widget>
@@ -261,7 +264,7 @@
        </size>
       </property>
       <property name="text" >
-       <string>First-Version:</string>
+       <string>First4-Version:</string>
       </property>
      </widget>
      <widget class="QLabel" name="lblfirstversion" >
@@ -413,7 +416,8 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
       </property>
      </widget>
     </widget>
@@ -514,7 +518,8 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
       </property>
      </widget>
     </widget>
@@ -560,7 +565,8 @@
        <string>&amp;Change</string>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_6" >
@@ -598,7 +604,7 @@
        </rect>
       </property>
       <property name="styleSheet" >
-       <string/>
+       <string notr="true" />
       </property>
       <property name="echoMode" >
        <enum>QLineEdit::Password</enum>
@@ -919,7 +925,8 @@
        <string/>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_tools_save_local" >
@@ -947,7 +954,8 @@
        <string>&amp;Save</string>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
       </property>
      </widget>
     </widget>
@@ -1225,7 +1233,8 @@
          <string>UnLocked</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
         </property>
         <property name="checked" >
          <bool>true</bool>
@@ -1244,7 +1253,8 @@
          <string>Locked</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
         </property>
        </widget>
        <widget class="QTextEdit" name="txtdblockedMSG" >
@@ -1270,7 +1280,8 @@
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
         </property>
        </widget>
       </widget>
@@ -2653,22 +2664,10 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Notes</string>
         </attribute>
         <layout class="QGridLayout" >
-         <property name="leftMargin" >
+         <property name="margin" >
           <number>9</number>
          </property>
-         <property name="topMargin" >
-          <number>9</number>
-         </property>
-         <property name="rightMargin" >
-          <number>9</number>
-         </property>
-         <property name="bottomMargin" >
-          <number>9</number>
-         </property>
-         <property name="horizontalSpacing" >
-          <number>6</number>
-         </property>
-         <property name="verticalSpacing" >
+         <property name="spacing" >
           <number>6</number>
          </property>
          <item row="0" column="0" >
@@ -2828,7 +2827,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/useradd.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/useradd.png</normaloff>:/useradd.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_delete" >
@@ -2856,7 +2856,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/trashcan_empty.png</normaloff>:/trashcan_empty.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_save" >
@@ -2884,7 +2885,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_users_cancel" >
@@ -2912,7 +2914,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/undo.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/undo.png</normaloff>:/undo.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_17" >
@@ -3304,7 +3307,8 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
        </property>
        <property name="flat" >
         <bool>false</bool>
@@ -3556,7 +3560,8 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Save</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_67" >
@@ -3751,7 +3756,8 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_64" >
@@ -4093,7 +4099,8 @@ p, li { white-space: pre-wrap; }
          <string/>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
         </property>
        </widget>
        <widget class="QPushButton" name="btn_tools_save_db" >
@@ -4121,7 +4128,8 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
         </property>
        </widget>
       </widget>
@@ -4197,7 +4205,8 @@ p, li { white-space: pre-wrap; }
          <string>&amp;Save</string>
         </property>
         <property name="icon" >
-         <iconset resource="../resources/images/first4.qrc" >:/filesave.png</iconset>
+         <iconset resource="../resources/images/first4.qrc" >
+          <normaloff>:/filesave.png</normaloff>:/filesave.png</iconset>
         </property>
        </widget>
        <widget class="QLineEdit" name="txtdefcurrency" >
@@ -4291,7 +4300,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/hotlistadd.png</normaloff>:/hotlistadd.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btndeletetemplate" >
@@ -4319,7 +4329,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/trashcan_empty.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/trashcan_empty.png</normaloff>:/trashcan_empty.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btnedittemplate" >
@@ -4347,7 +4358,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/fileopen.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/fileopen.png</normaloff>:/fileopen.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_88" >
@@ -4547,7 +4559,8 @@ p, li { white-space: pre-wrap; }
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
        </property>
       </widget>
       <widget class="QCheckBox" name="chksystemplates" >
@@ -4634,7 +4647,8 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Unlock</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/unlock.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/unlock.png</normaloff>:/unlock.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="lock_btnrefresh" >
@@ -4650,7 +4664,8 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Refresh</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/images/first4.qrc" >:/impexp.png</iconset>
+        <iconset resource="../resources/images/first4.qrc" >
+         <normaloff>:/impexp.png</normaloff>:/impexp.png</iconset>
        </property>
       </widget>
      </widget>
@@ -4685,7 +4700,8 @@ p, li { white-space: pre-wrap; }
        <string>&amp;Close</string>
       </property>
       <property name="icon" >
-       <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+       <iconset resource="../resources/images/first4.qrc" >
+        <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
       </property>
      </widget>
     </item>
@@ -4726,7 +4742,7 @@ p, li { white-space: pre-wrap; }
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
-      <property name="sizeHint" >
+      <property name="sizeHint" stdset="0" >
        <size>
         <width>40</width>
         <height>20</height>
