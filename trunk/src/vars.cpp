@@ -11,7 +11,7 @@
 //
 int uid;
 QString firstver = "1.4.0";
-QString dbrequire = "1.4.00.01";
+QString dbrequire = "1.4.00.02";
 QString build = "365";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
@@ -33,7 +33,7 @@ void vars::savegeo(QString frname, bool max, int x, int y, int width, int height
 			lines << stream.readLine();
 	}
 	file.close();
-    
+
 	if ( file.open ( QIODevice::WriteOnly ) )
 	{
 		int i;
@@ -79,7 +79,7 @@ void vars::savegeo(QString frname, bool max, int x, int y, int width, int height
 //
 QStringList vars::loadgeo(QString frmname)
 {
-    QStringList tmp;
+	QStringList tmp;
 	QString filename;
 	if(username != "")
 		filename = QDir::homePath() +"/.first4/"+username+".first4.conf";
@@ -99,7 +99,7 @@ QStringList vars::loadgeo(QString frmname)
 				tmp << line.section(",",1,1);
 				tmp << line.section(",",2,2);
 				tmp << line.section(",",3,3);
-				tmp << line.section(",",4,5);
+				tmp << line.section(",",4,4);
 		    }
 		} while (line != "");
 		file.close();

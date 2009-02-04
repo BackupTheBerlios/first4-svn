@@ -18,7 +18,7 @@ int dbupdatefrm::init()
 	connect ( btncancel, SIGNAL ( released() ), this, SLOT ( reject() ) );
 	connect ( btnproceed, SIGNAL ( released() ), this, SLOT ( check_db_structure() ) );
 
-	newdbver = "1.4.00.01";
+	newdbver = "1.4.00.02";
 	QSqlQuery querycheck("SHOW TABLES LIKE '%main%';");
 	querycheck.next();
 	QSqlQuery query(QString("SELECT value FROM %1 WHERE var = 'dbversion';").arg(querycheck.value(0).toString()));
@@ -99,6 +99,8 @@ int dbupdatefrm::init()
 	if(dbversion < 139802)
 		retrcode = 1;
 	if(dbversion < 140001)
+		retrcode = 1;
+	if(dbversion < 140002)
 		retrcode = 1;
 	return retrcode;
 	
@@ -229,6 +231,15 @@ void dbupdatefrm::check_db_structure()
 	}
 	if(dbversion < 140001)
 	{
+		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
+		progbar->setValue(17);
+		dbversion = newdbver.replace(".","").toInt();
+	}
+	if(dbversion < 140002)
+	{
+		progbar->setValue(14);
+		update_db_structure("rename_msgcfg");
+		progbar->setValue(15);
 		QSqlQuery query99(QString("UPDATE maincfg SET value = '%1' WHERE var = 'dbversion';").arg(newdbver));
 		progbar->setValue(17);
 		dbversion = newdbver.replace(".","").toInt();
@@ -390,5 +401,9 @@ void dbupdatefrm::update_db_structure(QString section)
 				QSqlQuery query1("ALTER TABLE `procedurearchiv` RENAME TO `procedurearchive`;");
 				QSqlQuery query2("ALTER TABLE `procedurecfgtab` RENAME TO `procedurecfg`;");
 				QSqlQuery query3("ALTER TABLE `proceduretab` RENAME TO `procedures`;");
+			}
+			else if(section == "rename_msgcfg")
+			{
+				QSqlQuery query3("ALTER TABLE `msgcfgtab` RENAME TO `messagecfg`;");
 			}
 }

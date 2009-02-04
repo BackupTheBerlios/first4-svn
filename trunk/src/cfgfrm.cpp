@@ -939,7 +939,7 @@ void cfgfrm::saveresourcesdetails()
 		else if ( item->text ( 2 ) == "orders" )
 		{
 			QSqlQuery querysave;
-			querysave.prepare ( "UPDATE `procedurecfgtab` SET `users` = :users, `auftrid` = :auftrid WHERE `ID` = :ID LIMIT 1;" );
+			querysave.prepare ( "UPDATE `procedurecfg` SET `users` = :users, `auftrid` = :auftrid WHERE `ID` = :ID LIMIT 1;" );
 			querysave.bindValue ( ":users", item->text ( 3 ) );
 			querysave.bindValue ( ":auftrid", item->text ( 4 ) );
 			querysave.bindValue ( ":ID", item->text ( 1 ) );
