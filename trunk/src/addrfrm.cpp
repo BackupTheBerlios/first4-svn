@@ -16,6 +16,7 @@
 #include "vars.h"
 #include "doceditfrm.h"
 #include "addrimpexpfrm.h"
+#include "procedureeditfrm.h"
 //
 QString lastadrtab, rev_currency, lastaddr, wintitle;
 QStringList adrnamelist, rightslist;
@@ -105,8 +106,10 @@ void addrfrm::init()
 	listproc->headerItem()->setText(0, QApplication::translate("addrfrm", "State", 0, QApplication::UnicodeUTF8));
 	listproc->headerItem()->setText(1, QApplication::translate("addrfrm", "Description", 0, QApplication::UnicodeUTF8));
 	listproc->headerItem()->setText(2, QApplication::translate("addrfrm", "Date", 0, QApplication::UnicodeUTF8));
+	listproc->headerItem()->setText(3, QApplication::translate("addrfrm", "ID", 0, QApplication::UnicodeUTF8));
 	listproc->setColumnWidth(0, 100);
 	listproc->setColumnWidth(2, 100);
+	listproc->hideColumn(3);
 	listproc->header()->setStretchLastSection(FALSE);
 	listproc->header()->setResizeMode (1, QHeaderView::Stretch);
 
@@ -483,41 +486,38 @@ void addrfrm::loaddocsdata()
 //
 void addrfrm::loadauftr(QString dbID)
 {
-    listproc->clear();
-    QStringList statusname;
-    statusname << tr("Incoming orders") << tr("Offers") << tr("Open orders") << tr("Completed orders") << tr("Deliverynotes") << tr("Invoices");
-    QTreeWidgetItem *tmpitem = mainlistview->currentItem();   
-    while(tmpitem->childCount()>0)
+	listproc->clear();
+	QStringList statusname;
+	statusname << tr("Incoming orders") << tr("Offers") << tr("Open orders") << tr("Completed orders") << tr("Deliverynotes") << tr("Invoices");
+	QTreeWidgetItem *tmpitem = mainlistview->currentItem();   
+	while(tmpitem->childCount()>0)
 		tmpitem->takeChild(0);
-    QString connstr = "SELECT status, description, date, ID FROM procedures WHERE client LIKE '%";
-    connstr += "("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")";
-    connstr += "%';";
-    QSqlQuery query(connstr);
-    if(query.isActive())
-    {
+	QString connstr = "SELECT status, description, date, ID FROM procedures WHERE client LIKE '%";
+	connstr += "("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")";
+	connstr += "%';";
+	QSqlQuery query(connstr);
+	if(query.isActive())
+	{
 		while(query.next())
 		{
-		    QTreeWidgetItem *item = new QTreeWidgetItem(listproc);
-		    item->setText(0, statusname[query.value(0).toString().toInt()]);
-		    item->setText(1, query.value(1).toString());
-		    item->setText(2, query.value(2).toString());
+			QTreeWidgetItem *item = new QTreeWidgetItem(listproc);
+			item->setText(0, statusname[query.value(0).toString().toInt()]);
+			item->setText(1, query.value(1).toString());
+			item->setText(2, query.value(2).toString());
+			item->setText(3, query.value(3).toString());
 		}
-    }
+	}
 }
 //
 void addrfrm::openauftrag()
 {
-    //ablauf *auftr = new ablauf;
-    QTreeWidgetItem *tmpitem = listproc->currentItem();
-    if(tmpitem != 0)
-    {
-		if(tmpitem->text(3).mid(0,1)=="*")
-		{
-		    //auftr->initfrm();
-		    //auftr->editauftrag(tmpitem->text(3).mid(1));
-		    tmpitem = tmpitem->parent();
-		    loadauftr(tmpitem->text(3));
-		}
+	procedureeditfrm *proc = new procedureeditfrm;
+	QTreeWidgetItem *tmpitem = listproc->currentItem();
+	if(tmpitem != 0)
+	{
+		proc->init();
+		proc->loadentry(tmpitem->text(3));
+		proc->exec();
     }
 }
 //
@@ -563,87 +563,86 @@ void addrfrm::changecust4()
 //
 void addrfrm::changecust5()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                          tr("New Label:"), QLineEdit::Normal,
-                                          lbladr28->text(), &ok);
-    if(ok)
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+		tr("New Label:"), QLineEdit::Normal,
+		lbladr28->text(), &ok);
+	if(ok)
 		lbladr28->setText(text);
 }
 //
 void addrfrm::newaddr()
 {
 	QSqlDatabase::database().transaction();
-    maintab->setCurrentIndex(0);
-    
-    QString qstr1 = QString("SELECT idcounter FROM directories WHERE `name` = '%1';").arg(adrnamelist[cmbdir->currentIndex()]);
-    QSqlQuery querycheckid(qstr1);
-    querycheckid.next();
-    adr2->setText(QString("%1").arg(querycheckid.value(0).toInt()+1, 0, 10));
-    
-    QString qstr2 = QString("UPDATE `directories` SET `idcounter` = '%1' WHERE `name` = '%2' LIMIT 1;").arg(adr2->text()).arg(adrnamelist[cmbdir->currentIndex()]);
-    QSqlQuery queryupdateid(qstr2);
-    //queryupdateid.exec();
-    
-    QString s = QDate::currentDate().toString("dd.MM.yyyy");
-    QString conn1 = "INSERT INTO `";
-    conn1 += adrnamelist[cmbdir->currentIndex()];
-    conn1 += "` ( `ID`, `clientid`, `company`, `lastname`, `firstname`, `nameadd`, `pobox`, `street_nr`, `location`, `zip`, `country`, `tel_b`, `tel_direct`, `fax_b`, `tel_p`, `fax_p`, `mobile`, `email1`, `email2`, `email3`, `homepage`, `revenueaj`, `revenuelj`, `discount`, `clienttyp`, `comments`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `created`, `modified`)VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '"+s+"', '');";
-    QSqlQuery queryadrnew1(conn1);
+	maintab->setCurrentIndex(0);
+
+	QString qstr1 = QString("SELECT idcounter FROM directories WHERE `name` = '%1';").arg(adrnamelist[cmbdir->currentIndex()]);
+	QSqlQuery querycheckid(qstr1);
+	querycheckid.next();
+	adr2->setText(QString("%1").arg(querycheckid.value(0).toInt()+1, 0, 10));
+
+	QString qstr2 = QString("UPDATE `directories` SET `idcounter` = '%1' WHERE `name` = '%2' LIMIT 1;").arg(adr2->text()).arg(adrnamelist[cmbdir->currentIndex()]);
+	QSqlQuery queryupdateid(qstr2);
+
+	QString s = QDate::currentDate().toString("dd.MM.yyyy");
+	QString conn1 = "INSERT INTO `";
+	conn1 += adrnamelist[cmbdir->currentIndex()];
+	conn1 += "` ( `ID`, `clientid`, `company`, `lastname`, `firstname`, `nameadd`, `pobox`, `street_nr`, `location`, `zip`, `country`, `tel_b`, `tel_direct`, `fax_b`, `tel_p`, `fax_p`, `mobile`, `email1`, `email2`, `email3`, `homepage`, `revenueaj`, `revenuelj`, `discount`, `clienttyp`, `comments`, `custom1`, `custom2`, `custom3`, `custom4`, `custom5`, `created`, `modified`)VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '"+s+"', '');";
+	QSqlQuery queryadrnew1(conn1);
+
+	QString conn4 = "SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, `location`, `zip`, `country`, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, clienttyp, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM ";
+	conn4 += adrnamelist[cmbdir->currentIndex()];
+	conn4 += ";";
+	QSqlQuery queryadrnew4(conn4);
+	if ( queryadrnew4.isActive())
+	{
+			queryadrnew4.last();
+			adr1->setText(queryadrnew4.value(0).toString());
+			adr29->setText(queryadrnew4.value(26).toString());
+			adr30->setText(queryadrnew4.value(26).toString());
+	}
+	adr3->setText("");
+	adr4->setText("");
+	adr5->setText("");
+	adr6->setText("");
+	adr7->setText("");
+	adr8->setText("");
+	adr9a->setText("");
+	adr9b->setText("");
+	adr31->setText("");
+	adr10->setText("");
+	adr11->setText("");
+	adr12->setText("");
+	adr13->setText("");
+	adr14->setText("");
+	adr15->setText("");
+	adr16->setText("");
+	adr17->setText("");
+	adr18->setText("");
+	adr19->setText("");
+	adr22->setText("0");	
+	adr23->setText("");		
+	lbladr24->setText("");
+	adr24->setText("");
+	lbladr25->setText("");
+	adr25->setText("");
+	lbladr26->setText("");
+	adr26->setText("");
+	lbladr27->setText("");
+	adr27->setText("");
+	lbladr28->setText("");
+	adr28->setText("");
+	QSqlDatabase::database().commit();
 	
-    QString conn4 = "SELECT ID, clientid, company, lastname, firstname, nameadd, pobox, street_nr, `location`, `zip`, `country`, tel_b, tel_direct , fax_b, tel_p, fax_p, mobile, email1, email2, email3, homepage, revenueaj, revenuelj, discount, clienttyp, comments, custom1, custom2, custom3, custom4, custom5, created, modified FROM ";
-    conn4 += adrnamelist[cmbdir->currentIndex()];
-    conn4 += ";";
-    QSqlQuery queryadrnew4(conn4);
-    if ( queryadrnew4.isActive())
-    {
-		queryadrnew4.last();
-		adr1->setText(queryadrnew4.value(0).toString());
-		adr29->setText(queryadrnew4.value(26).toString());
-		adr30->setText(queryadrnew4.value(26).toString());
-    }
-    adr3->setText("");
-    adr4->setText("");
-    adr5->setText("");
-    adr6->setText("");
-    adr7->setText("");
-    adr8->setText("");
-    adr9a->setText("");
-    adr9b->setText("");
-    adr31->setText("");
-    adr10->setText("");
-    adr11->setText("");
-    adr12->setText("");
-    adr13->setText("");
-    adr14->setText("");
-    adr15->setText("");
-    adr16->setText("");
-    adr17->setText("");
-    adr18->setText("");
-    adr19->setText("");
-    adr22->setText("0");	
-    adr23->setText("");		
-    lbladr24->setText("");
-    adr24->setText("");
-    lbladr25->setText("");
-    adr25->setText("");
-    lbladr26->setText("");
-    adr26->setText("");
-    lbladr27->setText("");
-    adr27->setText("");
-    lbladr28->setText("");
-    adr28->setText("");
-    QSqlDatabase::database().commit();
+	lastadrtab = "";
+	loadaddrs();
 	
-    lastadrtab = "";
-    loadaddrs();
-	
-    mainlistview->setEnabled(false);
-    btnnew->setEnabled(false);
-    cmbdir->setEnabled(false);
-    btnclose->setEnabled(false);
-    btncancel->setEnabled(false);
-    btndelete->setEnabled(false);
+	mainlistview->setEnabled(false);
+	btnnew->setEnabled(false);
+	cmbdir->setEnabled(false);
+	btnclose->setEnabled(false);
+	btncancel->setEnabled(false);
+	btndelete->setEnabled(false);
 }
 //
 void addrfrm::saveaddr()
@@ -1032,4 +1031,4 @@ QString addrfrm::loadtemplatedata()
 		QMessageBox::warning ( 0, tr ( "Can't load template data..." ), qerror.text() );
 	}
 	return answ;
-}
+	}
