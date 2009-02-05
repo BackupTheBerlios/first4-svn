@@ -37,7 +37,12 @@ void addrfrm::init()
 	{
 		if(sgeo[0] == "1")
 			this->setWindowState(this->windowState() ^ Qt::WindowMaximized);
-		this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
+		else
+		{
+			//this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
+			resize(QSize(sgeo[3].toInt(), sgeo[4].toInt()));
+			move(QPoint(sgeo[1].toInt(), sgeo[2].toInt()));
+		}
 	}
 
 	adrnamelist.clear();
@@ -145,7 +150,8 @@ void addrfrm::closeEvent(QCloseEvent* ce )
 	vars v;
 	v.savecolwidth(this->objectName(), "mainlistview", colwidth);
 	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
-	v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
+	//v.savegeo(this->objectName(), this->isMaximized(), this->x(), this->y(), this->width(), this->height());
+	v.savegeo(this->objectName(), this->isMaximized(), this->pos().x(), this->pos().y(), this->width(), this->height());
 	ce->accept();
 }
 //
