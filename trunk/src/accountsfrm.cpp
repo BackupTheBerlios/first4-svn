@@ -22,6 +22,7 @@ extern int uid;
 extern QString username, fullname, templatefolder, docfolder;
 //
 QString accountid;
+QString incexp_currency;
 //
 accountsfrm::accountsfrm( QWidget * parent, Qt::WFlags f) 
 	: QWidget(parent, f)
@@ -69,6 +70,10 @@ int accountsfrm::init()
 		this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
 	}
 	inittreemainoverview();
+
+	QSqlQuery query_curr("SELECT value FROM `maincfg` WHERE `var` = 'def_currency' LIMIT 1;");
+	query_curr.next();
+	incexp_currency = query_curr.value(0).toString();
 
 	return 2;
 }
@@ -466,9 +471,9 @@ void accountsfrm::loaddetails()
 				    tot->setText(calctotal(0));
 				    totin->setText(calctotal(1));
 				    totout->setText(calctotal(2));
-				    lblcurr1->setText("CHF");
-				    lblcurr2->setText("CHF");
-				    lblcurr3->setText("CHF");
+				    lblcurr1->setText(incexp_currency);
+				    lblcurr2->setText(incexp_currency);
+				    lblcurr3->setText(incexp_currency);
 				}
 				else if(item->text(7)=="10")
 				{
@@ -482,9 +487,9 @@ void accountsfrm::loaddetails()
 				    tot->setText(this->calctotal(0));
 				    totin->setText(this->calctotal(1));
 				    totout->setText(this->calctotal(2));
-				    lblcurr1->setText("CHF");
-				    lblcurr2->setText("CHF");
-				    lblcurr3->setText("CHF");
+				    lblcurr1->setText(incexp_currency);
+				    lblcurr2->setText(incexp_currency);
+				    lblcurr3->setText(incexp_currency);
 				}
 				else
 				{
@@ -633,9 +638,9 @@ void accountsfrm::loadarchivdata(QString type)
 		    saldo += query.value(7).toString().toFloat(&ok);
 		}
 	    tot->setText(QString("%1").arg(saldo, 0, 'f',2));
-	    lblcurr1->setText("CHF");
-	    lblcurr2->setText("CHF");
-	    lblcurr3->setText("CHF");
+	    lblcurr1->setText(incexp_currency);
+	    lblcurr2->setText(incexp_currency);
+	    lblcurr3->setText(incexp_currency);
 	} else {
 		QSqlError qerror = query.lastError();
 		QMessageBox::warning ( 0, tr ( "Importing error..." ), qerror.text() );
@@ -718,9 +723,13 @@ void accountsfrm::newentry()
 			efrm->cmbincexp->setCurrentIndex(0);
 		else
 			efrm->cmbincexp->setCurrentIndex(1);
+		efrm->lblcurrency->setText(incexp_currency);
 	}
 	else
 	{
+		QSqlQuery query_curr(QString("SELECT currency FROM accounts WHERE name = '%1';").arg(accountid));
+		query_curr.next();
+		efrm->lblcurrency->setText(query_curr.value(0).toString());
 		efrm->lbl_8->setVisible(FALSE);
 		efrm->cmbincexp->setVisible(FALSE);
 	}

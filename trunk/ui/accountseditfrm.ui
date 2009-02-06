@@ -13,7 +13,8 @@
    <string>Edit entry...</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/kcalc.png</normaloff>:/kcalc.png</iconset>
   </property>
   <widget class="QLabel" name="lbl_2" >
    <property name="geometry" >
@@ -324,7 +325,8 @@
     <string>Cancel</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnaccept" >
@@ -340,7 +342,8 @@
     <string>&amp;Accept</string>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
    </property>
   </widget>
   <widget class="QTextEdit" name="txtdescription" >
@@ -376,7 +379,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/xmag.png</normaloff>:/xmag.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnclearsearch" >
@@ -392,7 +396,8 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_cancel.png</normaloff>:/button_cancel.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btncodecheck" >
@@ -408,7 +413,26 @@
     <string/>
    </property>
    <property name="icon" >
-    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/button_ok.png</normaloff>:/button_ok.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblcurrency" >
+   <property name="geometry" >
+    <rect>
+     <x>210</x>
+     <y>385</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
    </property>
   </widget>
  </widget>

@@ -3325,7 +3325,7 @@ p, li { white-space: pre-wrap; }
          <x>9</x>
          <y>232</y>
          <width>671</width>
-         <height>181</height>
+         <height>191</height>
         </rect>
        </property>
        <property name="title" >
@@ -3335,7 +3335,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>12</x>
-          <y>140</y>
+          <y>150</y>
           <width>110</width>
           <height>20</height>
          </rect>
@@ -3360,7 +3360,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>12</x>
-          <y>110</y>
+          <y>120</y>
           <width>110</width>
           <height>20</height>
          </rect>
@@ -3385,7 +3385,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>128</x>
-          <y>110</y>
+          <y>120</y>
           <width>531</width>
           <height>25</height>
          </rect>
@@ -3395,7 +3395,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>12</x>
-          <y>80</y>
+          <y>90</y>
           <width>110</width>
           <height>20</height>
          </rect>
@@ -3420,7 +3420,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>128</x>
-          <y>80</y>
+          <y>90</y>
           <width>531</width>
           <height>25</height>
          </rect>
@@ -3430,7 +3430,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>12</x>
-          <y>50</y>
+          <y>60</y>
           <width>110</width>
           <height>20</height>
          </rect>
@@ -3455,7 +3455,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>128</x>
-          <y>50</y>
+          <y>60</y>
           <width>531</width>
           <height>25</height>
          </rect>
@@ -3465,7 +3465,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>12</x>
-          <y>20</y>
+          <y>30</y>
           <width>110</width>
           <height>20</height>
          </rect>
@@ -3490,7 +3490,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>128</x>
-          <y>20</y>
+          <y>30</y>
           <width>531</width>
           <height>25</height>
          </rect>
@@ -3500,7 +3500,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>128</x>
-          <y>140</y>
+          <y>150</y>
           <width>131</width>
           <height>25</height>
          </rect>
@@ -3788,9 +3788,9 @@ p, li { white-space: pre-wrap; }
        <widget class="QLineEdit" name="txtdocpath" >
         <property name="geometry" >
          <rect>
-          <x>120</x>
+          <x>188</x>
           <y>30</y>
-          <width>499</width>
+          <width>431</width>
           <height>25</height>
          </rect>
         </property>
@@ -3823,7 +3823,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLineEdit" name="txtdocprefix" >
         <property name="geometry" >
          <rect>
-          <x>120</x>
+          <x>190</x>
           <y>60</y>
           <width>81</width>
           <height>25</height>
@@ -3858,7 +3858,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QTextEdit" name="txtgeneralinfo" >
         <property name="geometry" >
          <rect>
-          <x>120</x>
+          <x>190</x>
           <y>90</y>
           <width>351</width>
           <height>101</height>
@@ -3870,21 +3870,9 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>10</x>
           <y>90</y>
-          <width>110</width>
+          <width>161</width>
           <height>21</height>
          </rect>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>110</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>110</width>
-          <height>16777215</height>
-         </size>
         </property>
         <property name="text" >
          <string>General informations:</string>
@@ -4139,7 +4127,7 @@ p, li { white-space: pre-wrap; }
          <x>10</x>
          <y>10</y>
          <width>351</width>
-         <height>141</height>
+         <height>151</height>
         </rect>
        </property>
        <property name="title" >
@@ -4149,7 +4137,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>10</x>
-          <y>22</y>
+          <y>32</y>
           <width>110</width>
           <height>21</height>
          </rect>
@@ -4174,7 +4162,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>120</x>
-          <y>20</y>
+          <y>30</y>
           <width>81</width>
           <height>25</height>
          </rect>
@@ -4184,7 +4172,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>220</x>
-          <y>100</y>
+          <y>110</y>
           <width>110</width>
           <height>26</height>
          </rect>
@@ -4213,7 +4201,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>120</x>
-          <y>60</y>
+          <y>70</y>
           <width>81</width>
           <height>25</height>
          </rect>
@@ -4223,7 +4211,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry" >
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>70</y>
           <width>110</width>
           <height>21</height>
          </rect>
