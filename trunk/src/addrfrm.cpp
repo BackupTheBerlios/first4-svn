@@ -278,6 +278,7 @@ void addrfrm::loadaddrdetail()
 {
 	vars v;
 	v.unlockrow(lastaddr.section("_", 0, 0), lastaddr.section("_", 1, 1));
+	progbar->setMaximum(100);
 	QTreeWidgetItem *tmpitem = mainlistview->currentItem();
 	if(tmpitem!=0 && tmpitem->text(3) != "")
 	{
@@ -302,133 +303,133 @@ void addrfrm::loadaddrdetail()
 		QSqlQuery query(qstr);
 		if(query.isActive())
 		{
-		    progbar->setValue(0);
-		    query.next();
-		    adr1->setText(query.value(0).toString());
-		    adr2->setText(query.value(1).toString());
-		    adr3->setText(query.value(2).toString());
-		    adr5->setText(query.value(3).toString());
-		    adr4->setText(query.value(4).toString());
-		    adr6->setText(query.value(5).toString());
-		    adr7->setText(query.value(6).toString());
-		    adr8->setText(query.value(7).toString());
-		    adr9b->setText(query.value(8).toString());
-		    adr9a->setText(query.value(9).toString());
-		    adr31->setText(query.value(10).toString());
-		    adr10->setText(query.value(11).toString());
-		    adr11->setText(query.value(12).toString());
-		    adr12->setText(query.value(13).toString());
-		    adr13->setText(query.value(14).toString());
-		    adr14->setText(query.value(15).toString());
-		    adr15->setText(query.value(16).toString());
-		    adr16->setText(query.value(17).toString());
-		    adr17->setText(query.value(18).toString());
-		    adr18->setText(query.value(19).toString());
-		    adr19->setText(query.value(20).toString());	
-		    progbar->setValue(25);
+			progbar->setValue(0);
+			query.next();
+			adr1->setText(query.value(0).toString());
+			adr2->setText(query.value(1).toString());
+			adr3->setText(query.value(2).toString());
+			adr5->setText(query.value(3).toString());
+			adr4->setText(query.value(4).toString());
+			adr6->setText(query.value(5).toString());
+			adr7->setText(query.value(6).toString());
+			adr8->setText(query.value(7).toString());
+			adr9b->setText(query.value(8).toString());
+			adr9a->setText(query.value(9).toString());
+			adr31->setText(query.value(10).toString());
+			adr10->setText(query.value(11).toString());
+			adr11->setText(query.value(12).toString());
+			adr12->setText(query.value(13).toString());
+			adr13->setText(query.value(14).toString());
+			adr14->setText(query.value(15).toString());
+			adr15->setText(query.value(16).toString());
+			adr16->setText(query.value(17).toString());
+			adr17->setText(query.value(18).toString());
+			adr18->setText(query.value(19).toString());
+			adr19->setText(query.value(20).toString());	
+			progbar->setValue(25);
 		
 			listrevenue->clear();
-	    	QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
-	    	item->setText(0, query.value(21).toString().section(";", 0, 0));
-	    	item->setText(1, query.value(21).toString().section(";", 1, 1));
-	    	int i;
-		    for(i=0; i<query.value(22).toString().count("#");i++)
-		    {
-		    	QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
-		    	item->setText(0, query.value(22).toString().section("#", i+1, i+1).section(";", 0, 0));
-		    	item->setText(1, query.value(22).toString().section("#", i+1, i+1).section(";", 1, 1));
-		    }
-		    progbar->setValue(50);
-	    
-		    adr22->setText(query.value(23).toString());
-		    if(adr22->text()=="")
-		    	adr22->setText("0");
-		    	
-		    adr23->setText(query.value(24).toString());		
-		
-		    QStringList custom = query.value(25).toString().split(":#:");
-		    if(custom.count()>1)
-		    {
+			QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
+			item->setText(0, query.value(21).toString().section(";", 0, 0));
+			item->setText(1, query.value(21).toString().section(";", 1, 1));
+			int i;
+			for(i=0; i<query.value(22).toString().count("#");i++)
+			{
+				QTreeWidgetItem *item = new QTreeWidgetItem(listrevenue);
+				item->setText(0, query.value(22).toString().section("#", i+1, i+1).section(";", 0, 0));
+				item->setText(1, query.value(22).toString().section("#", i+1, i+1).section(";", 1, 1));
+			}
+			progbar->setValue(50);
+
+			adr22->setText(query.value(23).toString());
+			if(adr22->text()=="")
+				adr22->setText("0");
+
+			adr23->setText(query.value(24).toString());
+
+			QStringList custom = query.value(25).toString().split(":#:");
+			if(custom.count()>1)
+			{
 				lbladr24->setText(custom[0]);
 				adr24->setText(custom[1]);
-	    	}
-		    custom = query.value(26).toString().split(":#:");
-		    if(custom.count()>1)
-		    {
-			    lbladr25->setText(custom[0]);
-			    adr25->setText(custom[1]);
-	    	}
-		    custom = query.value(27).toString().split(":#:");
-		    if(custom.count()>1)
-		    {
-		    	lbladr26->setText(custom[0]);
-			    adr26->setText(custom[1]);
-		    }
-		    custom = query.value(28).toString().split(":#:");
-		    if(custom.count()>1)
-		    {
-		    	lbladr27->setText(custom[0]);
-			    adr27->setText(custom[1]);
-		    }
-		    custom = query.value(29).toString().split(":#:");
-		    if(custom.count()>1)
-		    {
-		    	lbladr28->setText(custom[0]);
-			    adr28->setText(custom[1]);
-		    }
+			}
+			custom = query.value(26).toString().split(":#:");
+			if(custom.count()>1)
+			{
+				lbladr25->setText(custom[0]);
+				adr25->setText(custom[1]);
+			}
+			custom = query.value(27).toString().split(":#:");
+			if(custom.count()>1)
+			{
+				lbladr26->setText(custom[0]);
+				adr26->setText(custom[1]);
+			}
+			custom = query.value(28).toString().split(":#:");
+			if(custom.count()>1)
+			{
+				lbladr27->setText(custom[0]);
+				adr27->setText(custom[1]);
+			}
+			custom = query.value(29).toString().split(":#:");
+			if(custom.count()>1)
+			{
+				lbladr28->setText(custom[0]);
+				adr28->setText(custom[1]);
+			}
+
+			progbar->setValue(75);
 		
-		    progbar->setValue(75);
-		
-		    adr29->setText(query.value(30).toString());
-		    adr30->setText(query.value(31).toString());
-		    progbar->setValue(100);
+			adr29->setText(query.value(30).toString());
+			adr30->setText(query.value(31).toString());
+			progbar->setValue(100);
 		}
 		loaddocs(adr1->text());
 		if(tmpitem->text(3).mid(0,1)!="*")
-		    loadauftr(tmpitem->text(3));
+			loadauftr(tmpitem->text(3));
 		lastaddr = adrnamelist[cmbdir->currentIndex()] + "_" +tmpitem->text(3);
 	}
 }
 //
 void addrfrm::loaddocs(QString dbID)
 {
-    listdocs->clear();
-    QTreeWidgetItem *itemof = new QTreeWidgetItem(listdocs);
-    itemof->setText(0, tr("Offers"));
-    QTreeWidgetItem *itemab = new QTreeWidgetItem(listdocs);
-    itemab->setText(0, tr("Order confirmations"));
-    QTreeWidgetItem *itemli = new QTreeWidgetItem(listdocs);
-    itemli->setText(0, tr("Deliverynotes"));
-    QTreeWidgetItem *itemre = new QTreeWidgetItem(listdocs);
-    itemre->setText(0, tr("Invoices"));
+	listdocs->clear();
+	QTreeWidgetItem *itemof = new QTreeWidgetItem(listdocs);
+	itemof->setText(0, tr("Offers"));
+	QTreeWidgetItem *itemab = new QTreeWidgetItem(listdocs);
+	itemab->setText(0, tr("Order confirmations"));
+	QTreeWidgetItem *itemli = new QTreeWidgetItem(listdocs);
+	itemli->setText(0, tr("Deliverynotes"));
+	QTreeWidgetItem *itemre = new QTreeWidgetItem(listdocs);
+	itemre->setText(0, tr("Invoices"));
 
-    QString connstr = QString("SELECT ID, doctyp, date, client, comments, amount, docID FROM documents WHERE client = '%1_%2';").arg(adrnamelist[cmbdir->currentIndex()].mid(3)).arg(dbID);
-    QSqlQuery query(connstr);
-    if(query.isActive())
-    {
+	QString connstr = QString("SELECT ID, doctyp, date, client, comments, amount, docID FROM documents WHERE client = '%1_%2';").arg(adrnamelist[cmbdir->currentIndex()].mid(3)).arg(dbID);
+	QSqlQuery query(connstr);
+	if(query.isActive())
+	{
 		while(query.next())
-		{	    
-		    QTreeWidgetItem *itemdoc = new QTreeWidgetItem();
-		    if(query.value(1).toString()== "1 offer")
-		    {
+		{
+			QTreeWidgetItem *itemdoc = new QTreeWidgetItem();
+			if(query.value(1).toString()== "1 offer")
+			{
 				itemdoc->setText(0, tr("Offer %1 - %2").arg(query.value(7).toString()).arg(query.value(2).toString()));
 				itemdoc->setText(1, query.value(0).toString());
 				itemof->addChild(itemdoc);
-		    }
-		    else if(query.value(1).toString()=="2 orderconf")
-		    {
+			}
+			else if(query.value(1).toString()=="2 orderconf")
+			{
 				itemdoc->setText(0, tr("Order confirmation %1 - %2").arg(query.value(7).toString()).arg(query.value(2).toString()));
 				itemdoc->setText(1, query.value(0).toString());
 				itemab->addChild(itemdoc);
-		    }
-		    else if(query.value(1).toString()=="3 deliverynote")
-		    {
+			}
+			else if(query.value(1).toString()=="3 deliverynote")
+			{
 				itemdoc->setText(0, tr("Deliverynote %1 - %2").arg(query.value(7).toString()).arg(query.value(2).toString()));
 				itemdoc->setText(1, query.value(0).toString());
 				itemli->addChild(itemdoc);
-		    }
-		    else if(query.value(1).toString()=="4 invoice")
-		    {
+			}
+			else if(query.value(1).toString()=="4 invoice")
+			{
 				QSqlQuery query1("SELECT value FROM `maincfg` WHERE `var` = 'docpref';");
 				query1.next();
 
@@ -442,44 +443,44 @@ void addrfrm::loaddocs(QString dbID)
 					status = tr("Paid ")+query2.value(1).toString().section("-", 2, 2)+"."+query2.value(1).toString().section("-", 1, 1)+"."+query2.value(1).toString().section("-", 0, 0);
 				else
 				{
-				    //Pruefe ob Rechnung Pendent
-				    QString connstr3 = "SELECT state, date FROM incexp WHERE `refnr` LIKE '%"+refnumber+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
-				    QSqlQuery query3(connstr3);
-				    query3.next();
-				    if(query3.size()>0)
+					//Pruefe ob Rechnung Pendent
+					QString connstr3 = "SELECT state, date FROM incexp WHERE `refnr` LIKE '%"+refnumber+"' AND `address` LIKE '%("+adrnamelist[cmbdir->currentIndex()].mid(3)+"_"+dbID+")%';";
+					QSqlQuery query3(connstr3);
+					query3.next();
+					if(query3.size()>0)
 						status = tr("Pendent");
-				    else
+					else
 						status = tr("Completed");
 				}
-			    
+
 				itemdoc->setText(0, tr("Invoice %1 - %2").arg(query.value(6).toString()).arg(query.value(2).toString()));
 				itemdoc->setText(1, query.value(0).toString());
 				itemdoc->setText(3, status);		    
 				itemre->addChild(itemdoc);
-		    }
+			}
 		}
-    }
+	}
 }
 //
 void addrfrm::loaddocsdata()
 {
-    QTreeWidgetItem *itemdoc = listdocs->currentItem();
-    if(itemdoc->text(1)!="")
-    {
+	QTreeWidgetItem *itemdoc = listdocs->currentItem();
+	if(itemdoc->text(1)!="")
+	{
 		while(itemdoc->childCount()>0)
-		    itemdoc->takeChild(0);
+			itemdoc->takeChild(0);
 		if(itemdoc->text(3)!="")
 		{
-		    QTreeWidgetItem *statusitem = new QTreeWidgetItem(itemdoc, 0);
-		    statusitem->setText(0, tr("Status: %1").arg(itemdoc->text(3)));
+			QTreeWidgetItem *statusitem = new QTreeWidgetItem(itemdoc, 0);
+		statusitem->setText(0, tr("Status: %1").arg(itemdoc->text(3)));
 		}
 	
 		QString qstr = QString("SELECT description FROM documentpositions WHERE `docid`='%1';").arg(itemdoc->text(1));
 		QSqlQuery docpos(qstr);
 		while(docpos.next())
 		{
-		    QTreeWidgetItem *itemchild = new QTreeWidgetItem(itemdoc);
-		    itemchild->setText(0, docpos.value(0).toString());
+			QTreeWidgetItem *itemchild = new QTreeWidgetItem(itemdoc);
+			itemchild->setText(0, docpos.value(0).toString());
 		}
     }
 }
@@ -518,53 +519,53 @@ void addrfrm::openauftrag()
 		proc->init();
 		proc->loadentry(tmpitem->text(3));
 		proc->exec();
-    }
+	}
 }
 //
 void addrfrm::changecust1()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                          tr("New Label:"), QLineEdit::Normal,
-                                          lbladr24->text(), &ok);
-    if(ok)
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Custom field 1"),
+		tr("New Label:"), QLineEdit::Normal,
+		lbladr24->text(), &ok);
+	if(ok)
 		lbladr24->setText(text);
 }
 //
 void addrfrm::changecust2()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                          tr("New Label:"), QLineEdit::Normal,
-                                          lbladr25->text(), &ok);
-    if(ok)
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Custom field 2"),
+		tr("New Label:"), QLineEdit::Normal,
+		lbladr25->text(), &ok);
+	if(ok)
 		lbladr25->setText(text);
 }
 //
 void addrfrm::changecust3()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                          tr("New Label:"), QLineEdit::Normal,
-                                          lbladr26->text(), &ok);
-    if(ok)
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Custom field 3"),
+		tr("New Label:"), QLineEdit::Normal,
+		lbladr26->text(), &ok);
+	if(ok)
 		lbladr26->setText(text);
 }
 //
 void addrfrm::changecust4()
 {
-    bool ok;
-    QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                          tr("New Label:"), QLineEdit::Normal,
-                                          lbladr27->text(), &ok);
-    if(ok)
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Custom field 4"),
+		tr("New Label:"), QLineEdit::Normal,
+		lbladr27->text(), &ok);
+	if(ok)
 		lbladr27->setText(text);
 }
 //
 void addrfrm::changecust5()
 {
 	bool ok;
-	QString text = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+	QString text = QInputDialog::getText(this, tr("Custom field 5"),
 		tr("New Label:"), QLineEdit::Normal,
 		lbladr28->text(), &ok);
 	if(ok)
