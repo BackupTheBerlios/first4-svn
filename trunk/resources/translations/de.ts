@@ -572,7 +572,7 @@ Währung in Datei ist: %1</translation>
 
 Actual account amount is: %1
 Amount in file is: %2</source>
-        <translation>Aktueller Betrag stimmt nicht überein.Aktueller Betrag ist: %1
+        <translation>Aktueller Betrag stimmt nicht überein. Aktueller Betrag ist: %1
 Betrag in Datei ist: %2</translation>
     </message>
     <message>
