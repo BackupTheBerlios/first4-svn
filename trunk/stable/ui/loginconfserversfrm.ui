@@ -1,0 +1,130 @@
+<ui version="4.0" >
+ <class>loginconfserversfrm</class>
+ <widget class="QDialog" name="loginconfserversfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>232</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Configure databases...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btnadddb" >
+   <property name="geometry" >
+    <rect>
+     <x>5</x>
+     <y>30</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/hotlistadd.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btndeldb" >
+   <property name="geometry" >
+    <rect>
+     <x>5</x>
+     <y>60</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/hotlistdel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listservers" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>351</width>
+     <height>160</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnclose" >
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>200</y>
+     <width>110</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>110</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>110</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Databases...</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections/>
+</ui>

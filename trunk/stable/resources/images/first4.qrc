@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>button_cancel.png</file>
+        <file>button_ok.png</file>
+        <file>button_ok_small.png</file>
+        <file>contents.png</file>
+        <file>down.png</file>
+        <file>exec.png</file>
+        <file>exit.png</file>
+        <file>fileclose.png</file>
+        <file>filenew.png</file>
+        <file>fileopen.png</file>
+        <file>fileprint.png</file>
+        <file>filesave.png</file>
+        <file>help_index.png</file>
+        <file>hotlistadd.png</file>
+        <file>hotlistdel.png</file>
+        <file>impexp.png</file>
+        <file>kcalc.png</file>
+        <file>kdmconfig.png</file>
+        <file>kfind.png</file>
+        <file>kfm.png</file>
+        <file>kontact_mail.png</file>
+        <file>kontact_todo.png</file>
+        <file>logo.png</file>
+        <file>mail_new.png</file>
+        <file>message2.png</file>
+        <file>messagebox_critical.png</file>
+        <file>newsplash.png</file>
+        <file>package_utilities.png</file>
+        <file>trashcan_empty.png</file>
+        <file>undo.png</file>
+        <file>unlock.png</file>
+        <file>up.png</file>
+        <file>useradd.png</file>
+        <file>viewmag2.png</file>
+        <file>wordprocessing32x32.png</file>
+        <file>xclipboard.png</file>
+        <file>xmag.png</file>
+    </qresource>
+    <qresource prefix="/license" >
+        <file>../../COPYING</file>
+    </qresource>
+</RCC>

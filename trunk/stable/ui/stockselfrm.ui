@@ -1,0 +1,137 @@
+<ui version="4.0" >
+ <class>stockselfrm</class>
+ <widget class="QDialog" name="stockselfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>642</width>
+    <height>393</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Select stock item...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/kfm.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnaccept" >
+   <property name="geometry" >
+    <rect>
+     <x>534</x>
+     <y>360</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Accept</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+  </widget>
+  <widget class="QTreeWidget" name="treemain" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>621</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text" >
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Label</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Description</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Stock</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Unit</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Price</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>VAT</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Min. Stock</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>tab_id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>supplier</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>treemain</tabstop>
+  <tabstop>btnaccept</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>stockselfrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
