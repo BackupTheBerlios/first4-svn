@@ -1,0 +1,103 @@
+<ui version="4.0" >
+ <class>cmntfrm</class>
+ <widget class="QDialog" name="cmntfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>592</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Comments...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>460</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txtcomments" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>571</width>
+     <height>441</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnok" >
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>460</y>
+     <width>75</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtcomments</tabstop>
+  <tabstop>btnok</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnok</sender>
+   <signal>clicked()</signal>
+   <receiver>cmntfrm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>cmntfrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

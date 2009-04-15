@@ -1,0 +1,162 @@
+<ui version="4.0" >
+ <class>aboutfrm</class>
+ <widget class="QDialog" name="aboutfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>About first4...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >
+    <normaloff>:/help_index.png</normaloff>:/help_index.png</iconset>
+  </property>
+  <widget class="QPushButton" name="okButton" >
+   <property name="geometry" >
+    <rect>
+     <x>534</x>
+     <y>410</y>
+     <width>111</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >
+     <normaloff>:/fileclose.png</normaloff>:/fileclose.png</iconset>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="License" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>631</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="currentIndex" >
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="first4" >
+    <attribute name="title" >
+     <string>first4</string>
+    </attribute>
+    <widget class="QLabel" name="label_2" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>350</width>
+       <height>260</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="../resources/images/first4.qrc" >:/newsplash.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>280</y>
+       <width>201</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="cursor" >
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text" >
+      <string>&lt;a href=http:///www.procopio.ch>http://www.procopio.ch&lt;/a></string>
+     </property>
+     <property name="openExternalLinks" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>341</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>first4: Orlando Procopio</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>341</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text" >
+      <string>Plugins: Alexander Saal</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2" >
+    <attribute name="title" >
+     <string>License</string>
+    </attribute>
+    <widget class="QTextEdit" name="textEditLicense" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>611</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="readOnly" >
+      <bool>true</bool>
+     </property>
+     <property name="html" >
+      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';">&lt;/p>&lt;/body>&lt;/html></string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>aboutfrm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,202 @@
+<ui version="4.0" >
+ <class>doccompletefrm</class>
+ <widget class="QDialog" name="doccompletefrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>284</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Complete document...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>321</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Complete document and refresh stock?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncomplete" >
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>250</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Complete</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>381</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Tasks</string>
+   </property>
+   <widget class="QCheckBox" name="chkbox_3" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Add conversion</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkbox_4" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Register</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkbox_6" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Print paying-in slip</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkbox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Refresh stock</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkbox_1" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Calc total</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkbox_5" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Create document</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>chkbox_1</tabstop>
+  <tabstop>chkbox_2</tabstop>
+  <tabstop>chkbox_3</tabstop>
+  <tabstop>chkbox_4</tabstop>
+  <tabstop>chkbox_5</tabstop>
+  <tabstop>chkbox_6</tabstop>
+  <tabstop>btncomplete</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btncomplete</sender>
+   <signal>clicked()</signal>
+   <receiver>doccompletefrm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>doccompletefrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

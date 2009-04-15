@@ -1,0 +1,81 @@
+<ui version="4.0" >
+ <class>vatshowfrm</class>
+ <widget class="QDialog" name="vatshowfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>192</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>VAT overview...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/kcalc.png</iconset>
+  </property>
+  <widget class="QTreeWidget" name="treemain" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text" >
+     <string>VAT percent</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Amount</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>VAT amount</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="btnok" >
+   <property name="geometry" >
+    <rect>
+     <x>274</x>
+     <y>160</y>
+     <width>111</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/fileclose.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnok</sender>
+   <signal>clicked()</signal>
+   <receiver>vatshowfrm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>278</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>96</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
