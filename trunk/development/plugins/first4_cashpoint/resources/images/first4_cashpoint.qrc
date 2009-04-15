@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>button_cancel.png</file>
+        <file>button_ok.png</file>
+        <file>fileclose.png</file>
+        <file>kcalc.png</file>
+        <file>xmag.png</file>
+    </qresource>
+</RCC>
