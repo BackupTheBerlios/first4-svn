@@ -11,7 +11,8 @@
 
 function checkenv {
 	QMAKE=`which qmake-qt4`
-	INSTDIR=/usr/local/lib/first4
+	INSTDIR=/usr/local/bin
+	SHARE=/usr/share/first4
 }
 
 function setenv {
@@ -86,21 +87,19 @@ function install {
 		echo "Please enter your or the root passwort."
 		echo 
 		echo "Create target directories..."
-		sudo mkdir -p $INSTDIR/bin
-		sudo mkdir -p $INSTDIR/translations
+		sudo mkdir -p $SHARE/translations
 		echo "Copy files..."
-		sudo cp bin/* $INSTDIR/bin/
-		sudo cp resources/images/logo.png $INSTDIR/bin/logo.png
-		sudo cp resources/translations/*.qm $INSTDIR/translations/
+		sudo cp bin/* $INSTDIR/
+		sudo cp resources/images/logo.png $SHARE/logo.png
+		sudo cp resources/translations/*.qm $SHARE/translations/
 		sudo cp resources/first4.desktop /usr/share/applications/first4.desktop
 	else
 		echo "Create target directories..."
-		mkdir -p $INSTDIR/bin
-		mkdir -p $INSTDIR/translations
+		mkdir -p $SHARE/translations
 		echo "Copy files..."
-		cp bin/* $INSTDIR/bin/
-		cp resources/images/logo.png $INSTDIR/bin/logo.png
-		cp resources/translations/*.qm $INSTDIR/translations/
+		cp bin/* $INSTDIR/
+		cp resources/images/logo.png $SHARE/bin/logo.png
+		cp resources/translations/*.qm $SHARE/translations/
 		cp resources/first4.desktop /usr/share/applications/first4.desktop
 	fi
 	
