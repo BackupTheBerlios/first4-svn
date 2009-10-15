@@ -15,9 +15,10 @@ public:
 private slots:
 	void listen();
 	void startRead();
-	void writeBack(char*);
+	void writeBack(QString);
 private:
 	QTcpServer *f4srv;
 	QTcpSocket *client;
+	QString performAction(QString);
 };
 #endif // __FIRST4SERVER_H__

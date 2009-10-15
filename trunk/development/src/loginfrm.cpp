@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QTcpSocket>
 //
 #include "loginfrm.h"
 #include "cfgfrm.h"
@@ -95,6 +96,15 @@ bool loginfrm::loadservers()
 //
 void loginfrm::checkpwd()
 {
+    QTcpSocket *tcpSocket = new QTcpSocket(this);
+    tcpSocket->connectToHost("localhost", 15000);
+    if (tcpSocket->waitForConnected(1000))
+	qDebug("Connected!");
+    QDataStream in(tcpSocket);
+    in.setVersion(QDataStream::Qt_4_0);
+    in << "test";
+    tcpSocket->close();
+
 	bool ok = FALSE;
     if(boxuser->text() != "")
     {	

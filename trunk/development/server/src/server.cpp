@@ -43,16 +43,20 @@ void first4server::startRead()
 {
 	char buffer[1024] = {0};
 	client->read(buffer, client->bytesAvailable());
-	qDebug() << QString("%1").arg(buffer).simplified();
-	if(QString("%1").arg(buffer).simplified() != "quit")
-		writeBack(buffer);
-	else
-		client->disconnectFromHost();
+	QString answ = performAction(QString::QString(buffer));
+	writeBack(answ);
+	client->close();
 }
 //
-void first4server::writeBack(char *buffer)
+void first4server::writeBack(QString answer)
 {
     QByteArray answ;
     answ.append(xmlheader);
+    answ.append(answer);
     client->write(answ);
+}
+//
+QString first4server::performAction(QString input)
+{
+    return "hallo";
 }
