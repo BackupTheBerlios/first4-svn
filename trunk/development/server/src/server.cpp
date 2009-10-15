@@ -3,11 +3,14 @@
 #include <QByteArray>
 #include <QHostInfo>
 #include <QDebug>
+#include <QXmlStreamWriter>
+#include <QXmlStreamReader>
+#include <QXmlStreamAttribute>
 //
 #include "server.h"
 //
 QString version = "1.9.80";
-QString xmlheader = "<?xml-version=\"1.0\"?>";
+QString client_required = "1.9.80";
 //
 bool first4server::startServer ( )
 {
@@ -25,34 +28,47 @@ uint first4server::getPort ( )
 //
 void first4server::listen ( )
 {
-	QByteArray block;
-	QDataStream out(&block, QIODevice::WriteOnly);
-	out.setVersion(QDataStream::Qt_4_0);
-	out << (quint16)0;
-	out << tr("first4server Version %1 on %2.%3\n").arg(version).arg(QHostInfo::localHostName()).arg(QHostInfo::localDomainName());
-        out.device()->seek(0);
-        out << (quint16)(block.size() - sizeof(quint16));
-
-	qDebug() << "Starting connection";
 	client = f4srv->nextPendingConnection();
-	client->write(block);
+    QByteArray answ;
+    QXmlStreamWriter stream(&answ);
+    stream.setAutoFormatting(true);
+    stream.writeStartDocument();
+    stream.writeStartElement("first4server");
+    stream.writeAttribute("href", "http://first4.procopio.ch/");
+    stream.writeTextElement("Version", version);
+    stream.writeTextElement("Host", QHostInfo::localHostName()+"."+QHostInfo::localDomainName());
+    stream.writeTextElement("ClientRequired", client_required);
+    stream.writeEndElement(); 
+    stream.writeEndDocument();
+    client->write(answ);
 	connect(client, SIGNAL(readyRead()), this, SLOT(startRead()));
 }
 //
 void first4server::startRead()
 {
-	char buffer[1024] = {0};
-	client->read(buffer, client->bytesAvailable());
-	QString answ = performAction(QString::QString(buffer));
-	writeBack(answ);
-	client->close();
+	QByteArray request;
+	request = client->read(client->bytesAvailable());
+	QXmlStreamReader xmlrequest(request);
+	while (!xmlrequest.atEnd()) {
+        	xmlrequest.readNext();
+		if(xmlrequest.isStartElement())
+		        qDebug() << xmlrequest.name();
+		else if(xmlrequest.isCharacters())
+		        qDebug() << xmlrequest.text();
+	}
 }
 //
 void first4server::writeBack(QString answer)
 {
     QByteArray answ;
-    answ.append(xmlheader);
-    answ.append(answer);
+    QXmlStreamWriter stream(&answ);
+    stream.setAutoFormatting(true);
+    stream.writeStartDocument();
+    stream.writeStartElement("bookmark");
+    stream.writeAttribute("href", "http://www.qtsoftware.com/");
+    stream.writeTextElement("title", "Qt Home");
+    stream.writeEndElement(); // bookmark
+    stream.writeEndDocument();
     client->write(answ);
 }
 //
