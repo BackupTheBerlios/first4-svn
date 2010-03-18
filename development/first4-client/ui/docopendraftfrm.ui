@@ -1,0 +1,368 @@
+<ui version="4.0" >
+ <class>docopendraftsfrm</class>
+ <widget class="QDialog" name="docopendraftsfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>762</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Open draft...</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/wordprocessing32x32.png</iconset>
+  </property>
+  <widget class="QPushButton" name="btnaddr" >
+   <property name="geometry" >
+    <rect>
+     <x>650</x>
+     <y>10</y>
+     <width>30</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/contents.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnsearch" >
+   <property name="geometry" >
+    <rect>
+     <x>686</x>
+     <y>10</y>
+     <width>30</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/xmag.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnclear" >
+   <property name="geometry" >
+    <rect>
+     <x>722</x>
+     <y>10</y>
+     <width>30</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Search in:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbsearchrow" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>154</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Customer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Document-ID</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Date</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Positions</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Comments</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>10</y>
+     <width>31</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>for:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtsearch" >
+   <property name="geometry" >
+    <rect>
+     <x>333</x>
+     <y>12</y>
+     <width>301</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progbar" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>460</y>
+     <width>200</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>200</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>181</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="value" >
+    <number>0</number>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>460</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text" >
+    <string>&amp;Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnopen" >
+   <property name="geometry" >
+    <rect>
+     <x>650</x>
+     <y>460</y>
+     <width>101</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text" >
+    <string>&amp;Open</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+  </widget>
+  <widget class="QTreeWidget" name="treemain" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>50</y>
+     <width>511</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="horizontalScrollBarPolicy" >
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <column>
+    <property name="text" >
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>DocumentID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Date</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Customer</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Amount</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Discount</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>Comments</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>ClientID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>ClientAddr</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTreeWidget" name="treeindex" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>221</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>221</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>221</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <column>
+    <property name="text" >
+     <string>Documents</string>
+    </property>
+   </column>
+   <column>
+    <property name="text" >
+     <string>name</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>cmbsearchrow</tabstop>
+  <tabstop>txtsearch</tabstop>
+  <tabstop>btnaddr</tabstop>
+  <tabstop>btnsearch</tabstop>
+  <tabstop>btnclear</tabstop>
+  <tabstop>treeindex</tabstop>
+  <tabstop>treemain</tabstop>
+  <tabstop>btnopen</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>docopendraftsfrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

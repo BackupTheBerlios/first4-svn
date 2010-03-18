@@ -1,0 +1,197 @@
+<ui version="4.0" >
+ <class>loginfrm</class>
+ <widget class="QDialog" name="loginfrm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>382</width>
+    <height>180</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>382</width>
+    <height>180</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>382</width>
+    <height>180</height>
+   </size>
+  </property>
+  <property name="baseSize" >
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Login - </string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/images/first4.qrc" >:/logo.png</iconset>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Username:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Password:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Database:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="boxuser" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>251</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="boxpwd" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>60</y>
+     <width>251</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="echoMode" >
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbdb" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>100</y>
+     <width>221</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancel" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>140</y>
+     <width>101</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_cancel.png</iconset>
+   </property>
+   <property name="flat" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnok" >
+   <property name="geometry" >
+    <rect>
+     <x>270</x>
+     <y>140</y>
+     <width>101</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Login</string>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/button_ok.png</iconset>
+   </property>
+   <property name="default" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnservers" >
+   <property name="geometry" >
+    <rect>
+     <x>347</x>
+     <y>100</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="icon" >
+    <iconset resource="../resources/images/first4.qrc" >:/package_utilities.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>boxuser</tabstop>
+  <tabstop>boxpwd</tabstop>
+  <tabstop>cmbdb</tabstop>
+  <tabstop>btnok</tabstop>
+  <tabstop>btncancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/images/first4.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>btncancel</sender>
+   <signal>clicked()</signal>
+   <receiver>loginfrm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
