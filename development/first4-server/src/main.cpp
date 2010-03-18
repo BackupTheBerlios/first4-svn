@@ -19,6 +19,5 @@ int main(int argc, char *argv[])
 		qDebug() << "first4server started on port" << f4srvport;
 	else
 		qDebug() << "first4server NOT started";
-
 	return a.exec();
 }

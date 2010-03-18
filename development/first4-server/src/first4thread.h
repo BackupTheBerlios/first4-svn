@@ -20,6 +20,7 @@ private:
 private slots:
     void writeBack(QString);
     void startRead();
+    void incomingRequest();
 };
 
 #endif

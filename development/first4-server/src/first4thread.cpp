@@ -2,11 +2,13 @@
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
 #include <QXmlStreamAttribute>
+#include <QDomDocument>
 //
 #include "first4thread.h"
 //
 extern QString f4srv_version;
 extern QString f4srv_client_required;
+QTcpSocket tcpSocket;
 //
 first4thread::first4thread(int socketDescriptor, QObject *parent)
     : QThread(parent), socketDescriptor(socketDescriptor)
@@ -15,7 +17,6 @@ first4thread::first4thread(int socketDescriptor, QObject *parent)
 //
 void first4thread::run()
 {
-	QTcpSocket tcpSocket;
         if (!tcpSocket.setSocketDescriptor(socketDescriptor)) {
         	emit error(tcpSocket.error());
 		return;
@@ -32,11 +33,31 @@ void first4thread::run()
 	stream.writeEndElement();
 	stream.writeEndDocument();
         tcpSocket.write(initansw);
-
-	connect(&tcpSocket, SIGNAL(readyRead()), SLOT(startRead()), Qt::AutoConnection);
+        connect(&tcpSocket, SIGNAL(readyRead()), SLOT(incomingRequest()), Qt::AutoConnection);
         tcpSocket.flush();
         //tcpSocket.disconnectFromHost();
-        //tcpSocket.waitForDisconnected();
+        tcpSocket.waitForDisconnected();
+}
+//
+void first4thread::incomingRequest()
+{
+    if(tcpSocket.canReadLine())
+    {
+        QDomDocument incReq("req");
+        QByteArray request;
+        request = tcpSocket.read(tcpSocket.bytesAvailable());
+        incReq.setContent(request);
+
+        QDomElement docElem = incReq.documentElement();
+        QDomNode n = docElem.firstChild();
+        while(!n.isNull()) {
+            QDomElement e = n.toElement();
+            if(!e.isNull() && e.tagName() == "Action") {
+                qDebug() << performAction(e.text());
+            }
+            n = n.nextSibling();
+        }
+    }
 }
 //
 void first4thread::startRead()
@@ -56,7 +77,7 @@ void first4thread::startRead()
 //
 void first4thread::writeBack(QString answer)
 {
-	QTcpSocket tcpSocket;
+    QTcpSocket tcpSocket;
     QByteArray answ;
     QXmlStreamWriter stream(&answ);
     stream.setAutoFormatting(true);
@@ -69,8 +90,7 @@ void first4thread::writeBack(QString answer)
     tcpSocket.write(answ);
 }
 //
-QString first4thread::performAction(QString input)
+QString first4thread::performAction(QString action)
 {
-    return "hallo";
+    return action;
 }
-

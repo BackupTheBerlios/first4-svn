@@ -6,7 +6,7 @@ DESTDIR = bin
 HEADERS = src/first4server.h \
  src/first4thread.h 
 INCLUDEPATH = src 
-QT += core sql network
+QT += core sql network xml
 SOURCES = src/main.cpp \
  src/first4server.cpp \
  src/first4thread.cpp
