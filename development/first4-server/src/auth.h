@@ -6,8 +6,8 @@
 class Auth
 {
 public:
-    bool loginUser(QString, QString, QString);
-    bool logoutUser(QString, QString);
+    int loginUser(QString, QString);
+    bool logoutUser(QString);
 protected:
 
 private:

@@ -11,6 +11,9 @@ public:
 	first4server(QObject *parent = 0);
 	QString f4srvversion;
 	QString f4srv_client_required;
+private:
+	void readConfiguration();
+	void connectToDatabase(QString, int, QString, QString, QString);
 protected:
     void incomingConnection(int socketDescriptor);
 private:

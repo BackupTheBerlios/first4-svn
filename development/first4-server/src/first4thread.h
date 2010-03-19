@@ -17,8 +17,8 @@ signals:
 private:
     int socketDescriptor;
     bool performAction(QString, QDomElement);
-    QDomDocument performAuthAction(QString, QDomElement);
-    QString text;
+    void closeConnection();
+    void performAuthAction(QString, QDomElement);
 private slots:
     void writeBack(QDomDocument);
     void incomingRequest();

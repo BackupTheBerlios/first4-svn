@@ -10,10 +10,12 @@
 extern QString f4srv_version;
 extern QString f4srv_client_required;
 QTcpSocket *tcpSocket;
+QString user, fullname, token;
 //
 first4thread::first4thread(int socketDescriptor, QObject *parent)
     : QThread(parent), socketDescriptor(socketDescriptor)
 {
+
 }
 //
 void first4thread::run()
@@ -25,21 +27,14 @@ void first4thread::run()
     }
     qDebug() << "New connection from: " << tcpSocket->peerAddress().toString();
 
-    QDomDocument doc("first4server");
+    QDomDocument doc("first4");
     QDomElement root = doc.createElement("first4server");
     doc.appendChild(root);
-	QDomElement srv_ver = doc.createElement("Version");
-	root.appendChild(srv_ver);
-	    QDomText srv_ver_value = doc.createTextNode(f4srv_version);
-	    srv_ver.appendChild(srv_ver_value);
-	QDomElement srv_host = doc.createElement("Host");
-	root.appendChild(srv_host);
-	    QDomText srv_host_value = doc.createTextNode(QHostInfo::localHostName()+"."+QHostInfo::localDomainName());
-	    srv_host.appendChild(srv_host_value);
-	QDomElement srv_client_ver = doc.createElement("ClientRequired");
-	root.appendChild(srv_client_ver);
-	    QDomText srv_client_ver_value = doc.createTextNode(f4srv_client_required);
-	    srv_client_ver.appendChild(srv_client_ver_value);
+	QDomElement server = doc.createElement("Server");
+	server.setAttribute("Version", f4srv_version);
+	server.setAttribute("Host", QHostInfo::localHostName()+"."+QHostInfo::localDomainName());
+	server.setAttribute("ClientRequired", f4srv_client_required);
+	root.appendChild(server);
 
     tcpSocket->write(doc.toByteArray());
     connect(tcpSocket, SIGNAL(readyRead()), SLOT(incomingRequest()), Qt::AutoConnection);
@@ -58,15 +53,21 @@ void first4thread::incomingRequest()
         incReq.setContent(request);
 
         QDomElement docElem = incReq.documentElement();
-	QDomNodeList nlist = docElem.elementsByTagName("Action");
-
+	QDomNodeList nlist = docElem.elementsByTagName("Request");
 	if(nlist.size() > 0)
 	{
 	    QDomElement e = nlist.at(0).toElement();
 	    if(!e.isNull())
-		performAction(e.text(), docElem);
+		performAction(e.attribute("Action"), e);
 	}
     }
+}
+//
+void first4thread::closeConnection()
+{
+    tcpSocket->flush();
+    tcpSocket->disconnectFromHost();
+    this->terminate();
 }
 //
 void first4thread::writeBack(QDomDocument doc)
@@ -76,10 +77,10 @@ void first4thread::writeBack(QDomDocument doc)
     tcpSocket->flush();
 }
 //
-bool first4thread::performAction(QString action, QDomElement docElem)
+bool first4thread::performAction(QString action, QDomElement e)
 {
     if (action.section(".", 0, 0) == "Auth")
-	writeBack(performAuthAction(action, docElem));
+	performAuthAction(action, e);
     else if (action.section(".", 0, 0) == "Idle")
 	qDebug() << "Processing Idle action: " << action;
     else
@@ -87,30 +88,35 @@ bool first4thread::performAction(QString action, QDomElement docElem)
     return true;
 }
 //
-QDomDocument first4thread::performAuthAction(QString action, QDomElement docElem)
+void first4thread::performAuthAction(QString action, QDomElement e)
 {
     Auth auth;
-    QDomDocument doc("first4server");
+    QDomDocument doc("first4");
     if(action.section(".", 1, 1) == "Login")
     {
-	QDomNodeList user = docElem.elementsByTagName("User");
-	QDomNodeList pass = docElem.elementsByTagName("Password");
-	QDomNodeList clientid = docElem.elementsByTagName("ClientId");
-	if(auth.loginUser(user.at(0).toElement().text(), pass.at(0).toElement().text(), clientid.at(0).toElement().text()))
+	int answ = auth.loginUser(e.attribute("Username"), e.attribute("Password"));
+	QDomElement root = doc.createElement("first4server");
+	doc.appendChild(root);
+	QDomElement request = doc.createElement("Request");
+	request.setAttribute("Action", action);
+	request.setAttribute("Answer", answ);
+	if(answ == 0)
 	{
-	    QDomElement root = doc.createElement("first4server");
-	    doc.appendChild(root);
-		QDomElement success = doc.createElement("Login");
-		root.appendChild(success);
-		    QDomText success_value = doc.createTextNode("0");
-		    success.appendChild(success_value);
+	    request.setAttribute("Token", token);
+	    request.setAttribute("Fullname", fullname);
+	    root.appendChild(request);
+	    writeBack(doc);
+	}
+	else
+	{
+	    root.appendChild(request);
+	    writeBack(doc);
+	    closeConnection();
 	}
     }
     else if(action.section(".", 1, 1) == "Logout")
     {
-	QDomNodeList user = docElem.elementsByTagName("User");
-	QDomNodeList clientid = docElem.elementsByTagName("ClientId");
-	if(auth.logoutUser(user.at(0).toElement().text(), clientid.at(0).toElement().text()))
+	if(auth.logoutUser(e.attribute("Username")))
 	{
 	    tcpSocket->flush();
 	    tcpSocket->disconnectFromHost();
@@ -119,5 +125,4 @@ QDomDocument first4thread::performAuthAction(QString action, QDomElement docElem
     }
     else
 	qDebug() << "Processing Auth action: " << action;
-    return doc;
 }
