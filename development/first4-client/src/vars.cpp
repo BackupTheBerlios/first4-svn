@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QTcpSocket>
 //
 #include "vars.h"
 #include "dbupdatefrm.h"
@@ -16,7 +17,8 @@ QString build = "380";
 QString dbhost, dbname, dbuid, dbpwd, dbport;
 QString docfolder, templatefolder;
 QString username, fullname;
-
+QTcpSocket tcpSocket;
+//
 void vars::savegeo(QString frname, bool max, int x, int y, int width, int height)
 {
 	QStringList lines;

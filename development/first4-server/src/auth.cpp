@@ -11,13 +11,10 @@ extern QString fullname, token;
 int Auth::loginUser(QString username, QString passwd)
 {
     token.clear();
-    QString cpass = "";
-    QCryptographicHash *pass = new QCryptographicHash(QCryptographicHash::Sha1);
-    pass->addData(passwd.toAscii());
 
     int r;
     // Database successfully opened;
-    QString qstr = QString( "SELECT fullname, id FROM users WHERE username='%1' AND userpass = '%2';").arg(username).arg(cpass.append(pass->result().toBase64()));
+    QString qstr = QString( "SELECT fullname, id FROM users WHERE username='%1' AND userpass = '%2';").arg(username).arg(passwd);
     QSqlQuery query(qstr);
     if(query.isActive())
     {

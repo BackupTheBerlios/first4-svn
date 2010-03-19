@@ -6,14 +6,14 @@
 #include <QDir>
 #include <QTranslator>
 #include <QTime>
-
+//
 #include "mainfrm.h"
 #include "loginfrm.h"
 #include "dbwizzardfrm.h"
 #include "vars.h"
-
+//
 extern QString firstver, dbhost, dbname, dbuid, dbpwd, dbport;
-
+//
 int main ( int argc, char ** argv )
 {
 	QApplication app ( argc, argv );

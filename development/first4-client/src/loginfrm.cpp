@@ -7,6 +7,8 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QTcpSocket>
+#include <QDomDocument>
+#include <QCryptographicHash>
 //
 #include "loginfrm.h"
 #include "cfgfrm.h"
@@ -16,8 +18,10 @@
 extern int uid;
 extern QString username, fullname, docfolder, templatefolder, firstver;
 extern QString dbhost, dbname, dbuid, dbpwd, dbport;
+extern QTcpSocket *tcpSocket;
 //
 QStringList dbserver, dbname_local, uids, pwd, port;
+QStringList f4host, f4port;
 //
 loginfrm::loginfrm( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
@@ -26,7 +30,7 @@ loginfrm::loginfrm( QWidget * parent, Qt::WFlags f)
 }
 //
 //
-void loginfrm::init()
+void loginfrm::init() //Server
 {
     this->setFixedSize(this->width(), this->height());
     this->setWindowTitle(this->windowTitle()+firstver);	
@@ -40,72 +44,47 @@ void loginfrm::init()
 	    this->setGeometry(sgeo[1].toInt(), sgeo[2].toInt(), sgeo[3].toInt(), sgeo[4].toInt());
     }	
     
-	connect( btnok, SIGNAL( released() ), this, SLOT( checkpwd() ) );
-	connect( btnservers, SIGNAL( released() ), this, SLOT( configure_servers() ) );
+    connect( btnok, SIGNAL( released() ), this, SLOT( checkpwd() ) );
+    connect( btnservers, SIGNAL( released() ), this, SLOT( configure_servers() ) );
 }
 //
-bool loginfrm::loadservers()
+bool loginfrm::loadservers() //Server
 {
-	cmbdb->clear();
-	dbserver.clear();
-	dbname_local.clear();
-	uids.clear();
-	pwd.clear();
-	port.clear();
-	QStringList tmp;
-	QFile file ( QDir::homePath() +"/.first4/local.first4.conf" );
-	if ( file.open ( QIODevice::ReadOnly ) )
-	{
-		QString streamline;
-		QTextStream stream ( &file );
-		while(stream.readLine() != "[SERVERS]" && !stream.atEnd()) ;
-		do {
-			streamline = stream.readLine();
-			if(streamline != "")
-			{
-				if(streamline.section(":", 0, 0) == "SQLITE")
-				{
-					streamline = streamline.section(":", 1, 10);
-			    	uids.append("");
-		    		pwd.append("");
-			    	dbserver.append("");
-		    		dbname_local.append(streamline);
-			    	port.append("");
-					cmbdb->addItem(streamline + " (SQLite3)");
-				}
-				else
-				{
-					streamline = streamline.section(":", 1, 10);
-			    	uids.append(streamline.section("@",0,0).section(":",0,0));
-		    		pwd.append(streamline.section("@",0,0).section(":",1,1));
-			    	dbserver.append(streamline.section("@",1,1).section("/",0,0));
-		    		dbname_local.append(streamline.section("@",1,1).section("/",1,1).section(":",0,0));
-			    	port.append(streamline.section("@",1,1).section("/",1,1).section(":",1,1));
-		    		cmbdb->addItem(streamline.section("@",0,0).section(":",0,0) + "@"+ streamline.section("@",1,1).section("/",0,0) +"/"+streamline.section("@",1,1).section("/",1,1).section(":",0,0) + " (MySQL)");
-				}
-			}
-		} while (streamline != "" && !stream.atEnd());
-		file.close();
-	}
-    
-    if(cmbdb->count()==0)
-    	return FALSE;
+    f4host.clear();
+    f4port.clear();
+
+    QDomDocument srvs("servers");
+    QFile sfile ( QDir::homePath() +"/.first4/servers.conf" );
+    if (sfile.open(QIODevice::ReadOnly))
+    {
+	srvs.setContent(sfile.readAll());
+	sfile.close();
+    }
     else
-    	return TRUE;
+	qDebug() << "Can't read servers file";
+
+    QDomElement srv = srvs.documentElement();
+    QDomNodeList nlist = srv.elementsByTagName("Server");
+    if(nlist.size() > 0)
+    {
+	for(int i = 0; i < nlist.size(); i++)
+	{
+	    QDomElement e = nlist.at(i).toElement();
+	    if(!e.isNull())
+	    {
+		cmbdb->addItem(e.attribute("Description"));
+		f4host.append(e.attribute("Host"));
+		f4port.append(e.attribute("Port"));
+	    }
+	}
+    }
+    return TRUE;
 }
 //
 void loginfrm::checkpwd()
 {
-    QTcpSocket *tcpSocket = new QTcpSocket(this);
-    tcpSocket->connectToHost("localhost", 15000);
-    if (tcpSocket->waitForConnected(1000))
-	qDebug("Connected!");
-    QDataStream in(tcpSocket);
-    in.setVersion(QDataStream::Qt_4_0);
-    in << "test";
-    tcpSocket->close();
-
-	bool ok = FALSE;
+    /*
+    bool ok = FALSE;
     if(boxuser->text() != "")
     {	
     	QSqlDatabase first4DB;
@@ -177,6 +156,34 @@ void loginfrm::checkpwd()
 		}
 		if(!ok)
 			first4DB.close();
+    }*/
+
+    QString cpass = "";
+    QCryptographicHash *pass = new QCryptographicHash(QCryptographicHash::Sha1);
+    pass->addData(boxpwd->text().toAscii());
+
+    QDomDocument doc("first4");
+    QDomElement root = doc.createElement("first4client");
+    doc.appendChild(root);
+	QDomElement server = doc.createElement("Request");
+	server.setAttribute("Action", "Auth.Login");
+	server.setAttribute("Username", boxuser->text());
+	server.setAttribute("Password", cpass.append(pass->result().toBase64()));
+	root.appendChild(server);
+
+    qDebug() << doc.toString();
+
+    tcpSocket = new QTcpSocket;
+    tcpSocket->connectToHost(f4host[cmbdb->currentIndex()], f4port[cmbdb->currentIndex()].toInt());
+    tcpSocket->waitForConnected();
+    if(tcpSocket->state() == QAbstractSocket::ConnectedState)
+    {
+	tcpSocket->write(doc.toByteArray());
+	tcpSocket->flush();
+    }
+    else
+    {
+	QMessageBox::critical(this,"Login...",tr("Can't connect to server!"));
     }
 }
 //

@@ -85,7 +85,7 @@ HEADERS = src/aboutfrm.h \
  src/dataimpexpfrm.h \
  src/plugininterface.h
 INCLUDEPATH = src ui
-QT += core gui sql network
+QT += core gui sql network xml
 SOURCES = src/aboutfrm.cpp \
  src/accountsfrm.cpp \
  src/addrfrm.cpp \
