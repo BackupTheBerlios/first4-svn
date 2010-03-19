@@ -1,16 +1,21 @@
 CONFIG += qt \
- thread \
- debug \
- warn_on
+    thread \
+    debug \
+    warn_on
 DESTDIR = bin
 HEADERS = src/first4server.h \
- src/first4thread.h 
-INCLUDEPATH = src 
-QT += core sql network xml
+    src/first4thread.h \
+    src/auth.h
+INCLUDEPATH = src
+QT += core \
+    sql \
+    network \
+    xml
 SOURCES = src/main.cpp \
- src/first4server.cpp \
- src/first4thread.cpp
+    src/first4server.cpp \
+    src/first4thread.cpp \
+    src/auth.cpp
 TARGET = first4server
 TEMPLATE = app
-MOC_DIR =  build/unix/moc
-OBJECTS_DIR =  build/unix/obj
+MOC_DIR = build/unix/moc
+OBJECTS_DIR = build/unix/obj

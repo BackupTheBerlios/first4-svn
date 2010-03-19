@@ -3,6 +3,7 @@
 
 #include <QThread>
 #include <QTcpSocket>
+#include <QDomDocument>
 
 class first4thread : public QThread
 {
@@ -15,11 +16,11 @@ signals:
     void error(QTcpSocket::SocketError socketError);
 private:
     int socketDescriptor;
-    QString performAction(QString);
+    bool performAction(QString, QDomElement);
+    QDomDocument performAuthAction(QString, QDomElement);
     QString text;
 private slots:
-    void writeBack(QString);
-    void startRead();
+    void writeBack(QDomDocument);
     void incomingRequest();
 };
 

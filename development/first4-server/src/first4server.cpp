@@ -15,4 +15,3 @@ void first4server::incomingConnection(int socketDescriptor)
         connect(f4thread, SIGNAL(finished()), f4thread, SLOT(deleteLater()));
         f4thread->start();
 }
-
