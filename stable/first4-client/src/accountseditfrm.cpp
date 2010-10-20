@@ -69,7 +69,7 @@ void accountseditfrm::loadentry(QString tmpdbID)
 				cmbincexp->setCurrentIndex(0);
 		    bool ok;
 		    QString tmpstr = query.value(4).toString();
-		    QDate s = QDate::QDate(tmpstr.section("-", 0, 0).toInt(&ok, 10), tmpstr.section("-", 1, 1).toInt(&ok, 10), tmpstr.section("-", 2, 2).toInt(&ok, 10));
+		    QDate s = QDate(tmpstr.section("-", 0, 0).toInt(&ok, 10), tmpstr.section("-", 1, 1).toInt(&ok, 10), tmpstr.section("-", 2, 2).toInt(&ok, 10));
 		    date1->setDate(s);
 		    txtaddress->setText(query.value(5).toString().section(" (", 0, 0));
 		    lbladdrID->setText(query.value(5).toString().section(" (", 1, 1).section(")", 0, 0));
@@ -102,7 +102,7 @@ void accountseditfrm::loadentry(QString tmpdbID)
 		    txtRefNr->setText(query.value(1).toString());
 		    bool ok;
 		    QString tmpstr = query.value(2).toString();
-		    QDate s = QDate::QDate(tmpstr.section("-", 0, 0).toInt(&ok, 10), tmpstr.section("-", 1, 1).toInt(&ok, 10), tmpstr.section("-", 2, 2).toInt(&ok, 10));
+		    QDate s = QDate(tmpstr.section("-", 0, 0).toInt(&ok, 10), tmpstr.section("-", 1, 1).toInt(&ok, 10), tmpstr.section("-", 2, 2).toInt(&ok, 10));
 		    date1->setDate(s);
 		    txtaddress->setText(query.value(3).toString().section(" (", 0, 0));
 		    lbladdrID->setText(query.value(3).toString().section(" (", 1, 1).section(")", 0, 0));	

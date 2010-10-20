@@ -134,10 +134,10 @@ void procedureeditfrm::loadentry(QString dbID)
 		txtcustomer->setText(query.value(3).toString().section(" (", 0, 0));
 		txtcomments->setText(query.value(4).toString());
 		QString s = query.value(5).toString();
-		dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
+		dateedit1->setDate(QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
 		txtorderid->setText(query.value(6).toString());
 		s = query.value(10).toString();
-		dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
+		dateedit2->setDate(QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
 		txtcontact->setText(query.value(8).toString());
 		lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
 		cmbpriority->setEditText(query.value(7).toString());    
@@ -248,10 +248,10 @@ void procedureeditfrm::loadarchiveentry(QString dbID)
 		txtcustomer->setText(query.value(3).toString().section(" (", 0, 0));
 		txtcomments->setText(query.value(4).toString());
 		QString s = query.value(5).toString();
-		dateedit1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
+		dateedit1->setDate(QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));		
 		txtorderid->setText(query.value(6).toString());
 		s = query.value(10).toString();
-		dateedit2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
+		dateedit2->setDate(QDate(s.section("-", 0, 0).toInt(), s.section("-", 1, 1).toInt(), s.section("-", 2, 2).toInt()));
 		txtcontact->setText(query.value(8).toString());
 		lblcustomerid->setText(query.value(3).toString().section("(",1,1).section(")", 0, 0));        
 		cmbpriority->setEditText(query.value(7).toString());    
@@ -814,7 +814,7 @@ void procedureeditfrm::edittask()
     
     item = tabtasks->item(tabtasks->currentRow(), 2);
     QString s = item->text();
-    edtentry->date->setDate(QDate::QDate(s.section(".", 2, 2).toInt(), s.section(".", 1, 1).toInt(), s.section(".", 0, 0).toInt()));
+    edtentry->date->setDate(QDate(s.section(".", 2, 2).toInt(), s.section(".", 1, 1).toInt(), s.section(".", 0, 0).toInt()));
 	
     if(edtentry->exec())
     {

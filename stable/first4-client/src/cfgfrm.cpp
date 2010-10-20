@@ -433,9 +433,9 @@ void cfgfrm::loadUserDetails(QString usrname)
 		txt_users_firstname->setText ( query.value ( 3 ).toString().simplified() );
 		txt_users_lastname->setText ( query.value ( 4 ).toString().simplified() );
 		QString s = query.value ( 5 ).toString();
-		txtdob->setDate ( QDate::QDate ( s.section ( "-", 0, 0 ).toInt(), s.section ( "-", 1, 1 ).toInt(), s.section ( "-", 2, 2 ).toInt() ) );
+		txtdob->setDate ( QDate(s.section ( "-", 0, 0 ).toInt(), s.section ( "-", 1, 1 ).toInt(), s.section ( "-", 2, 2 ).toInt()) );
 		if (s == "")
-			txtdob->setDate ( QDate::QDate(1970, 01, 01 ));
+			txtdob->setDate ( QDate(1970, 01, 01 ));
 			
 		txt_users_privat_street->setText ( query.value ( 6 ).toString() );
 		txt_users_privat_zip->setText ( query.value ( 7 ).toString() );

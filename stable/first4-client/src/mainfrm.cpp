@@ -259,9 +259,9 @@ void mainfrm::admtasks()
 		emsg->ord_lbladdrid->setText(queryreturn1[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
 		emsg->ord_ordernr->setText(queryreturn1[i].section("//", 1, 1));
 		QString s = queryreturn1[i].section("//", 2, 2);
-		emsg->ord_date1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+		emsg->ord_date1->setDate(QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
 		s = queryreturn1[i].section("//", 3, 3);
-		emsg->ord_date2->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+		emsg->ord_date2->setDate(QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
 		emsg->newentry();
 	}
 	emsg->init("iem");
@@ -271,7 +271,7 @@ void mainfrm::admtasks()
 		emsg->iem_lbladdrid->setText(queryreturn2[i].section("//", 0, 0).section(" (", 1, 1).section(")", 0, 0));
 		emsg->iem_ordernr->setText(queryreturn2[i].section("//", 1, 1));
 		QString s = queryreturn2[i].section("//", 2, 2);
-		emsg->iem_date1->setDate(QDate::QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
+		emsg->iem_date1->setDate(QDate(s.section("-", 0, 0).toInt(),s.section("-", 1, 1).toInt(),s.section("-", 2, 2).toInt()));
 		emsg->iem_amount->setText(queryreturn2[i].section("//", 3, 3));
 		emsg->newentry();
 	}

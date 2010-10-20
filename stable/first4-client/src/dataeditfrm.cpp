@@ -117,7 +117,7 @@ void dataeditfrm::loadentry(QString dbID)
 		d = query.value(18).toString();
 		lblmodified->setText(d.section("-", 2, 2)+"."+d.section("-", 1, 1)+"."+d.section("-", 0, 0));
 		d = query.value(19).toString();
-		txtsalesdate->setDate(QDate::QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
+		txtsalesdate->setDate(QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
 		txtcomments->setText(query.value(20).toString());
 		txtstockpos->setText(query.value(21).toString());
 		calc_gw();

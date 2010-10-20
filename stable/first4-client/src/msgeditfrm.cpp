@@ -114,7 +114,7 @@ void msgeditfrm::loadentry(QString dbID)
     {
 		query.next();
 		QString d = query.value(3).toString();
-		date->setDate(QDate::QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
+		date->setDate(QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
 		switch(cmbmsgtype->currentIndex())
 		{
 			case 0:
@@ -146,16 +146,16 @@ void msgeditfrm::loadentry(QString dbID)
 			    ord_lbladdrid->setText(query.value(5).toString().section(" (", 1, 1).section(")", 0, 0));
 	    		ord_ordernr->setText(query.value(6).toString());
 			    d = query.value(7).toString();
-	    		ord_date1->setDate(QDate::QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
+	    		ord_date1->setDate(QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
 			    d = query.value(8).toString();
-	    		ord_date2->setDate(QDate::QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
+	    		ord_date2->setDate(QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
 			    break;
 			case 4:
 	    		iem_customer->setText(query.value(5).toString().section(" (", 0, 0));
 			    iem_lbladdrid->setText(query.value(5).toString().section(" (", 1, 1).section(")", 0, 0));
 	    		iem_ordernr->setText(query.value(6).toString());
 			    d = query.value(7).toString();
-	    		iem_date1->setDate(QDate::QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
+	    		iem_date1->setDate(QDate(d.section("-", 0, 0).toInt(&ok, 10), d.section("-", 1, 1).toInt(&ok, 10), d.section("-", 2, 2).toInt(&ok, 10)));
 			    iem_amount->setText(query.value(8).toString().section(" ", 0, 0));
 				iem_currency->addItem(query.value(8).toString().section(" ", 1, 1));
 	    		break;	       
